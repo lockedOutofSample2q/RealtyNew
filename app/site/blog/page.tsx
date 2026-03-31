@@ -1,5 +1,5 @@
 // app/site/blog/page.tsx  →  /blog
-import { allPosts } from "contentlayer/generated";
+import { allPosts } from "../../../.contentlayer/generated";
 import { compareDesc } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";
