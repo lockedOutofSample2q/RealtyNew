@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
     }
 
     const supabase = createAdminClient();
-    await supabase.from("subscribers").upsert({ email }, { onConflict: "email" });
+    await supabase.from("subscribers").upsert({ email } as any, { onConflict: "email" });
 
     return NextResponse.redirect(new URL("/?subscribed=true", req.url));
   } catch (err) {

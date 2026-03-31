@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
       source: data.source,
       property_id: data.property_id ?? null,
       status: "new",
-    });
+    } as any);
 
     if (error) throw error;
 

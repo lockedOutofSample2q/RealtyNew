@@ -204,7 +204,7 @@ function PropertyFormModal({
       if (property) {
         const { error } = await supabase
           .from("properties")
-          .update({ ...form, updated_at: new Date().toISOString() })
+          .update({ ...form, updated_at: new Date().toISOString() } as any)
           .eq("id", property.id);
         if (error) throw error;
         toast.success("Property updated");
@@ -213,7 +213,7 @@ function PropertyFormModal({
           ...form,
           images: [],
           features: [],
-        });
+        } as any);
         if (error) throw error;
         toast.success("Property created");
       }
