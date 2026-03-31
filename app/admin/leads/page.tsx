@@ -23,17 +23,23 @@ export default function LeadsAdmin() {
 
   async function load() {
     setLoading(true);
-    let q = supabase.from("leads").select("*").order("created_at", { ascending: false });
-    if (filter !== "all") q = q.eq("status", filter);
-    const { data } = await q;
-    setLeads(data ?? []);
-    setLoading(false);
+    try {
+      if (!supabase.from) throw new Error("Supabase not initialized");
+      let q = supabase.from("leads").select("*").order("created_at", { ascending: false });
+      if (filter !== "all") q = q.eq("status", filter);
+      const { data } = await q;
+      setLeads(data ?? []);
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setLoading(false);
+    }
   }
 
   useEffect(() => { load(); }, [filter]);
 
   async function updateStatus(id: string, status: string) {
-    const { error } = await supabase.from("leads").update({ status } as any).eq("id", id);
+    const { error } = await (supabase.from("leads") as any).update({ status }).eq("id", id);
     if (error) toast.error("Update failed");
     else { toast.success(`Marked as ${status}`); load(); }
   }

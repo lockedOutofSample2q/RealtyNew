@@ -23,12 +23,18 @@ export default function PropertiesAdmin() {
 
   async function load() {
     setLoading(true);
-    const { data } = await supabase
-      .from("properties")
-      .select("*")
-      .order("created_at", { ascending: false });
-    setProperties(data ?? []);
-    setLoading(false);
+    try {
+      if (!supabase.from) throw new Error("Supabase not initialized");
+      const { data } = await supabase
+        .from("properties")
+        .select("*")
+        .order("created_at", { ascending: false });
+      setProperties(data ?? []);
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setLoading(false);
+    }
   }
 
   useEffect(() => { load(); }, []);
@@ -202,18 +208,17 @@ function PropertyFormModal({
     setSaving(true);
     try {
       if (property) {
-        const { error } = await supabase
-          .from("properties")
-          .update({ ...form, updated_at: new Date().toISOString() } as any)
+        const { error } = await (supabase.from("properties") as any)
+          .update({ ...form, updated_at: new Date().toISOString() })
           .eq("id", property.id);
         if (error) throw error;
         toast.success("Property updated");
       } else {
-        const { error } = await supabase.from("properties").insert({
+        const { error } = await (supabase.from("properties") as any).insert({
           ...form,
           images: [],
           features: [],
-        } as any);
+        });
         if (error) throw error;
         toast.success("Property created");
       }

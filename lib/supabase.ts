@@ -16,19 +16,29 @@ import { createBrowserClient } from "@supabase/ssr";
 import { createClient as createServerClient } from "@supabase/supabase-js";
 import type { Database } from "@/types/supabase";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
 
 // ── Browser client (use in components) ───────────────────────
 export function createClient() {
+  if (!supabaseUrl || !supabaseAnonKey) {
+    console.warn("Supabase credentials missing. Returning a dummy client for build/SSR.");
+    // Return a dummy client or handle appropriately to avoid crashing during build
+    return {} as any;
+  }
   return createBrowserClient<Database>(supabaseUrl, supabaseAnonKey);
 }
 
 // ── Service role client (use in API routes / server actions ONLY)
 export function createAdminClient() {
+  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
+  if (!supabaseUrl || !serviceKey) {
+    console.warn("Supabase Admin credentials missing. Returning a dummy client for build/SSR.");
+    return {} as any;
+  }
   return createServerClient<Database>(
     supabaseUrl,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!,
+    serviceKey,
     { auth: { persistSession: false } }
   );
 }

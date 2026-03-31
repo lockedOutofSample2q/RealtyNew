@@ -12,7 +12,7 @@ const config: Config = {
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
-    "./content/**/*.{mdx}",
+    "./content/**/*.mdx",
   ],
   theme: {
     extend: {
