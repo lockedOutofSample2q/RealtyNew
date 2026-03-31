@@ -1,0 +1,34 @@
+// lib/supabase.ts
+// ============================================================
+// SUPABASE CLIENT
+// ─────────────────────────────────────────────────────────────
+// Two clients:
+//  - createClient()        → browser (anon key)
+//  - createServiceClient() → server-side only (service role key)
+//
+// ENV VARS needed in .env.local and Vercel dashboard:
+//   NEXT_PUBLIC_SUPABASE_URL
+//   NEXT_PUBLIC_SUPABASE_ANON_KEY
+//   SUPABASE_SERVICE_ROLE_KEY  (never expose client-side)
+// ============================================================
+
+import { createBrowserClient } from "@supabase/ssr";
+import { createClient as createServerClient } from "@supabase/supabase-js";
+import type { Database } from "@/types/supabase";
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+
+// ── Browser client (use in components) ───────────────────────
+export function createClient() {
+  return createBrowserClient<Database>(supabaseUrl, supabaseAnonKey);
+}
+
+// ── Service role client (use in API routes / server actions ONLY)
+export function createAdminClient() {
+  return createServerClient<Database>(
+    supabaseUrl,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!,
+    { auth: { persistSession: false } }
+  );
+}
