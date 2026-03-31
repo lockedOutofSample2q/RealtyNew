@@ -41,8 +41,46 @@ export interface Database {
           created_at: string;
           updated_at: string;
         };
-        Insert: Omit<Database["public"]["Tables"]["properties"]["Row"], "id" | "created_at" | "updated_at">;
-        Update: Partial<Database["public"]["Tables"]["properties"]["Insert"]>;
+        Insert: {
+          title: string;
+          slug: string;
+          type: string;
+          status: string;
+          listing_type: string;
+          price: number;
+          price_currency: string;
+          bedrooms?: number | null;
+          bathrooms: number;
+          area_sqft: number;
+          location: string;
+          community: string;
+          developer?: string | null;
+          furnishing: string;
+          description: string;
+          features: string[];
+          images: string[];
+          featured: boolean;
+        };
+        Update: {
+          title?: string;
+          slug?: string;
+          type?: string;
+          status?: string;
+          listing_type?: string;
+          price?: number;
+          price_currency?: string;
+          bedrooms?: number | null;
+          bathrooms?: number;
+          area_sqft?: number;
+          location?: string;
+          community?: string;
+          developer?: string | null;
+          furnishing?: string;
+          description?: string;
+          features?: string[];
+          images?: string[];
+          featured?: boolean;
+        };
       };
 
       // ── Leads ──────────────────────────────────────────
@@ -58,8 +96,24 @@ export interface Database {
           status: string;
           created_at: string;
         };
-        Insert: Omit<Database["public"]["Tables"]["leads"]["Row"], "id" | "created_at">;
-        Update: Partial<Database["public"]["Tables"]["leads"]["Insert"]>;
+        Insert: {
+          name: string;
+          email: string;
+          phone: string;
+          message?: string | null;
+          source: string;
+          property_id?: string | null;
+          status: string;
+        };
+        Update: {
+          name?: string;
+          email?: string;
+          phone?: string;
+          message?: string | null;
+          source?: string;
+          property_id?: string | null;
+          status?: string;
+        };
       };
 
       // ── Subscribers ────────────────────────────────────
@@ -69,8 +123,12 @@ export interface Database {
           email: string;
           created_at: string;
         };
-        Insert: { email: string };
-        Update: Partial<Database["public"]["Tables"]["subscribers"]["Insert"]>;
+        Insert: {
+          email: string;
+        };
+        Update: {
+          email?: string;
+        };
       };
     };
     Views: {};
