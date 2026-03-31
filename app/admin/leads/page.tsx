@@ -33,7 +33,7 @@ export default function LeadsAdmin() {
   useEffect(() => { load(); }, [filter]);
 
   async function updateStatus(id: string, status: string) {
-    const { error } = await supabase.from("leads").update({ status }).eq("id", id);
+    const { error } = await supabase.from("leads").update({ status } as any).eq("id", id);
     if (error) toast.error("Update failed");
     else { toast.success(`Marked as ${status}`); load(); }
   }
