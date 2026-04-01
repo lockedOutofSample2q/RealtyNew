@@ -4,6 +4,8 @@ import { useRouter } from "next/navigation";
 import { Search, X, MapPin, Home, BedDouble, MousePointer2 } from "lucide-react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import CustomSelect from "@/components/ui/CustomSelect";
+import PillSelect from "@/components/ui/PillSelect";
 
 const LOCATIONS = [
   "All Dubai",
@@ -28,6 +30,8 @@ const PROPERTY_TYPES = [
 ];
 
 const BEDROOMS = ["Any", "Studio", "1", "2", "3", "4", "5+"];
+const FURNISHING = ["All", "Furnished", "Unfurnished", "Partly furnished"];
+const PRICES = ["Any Price", "1,000,000 AED", "5,000,000 AED", "10,000,000 AED"];
 
 // 13 logos from public/assets/images/logos/
 const LOGOS = [
@@ -54,6 +58,8 @@ export default function HeroSection() {
     location: "",
     type: "",
     bedrooms: "",
+    furnishing: "",
+    price: "",
     currency: "AED",
   });
 
@@ -74,17 +80,7 @@ export default function HeroSection() {
     router.push(`${page}?${params.toString()}`);
   }
 
-  const selectWrap =
-    "relative bg-white/[0.08] hover:bg-white/[0.13] transition-colors rounded-xl px-4 py-3 border border-white/[0.08]";
-  const selectClass =
-    "w-full bg-transparent text-white font-body text-sm font-medium outline-none appearance-none cursor-pointer pr-5 placeholder:text-white/50";
-  const chevron = (
-    <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none opacity-50">
-      <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
-        <path d="M1 1L5 5L9 1" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    </div>
-  );
+
 
   // Doubled for seamless loop
   const tickerLogos = [...LOGOS, ...LOGOS];
@@ -175,73 +171,47 @@ export default function HeroSection() {
 
             {/* Filter Row (Desktop) */}
             <form onSubmit={handleSearch} className="flex flex-col md:flex-row items-end gap-3 w-full">
-              {/* Location */}
-              <div className="flex-1 w-full min-w-0">
-                <label className="block text-left text-[10px] font-body font-semibold text-white/40 mb-1.5 pl-1 uppercase tracking-widest">Location</label>
-                <div className={selectWrap}>
-                  <select value={filters.location} onChange={(e) => setFilters({ ...filters, location: e.target.value })} className={selectClass}>
-                    {LOCATIONS.map((l) => (
-                      <option key={l} value={l === "All Dubai" ? "" : l} className="text-black bg-white">{l === "All Dubai" ? "All" : l}</option>
-                    ))}
-                  </select>
-                  {chevron}
-                </div>
-              </div>
+              <CustomSelect 
+                label="Location"
+                value={filters.location}
+                options={LOCATIONS}
+                onChange={(loc) => setFilters({ ...filters, location: loc })}
+                placeholder="All Dubai"
+              />
 
-              {/* Property Type */}
-              <div className="flex-1 w-full min-w-0">
-                <label className="block text-left text-[10px] font-body font-semibold text-white/40 mb-1.5 pl-1 uppercase tracking-widest">Property Type</label>
-                <div className={selectWrap}>
-                  <select value={filters.type} onChange={(e) => setFilters({ ...filters, type: e.target.value })} className={selectClass}>
-                    {PROPERTY_TYPES.map((t) => (
-                      <option key={t} value={t === "All Types" ? "" : t.toLowerCase()} className="text-black bg-white">{t === "All Types" ? "All" : t}</option>
-                    ))}
-                  </select>
-                  {chevron}
-                </div>
-              </div>
+              <CustomSelect 
+                label="Property Type"
+                value={filters.type}
+                options={PROPERTY_TYPES}
+                onChange={(type) => setFilters({ ...filters, type: type })}
+                placeholder="All Types"
+              />
 
-              {/* Bedrooms */}
-              <div className="flex-1 w-full min-w-0">
-                <label className="block text-left text-[10px] font-body font-semibold text-white/40 mb-1.5 pl-1 uppercase tracking-widest">Bedrooms</label>
-                <div className={selectWrap}>
-                  <select value={filters.bedrooms} onChange={(e) => setFilters({ ...filters, bedrooms: e.target.value })} className={selectClass}>
-                    {BEDROOMS.map((b) => (
-                      <option key={b} value={b === "Any" ? "" : b.toLowerCase()} className="text-black bg-white">{b}</option>
-                    ))}
-                  </select>
-                  {chevron}
-                </div>
-              </div>
+              <CustomSelect 
+                label="Bedrooms"
+                value={filters.bedrooms}
+                options={BEDROOMS}
+                onChange={(beds) => setFilters({ ...filters, bedrooms: beds })}
+                placeholder="Any"
+              />
 
-              {/* Furnishing */}
-              <div className="flex-[1.2] w-full min-w-0">
-                <label className="block text-left text-[10px] font-body font-semibold text-white/40 mb-1.5 pl-1 uppercase tracking-widest">Furnishing</label>
-                <div className={selectWrap}>
-                  <select className={selectClass}>
-                    <option value="" className="text-black bg-white">All furnishings</option>
-                    <option value="furnished" className="text-black bg-white">Furnished</option>
-                    <option value="unfurnished" className="text-black bg-white">Unfurnished</option>
-                  </select>
-                  {chevron}
-                </div>
-              </div>
+              <CustomSelect 
+                label="Furnishing"
+                value={filters.furnishing}
+                options={FURNISHING}
+                onChange={(furn) => setFilters({ ...filters, furnishing: furn })}
+                placeholder="All"
+                className="flex-[1.2]"
+              />
 
-              {/* Price */}
-              <div className="flex-[1.5] w-full min-w-0">
-                <label className="block text-left text-[10px] font-body font-semibold text-white/40 mb-1.5 pl-1 uppercase tracking-widest">
-                  Price <span className="normal-case tracking-normal text-white/70 font-normal">( AED  USD  EUR )</span>
-                </label>
-                <div className={selectWrap}>
-                  <select className={selectClass}>
-                    <option value="" className="text-black bg-white">Any Price</option>
-                    <option value="1000000" className="text-black bg-white">1,000,000 AED</option>
-                    <option value="5000000" className="text-black bg-white">5,000,000 AED</option>
-                    <option value="10000000" className="text-black bg-white">10,000,000 AED</option>
-                  </select>
-                  {chevron}
-                </div>
-              </div>
+              <CustomSelect 
+                label="Price ( AED  USD  EUR )"
+                value={filters.price}
+                options={PRICES}
+                onChange={(price) => setFilters({ ...filters, price: price })}
+                placeholder="Any Price"
+                className="flex-[1.5]"
+              />
 
               {/* Search Button */}
               <div className="pt-[22px] w-full md:w-auto shrink-0">
@@ -301,64 +271,55 @@ export default function HeroSection() {
                   ))}
                 </div>
 
-                <form onSubmit={handleSearch} className="flex flex-col gap-6">
-                  {/* Location Mobile */}
-                  <div className="flex flex-col gap-2">
-                    <label className="text-[11px] font-bold uppercase tracking-widest text-black/40 pl-1">Location</label>
-                    <div className="bg-white rounded-2xl p-4 shadow-sm flex items-center gap-3 border border-gray-100">
-                      <MapPin size={18} className="text-black/30" />
-                      <select 
-                        value={filters.location} 
-                        onChange={(e) => setFilters({ ...filters, location: e.target.value })} 
-                        className="flex-1 bg-transparent text-black text-[15px] font-medium outline-none appearance-none"
-                      >
-                        {LOCATIONS.map((l) => (
-                          <option key={l} value={l === "All Dubai" ? "" : l}>{l === "All Dubai" ? "All Locations" : l}</option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
+                <form onSubmit={handleSearch} className="flex flex-col gap-10">
+                  <PillSelect 
+                    label="Location"
+                    value={filters.location}
+                    options={LOCATIONS}
+                    onChange={(loc) => setFilters({ ...filters, location: loc })}
+                    placeholder="All Dubai"
+                  />
 
-                  {/* Property Type Mobile */}
-                  <div className="flex flex-col gap-2">
-                    <label className="text-[11px] font-bold uppercase tracking-widest text-black/40 pl-1">Property Type</label>
-                    <div className="bg-white rounded-2xl p-4 shadow-sm flex items-center gap-3 border border-gray-100">
-                      <Home size={18} className="text-black/30" />
-                      <select 
-                        value={filters.type} 
-                        onChange={(e) => setFilters({ ...filters, type: e.target.value })} 
-                        className="flex-1 bg-transparent text-black text-[15px] font-medium outline-none appearance-none"
-                      >
-                        {PROPERTY_TYPES.map((t) => (
-                          <option key={t} value={t === "All Types" ? "" : t.toLowerCase()}>{t === "All Types" ? "All Types" : t}</option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
+                  <PillSelect 
+                    label="Property Type"
+                    value={filters.type}
+                    options={PROPERTY_TYPES}
+                    onChange={(type) => setFilters({ ...filters, type: type })}
+                    placeholder="All Types"
+                  />
 
-                  {/* Bedrooms Mobile */}
-                  <div className="flex flex-col gap-2">
-                    <label className="text-[11px] font-bold uppercase tracking-widest text-black/40 pl-1">Bedrooms</label>
-                    <div className="bg-white rounded-2xl p-4 shadow-sm flex items-center gap-3 border border-gray-100">
-                      <BedDouble size={18} className="text-black/30" />
-                      <select 
-                        value={filters.bedrooms} 
-                        onChange={(e) => setFilters({ ...filters, bedrooms: e.target.value })} 
-                        className="flex-1 bg-transparent text-black text-[15px] font-medium outline-none appearance-none"
-                      >
-                        {BEDROOMS.map((b) => (
-                          <option key={b} value={b === "Any" ? "" : b.toLowerCase()}>{b} Bedrooms</option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
+                  <PillSelect 
+                    label="Bedrooms"
+                    value={filters.bedrooms}
+                    options={BEDROOMS}
+                    onChange={(beds) => setFilters({ ...filters, bedrooms: beds })}
+                    placeholder="Any"
+                  />
 
-                  <button
-                    type="submit"
-                    className="mt-4 w-full bg-black text-white py-5 rounded-2xl font-bold text-[15px] shadow-xl active:scale-[0.98] transition-transform"
-                  >
-                    Show results
-                  </button>
+                  <PillSelect 
+                    label="Furnishing"
+                    value={filters.furnishing}
+                    options={FURNISHING}
+                    onChange={(furn) => setFilters({ ...filters, furnishing: furn })}
+                    placeholder="All"
+                  />
+
+                  {/* Reset & Submit Footer */}
+                  <div className="mt-4 flex flex-col gap-4 border-t border-black/5 pt-8">
+                    <button
+                      type="button"
+                      onClick={() => setFilters({ location: "", type: "", bedrooms: "", furnishing: "", price: "", currency: "AED" })}
+                      className="text-center font-body text-[13px] font-bold uppercase tracking-widest text-black/40 hover:text-black"
+                    >
+                      Reset filters
+                    </button>
+                    <button
+                      type="submit"
+                      className="w-full bg-black text-white py-5 rounded-2xl font-bold text-[15px] shadow-xl active:scale-[0.98] transition-transform"
+                    >
+                      Show results
+                    </button>
+                  </div>
                 </form>
               </motion.div>
             </>
