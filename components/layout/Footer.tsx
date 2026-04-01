@@ -14,34 +14,34 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#080808] border-t border-[rgba(201,168,76,0.1)]">
-      {/* ── Newsletter Banner ────────────────────────────── */}
-      <div className="border-b border-[rgba(201,168,76,0.08)]">
-        <div className="container-site py-12 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <h3 className="font-display text-2xl text-white font-light">
-              Stay ahead of Dubai's market.
+      {/* ── Newsletter Banner ───────────────────────────────── */}
+      <div className="border-b border-white/[0.06]">
+        <div className="container-site py-16 flex flex-col md:flex-row items-start justify-between gap-10">
+          <div className="max-w-sm">
+            <h3 className="font-display text-3xl text-white font-medium leading-tight mb-3">
+              Discover exclusive real estate opportunities
             </h3>
-            <p className="font-body text-sm text-white/50 mt-1">
-              Monthly insights. No spam. Unsubscribe anytime.
+            <p className="font-body text-sm text-white/50 mt-1 leading-relaxed">
+              Stay informed about the latest properties in Dubai. Subscribe to our newsletter for exclusive listings and market insights.
             </p>
           </div>
           <form
             action="/api/subscribe"
             method="POST"
-            className="flex gap-0 w-full max-w-sm"
+            className="flex gap-3 w-full max-w-md mt-2"
           >
             <input
               type="email"
               name="email"
-              placeholder="your@email.com"
+              placeholder="Enter your email address"
               required
-              className="flex-1 bg-[#141414] border border-[rgba(201,168,76,0.2)] border-r-0 px-4 py-3 text-sm font-body text-white placeholder:text-white/30 outline-none focus:border-[var(--gold)] transition-colors"
+              className="flex-1 bg-white/5 border border-white/10 rounded-xl px-5 py-3.5 text-sm font-body text-white placeholder:text-white/30 outline-none focus:border-white/30 transition-colors"
             />
             <button
               type="submit"
-              className="px-5 py-3 bg-[var(--gold)] text-black text-sm font-body font-medium tracking-wide hover:bg-[var(--gold-light)] transition-colors whitespace-nowrap"
+              className="px-6 py-3.5 bg-white text-black text-sm font-body font-semibold rounded-xl hover:bg-gray-100 transition-colors whitespace-nowrap flex items-center gap-2"
             >
-              Subscribe
+              Subscribe →
             </button>
           </form>
         </div>
@@ -161,14 +161,29 @@ export default function Footer() {
       </div>
 
       {/* ── Bottom Bar ───────────────────────────────────── */}
-      <div className="border-t border-[rgba(255,255,255,0.04)]">
-        <div className="container-site py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="font-body text-xs text-white/30">
-            © {year} {siteConfig.name}. All rights reserved.
-          </p>
-          <p className="font-body text-xs text-white/20">
-            RERA Licensed — Dubai Land Department
-          </p>
+      <div className="border-t border-white/[0.05]">
+        <div className="container-site py-5 flex flex-col sm:flex-row items-center justify-between gap-3 flex-wrap">
+          <div className="flex items-center gap-3">
+            <Link href="/" className="flex items-center gap-1.5 opacity-70 hover:opacity-100 transition-opacity">
+              <span className="font-display text-sm font-light text-white lowercase tracking-wider">m | monte</span>
+            </Link>
+            <span className="font-body text-xs text-white/30">© {year} Monte Real Estate LLC. All rights reserved.</span>
+          </div>
+          <div className="flex items-center gap-4 flex-wrap">
+            {[
+              { label: "Privacy Policy", href: "/privacy" },
+              { label: "Terms & Conditions", href: "/terms" },
+              { label: "Imprint", href: "/imprint" },
+              { label: "Cookie Policy", href: "/cookies" },
+              { label: "Sitemap", href: "/sitemap.xml" },
+              { label: "Admin", href: "/admin" },
+            ].map((l) => (
+              <Link key={l.href} href={l.href} className="font-body text-[11px] text-white/25 hover:text-white/60 transition-colors">
+                {l.label}
+              </Link>
+            ))}
+            <span className="font-body text-[11px] text-white/25">Designed in the UAE by MPAgency</span>
+          </div>
         </div>
       </div>
     </footer>

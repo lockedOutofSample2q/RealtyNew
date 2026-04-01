@@ -14,24 +14,24 @@
 import type { SiteConfig, NavItem } from "@/types";
 
 export const siteConfig: SiteConfig = {
-  name: "Realty Holding and Management Consultants",
-  tagline: "Curated Estate in Mohali",
+  name: "Monte Real Estate",
+  tagline: "Dubai Luxury Real Estate",
   description:
-    "Mohali's trusted real estate consultancy. Off-plan investments, Commercial Plotting, Residential Delights — handled with precision.",
-  url: "https://www.realtyconsultants.in",
+    "Dubai's trusted luxury real estate consultancy. Off-plan investments and premium secondary market properties.",
+  url: "https://www.monterealestate.ae",
 
   contact: {
-    phone: "+91 7814613916",         // ← EDIT: main phone
-    whatsapp: "+917814613916",          // ← EDIT: WhatsApp number (no spaces)
-    email: "support@realtyconsultants.in",   // ← EDIT: primary email
-    address: "Phase 8B Mohali, India",              // ← EDIT: full office address
+    phone: "+971 58 534 7884",
+    whatsapp: "+971585347884",
+    email: "info@monterealestate.ae",
+    address: "Prime Tower, Business Bay, Dubai",
   },
 
   social: {
-    instagram: "https://instagram.com/amritrealty",  // ← EDIT
-    facebook: "https://facebook.com/amritrealty",    // ← EDIT
-    linkedin: "",   // ← EDIT or leave empty to hide
-    youtube: "https://www.youtube.com/channel/UCKnMj6sQl_HSAqkCQZeEQyA/",    // ← EDIT or leave empty to hide
+    instagram: "https://instagram.com/monterealestate.ae",
+    facebook: "https://facebook.com/monterealestate.ae",
+    linkedin: "https://linkedin.com/company/monterealestate",
+    youtube: "",
   },
 };
 
@@ -77,41 +77,97 @@ export const heroContent = {
 
 // ── About Snippet (Home Page) ────────────────────────────────
 export const aboutSnippet = {
-  headline: "Ten Years of Trusted\nDeals in Dubai",
-  body: "Monter was built on one principle: you deserve straight answers. No inflated valuations, no pressure tactics — just honest advice on where Dubai's best opportunities actually are.",
+  headline: "We're your trusted partner in real estate. With 10 years of experience in United Arab Emirates, our team of experts is dedicated to providing personalised service and achieving the best possible results.",
+  body: "From finding your dream home in Dubai to selling your property at the right price, we're here to guide you every step of the way.",
   stats: [
-    { value: "4+", label: "Years in Mohali" },
-    { value: "39+", label: "Properties Sold" },
-    { value: "INR 20Cr+", label: "In Transactions" },
+    { value: "10+", label: "Years in Dubai" },
+    { value: "850+", label: "Properties Sold" },
+    { value: "AED 3.5B+", label: "In Transactions" },
     { value: "4.9★", label: "Client Rating" },
   ],
 };
+
+// ── About Carousel Items ─────────────────────────────────────
+export const aboutCarouselItems = [
+  {
+    title: "ENARA by OMNIYAT",
+    location: "Dubai Marina, Dubai",
+    description: "Luxury waterfront residences with unparalleled views of Dubai Marina. Premium finishes and world-class amenities in the heart of Dubai.",
+    price: "AED 12,500,000",
+    badges: ["Marina View", "Premium Finishes", "Sky Lounge"],
+    image: "/assets/images/home/about.jpg",
+  },
+  {
+    title: "The Alba Residences",
+    location: "Dorchester Collection, Dubai",
+    description: "Ultra-luxury living managed by Dorchester Collection. Breathtaking sea views, private plunge pools, and bespoke concierge services.",
+    price: "AED 15,800,000",
+    badges: ["Infinity Pool", "Sky Terrace", "Beach Access"],
+    image: "/assets/images/home/hero-bg.jpg",
+  },
+  {
+    title: "Playa del Sol",
+    location: "Beachfront Paradise, Dubai",
+    description: "Island living perfected. Embrace a vibrant way of life where each moment is filled with pure serenity and the rhythm of island living.",
+    price: "AED 9,750,000",
+    badges: ["Ocean View", "Beach Access", "Resort Style"],
+    image: "/assets/images/home/services.jpg",
+  },
+];
 
 // ── Services (Home Page) ─────────────────────────────────────
 export const services = [
   {
     icon: "building",
     title: "Real Estate Sales",
-    description:
-      "Off-plan and secondary market properties across Dubai's most valuable communities.",
+    description: "Discover our exclusive portfolio of high-end properties for sale. Each residence is meticulously selected for its prime location, luxury amenities, and exceptional investment potential.",
+    bullets: [
+      "Luxury Villas & Penthouses",
+      "Waterfront Properties",
+      "Investment Opportunities",
+      "Off-Plan Developments",
+      "Prime Location Estates"
+    ],
+    image: "/assets/images/home/about.jpg"
   },
   {
     icon: "key",
     title: "Property Rentals",
-    description:
-      "Short-term and long-term rentals. We handle everything from listing to key handover.",
+    description: "Short-term and long-term luxury rentals. We handle everything from listing and marketing to tenant screening and key handover, ensuring a seamless experience for landlords and tenants alike.",
+    bullets: [
+      "Long-Term Leases",
+      "Short-Term Holiday Homes",
+      "Tenant Screening",
+      "Property Management",
+      "Rental Yield Optimization"
+    ],
+    image: "/assets/images/home/hero-bg.jpg"
   },
   {
     icon: "palette",
     title: "Interior Design",
-    description:
-      "From concept to completion. Spaces designed to maximise rental yield and lifestyle.",
+    description: "From concept to completion. Spaces designed to maximise rental yield and elevate lifestyle. Our award-winning designers create bespoke environments tailored to your taste and property architecture.",
+    bullets: [
+      "Bespoke Concept Design",
+      "Space Planning & Layouts",
+      "Material Selection",
+      "Custom Furniture Sourcing",
+      "Project Management"
+    ],
+    image: "/assets/images/home/services.jpg"
   },
   {
     icon: "sparkles",
     title: "Decoration",
-    description:
-      "Turnkey furnishing and staging that commands premium rents and faster closings.",
+    description: "Turnkey furnishing and staging that commands premium rents and faster closings. We transform empty spaces into captivating homes that appeal to high-net-worth buyers and premium tenants.",
+    bullets: [
+      "Turnkey Furnishing",
+      "Home Staging for Sale",
+      "Art & Accessory Curation",
+      "Window Treatments",
+      "Lighting Design"
+    ],
+    image: "/assets/images/home/about.jpg"
   },
 ];
 
@@ -147,12 +203,12 @@ export const faqs = [
 
 // ── SEO Defaults ─────────────────────────────────────────────
 export const seoDefaults = {
-  titleTemplate: "%s | Monter Real Estate",
-  defaultTitle: "Realty Holding & Management Consultants — Curated Estates in Mohali",
+  titleTemplate: "%s | Monte Real Estate",
+  defaultTitle: "Dubai Luxury Real Estate | Off-Plan Properties & Investments | Monte Real Estate",
   description: siteConfig.description,
   openGraph: {
     type: "website",
-    locale: "en_IN",
+    locale: "en_AE",
     url: siteConfig.url,
     siteName: siteConfig.name,
     images: [
@@ -160,7 +216,7 @@ export const seoDefaults = {
         url: `${siteConfig.url}/images/og-default.jpg`,
         width: 1200,
         height: 630,
-        alt: "Realty Holding and Management Consultants",
+        alt: "Monte Real Estate - Dubai Luxury Properties",
       },
     ],
   },

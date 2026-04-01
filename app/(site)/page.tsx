@@ -7,10 +7,8 @@
 
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
-import FeaturedProperty from "@/components/sections/FeaturedProperty";
 import PropertiesCarousel from "@/components/sections/PropertiesCarousel";
 import ServicesSection from "@/components/sections/ServicesSection";
-import CtaSection from "@/components/sections/CtaSection";
 import FaqSection from "@/components/sections/FaqSection";
 import ContactSection from "@/components/sections/ContactSection";
 import { createAdminClient } from "@/lib/supabase";
@@ -63,8 +61,7 @@ export default async function HomePage() {
   return (
     <>
       <HeroSection />
-      <AboutSection />
-      {featured && <FeaturedProperty property={featured} />}
+      <AboutSection featuredProperty={featured} />
       <PropertiesCarousel
         title="Fresh Opportunities"
         subtitle="Latest off-plan and sale listings"
@@ -79,7 +76,6 @@ export default async function HomePage() {
         inverted
       />
       <ServicesSection />
-      <CtaSection />
       <FaqSection />
       <ContactSection />
     </>

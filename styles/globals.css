@@ -16,25 +16,25 @@
 /* ── CSS Variables (Design Tokens) ──────────────────────────── */
 :root {
   /* Fonts */
-  --font-display: 'Cormorant Garamond';
-  --font-body: 'DM Sans';
-  --font-mono: 'DM Mono';
+  --font-display: 'DM Sans', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
 
   /* Colors */
-  --background: #0D0D0D;
-  --foreground: #F5F0E8;
-  --border: rgba(201, 168, 76, 0.15);
-  --border-subtle: rgba(255,255,255,0.08);
-  --muted: #888888;
-  --accent: #C9A84C;
-  --card: #141414;
-  --card-hover: #1a1a1a;
+  --background: #FFFFFF;
+  --foreground: #0A0A0A;
+  --border: rgba(0, 0, 0, 0.1);
+  --border-subtle: rgba(0, 0, 0, 0.05);
+  --muted: #666666;
+  --accent: #000000;
+  --card: #F9F9F9;
+  --card-hover: #F0F0F0;
 
-  /* Gold system */
-  --gold: #C9A84C;
-  --gold-light: #E8C97A;
-  --gold-dark: #A8893A;
-  --gold-glow: rgba(201, 168, 76, 0.12);
+  /* Gold system - mapped to black for the new clean aesthetic */
+  --gold: #0A0A0A;
+  --gold-light: #333333;
+  --gold-dark: #000000;
+  --gold-glow: rgba(0, 0, 0, 0.05);
 
   /* Layout */
   --max-width: 1320px;
@@ -65,10 +65,10 @@ body {
 
 /* ── Typography ─────────────────────────────────────────── */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display), serif;
-  font-weight: 400;
+  font-family: var(--font-display), sans-serif;
+  font-weight: 500;
   line-height: 1.15;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 h1 { font-size: clamp(2.5rem, 6vw, 5rem); }
@@ -78,7 +78,7 @@ h4 { font-size: clamp(1.25rem, 2vw, 1.75rem); }
 
 p {
   font-family: var(--font-body), sans-serif;
-  color: rgba(245, 240, 232, 0.7);
+  color: var(--muted);
   line-height: 1.75;
 }
 
