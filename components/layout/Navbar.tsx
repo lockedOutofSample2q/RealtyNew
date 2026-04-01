@@ -27,6 +27,9 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
+  const isBlogPage = pathname?.startsWith("/blog");
+  const useDarkText = isBlogPage && !isOpen;
+
   // Prevent scrolling when menu is open
   useEffect(() => {
     if (isOpen) {
@@ -60,7 +63,7 @@ export default function Navbar() {
           
           {/* ── Logo ─────────────────────────────────────── */}
           <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 group z-50">
-            <div className="flex flex-col items-center leading-none text-white font-display">
+            <div className={cn("flex flex-col items-center leading-none font-display", useDarkText ? "text-black" : "text-white")}>
               <span className="text-2xl font-light tracking-wider lowercase flex items-center gap-1.5">
                 m <span className="opacity-40 font-thin text-[28px] -translate-y-[2px]">|</span> monte
               </span>
@@ -70,22 +73,22 @@ export default function Navbar() {
 
           {/* ── Controls (EN + Hamburger/Close) ──────────── */}
           <div className="flex items-center gap-6 z-50">
-            <div className="hidden sm:flex items-center gap-1.5 text-white/90 hover:text-white cursor-pointer transition-colors">
+            <div className={cn("hidden sm:flex items-center gap-1.5 cursor-pointer transition-colors", useDarkText ? "text-black/90 hover:text-black" : "text-white/90 hover:text-white")}>
               <span className="font-body text-[11px] font-bold tracking-widest uppercase">EN</span>
               <ChevronDown size={12} className="opacity-70" />
             </div>
-            
+
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:opacity-70 transition-opacity focus:outline-none"
+              className={cn("hover:opacity-70 transition-opacity focus:outline-none", useDarkText ? "text-black" : "text-white")}
               aria-label="Toggle menu"
             >
               {isOpen ? (
                 <X size={24} strokeWidth={1.5} />
               ) : (
                 <div className="flex flex-col gap-[6px] w-[22px]">
-                  <div className="w-full h-[1.5px] bg-white rounded-full"></div>
-                  <div className="w-full h-[1.5px] bg-white rounded-full"></div>
+                  <div className={cn("w-full h-[1.5px] rounded-full", useDarkText ? "bg-black" : "bg-white")}></div>
+                  <div className={cn("w-full h-[1.5px] rounded-full", useDarkText ? "bg-black" : "bg-white")}></div>
                 </div>
               )}
             </button>

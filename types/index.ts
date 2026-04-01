@@ -1,8 +1,22 @@
 // types/index.ts
-// ============================================================
-// SHARED TYPE DEFINITIONS
-// Add new types here as the project grows.
-// ============================================================
+
+export interface NearbyLandmark {
+  name: string;
+  time: number;
+  transport: "car" | "walk" | "metro" | "bus";
+}
+
+export interface PaymentPlan {
+  down_payment: number;
+  during_construction: number;
+  on_handover: number;
+}
+
+export interface PropertyDocument {
+  name: string;
+  url?: string;
+  coming_soon?: boolean;
+}
 
 // ── Property ─────────────────────────────────────────────────
 export interface Property {
@@ -14,17 +28,44 @@ export interface Property {
   listing_type: "sale" | "rent" | "off-plan";
   price: number;
   price_currency: "AED" | "USD" | "EUR";
-  bedrooms: number | null; // null = studio
+  bedrooms: number | null;
+  bedrooms_max?: number | null;
   bathrooms: number;
   area_sqft: number;
   location: string;
   community: string;
   developer?: string;
+  developer_website?: string;
   furnishing: "furnished" | "unfurnished" | "semi-furnished";
   description: string;
   features: string[];
-  images: string[]; // array of Supabase storage URLs
+  images: string[];
+  image_count?: number;
   featured: boolean;
+
+  // Extended fields
+  building_name?: string;
+  address?: string;
+  highlights?: string[];
+  amenities?: string[];
+  amenities_gallery?: string[];
+  interior_features?: string[];
+  nearby_landmarks?: NearbyLandmark[];
+  latitude?: number;
+  longitude?: number;
+  payment_plan?: PaymentPlan;
+  documents?: PropertyDocument[];
+  unit_types_image?: string;
+  unit_types_coming_soon?: boolean;
+
+  // Agent
+  agent_name?: string;
+  agent_title?: string;
+  agent_email?: string;
+  agent_phone?: string;
+  agent_photo?: string;
+  agent_languages?: string[];
+
   created_at: string;
   updated_at: string;
 }
@@ -37,14 +78,12 @@ export interface Lead {
   phone: string;
   message?: string;
   source: "contact" | "property" | "list-property" | "newsletter" | "relocation";
-  property_id?: string; // if inquiry about specific property
+  property_id?: string;
   status: "new" | "contacted" | "qualified" | "closed";
   created_at: string;
 }
 
 // ── Blog (from Contentlayer) ─────────────────────────────────
-// Contentlayer auto-generates these from MDX frontmatter.
-// This is a manual mirror for non-Contentlayer use.
 export interface BlogPost {
   title: string;
   slug: string;

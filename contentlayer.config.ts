@@ -51,12 +51,11 @@ export const Post = defineDocumentType(() => ({
     category: {
       type: "enum",
       options: [
-        "Market Insights",
-        "Off Plan",
-        "Rentals",
-        "Investment",
+        "Market News",
+        "Investment Tips",
+        "Community Spotlight",
+        "Legal Updates",
         "Lifestyle",
-        "News",
       ],
       required: true,
     },
