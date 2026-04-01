@@ -61,7 +61,7 @@ export default async function HomePage() {
   return (
     <>
       <HeroSection />
-      <AboutSection featuredProperty={featured} />
+      <AboutSection />
       <PropertiesCarousel
         title="Fresh Opportunities"
         subtitle="Latest off-plan and sale listings"
