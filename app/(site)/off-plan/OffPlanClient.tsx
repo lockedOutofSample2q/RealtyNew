@@ -3,8 +3,15 @@ import { useState, useMemo, useEffect } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
-import { Bed, Bath, Maximize2, Search } from "lucide-react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { Bed, Bath, Maximize2 } from "lucide-react";
 import type { Property } from "@/types";
+import PropertySearchBar from "@/components/search/PropertySearchBar";
+import {
+  DEFAULT_PROPERTY_FILTERS,
+  type PropertySearchFilters,
+  type SearchTab,
+} from "@/components/search/propertySearchOptions";
 
 // Leaflet must not SSR
 const PropertiesMap = dynamic(() => import("@/components/ui/PropertiesMap"), {
@@ -89,13 +96,45 @@ interface Props {
   properties: Property[];
 }
 
-const BED_FILTERS = ["All", "1 Bed", "2 Bed", "3 Bed", "4+ Bed"];
+function parseMaxPrice(priceLabel: string): number | null {
+  if (!priceLabel) return null;
+  const digits = priceLabel.replace(/[^\d]/g, "");
+  if (!digits) return null;
+  const n = Number(digits);
+  return Number.isFinite(n) && n > 0 ? n : null;
+}
+
+function normalize(text: string | undefined | null): string {
+  return (text ?? "").toLowerCase().replace(/[-\s]+/g, " ").trim();
+}
 
 export default function OffPlanClient({ properties }: Props) {
-  const [bedFilter, setBedFilter] = useState("All");
-  const [maxPrice, setMaxPrice] = useState<number | null>(null);
-  const [search, setSearch] = useState("");
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const [tab, setTab] = useState<SearchTab>(searchParams.get("listingType") === "rent" ? "rent" : "buy");
+  const [filters, setFilters] = useState<PropertySearchFilters>({
+    ...DEFAULT_PROPERTY_FILTERS,
+    location: searchParams.get("location") ?? "",
+    type: searchParams.get("type") ?? "",
+    bedrooms: searchParams.get("bedrooms") ?? "",
+    furnishing: searchParams.get("furnishing") ?? "",
+    price: searchParams.get("price") ?? "",
+    currency: searchParams.get("currency") ?? "AED",
+  });
   const [leafletReady, setLeafletReady] = useState(false);
+
+  useEffect(() => {
+    setTab(searchParams.get("listingType") === "rent" ? "rent" : "buy");
+    setFilters({
+      ...DEFAULT_PROPERTY_FILTERS,
+      location: searchParams.get("location") ?? "",
+      type: searchParams.get("type") ?? "",
+      bedrooms: searchParams.get("bedrooms") ?? "",
+      furnishing: searchParams.get("furnishing") ?? "",
+      price: searchParams.get("price") ?? "",
+      currency: searchParams.get("currency") ?? "AED",
+    });
+  }, [searchParams]);
 
   useEffect(() => {
     // Leaflet needs the CSS too
@@ -104,29 +143,61 @@ export default function OffPlanClient({ properties }: Props) {
   }, []);
 
   const filtered = useMemo(() => {
+    const maxPrice = parseMaxPrice(filters.price);
+    const desiredType = normalize(filters.type);
+    const desiredLocation = normalize(filters.location);
+    const desiredFurnishing = normalize(filters.furnishing);
+
     return properties.filter((p) => {
-      if (bedFilter !== "All") {
-        if (bedFilter === "4+ Bed") {
-          if ((p.bedrooms ?? 0) < 4) return false;
+      if (filters.bedrooms) {
+        if (filters.bedrooms === "Studio") {
+          if ((p.bedrooms ?? 0) !== 0) return false;
+        } else if (filters.bedrooms === "5+") {
+          if ((p.bedrooms ?? 0) < 5) return false;
         } else {
-          const n = parseInt(bedFilter);
-          if (p.bedrooms !== n) return false;
+          const n = Number(filters.bedrooms);
+          if (Number.isFinite(n) && p.bedrooms !== n) return false;
         }
       }
+
       if (maxPrice && p.price > maxPrice && p.price > 0) return false;
-      if (search) {
-        const q = search.toLowerCase();
-        if (
-          !p.title.toLowerCase().includes(q) &&
-          !p.community?.toLowerCase().includes(q) &&
-          !p.location?.toLowerCase().includes(q) &&
-          !p.developer?.toLowerCase().includes(q)
-        )
-          return false;
+
+      if (desiredType && desiredType !== "all") {
+        if (normalize(p.type) !== desiredType) return false;
       }
+
+      if (desiredLocation && desiredLocation !== "all") {
+        const inLocation = normalize(p.location).includes(desiredLocation);
+        const inCommunity = normalize(p.community).includes(desiredLocation);
+        if (!inLocation && !inCommunity) return false;
+      }
+
+      if (desiredFurnishing && desiredFurnishing !== "all furnishings") {
+        const propertyFurnishing = normalize(
+          p.furnishing === "semi-furnished" ? "partly furnished" : p.furnishing
+        );
+        if (propertyFurnishing !== desiredFurnishing) return false;
+      }
+
       return true;
     });
-  }, [properties, bedFilter, maxPrice, search]);
+  }, [properties, filters]);
+
+  function handleSearch(e: React.FormEvent) {
+    e.preventDefault();
+    const params = new URLSearchParams({
+      listingType: tab,
+      ...(filters.location && { location: filters.location }),
+      ...(filters.type && { type: filters.type }),
+      ...(filters.bedrooms && { bedrooms: filters.bedrooms }),
+      ...(filters.furnishing && { furnishing: filters.furnishing }),
+      ...(filters.price && { price: filters.price }),
+      ...(filters.currency && { currency: filters.currency }),
+    });
+
+    const page = tab === "rent" ? "/rentals" : "/off-plan";
+    router.push(`${page}?${params.toString()}`);
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -152,45 +223,14 @@ export default function OffPlanClient({ properties }: Props) {
           </p>
         </div>
 
-        {/* Filter bar */}
-        <div className="relative z-10 mt-8 bg-white rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.25)] px-4 py-3 flex items-center gap-2 flex-wrap max-w-2xl w-[90%]">
-          {BED_FILTERS.map((f) => (
-            <button
-              key={f}
-              onClick={() => setBedFilter(f)}
-              className={`px-4 py-2 rounded-xl text-[13px] font-medium transition-colors whitespace-nowrap ${
-                bedFilter === f
-                  ? "bg-black text-white"
-                  : "bg-black/5 text-black/60 hover:bg-black/10"
-              }`}
-            >
-              {f}
-            </button>
-          ))}
-
-          <select
-            value={maxPrice ?? ""}
-            onChange={(e) => setMaxPrice(e.target.value ? Number(e.target.value) : null)}
-            className="ml-auto px-3 py-2 rounded-xl bg-black/5 text-[13px] text-black/60 border-none focus:outline-none cursor-pointer"
-          >
-            <option value="">Price Range</option>
-            <option value="1000000">Under AED 1M</option>
-            <option value="2000000">Under AED 2M</option>
-            <option value="5000000">Under AED 5M</option>
-            <option value="10000000">Under AED 10M</option>
-          </select>
-
-          <div className="relative">
-            <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-black/30" />
-            <input
-              type="text"
-              placeholder="Search..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="pl-8 pr-3 py-2 rounded-xl bg-black/5 text-[13px] text-black placeholder:text-black/30 focus:outline-none w-32"
-            />
-          </div>
-        </div>
+        <PropertySearchBar
+          tab={tab}
+          setTab={setTab}
+          filters={filters}
+          setFilters={setFilters}
+          onSubmit={handleSearch}
+          className="relative z-10 mt-8 w-[90%] max-w-[1100px] bg-white/10 backdrop-blur-3xl rounded-[28px] px-6 py-5 shadow-2xl shadow-black/10 border border-white/20"
+        />
       </div>
 
       {/* ── Results bar ───────────────────────────────────── */}
@@ -211,7 +251,7 @@ export default function OffPlanClient({ properties }: Props) {
             <div className="col-span-2 py-24 text-center">
               <p className="text-black/40 text-sm">No properties match your filters.</p>
               <button
-                onClick={() => { setBedFilter("All"); setMaxPrice(null); setSearch(""); }}
+                onClick={() => setFilters(DEFAULT_PROPERTY_FILTERS)}
                 className="mt-3 text-sm text-black underline"
               >
                 Clear filters

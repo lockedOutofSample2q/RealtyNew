@@ -1,37 +1,19 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Search, X, MapPin, Home, BedDouble, MousePointer2 } from "lucide-react";
+import { Search, X } from "lucide-react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import CustomSelect from "@/components/ui/CustomSelect";
 import PillSelect from "@/components/ui/PillSelect";
-
-const LOCATIONS = [
-  "All Dubai",
-  "Downtown Dubai",
-  "Dubai Marina",
-  "Palm Jumeirah",
-  "Business Bay",
-  "JVC",
-  "DIFC",
-  "Dubai Hills",
-  "Creek Harbour",
-  "Emaar Beachfront",
-];
-
-const PROPERTY_TYPES = [
-  "All Types",
-  "Apartment",
-  "Villa",
-  "Penthouse",
-  "Townhouse",
-  "Studio",
-];
-
-const BEDROOMS = ["Any", "Studio", "1", "2", "3", "4", "5+"];
-const FURNISHING = ["All", "Furnished", "Unfurnished", "Partly furnished"];
-const PRICES = ["Any Price", "1,000,000 AED", "5,000,000 AED", "10,000,000 AED"];
+import PropertySearchBar from "@/components/search/PropertySearchBar";
+import {
+  BEDROOMS,
+  FURNISHING,
+  LOCATIONS,
+  PROPERTY_TYPES,
+  DEFAULT_PROPERTY_FILTERS,
+  type SearchTab,
+} from "@/components/search/propertySearchOptions";
 
 // 13 logos from public/assets/images/logos/
 const LOGOS = [
@@ -52,16 +34,9 @@ const LOGOS = [
 
 export default function HeroSection() {
   const router = useRouter();
-  const [tab, setTab] = useState<"buy" | "rent">("buy");
+  const [tab, setTab] = useState<SearchTab>("buy");
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
-  const [filters, setFilters] = useState({
-    location: "",
-    type: "",
-    bedrooms: "",
-    furnishing: "",
-    price: "",
-    currency: "AED",
-  });
+  const [filters, setFilters] = useState(DEFAULT_PROPERTY_FILTERS);
 
   const { scrollY } = useScroll();
   const backgroundY = useTransform(scrollY, [0, 1000], ["0%", "20%"]);
@@ -74,6 +49,9 @@ export default function HeroSection() {
       ...(filters.location && { location: filters.location }),
       ...(filters.type && { type: filters.type }),
       ...(filters.bedrooms && { bedrooms: filters.bedrooms }),
+      ...(filters.furnishing && { furnishing: filters.furnishing }),
+      ...(filters.price && { price: filters.price }),
+      ...(filters.currency && { currency: filters.currency }),
     });
     const page = tab === "rent" ? "/rentals" : "/off-plan";
     setIsSearchModalOpen(false);
@@ -146,85 +124,14 @@ export default function HeroSection() {
             <span className="flex-1 text-left">Search properties</span>
           </button>
 
-          {/* Desktop Search Bar */}
-          <div className="hidden md:block w-full bg-white/10 backdrop-blur-3xl rounded-[28px] px-6 py-5 shadow-2xl shadow-black/10 border border-white/20">
-            {/* Tabs */}
-            <div className="flex gap-6 mb-5 px-1">
-              {(["buy", "rent"] as const).map((t) => (
-                <button
-                  key={t}
-                  onClick={() => setTab(t)}
-                  className={`relative font-body text-[14px] font-medium transition-colors pb-1 ${
-                    tab === t ? "text-white" : "text-white/35 hover:text-white/60"
-                  }`}
-                >
-                  {t.charAt(0).toUpperCase() + t.slice(1)}
-                  {tab === t && (
-                    <motion.div
-                      layoutId="activeTabHero"
-                      className="absolute left-0 right-0 bottom-0 h-[1.5px] bg-white rounded-full"
-                    />
-                  )}
-                </button>
-              ))}
-            </div>
-
-            {/* Filter Row (Desktop) */}
-            <form onSubmit={handleSearch} className="flex flex-col md:flex-row items-end gap-3 w-full">
-              <CustomSelect 
-                label="Location"
-                value={filters.location}
-                options={LOCATIONS}
-                onChange={(loc) => setFilters({ ...filters, location: loc })}
-                placeholder="All Dubai"
-              />
-
-              <CustomSelect 
-                label="Property Type"
-                value={filters.type}
-                options={PROPERTY_TYPES}
-                onChange={(type) => setFilters({ ...filters, type: type })}
-                placeholder="All Types"
-              />
-
-              <CustomSelect 
-                label="Bedrooms"
-                value={filters.bedrooms}
-                options={BEDROOMS}
-                onChange={(beds) => setFilters({ ...filters, bedrooms: beds })}
-                placeholder="Any"
-              />
-
-              <CustomSelect 
-                label="Furnishing"
-                value={filters.furnishing}
-                options={FURNISHING}
-                onChange={(furn) => setFilters({ ...filters, furnishing: furn })}
-                placeholder="All"
-                className="flex-[1.2]"
-              />
-
-              <CustomSelect 
-                label="Price ( AED  USD  EUR )"
-                value={filters.price}
-                options={PRICES}
-                onChange={(price) => setFilters({ ...filters, price: price })}
-                placeholder="Any Price"
-                className="flex-[1.5]"
-              />
-
-              {/* Search Button */}
-              <div className="pt-[22px] w-full md:w-auto shrink-0">
-                <button
-                  type="submit"
-                  className="flex items-center justify-center gap-2 bg-[#9A9590]/80 backdrop-blur-sm text-white font-body font-medium text-[13px] rounded-xl hover:bg-[#9A9590] hover:scale-[1.02] active:scale-[0.98] transition-all py-[13px] px-5 w-full md:w-auto shadow-lg border border-white/10"
-                >
-                  <Search size={15} className="shrink-0" />
-                  Search properties
-                </button>
-              </div>
-            </form>
-          </div>
+          <PropertySearchBar
+            tab={tab}
+            setTab={setTab}
+            filters={filters}
+            setFilters={setFilters}
+            onSubmit={handleSearch}
+            className="hidden md:block w-full bg-white/10 backdrop-blur-3xl rounded-[28px] px-6 py-5 shadow-2xl shadow-black/10 border border-white/20"
+          />
         </motion.div>
 
         {/* ── Mobile Search Bottom Sheet ── */}
@@ -308,7 +215,7 @@ export default function HeroSection() {
                   <div className="mt-4 flex flex-col gap-4 border-t border-black/5 pt-8">
                     <button
                       type="button"
-                      onClick={() => setFilters({ location: "", type: "", bedrooms: "", furnishing: "", price: "", currency: "AED" })}
+                      onClick={() => setFilters(DEFAULT_PROPERTY_FILTERS)}
                       className="text-center font-body text-[13px] font-bold uppercase tracking-widest text-black/40 hover:text-black"
                     >
                       Reset filters

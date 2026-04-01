@@ -17,9 +17,11 @@ const MENU_LINKS = [
   { label: "Contact", href: "/contact" },
 ];
 
+const MENU_TOP_POSITIONS = ["18vh", "27vh", "36vh", "45vh", "54vh", "63vh"];
+
 const UTILITY_LINKS = [
-  { label: "Relocation", href: "#" },
-  { label: "Mortgage Calculator", href: "#" },
+  { label: "Relocation", href: "/contact" },
+  { label: "Mortgage Calculator", href: "/mortgage-calculator" },
   { label: "List Property", href: "/contact" },
 ];
 
@@ -104,25 +106,33 @@ export default function Navbar() {
             initial="closed"
             animate="open"
             exit="exit"
-            className="fixed inset-0 z-[50] w-full h-full bg-[#111111]/98 backdrop-blur-3xl overflow-y-auto"
+            className="fixed inset-0 z-[50] w-full h-full bg-[#111111]/96 backdrop-blur-2xl"
           >
             {/* Dark gradient overlay for that dim room feel from screenshot */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-black/80 via-transparent to-black/40 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/45 to-black/18 pointer-events-none" />
 
-            <div className="relative z-10 min-h-full px-6 md:px-12 pt-[12vh] pb-[6vh] flex flex-col justify-between">
-              
-              {/* Massive Main Links */}
-              <nav className="flex flex-col mt-2">
+            <div className="relative z-10 h-screen px-6 md:px-12">
+
+              {/* Main vertical links (each item has frame-relative anchor) */}
+              <nav className="absolute left-[6.25rem] md:left-[7.75rem] top-0 w-[min(560px,80vw)] h-screen">
                 {MENU_LINKS.map((item, i) => (
-                  <motion.div custom={i} variants={linkVariants} initial="closed" animate="open" key={item.label}>
+                  <motion.div
+                    custom={i}
+                    variants={linkVariants}
+                    initial="closed"
+                    animate="open"
+                    key={item.label}
+                    className="absolute left-0"
+                    style={{ top: MENU_TOP_POSITIONS[i] }}
+                  >
                     <Link
                       href={item.href}
                       onClick={() => setIsOpen(false)}
                       className={cn(
-                        "font-display font-light text-[clamp(32px,10vh,120px)] md:text-[clamp(40px,11.5vh,150px)] leading-[1.1] tracking-tight transition-colors duration-400 block w-max max-w-full",
+                        "font-display font-light text-[clamp(37px,4.55vw,75px)] leading-[1.12] [letter-spacing:calc(0.015em+1pt)] transition-colors duration-400 block w-max max-w-full",
                         pathname === item.href
                           ? "text-white"
-                          : "text-white/30 hover:text-white/70"
+                          : "text-white/50 hover:text-white/80"
                       )}
                     >
                       {item.label}
@@ -131,21 +141,20 @@ export default function Navbar() {
                 ))}
               </nav>
 
-              {/* Bottom Footer Section inside the menu */}
+              {/* Bottom section inside same full-screen frame (frame-relative anchors) */}
               <motion.div 
                 initial={{ opacity: 0 }} 
                 animate={{ opacity: 1 }} 
                 transition={{ delay: 0.8, duration: 0.5 }}
-                className="mt-[6vh] pt-8 border-t border-white/10 grid grid-cols-1 md:grid-cols-3 gap-8 items-end w-full"
+                className="absolute left-[6.25rem] md:left-[7.75rem] bottom-[3.8vh] w-[min(760px,88vw)] flex flex-col gap-6"
               >
-                {/* Utilities */}
                 <div className="flex flex-wrap items-center gap-6">
                   {UTILITY_LINKS.map((util) => (
-                    <Link 
+                    <Link
                       key={util.label}
                       href={util.href}
                       onClick={() => setIsOpen(false)}
-                      className="font-body text-[11px] font-bold uppercase tracking-widest text-white/40 hover:text-white transition-colors"
+                      className="font-body text-[11px] md:text-[12px] font-normal text-white/60 hover:text-white transition-colors"
                     >
                       {util.label}
                     </Link>
@@ -153,7 +162,7 @@ export default function Navbar() {
                 </div>
 
                 {/* Contact Info */}
-                <div className="flex flex-col gap-2 font-body text-[13px] text-white/50 tracking-wide md:text-center">
+                <div className="flex flex-col gap-1 font-body text-[13px] md:text-[14px] text-white/60 tracking-wide">
                   <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-white transition-colors">
                     {siteConfig.contact.email}
                   </a>
@@ -161,12 +170,11 @@ export default function Navbar() {
                     {siteConfig.contact.phone}
                   </a>
                 </div>
-
-                {/* Location */}
-                <div className="font-body text-[11px] font-bold uppercase tracking-widest text-white/40 md:text-right">
-                  DUBAI, UAE
-                </div>
               </motion.div>
+
+              <div className="absolute right-[6.25rem] md:right-[7.75rem] bottom-[3.8vh] font-body text-[11px] uppercase tracking-[0.16em] text-white/50">
+                Dubai, UAE
+              </div>
 
             </div>
           </motion.div>
