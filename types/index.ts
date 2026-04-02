@@ -19,6 +19,20 @@ export interface PropertyDocument {
 }
 
 // ── Property ─────────────────────────────────────────────────
+export interface Agent {
+  id: string;
+  name: string;
+  title?: string;
+  email?: string;
+  phone?: string;
+  photo_url?: string;
+  languages?: string[];
+  bio?: string;
+  active?: boolean;
+  created_at?: string;
+  updated_at?: string;
+}
+
 export interface Property {
   id: string;
   title: string;
@@ -59,6 +73,7 @@ export interface Property {
   unit_types_coming_soon?: boolean;
 
   // Agent
+  agent_id?: string;
   agent_name?: string;
   agent_title?: string;
   agent_email?: string;
