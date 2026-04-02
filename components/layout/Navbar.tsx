@@ -30,7 +30,13 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const isBlogPage = pathname?.startsWith("/blog");
-  const useDarkText = isBlogPage && !isOpen;
+  const isWhitePage =
+    pathname?.startsWith("/properties") ||
+    pathname?.startsWith("/about") ||
+    pathname?.startsWith("/contact") ||
+    pathname?.startsWith("/mortgage-calculator") ||
+    pathname?.startsWith("/blog");
+  const useDarkText = isWhitePage && !isOpen;
 
   // Prevent scrolling when menu is open
   useEffect(() => {

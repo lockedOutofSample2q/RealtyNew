@@ -6,13 +6,15 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import type { Metadata } from "next";
 import {
-  ChevronLeft, ChevronRight, Share2, MapPin, Check,
+  ChevronLeft, ChevronRight, MapPin, Check,
   Waves, Dumbbell, Flame, Activity, Droplets, Users,
   Car, Leaf, Building2, Target, Thermometer, Briefcase,
-  Film, Bell, Shield, ExternalLink, Images,
+  Film, Bell, Shield, ExternalLink,
 } from "lucide-react";
 import type { Property, NearbyLandmark } from "@/types";
 import InquiryForm from "./InquiryForm";
+import PropertyGallery from "./PropertyGallery";
+import ShareButton from "./ShareButton";
 
 const PropertyDetailMap = dynamic(() => import("./PropertyDetailMap"), {
   ssr: false,
@@ -120,52 +122,17 @@ export default async function PropertyDetailPage({ params }: Props) {
           <Link href={backHref} className="hover:text-black transition-colors">{backLabel}</Link>
           <ChevronRight size={12} className="text-black/20" />
           <span className="text-black/70 truncate max-w-[200px]">{property.title}</span>
-          <button className="ml-auto flex items-center gap-1.5 text-[12px] border border-black/10 rounded-full px-3 py-1 hover:bg-black/5 transition-colors">
-            <Share2 size={12} /> Share
-          </button>
+          <ShareButton title={property.title} />
         </div>
       </div>
 
       {/* ── Gallery ─────────────────────────────────────── */}
       <div className="container-site py-4">
-        <div className="flex gap-1 h-[420px]">
-          {/* Main image */}
-          <div className="relative flex-1 overflow-hidden rounded-l-2xl bg-black/5">
-            <Image
-              src={property.images?.[0] ?? "/assets/images/home/about.jpg"}
-              alt={property.title}
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-          {/* 2×2 thumbnails */}
-          <div className="grid grid-cols-2 gap-1 w-[340px] shrink-0">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className={`relative overflow-hidden bg-black/5 ${i === 2 ? "rounded-tr-2xl" : ""} ${i === 4 ? "rounded-br-2xl" : ""}`}>
-                {property.images?.[i] ? (
-                  <Image
-                    src={property.images[i]}
-                    alt={`${property.title} ${i}`}
-                    fill
-                    className="object-cover"
-                  />
-                ) : (
-                  <div className="w-full h-full bg-black/5" />
-                )}
-                {/* View all overlay on last thumb */}
-                {i === 4 && (property.image_count ?? 0) > 5 && (
-                  <div className="absolute inset-0 bg-black/45 flex flex-col items-center justify-center gap-1">
-                    <Images size={18} className="text-white" />
-                    <span className="text-white text-[12px] font-semibold">
-                      View all {property.image_count}
-                    </span>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
+        <PropertyGallery
+          images={property.images?.length ? property.images : ["/assets/images/home/about.jpg"]}
+          title={property.title}
+          imageCount={property.image_count}
+        />
       </div>
 
       {/* ── Content ─────────────────────────────────────── */}
