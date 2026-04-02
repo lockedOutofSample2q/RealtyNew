@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { leadership } from "@/config/about";
 
 export default function AboutLeadership() {
   return (
@@ -18,8 +19,8 @@ export default function AboutLeadership() {
             className="w-[45%] h-[80vh] relative overflow-hidden shrink-0 rounded-lg"
           >
             <Image
-              src="/assets/images/about/ceo.png"
-              alt="Armina Crnovrsanin - CEO"
+              src={leadership.image}
+              alt={`${leadership.name} - ${leadership.title}`}
               fill
               className="object-cover object-top"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -36,16 +37,16 @@ export default function AboutLeadership() {
             <div className="flex items-center gap-[1vw] mb-[4%]">
               <span className="w-[0.4vw] h-[0.4vw] min-w-[4px] min-h-[4px] rounded-full bg-white opacity-60" />
               <span className="text-white/60 text-[clamp(8px,0.8vw,12px)] font-bold tracking-[0.1em] uppercase">
-                Leadership
+                {leadership.eyebrow}
               </span>
             </div>
             
             <h2 className="text-white text-[clamp(2.5rem,4vw,4rem)] font-light leading-[1.1] tracking-tight mb-[2vh]">
-              Armina Crnovrsanin
+              {leadership.name}
             </h2>
 
             <p className="text-white/60 text-[clamp(14px,1.2vw,18px)] font-light">
-              CEO, Monte Real Estate
+              {leadership.title}
             </p>
           </motion.div>
 

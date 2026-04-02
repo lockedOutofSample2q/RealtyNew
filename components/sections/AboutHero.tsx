@@ -3,13 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-
-const PANELS = [
-  { id: 1, image: "/assets/images/about/hero-1.png", title: "Where Vision\nMeets\nStructure", tag: "WHO WE ARE" },
-  { id: 2, image: "/assets/images/about/hero-2.png", title: "", tag: "" },      
-  { id: 3, image: "/assets/images/about/hero-3.png", title: "", tag: "" },      
-  { id: 4, image: "/assets/images/about/hero-4.png", title: "", tag: "" },      
-];
+import { aboutHeroPanels as PANELS } from "@/config/about";
 
 export default function AboutHero() {
   const containerRef = useRef(null);

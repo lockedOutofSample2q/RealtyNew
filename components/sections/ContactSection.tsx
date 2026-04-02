@@ -2,30 +2,22 @@
 import { useState } from "react";
 import { toast } from "sonner";
 import { siteConfig } from "@/config/site";
+import { contactContent, projectTypes, contactMethods, contactTimes } from "@/config/contact";
 import { motion } from "framer-motion";
 import { Mail, Phone, MessageCircle, Sun, Clock, Moon } from "lucide-react";
 
-const PROJECT_TYPES = [
-  "Residential",
-  "Commercial",
-  "Off-Plan",
-  "Ready Property",
-  "Secondary Market",
-  "Rentals",
-];
+// Icon map — keeps JSX out of the config file
+const METHOD_ICONS: Record<string, React.ReactNode> = {
+  "mail":           <Mail size={14} strokeWidth={1.5} />,
+  "phone":          <Phone size={14} strokeWidth={1.5} />,
+  "message-circle": <MessageCircle size={14} strokeWidth={1.5} />,
+};
 
-const CONTACT_METHODS = [
-  { label: "Email", icon: <Mail size={14} strokeWidth={1.5} /> },
-  { label: "Phone", icon: <Phone size={14} strokeWidth={1.5} /> },
-  { label: "WhatsApp", icon: <MessageCircle size={14} strokeWidth={1.5} /> },
-];
-
-const CONTACT_TIMES = [
-  { label: "Morning", icon: <Sun size={13} strokeWidth={1.5} /> },
-  { label: "Afternoon", icon: <Sun size={13} strokeWidth={1.5} /> },
-  { label: "Evening", icon: <Moon size={13} strokeWidth={1.5} /> },
-  { label: "Anytime", icon: <Clock size={13} strokeWidth={1.5} /> },
-];
+const TIME_ICONS: Record<string, React.ReactNode> = {
+  "sun":   <Sun size={13} strokeWidth={1.5} />,
+  "moon":  <Moon size={13} strokeWidth={1.5} />,
+  "clock": <Clock size={13} strokeWidth={1.5} />,
+};
 
 export default function ContactSection() {
   const [loading, setLoading] = useState(false);
@@ -76,13 +68,11 @@ export default function ContactSection() {
           transition={{ duration: 0.8 }}
           className="lg:pt-8 lg:sticky lg:top-32"
         >
-          <h2 className="font-display font-medium text-black text-4xl md:text-[56px] leading-[1.1] mb-8 tracking-tight">
-            Let&apos;s create<br />
-            something exceptional<br />
-            together.
+          <h2 className="font-display font-medium text-black text-4xl md:text-[56px] leading-[1.1] mb-8 tracking-tight whitespace-pre-line">
+            {contactContent.heading}
           </h2>
           <p className="font-body text-gray-500 leading-relaxed mb-12 max-w-md text-lg">
-            Ready to take the next step? We respond within 24 hours. Every project matters to us.
+            {contactContent.subheading}
           </p>
 
           <div className="flex flex-col gap-6 font-body">
@@ -160,7 +150,7 @@ export default function ContactSection() {
                     className="w-full bg-transparent border-b border-gray-200 text-black font-body text-[15px] py-3.5 outline-none focus:border-gray-500 transition-colors appearance-none cursor-pointer pr-8"
                   >
                     <option value="" disabled>Select Project Type</option>
-                    {PROJECT_TYPES.map((t) => (
+                    {projectTypes.map((t) => (
                       <option key={t} value={t}>{t}</option>
                     ))}
                   </select>
@@ -180,7 +170,7 @@ export default function ContactSection() {
                 How would you like to be contacted? *
               </p>
               <div className="flex flex-wrap gap-2.5">
-                {CONTACT_METHODS.map(({ label, icon }) => (
+                {contactMethods.map(({ label, icon }) => (
                   <button
                     key={label}
                     type="button"
@@ -191,7 +181,7 @@ export default function ContactSection() {
                         : "border-gray-200 bg-white text-gray-500 hover:border-gray-300 hover:text-black"
                     }`}
                   >
-                    <span className="text-gray-400">{icon}</span>
+                    <span className="text-gray-400">{METHOD_ICONS[icon]}</span>
                     {label}
                   </button>
                 ))}
@@ -204,7 +194,7 @@ export default function ContactSection() {
                 Preferred contact time (optional)
               </p>
               <div className="flex flex-wrap gap-2.5">
-                {CONTACT_TIMES.map(({ label, icon }) => (
+                {contactTimes.map(({ label, icon }) => (
                   <button
                     key={label}
                     type="button"
@@ -215,7 +205,7 @@ export default function ContactSection() {
                         : "border-gray-200 bg-white text-gray-500 hover:border-gray-300 hover:text-black"
                     }`}
                   >
-                    <span className="text-gray-400">{icon}</span>
+                    <span className="text-gray-400">{TIME_ICONS[icon]}</span>
                     {label}
                   </button>
                 ))}
@@ -243,7 +233,7 @@ export default function ContactSection() {
                   <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
                 </span>
                 <span className="font-body text-[13px] text-gray-500">
-                  Response within 24h
+                  {contactContent.responseNote}
                 </span>
               </div>
 
@@ -252,7 +242,7 @@ export default function ContactSection() {
                 disabled={loading}
                 className="flex items-center gap-3 py-3.5 px-8 bg-[#7A7A75] text-white rounded-2xl font-body font-medium text-[14px] hover:bg-[#6A6A65] transition-colors disabled:opacity-60 disabled:cursor-not-allowed shadow-md shrink-0"
               >
-                {loading ? "Sending..." : "Send Message"}
+                {loading ? contactContent.submittingLabel : contactContent.submitLabel}
                 {!loading && (
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="opacity-80">
                     <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

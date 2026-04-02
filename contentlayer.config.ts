@@ -52,7 +52,9 @@ export const Post = defineDocumentType(() => ({
       type: "enum",
       options: [
         "Market News",
+        "Market Analysis",
         "Investment Tips",
+        "Buyer Guide",
         "Community Spotlight",
         "Legal Updates",
         "Lifestyle",

@@ -48,11 +48,12 @@ function normalize(text: string | undefined | null): string {
   return (text ?? "").toLowerCase().replace(/[-\s]+/g, " ").trim();
 }
 
-export default function OffPlanClient({ properties }: Props) {
+export default function RentalsClient({ properties }: Props) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
-  const [tab, setTab] = useState<SearchTab>(searchParams.get("listingType") === "rent" ? "rent" : "buy");
+  // Default to rent for this page
+  const [tab, setTab] = useState<SearchTab>(searchParams.get("listingType") === "buy" ? "buy" : "rent");
   const [filters, setFilters] = useState<PropertySearchFilters>({
     ...DEFAULT_PROPERTY_FILTERS,
     location: searchParams.get("location") ?? "",
@@ -65,7 +66,7 @@ export default function OffPlanClient({ properties }: Props) {
   const [leafletReady, setLeafletReady] = useState(false);
 
   useEffect(() => {
-    setTab(searchParams.get("listingType") === "rent" ? "rent" : "buy");
+    setTab(searchParams.get("listingType") === "buy" ? "buy" : "rent");
     setFilters({
       ...DEFAULT_PROPERTY_FILTERS,
       location: searchParams.get("location") ?? "",
@@ -78,7 +79,6 @@ export default function OffPlanClient({ properties }: Props) {
   }, [searchParams]);
 
   useEffect(() => {
-    // Leaflet needs the CSS too
     import("leaflet/dist/leaflet.css" as any);
     setLeafletReady(true);
   }, []);
@@ -137,8 +137,8 @@ export default function OffPlanClient({ properties }: Props) {
 
   function handleTabChange(newTab: SearchTab) {
     setTab(newTab);
-    if (newTab === "rent") {
-      router.push("/rentals");
+    if (newTab === "buy") {
+      router.push("/off-plan");
     }
   }
 
@@ -165,7 +165,7 @@ export default function OffPlanClient({ properties }: Props) {
         {/* Background image */}
         <Image
           src="/assets/images/home/hero-bg.jpg"
-          alt="Off plan properties"
+          alt="Rental properties"
           fill
           className="object-cover"
           priority
@@ -175,10 +175,10 @@ export default function OffPlanClient({ properties }: Props) {
         {/* Text */}
         <div className="relative z-10 text-center px-4">
           <h1 className="text-white font-semibold text-[clamp(1.8rem,4vw,3rem)] leading-[1.2] tracking-tight max-w-2xl mx-auto mb-3">
-            Check on all off plan<br />properties we have available
+            Discover Top Rental<br />Properties in Dubai
           </h1>
           <p className="text-white/60 text-[clamp(13px,1.2vw,15px)] max-w-lg mx-auto">
-            Filter and find your perfect home in the United Arab Emirates
+            Find your next home with flexible leasing options and prime locations.
           </p>
         </div>
 
@@ -330,7 +330,6 @@ export default function OffPlanClient({ properties }: Props) {
     </div>
   );
 }
-
 
 
 

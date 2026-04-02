@@ -1,29 +1,7 @@
 ﻿"use client";
 import React from "react";
 import { motion } from "framer-motion";
-
-const PROCESS = [
-  {
-    num: "01",
-    title: "Insight & Analysis",
-    text: "Deep market analysis and understanding of your unique requirements to identify perfect opportunities."
-  },
-  {
-    num: "02",
-    title: "Meticulous Planning",
-    text: "Strategic planning tailored to your goals, timeline, and investment objectives."
-  },
-  {
-    num: "03",
-    title: "Tailored Solutions",
-    text: "Customized property solutions that align perfectly with your vision and lifestyle."
-  },
-  {
-    num: "04",
-    title: "Quality Execution",
-    text: "Seamless execution with attention to every detail, ensuring a smooth transition experience."
-  }
-];
+import { aboutProcess } from "@/config/about";
 
 export default function AboutProcess() {
   return (
@@ -38,7 +16,7 @@ export default function AboutProcess() {
             transition={{ duration: 0.8 }}
             className="text-black text-[clamp(2.5rem,4vw,4rem)] font-light mb-[3%] tracking-tight"
           >
-            Our Process
+            {aboutProcess.heading}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: '2vh' }}
@@ -47,12 +25,12 @@ export default function AboutProcess() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-black/60 text-[clamp(12px,1.2vw,15px)]"
           >
-            A systematic approach ensuring excellence at every step
+            {aboutProcess.subheading}
           </motion.p>
         </div>
 
         <div className="flex flex-col gap-[6vh]">
-          {PROCESS.map((item, idx) => (
+          {aboutProcess.steps.map((item, idx) => (
             <motion.div
               key={item.num}
               initial={{ opacity: 0, x: '-2vw' }}

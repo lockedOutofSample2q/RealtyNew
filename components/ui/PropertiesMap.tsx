@@ -4,6 +4,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import Link from "next/link";
 import type { Property } from "@/types";
+import { useCurrency } from "@/context/CurrencyContext";
 
 // Fix leaflet default marker icons (broken in webpack/Next.js)
 const DefaultIcon = L.icon({
@@ -79,6 +80,7 @@ interface Props {
 }
 
 export default function PropertiesMap({ properties }: Props) {
+  const { formatPrice } = useCurrency();
   useEffect(() => {
     L.Marker.prototype.options.icon = DefaultIcon;
   }, []);
@@ -115,7 +117,7 @@ export default function PropertiesMap({ properties }: Props) {
               <p className="text-gray-500 mb-2">{property.community}, {property.location}</p>
               <p className="font-semibold text-black">
                 {property.price > 0
-                  ? `${property.price_currency} ${property.price.toLocaleString()}`
+                  ? formatPrice(property.price)
                   : "Price on request"}
               </p>
               <Link
