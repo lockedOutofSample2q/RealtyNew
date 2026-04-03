@@ -147,7 +147,7 @@ export default function OffPlanClient({ properties }: Props) {
 
   useEffect(() => {
     // Leaflet needs the CSS too
-    import("leaflet/dist/leaflet.css" as any);
+    import("leaflet/dist/leaflet.css");
     setLeafletReady(true);
   }, []);
 
