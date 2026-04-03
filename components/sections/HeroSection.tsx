@@ -11,7 +11,7 @@ import { useRouter } from "next/navigation";
 import { Search } from "lucide-react";
 import { heroContent } from "@/config/site";
 
-const LOCATIONS = [
+const FALLBACK_LOCATIONS = [
   "All Dubai",
   "Downtown Dubai",
   "Dubai Marina",
@@ -37,7 +37,7 @@ const BEDROOMS = ["Any", "Studio", "1", "2", "3", "4", "5+"];
 
 const CURRENCIES = ["AED", "USD", "EUR"];
 
-export default function HeroSection() {
+export default function HeroSection({ locations = [] }: { locations?: string[] }) {
   const router = useRouter();
   const [tab, setTab] = useState<"buy" | "rent" | "off-plan">("buy");
   const [filters, setFilters] = useState({
@@ -46,6 +46,10 @@ export default function HeroSection() {
     bedrooms: "",
     currency: "AED",
   });
+
+  const displayLocations = locations.length > 0 
+    ? ["All Locations", ...locations] 
+    : ["All Locations", ...FALLBACK_LOCATIONS.filter(l => l !== "All Dubai")];
 
   function handleSearch(e: React.FormEvent) {
     e.preventDefault();
@@ -127,8 +131,8 @@ export default function HeroSection() {
               onChange={(e) => setFilters({ ...filters, location: e.target.value })}
               className="bg-[#141414] border border-white/10 text-white/80 px-4 py-3 font-body text-sm outline-none focus:border-[var(--gold)] transition-colors"
             >
-              {LOCATIONS.map((l) => (
-                <option key={l} value={l === "All Dubai" ? "" : l}>
+              {displayLocations.map((l) => (
+                <option key={l} value={l === "All Locations" ? "" : l}>
                   {l}
                 </option>
               ))}

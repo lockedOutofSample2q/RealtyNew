@@ -20,7 +20,7 @@ async function getHomeData() {
   try {
     const supabase = createAdminClient();
 
-    const [{ data: featured }, { data: latest }, { data: rentals }] =
+    const [{ data: featured }, { data: latest }, { data: rentals }, { data: locationsData }] =
       await Promise.all([
         supabase
           .from("properties")
@@ -41,24 +41,31 @@ async function getHomeData() {
           .eq("listing_type", "rent")
           .order("created_at", { ascending: false })
           .limit(6),
+        supabase
+          .from("properties")
+          .select("location")
+          .neq("location", ""),
       ]);
+
+    const uniqueLocations = Array.from(new Set((locationsData ?? []).map((p) => p.location))).filter(Boolean).sort();
 
     return {
       featured: featured as Property | null,
       latest: (latest ?? []) as Property[],
       rentals: (rentals ?? []) as Property[],
+      locations: uniqueLocations,
     };
   } catch {
-    return { featured: null, latest: [], rentals: [] };
+    return { featured: null, latest: [], rentals: [], locations: [] };
   }
 }
 
 export default async function HomePage() {
-  const { featured, latest, rentals } = await getHomeData();
+  const { featured, latest, rentals, locations } = await getHomeData();
 
   return (
     <>
-      <HeroSection />
+      <HeroSection locations={locations} />
       <AboutSection />
       {featured && <FeaturedProperty property={featured} />}
       <PropertiesCarousel

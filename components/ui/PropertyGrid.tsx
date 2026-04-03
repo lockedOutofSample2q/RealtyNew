@@ -18,21 +18,6 @@ interface Props {
   listingType: "sale" | "rent" | "off-plan";
 }
 
-const LOCATIONS = [
-  "All Locations",
-  "Downtown Dubai",
-  "Dubai Marina",
-  "Palm Jumeirah",
-  "Business Bay",
-  "JVC",
-  "DIFC",
-  "Dubai Hills",
-  "Creek Harbour",
-  "Emaar Beachfront",
-  "JBR",
-  "MBR City",
-];
-
 const PROPERTY_TYPES = ["All Types", "Apartment", "Villa", "Penthouse", "Townhouse", "Studio"];
 const BEDROOMS = ["Any", "Studio", "1", "2", "3", "4", "5+"];
 const FURNISHING = ["Any", "Furnished", "Unfurnished", "Semi-Furnished"];
@@ -49,7 +34,10 @@ export default function PropertyGrid({ properties, listingType }: Props) {
   const [filters, setFilters] = useState<PropertyFilters>({});
   const [sort, setSort] = useState("newest");
   const [search, setSearch] = useState("");
-
+  const dynamicLocations = useMemo(() => {
+    const locs = Array.from(new Set(properties.map(p => p.location))).filter(Boolean);
+    return ["All Locations", ...locs.sort()];
+  }, [properties]);
   // ── Filter + Sort logic ───────────────────────────────────
   const filtered = useMemo(() => {
     let list = [...properties];
@@ -194,7 +182,7 @@ export default function PropertyGrid({ properties, listingType }: Props) {
               onChange={(e) => setFilters({ ...filters, location: e.target.value || undefined })}
               className={selectClass}
             >
-              {LOCATIONS.map((l) => (
+              {dynamicLocations.map((l) => (
                 <option key={l} value={l === "All Locations" ? "" : l}>{l}</option>
               ))}
             </select>
