@@ -24,11 +24,13 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const isSolid = scrolled || pathname !== "/";
+
   return (
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        scrolled
+        isSolid
           ? "bg-[#0D0D0D]/95 backdrop-blur-md border-b border-[rgba(201,168,76,0.1)] py-3"
           : "bg-transparent py-5"
       )}
