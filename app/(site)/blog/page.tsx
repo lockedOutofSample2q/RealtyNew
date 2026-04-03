@@ -1,4 +1,4 @@
-﻿import { allPosts } from "../../../.contentlayer/generated";
+import { allPosts } from "../../../.contentlayer/generated";
 import { compareDesc } from "date-fns";
 import BlogClient from "./BlogClient";
 
@@ -13,7 +13,7 @@ export default function BlogPage() {
   );
 
   return (
-    <main className="bg-white min-h-screen pt-[12vh]">
+    <main className="bg-[#F9F9F9] min-h-screen pt-[12vh]">
       <BlogClient posts={posts} />
     </main>
   );

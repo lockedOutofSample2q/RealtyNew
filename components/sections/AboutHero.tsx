@@ -3,7 +3,13 @@ import React from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { aboutHeroPanels as PANELS } from "@/config/about";
+
+const PANELS = [
+  { id: 1, image: "/assets/images/about/hero-1.png", title: "Where Vision\nMeets\nStructure", tag: "WHO WE ARE" },
+  { id: 2, image: "/assets/images/about/hero-2.png", title: "", tag: "" },      
+  { id: 3, image: "/assets/images/about/hero-3.png", title: "", tag: "" },      
+  { id: 4, image: "/assets/images/about/hero-4.png", title: "", tag: "" },      
+];
 
 export default function AboutHero() {
   const containerRef = useRef(null);
@@ -16,8 +22,8 @@ export default function AboutHero() {
 
   return (
     <section ref={containerRef} className="relative w-full pt-[8vh] pb-[4vh] bg-black overflow-hidden flex flex-col justify-center align-middle" style={{ minHeight: '85vh' }}>
-      <div className="w-[95%] mx-auto h-[68vh] flex flex-col">
-        <div className="flex flex-row w-full h-full gap-[1%]">      
+      <div className="w-[95%] mx-auto h-[50vh] sm:h-[60vh] lg:h-[68vh] flex flex-col">
+        <div className="flex flex-row w-full h-full gap-[1%]">
           {PANELS.map((panel, idx) => (
             <motion.div
               key={panel.id}
@@ -28,7 +34,11 @@ export default function AboutHero() {
                 ease: [0.16, 1, 0.3, 1],
                 delay: idx * 0.15
               }}
-              className="relative group overflow-hidden bg-white/5 w-[24.25%] h-full shrink-0"      
+              className={`relative group overflow-hidden bg-white/5 h-full shrink-0 ${
+                idx === 0
+                  ? "flex-1"
+                  : "hidden sm:block sm:w-[24.25%]"
+              }`}
             >
               <motion.div
                 style={{ scale }}

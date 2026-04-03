@@ -1,9 +1,11 @@
 // components/ui/PropertyCard.tsx
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { Bed, Bath, Maximize, MapPin, ArrowRight } from "lucide-react";
 import type { Property } from "@/types";
 import { cn } from "@/lib/utils";
+import { useCurrency } from "@/context/CurrencyContext";
 
 interface PropertyCardProps {
   property: Property;
@@ -11,15 +13,8 @@ interface PropertyCardProps {
   variant?: "standard" | "image-bg";
 }
 
-function formatPrice(price: number, currency: string) {
-  const formatted = new Intl.NumberFormat("en-AE", {
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  }).format(price);
-  return `${currency} ${formatted}`;
-}
-
 export default function PropertyCard({ property, className, variant = "standard" }: PropertyCardProps) {
+  const { formatPrice } = useCurrency();
   const image = property.images?.[0] ?? "/assets/images/home/about.jpg";
   const isRent = property.listing_type === "rent";
 
@@ -60,7 +55,7 @@ export default function PropertyCard({ property, className, variant = "standard"
           
           <div className="flex items-center justify-between pt-4 border-t border-white/20">
             <div className="font-display text-lg text-white font-semibold flex items-baseline">
-              {formatPrice(property.price, property.price_currency)}
+              {formatPrice(property.price)}
               {isRent && <span className="font-body text-[11px] text-white/70 ml-1">/yr</span>}
             </div>
             <div className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center group-hover:-rotate-45 transition-transform duration-500 shrink-0">
@@ -127,7 +122,7 @@ export default function PropertyCard({ property, className, variant = "standard"
         {/* Footer (Price & Button) */}
         <div className="flex items-center justify-between pt-5 border-t border-black/5">
           <div className="font-display text-[22px] text-black font-medium tracking-tight">
-            {formatPrice(property.price, property.price_currency)}
+            {formatPrice(property.price)}
             {isRent && <span className="font-body text-sm text-gray-500 font-normal ml-1">/yr</span>}
           </div>
           <div className="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-black group-hover:text-white transition-all duration-300 shrink-0 shadow-sm">

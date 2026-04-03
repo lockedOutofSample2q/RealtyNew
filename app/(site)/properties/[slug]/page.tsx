@@ -6,15 +6,15 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import type { Metadata } from "next";
 import {
-  ChevronLeft, ChevronRight, MapPin, Check,
+  ChevronLeft, ChevronRight, Share2, MapPin, Check,
   Waves, Dumbbell, Flame, Activity, Droplets, Users,
   Car, Leaf, Building2, Target, Thermometer, Briefcase,
-  Film, Bell, Shield, ExternalLink,
+  Film, Bell, Shield, ExternalLink, Images,
 } from "lucide-react";
 import type { Property, NearbyLandmark } from "@/types";
 import InquiryForm from "./InquiryForm";
-import PropertyGallery from "./PropertyGallery";
-import ShareButton from "./ShareButton";
+import PriceDisplay from "./PriceDisplay";
+import PropertyPriceInline from "./PropertyPriceInline";
 
 const PropertyDetailMap = dynamic(() => import("./PropertyDetailMap"), {
   ssr: false,
@@ -102,10 +102,7 @@ export default async function PropertyDetailPage({ params }: Props) {
       ? `${property.bedrooms}-${property.bedrooms_max}`
       : property.bedrooms === 0 ? "Studio" : String(property.bedrooms ?? "—");
 
-  const priceDisplay =
-    property.price > 0
-      ? `${property.price_currency} ${property.price.toLocaleString()}`
-      : "Price on Request";
+  const priceAED = property.price;
 
   return (
     <div className="bg-white min-h-screen pt-[var(--nav-height)]">
@@ -122,17 +119,52 @@ export default async function PropertyDetailPage({ params }: Props) {
           <Link href={backHref} className="hover:text-black transition-colors">{backLabel}</Link>
           <ChevronRight size={12} className="text-black/20" />
           <span className="text-black/70 truncate max-w-[200px]">{property.title}</span>
-          <ShareButton title={property.title} />
+          <button className="ml-auto flex items-center gap-1.5 text-[12px] border border-black/10 rounded-full px-3 py-1 hover:bg-black/5 transition-colors">
+            <Share2 size={12} /> Share
+          </button>
         </div>
       </div>
 
       {/* ── Gallery ─────────────────────────────────────── */}
       <div className="container-site py-4">
-        <PropertyGallery
-          images={property.images?.length ? property.images : ["/assets/images/home/about.jpg"]}
-          title={property.title}
-          imageCount={property.image_count}
-        />
+        <div className="flex gap-1 h-[260px] sm:h-[340px] md:h-[420px]">
+          {/* Main image */}
+          <div className="relative flex-1 overflow-hidden rounded-2xl md:rounded-l-2xl md:rounded-r-none bg-black/5">
+            <Image
+              src={property.images?.[0] ?? "/assets/images/home/about.jpg"}
+              alt={property.title}
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+          {/* 2×2 thumbnails */}
+          <div className="hidden md:grid grid-cols-2 gap-1 w-[340px] shrink-0">
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} className={`relative overflow-hidden bg-black/5 ${i === 2 ? "rounded-tr-2xl" : ""} ${i === 4 ? "rounded-br-2xl" : ""}`}>
+                {property.images?.[i] ? (
+                  <Image
+                    src={property.images[i]}
+                    alt={`${property.title} ${i}`}
+                    fill
+                    className="object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-black/5" />
+                )}
+                {/* View all overlay on last thumb */}
+                {i === 4 && (property.image_count ?? 0) > 5 && (
+                  <div className="absolute inset-0 bg-black/45 flex flex-col items-center justify-center gap-1">
+                    <Images size={18} className="text-white" />
+                    <span className="text-white text-[12px] font-semibold">
+                      View all {property.image_count}
+                    </span>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* ── Content ─────────────────────────────────────── */}
@@ -145,7 +177,7 @@ export default async function PropertyDetailPage({ params }: Props) {
           </p>
         )}
 
-        <div className="grid grid-cols-[1fr_340px] gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-8 lg:gap-12 items-start">
 
           {/* ── LEFT CONTENT ──────────────────────────────── */}
           <div>
@@ -168,7 +200,7 @@ export default async function PropertyDetailPage({ params }: Props) {
             <p className="text-[15px] text-black/60 leading-relaxed mb-8">{property.description}</p>
 
             {/* Stats */}
-            <div className="flex items-center gap-10 border-y border-black/8 py-6 mb-10">
+            <div className="flex items-center gap-5 sm:gap-10 flex-wrap border-y border-black/8 py-6 mb-10">
               <div>
                 <p className="text-[10px] uppercase tracking-widest text-black/35 mb-1">Size</p>
                 <p className="text-[17px] font-bold text-black">{property.area_sqft.toLocaleString()} sqft</p>
@@ -235,7 +267,7 @@ export default async function PropertyDetailPage({ params }: Props) {
             {(property.amenities?.length ?? 0) > 0 && (
               <section className="mb-10">
                 <h2 className="text-[18px] font-bold text-black mb-6">Community Amenities</h2>
-                <div className="grid grid-cols-3 gap-x-6 gap-y-4">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-4">
                   {property.amenities!.map((a) => (
                     <div key={a} className="flex items-center gap-2.5">
                       <AmenityIcon name={a} />
@@ -250,7 +282,7 @@ export default async function PropertyDetailPage({ params }: Props) {
             {(property.amenities_gallery?.length ?? 0) > 0 && (
               <section className="mb-10">
                 <h2 className="text-[18px] font-bold text-black mb-5">Community Amenities Gallery</h2>
-                <div className="grid grid-cols-3 gap-3">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {property.amenities_gallery!.map((src, i) => (
                     <div key={i} className="relative aspect-square rounded-2xl overflow-hidden bg-black/5">
                       <Image src={src} alt={`Amenity ${i + 1}`} fill className="object-cover" />
@@ -263,7 +295,7 @@ export default async function PropertyDetailPage({ params }: Props) {
             {/* Payment Plan + Unit Types + Documents */}
             {(property.payment_plan || property.unit_types_image || (property.documents?.length ?? 0) > 0) && (
               <section className="mb-10">
-                <div className="grid grid-cols-3 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
                   {/* Payment Plan */}
                   {property.payment_plan && (
@@ -299,7 +331,7 @@ export default async function PropertyDetailPage({ params }: Props) {
 
                       <div className="border-t border-black/8 pt-4">
                         <p className="text-[10px] uppercase tracking-widest text-black/35 mb-1">Total Investment</p>
-                        <p className="text-[17px] font-bold text-black">{priceDisplay}</p>
+                        <PropertyPriceInline priceAED={priceAED} className="text-[17px] font-bold text-black" />
                       </div>
                     </div>
                   )}
@@ -353,7 +385,7 @@ export default async function PropertyDetailPage({ params }: Props) {
 
             {/* Location + Nearby Landmarks */}
             <section>
-              <div className="grid grid-cols-2 gap-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
                 {/* Map */}
                 <div>
                   <h2 className="text-[18px] font-bold text-black mb-5">Location</h2>
@@ -395,17 +427,11 @@ export default async function PropertyDetailPage({ params }: Props) {
           </div>
 
           {/* ── RIGHT STICKY SIDEBAR ──────────────────────── */}
-          <aside className="sticky top-[calc(var(--nav-height)+1rem)]">
+          <aside className="order-first lg:order-last lg:sticky lg:top-[calc(var(--nav-height)+1rem)]">
             <div className="border border-black/10 rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.06)]">
 
               {/* Price */}
-              <div className="p-5 border-b border-black/8">
-                <p className="text-[20px] font-bold text-black mb-0.5">{priceDisplay}</p>
-                <p className="text-[11px] text-black/40 mb-1">{listingLabel}</p>
-                {property.price === 0 && (
-                  <p className="text-[12px] text-black/40">Contact us for pricing information</p>
-                )}
-              </div>
+              <PriceDisplay priceAED={priceAED} listingLabel={listingLabel} />
 
               {/* Inquiry Form */}
               <div className="p-5 border-b border-black/8">

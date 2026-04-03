@@ -13,7 +13,7 @@ export default function AboutStats() {
   return (
     <section className="bg-black py-[8vh] w-full">
       <div className="w-[95%] max-w-[1200px] mx-auto px-[2%]">
-        <div className="flex flex-row justify-between gap-0 divide-x divide-white/20">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-0 sm:divide-x sm:divide-white/20">
           {STATS.map((stat, idx) => (
             <motion.div
               key={stat.label}
@@ -21,7 +21,7 @@ export default function AboutStats() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: idx * 0.1 }}
-              className="flex flex-col items-start px-[4%] text-left border-l first:border-0 border-white/20 w-[25%]"
+              className="flex flex-col items-start sm:px-[4%] text-left"
             >
               <div className="text-white text-[clamp(2.5rem,5vw,4.5rem)] font-light mb-[2%] tracking-tighter">
                 {stat.value}

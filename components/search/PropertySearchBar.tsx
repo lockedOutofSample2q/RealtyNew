@@ -12,6 +12,7 @@ import {
   type PropertySearchFilters,
   type SearchTab,
 } from "@/components/search/propertySearchOptions";
+import { useCurrency } from "@/context/CurrencyContext";
 
 interface PropertySearchBarProps {
   tab: SearchTab;
@@ -30,6 +31,7 @@ export default function PropertySearchBar({
   onSubmit,
   className,
 }: PropertySearchBarProps) {
+  const { currency } = useCurrency();
   return (
     <div className={className ?? "w-full bg-white/10 backdrop-blur-3xl rounded-[28px] px-6 py-5 shadow-2xl shadow-black/10 border border-white/20"}>
       <div className="flex gap-6 mb-5 px-1">
@@ -88,7 +90,7 @@ export default function PropertySearchBar({
         />
 
         <CustomSelect
-          label="Price ( AED  USD  EUR )"
+          label={`Price (${currency})`}
           value={filters.price}
           options={PRICES}
           onChange={(price) => setFilters({ ...filters, price })}

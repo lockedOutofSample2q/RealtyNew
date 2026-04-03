@@ -1,15 +1,14 @@
 "use client";
 import { useState, useMemo, useEffect } from "react";
-import { createPortal } from "react-dom";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { Search, X } from "lucide-react";
+import { Bed, Bath, Maximize2, Search, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Property } from "@/types";
 import PropertySearchBar from "@/components/search/PropertySearchBar";
 import PillSelect from "@/components/ui/PillSelect";
-import PropertyCard from "@/components/ui/PropertyCard";
 import { useCurrency } from "@/context/CurrencyContext";
 import {
   DEFAULT_PROPERTY_FILTERS,
@@ -21,7 +20,6 @@ import {
   type SearchTab,
 } from "@/components/search/propertySearchOptions";
 
-// Leaflet must not SSR
 const PropertiesMap = dynamic(() => import("@/components/ui/PropertiesMap"), {
   ssr: false,
   loading: () => (
@@ -31,7 +29,70 @@ const PropertiesMap = dynamic(() => import("@/components/ui/PropertiesMap"), {
   ),
 });
 
-// ── Main Client Component ─────────────────────────────────────
+function PropertyCard({ property }: { property: Property }) {
+  const image = property.images?.[0] ?? "/assets/images/home/about.jpg";
+  const hasPrice = property.price > 0;
+  const { formatPrice } = useCurrency();
+
+  return (
+    <Link
+      href={`/properties/${property.slug}`}
+      className="group bg-white border border-black/8 overflow-hidden hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)] transition-shadow duration-300 block"
+    >
+      <div className="relative w-full aspect-[4/3] overflow-hidden bg-black/5">
+        <Image
+          src={image}
+          alt={property.title}
+          fill
+          className="object-cover group-hover:scale-105 transition-transform duration-700"
+          sizes="(max-width: 768px) 100vw, 350px"
+        />
+        {property.featured && (
+          <span className="absolute top-3 left-3 bg-emerald-500 text-white text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-full">
+            Featured
+          </span>
+        )}
+      </div>
+
+      <div className="p-4">
+        <h3 className="font-semibold text-black text-[15px] leading-snug mb-1 line-clamp-1">
+          {property.title}
+        </h3>
+        <p className="text-[12px] text-black/45 mb-3 line-clamp-2 leading-relaxed">
+          {property.description || `${property.community}, ${property.location}`}
+        </p>
+
+        <div className="flex items-center gap-3 text-[12px] text-black/50 mb-3">
+          {property.bedrooms !== null && (
+            <span className="flex items-center gap-1">
+              <Bed size={12} />
+              {property.bedrooms === 0 ? "Studio" : property.bedrooms}
+            </span>
+          )}
+          <span className="flex items-center gap-1">
+            <Bath size={12} />
+            {property.bathrooms}
+          </span>
+          <span className="flex items-center gap-1">
+            <Maximize2 size={12} />
+            {property.area_sqft.toLocaleString()} sqft
+          </span>
+        </div>
+
+        <div className="border-t border-black/6 pt-3">
+          {hasPrice ? (
+            <p className="text-[14px] font-bold text-black">
+              {formatPrice(property.price)}
+            </p>
+          ) : (
+            <p className="text-[13px] text-black/40 italic">Price on request</p>
+          )}
+        </div>
+      </div>
+    </Link>
+  );
+}
+
 interface Props {
   properties: Property[];
 }
@@ -52,8 +113,7 @@ export default function RentalsClient({ properties }: Props) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
-  // Default to rent for this page
-  const [tab, setTab] = useState<SearchTab>(searchParams.get("listingType") === "buy" ? "buy" : "rent");
+  const [tab, setTab] = useState<SearchTab>("rent");
   const [filters, setFilters] = useState<PropertySearchFilters>({
     ...DEFAULT_PROPERTY_FILTERS,
     location: searchParams.get("location") ?? "",
@@ -66,33 +126,18 @@ export default function RentalsClient({ properties }: Props) {
   const [leafletReady, setLeafletReady] = useState(false);
 
   useEffect(() => {
-    setTab(searchParams.get("listingType") === "buy" ? "buy" : "rent");
-    setFilters({
-      ...DEFAULT_PROPERTY_FILTERS,
-      location: searchParams.get("location") ?? "",
-      type: searchParams.get("type") ?? "",
-      bedrooms: searchParams.get("bedrooms") ?? "",
-      furnishing: searchParams.get("furnishing") ?? "",
-      price: searchParams.get("price") ?? "",
-      currency: searchParams.get("currency") ?? "AED",
-    });
+    setTab("rent");
+    if (searchParams.get("listingType") === "buy") {
+       setTab("buy");
+    } else {
+       setTab("rent");
+    }
   }, [searchParams]);
 
   useEffect(() => {
-    import("leaflet/dist/leaflet.css" as any);
+    import("leaflet/dist/leaflet.css");
     setLeafletReady(true);
   }, []);
-
-  useEffect(() => {
-    if (isSearchModalOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isSearchModalOpen]);
 
   const filtered = useMemo(() => {
     const maxPrice = parseMaxPrice(filters.price);
@@ -101,6 +146,10 @@ export default function RentalsClient({ properties }: Props) {
     const desiredFurnishing = normalize(filters.furnishing);
 
     return properties.filter((p) => {
+      // Must let filter apply if tab state changes
+      if (tab === "rent" && p.listing_type !== "rent") return false;
+      if (tab === "buy" && p.listing_type === "rent") return false;
+
       if (filters.bedrooms) {
         if (filters.bedrooms === "Studio") {
           if ((p.bedrooms ?? 0) !== 0) return false;
@@ -133,14 +182,7 @@ export default function RentalsClient({ properties }: Props) {
 
       return true;
     });
-  }, [properties, filters]);
-
-  function handleTabChange(newTab: SearchTab) {
-    setTab(newTab);
-    if (newTab === "buy") {
-      router.push("/off-plan");
-    }
-  }
+  }, [properties, filters, tab]);
 
   function handleSearch(e: React.FormEvent) {
     e.preventDefault();
@@ -154,35 +196,35 @@ export default function RentalsClient({ properties }: Props) {
       ...(filters.currency && { currency: filters.currency }),
     });
 
-    const page = tab === "rent" ? "/rentals" : "/off-plan";
-    router.push(`${page}?${params.toString()}`);
+    if (tab === "buy") {
+      router.push(`/properties?${params.toString()}`);
+    } else {
+      router.push(`/rentals?${params.toString()}`);
+    }
   }
 
   return (
     <div className="min-h-screen bg-white">
       {/* ── Hero ──────────────────────────────────────────── */}
       <div className="relative w-full h-[52vh] min-h-[360px] flex flex-col items-center justify-center pt-[var(--nav-height)]">
-        {/* Background image */}
         <Image
-          src="/assets/images/home/hero-bg.jpg"
-          alt="Rental properties"
+          src="/assets/images/home/about.jpg"
+          alt="Rentals"
           fill
           className="object-cover"
           priority
         />
         <div className="absolute inset-0 bg-black/55" />
 
-        {/* Text */}
         <div className="relative z-10 text-center px-4">
           <h1 className="text-white font-semibold text-[clamp(1.8rem,4vw,3rem)] leading-[1.2] tracking-tight max-w-2xl mx-auto mb-3">
-            Discover Top Rental<br />Properties in Dubai
+            Check on all rental properties<br />we have available
           </h1>
           <p className="text-white/60 text-[clamp(13px,1.2vw,15px)] max-w-lg mx-auto">
-            Find your next home with flexible leasing options and prime locations.
+            Discover exceptional properties across Dubai's most prestigious locations
           </p>
         </div>
 
-        {/* Mobile: pill button */}
         <button
           onClick={() => setIsSearchModalOpen(true)}
           className="md:hidden relative z-10 mt-6 w-[90%] max-w-[400px] bg-white text-black py-4 px-6 rounded-2xl flex items-center gap-3 shadow-xl font-body font-medium active:scale-95 transition-transform"
@@ -193,10 +235,9 @@ export default function RentalsClient({ properties }: Props) {
           </span>
         </button>
 
-        {/* Desktop: full inline bar */}
         <PropertySearchBar
           tab={tab}
-          setTab={handleTabChange}
+          setTab={setTab}
           filters={filters}
           setFilters={setFilters}
           onSubmit={handleSearch}
@@ -204,8 +245,7 @@ export default function RentalsClient({ properties }: Props) {
         />
       </div>
 
-      {/* ── Mobile Search Bottom Sheet ─────────────────────── */}
-      {leafletReady && createPortal(<AnimatePresence>
+      <AnimatePresence>
         {isSearchModalOpen && (
           <>
             <motion.div
@@ -236,8 +276,7 @@ export default function RentalsClient({ properties }: Props) {
                 {(["buy", "rent"] as const).map((t) => (
                   <button
                     key={t}
-                    onClick={() => handleTabChange(t)}
-                    type="button"
+                    onClick={() => setTab(t)}
                     className={`flex-1 py-3.5 text-sm font-semibold rounded-xl transition-all ${
                       tab === t ? "bg-black text-white shadow-lg" : "text-black/40"
                     }`}
@@ -296,22 +335,22 @@ export default function RentalsClient({ properties }: Props) {
             </motion.div>
           </>
         )}
-      </AnimatePresence>, document.body)}
+      </AnimatePresence>
 
-      {/* ── Cards + Map ───────────────────────────────────── */}
-      <div className="flex flex-col md:flex-row bg-[#F9FAFB]">
-        {/* Left: scrollable property grid — on mobile appears after map via order */}
-        <div className="order-2 md:order-1 w-full md:w-[58%] p-4 md:p-8 grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 content-start">
-            <div className="col-span-1 sm:col-span-2 border-t border-black/5 pt-8 md:hidden mt-2 mb-2 flex items-center justify-between">
-               <h2 className="font-display text-3xl font-bold text-black tracking-tight">Listings</h2>
-               <span className="font-body text-xs font-bold uppercase tracking-widest text-black/50">{filtered.length} found</span>
-            </div>
+      <div className="border-b border-black/6 px-6 py-3 flex items-center">
+        <span className="text-[13px] text-black/50 font-medium">
+          {filtered.length} {filtered.length === 1 ? "property" : "properties"}
+        </span>
+      </div>
+
+      <div className="flex flex-col md:flex-row">
+        <div className="order-2 md:order-1 w-full md:w-[58%] p-4 md:p-6 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5 content-start">
           {filtered.map((p) => (
             <PropertyCard key={p.id} property={p} />
           ))}
           {filtered.length === 0 && (
             <div className="col-span-1 sm:col-span-2 py-24 text-center">
-              <p className="text-black/40 text-sm">No properties match your filters.</p>
+              <p className="text-black/40 text-sm">No rentals match your filters.</p>
               <button
                 onClick={() => setFilters(DEFAULT_PROPERTY_FILTERS)}
                 className="mt-3 text-sm text-black underline"
@@ -322,14 +361,13 @@ export default function RentalsClient({ properties }: Props) {
           )}
         </div>
 
-        {/* Map â€” large floating card on mobile, sticky sidebar on desktop */}
-        <div className="order-1 md:order-2 w-[calc(100%-2rem)] mx-auto mt-6 mb-2 h-[55vh] min-h-[400px] rounded-[32px] md:w-[42%] md:m-0 md:h-[calc(100vh-var(--nav-height))] md:max-h-none relative md:sticky top-auto md:top-[var(--nav-height)] z-10 shrink-0 overflow-hidden md:rounded-none md:rounded-l-[32px] border border-black/10 md:border-y-0 md:border-r-0 md:border-l shadow-2xl md:shadow-sm">
+        <div className="order-1 md:order-2 w-full h-[45vw] min-h-[260px] max-h-[380px] md:hidden">
+          {leafletReady && <PropertiesMap properties={filtered} />}
+        </div>
+        <div className="hidden md:block order-2 md:w-[42%] sticky top-[var(--nav-height)] h-[calc(100vh-var(--nav-height))] shrink-0">
           {leafletReady && <PropertiesMap properties={filtered} />}
         </div>
       </div>
     </div>
   );
 }
-
-
-

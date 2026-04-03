@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { createAdminClient } from "@/lib/supabase";
 import type { Property } from "@/types";
 import { DEMO_PROPERTIES } from "@/lib/demo-properties";
-import RentalsClient from "./RentalsClient";
+import PropertiesClient from "./PropertiesClient";
 
 export const metadata: Metadata = {
-  title: "Rentals",
-  description: "Furnished and unfurnished rentals across Dubai's best communities.",
+  title: "Properties in Dubai",
+  description: "Browse Dubai's best properties for sale and rent.",
 };
 
 export const revalidate = 60;
@@ -27,7 +27,7 @@ async function getProperties(): Promise<Property[]> {
   }
 }
 
-export default async function RentalsPage() {
+export default async function PropertiesPage() {
   const properties = await getProperties();
-  return <RentalsClient properties={properties} />;
+  return <PropertiesClient properties={properties} />;
 }

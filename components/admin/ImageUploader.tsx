@@ -141,7 +141,7 @@ export default function ImageUploader({ value, onChange, maxImages = 20 }: Props
             <span style={{ color: GOLD }} className="font-medium">Click to upload</span> or drag & drop
           </p>
           <p className="font-body text-xs text-[#aaa] mt-1">
-            PNG, JPG, WebP — uploads to Supabase Storage
+            PNG, JPG, WebP — uploads to Cloudflare CDN
           </p>
         </div>
         <input
@@ -165,7 +165,7 @@ export default function ImageUploader({ value, onChange, maxImages = 20 }: Props
                 {u.status === "uploading" && (
                   <div className="flex items-center gap-1.5 mt-1">
                     <div className="w-3 h-3 rounded-full border-2 animate-spin" style={{ borderColor: GOLD, borderTopColor: "transparent" }} />
-                    <span className="font-body text-xs text-[#aaa]">Uploading...</span>
+                    <span className="font-body text-xs text-[#aaa]">Uploading to Cloudflare...</span>
                   </div>
                 )}
                 {u.status === "done" && (

@@ -134,7 +134,7 @@ export default function BlogPostPage({ params }: Props) {
 
       {/* ── Content + Sidebar ────────────────────────────── */}
       <div className="container-site pb-24">
-        <div className="flex gap-16 items-start">
+        <div className="flex gap-8 lg:gap-16 items-start">
 
           {/* Main content */}
           <div className="flex-1 min-w-0">

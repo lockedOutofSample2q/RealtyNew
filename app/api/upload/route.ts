@@ -1,31 +1,35 @@
 // app/api/upload/route.ts
 // ============================================================
-// Supabase Storage upload proxy
+// Cloudflare Images upload proxy
 //
-// Uploads images to the "property-images" bucket in Supabase.
-// Create the bucket once in Supabase Dashboard → Storage:
-//   1. Click "New bucket"
-//   2. Name: property-images
-//   3. Public bucket: ON
-//
-// Required env vars (already in .env.local):
-//   NEXT_PUBLIC_SUPABASE_URL
-//   SUPABASE_SERVICE_ROLE_KEY
+// Required env vars (add to .env.local + Vercel):
+//   CLOUDFLARE_ACCOUNT_ID      — found in Cloudflare Dashboard → Overview
+//   CLOUDFLARE_IMAGES_TOKEN    — Cloudflare Dashboard → My Profile → API Tokens
+//                                (create with "Cloudflare Images: Edit" permission)
+//   CLOUDFLARE_IMAGES_HASH     — e.g. "abc123def" from your delivery URL
+//                                imagedelivery.net/{HASH}/image_id/public
 //
 // Usage: POST /api/upload  (multipart/form-data, field name = "file")
-// Returns: { url: "https://<project>.supabase.co/storage/v1/object/public/property-images/<filename>" }
+// Returns: { url: "https://imagedelivery.net/{hash}/{id}/public" }
 // ============================================================
 
 import { NextRequest, NextResponse } from "next/server";
-import { createClient } from "@supabase/supabase-js";
 
-const BUCKET = "property-images";
+const ACCOUNT_ID = process.env.CLOUDFLARE_ACCOUNT_ID;
+const API_TOKEN  = process.env.CLOUDFLARE_IMAGES_TOKEN;
+const HASH       = process.env.CLOUDFLARE_IMAGES_HASH;
 
 export async function POST(req: NextRequest) {
-  const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!
-  );
+  // ── Guard: credentials missing ──────────────────────────────
+  if (!ACCOUNT_ID || !API_TOKEN || !HASH) {
+    return NextResponse.json(
+      {
+        error: "Cloudflare Images not configured",
+        hint: "Add CLOUDFLARE_ACCOUNT_ID, CLOUDFLARE_IMAGES_TOKEN, and CLOUDFLARE_IMAGES_HASH to your environment variables.",
+      },
+      { status: 503 }
+    );
+  }
 
   // ── Parse incoming file ─────────────────────────────────────
   let formData: FormData;
@@ -40,24 +44,36 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "No file provided (field name must be 'file')" }, { status: 400 });
   }
 
-  // ── Build a unique filename ─────────────────────────────────
-  const ext = file.name.split(".").pop() ?? "jpg";
-  const filename = `${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
+  // ── Forward to Cloudflare Images ────────────────────────────
+  const cfForm = new FormData();
+  cfForm.append("file", file);
 
-  // ── Upload to Supabase Storage ──────────────────────────────
-  const { error } = await supabase.storage
-    .from(BUCKET)
-    .upload(filename, file, {
-      contentType: file.type,
-      upsert: false,
-    });
+  let cfRes: Response;
+  try {
+    cfRes = await fetch(
+      `https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}/images/v1`,
+      {
+        method: "POST",
+        headers: { Authorization: `Bearer ${API_TOKEN}` },
+        body: cfForm,
+      }
+    );
+  } catch (err: any) {
+    return NextResponse.json({ error: "Upload to Cloudflare failed", detail: err.message }, { status: 502 });
+  }
 
-  if (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+  const json = await cfRes.json() as any;
+
+  if (!cfRes.ok || !json.success) {
+    return NextResponse.json(
+      { error: "Cloudflare rejected the upload", detail: json.errors ?? json },
+      { status: cfRes.status }
+    );
   }
 
   // ── Return public URL ────────────────────────────────────────
-  const { data } = supabase.storage.from(BUCKET).getPublicUrl(filename);
+  const imageId = json.result.id as string;
+  const url = `https://imagedelivery.net/${HASH}/${imageId}/public`;
 
-  return NextResponse.json({ url: data.publicUrl });
+  return NextResponse.json({ url, id: imageId });
 }

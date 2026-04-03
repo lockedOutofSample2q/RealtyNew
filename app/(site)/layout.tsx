@@ -6,6 +6,7 @@
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { CurrencyProvider } from "@/context/CurrencyContext";
 
 export default function SiteLayout({
   children,
@@ -13,10 +14,10 @@ export default function SiteLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
+    <CurrencyProvider>
       <Navbar />
       <main>{children}</main>
       <Footer />
-    </>
+    </CurrencyProvider>
   );
 }

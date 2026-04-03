@@ -41,7 +41,6 @@ function PropertyCard({ property }: { property: Property }) {
       href={`/properties/${property.slug}`}
       className="group bg-white border border-black/8 overflow-hidden hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)] transition-shadow duration-300 block"
     >
-      {/* Image */}
       <div className="relative w-full aspect-[4/3] overflow-hidden bg-black/5">
         <Image
           src={image}
@@ -57,7 +56,6 @@ function PropertyCard({ property }: { property: Property }) {
         )}
       </div>
 
-      {/* Content */}
       <div className="p-4">
         <h3 className="font-semibold text-black text-[15px] leading-snug mb-1 line-clamp-1">
           {property.title}
@@ -66,7 +64,6 @@ function PropertyCard({ property }: { property: Property }) {
           {property.description || `${property.community}, ${property.location}`}
         </p>
 
-        {/* Specs */}
         <div className="flex items-center gap-3 text-[12px] text-black/50 mb-3">
           {property.bedrooms !== null && (
             <span className="flex items-center gap-1">
@@ -84,7 +81,6 @@ function PropertyCard({ property }: { property: Property }) {
           </span>
         </div>
 
-        {/* Price */}
         <div className="border-t border-black/6 pt-3">
           {hasPrice ? (
             <p className="text-[14px] font-bold text-black">
@@ -116,7 +112,7 @@ function normalize(text: string | undefined | null): string {
   return (text ?? "").toLowerCase().replace(/[-\s]+/g, " ").trim();
 }
 
-export default function OffPlanClient({ properties }: Props) {
+export default function PropertiesClient({ properties }: Props) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
@@ -146,8 +142,7 @@ export default function OffPlanClient({ properties }: Props) {
   }, [searchParams]);
 
   useEffect(() => {
-    // Leaflet needs the CSS too
-    import("leaflet/dist/leaflet.css" as any);
+    import("leaflet/dist/leaflet.css");
     setLeafletReady(true);
   }, []);
 
@@ -158,6 +153,13 @@ export default function OffPlanClient({ properties }: Props) {
     const desiredFurnishing = normalize(filters.furnishing);
 
     return properties.filter((p) => {
+      // Basic split: if tab is buy, exclude rent (unless all listings are off-plan/buy). 
+      // If we strictly want to filter by "buy" or "rent" based on listing_type, we should do so.
+      // E.g. "rent" tab = p.listing_type === "rent".
+      // "buy" tab = p.listing_type === "sale" || p.listing_type === "off-plan".
+      if (tab === "rent" && p.listing_type !== "rent") return false;
+      if (tab === "buy" && p.listing_type === "rent") return false;
+
       if (filters.bedrooms) {
         if (filters.bedrooms === "Studio") {
           if ((p.bedrooms ?? 0) !== 0) return false;
@@ -190,7 +192,7 @@ export default function OffPlanClient({ properties }: Props) {
 
       return true;
     });
-  }, [properties, filters]);
+  }, [properties, filters, tab]);
 
   function handleSearch(e: React.FormEvent) {
     e.preventDefault();
@@ -204,35 +206,31 @@ export default function OffPlanClient({ properties }: Props) {
       ...(filters.currency && { currency: filters.currency }),
     });
 
-    const page = tab === "rent" ? "/rentals" : "/off-plan";
-    router.push(`${page}?${params.toString()}`);
+    router.push(`/properties?${params.toString()}`);
   }
 
   return (
     <div className="min-h-screen bg-white">
       {/* ── Hero ──────────────────────────────────────────── */}
       <div className="relative w-full h-[52vh] min-h-[360px] flex flex-col items-center justify-center pt-[var(--nav-height)]">
-        {/* Background image */}
         <Image
           src="/assets/images/home/hero-bg.jpg"
-          alt="Off plan properties"
+          alt="Properties"
           fill
           className="object-cover"
           priority
         />
         <div className="absolute inset-0 bg-black/55" />
 
-        {/* Text */}
         <div className="relative z-10 text-center px-4">
           <h1 className="text-white font-semibold text-[clamp(1.8rem,4vw,3rem)] leading-[1.2] tracking-tight max-w-2xl mx-auto mb-3">
-            Check on all off plan<br />properties we have available
+            Find Your Perfect<br />Property in Dubai
           </h1>
           <p className="text-white/60 text-[clamp(13px,1.2vw,15px)] max-w-lg mx-auto">
-            Filter and find your perfect home in the United Arab Emirates
+            Discover exceptional properties across Dubai's most prestigious locations
           </p>
         </div>
 
-        {/* Mobile: pill button */}
         <button
           onClick={() => setIsSearchModalOpen(true)}
           className="md:hidden relative z-10 mt-6 w-[90%] max-w-[400px] bg-white text-black py-4 px-6 rounded-2xl flex items-center gap-3 shadow-xl font-body font-medium active:scale-95 transition-transform"
@@ -243,7 +241,6 @@ export default function OffPlanClient({ properties }: Props) {
           </span>
         </button>
 
-        {/* Desktop: full inline bar */}
         <PropertySearchBar
           tab={tab}
           setTab={setTab}
@@ -254,7 +251,6 @@ export default function OffPlanClient({ properties }: Props) {
         />
       </div>
 
-      {/* ── Mobile Search Bottom Sheet ─────────────────────── */}
       <AnimatePresence>
         {isSearchModalOpen && (
           <>
@@ -347,16 +343,13 @@ export default function OffPlanClient({ properties }: Props) {
         )}
       </AnimatePresence>
 
-      {/* ── Results bar ───────────────────────────────────── */}
       <div className="border-b border-black/6 px-6 py-3 flex items-center">
         <span className="text-[13px] text-black/50 font-medium">
           {filtered.length} {filtered.length === 1 ? "property" : "properties"}
         </span>
       </div>
 
-      {/* ── Cards + Map ───────────────────────────────────── */}
       <div className="flex flex-col md:flex-row">
-        {/* Left: scrollable property grid — on mobile appears after map via order */}
         <div className="order-2 md:order-1 w-full md:w-[58%] p-4 md:p-6 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5 content-start">
           {filtered.map((p) => (
             <PropertyCard key={p.id} property={p} />
@@ -374,7 +367,6 @@ export default function OffPlanClient({ properties }: Props) {
           )}
         </div>
 
-        {/* Map — full width on mobile (above listings), sticky sidebar on desktop */}
         <div className="order-1 md:order-2 w-full h-[45vw] min-h-[260px] max-h-[380px] md:hidden">
           {leafletReady && <PropertiesMap properties={filtered} />}
         </div>
