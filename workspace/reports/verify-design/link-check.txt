@@ -1,0 +1,8 @@
+GET / ->
+200
+GET /off-plan ->
+200
+GET /rentals ->
+200
+GET /properties ->
+200

@@ -1,0 +1,4 @@
+env-ready
+snapshots-saved
+checks-complete
+report-written

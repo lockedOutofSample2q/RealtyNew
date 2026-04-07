@@ -39,7 +39,7 @@ function PropertyCard({ property }: { property: Property }) {
   return (
     <Link
       href={`/properties/${property.slug}`}
-      className="group bg-white border border-black/8 overflow-hidden hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)] transition-shadow duration-300 block"
+      className="group bg-white border border-black/8 overflow-hidden rounded-xl hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)] transition-shadow duration-300 block"
     >
       {/* Image */}
       <div className="relative w-full aspect-[4/3] overflow-hidden bg-black/5">
@@ -250,7 +250,7 @@ export default function OffPlanClient({ properties }: Props) {
           filters={filters}
           setFilters={setFilters}
           onSubmit={handleSearch}
-          className="hidden md:block relative z-10 mt-8 w-[90%] max-w-[1100px] bg-white/10 backdrop-blur-3xl rounded-[28px] px-6 py-5 shadow-2xl shadow-black/10 border border-white/20"
+          className="hidden md:block relative z-10 mt-8 w-[90%] max-w-[1100px] bg-white/10 backdrop-blur-3xl rounded-2xl px-6 py-5 shadow-2xl shadow-black/10 border border-white/20"
         />
       </div>
 
@@ -270,7 +270,7 @@ export default function OffPlanClient({ properties }: Props) {
               animate={{ y: 0 }}
               exit={{ y: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="fixed bottom-0 left-0 right-0 bg-[#F3F4F6] rounded-t-[32px] z-[1000] p-6 max-h-[90vh] overflow-y-auto"
+              className="fixed bottom-0 left-0 right-0 bg-[#F3F4F6] rounded-t-2xl z-[1000] p-6 max-h-[90vh] overflow-y-auto"
             >
               <div className="flex items-center justify-between mb-8">
                 <h2 className="font-display text-2xl font-semibold text-black">Filter</h2>

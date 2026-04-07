@@ -1,0 +1,12 @@
+== workspace/reports/verify-design/html-home.html ==
+      4 rounded-2xl
+     15 rounded-xl
+== workspace/reports/verify-design/html-off-plan.html ==
+      2 rounded-2xl
+     13 rounded-xl
+== workspace/reports/verify-design/html-properties.html ==
+      1 rounded-2xl
+     10 rounded-xl
+== workspace/reports/verify-design/html-rentals.html ==
+      2 rounded-2xl
+     10 rounded-xl

@@ -94,7 +94,8 @@ export default function PropertiesMap({ properties }: Props) {
     .filter(Boolean) as { property: Property; coords: [number, number] }[];
 
   const allCoords = mapped.map((m) => m.coords);
-  const center: [number, number] = [25.1124, 55.2]
+  const officeCoords: [number, number] = [25.2048, 55.2382]
+  const center: [number, number] = allCoords.length > 0 ? allCoords[0] : officeCoords
 
   return (
     <MapContainer
@@ -130,6 +131,17 @@ export default function PropertiesMap({ properties }: Props) {
           </Popup>
         </Marker>
       ))}
+
+      {/* Office marker fallback */}
+      <Marker key="office" position={officeCoords} icon={DefaultIcon}>
+        <Popup maxWidth={220}>
+          <div className="text-xs">
+            <p className="font-bold text-black text-sm leading-tight mb-1">Montere Real Estate</p>
+            <p className="text-gray-500 mb-2">Office</p>
+            <Link href="/contact" className="inline-block mt-2 text-xs text-black underline">Contact us →</Link>
+          </div>
+        </Popup>
+      </Marker>
     </MapContainer>
   );
 }
