@@ -42,6 +42,11 @@
 
   /* Transitions */
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Shared Radii */
+  --radius-2xl: 24px;
+  --radius-xl: 16px;
+  --radius-lg: 12px;
 }
 
 /* ── Base Resets ─────────────────────────────────────────── */
