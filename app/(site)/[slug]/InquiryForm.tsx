@@ -54,8 +54,11 @@ export function PropertyGallery({ images, videos = [], title, imageCountOverride
     <div className="py-4 select-none">
       <div className="flex gap-1 h-[260px] sm:h-[340px] md:h-[420px]">
         <div 
-          onClick={() => setIndex(0)}
-          className="relative flex-1 overflow-hidden rounded-2xl md:rounded-l-2xl md:rounded-r-none bg-black/5 cursor-pointer group"
+          onClick={() => mediaItems[0] && setIndex(0)}
+          className={cn(
+            "relative flex-1 overflow-hidden rounded-2xl md:rounded-l-2xl md:rounded-r-none bg-black/5 group",
+            mediaItems[0] ? "cursor-pointer" : ""
+          )}
         >
           {mediaItems[0] ? (
             <>
@@ -78,9 +81,10 @@ export function PropertyGallery({ images, videos = [], title, imageCountOverride
           {[1, 2, 3, 4].map((i) => (
             <div 
               key={i} 
-              onClick={() => setIndex(i)}
+              onClick={() => mediaItems[i] && setIndex(i)}
               className={cn(
-                "relative overflow-hidden bg-black/5 cursor-pointer group",
+                "relative overflow-hidden bg-black/5 group",
+                mediaItems[i] ? "cursor-pointer" : "",
                 i === 2 && "rounded-tr-2xl",
                 i === 4 && "rounded-br-2xl"
               )}
