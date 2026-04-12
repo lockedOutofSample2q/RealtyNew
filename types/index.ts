@@ -1,4 +1,4 @@
-// types/index.ts
+// types/index.ts - TEST EDIT
 
 export interface NearbyLandmark {
   name: string;
@@ -55,6 +55,7 @@ export interface Property {
   features: string[];
   images: string[];
   image_count?: number;
+  videos?: string[];
   featured: boolean;
 
   // Extended fields
@@ -80,6 +81,9 @@ export interface Property {
   agent_phone?: string;
   agent_photo?: string;
   agent_languages?: string[];
+
+  // Upcoming infrastructure
+  upcoming_infrastructure?: string[];
 
   created_at: string;
   updated_at: string;

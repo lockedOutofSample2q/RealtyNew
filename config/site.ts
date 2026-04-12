@@ -25,6 +25,7 @@ export const siteConfig: SiteConfig = {
     whatsapp: "+971585347884",
     email: "info@monterealestate.ae",
     address: "Prime Tower, Business Bay, Dubai",
+    calendly: "https://calendly.com/amritrealtyholding/10min",
   },
 
   social: {
@@ -53,6 +54,7 @@ export const footerLinks = {
     { label: "Rentals", href: "/rentals" },
     { label: "List Your Property", href: "/list-property" },
     { label: "Mortgage Calculator", href: "/mortgage-calculator" },
+    { label: "Book a Consultation", href: "/booking" },
     { label: "Relocation Services", href: "/relocation" },
     { label: "Blog", href: "/blog" },
   ],

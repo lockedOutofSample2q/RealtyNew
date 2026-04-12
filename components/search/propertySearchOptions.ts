@@ -22,7 +22,7 @@ export const PROPERTY_TYPES = [
 
 export const BEDROOMS = ["Any", "Studio", "1", "2", "3", "4", "5+"];
 export const FURNISHING = ["All furnishings", "Furnished", "Unfurnished", "Partly furnished"];
-export const PRICES = ["Any Price", "1,000,000 AED", "5,000,000 AED", "10,000,000 AED"];
+export const PRICES = ["Any Price", "1,000,000", "5,000,000", "10,000,000", "20,000,000", "50,000,000"];
 
 export type SearchTab = "buy" | "rent";
 

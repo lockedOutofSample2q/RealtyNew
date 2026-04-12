@@ -122,7 +122,7 @@ export default function PropertiesMap({ properties }: Props) {
                   : "Price on request"}
               </p>
               <Link
-                href={`/properties/${property.slug}`}
+                href={`/${property.slug}`}
                 className="inline-block mt-2 text-xs text-black underline"
               >
                 View property →

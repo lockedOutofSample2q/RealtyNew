@@ -124,10 +124,12 @@ export default function OffPlanClient({ properties }: Props) {
     });
   }, [properties, filters]);
 
-  function handleSearch(e: React.FormEvent) {
-    e.preventDefault();
+  function handleSearch(e?: React.FormEvent, forcedTab?: SearchTab) {
+    if (e) e.preventDefault();
+    const activeTab = forcedTab || tab;
+
     const params = new URLSearchParams({
-      listingType: tab,
+      listingType: activeTab,
       ...(filters.location && { location: filters.location }),
       ...(filters.type && { type: filters.type }),
       ...(filters.bedrooms && { bedrooms: filters.bedrooms }),
@@ -136,9 +138,14 @@ export default function OffPlanClient({ properties }: Props) {
       ...(filters.currency && { currency: filters.currency }),
     });
 
-    const page = tab === "rent" ? "/rentals" : "/off-plan";
+    const page = activeTab === "rent" ? "/rentals" : "/off-plan";
     router.push(`${page}?${params.toString()}`);
   }
+
+  const handleTabChange = (newTab: SearchTab) => {
+    setTab(newTab);
+    handleSearch(undefined, newTab);
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -178,11 +185,11 @@ export default function OffPlanClient({ properties }: Props) {
         {/* Desktop: full inline bar */}
         <PropertySearchBar
           tab={tab}
-          setTab={setTab}
+          setTab={handleTabChange}
           filters={filters}
           setFilters={setFilters}
           onSubmit={handleSearch}
-          className="hidden md:block relative z-10 mt-8 w-[90%] max-w-[1100px] bg-white/10 backdrop-blur-3xl rounded-2xl px-6 py-5 shadow-2xl shadow-black/10 border border-white/20"
+          className="hidden md:block relative z-10 mt-8 w-[90%] max-w-[1100px] bg-white/10 backdrop-blur-3xl rounded-[28px] px-6 py-5 shadow-2xl shadow-black/10 border border-white/20"
         />
       </div>
 
@@ -218,7 +225,7 @@ export default function OffPlanClient({ properties }: Props) {
                 {(["buy", "rent"] as const).map((t) => (
                   <button
                     key={t}
-                    onClick={() => setTab(t)}
+                    onClick={() => handleTabChange(t)}
                     className={`flex-1 py-3.5 text-sm font-semibold rounded-xl transition-all ${
                       tab === t ? "bg-black text-white shadow-lg" : "text-black/40"
                     }`}

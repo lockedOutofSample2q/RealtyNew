@@ -92,8 +92,8 @@ export default function PropertySearchBar({
         <CustomSelect
           label={`Price (${currency})`}
           value={filters.price}
-          options={PRICES}
-          onChange={(price) => setFilters({ ...filters, price })}
+          options={PRICES.map(p => p === "Any Price" ? p : `${p} ${currency}`)}
+          onChange={(price) => setFilters({ ...filters, price: price.split(' ')[0].replace(/,/g, '') })}
           placeholder="Any Price"
           className="flex-[1.5]"
         />

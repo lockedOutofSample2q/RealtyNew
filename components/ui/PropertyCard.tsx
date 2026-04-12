@@ -20,7 +20,7 @@ export default function PropertyCard({ property, className, variant = "standard"
   if (variant === "image-bg") {
     return (
       <Link
-        href={`/properties/${property.slug}`}
+        href={`/${property.slug}`}
         className={cn(
           "group relative block overflow-hidden rounded-[24px] aspect-[4/5] bg-gray-100",
           className
@@ -84,7 +84,7 @@ export default function PropertyCard({ property, className, variant = "standard"
   // Standard Variant
   return (
     <Link
-      href={`/properties/${property.slug}`}
+      href={`/${property.slug}`}
       className={cn(
         "group flex flex-col bg-white rounded-[24px] overflow-hidden border border-black/5 hover:shadow-[0_20px_40px_rgba(0,0,0,0.04)] hover:border-black/10 transition-all duration-500",
         className

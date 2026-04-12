@@ -105,6 +105,8 @@ function defaultForm(p?: Property | null) {
     agent_phone:         p?.agent_phone ?? "",
     agent_photo:         p?.agent_photo ?? "",
     agent_languages:     p?.agent_languages?.join(", ") ?? "",
+    upcoming_infrastructure: arrayToLines(p?.upcoming_infrastructure),
+    videos:              arrayToLines(p?.videos),
   };
 }
 
@@ -150,6 +152,12 @@ export default function PropertyForm({ property }: { property?: Property | null 
   async function handleSave(e: React.FormEvent) {
     e.preventDefault();
     setSaving(true);
+
+    if (form.images.length === 0) {
+      toast.error("Please upload at least one property image");
+      setSaving(false);
+      return;
+    }
 
     let nearby_landmarks = null;
     let documents = null;
@@ -204,6 +212,8 @@ export default function PropertyForm({ property }: { property?: Property | null 
       agent_languages: form.agent_languages
         ? form.agent_languages.split(",").map((l: string) => l.trim()).filter(Boolean)
         : null,
+      upcoming_infrastructure: linesToArray(form.upcoming_infrastructure),
+      videos: linesToArray(form.videos),
       updated_at: new Date().toISOString(),
     };
 
@@ -290,16 +300,16 @@ export default function PropertyForm({ property }: { property?: Property | null 
               </div>
               <Row>
                 <div>
-                  <label className={lc}>Property Type</label>
-                  <select value={form.type} onChange={(e) => f("type", e.target.value)} className={ic}>
+                  <label className={lc}>Property Type *</label>
+                  <select required value={form.type} onChange={(e) => f("type", e.target.value)} className={ic}>
                     {["apartment", "villa", "penthouse", "townhouse", "studio"].map((t) => (
                       <option key={t} value={t}>{t.charAt(0).toUpperCase() + t.slice(1)}</option>
                     ))}
                   </select>
                 </div>
                 <div>
-                  <label className={lc}>Listing Type</label>
-                  <select value={form.listing_type} onChange={(e) => f("listing_type", e.target.value)} className={ic}>
+                  <label className={lc}>Listing Type *</label>
+                  <select required value={form.listing_type} onChange={(e) => f("listing_type", e.target.value)} className={ic}>
                     <option value="sale">For Sale</option>
                     <option value="rent">For Rent</option>
                     <option value="off-plan">Off Plan</option>
@@ -308,12 +318,12 @@ export default function PropertyForm({ property }: { property?: Property | null 
               </Row>
               <Row>
                 <div>
-                  <label className={lc}>Price (0 = Price on request)</label>
-                  <input type="number" value={form.price} onChange={(e) => f("price", +e.target.value)} className={ic} />
+                  <label className={lc}>Price * (0 = Price on request)</label>
+                  <input type="number" required value={form.price} onChange={(e) => f("price", +e.target.value)} className={ic} />
                 </div>
                 <div>
-                  <label className={lc}>Currency</label>
-                  <select value={form.price_currency} onChange={(e) => f("price_currency", e.target.value)} className={ic}>
+                  <label className={lc}>Currency *</label>
+                  <select required value={form.price_currency} onChange={(e) => f("price_currency", e.target.value)} className={ic}>
                     <option>AED</option><option>USD</option><option>EUR</option>
                   </select>
                 </div>
@@ -330,12 +340,12 @@ export default function PropertyForm({ property }: { property?: Property | null 
               </Row>
               <Row>
                 <div>
-                  <label className={lc}>Bathrooms</label>
-                  <input type="number" value={form.bathrooms} onChange={(e) => f("bathrooms", +e.target.value)} className={ic} />
+                  <label className={lc}>Bathrooms *</label>
+                  <input type="number" required value={form.bathrooms} onChange={(e) => f("bathrooms", +e.target.value)} className={ic} />
                 </div>
                 <div>
-                  <label className={lc}>Area (sqft)</label>
-                  <input type="number" value={form.area_sqft} onChange={(e) => f("area_sqft", +e.target.value)} className={ic} />
+                  <label className={lc}>Area * (sqft)</label>
+                  <input type="number" required value={form.area_sqft} onChange={(e) => f("area_sqft", +e.target.value)} className={ic} />
                 </div>
               </Row>
               <Row>
@@ -358,8 +368,8 @@ export default function PropertyForm({ property }: { property?: Property | null 
                 </div>
               </Row>
               <div>
-                <label className={lc}>Description</label>
-                <textarea rows={5} value={form.description} onChange={(e) => f("description", e.target.value)} className={tc} />
+                <label className={lc}>Description *</label>
+                <textarea required rows={5} value={form.description} onChange={(e) => f("description", e.target.value)} className={tc} />
               </div>
               <Row>
                 <div>
@@ -387,8 +397,8 @@ export default function PropertyForm({ property }: { property?: Property | null 
             <div className="space-y-4">
               <Row>
                 <div>
-                  <label className={lc}>City</label>
-                  <input type="text" value={form.location} onChange={(e) => f("location", e.target.value)} className={ic} placeholder="Dubai" />
+                  <label className={lc}>City *</label>
+                  <input type="text" required value={form.location} onChange={(e) => f("location", e.target.value)} className={ic} placeholder="Dubai" />
                 </div>
                 <div>
                   <label className={lc}>Community *</label>
@@ -429,7 +439,7 @@ export default function PropertyForm({ property }: { property?: Property | null 
           <Section id="images" icon={ImageIcon} title="Images">
             <div className="space-y-6">
               <div>
-                <label className={lc + " mb-3"}>Property Images</label>
+                <label className={lc + " mb-3"}>Property Images *</label>
                 <ImageUploader
                   value={form.images}
                   onChange={(urls) => f("images", urls)}
@@ -447,6 +457,12 @@ export default function PropertyForm({ property }: { property?: Property | null 
                 <input type="number" value={form.image_count} onChange={(e) => f("image_count", e.target.value)}
                   className={ic} placeholder={`Auto (${form.images.length})`} />
                 <p className="font-body text-xs text-[#aaa] mt-1.5">Shown on the gallery "View all N" overlay. Defaults to number of uploaded images.</p>
+              </div>
+              <div className="border-t border-black/[0.06] pt-6">
+                <label className={lc}>Video URLs (YouTube, Vimeo, or Direct - one per line)</label>
+                <textarea rows={4} value={form.videos} onChange={(e) => f("videos", e.target.value)} className={tc} 
+                  placeholder={"https://www.youtube.com/watch?v=...\nhttps://vimeo.com/...\nhttps://example.com/video.mp4"} />
+                <p className="font-body text-xs text-[#aaa] mt-1.5 tracking-tight">Videos will be merged with photos in the property gallery.</p>
               </div>
             </div>
           </Section>
@@ -472,6 +488,11 @@ export default function PropertyForm({ property }: { property?: Property | null 
               <div>
                 <label className={lc}>General Features / Specs (one per line)</label>
                 <textarea rows={4} value={form.features} onChange={(e) => f("features", e.target.value)} className={tc} />
+              </div>
+              <div>
+                <label className={lc}>Upcoming Infrastructure & Projects (one per line)</label>
+                <textarea rows={4} value={form.upcoming_infrastructure} onChange={(e) => f("upcoming_infrastructure", e.target.value)} className={tc}
+                  placeholder={"New Metro Station (2025)\nCommercial Hub Development\nPark Expansion"} />
               </div>
             </div>
           </Section>
