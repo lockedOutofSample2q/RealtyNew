@@ -25,7 +25,6 @@ export const siteConfig: SiteConfig = {
     whatsapp: "+971585347884",
     email: "info@monterealestate.ae",
     address: "Prime Tower, Business Bay, Dubai",
-    calendly: "https://calendly.com/amritrealtyholding/10min",
   },
 
   social: {

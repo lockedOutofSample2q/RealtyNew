@@ -137,6 +137,7 @@ export interface SiteConfig {
     email: string;
     address: string;
     whatsapp: string;
+    calendly?: string;
   };
   social: {
     instagram?: string;
