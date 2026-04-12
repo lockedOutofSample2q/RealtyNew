@@ -109,7 +109,7 @@ export function PropertyGallery({ images, videos = [], title, imageCountOverride
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors flex flex-col items-center justify-center gap-1.5 backdrop-blur-[2px]">
                   <Images size={20} className="text-white" />
                   <span className="text-white text-[13px] font-bold tracking-tight">
-                    View all {totalCount}
+                    View all
                   </span>
                 </div>
               )}
