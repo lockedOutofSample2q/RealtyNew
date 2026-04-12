@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "@/config/site";
@@ -25,6 +25,7 @@ const MENU_TOP_POSITIONS = ["18vh", "27vh", "36vh", "45vh", "54vh", "63vh"];
 const UTILITY_LINKS = [
   { label: "Relocation", href: "/contact" },
   { label: "Mortgage Calculator", href: "/mortgage-calculator" },
+  { label: "Book a Consultation", href: "/booking" },
   { label: "List Property", href: "/contact" },
 ];
 
@@ -33,7 +34,21 @@ export default function Navbar() {
   const [currencyOpen, setCurrencyOpen] = useState(false);
   const currencyRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
-  const { currency, setCurrency } = useCurrency();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const { currency, setCurrency: setGlobalCurrency } = useCurrency();
+
+  const handleCurrencyChange = (c: Currency) => {
+    setGlobalCurrency(c);
+    
+    // Sync with URL if on a listing page
+    const isListingPage = ["/properties", "/rentals", "/off-plan"].includes(pathname || "");
+    if (isListingPage) {
+      const params = new URLSearchParams(searchParams?.toString());
+      params.set("currency", c);
+      router.push(`${pathname}?${params.toString()}`, { scroll: false });
+    }
+  };
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -118,7 +133,7 @@ export default function Navbar() {
                       <button
                         key={c}
                         type="button"
-                        onClick={() => { setCurrency(c); setCurrencyOpen(false); }}
+                        onClick={() => { handleCurrencyChange(c); setCurrencyOpen(false); }}
                         className={cn(
                           "w-full text-left px-4 py-2.5 font-body text-[12px] font-bold tracking-widest uppercase transition-colors",
                           currency === c

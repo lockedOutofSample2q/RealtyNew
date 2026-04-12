@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import type { Property } from "@/types";
 import PropertySearchBar from "@/components/search/PropertySearchBar";
 import PillSelect from "@/components/ui/PillSelect";
+import PropertyCard from "@/components/ui/PropertyCard";
 import { useCurrency } from "@/context/CurrencyContext";
 import {
   DEFAULT_PROPERTY_FILTERS,
@@ -29,75 +30,6 @@ const PropertiesMap = dynamic(() => import("@/components/ui/PropertiesMap"), {
     </div>
   ),
 });
-
-// ── Property Card ─────────────────────────────────────────────
-function PropertyCard({ property }: { property: Property }) {
-  const image = property.images?.[0] ?? "/assets/images/home/about.jpg";
-  const hasPrice = property.price > 0;
-  const { formatPrice } = useCurrency();
-
-  return (
-    <Link
-      href={`/properties/${property.slug}`}
-      className="group bg-white border border-black/8 overflow-hidden rounded-xl hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)] transition-shadow duration-300 block"
-    >
-      {/* Image */}
-      <div className="relative w-full aspect-[4/3] overflow-hidden bg-black/5">
-        <Image
-          src={image}
-          alt={property.title}
-          fill
-          className="object-cover group-hover:scale-105 transition-transform duration-700"
-          sizes="(max-width: 768px) 100vw, 350px"
-        />
-        {property.featured && (
-          <span className="absolute top-3 left-3 bg-emerald-500 text-white text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-full">
-            Featured
-          </span>
-        )}
-      </div>
-
-      {/* Content */}
-      <div className="p-4">
-        <h3 className="font-semibold text-black text-[15px] leading-snug mb-1 line-clamp-1">
-          {property.title}
-        </h3>
-        <p className="text-[12px] text-black/45 mb-3 line-clamp-2 leading-relaxed">
-          {property.description || `${property.community}, ${property.location}`}
-        </p>
-
-        {/* Specs */}
-        <div className="flex items-center gap-3 text-[12px] text-black/50 mb-3">
-          {property.bedrooms !== null && (
-            <span className="flex items-center gap-1">
-              <Bed size={12} />
-              {property.bedrooms === 0 ? "Studio" : property.bedrooms}
-            </span>
-          )}
-          <span className="flex items-center gap-1">
-            <Bath size={12} />
-            {property.bathrooms}
-          </span>
-          <span className="flex items-center gap-1">
-            <Maximize2 size={12} />
-            {property.area_sqft.toLocaleString()} sqft
-          </span>
-        </div>
-
-        {/* Price */}
-        <div className="border-t border-black/6 pt-3">
-          {hasPrice ? (
-            <p className="text-[14px] font-bold text-black">
-              {formatPrice(property.price)}
-            </p>
-          ) : (
-            <p className="text-[13px] text-black/40 italic">Price on request</p>
-          )}
-        </div>
-      </div>
-    </Link>
-  );
-}
 
 // ── Main Client Component ─────────────────────────────────────
 interface Props {
@@ -192,10 +124,12 @@ export default function OffPlanClient({ properties }: Props) {
     });
   }, [properties, filters]);
 
-  function handleSearch(e: React.FormEvent) {
-    e.preventDefault();
+  function handleSearch(e?: React.FormEvent, forcedTab?: SearchTab) {
+    if (e) e.preventDefault();
+    const activeTab = forcedTab || tab;
+
     const params = new URLSearchParams({
-      listingType: tab,
+      listingType: activeTab,
       ...(filters.location && { location: filters.location }),
       ...(filters.type && { type: filters.type }),
       ...(filters.bedrooms && { bedrooms: filters.bedrooms }),
@@ -204,9 +138,14 @@ export default function OffPlanClient({ properties }: Props) {
       ...(filters.currency && { currency: filters.currency }),
     });
 
-    const page = tab === "rent" ? "/rentals" : "/off-plan";
+    const page = activeTab === "rent" ? "/rentals" : "/off-plan";
     router.push(`${page}?${params.toString()}`);
   }
+
+  const handleTabChange = (newTab: SearchTab) => {
+    setTab(newTab);
+    handleSearch(undefined, newTab);
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -246,11 +185,11 @@ export default function OffPlanClient({ properties }: Props) {
         {/* Desktop: full inline bar */}
         <PropertySearchBar
           tab={tab}
-          setTab={setTab}
+          setTab={handleTabChange}
           filters={filters}
           setFilters={setFilters}
           onSubmit={handleSearch}
-          className="hidden md:block relative z-10 mt-8 w-[90%] max-w-[1100px] bg-white/10 backdrop-blur-3xl rounded-2xl px-6 py-5 shadow-2xl shadow-black/10 border border-white/20"
+          className="hidden md:block relative z-10 mt-8 w-[90%] max-w-[1100px] bg-white/10 backdrop-blur-3xl rounded-[28px] px-6 py-5 shadow-2xl shadow-black/10 border border-white/20"
         />
       </div>
 
@@ -286,7 +225,7 @@ export default function OffPlanClient({ properties }: Props) {
                 {(["buy", "rent"] as const).map((t) => (
                   <button
                     key={t}
-                    onClick={() => setTab(t)}
+                    onClick={() => handleTabChange(t)}
                     className={`flex-1 py-3.5 text-sm font-semibold rounded-xl transition-all ${
                       tab === t ? "bg-black text-white shadow-lg" : "text-black/40"
                     }`}
@@ -359,7 +298,7 @@ export default function OffPlanClient({ properties }: Props) {
         {/* Left: scrollable property grid — on mobile appears after map via order */}
         <div className="order-2 md:order-1 w-full md:w-[58%] p-4 md:p-6 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5 content-start">
           {filtered.map((p) => (
-            <PropertyCard key={p.id} property={p} />
+            <PropertyCard key={p.id} property={p} variant="image-bg" />
           ))}
           {filtered.length === 0 && (
             <div className="col-span-1 sm:col-span-2 py-24 text-center">

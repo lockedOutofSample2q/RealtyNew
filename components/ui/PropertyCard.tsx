@@ -17,10 +17,10 @@ export default function PropertyCard({ property, className, variant = "standard"
   const { formatPrice } = useCurrency();
   const image = property.images?.[0] ?? "/assets/images/home/about.jpg";
   const isRent = property.listing_type === "rent";
-
+  if (variant === "image-bg") {
     return (
       <Link
-        href={`/properties/${property.slug}`}
+        href={`/${property.slug}`}
         className={cn(
           "group relative block overflow-hidden rounded-[24px] aspect-[4/5] bg-gray-100",
           className
@@ -42,6 +42,14 @@ export default function PropertyCard({ property, className, variant = "standard"
               {isRent ? "For Rent" : "For Sale"}
             </span>
           </div>
+
+          {property.featured && (
+            <div className="bg-emerald-500/80 backdrop-blur-md px-3 py-1.5 rounded-full">
+              <span className="font-body text-[10px] uppercase tracking-widest text-white font-bold">
+                Featured
+              </span>
+            </div>
+          )}
         </div>
 
         {/* Glassmorphism Details Card */}
@@ -55,8 +63,14 @@ export default function PropertyCard({ property, className, variant = "standard"
           
           <div className="flex items-center justify-between pt-4 border-t border-white/20">
             <div className="font-display text-lg text-white font-semibold flex items-baseline">
-              {formatPrice(property.price)}
-              {isRent && <span className="font-body text-[11px] text-white/70 ml-1">/yr</span>}
+              {property.price > 0 ? (
+                <>
+                  {formatPrice(property.price)}
+                  {isRent && <span className="font-body text-[11px] text-white/70 ml-1">/yr</span>}
+                </>
+              ) : (
+                <span className="text-sm text-white/60 italic font-normal">Price on request</span>
+              )}
             </div>
             <div className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center group-hover:-rotate-45 transition-transform duration-500 shrink-0">
                <ArrowRight size={14} />
@@ -65,11 +79,12 @@ export default function PropertyCard({ property, className, variant = "standard"
         </div>
       </Link>
     );
+  }
 
   // Standard Variant
   return (
     <Link
-      href={`/properties/${property.slug}`}
+      href={`/${property.slug}`}
       className={cn(
         "group flex flex-col bg-white rounded-[24px] overflow-hidden border border-black/5 hover:shadow-[0_20px_40px_rgba(0,0,0,0.04)] hover:border-black/10 transition-all duration-500",
         className
