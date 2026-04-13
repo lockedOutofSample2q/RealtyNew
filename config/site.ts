@@ -15,23 +15,23 @@ import type { SiteConfig, NavItem } from "@/types";
 
 export const siteConfig: SiteConfig = {
   name: "Realty Holding & Management Consultants",
-  tagline: "Dubai Luxury Real Estate",
+  tagline: "Invest in Mohali",
   description:
-    "Dubai's trusted luxury real estate consultancy. Off-plan investments and premium secondary market properties.",
-  url: "https://www.monterealestate.ae",
+    "Mohali's non-conventional real estate consultancy. Luxury investments .",
+  url: "https://www.realtyconsultants.in",
 
   contact: {
-    phone: "+91 9988XXXXXX",
-    whatsapp: "+971585347884",
-    email: "info@monterealestate.ae",
+    phone: "+91 7814613916",
+    whatsapp: "+917814613916",
+    email: "hello@realtyconsultants.in",
     address: "E328 Industrial area phase 8A, Mohali, Punjab",
   },
 
   social: {
-    instagram: "https://instagram.com/monterealestate.ae",
-    facebook: "https://facebook.com/monterealestate.ae",
-    linkedin: "https://linkedin.com/company/monterealestate",
-    youtube: "",
+    instagram: "https://instagram.com/amritrealty",
+    facebook: "https://facebook.com/amritrealty",
+    linkedin: "https://linkedin.com/company/realtyholdingandmanagementconsultants",
+    youtube: "https://www.youtube.com/@AmritRealty",
   },
 };
 
@@ -69,8 +69,8 @@ export const footerLinks = {
 export const heroContent = {
   headline: "Find Your Place\nin Mohali",
   subline:
-    "Off-plan investments and luxury rentals, curated for those who know exactly what they want.",
-  ctaPrimary: { label: "Explore Properties", href: "/off-plan" },
+    "Off-market investments and luxury assets, curated for those who know exactly what they want.",
+  ctaPrimary: { label: "Explore Properties", href: "/properties" },
   ctaSecondary: { label: "Talk to an Advisor", href: "/contact" },
   // Background image (place in /public/images/hero.jpg or use Supabase URL)
   backgroundImage: "/images/hero.jpg",
@@ -78,12 +78,12 @@ export const heroContent = {
 
 // ── About Snippet (Home Page) ────────────────────────────────
 export const aboutSnippet = {
-  headline: "We're your trusted partner in real estate. With 10 years of experience in United Arab Emirates, our team of experts is dedicated to providing personalised service and achieving the best possible results.",
-  body: "From finding your dream home in Dubai to selling your property at the right price, we're here to guide you every step of the way.",
+  headline: "We're your trusted partner in real estate. With 10 years of experience in Punjab Real Estate, our team of experts is dedicated to providing personalised service and achieving the best possible results.",
+  body: "From finding your dream in Mohali to selling your property at the right price, we're here to guide you every step of the way.",
   stats: [
-    { value: "10+", label: "Years in Dubai" },
-    { value: "850+", label: "Properties Sold" },
-    { value: "AED 3.5B+", label: "In Transactions" },
+    { value: "4+", label: "Years in Mohali" },
+    { value: "125+", label: "Properties Sold" },
+    { value: "INR 84Cr+", label: "In Transactions" },
     { value: "4.9★", label: "Client Rating" },
   ],
 };
