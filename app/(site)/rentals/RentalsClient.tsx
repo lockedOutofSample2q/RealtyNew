@@ -182,7 +182,7 @@ export default function RentalsClient({ properties }: Props) {
           filters={filters}
           setFilters={setFilters}
           onSubmit={handleSearch}
-          className="hidden md:block relative z-10 mt-8 w-[90%] max-w-[1100px] transform-gpu bg-white/10 backdrop-blur-3xl rounded-[28px] px-6 py-5 shadow-2xl shadow-black/10 border border-white/20"
+          className="hidden md:block relative z-10 mt-8 w-[90%] max-w-[1100px]"
         />
       </div>
 

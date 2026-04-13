@@ -13,6 +13,7 @@ import {
   type SearchTab,
 } from "@/components/search/propertySearchOptions";
 import { useCurrency } from "@/context/CurrencyContext";
+import { cn } from "@/lib/utils";
 
 interface PropertySearchBarProps {
   tab: SearchTab;
@@ -33,8 +34,11 @@ export default function PropertySearchBar({
 }: PropertySearchBarProps) {
   const { currency } = useCurrency();
   return (
-    <div className={className ?? "w-full transform-gpu bg-white/10 backdrop-blur-3xl rounded-[28px] px-6 py-5 shadow-2xl shadow-black/10 border border-white/20"}>
-      <div className="flex gap-6 mb-5 px-1">
+    <div className={cn("relative", className ?? "w-full")}>
+      <div className="absolute inset-0 z-0 bg-white/10 backdrop-blur-[64px] border border-white/20 rounded-[28px] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] pointer-events-none transform-gpu" />
+      
+      <div className="relative z-10 px-6 py-5">
+        <div className="flex gap-6 mb-5 px-1">
         {(["buy", "rent"] as const).map((t) => (
           <button
             key={t}
@@ -108,6 +112,7 @@ export default function PropertySearchBar({
           </button>
         </div>
       </form>
+      </div>
     </div>
   );
 }
