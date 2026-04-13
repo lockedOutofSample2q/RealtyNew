@@ -45,17 +45,16 @@ export default function HeroSection() {
   function handleSearch(e: React.FormEvent) {
     e.preventDefault();
     const params = new URLSearchParams({
-      listingType: tab,
+      tab: tab,
       ...(filters.location && { location: filters.location }),
       ...(filters.type && { type: filters.type }),
-      ...(filters.bedrooms && { bedrooms: filters.bedrooms }),
-      ...(filters.furnishing && { furnishing: filters.furnishing }),
+      ...(filters.bedrooms && tab !== "lands" && { bedrooms: filters.bedrooms }),
+      ...(filters.furnishing && tab !== "lands" && { furnishing: filters.furnishing }),
       ...(filters.price && { price: filters.price }),
       ...(filters.currency && { currency: filters.currency }),
     });
-    const page = tab === "lands" ? "/lands" : "/properties";
     setIsSearchModalOpen(false);
-    router.push(`${page}?${params.toString()}`);
+    router.push(`/properties?${params.toString()}`);
   }
 
 

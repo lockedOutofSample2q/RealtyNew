@@ -52,7 +52,9 @@ export default function PropertiesClient({ properties }: Props) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
-  const [tab, setTab] = useState<SearchTab>(searchParams.get("listingType") === "lands" ? "lands" : "properties");
+  const [tab, setTab] = useState<SearchTab>(
+    (searchParams.get("tab") as SearchTab) || "apartments"
+  );
   const [filters, setFilters] = useState<PropertySearchFilters>({
     ...DEFAULT_PROPERTY_FILTERS,
     location: searchParams.get("location") ?? "",
@@ -65,7 +67,7 @@ export default function PropertiesClient({ properties }: Props) {
   const [leafletReady, setLeafletReady] = useState(false);
 
   useEffect(() => {
-    setTab(searchParams.get("listingType") === "lands" ? "lands" : "properties");
+    setTab((searchParams.get("tab") as SearchTab) || "apartments");
     setFilters({
       ...DEFAULT_PROPERTY_FILTERS,
       location: searchParams.get("location") ?? "",
@@ -90,7 +92,19 @@ export default function PropertiesClient({ properties }: Props) {
     const desiredFurnishing = normalize(filters.furnishing);
 
     return properties.filter((p) => {
-      if (filters.bedrooms) {
+      // ── TYPE/TAB LOGIC ──────────────────────────────────────
+      const pType = normalize(p.type);
+      if (tab === "apartments") {
+        if (!["apartment", "studio", "penthouse"].includes(pType)) return false;
+      } else if (tab === "houses") {
+        if (!["villa", "townhouse"].includes(pType)) return false;
+      } else if (tab === "lands") {
+        // assume if it's a land, its type typically says 'land', 'plot', etc.
+        // or by category if Supabase has it. Let's filter loosely.
+        if (!["residential", "commercial", "agricultural", "industrial", "land", "plot"].includes(pType)) return false;
+      }
+
+      if (filters.bedrooms && tab !== "lands") {
         if (filters.bedrooms === "Studio") {
           if ((p.bedrooms ?? 0) !== 0) return false;
         } else if (filters.bedrooms === "5+") {
@@ -129,17 +143,16 @@ export default function PropertiesClient({ properties }: Props) {
     const activeTab = forcedTab || tab;
 
     const params = new URLSearchParams({
-      listingType: activeTab,
+      tab: activeTab,
       ...(filters.location && { location: filters.location }),
       ...(filters.type && { type: filters.type }),
-      ...(filters.bedrooms && { bedrooms: filters.bedrooms }),
-      ...(filters.furnishing && { furnishing: filters.furnishing }),
+      ...(filters.bedrooms && tab !== "lands" && { bedrooms: filters.bedrooms }),
+      ...(filters.furnishing && tab !== "lands" && { furnishing: filters.furnishing }),
       ...(filters.price && { price: filters.price }),
       ...(filters.currency && { currency: filters.currency }),
     });
 
-    const page = activeTab === "lands" ? "/lands" : "/properties";
-    router.push(`${page}?${params.toString()}`);
+    router.push(`/properties?${params.toString()}`);
   }
 
   const handleTabChange = (newTab: SearchTab) => {

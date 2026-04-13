@@ -40,7 +40,7 @@ export const siteConfig: SiteConfig = {
 export const navItems: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "Properties", href: "/properties" },
-  { label: "Lands", href: "/lands" },
+  
   { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
@@ -50,7 +50,7 @@ export const navItems: NavItem[] = [
 export const footerLinks = {
   quick: [
     { label: "Properties", href: "/properties" },
-    { label: "Lands", href: "/lands" },
+    
     { label: "List Your Property", href: "/list-your-property" },
     { label: "Mortgage Calculator", href: "/mortgage-calculator" },
     { label: "Book a Consultation", href: "/booking" },

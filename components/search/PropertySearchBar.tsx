@@ -9,6 +9,9 @@ import {
   LOCATIONS,
   PRICES,
   PROPERTY_TYPES,
+  APARTMENT_TYPES,
+  HOUSE_TYPES,
+  LAND_TYPES,
   type PropertySearchFilters,
   type SearchTab,
 } from "@/components/search/propertySearchOptions";
@@ -39,7 +42,7 @@ export default function PropertySearchBar({
       
       <div className="relative z-10 px-6 py-5">
         <div className="flex gap-6 mb-5 px-1">
-        {(["properties", "lands"] as const).map((t) => (
+        {(["apartments", "houses", "lands"] as const).map((t) => (
           <button
             key={t}
             onClick={() => setTab(t)}
@@ -71,27 +74,31 @@ export default function PropertySearchBar({
         <CustomSelect
           label="Property Type"
           value={filters.type}
-          options={PROPERTY_TYPES}
+          options={tab === "apartments" ? APARTMENT_TYPES : tab === "houses" ? HOUSE_TYPES : LAND_TYPES}
           onChange={(type) => setFilters({ ...filters, type })}
           placeholder="All"
         />
 
-        <CustomSelect
-          label="Bedrooms"
-          value={filters.bedrooms}
-          options={BEDROOMS}
-          onChange={(bedrooms) => setFilters({ ...filters, bedrooms })}
-          placeholder="Any"
-        />
+        {tab !== "lands" && (
+          <>
+            <CustomSelect
+              label="Bedrooms"
+              value={filters.bedrooms}
+              options={BEDROOMS}
+              onChange={(bedrooms) => setFilters({ ...filters, bedrooms })}
+              placeholder="Any"
+            />
 
-        <CustomSelect
-          label="Furnishing"
-          value={filters.furnishing}
-          options={FURNISHING}
-          onChange={(furnishing) => setFilters({ ...filters, furnishing })}
-          placeholder="All furnishings"
-          className="flex-[1.2]"
-        />
+            <CustomSelect
+              label="Furnishing"
+              value={filters.furnishing}
+              options={FURNISHING}
+              onChange={(furnishing) => setFilters({ ...filters, furnishing })}
+              placeholder="All furnishings"
+              className="flex-[1.2]"
+            />
+          </>
+        )}
 
         <CustomSelect
           label={`Price (${currency})`}
