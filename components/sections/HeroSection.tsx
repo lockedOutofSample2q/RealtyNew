@@ -130,7 +130,7 @@ export default function HeroSection() {
             filters={filters}
             setFilters={setFilters}
             onSubmit={handleSearch}
-            className="hidden md:block w-full bg-white/10 backdrop-blur-3xl rounded-[28px] px-6 py-5 shadow-2xl shadow-black/10 border border-white/20"
+            className="hidden md:block w-full transform-gpu bg-white/10 backdrop-blur-3xl rounded-[28px] px-6 py-5 shadow-2xl shadow-black/10 border border-white/20"
           />
         </motion.div>
 

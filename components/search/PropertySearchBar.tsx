@@ -33,7 +33,7 @@ export default function PropertySearchBar({
 }: PropertySearchBarProps) {
   const { currency } = useCurrency();
   return (
-    <div className={className ?? "w-full bg-white/10 backdrop-blur-3xl rounded-[28px] px-6 py-5 shadow-2xl shadow-black/10 border border-white/20"}>
+    <div className={className ?? "w-full transform-gpu bg-white/10 backdrop-blur-3xl rounded-[28px] px-6 py-5 shadow-2xl shadow-black/10 border border-white/20"}>
       <div className="flex gap-6 mb-5 px-1">
         {(["buy", "rent"] as const).map((t) => (
           <button
