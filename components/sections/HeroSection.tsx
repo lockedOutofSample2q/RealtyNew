@@ -34,7 +34,7 @@ const LOGOS = [
 
 export default function HeroSection() {
   const router = useRouter();
-  const [tab, setTab] = useState<SearchTab>("sale");
+  const [tab, setTab] = useState<SearchTab>("properties");
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [filters, setFilters] = useState(DEFAULT_PROPERTY_FILTERS);
 

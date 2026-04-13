@@ -39,7 +39,7 @@ export default function PropertySearchBar({
       
       <div className="relative z-10 px-6 py-5">
         <div className="flex gap-6 mb-5 px-1">
-        {(["sale", "lands", "properties"] as const).map((t) => (
+        {(["properties", "lands"] as const).map((t) => (
           <button
             key={t}
             onClick={() => setTab(t)}

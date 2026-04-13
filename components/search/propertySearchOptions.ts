@@ -24,7 +24,7 @@ export const BEDROOMS = ["Any", "Studio", "1", "2", "3", "4", "5+"];
 export const FURNISHING = ["All furnishings", "Furnished", "Unfurnished", "Partly furnished"];
 export const PRICES = ["Any Price", "1,000,000", "5,000,000", "10,000,000", "20,000,000", "50,000,000"];
 
-export type SearchTab = "sale" | "lands" | "properties";
+export type SearchTab = "properties" | "lands";
 
 export interface PropertySearchFilters {
   location: string;
