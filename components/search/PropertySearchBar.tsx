@@ -6,7 +6,8 @@ import CustomSelect from "@/components/ui/CustomSelect";
 import {
   BEDROOMS,
   FURNISHING,
-  LOCATIONS,
+  CITIES,
+  SECTORS_BY_CITY,
   PRICES,
   PROPERTY_TYPES,
   APARTMENT_TYPES,
@@ -64,10 +65,18 @@ export default function PropertySearchBar({
 
       <form onSubmit={onSubmit} className="flex flex-col md:flex-row items-end gap-3 w-full">
         <CustomSelect
-          label="Location"
-          value={filters.location}
-          options={LOCATIONS}
-          onChange={(location) => setFilters({ ...filters, location })}
+          label="City"
+          value={filters.city}
+          options={CITIES}
+          onChange={(city) => setFilters({ ...filters, city, sector: "" })}
+          placeholder="All"
+        />
+
+        <CustomSelect
+          label="Sector / Area"
+          value={filters.sector}
+          options={filters.city && SECTORS_BY_CITY[filters.city] ? SECTORS_BY_CITY[filters.city] : ["All"]}
+          onChange={(sector) => setFilters({ ...filters, sector })}
           placeholder="All"
         />
 

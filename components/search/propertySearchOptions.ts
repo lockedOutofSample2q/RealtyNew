@@ -1,15 +1,20 @@
-export const LOCATIONS = [
+export const CITIES = [
   "All",
-  "E328 Industrial area phase 8A",
-  "Sector 82A",
-  "Airport Road",
-  "Rajpura",
-  "Kharar",
+  "Mohali",
   "Zirakpur",
+  "Kharar",
   "New Chandigarh",
-  "Sector 82",
-  "Sector 66"
+  "Rajpura",
 ];
+
+export const SECTORS_BY_CITY: Record<string, string[]> = {
+  All: ["All"],
+  Mohali: ["All", "Sector 82A", "Sector 82", "Sector 66", "Airport Road", "E328 Industrial area phase 8A"],
+  Zirakpur: ["All", "Aerocity", "VIP Road", "Peer Muchalla"],
+  Kharar: ["All", "Sunny Enclave", "Sector 115", "Sector 125"],
+  "New Chandigarh": ["All", "Omaxe", "Eco City 1", "Eco City 2"],
+  Rajpura: ["All", "Industrial Zone", "Gagan Vihar"],
+};
 
 export const PROPERTY_TYPES = [
   "All",
@@ -31,7 +36,8 @@ export const PRICES = ["Any Price", "1,000,000", "5,000,000", "10,000,000", "20,
 export type SearchTab = "apartments" | "houses" | "lands";
 
 export interface PropertySearchFilters {
-  location: string;
+  city: string;
+  sector: string;
   type: string;
   bedrooms: string;
   furnishing: string;
@@ -40,7 +46,8 @@ export interface PropertySearchFilters {
 }
 
 export const DEFAULT_PROPERTY_FILTERS: PropertySearchFilters = {
-  location: "",
+  city: "",
+  sector: "",
   type: "",
   bedrooms: "",
   furnishing: "",

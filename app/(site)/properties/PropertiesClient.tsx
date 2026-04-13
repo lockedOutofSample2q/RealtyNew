@@ -13,7 +13,8 @@ import PropertyCard from "@/components/ui/PropertyCard";
 import { useCurrency } from "@/context/CurrencyContext";
 import {
   DEFAULT_PROPERTY_FILTERS,
-  LOCATIONS,
+  CITIES,
+  SECTORS_BY_CITY,
   PROPERTY_TYPES,
   BEDROOMS,
   FURNISHING,
@@ -57,7 +58,8 @@ export default function PropertiesClient({ properties }: Props) {
   );
   const [filters, setFilters] = useState<PropertySearchFilters>({
     ...DEFAULT_PROPERTY_FILTERS,
-    location: searchParams.get("location") ?? "",
+    city: searchParams.get("city") ?? "",
+    sector: searchParams.get("sector") ?? "",
     type: searchParams.get("type") ?? "",
     bedrooms: searchParams.get("bedrooms") ?? "",
     furnishing: searchParams.get("furnishing") ?? "",
@@ -70,7 +72,8 @@ export default function PropertiesClient({ properties }: Props) {
     setTab((searchParams.get("tab") as SearchTab) || "apartments");
     setFilters({
       ...DEFAULT_PROPERTY_FILTERS,
-      location: searchParams.get("location") ?? "",
+      city: searchParams.get("city") ?? "",
+      sector: searchParams.get("sector") ?? "",
       type: searchParams.get("type") ?? "",
       bedrooms: searchParams.get("bedrooms") ?? "",
       furnishing: searchParams.get("furnishing") ?? "",
@@ -88,7 +91,8 @@ export default function PropertiesClient({ properties }: Props) {
   const filtered = useMemo(() => {
     const maxPrice = parseMaxPrice(filters.price);
     const desiredType = normalize(filters.type);
-    const desiredLocation = normalize(filters.location);
+    const desiredCity = normalize(filters.city);
+    const desiredSector = normalize(filters.sector);
     const desiredFurnishing = normalize(filters.furnishing);
 
     return properties.filter((p) => {
@@ -121,9 +125,15 @@ export default function PropertiesClient({ properties }: Props) {
         if (normalize(p.type) !== desiredType) return false;
       }
 
-      if (desiredLocation && desiredLocation !== "all") {
-        const inLocation = normalize(p.location).includes(desiredLocation);
-        const inCommunity = normalize(p.community).includes(desiredLocation);
+      if (desiredCity && desiredCity !== "all") {
+        const inLocation = normalize(p.location).includes(desiredCity);
+        const inCommunity = normalize(p.community).includes(desiredCity);
+        if (!inLocation && !inCommunity) return false;
+      }
+
+      if (desiredSector && desiredSector !== "all") {
+        const inLocation = normalize(p.location).includes(desiredSector);
+        const inCommunity = normalize(p.community).includes(desiredSector);
         if (!inLocation && !inCommunity) return false;
       }
 
@@ -144,7 +154,8 @@ export default function PropertiesClient({ properties }: Props) {
 
     const params = new URLSearchParams({
       tab: activeTab,
-      ...(filters.location && { location: filters.location }),
+      ...(filters.city && { city: filters.city }),
+      ...(filters.sector && { sector: filters.sector }),
       ...(filters.type && { type: filters.type }),
       ...(filters.bedrooms && tab !== "lands" && { bedrooms: filters.bedrooms }),
       ...(filters.furnishing && tab !== "lands" && { furnishing: filters.furnishing }),
@@ -191,7 +202,7 @@ export default function PropertiesClient({ properties }: Props) {
         >
           <Search size={20} className="text-black/50 shrink-0" />
           <span className="flex-1 text-left text-[15px]">
-            {[filters.location, filters.type, filters.bedrooms, filters.furnishing, filters.price].some(Boolean) ? "Filters active — tap to edit" : "Search properties"}
+            {[filters.city, filters.sector, filters.type, filters.bedrooms, filters.furnishing, filters.price].some(Boolean) ? "Filters active — tap to edit" : "Search properties"}
           </span>
         </button>
 
@@ -250,11 +261,18 @@ export default function PropertiesClient({ properties }: Props) {
 
               <form onSubmit={(e) => { handleSearch(e); setIsSearchModalOpen(false); }} className="flex flex-col gap-10">
                 <PillSelect
-                  label="Location"
-                  value={filters.location}
-                  options={LOCATIONS}
-                  onChange={(loc) => setFilters({ ...filters, location: loc })}
-                  placeholder="All Dubai"
+                  label="City"
+                  value={filters.city}
+                  options={CITIES}
+                  onChange={(city) => setFilters({ ...filters, city: city, sector: "" })}
+                  placeholder="All Cities"
+                />
+                <PillSelect
+                  label="Sector / Area"
+                  value={filters.sector}
+                  options={filters.city && SECTORS_BY_CITY[filters.city] ? SECTORS_BY_CITY[filters.city] : ["All"]}
+                  onChange={(sector) => setFilters({ ...filters, sector })}
+                  placeholder="All Areas"
                 />
                 <PillSelect
                   label="Property Type"

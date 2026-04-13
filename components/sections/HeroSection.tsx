@@ -9,7 +9,8 @@ import PropertySearchBar from "@/components/search/PropertySearchBar";
 import {
   BEDROOMS,
   FURNISHING,
-  LOCATIONS,
+  CITIES,
+  SECTORS_BY_CITY,
   PROPERTY_TYPES,
   DEFAULT_PROPERTY_FILTERS,
   type SearchTab,
@@ -46,7 +47,8 @@ export default function HeroSection() {
     e.preventDefault();
     const params = new URLSearchParams({
       tab: tab,
-      ...(filters.location && { location: filters.location }),
+      ...(filters.city && { city: filters.city }),
+      ...(filters.sector && { sector: filters.sector }),
       ...(filters.type && { type: filters.type }),
       ...(filters.bedrooms && tab !== "lands" && { bedrooms: filters.bedrooms }),
       ...(filters.furnishing && tab !== "lands" && { furnishing: filters.furnishing }),
@@ -179,11 +181,19 @@ export default function HeroSection() {
 
                 <form onSubmit={handleSearch} className="flex flex-col gap-10">
                   <PillSelect 
-                    label="Location"
-                    value={filters.location}
-                    options={LOCATIONS}
-                    onChange={(loc) => setFilters({ ...filters, location: loc })}
-                    placeholder="All Dubai"
+                    label="City"
+                    value={filters.city}
+                    options={CITIES}
+                    onChange={(city) => setFilters({ ...filters, city: city, sector: "" })}
+                    placeholder="All Cities"
+                  />
+
+                  <PillSelect 
+                    label="Sector / Area"
+                    value={filters.sector}
+                    options={filters.city && SECTORS_BY_CITY[filters.city] ? SECTORS_BY_CITY[filters.city] : ["All"]}
+                    onChange={(sector) => setFilters({ ...filters, sector })}
+                    placeholder="All Areas"
                   />
 
                   <PillSelect 
