@@ -7,6 +7,7 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { CurrencyProvider } from "@/context/CurrencyContext";
+import { Suspense } from "react";
 
 export default function SiteLayout({
   children,
@@ -15,7 +16,9 @@ export default function SiteLayout({
 }) {
   return (
     <CurrencyProvider>
-      <Navbar />
+      <Suspense fallback={<div className="h-[var(--nav-height)] bg-white w-full border-b border-black/6"></div>}>
+        <Navbar />
+      </Suspense>
       <main>{children}</main>
       <Footer />
     </CurrencyProvider>
