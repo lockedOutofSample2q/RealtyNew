@@ -12,7 +12,7 @@ interface Props {
   title: string;
   subtitle: string;
   properties: Property[];
-  type: "sale" | "rent";
+  type: "sale" | "lands" | "properties";
   inverted?: boolean;
 }
 
@@ -47,7 +47,7 @@ export default function PropertiesCarousel({
 }: Props) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const items = properties.length > 0 ? properties : (PLACEHOLDERS as Property[]);
-  const href = type === "rent" ? "/rentals" : "/off-plan";
+  const href = type === "lands" ? "/lands" : "/properties";
 
   function scroll(dir: "left" | "right") {
     if (!scrollRef.current) return;
@@ -71,7 +71,7 @@ export default function PropertiesCarousel({
   };
 
   // --- RENTALS LAYOUT (Image BG Cards, Centered Header) ---
-  if (type === "rent") {
+  if (type === "lands") {
     return (
       <section className="section-padding bg-[#FAFAFA] overflow-hidden">
         <div className="container-site flex flex-col items-center">

@@ -13,8 +13,8 @@ const CURRENCIES: Currency[] = ["AED", "USD", "INR"];
 
 const MENU_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Off Plan", href: "/off-plan" },
-  { label: "Rentals", href: "/rentals" },
+  { label: "Properties", href: "/properties" },
+  { label: "Lands", href: "/lands" },
   { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
@@ -42,7 +42,7 @@ export default function Navbar() {
     setGlobalCurrency(c);
     
     // Sync with URL if on a listing page
-    const isListingPage = ["/properties", "/rentals", "/off-plan"].includes(pathname || "");
+    const isListingPage = ["/properties", "/lands", "/properties"].includes(pathname || "");
     if (isListingPage) {
       const params = new URLSearchParams(searchParams?.toString());
       params.set("currency", c);
@@ -60,10 +60,10 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const isListingPage = ["/properties", "/rentals", "/off-plan"].includes(pathname || "");
+  const isListingPage = ["/properties", "/lands", "/properties"].includes(pathname || "");
   
   // These specific pages have dark hero sections at the top
-  const darkHeaderPages = ["/", "/off-plan", "/rentals", "/properties", "/about", "/contact", "/booking"];
+  const darkHeaderPages = ["/", "/properties", "/lands", "/properties", "/about", "/contact", "/booking"];
   
   // All other pages (like property detail /[slug], /blog, /mortgage-calculator, etc) start with white backgrounds
   const isLightPage = !darkHeaderPages.includes(pathname || "");

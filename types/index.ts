@@ -38,8 +38,8 @@ export interface Property {
   title: string;
   slug: string;
   type: "apartment" | "villa" | "penthouse" | "townhouse" | "studio";
-  status: "available" | "sold" | "rented" | "off-plan";
-  listing_type: "sale" | "rent" | "off-plan";
+  status: "available" | "sold" | "rented" | "properties";
+  listing_type: "sale" | "lands" | "properties";
   price: number;
   price_currency: "AED" | "USD" | "EUR";
   bedrooms: number | null;
@@ -156,7 +156,7 @@ export interface NavItem {
 
 // ── Search Filters ────────────────────────────────────────────
 export interface PropertyFilters {
-  listingType?: "sale" | "rent" | "off-plan";
+  listingType?: "sale" | "lands" | "properties";
   location?: string;
   propertyType?: string;
   bedrooms?: string;

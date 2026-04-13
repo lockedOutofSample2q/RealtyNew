@@ -112,8 +112,8 @@ export default function PropertiesAdmin() {
                   </td>
                   <td className="px-5 py-3">
                     <span className={`font-body text-xs px-2 py-1 capitalize ${
-                      p.listing_type === "off-plan" ? "bg-blue-500/15 text-blue-400" :
-                      p.listing_type === "rent" ? "bg-green-500/15 text-green-400" :
+                      p.listing_type === "properties" ? "bg-blue-500/15 text-blue-400" :
+                      p.listing_type === "lands" ? "bg-green-500/15 text-green-400" :
                       "bg-[rgba(201,168,76,0.15)] text-[var(--gold)]"
                     }`}>
                       {p.listing_type}
@@ -285,8 +285,8 @@ function PropertyFormModal({
             <label className={labelClass}>Listing Type</label>
             <select value={form.listing_type} onChange={(e) => setForm({ ...form, listing_type: e.target.value as any })} className={inputClass}>
               <option value="sale">For Sale</option>
-              <option value="rent">For Rent</option>
-              <option value="off-plan">Off Plan</option>
+              <option value="lands">For Rent</option>
+              <option value="properties">Off Plan</option>
             </select>
           </div>
 
@@ -349,7 +349,7 @@ function PropertyFormModal({
               <option value="available">Available</option>
               <option value="sold">Sold</option>
               <option value="rented">Rented</option>
-              <option value="off-plan">Off Plan</option>
+              <option value="properties">Off Plan</option>
             </select>
           </div>
 

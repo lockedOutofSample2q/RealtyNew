@@ -46,11 +46,11 @@ function normalize(text: string | undefined | null): string {
   return (text ?? "").toLowerCase().replace(/[-\s]+/g, " ").trim();
 }
 
-export default function RentalsClient({ properties }: Props) {
+export default function LandsClient({ properties }: Props) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
-  const [tab, setTab] = useState<SearchTab>("rent");
+  const [tab, setTab] = useState<SearchTab>("lands");
   const [filters, setFilters] = useState<PropertySearchFilters>({
     ...DEFAULT_PROPERTY_FILTERS,
     location: searchParams.get("location") ?? "",
@@ -63,11 +63,11 @@ export default function RentalsClient({ properties }: Props) {
   const [leafletReady, setLeafletReady] = useState(false);
 
   useEffect(() => {
-    setTab("rent");
-    if (searchParams.get("listingType") === "buy") {
-       setTab("buy");
+    setTab("lands");
+    if (searchParams.get("listingType") === "properties") {
+       setTab("properties");
     } else {
-       setTab("rent");
+       setTab("lands");
     }
   }, [searchParams]);
 
@@ -84,8 +84,8 @@ export default function RentalsClient({ properties }: Props) {
 
     return properties.filter((p) => {
       // Must let filter apply if tab state changes
-      if (tab === "rent" && p.listing_type !== "rent") return false;
-      if (tab === "buy" && p.listing_type === "rent") return false;
+      if (tab === "lands" && p.listing_type !== "lands") return false;
+      if (tab === "properties" && p.listing_type === "lands") return false;
 
       if (filters.bedrooms) {
         if (filters.bedrooms === "Studio") {
@@ -135,7 +135,7 @@ export default function RentalsClient({ properties }: Props) {
       ...(filters.currency && { currency: filters.currency }),
     });
 
-    const page = activeTab === "buy" ? "/properties" : "/rentals";
+    const page = activeTab === "properties" ? "/properties" : "/lands";
     router.push(`${page}?${params.toString()}`);
   }
 
@@ -150,7 +150,7 @@ export default function RentalsClient({ properties }: Props) {
       <div className="relative w-full h-[52vh] min-h-[360px] flex flex-col items-center justify-center pt-[var(--nav-height)]">
         <Image
           src="/assets/images/home/about.jpg"
-          alt="Rentals"
+          alt="Lands"
           fill
           className="object-cover"
           priority
@@ -159,7 +159,7 @@ export default function RentalsClient({ properties }: Props) {
 
         <div className="relative z-10 text-center px-4">
           <h1 className="text-white font-semibold text-[clamp(1.8rem,4vw,3rem)] leading-[1.2] tracking-tight max-w-2xl mx-auto mb-3">
-            Check on all rental properties<br />we have available
+            Check on all Landsal properties<br />we have available
           </h1>
           <p className="text-white/60 text-[clamp(13px,1.2vw,15px)] max-w-lg mx-auto">
             Discover exceptional properties across Dubai's most prestigious locations
@@ -214,7 +214,7 @@ export default function RentalsClient({ properties }: Props) {
               </div>
 
               <div className="flex bg-white rounded-2xl p-1 mb-8 shadow-sm">
-                {(["buy", "rent"] as const).map((t) => (
+                {(["properties", "lands"] as const).map((t) => (
                   <button
                     key={t}
                     onClick={() => handleTabChange(t)}
@@ -291,7 +291,7 @@ export default function RentalsClient({ properties }: Props) {
           ))}
           {filtered.length === 0 && (
             <div className="col-span-1 sm:col-span-2 py-24 text-center">
-              <p className="text-black/40 text-sm">No rentals match your filters.</p>
+              <p className="text-black/40 text-sm">No Lands match your filters.</p>
               <button
                 onClick={() => setFilters(DEFAULT_PROPERTY_FILTERS)}
                 className="mt-3 text-sm text-black underline"

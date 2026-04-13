@@ -27,7 +27,7 @@ async function getHomeData() {
           .from("properties")
           .select("*")
           .eq("featured", true)
-          .eq("listing_type", "off-plan")
+          .eq("listing_type", "properties")
           .limit(1)
           .single(),
         supabase
@@ -39,7 +39,7 @@ async function getHomeData() {
         supabase
           .from("properties")
           .select("*")
-          .eq("listing_type", "rent")
+          .eq("listing_type", "lands")
           .order("created_at", { ascending: false })
           .limit(6),
       ]);
@@ -72,7 +72,7 @@ export default async function HomePage() {
         title="Top Picks to Rent"
         subtitle="Curated rentals across Dubai's best communities"
         properties={rentals}
-        type="rent"
+        type="lands"
         inverted
       />
       <ServicesSection />

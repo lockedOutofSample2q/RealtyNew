@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 import { createAdminClient } from "@/lib/supabase";
-import { DEMO_PROPERTIES } from "@/lib/demo-properties";
+
 import { allPosts } from "../.contentlayer/generated";
 import { siteConfig } from "@/config/site";
 import type { Property } from "@/types";
@@ -14,8 +14,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = [
     "",
     "/properties",
-    "/off-plan",
-    "/rentals",
+    
+    "/lands",
     "/about",
     "/blog",
     "/contact",
@@ -34,11 +34,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: route === "" ? 1.0 : 0.8,
   }));
 
-  // 2. Fetch live properties from Supabase + fallback to Demo
-  let properties: Partial<Property>[] = DEMO_PROPERTIES.map(p => ({
-    slug: p.slug,
-    updated_at: p.updated_at || new Date().toISOString()
-  }));
+  // 2. Fetch live properties from Supabase
+  let properties: Partial<Property>[] = [];
 
   try {
     const supabase = createAdminClient();
@@ -47,10 +44,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       .select("slug, updated_at");
       
     if (data && data.length > 0) {
-      // Merge live properties, overriding demos with the same slug if they exist
-      const dataSlugs = new Set((data as any[]).map(p => p.slug));
-      const filteredDemos = properties.filter(p => !dataSlugs.has(p.slug));
-      properties = [...filteredDemos, ...(data as any[])];
+      properties = (data as any[]);
     }
   } catch (error) {
     console.error("Sitemap: Failed to fetch properties from Supabase.", error);

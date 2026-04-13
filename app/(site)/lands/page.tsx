@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { createAdminClient } from "@/lib/supabase";
 import type { Property } from "@/types";
-import { DEMO_PROPERTIES } from "@/lib/demo-properties";
-import RentalsClient from "./RentalsClient";
+
+import LandsClient from "./LandsClient";
 
 export const metadata: Metadata = {
-  title: "Rentals",
-  description: "Furnished and unfurnished rentals across Dubai's best communities.",
+  title: "Lands",
+  description: "Furnished and unfurnished Lands across Dubai's best communities.",
 };
 
 export const revalidate = 60;
@@ -17,17 +17,17 @@ async function getProperties(): Promise<Property[]> {
     const { data } = await supabase
       .from("properties")
       .select("*")
-      .in("listing_type", ["sale", "rent", "off-plan"])
+      .in("listing_type", ["sale", "lands", "off-plan"])
       .order("featured", { ascending: false })
       .order("created_at", { ascending: false });
     const live = (data ?? []) as Property[];
-    return live.length > 0 ? live : DEMO_PROPERTIES;
+    return live.length > 0 ? live : [];
   } catch {
-    return DEMO_PROPERTIES;
+    return [];
   }
 }
 
-export default async function RentalsPage() {
+export default async function LandsPage() {
   const properties = await getProperties();
-  return <RentalsClient properties={properties} />;
+  return <LandsClient properties={properties} />;
 }

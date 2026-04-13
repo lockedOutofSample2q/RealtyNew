@@ -16,7 +16,7 @@ interface PropertyCardProps {
 export default function PropertyCard({ property, className, variant = "standard" }: PropertyCardProps) {
   const { formatPrice } = useCurrency();
   const image = property.images?.[0] ?? "/assets/images/home/about.jpg";
-  const isRent = property.listing_type === "rent";
+  const isLands = property.listing_type === "lands";
   if (variant === "image-bg") {
     return (
       <Link
@@ -39,7 +39,7 @@ export default function PropertyCard({ property, className, variant = "standard"
         <div className="absolute top-5 left-5 right-5 flex justify-between items-start">
           <div className="bg-white/20 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-full">
             <span className="font-body text-[10px] uppercase tracking-widest text-white font-bold">
-              {isRent ? "For Rent" : "For Sale"}
+              {isLands ? "For Rent" : "For Sale"}
             </span>
           </div>
 
@@ -66,7 +66,7 @@ export default function PropertyCard({ property, className, variant = "standard"
               {property.price > 0 ? (
                 <>
                   {formatPrice(property.price)}
-                  {isRent && <span className="font-body text-[11px] text-white/70 ml-1">/yr</span>}
+                  {isLands && <span className="font-body text-[11px] text-white/70 ml-1">/yr</span>}
                 </>
               ) : (
                 <span className="text-sm text-white/60 italic font-normal">Price on request</span>
@@ -101,7 +101,7 @@ export default function PropertyCard({ property, className, variant = "standard"
         />
         <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full shadow-lg">
           <span className="font-body text-[10px] uppercase tracking-widest text-black font-bold">
-            {isRent ? "Rent" : "Buy"}
+            {isLands ? "Rent" : "Buy"}
           </span>
         </div>
       </div>
@@ -138,7 +138,7 @@ export default function PropertyCard({ property, className, variant = "standard"
         <div className="flex items-center justify-between pt-5 border-t border-black/5">
           <div className="font-display text-[22px] text-black font-medium tracking-tight">
             {formatPrice(property.price)}
-            {isRent && <span className="font-body text-sm text-gray-500 font-normal ml-1">/yr</span>}
+            {isLands && <span className="font-body text-sm text-gray-500 font-normal ml-1">/yr</span>}
           </div>
           <div className="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-black group-hover:text-white transition-all duration-300 shrink-0 shadow-sm">
             <ArrowRight size={16} className="group-hover:-rotate-45 transition-transform duration-300" />

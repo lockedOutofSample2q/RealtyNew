@@ -1,5 +1,5 @@
 import { createAdminClient } from "@/lib/supabase";
-import { DEMO_PROPERTIES } from "@/lib/demo-properties";
+
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -25,7 +25,7 @@ interface Props { params: { slug: string } }
 
 async function getProperty(slug: string): Promise<Property | null> {
   // Check demo first (so page works without Supabase)
-  const demo = DEMO_PROPERTIES.find((p) => p.slug === slug);
+  const demo = undefined;
   if (demo) return demo;
   try {
     const supabase = createAdminClient();
@@ -91,11 +91,11 @@ export default async function PropertyDetailPage({ params }: Props) {
   const property = await getProperty(params.slug);
   if (!property) notFound();
 
-  const backHref = property.listing_type === "rent" ? "/rentals" : "/off-plan";
-  const backLabel = property.listing_type === "rent" ? "Rentals" : "Off Plan";
+  const backHref = property.listing_type === "lands" ? "/lands" : "/properties";
+  const backLabel = property.listing_type === "lands" ? "Lands" : "Properties";
   const listingLabel =
-    property.listing_type === "off-plan" ? "Off Plan For Sale" :
-    property.listing_type === "rent" ? "For Rent" : "For Sale";
+    property.listing_type === "properties" ? "Properties For Sale" :
+    property.listing_type === "lands" ? "Lands For Sale" : "For Sale";
 
   const bedroomsDisplay =
     property.bedrooms_max && property.bedrooms_max !== property.bedrooms
