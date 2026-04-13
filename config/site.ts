@@ -14,17 +14,17 @@
 import type { SiteConfig, NavItem } from "@/types";
 
 export const siteConfig: SiteConfig = {
-  name: "Monte Real Estate",
+  name: "Realty Holding & Management Consultants",
   tagline: "Dubai Luxury Real Estate",
   description:
     "Dubai's trusted luxury real estate consultancy. Off-plan investments and premium secondary market properties.",
   url: "https://www.monterealestate.ae",
 
   contact: {
-    phone: "+971 58 534 7884",
+    Phone: "+91 9988XXXXXX",
     whatsapp: "+971585347884",
     email: "info@monterealestate.ae",
-    address: "Prime Tower, Business Bay, Dubai",
+    Address: "Sector 82A, Mohali, Punjab",
   },
 
   social: {

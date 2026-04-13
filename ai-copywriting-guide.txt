@@ -1,0 +1,184 @@
+=============================================================================
+MONTE REAL ESTATE - AI COPYWRITING & CONTENT STRUCTURE GUIDE
+=============================================================================
+
+[SYSTEM INSTRUCTION FOR AI COPYWRITER]
+You are an expert real estate copywriter. Your task is to rewrite, expand, and polish the content for "Monte Real Estate", an agency operating in Dubai and the UAE. 
+The brand voice should be: Professional, Luxurious, Trustworthy, Methodical, and Authoritative.
+
+Below is the exhaustive, section-by-section breakdown of every page on the Next.js website. Each section lists the current placeholder headings (H1/H2), paragraphs, and Buttons/CTAs. 
+Please generate high-converting, SEO-optimized copy for every text element listed below.
+
+=============================================================================
+1. GLOBAL ELEMENTS (Appears on all pages)
+=============================================================================
+
+1.1 GLOBAL HEADER (Navbar)
+- Brand Name: Monte Real Estate
+- Links to write short metadata/tooltips for (optional): Home, Properties, Lands, Blog, About, Contact.
+- Primary CTA Button: "Book a Consultation" (Keep short and actionable)
+
+1.2 GLOBAL FOOTER
+- Brand Tagline: "Exceptional properties, unparalleled service." -> [AI INSTRUCTION: Provide 3-4 alternative luxury taglines]
+- Company Description snippet (under logo): [AI INSTRUCTION: Write a 2-sentence summary of the agency's mission]
+- Quick Links labels: Properties, Lands, List Your Property, Mortgage Calculator, Book Consultation, Relocation, Blog.
+- Contact Info: +971 58 534 7884 | info@monterealestate.ae | Prime Tower, Business Bay, Dubai.
+
+
+=============================================================================
+2. PAGE-BY-PAGE CONTENT BREAKDOWN
+=============================================================================
+
+-----------------------------------------------------------------------------
+PAGE 1: HOME PAGE (/)
+-----------------------------------------------------------------------------
+Module 1: Hero Section
+- Current H1: "Discover Your Perfect Property Today"
+- Current Paragraph: "Real estate properties for sale and rent across Dubai & UAE"
+- CTA Button: "Search properties"
+- [AI INSTRUCTION: Write a high-impact luxury H1 and a compelling sub-headline that emphasizes exclusive UAE properties.]
+
+Module 2: About/Trust Snippet
+- Current H2: "We're your trusted partner in real estate."
+- Current Paragraph: "From finding your dream home in Dubai to selling your property at the right price, we're here to guide you every step of the way."
+- Stats to mention: 10+ Years in Dubai, 850+ Properties Sold, AED 3.5B+ In Transactions, 4.9★ Client Rating.
+- [AI INSTRUCTION: Rewrite to emphasize methodical approach and market authority.]
+
+Module 3: Featured Properties (Sale/Properties)
+- Current H2: "Fresh Opportunities"
+- Current Paragraph: "Latest properties and exclusive listings."
+- CTA Button: "View all Properties"
+
+Module 4: Featured Lands (Lands/Rentals)
+- Current H2: "Top Picks for Lands"
+- Current Paragraph: "Curated land listings across the best communities."
+- CTA Button: "View all Lands"
+
+Module 5: Core Services Scope
+- Service 1 Title & Desc: "Real Estate Sales" - [AI INSTRUCTION: Write 2 sentences]
+- Service 2 Title & Desc: "Property Rentals & Lands" - [AI INSTRUCTION: Write 2 sentences]
+- Service 3 Title & Desc: "Interior Design & Setup" - [AI INSTRUCTION: Write 2 sentences]
+
+Module 6: FAQ Section
+- [AI INSTRUCTION: Write short, authoritative questions replacing the following 4 questions]
+  1. Can foreigners buy property in Dubai?
+  2. How does buying off-plan work?
+  3. What are the requirements for a UAE Golden Visa?
+  4. What ROI can I expect from Dubai real estate?
+
+Module 7: Hero Contact (Bottom page CTA)
+- Current H2: "Ready to make a move?"
+- Paragraph: [AI INSTRUCTION: Write a 1-sentence push to contact the team]
+- CTA Button: "Get in Touch"
+
+
+-----------------------------------------------------------------------------
+PAGE 2: PROPERTIES (Off-plan & Sale) (/properties)
+-----------------------------------------------------------------------------
+Module 1: Directory Header
+- Current H1: "Properties available"
+- Current Sub-text: "Filter and find your perfect home or investment."
+- [AI INSTRUCTION: Write a strong, SEO-friendly H1 and 2-sentence intro about buying property in Dubai.]
+
+
+-----------------------------------------------------------------------------
+PAGE 3: LANDS (Rentals/Plots) (/lands)
+-----------------------------------------------------------------------------
+Module 1: Directory Header
+- Current H1: "Lands available"
+- Current Sub-text: "Discover exceptional plots and lands across prestigious locations."
+- [AI INSTRUCTION: Write a professional H1 and intro text specifically for land acquisition and premium plots.]
+
+
+-----------------------------------------------------------------------------
+PAGE 4: ABOUT EXCLUSIVE (/about)
+-----------------------------------------------------------------------------
+Module 1: Hero
+- Current H1: "Redefining Dubai Real Estate."
+- [AI INSTRUCTION: Rewrite H1]
+
+Module 2: Our Philosophy & History
+- Current H2: "Our Methodical Approach"
+- Current Body: [AI INSTRUCTION: Write a 3-paragraph compelling story about how Monte Real Estate started in 2014, focusing on architectural excellence, transparency, and a data-driven "methodical approach" to the Dubai market.]
+
+Module 3: Our Process
+- Step 1: Consultation - [AI INSTRUCTION: write short desc]
+- Step 2: Market Analysis - [AI INSTRUCTION: write short desc]
+- Step 3: Acquisition & Handover - [AI INSTRUCTION: write short desc]
+
+Module 4: Leadership
+- Heading: "Meet the Leadership"
+- [AI INSTRUCTION: Write a 2-sentence highly professional quote from the CEO/Founder regarding trust and market evolution.]
+
+
+-----------------------------------------------------------------------------
+PAGE 5: CONTACT US (/contact)
+-----------------------------------------------------------------------------
+Module 1: Header
+- Label: "Contact Us"
+- Current H1: "Get in touch with our expert team"
+- Current Paragraph: "Whether you're looking to buy, sell, or rent - we're here to guide you every step of the way."
+- [AI INSTRUCTION: Refine for luxury and responsiveness.]
+
+Module 2: Form Interface
+- H2: "Send us a message"
+- Button: "Submit Inquiry"
+
+
+-----------------------------------------------------------------------------
+PAGE 6: BLOG / INSIGHTS (/blog)
+-----------------------------------------------------------------------------
+Module 1: Header
+- Label: "BLOG"
+- Current H1: "Latest News & Insights"
+- Current Paragraph: "Stay informed about Dubai's real estate market and investment tips."
+- [AI INSTRUCTION: Enhance text to sound like an authoritative market intelligence hub.]
+
+
+-----------------------------------------------------------------------------
+PAGE 7: MORTGAGE CALCULATOR (/mortgage-calculator)
+-----------------------------------------------------------------------------
+Module 1: Header
+- Current H1: "Mortgage Calculator"
+- Current Paragraph: "Estimate your monthly mortgage payments with our calculator. Adjust the property price, down payment, interest rate, and term to see how they impact your cost."
+- [AI INSTRUCTION: Rewrite to be more engaging, mentioning UAE market rates and ease of use.]
+
+
+-----------------------------------------------------------------------------
+PAGE 8: LIST YOUR PROPERTY (/list-your-property)
+-----------------------------------------------------------------------------
+Module 1: Header & Value Proposition
+- Current H1: "Sell or Rent Your Property With Us"
+- Current Paragraph: [AI INSTRUCTION: Write a compelling 2-paragraph pitch on why sellers/landlords should choose Monte. Mention targeted marketing, high-net-worth client base, and seamless processing.]
+- Bullet points to write:
+  1. Global Reach [add short desc]
+  2. Professional Valuation [add short desc]
+  3. Premium Marketing (Photography/Video) [add short desc]
+
+
+-----------------------------------------------------------------------------
+PAGE 9: RELOCATION SERVICES (/relocation)
+-----------------------------------------------------------------------------
+Module 1: Header
+- Current H1: "Seamless Relocation to Dubai"
+- Current Paragraph: [AI INSTRUCTION: Write a welcoming 2-sentence intro for expats looking to move to Dubai.]
+
+Module 2: Services Overview
+- Service 1: Visa & Golden Visa Assistance [add short desc]
+- Service 2: Bank Account & Corporate Setup [add short desc]
+- Service 3: School & Community Tours [add short desc]
+- CTA Button: "Get Your Relocation Pack"
+
+
+-----------------------------------------------------------------------------
+PAGE 10: BOOK A CONSULTATION (/booking)
+-----------------------------------------------------------------------------
+Module 1: Header
+- Current H1: "Schedule a 10-Minute Intro Call"
+- Current Paragraph: [AI INSTRUCTION: Write a 2-sentence explanation of what the user will get out of this quick call (e.g., market clarity, investment roadmap).]
+
+
+=============================================================================
+FINAL INSTRUCTIONS FOR THE AI COPYWRITER
+=============================================================================
+Output your results clearly formatted. Use markdown headers matching the pages above. Provide multiple options (A/B) for major H1s and Hero paragraphs. Ensure all copy aligns with a high-end Dubai real estate agency tone.

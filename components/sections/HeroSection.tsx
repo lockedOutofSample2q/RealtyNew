@@ -95,7 +95,7 @@ export default function HeroSection() {
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="font-display font-medium text-white mb-5 text-5xl md:text-7xl lg:text-[80px] tracking-tight leading-[1.05] text-center"
         >
-          Discover Your Perfect<br />Property Today
+          Most brokers sell you a property.<br />We protect you from the wrong one.
         </motion.h1>
 
         {/* Subline */}
@@ -105,7 +105,7 @@ export default function HeroSection() {
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           className="font-body text-white/85 text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed font-light text-center"
         >
-          Real estate properties for sale and rent across Dubai &amp; UAE
+          Independent property advisory across Mohali, Chandigarh, and Punjab, for buyers, investors, land sellers, and NRIs who want clarity before they commit.
         </motion.p>
 
         {/* ── Search Widget (Desktop & Mobile) ── */}
