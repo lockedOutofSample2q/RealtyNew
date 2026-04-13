@@ -23,10 +23,10 @@ const MENU_LINKS = [
 const MENU_TOP_POSITIONS = ["18vh", "27vh", "36vh", "45vh", "54vh", "63vh"];
 
 const UTILITY_LINKS = [
-  { label: "Relocation", href: "/contact" },
+  { label: "Relocation", href: "/relocation" },
   { label: "Mortgage Calculator", href: "/mortgage-calculator" },
   { label: "Book a Consultation", href: "/booking" },
-  { label: "List Property", href: "/contact" },
+  { label: "List Property", href: "/list-your-property" },
 ];
 
 export default function Navbar() {

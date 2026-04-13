@@ -138,7 +138,7 @@ export default function PropertiesClient({ properties }: Props) {
       ...(filters.currency && { currency: filters.currency }),
     });
 
-    const page = activeTab === "lands" ? "/rentals" : "/off-plan";
+    const page = activeTab === "lands" ? "/lands" : "/properties";
     router.push(`${page}?${params.toString()}`);
   }
 

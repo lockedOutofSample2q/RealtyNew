@@ -39,8 +39,8 @@ export const siteConfig: SiteConfig = {
 // EDIT: Add, remove, or reorder nav items here.
 export const navItems: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "Off Plan", href: "/off-plan" },
-  { label: "Rentals", href: "/rentals" },
+  { label: "Properties", href: "/properties" },
+  { label: "Lands", href: "/lands" },
   { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
@@ -49,9 +49,9 @@ export const navItems: NavItem[] = [
 // ── Footer Links ─────────────────────────────────────────────
 export const footerLinks = {
   quick: [
-    { label: "Off Plan Properties", href: "/off-plan" },
-    { label: "Rentals", href: "/rentals" },
-    { label: "List Your Property", href: "/list-property" },
+    { label: "Properties", href: "/properties" },
+    { label: "Lands", href: "/lands" },
+    { label: "List Your Property", href: "/list-your-property" },
     { label: "Mortgage Calculator", href: "/mortgage-calculator" },
     { label: "Book a Consultation", href: "/booking" },
     { label: "Relocation Services", href: "/relocation" },
