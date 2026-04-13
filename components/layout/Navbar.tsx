@@ -61,15 +61,12 @@ export default function Navbar() {
   }, []);
 
   const isListingPage = ["/properties", "/rentals", "/off-plan"].includes(pathname || "");
-  const isDetailPage = 
-    (pathname?.startsWith("/properties/") && pathname !== "/properties") ||
-    (pathname?.startsWith("/rentals/") && pathname !== "/rentals") ||
-    (pathname?.startsWith("/off-plan/") && pathname !== "/off-plan");
-
-  const isLightPage = 
-    pathname?.startsWith("/blog") || 
-    pathname?.startsWith("/mortgage-calculator") ||
-    isDetailPage;
+  
+  // These specific pages have dark hero sections at the top
+  const darkHeaderPages = ["/", "/off-plan", "/rentals", "/properties", "/about", "/contact", "/booking"];
+  
+  // All other pages (like property detail /[slug], /blog, /mortgage-calculator, etc) start with white backgrounds
+  const isLightPage = !darkHeaderPages.includes(pathname || "");
 
   const useDarkText = isLightPage && !isOpen;
 
