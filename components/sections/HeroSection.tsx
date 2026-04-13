@@ -5,6 +5,7 @@ import { Search, X } from "lucide-react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import PillSelect from "@/components/ui/PillSelect";
+import PillMultiSelect from "@/components/ui/PillMultiSelect";
 import PropertySearchBar from "@/components/search/PropertySearchBar";
 import {
   BEDROOMS,
@@ -45,16 +46,21 @@ export default function HeroSection() {
 
   function handleSearch(e: React.FormEvent) {
     e.preventDefault();
-    const params = new URLSearchParams({
-      tab: tab,
-      ...(filters.city && { city: filters.city }),
-      ...(filters.sector && { sector: filters.sector }),
-      ...(filters.type && { type: filters.type }),
-      ...(filters.bedrooms && tab !== "lands" && { bedrooms: filters.bedrooms }),
-      ...(filters.furnishing && tab !== "lands" && { furnishing: filters.furnishing }),
-      ...(filters.price && { price: filters.price }),
-      ...(filters.currency && { currency: filters.currency }),
-    });
+    const params = new URLSearchParams();
+    params.set("tab", tab);
+    if (filters.city) params.set("city", filters.city);
+    if (filters.sector && filters.sector.length > 0) {
+      if (typeof filters.sector === "string") {
+        params.append("sector", filters.sector);
+      } else {
+        filters.sector.forEach(s => params.append("sector", s));
+      }
+    }
+    if (filters.type) params.set("type", filters.type);
+    if (filters.bedrooms && tab !== "lands") params.set("bedrooms", filters.bedrooms);
+    if (filters.furnishing && tab !== "lands") params.set("furnishing", filters.furnishing);
+    if (filters.price) params.set("price", filters.price);
+    if (filters.currency) params.set("currency", filters.currency);
     setIsSearchModalOpen(false);
     router.push(`/properties?${params.toString()}`);
   }
@@ -184,14 +190,14 @@ export default function HeroSection() {
                     label="City"
                     value={filters.city}
                     options={CITIES}
-                    onChange={(city) => setFilters({ ...filters, city: city, sector: "" })}
+                    onChange={(city) => setFilters({ ...filters, city: city, sector: [] })}
                     placeholder="All Cities"
                   />
 
-                  <PillSelect 
-                    label="Sector / Area"
-                    value={filters.sector}
-                    options={filters.city && SECTORS_BY_CITY[filters.city] ? SECTORS_BY_CITY[filters.city] : ["All"]}
+                  <PillMultiSelect
+                  label="Sector / Area"
+                  value={filters.sector}
+                  options={filters.city && SECTORS_BY_CITY[filters.city] ? SECTORS_BY_CITY[filters.city] : ["All"]}
                     onChange={(sector) => setFilters({ ...filters, sector })}
                     placeholder="All Areas"
                   />

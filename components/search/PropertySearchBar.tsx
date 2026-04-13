@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Search } from "lucide-react";
 import CustomSelect from "@/components/ui/CustomSelect";
+import MultiSelect from "@/components/ui/MultiSelect";
 import {
   BEDROOMS,
   FURNISHING,
@@ -68,11 +69,11 @@ export default function PropertySearchBar({
           label="City"
           value={filters.city}
           options={CITIES}
-          onChange={(city) => setFilters({ ...filters, city, sector: "" })}
+          onChange={(city) => setFilters({ ...filters, city, sector: [] })}
           placeholder="All"
         />
 
-        <CustomSelect
+        <MultiSelect
           label="Sector / Area"
           value={filters.sector}
           options={filters.city && SECTORS_BY_CITY[filters.city] ? SECTORS_BY_CITY[filters.city] : ["All"]}

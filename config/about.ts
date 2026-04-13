@@ -25,8 +25,8 @@ export const aboutHeroPanels = [
 
 // ── Leadership ───────────────────────────────────────────────
 export const leadership = {
-  name: "Armina Crnovrsanin",
-  title: "CEO, Monte Real Estate",
+  name: "Amritpal Singh",
+  title: "MD, Realty Holding and Management Consultants",
   // Path relative to /public
   image: "/assets/images/about/ceo.png",
   // Section eyebrow label (small uppercase text above the name)

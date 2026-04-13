@@ -204,8 +204,8 @@ export const faqs = [
 
 // ── SEO Defaults ─────────────────────────────────────────────
 export const seoDefaults = {
-  titleTemplate: "%s | Monte Real Estate",
-  defaultTitle: "Dubai Luxury Real Estate | Off-Plan Properties & Investments | Monte Real Estate",
+  titleTemplate: "%s | Realty Holding and Management Consultants",
+  defaultTitle: "Mohali Real Estate | Off-Market Properties & Investments | Realty Holding and Management Consultants",
   description: siteConfig.description,
   openGraph: {
     type: "website",
@@ -217,7 +217,7 @@ export const seoDefaults = {
         url: `${siteConfig.url}/images/og-default.jpg`,
         width: 1200,
         height: 630,
-        alt: "Monte Real Estate - Dubai Luxury Properties",
+        alt: "Realty Holding and Management Consultants, Mohali",
       },
     ],
   },

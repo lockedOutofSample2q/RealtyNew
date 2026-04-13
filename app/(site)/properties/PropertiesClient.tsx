@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import type { Property } from "@/types";
 import PropertySearchBar from "@/components/search/PropertySearchBar";
 import PillSelect from "@/components/ui/PillSelect";
+import PillMultiSelect from "@/components/ui/PillMultiSelect";
 import PropertyCard from "@/components/ui/PropertyCard";
 import { useCurrency } from "@/context/CurrencyContext";
 import {
@@ -59,7 +60,7 @@ export default function PropertiesClient({ properties }: Props) {
   const [filters, setFilters] = useState<PropertySearchFilters>({
     ...DEFAULT_PROPERTY_FILTERS,
     city: searchParams.get("city") ?? "",
-    sector: searchParams.get("sector") ?? "",
+    sector: searchParams.getAll("sector") || [],
     type: searchParams.get("type") ?? "",
     bedrooms: searchParams.get("bedrooms") ?? "",
     furnishing: searchParams.get("furnishing") ?? "",
@@ -73,7 +74,7 @@ export default function PropertiesClient({ properties }: Props) {
     setFilters({
       ...DEFAULT_PROPERTY_FILTERS,
       city: searchParams.get("city") ?? "",
-      sector: searchParams.get("sector") ?? "",
+      sector: searchParams.getAll("sector") || [],
       type: searchParams.get("type") ?? "",
       bedrooms: searchParams.get("bedrooms") ?? "",
       furnishing: searchParams.get("furnishing") ?? "",
@@ -92,7 +93,7 @@ export default function PropertiesClient({ properties }: Props) {
     const maxPrice = parseMaxPrice(filters.price);
     const desiredType = normalize(filters.type);
     const desiredCity = normalize(filters.city);
-    const desiredSector = normalize(filters.sector);
+    const desiredSector = filters.sector;
     const desiredFurnishing = normalize(filters.furnishing);
 
     return properties.filter((p) => {
@@ -131,10 +132,12 @@ export default function PropertiesClient({ properties }: Props) {
         if (!inLocation && !inCommunity) return false;
       }
 
-      if (desiredSector && desiredSector !== "all") {
-        const inLocation = normalize(p.location).includes(desiredSector);
-        const inCommunity = normalize(p.community).includes(desiredSector);
-        if (!inLocation && !inCommunity) return false;
+      if (desiredSector && desiredSector.length > 0 && !desiredSector.includes("All") && !desiredSector.includes("all")) {
+        const inSector = desiredSector.some(sec => {
+          const normSec = normalize(sec);
+          return normalize(p.location).includes(normSec) || normalize(p.community).includes(normSec);
+        });
+        if (!inSector) return false;
       }
 
       if (desiredFurnishing && desiredFurnishing !== "all furnishings") {
@@ -152,16 +155,21 @@ export default function PropertiesClient({ properties }: Props) {
     if (e) e.preventDefault();
     const activeTab = forcedTab || tab;
 
-    const params = new URLSearchParams({
-      tab: activeTab,
-      ...(filters.city && { city: filters.city }),
-      ...(filters.sector && { sector: filters.sector }),
-      ...(filters.type && { type: filters.type }),
-      ...(filters.bedrooms && tab !== "lands" && { bedrooms: filters.bedrooms }),
-      ...(filters.furnishing && tab !== "lands" && { furnishing: filters.furnishing }),
-      ...(filters.price && { price: filters.price }),
-      ...(filters.currency && { currency: filters.currency }),
-    });
+    const params = new URLSearchParams();
+    params.set("tab", activeTab);
+    if (filters.city) params.set("city", filters.city);
+    if (filters.sector && filters.sector.length > 0) {
+      if (typeof filters.sector === "string") {
+        params.append("sector", filters.sector);
+      } else {
+        filters.sector.forEach(s => params.append("sector", s));
+      }
+    }
+    if (filters.type) params.set("type", filters.type);
+    if (filters.bedrooms && tab !== "lands") params.set("bedrooms", filters.bedrooms);
+    if (filters.furnishing && tab !== "lands") params.set("furnishing", filters.furnishing);
+    if (filters.price) params.set("price", filters.price);
+    if (filters.currency) params.set("currency", filters.currency);
 
     router.push(`/properties?${params.toString()}`);
   }
@@ -202,7 +210,7 @@ export default function PropertiesClient({ properties }: Props) {
         >
           <Search size={20} className="text-black/50 shrink-0" />
           <span className="flex-1 text-left text-[15px]">
-            {[filters.city, filters.sector, filters.type, filters.bedrooms, filters.furnishing, filters.price].some(Boolean) ? "Filters active — tap to edit" : "Search properties"}
+            {[filters.city, ...(Array.isArray(filters.sector) ? filters.sector : []), filters.type, filters.bedrooms, filters.furnishing, filters.price].some(Boolean) ? "Filters active — tap to edit" : "Search properties"}
           </span>
         </button>
 
@@ -264,10 +272,10 @@ export default function PropertiesClient({ properties }: Props) {
                   label="City"
                   value={filters.city}
                   options={CITIES}
-                  onChange={(city) => setFilters({ ...filters, city: city, sector: "" })}
+                  onChange={(city) => setFilters({ ...filters, city: city, sector: [] })}
                   placeholder="All Cities"
                 />
-                <PillSelect
+                <PillMultiSelect
                   label="Sector / Area"
                   value={filters.sector}
                   options={filters.city && SECTORS_BY_CITY[filters.city] ? SECTORS_BY_CITY[filters.city] : ["All"]}
