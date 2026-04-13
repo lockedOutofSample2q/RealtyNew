@@ -54,6 +54,7 @@ export interface Property {
   description: string;
   features: string[];
   images: string[];
+  featured_sections?: string[];
   image_count?: number;
   videos?: string[];
   featured: boolean;

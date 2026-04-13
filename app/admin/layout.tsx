@@ -15,6 +15,7 @@ import {
   Users,
   FileText,
   Settings,
+  Star,
   LogOut,
   Menu,
   X,
@@ -29,6 +30,7 @@ const NAV = [
   { label: "Properties", href: "/admin/properties", icon: Building2 },
   { label: "Leads", href: "/admin/leads", icon: Users },
   { label: "Blog Posts", href: "/admin/blog-posts", icon: FileText },
+  { label: "Placements", href: "/admin/featured", icon: Star },
   { label: "Settings", href: "/admin/settings", icon: Settings },
 ];
 

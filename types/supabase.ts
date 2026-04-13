@@ -37,6 +37,7 @@ export interface Database {
           description: string;
           features: string[];
           images: string[];
+            featured_sections?: string[];
           featured: boolean;
           created_at: string;
           updated_at: string;
@@ -59,6 +60,7 @@ export interface Database {
           description: string;
           features: string[];
           images: string[];
+            featured_sections?: string[];
           featured: boolean;
         };
         Update: {

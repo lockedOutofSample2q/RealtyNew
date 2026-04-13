@@ -26,20 +26,19 @@ async function getHomeData() {
         supabase
           .from("properties")
           .select("*")
-          .eq("featured", true)
-          .eq("listing_type", "properties")
+          .or('featured_sections.cs.{"home_hero"},and(featured.eq.true,listing_type.eq.properties)')
           .limit(1)
           .single(),
         supabase
           .from("properties")
           .select("*")
-          .eq("listing_type", "sale")
+          .or('featured_sections.cs.{"home_latest"},listing_type.eq.sale')
           .order("created_at", { ascending: false })
           .limit(6),
         supabase
           .from("properties")
           .select("*")
-          .eq("listing_type", "lands")
+          .or('featured_sections.cs.{"home_lands"},listing_type.eq.lands')
           .order("created_at", { ascending: false })
           .limit(6),
       ]);
