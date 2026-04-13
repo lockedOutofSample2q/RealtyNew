@@ -60,7 +60,17 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const isLightPage = pathname?.startsWith("/blog") || pathname?.startsWith("/mortgage-calculator");
+  const isListingPage = ["/properties", "/rentals", "/off-plan"].includes(pathname || "");
+  const isDetailPage = 
+    (pathname?.startsWith("/properties/") && pathname !== "/properties") ||
+    (pathname?.startsWith("/rentals/") && pathname !== "/rentals") ||
+    (pathname?.startsWith("/off-plan/") && pathname !== "/off-plan");
+
+  const isLightPage = 
+    pathname?.startsWith("/blog") || 
+    pathname?.startsWith("/mortgage-calculator") ||
+    isDetailPage;
+
   const useDarkText = isLightPage && !isOpen;
 
   // Prevent scrolling when menu is open
