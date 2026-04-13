@@ -29,7 +29,7 @@ export default function PropertyDetailMap({
 
   return (
     <MapContainer
-      center={[lat, lng]}
+      center={[30.7118, 76.6896]}
       zoom={14}
       style={{ width: "100%", height: "100%" }}
       zoomControl={true}
@@ -39,8 +39,8 @@ export default function PropertyDetailMap({
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={[lat, lng]} icon={PIN}>
-        <Popup>{title}</Popup>
+      <Marker position={[30.7118, 76.6896]} icon={PIN}>
+        <Popup>{title} - E328 Industrial area phase 8A, Mohali</Popup>
       </Marker>
     </MapContainer>
   );

@@ -4,8 +4,8 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
-// Prime Tower, Business Bay
-const position: [number, number] = [25.1866, 55.2635];
+// E328 Industrial area phase 8A, Mohali
+const position: [number, number] = [30.7118, 76.6896];
 
 const CustomIcon = L.divIcon({
   className: "bg-transparent border-none",
@@ -30,8 +30,8 @@ export default function ContactMap() {
         />
         <Marker position={position} icon={CustomIcon}>
           <Popup>
-            <div className="font-body text-sm font-semibold">Monte Real Estate</div>
-            <div className="font-body text-xs text-black/60">Prime Tower, Business Bay</div>
+            <div className="font-body text-sm font-semibold">Realty Holding & Management Consultants</div>
+            <div className="font-body text-xs text-black/60">E328 Industrial area phase 8A, Mohali</div>
           </Popup>
         </Marker>
       </MapContainer>
