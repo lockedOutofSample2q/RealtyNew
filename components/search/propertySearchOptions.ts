@@ -1,14 +1,14 @@
 export const LOCATIONS = [
   "All",
-  "Downtown Dubai",
-  "Dubai Marina",
-  "Palm Jumeirah",
-  "Business Bay",
-  "JVC",
-  "DIFC",
-  "Dubai Hills",
-  "Creek Harbour",
-  "Emaar Beachfront",
+  "E328 Industrial area phase 8A",
+  "Sector 82A",
+  "Airport Road",
+  "Rajpura",
+  "Kharar",
+  "Zirakpur",
+  "New Chandigarh",
+  "Sector 82",
+  "Sector 66"
 ];
 
 export const PROPERTY_TYPES = [
