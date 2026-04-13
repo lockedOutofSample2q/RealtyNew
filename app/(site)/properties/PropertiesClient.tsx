@@ -164,10 +164,10 @@ export default function PropertiesClient({ properties }: Props) {
         {/* Text */}
         <div className="relative z-10 text-center px-4">
           <h1 className="text-white font-semibold text-[clamp(1.8rem,4vw,3rem)] leading-[1.2] tracking-tight max-w-2xl mx-auto mb-3">
-            Check on all Properties<br />properties we have available
+            Properties in Mohali and Tricity: Verified, Evaluated, Honestly Presented
           </h1>
           <p className="text-white/60 text-[clamp(13px,1.2vw,15px)] max-w-lg mx-auto">
-            Filter and find your perfect home in the United Arab Emirates
+            Every listing here has been evaluated for RERA compliance, developer track record, and current market value against comparable transactions. If a property is on this page, it is because the numbers support it. Not because a developer is paying for placement.
           </p>
         </div>
 

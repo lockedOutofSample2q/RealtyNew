@@ -5,23 +5,18 @@ import { motion } from "framer-motion";
 const PROCESS = [
   {
     num: "01",
-    title: "Insight & Analysis",
-    text: "Deep market analysis and understanding of your unique requirements to identify perfect opportunities."
+    title: "Consultation",
+    text: "A direct conversation about your situation, your goals, and your concerns. Not a sales meeting. No property is recommended in this conversation. Only questions are asked and answered. The consultation is free."
   },
   {
     num: "02",
-    title: "Meticulous Planning",
-    text: "Strategic planning tailored to your goals, timeline, and investment objectives."
+    title: "Evaluation",
+    text: "Independent assessment of any property or land you are considering: RERA verification, developer track record, title clarity, payment plan structure, hidden cost calculation, and exit liquidity. This is the step most buyers skip. It is the step that protects them."
   },
   {
     num: "03",
-    title: "Tailored Solutions",
-    text: "Customized property solutions that align perfectly with your vision and lifestyle."
-  },
-  {
-    num: "04",
-    title: "Quality Execution",
-    text: "Seamless execution with attention to every detail, ensuring a smooth transition experience."
+    title: "Advisory and Follow-Through",
+    text: "A clear recommendation, whether to buy, wait, or avoid, with the reasoning behind it. If the recommendation is to proceed, the support continues through documentation, registration, mutation, and any post-possession issues that arise. The transaction does not end at the registry."
   }
 ];
 

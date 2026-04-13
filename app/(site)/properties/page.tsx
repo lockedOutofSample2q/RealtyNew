@@ -5,8 +5,8 @@ import type { Property } from "@/types";
 import PropertiesClient from "./PropertiesClient";
 
 export const metadata: Metadata = {
-  title: "Properties Properties",
-  description: "Browse Dubai's best off-plan developments. Flexible payment plans, Golden Visa-eligible projects, and early-bird pricing — curated by Monter.",
+  title: "Properties in Mohali and Tricity: Verified, Evaluated, Honestly Presented",
+  description: "Verified property listings in Mohali and Tricity: pre-launch, resale, and ready possession. Evaluated for RERA compliance, developer track record, and fair pricing.",
 };
 
 export const revalidate = 60;

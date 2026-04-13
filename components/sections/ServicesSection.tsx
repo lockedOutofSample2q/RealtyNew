@@ -5,7 +5,14 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
-const services = [
+type ServiceItem = {
+  title: string;
+  description: string;
+  image: string;
+  bullets?: string[];
+};
+
+const services: ServiceItem[] = [
   {
     title: "Property Advisory",
     description: "Independent evaluation of any property before you commit: developer track record, RERA verification, payment plan analysis, and honest shortlisting. I will tell you what I would do in your position, including when the answer is not to buy.",

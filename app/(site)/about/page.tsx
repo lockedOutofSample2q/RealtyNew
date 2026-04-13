@@ -7,14 +7,12 @@
 import AboutHero from "@/components/sections/AboutHero";
 import AboutStats from "@/components/sections/AboutStats";
 import AboutText from "@/components/sections/AboutText";
-import AboutLeadership from "@/components/sections/AboutLeadership";
-import AboutValues from "@/components/sections/AboutValues";
 import AboutProcess from "@/components/sections/AboutProcess";
-import AboutOffice from "@/components/sections/AboutOffice";
+import AboutLeadership from "@/components/sections/AboutLeadership";
 
 export const metadata = {
-  title: "About Monte Real Estate | Dubai's Trusted Property Experts",
-  description: "Learn about the vision, leadership, and methodical approach of Monte Real Estate. Crafting architectural excellence in Dubai since 2014.",
+  title: "About | The Background No Other Advisor in Mohali Can Claim",
+  description: "Amritpal Singh brings over 10 years of experience across every side of the real estate transaction in Mohali.",
 };
 
 export default function AboutPage() {
@@ -23,10 +21,8 @@ export default function AboutPage() {
       <AboutHero />
       <AboutStats />
       <AboutText />
-      <AboutLeadership />
-      <AboutValues />
       <AboutProcess />
-      <AboutOffice />
+      <AboutLeadership />
     </div>
   );
 }

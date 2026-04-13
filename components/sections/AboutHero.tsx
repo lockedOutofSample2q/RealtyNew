@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 const PANELS = [
-  { id: 1, image: "/assets/images/about/hero-1.png", title: "Where Vision\nMeets\nStructure", tag: "WHO WE ARE" },
+  { id: 1, image: "/assets/images/about/hero-1.png", title: "The Background\nNo Other Advisor\nIn Mohali Can Claim.", tag: "ABOUT US" },
   { id: 2, image: "/assets/images/about/hero-2.png", title: "", tag: "" },      
   { id: 3, image: "/assets/images/about/hero-3.png", title: "", tag: "" },      
   { id: 4, image: "/assets/images/about/hero-4.png", title: "", tag: "" },      

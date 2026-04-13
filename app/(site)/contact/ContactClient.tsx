@@ -54,13 +54,13 @@ export default function ContactClient() {
       <section className="bg-black text-white pt-20 pb-24 px-6 relative overflow-hidden">
         <div className="container-site max-w-4xl mx-auto text-center relative z-10">
           <div className="inline-block border border-white/20 bg-white/5 rounded-full px-4 py-1.5 mb-8">
-            <span className="font-body text-[13px] tracking-wide text-white/80">Contact Us</span>
+            <span className="font-body text-[13px] tracking-wide text-white/80">Contact</span>
           </div>
           <h1 className="font-display text-4xl md:text-[56px] font-medium leading-[1.1] mb-6">
-            Get in touch with our expert team
+            Speak directly with the advisor. No gatekeeping.
           </h1>
           <p className="font-body text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
-            Whether you're looking to buy, sell, or rent - we're here to guide you every step of the way. Reach out and let's make your real estate dreams a reality.
+            Whether you are evaluating a specific property, deciding what to do with a land acquisition payout, or looking at Mohali from abroad: bring the question and get a direct answer. If I think what you are considering is wrong for you, I will say so. If it is right, I will tell you exactly how to do it without getting caught out on the parts most buyers miss.
           </p>
         </div>
       </section>
@@ -120,12 +120,12 @@ export default function ContactClient() {
           
           {/* Form */}
           <div className="flex-1">
-            <h2 className="font-display text-4xl mb-10 text-black">Send us a message</h2>
+            <h2 className="font-display text-4xl mb-10 text-black">Send a Message</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <input
                   type="text"
-                  placeholder="First Name"
+                  placeholder="Your name"
                   required
                   value={form.firstName}
                   onChange={(e) => setForm({ ...form, firstName: e.target.value })}
@@ -151,7 +151,7 @@ export default function ContactClient() {
                 />
                 <input
                   type="tel"
-                  placeholder="Phone Number"
+                  placeholder="Best number to reach you"
                   value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
                   className={inputClass}
@@ -166,7 +166,7 @@ export default function ContactClient() {
               />
               <div className="pt-2">
                 <textarea
-                  placeholder="Message"
+                  placeholder="What are you trying to decide?"
                   rows={4}
                   required
                   value={form.message}
@@ -180,7 +180,7 @@ export default function ContactClient() {
                   disabled={loading}
                   className="bg-black text-white px-8 py-4 rounded-full font-body font-medium text-[15px] flex items-center gap-3 hover:scale-[1.02] transition-transform shadow-xl disabled:opacity-70 disabled:pointer-events-none"
                 >
-                  {loading ? "Sending..." : "Send Message"}
+                  {loading ? "Sending..." : "Submit Enquiry"}
                   {!loading && <ArrowRight size={18} />}
                 </button>
               </div>

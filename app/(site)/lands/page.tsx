@@ -5,8 +5,8 @@ import type { Property } from "@/types";
 import LandsClient from "./LandsClient";
 
 export const metadata: Metadata = {
-  title: "Lands",
-  description: "Furnished and unfurnished Lands across Dubai's best communities.",
+  title: "Land and Plot Listings in Punjab: GMADA, Licensed, and Agricultural",
+  description: "GMADA plots, licensed residential plots, and agricultural land in Mohali and Punjab. Verified title and licensing status. Honest assessment of every listing.",
 };
 
 export const revalidate = 60;

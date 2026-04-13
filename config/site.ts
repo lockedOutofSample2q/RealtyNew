@@ -21,10 +21,10 @@ export const siteConfig: SiteConfig = {
   url: "https://www.monterealestate.ae",
 
   contact: {
-    Phone: "+91 9988XXXXXX",
+    phone: "+91 9988XXXXXX",
     whatsapp: "+971585347884",
     email: "info@monterealestate.ae",
-    Address: "Sector 82A, Mohali, Punjab",
+    address: "Sector 82A, Mohali, Punjab",
   },
 
   social: {

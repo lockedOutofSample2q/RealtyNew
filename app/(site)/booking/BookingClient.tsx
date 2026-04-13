@@ -15,13 +15,13 @@ export default function BookingClient() {
       <section className="bg-black text-white pt-20 pb-24 px-6 relative overflow-hidden">
         <div className="container-site max-w-4xl mx-auto text-center relative z-10">
           <div className="inline-block border border-white/20 bg-white/5 rounded-full px-4 py-1.5 mb-8">
-            <span className="font-body text-[13px] tracking-wide text-white/80">Schedule a Meeting</span>
+            <span className="font-body text-[13px] tracking-wide text-white/80">Consultation</span>
           </div>
           <h1 className="font-display text-4xl md:text-[56px] font-medium leading-[1.1] mb-6 tracking-tight">
-            Book a Personal Consultation
+            Book a Free 15-Minute Consultation
           </h1>
           <p className="font-body text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
-            Choose a time that works for you to discuss your real estate goals with our expert advisors. Whether you're looking for investment advice or your next luxury home, we're here to help.
+            In 15 minutes, you will have a direct answer on whatever property decision you are facing: whether to buy a specific project, what to do with an acquisition payout, whether the price being offered is right, or how to approach purchasing from abroad. This is not a sales call. No property will be pushed. If I think what you are considering is wrong for you, I will tell you why. If it is right, I will tell you how to do it properly.
           </p>
         </div>
         
@@ -35,13 +35,13 @@ export default function BookingClient() {
           {[
             {
               icon: <Clock size={24} className="text-black mb-4" strokeWidth={1.5} />,
-              title: "10-Minute Intro",
-              desc: "A quick introduction to our services and how we can assist you."
+              title: "15-Minute Intro",
+              desc: "A direct answer to your current property question or dilemma."
             },
             {
               icon: <Users size={24} className="text-black mb-4" strokeWidth={1.5} />,
               title: "Expert Guidance",
-              desc: "Direct access to senior consultants with deep market knowledge."
+              desc: "Direct access to honest advice, not a sales pitch."
             },
             {
               icon: <Calendar size={24} className="text-black mb-4" strokeWidth={1.5} />,
@@ -73,7 +73,7 @@ export default function BookingClient() {
           
           <div className="mt-12 text-center">
             <p className="font-body text-black/40 text-sm mb-6">
-              Prefer to call us directly? Reach out at <a href="tel:+971585347884" className="text-black font-medium underline underline-offset-4">+971 58 534 7884</a>
+              Prefer to call us directly? Reach out at <a href="tel:+971585347884" className="text-black font-medium underline underline-offset-4">+91 98765 43210</a>
             </p>
             <Link 
               href="/contact" 

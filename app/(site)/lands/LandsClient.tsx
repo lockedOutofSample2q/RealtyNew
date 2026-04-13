@@ -159,10 +159,10 @@ export default function LandsClient({ properties }: Props) {
 
         <div className="relative z-10 text-center px-4">
           <h1 className="text-white font-semibold text-[clamp(1.8rem,4vw,3rem)] leading-[1.2] tracking-tight max-w-2xl mx-auto mb-3">
-            Check on all Landsal properties<br />we have available
+            Land and Plot Listings in Punjab: GMADA, Licensed, and Agricultural
           </h1>
           <p className="text-white/60 text-[clamp(13px,1.2vw,15px)] max-w-lg mx-auto">
-            Discover exceptional properties across Dubai's most prestigious locations
+            Land in Punjab is not a uniform category. The difference between a GMADA plot, a licensed colony plot, and an unlicensed plot can be the difference between a clean resale and a decade of legal complications. Every listing here has verified licensing status, clear title, and a specific reason to be on this page.
           </p>
         </div>
 

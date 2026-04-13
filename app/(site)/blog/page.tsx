@@ -3,8 +3,8 @@ import { compareDesc } from "date-fns";
 import BlogClient from "./BlogClient";
 
 export const metadata = {
-  title: "Blog | Market Insights",
-  description: "Stay informed about Dubai's real estate market, investment tips, and community spotlights.",
+  title: "Blog | Market Insights | Amritpal Singh Advisory",
+  description: "100 articles on Mohali real estate: sector intelligence, buyer protection, investment analysis, and legal rights. Written from 10+ years of first-hand market experience.",
 };
 
 export default function BlogPage() {

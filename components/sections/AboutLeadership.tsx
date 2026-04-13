@@ -19,7 +19,7 @@ export default function AboutLeadership() {
           >
             <Image
               src="/assets/images/about/ceo.png"
-              alt="Armina Crnovrsanin - CEO"
+              alt="Amritpal Singh - Founder"
               fill
               className="object-cover object-top"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -36,16 +36,19 @@ export default function AboutLeadership() {
             <div className="flex items-center gap-[1vw] mb-[4%]">
               <span className="w-[0.4vw] h-[0.4vw] min-w-[4px] min-h-[4px] rounded-full bg-white opacity-60" />
               <span className="text-white/60 text-[clamp(8px,0.8vw,12px)] font-bold tracking-[0.1em] uppercase">
-                Leadership
+                The Advisor Behind the Advisory
               </span>
             </div>
             
-            <h2 className="text-white text-[clamp(2.5rem,4vw,4rem)] font-light leading-[1.1] tracking-tight mb-[2vh]">
-              Armina Crnovrsanin
+            <h2 className="text-white text-[clamp(1.5rem,2.5vw,3rem)] font-light leading-[1.3] tracking-tight mb-[4vh] italic">
+              "I have been a developer who built projects and a buyer who fought to protect one. I have sat across the table from every type of problem this market can create. When I advise a client, I am not reading from a playbook. I am telling them what I have learned from being on the inside of every one of these situations. That is not something I was born with. It cost time, money, and in some cases years. It is also why clients trust me with decisions that cost crores."
             </h2>
 
+            <p className="text-white text-[clamp(18px,1.5vw,24px)] font-light mb-[0.5vh]">
+              Amritpal Singh
+            </p>
             <p className="text-white/60 text-[clamp(14px,1.2vw,18px)] font-light">
-              CEO, Monte Real Estate
+              Founder
             </p>
           </motion.div>
 

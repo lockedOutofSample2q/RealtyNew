@@ -37,7 +37,7 @@ export default function BlogClient({ posts }: { posts: any[] }) {
           transition={{ duration: 0.8 }}
         >
           <span className="inline-block border border-black/10 rounded-full px-5 py-2 text-black text-[11px] font-bold tracking-widest uppercase mb-6">
-            BLOG
+            Blog
           </span>
         </motion.div>
 
@@ -47,7 +47,7 @@ export default function BlogClient({ posts }: { posts: any[] }) {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="text-black text-[clamp(2.5rem,4vw,4rem)] font-display font-medium tracking-tight mb-[2vh]"
         >
-          Latest News & Insights
+          100 Articles on Mohali Real Estate, Written by Someone Who Has Done It.
         </motion.h1>
 
         <motion.p
@@ -56,7 +56,7 @@ export default function BlogClient({ posts }: { posts: any[] }) {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-[#6D6B66] text-[clamp(15px,1.2vw,18px)] max-w-xl mx-auto leading-relaxed"
         >
-          Stay informed about Dubai&apos;s real estate market, investment tips, and community spotlights
+          This is not a marketing blog. Every article here is written from direct experience: 10+ years across development, government liaisoning, capital markets, legal disputes, and 180+ personal transactions. Sector-by-sector price data. Buyer protection guides. Investment thesis analysis. Legal rights in plain language. The knowledge that usually exists only on the inside, written out clearly, for free.
         </motion.p>
       </div>
 
