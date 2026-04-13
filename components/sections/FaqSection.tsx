@@ -1,8 +1,26 @@
 "use client";
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
-import { faqs } from "@/config/site";
 import { motion, AnimatePresence } from "framer-motion";
+
+const faqs = [
+  {
+    question: "Can anyone buy property in Mohali, including people outside Punjab?",
+    answer: "Yes. There are no residency or domicile restrictions on buying property in Mohali or Punjab. Indian residents from any state, NRIs, and in certain cases foreign nationals can purchase here. NRIs must route payment through an NRO or NRE account and comply with FEMA guidelines. The process is straightforward with the right preparation."
+  },
+  {
+    question: "How does a pre-launch booking actually work, and what is the real risk?",
+    answer: "In a pre-launch, you book at an early price before construction begins, typically paying 25% upfront with the balance on a construction-linked schedule. The discount over possession-stage pricing is real. So is the risk. Developer cash flow health, RERA registration status, approval completeness, and past delivery record all need to be verified before paying a single rupee. I evaluate all of these before I recommend a pre-launch to any client."
+  },
+  {
+    question: "What should I do with a land acquisition payout in Punjab?",
+    answer: "The 24-month capital gains reinvestment window under Section 54F gives you time to make a considered decision. Not unlimited time. The money should be parked in a Capital Gains Account Scheme while you decide, not in an FD that looks safe but loses value in real terms after inflation. The options from ₹50 lakh to ₹5 crore are genuinely different, and which one makes sense depends on your goals, your family's needs, and the specific market conditions right now. This is exactly the kind of conversation we have in a free consultation."
+  },
+  {
+    question: "What returns can I realistically expect from Mohali real estate?",
+    answer: "In growth corridors like Sector 82A, the Airport Road commercial belt, and the Bharatmala-linked industrial zones near Rajpura, appreciation has been significant. Commercial units on Airport Road that were available at ₹3–4 crore some years ago now trade at ₹12–16 crore. Industrial land purchased at ₹18.70 lakh per vigha was valued at ₹45 lakh per vigha six months later. But these outcomes came from buying before the infrastructure was visible. Not after. I will tell you where the next vision corridor is, and I will tell you when I think a market is overpriced. Both equally."
+  }
+];
 
 export default function FaqSection() {
   const [open, setOpen] = useState<number | null>(0);

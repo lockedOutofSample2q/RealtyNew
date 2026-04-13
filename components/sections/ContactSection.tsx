@@ -69,10 +69,10 @@ export default function ContactSection() {
           className="lg:pt-8 lg:sticky lg:top-32"
         >
           <h2 className="font-display font-medium text-black text-4xl md:text-[56px] leading-[1.1] mb-8 tracking-tight whitespace-pre-line">
-            {contactContent.heading}
+            15 minutes.{"\n"}One honest answer.
           </h2>
           <p className="font-body text-gray-500 leading-relaxed mb-12 max-w-md text-lg">
-            {contactContent.subheading}
+            Tell me what you are looking at: a pre-launch, a plot, a reinvestment decision, a property you are not sure about. I will tell you directly what I would do in your position. No pitch. No pressure.
           </p>
 
           <div className="flex flex-col gap-6 font-body">
@@ -242,7 +242,7 @@ export default function ContactSection() {
                 disabled={loading}
                 className="flex items-center gap-3 py-3.5 px-8 bg-[#7A7A75] text-white rounded-2xl font-body font-medium text-[14px] hover:bg-[#6A6A65] transition-colors disabled:opacity-60 disabled:cursor-not-allowed shadow-md shrink-0"
               >
-                {loading ? contactContent.submittingLabel : contactContent.submitLabel}
+                {loading ? "Sending..." : "Book the Free Call"}
                 {!loading && (
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="opacity-80">
                     <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

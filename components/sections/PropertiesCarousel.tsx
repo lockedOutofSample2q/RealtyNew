@@ -87,7 +87,7 @@ export default function PropertiesCarousel({
               Rentals
             </span>
             <h2 className="font-display font-medium text-black text-[clamp(2rem,5vw,4rem)] tracking-tight">
-              Top picks rent property
+              Land Listings in Punjab
             </h2>
           </motion.div>
 
@@ -142,7 +142,7 @@ export default function PropertiesCarousel({
             Latest
           </span>
           <h2 className="font-display font-medium text-black text-[clamp(2rem,5vw,4rem)] tracking-tight">
-            Explore our latest property
+            Properties Worth Looking At
           </h2>
         </motion.div>
 

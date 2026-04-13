@@ -2,9 +2,26 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { services } from "@/config/site";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+
+const services = [
+  {
+    title: "Property Advisory",
+    description: "Independent evaluation of any property before you commit: developer track record, RERA verification, payment plan analysis, and honest shortlisting. I will tell you what I would do in your position, including when the answer is not to buy.",
+    image: "/assets/images/home/about.jpg"
+  },
+  {
+    title: "Land & Plot Advisory",
+    description: "From GMADA plot allotment to agricultural land reinvestment after an acquisition payout: guidance on licensed vs unlicensed status, capital gains implications, and which land in which location makes financial sense for your specific situation.",
+    image: "/assets/images/home/hero-bg.jpg"
+  },
+  {
+    title: "NRI & Remote Advisory",
+    description: "End-to-end property advisory for NRI investors buying from the UK, Canada, Gulf, or Australia: FEMA compliance, POA structuring, video-verified site walkthroughs, and post-purchase support without you needing to be here.",
+    image: "/assets/images/home/services.jpg"
+  }
+];
 
 export default function ServicesSection() {
   const [activeIndex, setActiveIndex] = useState<number>(0);

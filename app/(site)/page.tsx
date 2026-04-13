@@ -63,14 +63,14 @@ export default async function HomePage() {
       <HeroSection />
       <AboutSection />
       <PropertiesCarousel
-        title="Fresh Opportunities"
-        subtitle="Latest off-plan and sale listings"
+        title="Properties Worth Looking At"
+        subtitle="A curated selection of verified residential and commercial listings across Mohali and Tricity: pre-launch, resale, and ready possession."
         properties={latest}
         type="sale"
       />
       <PropertiesCarousel
-        title="Top Picks to Rent"
-        subtitle="Curated rentals across Dubai's best communities"
+        title="Land Listings in Punjab"
+        subtitle="GMADA plots, licensed residential plots, and agricultural land across Mohali, Chandigarh, and Greater Punjab. Selected for clear title, location merit, and resale liquidity."
         properties={rentals}
         type="lands"
         inverted
