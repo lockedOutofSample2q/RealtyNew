@@ -1,4 +1,4 @@
-```markdown
+
 # Amritpal Singh Advisory - Complete Site Structure & Sitemap
 
 ## Overview
@@ -347,7 +347,7 @@ Database: Supabase with property listings, agent profiles, leads/subscribers, an
 
 ## 📊 Route Structure Visualization
 
-```
+
 app/
 ├── (site)/                          # Public routes (route group)
 │   ├── page.tsx                     # / (Home)
@@ -416,7 +416,7 @@ app/
 ├── layout.tsx                       # Root layout
 ├── not-found.tsx                    # 404 page
 └── sitemap.ts                       # Dynamic sitemap generation
-```
+
 
 ---
 
@@ -451,7 +451,7 @@ app/
 
 ## 📈 Data Flow Architecture
 
-```
+
 Frontend (Public)
 ├── Home → fetches featured, latest sales, lands from Supabase
 ├── Properties & Lands → database queries with filters
@@ -469,7 +469,7 @@ Admin Dashboard
 Databases: Supabase (properties, leads, subscribers, agents)
 Static Content: MDX files (blog posts)
 Config: TypeScript files (site.ts, tailwind.config.ts)
-```
+
 
 ---
 
@@ -501,4 +501,4 @@ All pages include proper Next.js metadata for SEO:
 **Admin Routes:** 9 (under `admin`)  
 
 **Architecture:** Next.js App Router with route groups, dynamic routes `[slug]` & `[id]`, server/client hybrid rendering, ISR revalidation, and Supabase backend.
-```
+
