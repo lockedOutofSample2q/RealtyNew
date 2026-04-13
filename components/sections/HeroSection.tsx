@@ -34,7 +34,7 @@ const LOGOS = [
 
 export default function HeroSection() {
   const router = useRouter();
-  const [tab, setTab] = useState<SearchTab>("properties");
+  const [tab, setTab] = useState<SearchTab>("apartments");
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [filters, setFilters] = useState(DEFAULT_PROPERTY_FILTERS);
 
@@ -164,7 +164,7 @@ export default function HeroSection() {
                 </div>
 
                 <div className="flex bg-white rounded-2xl p-1 mb-8 shadow-sm">
-                  {(["sale", "lands", "properties"] as const).map((t) => (
+                  {(["apartments", "houses", "lands"] as const).map((t) => (
                     <button
                       key={t}
                       onClick={() => setTab(t)}

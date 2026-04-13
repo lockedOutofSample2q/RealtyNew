@@ -235,7 +235,7 @@ export default function PropertiesClient({ properties }: Props) {
               </div>
 
               <div className="flex bg-white rounded-2xl p-1 mb-8 shadow-sm">
-                {(["properties", "lands"] as const).map((t) => (
+                {(["apartments", "houses", "lands"] as const).map((t) => (
                   <button
                     key={t}
                     onClick={() => handleTabChange(t)}
