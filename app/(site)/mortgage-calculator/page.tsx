@@ -6,14 +6,14 @@ import { Info, ChevronDown } from "lucide-react";
 type Residency = "Resident" | "National" | "Non-resident";
 
 export default function MortgageCalculatorPage() {
-  const [currency, setCurrency] = useState("AED");
+  const [currency, setCurrency] = useState("INR");
   const [residency, setResidency] = useState<Residency>("Resident");
   const [price, setPrice] = useState(2000000);
   const [downPct, setDownPct] = useState(20);
   const [rate, setRate] = useState(4.5);
   const [years, setYears] = useState(25);
 
-  const FX: Record<string, number> = { AED: 1, USD: 0.272, EUR: 0.252 };
+  const FX: Record<string, number> = { INR: 1, USD: 0.272, CAD: 0.252 };
   const fx = FX[currency] ?? 1;
 
   // Enforce Max LTV based on Residency
@@ -88,7 +88,7 @@ export default function MortgageCalculatorPage() {
           <div className="flex flex-wrap items-center justify-between gap-4 bg-white p-6 rounded-[24px] shadow-[0_4px_24px_rgba(0,0,0,0.02)] border border-black/5">
             <span className="font-body text-[13px] font-bold uppercase tracking-wide text-black/60">Currency</span>
             <div className="flex bg-black/5 p-1 rounded-lg">
-              {["AED", "USD", "EUR"].map((c) => (
+              {["INR", "USD", "CAD"].map((c) => (
                 <button
                   key={c}
                   onClick={() => setCurrency(c)}

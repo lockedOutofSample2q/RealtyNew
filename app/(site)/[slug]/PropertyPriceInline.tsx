@@ -3,11 +3,11 @@
 import { useCurrency } from "@/context/CurrencyContext";
 
 interface Props {
-  priceAED: number;
+  price: number;
   className?: string;
 }
 
-export default function PropertyPriceInline({ priceAED, className }: Props) {
+export default function PropertyPriceInline({ price, className }: Props) {
   const { formatPrice } = useCurrency();
-  return <p className={className}>{priceAED > 0 ? formatPrice(priceAED) : "Price on Request"}</p>;
+  return <p className={className}>{price > 0 ? formatPrice(price) : "Price on Request"}</p>;
 }

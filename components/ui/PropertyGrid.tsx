@@ -244,7 +244,7 @@ export default function PropertyGrid({ properties, listingType }: Props) {
 
           {/* Max Price */}
           <div>
-            <label className="block font-body text-xs text-white/40 uppercase tracking-wide mb-1.5">Max Price (AED)</label>
+            <label className="block font-body text-xs text-white/40 uppercase tracking-wide mb-1.5">Max Price (INR)</label>
             <select
               value={filters.maxPrice ?? ""}
               onChange={(e) => setFilters({ ...filters, maxPrice: e.target.value ? +e.target.value : undefined })}
@@ -252,7 +252,7 @@ export default function PropertyGrid({ properties, listingType }: Props) {
             >
               <option value="">Any</option>
               {[500000, 1000000, 2000000, 3000000, 5000000, 10000000].map((p) => (
-                <option key={p} value={p}>AED {p.toLocaleString()}</option>
+                <option key={p} value={p}>INR {p.toLocaleString()}</option>
               ))}
             </select>
           </div>

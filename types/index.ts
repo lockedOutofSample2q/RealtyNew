@@ -41,7 +41,7 @@ export interface Property {
   status: "available" | "sold" | "rented" | "properties";
   listing_type: "sale" | "lands" | "properties";
   price: number;
-  price_currency: "AED" | "USD" | "EUR";
+  price_currency: "INR" | "USD" | "CAD" | "AUD";
   bedrooms: number | null;
   bedrooms_max?: number | null;
   bathrooms: number;
@@ -165,5 +165,5 @@ export interface PropertyFilters {
   furnishing?: string;
   minPrice?: number;
   maxPrice?: number;
-  currency?: "AED" | "USD" | "EUR";
+  currency?: "INR" | "USD" | "CAD" | "AUD";
 }

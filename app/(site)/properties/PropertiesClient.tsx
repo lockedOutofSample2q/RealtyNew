@@ -65,7 +65,7 @@ export default function PropertiesClient({ properties }: Props) {
     bedrooms: searchParams.get("bedrooms") ?? "",
     furnishing: searchParams.get("furnishing") ?? "",
     price: searchParams.get("price") ?? "",
-    currency: searchParams.get("currency") ?? "AED",
+    currency: searchParams.get("currency") ?? "INR",
   });
   const [leafletReady, setLeafletReady] = useState(false);
 
@@ -79,7 +79,7 @@ export default function PropertiesClient({ properties }: Props) {
       bedrooms: searchParams.get("bedrooms") ?? "",
       furnishing: searchParams.get("furnishing") ?? "",
       price: searchParams.get("price") ?? "",
-      currency: searchParams.get("currency") ?? "AED",
+      currency: searchParams.get("currency") ?? "INR",
     });
   }, [searchParams]);
 

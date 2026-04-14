@@ -24,7 +24,7 @@ const PLACEHOLDERS: Partial<Property>[] = Array.from({ length: 4 }, (_, i) => ({
   status: "available",
   listing_type: "sale",
   price: 2500000 + i * 500000,
-  price_currency: "AED",
+  price_currency: "INR",
   bedrooms: i + 1,
   bathrooms: 2,
   area_sqft: 1200 + i * 200,

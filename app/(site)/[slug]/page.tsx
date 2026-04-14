@@ -102,7 +102,7 @@ export default async function PropertyDetailPage({ params }: Props) {
       ? `${property.bedrooms}-${property.bedrooms_max}`
       : property.bedrooms === 0 ? "Studio" : String(property.bedrooms ?? "—");
 
-  const priceAED = property.price;
+  const price = property.price;
 
   return (
     <div className="bg-white min-h-screen pt-[var(--nav-height)]">
@@ -300,7 +300,7 @@ export default async function PropertyDetailPage({ params }: Props) {
 
                       <div className="border-t border-black/8 pt-6 mt-8">
                         <p className="text-[10px] uppercase tracking-widest text-black/35 font-bold mb-1">Total Investment</p>
-                        <PropertyPriceInline priceAED={priceAED} className="text-[20px] font-bold text-black" />
+                        <PropertyPriceInline price={price} className="text-[20px] font-bold text-black" />
                       </div>
                     </div>
                   )}
@@ -419,7 +419,7 @@ export default async function PropertyDetailPage({ params }: Props) {
             <div className="border border-black/10 rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.06)]">
 
               {/* Price */}
-              <PriceDisplay priceAED={priceAED} listingLabel={listingLabel} />
+              <PriceDisplay price={price} listingLabel={listingLabel} />
 
               {/* Inquiry Form */}
               <div className="p-5 border-b border-black/8">

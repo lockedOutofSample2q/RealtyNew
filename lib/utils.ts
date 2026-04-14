@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function formatPrice(price: number, currency: string = "AED") {
+export function formatPrice(price: number, currency: string = "INR") {
   return `${currency} ${new Intl.NumberFormat("en-AE").format(price)}`;
 }
 

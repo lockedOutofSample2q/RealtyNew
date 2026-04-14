@@ -67,7 +67,7 @@ function defaultForm(p?: Property | null) {
     status:              p?.status ?? "available",
     listing_type:        p?.listing_type ?? "off-plan",
     price:               p?.price ?? 0,
-    price_currency:      p?.price_currency ?? "AED",
+    price_currency:      p?.price_currency ?? "INR",
     bedrooms:            p?.bedrooms ?? 1,
     bedrooms_max:        p?.bedrooms_max ?? ("" as any),
     bathrooms:           p?.bathrooms ?? 1,
@@ -324,7 +324,7 @@ export default function PropertyForm({ property }: { property?: Property | null 
                 <div>
                   <label className={lc}>Currency *</label>
                   <select required value={form.price_currency} onChange={(e) => f("price_currency", e.target.value)} className={ic}>
-                    <option>AED</option><option>USD</option><option>EUR</option>
+                    <option>INR</option><option>USD</option><option>CAD</option><option>AUD</option>
                   </select>
                 </div>
               </Row>

@@ -9,7 +9,7 @@ import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { useCurrency, type Currency } from "@/context/CurrencyContext";
 
-const CURRENCIES: Currency[] = ["AED", "USD", "INR"];
+const CURRENCIES: Currency[] = ["INR", "USD", "CAD", "AUD"];
 
 const MENU_LINKS = [
   { label: "Home", href: "/" },

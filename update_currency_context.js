@@ -1,4 +1,6 @@
-"use client";
+const fs = require('fs');
+
+const contextCode = `"use client";
 
 import React, { createContext, useContext, useState, useEffect } from "react";
 
@@ -70,3 +72,6 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
 export function useCurrency() {
   return useContext(CurrencyContext);
 }
+`;
+
+fs.writeFileSync('context/CurrencyContext.tsx', contextCode, 'utf8');

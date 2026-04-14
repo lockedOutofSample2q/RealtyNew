@@ -187,7 +187,7 @@ function PropertyFormModal({
     status: property?.status ?? "available",
     listing_type: property?.listing_type ?? "sale",
     price: property?.price ?? 0,
-    price_currency: property?.price_currency ?? "AED",
+    price_currency: property?.price_currency ?? "INR",
     bedrooms: property?.bedrooms ?? 1,
     bathrooms: property?.bathrooms ?? 1,
     area_sqft: property?.area_sqft ?? 0,
@@ -305,7 +305,7 @@ function PropertyFormModal({
           <div>
             <label className={labelClass}>Currency</label>
             <select value={form.price_currency} onChange={(e) => setForm({ ...form, price_currency: e.target.value as any })} className={inputClass}>
-              <option>AED</option><option>USD</option><option>EUR</option>
+              <option>INR</option><option>USD</option><option>CAD</option><option>AUD</option>
             </select>
           </div>
 

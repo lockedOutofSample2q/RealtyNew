@@ -52,5 +52,5 @@ export const DEFAULT_PROPERTY_FILTERS: PropertySearchFilters = {
   bedrooms: "",
   furnishing: "",
   price: "",
-  currency: "AED",
+  currency: "INR",
 };
