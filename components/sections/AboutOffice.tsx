@@ -105,17 +105,19 @@ export default function AboutOffice() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="relative w-full lg:w-[50%] h-[40vh] lg:h-[50vh] rounded-2xl overflow-hidden grayscale contrast-125 opacity-80 shrink-0"
+            className="relative w-full lg:w-[50%] h-[40vh] lg:h-[50vh] rounded-2xl overflow-hidden grayscale contrast-125 opacity-80 shrink-0 group cursor-pointer"
           >
-            <motion.div style={{ scale }} className="absolute inset-0 w-full h-full">
-              <Image
-                src="/assets/images/home/about.jpg"
-                alt="Office Location Map"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </motion.div>
+            <a href="https://maps.app.goo.gl/KzAE7k1HB1RKPkHE6" target="_blank" rel="noopener noreferrer" className="block w-full h-full">
+              <motion.div style={{ scale }} className="absolute inset-0 w-full h-full">
+                <Image
+                  src="/assets/images/home/about.jpg"
+                  alt="Office Location Map"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </motion.div>
+            </a>
           </motion.div>
 
         </div>

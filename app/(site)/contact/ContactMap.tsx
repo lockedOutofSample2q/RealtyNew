@@ -30,8 +30,16 @@ export default function ContactMap() {
         />
         <Marker position={position} icon={CustomIcon}>
           <Popup>
-            <div className="font-body text-sm font-semibold">Realty Holding & Management Consultants</div>
-            <div className="font-body text-xs text-black/60">E328 Industrial area phase 8A, Mohali</div>
+            <div className="font-body text-sm font-semibold mb-1">Realty Holding & Management Consultants</div>
+            <div className="font-body text-xs text-black/60 mb-2">E328 Industrial area phase 8A, Mohali</div>
+            <a 
+              href="https://maps.app.goo.gl/KzAE7k1HB1RKPkHE6" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-xs text-blue-600 font-medium hover:underline inline-flex items-center"
+            >
+              Open in Google Maps <span className="ml-1">→</span>
+            </a>
           </Popup>
         </Marker>
       </MapContainer>
