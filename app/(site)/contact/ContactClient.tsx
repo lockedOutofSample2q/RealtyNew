@@ -57,10 +57,10 @@ export default function ContactClient() {
             <span className="font-body text-[13px] tracking-wide text-white/80">Contact</span>
           </div>
           <h1 className="font-display text-4xl md:text-[56px] font-medium leading-[1.1] mb-6">
-            Speak directly with the advisor. No gatekeeping.
+            Speak directly with an advisor.
           </h1>
           <p className="font-body text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
-            Whether you are evaluating a specific property, deciding what to do with a land acquisition payout, or looking at Mohali from abroad: bring the question and get a direct answer. If I think what you are considering is wrong for you, I will say so. If it is right, I will tell you exactly how to do it without getting caught out on the parts most buyers miss.
+            Whether you are evaluating a specific property, deciding what to do with a land acquisition payout, or looking at Mohali from abroad: bring the question and get a direct answer.
           </p>
         </div>
       </section>

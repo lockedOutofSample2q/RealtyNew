@@ -73,7 +73,7 @@ export default function BookingClient() {
           
           <div className="mt-12 text-center">
             <p className="font-body text-black/40 text-sm mb-6">
-              Prefer to call us directly? Reach out at <a href="tel:+971585347884" className="text-black font-medium underline underline-offset-4">+91 98765 43210</a>
+              Prefer to call us directly? Reach out at <a href="tel:+917814613916" className="text-black font-medium underline underline-offset-4">+91 7814613916</a>
             </p>
             <Link 
               href="/contact" 

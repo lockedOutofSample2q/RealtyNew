@@ -62,12 +62,15 @@ export default function Navbar() {
   const isListingPage = ["/properties", "/lands", "/properties"].includes(pathname || "");
   
   // These specific pages have dark hero sections at the top
-  const darkHeaderPages = ["/", "/properties", "/lands", "/properties", "/about", "/contact", "/booking", "/blog"];
+  const darkHeaderPages = ["/", "/properties", "/lands", "/about", "/contact", "/booking", "/blog"];
   
-  // All other pages (like property detail /[slug], /blog, /mortgage-calculator, etc) start with white backgrounds
-  const isLightPage = !darkHeaderPages.includes(pathname || "");
+  // Robust check if current page is in the dark header list
+  const isDarkHeroPage = darkHeaderPages.some(page => {
+    if (page === "/") return pathname === "/";
+    return pathname?.startsWith(page);
+  });
 
-  const useDarkText = isLightPage && !isOpen;
+  const useDarkText = !isDarkHeroPage && !isOpen;
 
   // Prevent scrolling when menu is open
   useEffect(() => {
