@@ -13,16 +13,16 @@ export default function Footer() {
   const hasSocial = Object.values(siteConfig.social).some(Boolean);
 
   return (
-    <footer className="bg-[#080808] border-t border-[rgba(201,168,76,0.1)]">
+    <footer className="bg-[#080808] border-t border-white/5">
       {/* ── Newsletter Banner ───────────────────────────────── */}
       <div className="border-b border-white/[0.06]">
         <div className="container-site py-16 flex flex-col md:flex-row items-start justify-between gap-10">
           <div className="max-w-sm">
             <h3 className="font-display text-3xl text-white font-medium leading-tight mb-3">
-              Discover exclusive real estate opportunities
+              {siteConfig.tagline}
             </h3>
             <p className="font-body text-sm text-white/50 mt-1 leading-relaxed">
-              Stay informed about the latest properties in Dubai. Subscribe to our newsletter for exclusive listings and market insights.
+              Stay informed about the latest outcomes in {siteConfig.contact.address.split(',').slice(-2, -1)[0].trim()}. Subscribe to our newsletter for exclusive insights.
             </p>
           </div>
           <form
@@ -52,15 +52,17 @@ export default function Footer() {
         {/* Brand */}
         <div className="lg:col-span-1">
           <Link href="/" className="inline-block mb-5">
-            <span className="font-display text-2xl font-light tracking-widest text-white lowercase">
-              mont
-            </span>
-            <span className="font-display text-2xl font-light tracking-widest text-[var(--gold)] lowercase">
-              er
-            </span>
+            <div className="flex flex-col leading-none font-display">
+              <span className="text-xl font-bold tracking-tighter uppercase text-white">
+                {siteConfig.name.split(' ')[0]}<span className="opacity-50 font-medium">{siteConfig.name.split(' ').slice(1).join(' ')}</span>
+              </span>
+              <span className="text-[8px] tracking-[0.4em] font-medium opacity-70 uppercase mt-1 text-white">
+                {siteConfig.tagline}
+              </span>
+            </div>
           </Link>
           <p className="font-body text-sm text-white/50 leading-relaxed mb-6 max-w-[220px]">
-            Dubai's trusted real estate consultancy since 2014.
+            {siteConfig.description}
           </p>
 
           {/* Social Icons */}
@@ -167,24 +169,24 @@ export default function Footer() {
         <div className="container-site py-5 flex flex-col sm:flex-row items-center justify-between gap-3 flex-wrap">
           <div className="flex items-center gap-3">
             <Link href="/" className="flex items-center gap-1.5 opacity-70 hover:opacity-100 transition-opacity">
-              <span className="font-display text-sm font-light text-white lowercase tracking-wider">m | monte</span>
+              <span className="font-display text-sm font-light text-white lowercase tracking-wider">
+                {siteConfig.name.split(' ').map(w => w[0]).join('').toLowerCase()} | {siteConfig.name.split(' ')[0].toLowerCase()}
+              </span>
             </Link>
-            <span className="font-body text-xs text-white/30">© {year} Monte Real Estate LLC. All rights reserved.</span>
+            <span className="font-body text-xs text-white/30">© {year} {siteConfig.name}. All rights reserved.</span>
           </div>
           <div className="flex items-center gap-4 flex-wrap">
-            {[
-              { label: "Privacy Policy", href: "/privacy" },
-              { label: "Terms & Conditions", href: "/terms" },
-              { label: "Imprint", href: "/imprint" },
-              { label: "Cookie Policy", href: "/cookies" },
-              { label: "Sitemap", href: "/sitemap.xml" },
-              { label: "Admin", href: "/admin" },
-            ].map((l) => (
+            {footerLinks.legal.map((l) => (
               <Link key={l.href} href={l.href} className="font-body text-[11px] text-white/25 hover:text-white/60 transition-colors">
                 {l.label}
               </Link>
             ))}
-            <span className="font-body text-[11px] text-white/25">Designed in the UAE by MPAgency</span>
+            <Link href="/sitemap.xml" className="font-body text-[11px] text-white/25 hover:text-white/60 transition-colors">
+              Sitemap
+            </Link>
+            <Link href="/admin" className="font-body text-[11px] text-white/25 hover:text-white/60 transition-colors">
+              Admin
+            </Link>
           </div>
         </div>
       </div>

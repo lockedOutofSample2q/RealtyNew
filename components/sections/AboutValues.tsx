@@ -9,7 +9,7 @@ const VALUES = [
   },
   {
     title: "Achievement",
-    text: "We measure our success by the milestones we reach and the impact we make in Dubai's real estate market. Each completed project is a testament to our team's relentless drive for achievement."
+    text: "We measure our success by the milestones we reach and the impact we make in Mohali's real estate market. Each completed project is a testament to our team's relentless drive for achievement."
   },
   {
     title: "Commitment",
@@ -17,7 +17,7 @@ const VALUES = [
   },
   {
     title: "Innovation",
-    text: "We embrace cutting-edge technology and creative solutions to deliver exceptional real estate experiences that set new standards in Dubai's property market."
+    text: "We embrace cutting-edge technology and creative solutions to deliver exceptional real estate experiences that set new standards in Mohali's property market."
   },
   {
     title: "Teamwork",
@@ -25,7 +25,7 @@ const VALUES = [
   },
   {
     title: "Growth",
-    text: "We continuously evolve and adapt to the dynamic real estate landscape, growing alongside our clients and the communities we serve in Dubai and the UAE."
+    text: "We continuously evolve and adapt to the dynamic real estate landscape, growing alongside our clients and the communities we serve in Mohali and Punjab."
   }
 ];
 

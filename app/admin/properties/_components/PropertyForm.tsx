@@ -15,6 +15,7 @@ import { createClient } from "@/lib/supabase";
 import { toast } from "sonner";
 import ImageUploader from "@/components/admin/ImageUploader";
 import type { Property, Agent } from "@/types";
+import { siteConfig } from "@/config/site";
 
 const GOLD = "#C9A84C";
 
@@ -72,8 +73,8 @@ function defaultForm(p?: Property | null) {
     bedrooms_max:        p?.bedrooms_max ?? ("" as any),
     bathrooms:           p?.bathrooms ?? 1,
     area_sqft:           p?.area_sqft ?? 0,
-    location:            p?.location ?? "Dubai",
-    community:           p?.community ?? "",
+    location:            p?.location ?? "Mohali",
+    community:           p?.community ?? "Aerocity",
     developer:           p?.developer ?? "",
     developer_website:   p?.developer_website ?? "",
     building_name:       p?.building_name ?? "",
@@ -291,7 +292,7 @@ export default function PropertyForm({ property }: { property?: Property | null 
                 <label className={lc}>Title *</label>
                 <input type="text" required value={form.title}
                   onChange={(e) => setForm((p) => ({ ...p, title: e.target.value, slug: autoSlug(e.target.value) }))}
-                  className={ic} placeholder="e.g. ENARA by OMNIYAT" />
+                  className={ic} placeholder={`e.g. 3BHK in ${form.community || 'Aerocity'}`} />
               </div>
               <div>
                 <label className={lc}>URL Slug *</label>
@@ -302,7 +303,7 @@ export default function PropertyForm({ property }: { property?: Property | null 
                 <div>
                   <label className={lc}>Property Type *</label>
                   <select required value={form.type} onChange={(e) => f("type", e.target.value)} className={ic}>
-                    {["apartment", "villa", "penthouse", "townhouse", "studio"].map((t) => (
+                    {["apartment", "villa", "penthouse", "townhouse", "studio", "plot", "commercial"].map((t) => (
                       <option key={t} value={t}>{t.charAt(0).toUpperCase() + t.slice(1)}</option>
                     ))}
                   </select>
@@ -374,11 +375,11 @@ export default function PropertyForm({ property }: { property?: Property | null 
               <Row>
                 <div>
                   <label className={lc}>Developer</label>
-                  <input type="text" value={form.developer} onChange={(e) => f("developer", e.target.value)} className={ic} placeholder="OMNIYAT" />
+                  <input type="text" value={form.developer} onChange={(e) => f("developer", e.target.value)} className={ic} placeholder="e.g. Hero Homes" />
                 </div>
                 <div>
                   <label className={lc}>Developer Website</label>
-                  <input type="url" value={form.developer_website} onChange={(e) => f("developer_website", e.target.value)} className={ic} placeholder="https://omniyat.com" />
+                  <input type="url" value={form.developer_website} onChange={(e) => f("developer_website", e.target.value)} className={ic} placeholder="https://example.com" />
                 </div>
               </Row>
               <div className="flex items-center gap-3 pt-1">
@@ -398,31 +399,31 @@ export default function PropertyForm({ property }: { property?: Property | null 
               <Row>
                 <div>
                   <label className={lc}>City *</label>
-                  <input type="text" required value={form.location} onChange={(e) => f("location", e.target.value)} className={ic} placeholder="Dubai" />
+                  <input type="text" required value={form.location} onChange={(e) => f("location", e.target.value)} className={ic} placeholder="Mohali" />
                 </div>
                 <div>
                   <label className={lc}>Community *</label>
-                  <input type="text" required value={form.community} onChange={(e) => f("community", e.target.value)} className={ic} placeholder="Downtown Dubai" />
+                  <input type="text" required value={form.community} onChange={(e) => f("community", e.target.value)} className={ic} placeholder="Aerocity" />
                 </div>
               </Row>
               <Row>
                 <div>
                   <label className={lc}>Building Name</label>
-                  <input type="text" value={form.building_name} onChange={(e) => f("building_name", e.target.value)} className={ic} placeholder="The Alba Residences" />
+                  <input type="text" value={form.building_name} onChange={(e) => f("building_name", e.target.value)} className={ic} placeholder="Hero Homes" />
                 </div>
                 <div>
                   <label className={lc}>Street Address</label>
-                  <input type="text" value={form.address} onChange={(e) => f("address", e.target.value)} className={ic} placeholder="Marina Walk, Dubai Marina" />
+                  <input type="text" value={form.address} onChange={(e) => f("address", e.target.value)} className={ic} placeholder="Sector 88, Mohali" />
                 </div>
               </Row>
               <Row>
                 <div>
                   <label className={lc}>Latitude</label>
-                  <input type="number" step="any" value={form.latitude} onChange={(e) => f("latitude", e.target.value)} className={ic} placeholder="25.0805" />
+                  <input type="number" step="any" value={form.latitude} onChange={(e) => f("latitude", e.target.value)} className={ic} placeholder="30.6973" />
                 </div>
                 <div>
                   <label className={lc}>Longitude</label>
-                  <input type="number" step="any" value={form.longitude} onChange={(e) => f("longitude", e.target.value)} className={ic} placeholder="55.1403" />
+                  <input type="number" step="any" value={form.longitude} onChange={(e) => f("longitude", e.target.value)} className={ic} placeholder="76.6903" />
                 </div>
               </Row>
               <div>
@@ -430,7 +431,7 @@ export default function PropertyForm({ property }: { property?: Property | null 
                 <textarea rows={6} value={form.nearby_landmarks_json}
                   onChange={(e) => f("nearby_landmarks_json", e.target.value)}
                   className={`${tc} font-mono text-xs`}
-                  placeholder={`[\n  { "name": "Dubai Marina Mall", "time": 5, "transport": "walk" }\n]`} />
+                  placeholder={`[\n  { "name": "Airport Road", "time": 5, "transport": "car" }\n]`} />
               </div>
             </div>
           </Section>
@@ -473,17 +474,17 @@ export default function PropertyForm({ property }: { property?: Property | null 
               <div>
                 <label className={lc}>Off-Plan Highlights (one per line)</label>
                 <textarea rows={5} value={form.highlights} onChange={(e) => f("highlights", e.target.value)} className={tc}
-                  placeholder={"Panoramic sea and skyline views\nPrivate pool & terrace\nHandover Q4 2027"} />
+                  placeholder={"Strategic location on Airport Road\nGMADA approved\nPossession Q4 2026"} />
               </div>
               <div>
                 <label className={lc}>Community Amenities (one per line)</label>
                 <textarea rows={5} value={form.amenities} onChange={(e) => f("amenities", e.target.value)} className={tc}
-                  placeholder={"Swimming Pool\nFitness Center\nConcierge"} />
+                  placeholder={"Swimming Pool\nClubhouse\n24/7 Security"} />
               </div>
               <div>
                 <label className={lc}>Interior Features (one per line)</label>
                 <textarea rows={4} value={form.interior_features} onChange={(e) => f("interior_features", e.target.value)} className={tc}
-                  placeholder={"Floor-to-ceiling windows\nItalian marble flooring"} />
+                  placeholder={"Modular Kitchen\nPremium flooring"} />
               </div>
               <div>
                 <label className={lc}>General Features / Specs (one per line)</label>
@@ -492,7 +493,7 @@ export default function PropertyForm({ property }: { property?: Property | null 
               <div>
                 <label className={lc}>Upcoming Infrastructure & Projects (one per line)</label>
                 <textarea rows={4} value={form.upcoming_infrastructure} onChange={(e) => f("upcoming_infrastructure", e.target.value)} className={tc}
-                  placeholder={"New Metro Station (2025)\nCommercial Hub Development\nPark Expansion"} />
+                  placeholder={"New Commercial Hub Development\nPark Expansion"} />
               </div>
             </div>
           </Section>
@@ -593,21 +594,21 @@ export default function PropertyForm({ property }: { property?: Property | null 
                   <Row>
                     <div>
                       <label className={lc}>Agent Name</label>
-                      <input type="text" value={form.agent_name} onChange={(e) => f("agent_name", e.target.value)} className={ic} placeholder="Armina Hakobyan" />
+                      <input type="text" value={form.agent_name} onChange={(e) => f("agent_name", e.target.value)} className={ic} placeholder="Agent Name" />
                     </div>
                     <div>
                       <label className={lc}>Agent Title</label>
-                      <input type="text" value={form.agent_title} onChange={(e) => f("agent_title", e.target.value)} className={ic} placeholder="Senior Property Consultant" />
+                      <input type="text" value={form.agent_title} onChange={(e) => f("agent_title", e.target.value)} className={ic} placeholder="Property Consultant" />
                     </div>
                   </Row>
                   <Row>
                     <div>
                       <label className={lc}>Email</label>
-                      <input type="email" value={form.agent_email} onChange={(e) => f("agent_email", e.target.value)} className={ic} placeholder="agent@monterealestate.ae" />
+                      <input type="email" value={form.agent_email} onChange={(e) => f("agent_email", e.target.value)} className={ic} placeholder={siteConfig.contact.email} />
                     </div>
                     <div>
                       <label className={lc}>Phone</label>
-                      <input type="text" value={form.agent_phone} onChange={(e) => f("agent_phone", e.target.value)} className={ic} placeholder="+971 50 123 4567" />
+                      <input type="text" value={form.agent_phone} onChange={(e) => f("agent_phone", e.target.value)} className={ic} placeholder={siteConfig.contact.phone} />
                     </div>
                   </Row>
                   <Row>
@@ -617,7 +618,7 @@ export default function PropertyForm({ property }: { property?: Property | null 
                     </div>
                     <div>
                       <label className={lc}>Languages (comma-separated)</label>
-                      <input type="text" value={form.agent_languages} onChange={(e) => f("agent_languages", e.target.value)} className={ic} placeholder="English, Arabic, Russian" />
+                      <input type="text" value={form.agent_languages} onChange={(e) => f("agent_languages", e.target.value)} className={ic} placeholder="English, Punjabi, Hindi" />
                     </div>
                   </Row>
                 </div>

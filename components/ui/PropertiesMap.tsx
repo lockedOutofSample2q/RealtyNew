@@ -1,147 +1,96 @@
 "use client";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
+import "leaflet/dist/leaflet.css";
 import Link from "next/link";
-import type { Property } from "@/types";
 import { useCurrency } from "@/context/CurrencyContext";
+import type { Property } from "@/types";
 
-// Fix leaflet default marker icons (broken in webpack/Next.js)
-const DefaultIcon = L.icon({
-  iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
-  iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+// Fix Leaflet marker icons
+const icon = L.icon({
+  iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
+  shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
   iconSize: [25, 41],
   iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41],
 });
 
-// Community-level coordinates for Dubai areas
+// ── COMMUNITY COORDINATES ──────────────────────────────────
+// Community-level coordinates for Mohali and Tricity areas
 const COMMUNITY_COORDS: Record<string, [number, number]> = {
-  "Downtown Dubai": [25.1972, 55.2744],
-  "Dubai Marina": [25.0805, 55.1403],
-  "Palm Jumeirah": [25.1124, 55.1390],
-  "Mohali Phase 8A": [30.69738317022751, 76.69031176711192],
-  "JVC": [25.0499, 55.2069],
-  "Jumeirah Village Circle": [25.0499, 55.2069],
-  "Jumeirah": [30.69738317022751, 76.69031176711192],
-  "DIFC": [25.2131, 55.2818],
-  "Dubai Hills": [25.1066, 55.2464],
-  "Dubai Hills Estate": [25.1066, 55.2464],
-  "Creek Harbour": [25.2024, 55.3490],
-  "Dubai Creek Harbour": [25.2024, 55.3490],
-  "Al Barari": [25.1018, 55.3076],
-  "Emaar Beachfront": [25.0792, 55.1302],
-  "Palm Jebel Ali": [24.9958, 55.0145],
-  "Dubai South": [24.8963, 55.1545],
-  "MBR City": [25.1698, 55.3117],
-  "Mohammed Bin Rashid City": [25.1698, 55.3117],
-  "Arabian Ranches": [25.0544, 55.2697],
-  "Dubai Land": [25.0765, 55.3095],
-  "Meydan": [25.1687, 55.3015],
-  "Al Furjan": [25.0273, 55.1511],
-  "Town Square": [24.9964, 55.2418],
-  "Sobha Hartland": [25.1905, 55.3282],
-  "Tilal Al Ghaf": [25.0352, 55.2338],
+  "Aerocity": [30.6619, 76.7412],
+  "IT City": [30.6550, 76.7250],
+  "Sector 82": [30.6650, 76.7350],
+  "Sector 88": [30.6973, 76.6903],
+  "Mohali Phase 8A": [30.6973, 76.6903],
+  "Sector 66": [30.6750, 76.7450],
+  "Sector 67": [30.6850, 76.7550],
+  "Sector 70": [30.7050, 76.7350],
+  "New Chandigarh": [30.7850, 76.7250],
+  "Zirakpur": [30.6450, 76.8250],
 };
 
-function getCoords(property: Property): [number, number] | null {
-  const key = Object.keys(COMMUNITY_COORDS).find(
-    (k) =>
-      property.community?.toLowerCase().includes(k.toLowerCase()) ||
-      k.toLowerCase().includes(property.community?.toLowerCase())
-  );
-  return key ? COMMUNITY_COORDS[key] : null;
-}
+const DEFAULT_CENTER: [number, number] = [30.6973, 76.6903]; // Mohali center
 
-// Slight jitter to avoid exact overlapping pins
-function jitter(coord: [number, number], index: number): [number, number] {
-  const offset = 0.002;
-  return [
-    coord[0] + (Math.sin(index * 2.4) * offset),
-    coord[1] + (Math.cos(index * 2.4) * offset),
-  ];
-}
-
-function FitBounds({ coords }: { coords: [number, number][] }) {
+function MapResizer() {
   const map = useMap();
   useEffect(() => {
-    if (coords.length > 0) {
-      const bounds = L.latLngBounds(coords);
-      map.fitBounds(bounds, { padding: [60, 60] });
-    }
-  }, [map, coords]);
+    setTimeout(() => { map.invalidateSize(); }, 400);
+  }, [map]);
   return null;
 }
 
-interface Props {
-  properties: Property[];
-}
-
-export default function PropertiesMap({ properties }: Props) {
+export default function PropertiesMap({ properties }: { properties: Property[] }) {
   const { formatPrice } = useCurrency();
+  const [isMounted, setIsMounted] = useState(false);
+
   useEffect(() => {
-    L.Marker.prototype.options.icon = DefaultIcon;
+    setIsMounted(true);
   }, []);
 
-  const mapped = properties
-    .map((p, i) => {
-      const raw = getCoords(p);
-      if (!raw) return null;
-      return { property: p, coords: jitter(raw, i) };
-    })
-    .filter(Boolean) as { property: Property; coords: [number, number] }[];
-
-  const allCoords = mapped.map((m) => m.coords);
-  const officeCoords: [number, number] = [30.69738317022751, 76.69031176711192]
-  const center: [number, number] = allCoords.length > 0 ? allCoords[0] : officeCoords
+  if (!isMounted) return <div className="w-full h-full bg-slate-50" />;
 
   return (
-    <MapContainer
-      center={center}
-      zoom={11}
-      style={{ width: "100%", height: "100%" }}
-      zoomControl={true}
-      scrollWheelZoom={true}
-    >
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      {allCoords.length > 0 && <FitBounds coords={allCoords} />}
-      {mapped.map(({ property, coords }) => (
-        <Marker key={property.id} position={coords} icon={DefaultIcon}>
-          <Popup maxWidth={220}>
-            <div className="text-xs">
-              <p className="font-bold text-black text-sm leading-tight mb-1">{property.title}</p>
-              <p className="text-gray-500 mb-2">{property.community}, {property.location}</p>
-              <p className="font-semibold text-black">
-                {property.price > 0
-                  ? formatPrice(property.price)
-                  : "Price on request"}
-              </p>
-              <Link
-                href={`/${property.slug}`}
-                className="inline-block mt-2 text-xs text-black underline"
-              >
-                View property →
-              </Link>
-            </div>
-          </Popup>
-        </Marker>
-      ))}
+    <div className="w-full h-full rounded-2xl overflow-hidden shadow-inner border border-black/5">
+      <MapContainer
+        center={DEFAULT_CENTER}
+        zoom={12}
+        style={{ height: "100%", width: "100%" }}
+        scrollWheelZoom={false}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <MapResizer />
 
-      {/* Office marker fallback */}
-      <Marker key="office" position={officeCoords} icon={DefaultIcon}>
-        <Popup maxWidth={220}>
-          <div className="text-xs">
-            <p className="font-bold text-black text-sm leading-tight mb-1">Montere Real Estate</p>
-            <p className="text-gray-500 mb-2">Office</p>
-            <Link href="/contact" className="inline-block mt-2 text-xs text-black underline">Contact us →</Link>
-          </div>
-        </Popup>
-      </Marker>
-    </MapContainer>
+        {properties.map((p) => {
+          // Use property lat/lng if available, otherwise fallback to community coords
+          const position: [number, number] = (p.latitude && p.longitude)
+            ? [p.latitude, p.longitude]
+            : (COMMUNITY_COORDS[p.community] || DEFAULT_CENTER);
+
+          return (
+            <Marker key={p.id} position={position} icon={icon}>
+              <Popup className="property-popup">
+                <div className="p-1 min-w-[180px]">
+                  <h4 className="font-display font-bold text-sm mb-1 leading-tight">{p.title}</h4>
+                  <p className="text-[11px] text-gray-500 mb-2">{p.community}</p>
+                  <div className="flex items-center justify-between gap-4 border-t border-gray-100 pt-2">
+                    <span className="font-body font-bold text-xs">{formatPrice(p.price)}</span>
+                    <Link
+                      href={`/${p.slug}`}
+                      className="text-[10px] font-bold text-blue-600 hover:underline uppercase tracking-wider"
+                    >
+                      Details
+                    </Link>
+                  </div>
+                </div>
+              </Popup>
+            </Marker>
+          );
+        })}
+      </MapContainer>
+    </div>
   );
 }

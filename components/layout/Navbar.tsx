@@ -106,10 +106,14 @@ export default function Navbar() {
           {/* ── Logo ─────────────────────────────────────── */}
           <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 group z-50">
             <div className={cn("flex flex-col items-center leading-none font-display", useDarkText ? "text-black" : "text-white")}>
-              <span className="text-2xl font-light tracking-wider lowercase flex items-center gap-1.5">
-                m <span className="opacity-40 font-thin text-[28px] -translate-y-[2px]">|</span> monte
+              <span className="text-xl font-bold tracking-tighter uppercase flex items-center gap-1.5">
+                {siteConfig.name.split(' ').map((word, i) => (
+                  <span key={i} className={i > 0 ? "opacity-50 font-medium" : ""}>{word}</span>
+                ))}
               </span>
-              <span className="text-[8px] tracking-[0.4em] font-medium opacity-70 uppercase -translate-y-1 pl-1">REAL ESTATE</span>
+              <span className="text-[8px] tracking-[0.4em] font-medium opacity-70 uppercase -translate-y-1 pl-1">
+                {siteConfig.tagline}
+              </span>
             </div>
           </Link>
 
@@ -193,7 +197,7 @@ export default function Navbar() {
 
               {/* Main vertical links (each item has frame-relative anchor) */}
               <nav className="absolute left-[6.25rem] md:left-[7.75rem] top-0 w-[min(560px,80vw)] h-screen">
-                {MENU_LINKS.map((item, i) => (
+                {navItems.map((item, i) => (
                   <motion.div
                     custom={i}
                     variants={linkVariants}
@@ -227,7 +231,7 @@ export default function Navbar() {
                 className="absolute left-[6.25rem] md:left-[7.75rem] bottom-[3.8vh] w-[min(760px,88vw)] flex flex-col gap-6"
               >
                 <div className="flex flex-wrap items-center gap-6">
-                  {UTILITY_LINKS.map((util) => (
+                  {footerLinks.quick.slice(0, 4).map((util) => (
                     <Link
                       key={util.label}
                       href={util.href}
@@ -251,7 +255,7 @@ export default function Navbar() {
               </motion.div>
 
               <div className="absolute right-[6.25rem] md:right-[7.75rem] bottom-[3.8vh] font-body text-[11px] uppercase tracking-[0.16em] text-white/50">
-                Dubai, UAE
+                {siteConfig.contact.address.split(',').slice(-2).join(',').trim()}
               </div>
 
             </div>

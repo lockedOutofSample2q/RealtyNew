@@ -2,9 +2,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+import { siteConfig } from "@/config/site";
+
 const PHILOSOPHY = [
   { id: "01", title: "Insight & Analysis", description: "Every project begins with a deep forensic dive into market dynamics and architectural potential." },
-  { id: "02", title: "Meticulous Planning", description: "We navigate the complex landscape of Dubai real estate with surgical precision and strategic intent." },
+  { id: "02", title: "Meticulous Planning", description: "We navigate the complex landscape of Mohali and Punjab real estate with surgical precision and strategic intent." },
   { id: "03", title: "Tailored Solutions", description: "Our approach is never generic. We curate solutions that align with your unique legacy and financial goals." },
   { id: "04", title: "Quality Execution", description: "From the first meeting to the final handover, our standard is uncompromising excellence." },
 ];
@@ -27,8 +29,8 @@ export default function AboutPhilosophy() {
             </span>
           </motion.div>
           
-          <h2 className="font-display text-white text-4xl md:text-5xl lg:text-[56px] font-medium tracking-tight mb-6 text-center">
-            The Monte Way
+          <h2 className="font-display text-white text-4xl md:text-5xl lg:text-[56px] font-medium tracking-tight mb-6 text-center uppercase">
+            The {siteConfig.name.split(' ')[0]} Way
           </h2>
           <p className="font-body text-white/50 text-base md:text-lg text-center max-w-xl mx-auto leading-relaxed">
             Our methodology is built on a decade of refined real estate intelligence and a relentless pursuit of architectural quality.

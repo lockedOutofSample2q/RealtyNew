@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Twitter, Facebook, Linkedin } from "lucide-react";
+import { siteConfig } from "@/config/site";
 
 interface BlogSidebarProps {
   postUrl: string;
@@ -67,7 +68,7 @@ export default function BlogSidebar({ postUrl, postTitle }: BlogSidebarProps) {
           Stay Updated
         </p>
         <p className="text-[14px] text-black/50 leading-relaxed mb-5">
-          Get the latest Dubai real estate insights delivered to your inbox.
+          Get the latest real estate insights from {siteConfig.contact.address.split(',').slice(-2, -1)[0].trim()} delivered to your inbox.
         </p>
 
         {status === "success" ? (

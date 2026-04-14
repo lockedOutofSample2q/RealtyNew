@@ -3,21 +3,21 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import { Info, ChevronDown } from "lucide-react";
 
-type Residency = "Resident" | "National" | "Non-resident";
+type Residency = "Resident" | "Non-Resident (NRI)";
 
 export default function MortgageCalculatorPage() {
   const [currency, setCurrency] = useState("INR");
   const [residency, setResidency] = useState<Residency>("Resident");
-  const [price, setPrice] = useState(2000000);
+  const [price, setPrice] = useState(5000000);
   const [downPct, setDownPct] = useState(20);
-  const [rate, setRate] = useState(4.5);
-  const [years, setYears] = useState(25);
+  const [rate, setRate] = useState(8.5);
+  const [years, setYears] = useState(20);
 
-  const FX: Record<string, number> = { INR: 1, USD: 0.272, CAD: 0.252 };
+  const FX: Record<string, number> = { INR: 1, USD: 0.012, CAD: 0.016 };
   const fx = FX[currency] ?? 1;
 
-  // Enforce Max LTV based on Residency
-  const maxLtv = residency === "National" ? 85 : residency === "Resident" ? 80 : 75;
+  // Enforce Max LTV based on Residency (Standard Indian Banking)
+  const maxLtv = residency === "Resident" ? 80 : 75;
   const minDownPct = 100 - maxLtv;
 
   // Ensure downpayment meets minimum
@@ -104,11 +104,11 @@ export default function MortgageCalculatorPage() {
             {/* Residency Status */}
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <label className="font-body text-[13px] font-bold text-black uppercase tracking-wide">UAE Residency Status</label>
+                <label className="font-body text-[13px] font-bold text-black uppercase tracking-wide">Residency Status</label>
                 <Info size={14} className="text-black/30 cursor-pointer" />
               </div>
               <div className="flex flex-wrap gap-2">
-                {(["Resident", "National", "Non-resident"] as Residency[]).map((r) => (
+                {(["Resident", "Non-Resident (NRI)"] as any[]).map((r) => (
                   <button
                     key={r}
                     onClick={() => setResidency(r)}
@@ -271,7 +271,7 @@ export default function MortgageCalculatorPage() {
       <div className="bg-[#F3F4F6] border-t border-black/5 py-10 mt-10">
         <div className="container-site max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row items-center justify-center text-center gap-4">
            <Info size={20} className="text-black/40" />
-           <p className="font-body text-sm text-black/60 font-medium">UAE mortgage regulations: Max LTV for Residents is 80%, Nationals 85%, and Non-residents 75%.</p>
+           <p className="font-body text-sm text-black/60 font-medium">Standard mortgage guidelines: Typical LTV for residents is up to 80-90% depending on loan amount and property value.</p>
         </div>
       </div>
     </div>
