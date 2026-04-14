@@ -60,7 +60,7 @@ export default function PropertiesClient({ properties }: Props) {
   const [filters, setFilters] = useState<PropertySearchFilters>({
     ...DEFAULT_PROPERTY_FILTERS,
     city: searchParams.get("city") ?? "",
-    sector: searchParams.getAll("sector") || [],
+    sector: searchParams.getAll("sector").filter(Boolean) || [],
     type: searchParams.get("type") ?? "",
     bedrooms: searchParams.get("bedrooms") ?? "",
     furnishing: searchParams.get("furnishing") ?? "",
@@ -74,7 +74,7 @@ export default function PropertiesClient({ properties }: Props) {
     setFilters({
       ...DEFAULT_PROPERTY_FILTERS,
       city: searchParams.get("city") ?? "",
-      sector: searchParams.getAll("sector") || [],
+      sector: searchParams.getAll("sector").filter(Boolean) || [],
       type: searchParams.get("type") ?? "",
       bedrooms: searchParams.get("bedrooms") ?? "",
       furnishing: searchParams.get("furnishing") ?? "",

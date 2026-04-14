@@ -62,15 +62,15 @@ export default function BlogClient({ posts }: { posts: any[] }) {
 
       {/* Filters and Search */}
       <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-6 mb-[4vh] border-b border-black/5 pb-6">
-        <div className="flex flex-row gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-hide">
+        <div className="flex flex-row gap-2 overflow-x-auto pb-2 md:pb-0 no-scrollbar select-none">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-5 py-2.5 rounded-full text-[13px] font-medium transition-colors whitespace-nowrap shrink-0 ${
+              className={`px-6 py-2.5 rounded-full text-[13px] font-semibold transition-all duration-300 whitespace-nowrap shrink-0 border ${
                 activeCategory === cat
-                  ? "bg-black text-white"
-                  : "bg-transparent text-black/60 hover:bg-[#F3F4F6] hover:text-black"
+                  ? "bg-white/40 backdrop-blur-md border-white/60 text-black shadow-[0_8px_32px_rgba(0,0,0,0.08)] scale-105"
+                  : "bg-transparent border-transparent text-black/40 hover:text-black hover:bg-black/5"
               }`}
             >
               {cat}

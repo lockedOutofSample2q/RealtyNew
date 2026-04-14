@@ -50,18 +50,21 @@ export default function HeroSection() {
     const params = new URLSearchParams();
     params.set("tab", tab);
     if (filters.city) params.set("city", filters.city);
+    
+    // Handle sector array correctly
     if (filters.sector && filters.sector.length > 0) {
-      if (typeof filters.sector === "string") {
-        params.append("sector", filters.sector);
-      } else {
-        filters.sector.forEach(s => params.append("sector", s));
-      }
+      const sectors = Array.isArray(filters.sector) ? filters.sector : [filters.sector];
+      sectors.forEach(s => {
+        if (s !== "All") params.append("sector", s);
+      });
     }
+    
     if (filters.type) params.set("type", filters.type);
     if (filters.bedrooms && tab !== "lands") params.set("bedrooms", filters.bedrooms);
     if (filters.furnishing && tab !== "lands") params.set("furnishing", filters.furnishing);
     if (filters.price) params.set("price", filters.price);
     if (filters.currency) params.set("currency", filters.currency);
+    
     setIsSearchModalOpen(false);
     router.push(`/properties?${params.toString()}`);
   }
