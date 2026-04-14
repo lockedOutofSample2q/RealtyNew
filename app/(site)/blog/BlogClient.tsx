@@ -47,7 +47,7 @@ export default function BlogClient({ posts }: { posts: any[] }) {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="text-black text-[clamp(2.5rem,4vw,4rem)] font-display font-medium tracking-tight mb-[2vh]"
         >
-          Mohali Real Estate, Explained by Someone Who Has Seen it Through.
+          Mohali Real Estate
         </motion.h1>
 
         <motion.p
