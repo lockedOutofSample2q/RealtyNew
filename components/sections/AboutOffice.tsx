@@ -6,7 +6,6 @@ import Link from "next/link";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { useRef } from "react";
 import { siteConfig } from "@/config/site";
-import { siteConfig } from "@/config/site";
 
 export default function AboutOffice() {
   const containerRef = useRef(null);

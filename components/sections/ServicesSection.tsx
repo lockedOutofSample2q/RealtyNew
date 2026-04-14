@@ -4,31 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-
-type ServiceItem = {
-  title: string;
-  description: string;
-  image: string;
-  bullets?: string[];
-};
-
-const services: ServiceItem[] = [
-  {
-    title: "Property Advisory",
-    description: "Independent evaluation of any property before you commit: developer track record, RERA verification, payment plan analysis, and honest shortlisting. I will tell you what I would do in your position, including when the answer is not to buy.",
-    image: "/assets/images/home/about.jpg"
-  },
-  {
-    title: "Land & Plot Advisory",
-    description: "From GMADA plot allotment to agricultural land reinvestment after an acquisition payout: guidance on licensed vs unlicensed status, capital gains implications, and which land in which location makes financial sense for your specific situation.",
-    image: "/assets/images/home/hero-bg.jpg"
-  },
-  {
-    title: "NRI & Remote Advisory",
-    description: "End-to-end property advisory for NRI investors buying from the UK, Canada, Gulf, or Australia: FEMA compliance, POA structuring, video-verified site walkthroughs, and post-purchase support without you needing to be here.",
-    image: "/assets/images/home/services.jpg"
-  }
-];
+import { services } from "@/config/site";
 
 export default function ServicesSection() {
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -137,9 +113,9 @@ export default function ServicesSection() {
                             </p>
                             
                             {/* Sub-bullets */}
-                            {service.bullets && (
+                            {(service as any).bullets && (
                               <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-6">
-                                {service.bullets.map((bullet, idx) => (
+                                {(service as any).bullets.map((bullet: string, idx: number) => (
                                   <li key={idx} className="font-body text-[12px] md:text-[13px] text-white/80 font-medium flex items-start gap-2.5">
                                     <span className="w-1.5 h-1.5 rounded-full bg-white/20 mt-1.5 shrink-0" />
                                     {bullet}

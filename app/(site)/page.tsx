@@ -12,6 +12,7 @@ import ServicesSection from "@/components/sections/ServicesSection";
 import FaqSection from "@/components/sections/FaqSection";
 import ContactSection from "@/components/sections/ContactSection";
 import { createAdminClient } from "@/lib/supabase";
+import { homeCarousels } from "@/config/site";
 import type { Property } from "@/types";
 
 // Fetch fresh properties at build time (ISR every 60s)
@@ -62,14 +63,14 @@ export default async function HomePage() {
       <HeroSection />
       <AboutSection />
       <PropertiesCarousel
-        title="Properties Worth Looking At"
-        subtitle="A curated selection of verified residential and commercial listings across Mohali and Tricity: pre-launch, resale, and ready possession."
+        title={homeCarousels.properties.title}
+        subtitle={homeCarousels.properties.subtitle}
         properties={latest}
         type="sale"
       />
       <PropertiesCarousel
-        title="Land Listings in Punjab"
-        subtitle="GMADA plots, licensed residential plots, and agricultural land across Mohali, Chandigarh, and Greater Punjab. Selected for clear title, location merit, and resale liquidity."
+        title={homeCarousels.lands.title}
+        subtitle={homeCarousels.lands.subtitle}
         properties={rentals}
         type="lands"
         inverted

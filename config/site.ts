@@ -120,87 +120,41 @@ export const aboutCarouselItems = [
 // ── Services (Home Page) ─────────────────────────────────────
 export const services = [
   {
-    icon: "building",
-    title: "Real Estate Sales",
-    description: "Discover our exclusive portfolio of high-end properties for sale. Each residence is meticulously selected for its prime location, luxury amenities, and exceptional investment potential.",
-    bullets: [
-      "Luxury Villas & Penthouses",
-      "Waterfront Properties",
-      "Investment Opportunities",
-      "Off-Plan Developments",
-      "Prime Location Estates"
-    ],
+    title: "Property Advisory",
+    description: "Independent evaluation of any property before you commit: developer track record, RERA verification, payment plan analysis, and honest shortlisting. I will tell you what I would do in your position, including when the answer is not to buy.",
     image: "/assets/images/home/about.jpg"
   },
   {
-    icon: "key",
-    title: "Property Rentals",
-    description: "Short-term and long-term luxury rentals. We handle everything from listing and marketing to tenant screening and key handover, ensuring a seamless experience for landlords and tenants alike.",
-    bullets: [
-      "Long-Term Leases",
-      "Short-Term Holiday Homes",
-      "Tenant Screening",
-      "Property Management",
-      "Rental Yield Optimization"
-    ],
+    title: "Land & Plot Advisory",
+    description: "From GMADA plot allotment to agricultural land reinvestment after an acquisition payout: guidance on licensed vs unlicensed status, capital gains implications, and which land in which location makes financial sense for your specific situation.",
     image: "/assets/images/home/hero-bg.jpg"
   },
   {
-    icon: "palette",
-    title: "Interior Design",
-    description: "From concept to completion. Spaces designed to maximise rental yield and elevate lifestyle. Our award-winning designers create bespoke environments tailored to your taste and property architecture.",
-    bullets: [
-      "Bespoke Concept Design",
-      "Space Planning & Layouts",
-      "Material Selection",
-      "Custom Furniture Sourcing",
-      "Project Management"
-    ],
+    title: "NRI & Remote Advisory",
+    description: "End-to-end property advisory for NRI investors buying from the UK, Canada, Gulf, or Australia: FEMA compliance, POA structuring, video-verified site walkthroughs, and post-purchase support without you needing to be here.",
     image: "/assets/images/home/services.jpg"
-  },
-  {
-    icon: "sparkles",
-    title: "Decoration",
-    description: "Turnkey furnishing and staging that commands premium rents and faster closings. We transform empty spaces into captivating homes that appeal to high-net-worth buyers and premium tenants.",
-    bullets: [
-      "Turnkey Furnishing",
-      "Home Staging for Sale",
-      "Art & Accessory Curation",
-      "Window Treatments",
-      "Lighting Design"
-    ],
-    image: "/assets/images/home/about.jpg"
-  },
+  }
 ];
 
 // ── FAQ (Home Page) ──────────────────────────────────────────
 // EDIT: Add, remove, or edit FAQ items here.
 export const faqs = [
   {
-    question: "Can foreigners buy property in Dubai?",
-    answer:
-      "Yes. Foreigners can purchase freehold properties in designated areas across Dubai. This includes apartments, villas, and townhouses with full ownership rights.",
+    question: "Can anyone buy property in Mohali, including people outside Punjab?",
+    answer: "Yes. There are no residency or domicile restrictions on buying property in Mohali or Punjab. Indian residents from any state, NRIs, and in certain cases foreign nationals can purchase here. NRIs must route payment through an NRO or NRE account and comply with FEMA guidelines. The process is straightforward with the right preparation."
   },
   {
-    question: "What is the process for buying off-plan in Dubai?",
-    answer:
-      "You select the development, pay a reservation fee (typically 5–10%), sign the SPA, and follow a payment plan tied to construction milestones. We guide you through every step.",
+    question: "How does a pre-launch booking actually work, and what is the real risk?",
+    answer: "In a pre-launch, you book at an early price before construction begins, typically paying 25% upfront with the balance on a construction-linked schedule. The discount over possession-stage pricing is real. So is the risk. Developer cash flow health, RERA registration status, approval completeness, and past delivery record all need to be verified before paying a single rupee. I evaluate all of these before I recommend a pre-launch to any client."
   },
   {
-    question: "How much do I need to invest to get a UAE Golden Visa?",
-    answer:
-      "A property investment of AED 2 million or more qualifies you for the 10-year Golden Visa. We can recommend projects that meet this threshold with strong ROI.",
+    question: "What should I do with a land acquisition payout in Punjab?",
+    answer: "The 24-month capital gains reinvestment window under Section 54F gives you time to make a considered decision. Not unlimited time. The money should be parked in a Capital Gains Account Scheme while you decide, not in an FD that looks safe but loses value in real terms after inflation. The options from ₹50 lakh to ₹5 crore are genuinely different, and which one makes sense depends on your goals, your family's needs, and the specific market conditions right now. This is exactly the kind of conversation we have in a free consultation."
   },
   {
-    question: "What are the typical rental yields in Dubai?",
-    answer:
-      "Dubai averages 5–8% gross rental yield depending on the community and property type — significantly higher than London, Singapore, or New York.",
-  },
-  {
-    question: "Do you handle property management after purchase?",
-    answer:
-      "Yes. We offer end-to-end property management including tenant sourcing, rent collection, maintenance coordination, and Ejari registration.",
-  },
+    question: "What returns can I realistically expect from Mohali real estate?",
+    answer: "In growth corridors like E328 Industrial area phase 8A, the Airport Road commercial belt, and the Bharatmala-linked industrial zones near Rajpura, appreciation has been significant. Commercial units on Airport Road that were available at ₹3–4 crore some years ago now trade at ₹12–16 crore. Industrial land purchased at ₹18.70 lakh per vigha was valued at ₹45 lakh per vigha six months later. But these outcomes came from buying before the infrastructure was visible. Not after. I will tell you where the next vision corridor is, and I will tell you when I think a market is overpriced. Both equally."
+  }
 ];
 
 // ── SEO Defaults ─────────────────────────────────────────────
@@ -222,4 +176,16 @@ export const seoDefaults = {
       },
     ],
   },
+};
+
+
+export const homeCarousels = {
+  properties: {
+    title: "Properties Worth Looking At",
+    subtitle: "A curated selection of verified residential and commercial listings across Mohali and Tricity: pre-launch, resale, and ready possession."
+  },
+  lands: {
+    title: "Land Listings in Punjab",
+    subtitle: "GMADA plots, licensed residential plots, and agricultural land across Mohali, Chandigarh, and Greater Punjab. Selected for clear title, location merit, and resale liquidity."
+  }
 };
