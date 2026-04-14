@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS properties (
 
   -- Pricing
   price                   NUMERIC NOT NULL DEFAULT 0,
-  price_currency          TEXT NOT NULL DEFAULT 'AED',
+  price_currency          TEXT NOT NULL DEFAULT 'INR',
 
   -- Size
   bedrooms                INTEGER,          -- NULL = studio
@@ -233,7 +233,7 @@ VALUES
     'The Alba Residences',
     'the-alba-residences',
     'apartment', 'off-plan', 'off-plan',
-    2850000, 'AED', 2, 3, 1640,
+    2850000, 'INR', 2, 3, 1640,
     'Dubai Marina', 'Dubai Marina', 'OMNIYAT', 'furnished',
     'Ultra-luxury living managed by Dorchester Collection. Breathtaking sea views, private plunge pools, and bespoke concierge services in the heart of Dubai Marina.',
     ARRAY['Sea View','Private Pool','Concierge','Gym','Spa','Valet Parking'],
@@ -245,7 +245,7 @@ VALUES
     'Creek Horizon Tower',
     'creek-horizon-tower',
     'apartment', 'off-plan', 'off-plan',
-    1490000, 'AED', 1, 2, 780,
+    1490000, 'INR', 1, 2, 780,
     'Dubai Creek Harbour', 'Creek Harbour', 'Emaar Properties', 'unfurnished',
     'Contemporary 1-bedroom residences overlooking the iconic Dubai Creek Tower. Premium finishes, smart home technology, and world-class amenities.',
     ARRAY['Creek View','Smart Home','Infinity Pool','Rooftop Terrace'],
@@ -257,7 +257,7 @@ VALUES
     'Tilal Al Ghaf Villas',
     'tilal-al-ghaf-villas',
     'villa', 'off-plan', 'off-plan',
-    4800000, 'AED', 4, 5, 4200,
+    4800000, 'INR', 4, 5, 4200,
     'Tilal Al Ghaf', 'Tilal Al Ghaf', 'Majid Al Futtaim', 'unfurnished',
     'Exclusive lakeside villas in Tilal Al Ghaf — Dubai''s newest lifestyle destination. Private gardens, lagoon access, and resort-style amenities.',
     ARRAY['Lagoon Access','Private Garden','Maid''s Room','4-Car Garage','Smart Home'],
@@ -269,7 +269,7 @@ VALUES
     'Marina Heights Penthouse',
     'marina-heights-penthouse',
     'penthouse', 'available', 'sale',
-    8500000, 'AED', 4, 5, 4200,
+    8500000, 'INR', 4, 5, 4200,
     'Dubai Marina', 'Dubai Marina', NULL, 'furnished',
     'Full-floor penthouse with 270-degree Marina views. Private pool, chef''s kitchen, and direct beach access.',
     ARRAY['Marina View','Private Pool','Chef''s Kitchen','Beach Access','Smart Home'],
@@ -281,7 +281,7 @@ VALUES
     'Creek Harbour 1-Bed',
     'creek-harbour-1-bed',
     'apartment', 'available', 'rent',
-    95000, 'AED', 1, 1, 720,
+    95000, 'INR', 1, 1, 720,
     'Dubai Creek Harbour', 'Creek Harbour', 'Emaar', 'furnished',
     'Bright 1-bedroom with full Creek Tower view. Furnished to hotel standard. Ready to move in.',
     ARRAY['Creek View','Fully Furnished','Gym','Pool','Covered Parking'],

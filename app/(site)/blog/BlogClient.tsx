@@ -47,7 +47,7 @@ export default function BlogClient({ posts }: { posts: any[] }) {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="text-black text-[clamp(2.5rem,4vw,4rem)] font-display font-medium tracking-tight mb-[2vh]"
         >
-          100 Articles on Mohali Real Estate, Written by Someone Who Has Done It.
+          Mohali Real Estate, Explained by Someone Who Has Seen it Through.
         </motion.h1>
 
         <motion.p
@@ -56,7 +56,7 @@ export default function BlogClient({ posts }: { posts: any[] }) {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-[#6D6B66] text-[clamp(15px,1.2vw,18px)] max-w-xl mx-auto leading-relaxed"
         >
-          This is not a marketing blog. Every article here is written from direct experience: 10+ years across development, government liaisoning, capital markets, legal disputes, and 180+ personal transactions. Sector-by-sector price data. Buyer protection guides. Investment thesis analysis. Legal rights in plain language. The knowledge that usually exists only on the inside, written out clearly, for free.
+          Written from experience, Learnt from being.
         </motion.p>
       </div>
 
