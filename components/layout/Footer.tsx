@@ -135,7 +135,7 @@ export default function Footer() {
             </li>
             <li className="flex items-start gap-3 font-body text-sm text-white/50">
               <MapPin size={14} className="mt-0.5 shrink-0 text-[var(--gold)]" />
-              <a href="https://maps.app.goo.gl/KzAE7k1HB1RKPkHE6" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--gold)] transition-colors">
+              <a href={siteConfig.contact.mapUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--gold)] transition-colors">
                 {siteConfig.contact.address}
               </a>
             </li>

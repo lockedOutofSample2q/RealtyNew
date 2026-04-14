@@ -87,7 +87,7 @@ export default function ContactClient() {
               icon: <MapPin size={24} className="text-black mb-4" strokeWidth={1.5} />,
               title: "Visit Us",
               desc: "Drop by our office",
-              val: "Prime Tower, Business Bay",
+              val: siteConfig.contact.address,
               href: "#map",
             },
             {

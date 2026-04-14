@@ -1,6 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { siteConfig } from "@/config/site";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
@@ -31,9 +32,9 @@ export default function ContactMap() {
         <Marker position={position} icon={CustomIcon}>
           <Popup>
             <div className="font-body text-sm font-semibold mb-1">Realty Holding & Management Consultants</div>
-            <div className="font-body text-xs text-black/60 mb-2">E328 Industrial area phase 8A, Mohali</div>
+            <div className="font-body text-xs text-black/60 mb-2">{siteConfig.contact.address}</div>
             <a 
-              href="https://maps.app.goo.gl/KzAE7k1HB1RKPkHE6" 
+              href={siteConfig.contact.mapUrl} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-xs text-blue-600 font-medium hover:underline inline-flex items-center"

@@ -25,6 +25,7 @@ export const siteConfig: SiteConfig = {
     whatsapp: "+917814613916",
     email: "hello@realtyconsultants.in",
     address: "E328 Industrial area phase 8A, Mohali, Punjab",
+    mapUrl: "https://maps.app.goo.gl/KzAE7k1HB1RKPkHE6",
   },
 
   social: {
@@ -209,7 +210,7 @@ export const seoDefaults = {
   description: siteConfig.description,
   openGraph: {
     type: "website",
-    locale: "en_AE",
+    locale: "en_IN",
     url: siteConfig.url,
     siteName: siteConfig.name,
     images: [

@@ -138,6 +138,7 @@ export interface SiteConfig {
     email: string;
     address: string;
     whatsapp: string;
+    mapUrl: string;
     calendly?: string;
   };
   social: {

@@ -5,6 +5,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { useRef } from "react";
+import { siteConfig } from "@/config/site";
+import { siteConfig } from "@/config/site";
 
 export default function AboutOffice() {
   const containerRef = useRef(null);
@@ -46,8 +48,7 @@ export default function AboutOffice() {
               <div className="flex flex-col gap-[2px]">
                 <span className="text-white/60 text-[clamp(8px,0.8vw,12px)] font-bold tracking-[0.1em] uppercase">LOCATION</span>
                 <span className="text-white text-[clamp(14px,1vw,18px)] font-light leading-relaxed max-w-[200px]">
-                  Prime Tower, Business Bay<br/>Dubai, United Arab Emirates     
-                </span>
+                  {siteConfig.contact.address}</span>
               </div>
             </motion.div>
 
@@ -62,7 +63,7 @@ export default function AboutOffice() {
               <div className="flex flex-col gap-[2px]">
                 <span className="text-white/60 text-[clamp(8px,0.8vw,12px)] font-bold tracking-[0.1em] uppercase">PHONE</span>
                 <span className="text-white text-[clamp(14px,1vw,18px)] font-light">
-                  +971 58 534 7884
+                  {siteConfig.contact.phone}
                 </span>
               </div>
             </motion.div>
@@ -78,7 +79,7 @@ export default function AboutOffice() {
               <div className="flex flex-col gap-[2px]">
                 <span className="text-white/60 text-[clamp(8px,0.8vw,12px)] font-bold tracking-[0.1em] uppercase">EMAIL</span>
                 <span className="text-white text-[clamp(14px,1vw,18px)] font-light">
-                  info@monterealestate.ae
+                  {siteConfig.contact.email}
                 </span>
               </div>
             </motion.div>
@@ -107,7 +108,7 @@ export default function AboutOffice() {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="relative w-full lg:w-[50%] h-[40vh] lg:h-[50vh] rounded-2xl overflow-hidden grayscale contrast-125 opacity-80 shrink-0 group cursor-pointer"
           >
-            <a href="https://maps.app.goo.gl/KzAE7k1HB1RKPkHE6" target="_blank" rel="noopener noreferrer" className="block w-full h-full">
+            <a href={siteConfig.contact.mapUrl} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
               <motion.div style={{ scale }} className="absolute inset-0 w-full h-full">
                 <Image
                   src="/assets/images/home/about.jpg"
