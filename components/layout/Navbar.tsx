@@ -62,7 +62,7 @@ export default function Navbar() {
   const isListingPage = ["/properties", "/lands", "/properties"].includes(pathname || "");
   
   // These specific pages have dark hero sections at the top
-  const darkHeaderPages = ["/", "/properties", "/lands", "/properties", "/about", "/contact", "/booking"];
+  const darkHeaderPages = ["/", "/properties", "/lands", "/properties", "/about", "/contact", "/booking", "/blog"];
   
   // All other pages (like property detail /[slug], /blog, /mortgage-calculator, etc) start with white backgrounds
   const isLightPage = !darkHeaderPages.includes(pathname || "");

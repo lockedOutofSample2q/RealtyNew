@@ -18,10 +18,10 @@ export default function BookingClient() {
             <span className="font-body text-[13px] tracking-wide text-white/80">Consultation</span>
           </div>
           <h1 className="font-display text-4xl md:text-[56px] font-medium leading-[1.1] mb-6 tracking-tight">
-            Book a Free 15-Minute Consultation
+            Book a 10-Minute Talk
           </h1>
           <p className="font-body text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
-            In 15 minutes, you will have a direct answer on whatever property decision you are facing: whether to buy a specific project, what to do with an acquisition payout, whether the price being offered is right, or how to approach purchasing from abroad. This is not a sales call. No property will be pushed. If I think what you are considering is wrong for you, I will tell you why. If it is right, I will tell you how to do it properly.
+            In 10 minutes, you will have a direct answer on whatever property decision you are facing. Whether you are looking to buy, sell, or simply need an honest second opinion on a project or price, I will provide the clarity you need.
           </p>
         </div>
         
@@ -35,13 +35,13 @@ export default function BookingClient() {
           {[
             {
               icon: <Clock size={24} className="text-black mb-4" strokeWidth={1.5} />,
-              title: "15-Minute Intro",
-              desc: "A direct answer to your current property question or dilemma."
+              title: "10-Minute Talk",
+              desc: "A focused, direct answer to your current property question or dilemma."
             },
             {
               icon: <Users size={24} className="text-black mb-4" strokeWidth={1.5} />,
               title: "Expert Guidance",
-              desc: "Direct access to honest advice, not a sales pitch."
+              desc: "Direct access to honest advice from a local market expert."
             },
             {
               icon: <Calendar size={24} className="text-black mb-4" strokeWidth={1.5} />,
