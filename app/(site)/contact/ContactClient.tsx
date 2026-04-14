@@ -224,11 +224,11 @@ export default function ContactClient() {
       <section id="map" className="py-24 px-6 bg-[#F8F8F8]">
         <div className="container-site max-w-[1200px] mx-auto text-center mb-12">
           <h2 className="font-display text-4xl mb-4 text-black">Find Us Here</h2>
-          <p className="font-body text-black/60">Visit our office in the heart of Dubai</p>
+          <p className="font-body text-black/60">Visit our office at {siteConfig.contact.address}</p>
         </div>
-        <div className="container-site max-w-[1200px] mx-auto h-[500px] rounded-[32px] overflow-hidden shadow-2xl relative border border-black/5 bg-black/5">
-          <ContactMap />
-        </div>
+        <div className="w-full max-w-[1200px] mx-auto h-[500px] rounded-[32px] overflow-hidden shadow-2xl relative border border-black/5 bg-[#F8F8F8]">
+            <ContactMap />
+          </div>
       </section>
     </div>
   );
