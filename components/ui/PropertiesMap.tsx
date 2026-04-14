@@ -22,10 +22,10 @@ const COMMUNITY_COORDS: Record<string, [number, number]> = {
   "Downtown Dubai": [25.1972, 55.2744],
   "Dubai Marina": [25.0805, 55.1403],
   "Palm Jumeirah": [25.1124, 55.1390],
-  "Mohali Phase 8A": [30.7118, 76.6896],
+  "Mohali Phase 8A": [30.69738317022751, 76.69031176711192],
   "JVC": [25.0499, 55.2069],
   "Jumeirah Village Circle": [25.0499, 55.2069],
-  "Jumeirah": [30.7118, 76.6896],
+  "Jumeirah": [30.69738317022751, 76.69031176711192],
   "DIFC": [25.2131, 55.2818],
   "Dubai Hills": [25.1066, 55.2464],
   "Dubai Hills Estate": [25.1066, 55.2464],
@@ -94,7 +94,7 @@ export default function PropertiesMap({ properties }: Props) {
     .filter(Boolean) as { property: Property; coords: [number, number] }[];
 
   const allCoords = mapped.map((m) => m.coords);
-  const officeCoords: [number, number] = [30.7118, 76.6896]
+  const officeCoords: [number, number] = [30.69738317022751, 76.69031176711192]
   const center: [number, number] = allCoords.length > 0 ? allCoords[0] : officeCoords
 
   return (
