@@ -14,7 +14,6 @@ const CURRENCIES: Currency[] = ["AED", "USD", "INR"];
 const MENU_LINKS = [
   { label: "Home", href: "/" },
   { label: "Properties", href: "/properties" },
-  { label: "Lands", href: "/lands" },
   { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
