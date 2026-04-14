@@ -5,28 +5,13 @@ import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { siteConfig } from "@/config/site";
+import { siteConfig, navItems, footerLinks } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { useCurrency, type Currency } from "@/context/CurrencyContext";
 
 const CURRENCIES: Currency[] = ["INR", "USD", "CAD", "AUD"];
 
-const MENU_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "Properties", href: "/properties" },
-  { label: "About", href: "/about" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
-];
-
 const MENU_TOP_POSITIONS = ["18vh", "27vh", "36vh", "45vh", "54vh", "63vh"];
-
-const UTILITY_LINKS = [
-  { label: "Relocation", href: "/relocation" },
-  { label: "Mortgage Calculator", href: "/mortgage-calculator" },
-  { label: "Book a Consultation", href: "/booking" },
-  { label: "List Property", href: "/list-your-property" },
-];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
