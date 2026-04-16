@@ -24,17 +24,40 @@ export function createClient() {
   if (!supabaseUrl || !supabaseAnonKey) {
     console.warn("Supabase credentials missing. Returning a dummy client for build/SSR.");
     // Return a dummy client or handle appropriately to avoid crashing during build
-    return {} as any;
+    return {
+      from: () => ({
+        select: async () => ({ data: [] }),
+        insert: async () => ({ data: [] }),
+        update: async () => ({ data: [] }),
+        delete: async () => ({ data: [] }),
+      }),
+      auth: {
+        getUser: async () => ({ data: { user: null } }),
+        getSession: async () => ({ data: { session: null } }),
+      }
+    } as any;
   }
   return createBrowserClient<Database>(supabaseUrl, supabaseAnonKey);
 }
 
-// ── Service role client (use in API routes / server actions ONLY)
+// —— Service role client (use in API routes / server actions ONLY)
 export function createAdminClient() {
   const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
   if (!supabaseUrl || !serviceKey) {
     console.warn("Supabase Admin credentials missing. Returning a dummy client for build/SSR.");
-    return {} as any;
+    return {
+      from: () => ({
+        select: async () => ({ data: [] }),
+        insert: async () => ({ data: [] }),
+        update: async () => ({ data: [] }),
+        delete: async () => ({ data: [] }),
+      }),
+      auth: {
+        admin: {
+          createUser: async () => ({ data: null }),
+        }
+      }
+    } as any;
   }
   return createServerClient<Database>(
     supabaseUrl,
