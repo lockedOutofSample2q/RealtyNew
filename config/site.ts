@@ -31,7 +31,7 @@ export const siteConfig: SiteConfig = {
   social: {
     instagram: "https://instagram.com/amritrealty",
     facebook: "https://facebook.com/amritrealty",
-    linkedin: "https://linkedin.com/company/realtyholdingandmanagementconsultants",
+    linkedin: "https://in.linkedin.com/company/reality-holding-and-management-consultants",
     youtube: "https://www.youtube.com/@AmritRealty",
   },
 };

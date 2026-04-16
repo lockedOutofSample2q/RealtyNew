@@ -3,6 +3,7 @@ import { createAdminClient } from "@/lib/supabase";
 import type { Property } from "@/types";
 
 import PropertiesClient from "./PropertiesClient";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Properties in Mohali and Tricity: Verified, Evaluated, Honestly Presented",
@@ -29,5 +30,9 @@ async function getProperties(): Promise<Property[]> {
 
 export default async function PropertiesPage() {
   const properties = await getProperties();
-  return <PropertiesClient properties={properties} />;
+  return (
+    <Suspense fallback={null}>
+      <PropertiesClient properties={properties} />
+    </Suspense>
+  );
 }
