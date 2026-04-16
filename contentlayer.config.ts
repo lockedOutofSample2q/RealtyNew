@@ -49,18 +49,18 @@ export const Post = defineDocumentType(() => ({
       description: "Author name",
     },
     category: {
-      type: "enum",
-      options: [
-        "Market News",
-        "Market Analysis",
-        "Investment Tips",
-        "Buyer Guide",
-        "Community Spotlight",
-        "Legal Updates",
-        "Lifestyle",
-      ],
+      type: "string",
+      
       required: true,
     },
+
+    slug: { type: "string" },
+    keyword: { type: "string" },
+    icp: { type: "string" },
+    author_url: { type: "string" },
+    schema: { type: "string" },
+
+
     coverImage: {
       type: "string",
       required: true,
