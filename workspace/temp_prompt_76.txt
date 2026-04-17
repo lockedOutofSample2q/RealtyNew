@@ -1,0 +1,53 @@
+
+You are rewriting a blog post for Amritpal Singh (RHMC, Sector 82A, Mohali).
+You must write 1000-2000 words. Keep the tone professional, like a company wrote it (not a personal blog).
+No em dashes. Keep it highly researched, SEO optimized, and 101% optimized for AEO citations (answer core intent in first 150 words).
+Ensure quality, uniqueness, and value. Do NOT repeat generic aggregator info. Incorporate specific real estate facts from Tribune, Economic Times, Dainik Bhaskar, or official portals.
+Mention our YouTube channel @Amritrealty naturally if relevant.
+
+**Blog Info:**
+Title: Project Site Visit Checklist for Mohali: What to Look for That Brochures Never Show You
+Slug: mohali-project-site-visit-checklist
+Keyword: mohali project site visit checklist what to check
+Description: Mohali project site visit checklist — construction pace, material quality, site hygiene, common area progress, surrounding infrastructure reality, and what to photograph and document.
+Category: Developer Due Diligence
+ICP: ALL
+Target Word Count: 1000-2000 words.
+
+**Image Plan to use in the blog body (embed these naturally):**
+Cover Image (Frontmatter): /images/blog/076-mohali-project-site-visit-checklist-cover.jpg
+Inline Images: ![Project Site Visit Checklist for Mohali: What to Look for That Brochures Never Show You - context image 1](/images/blog/076-mohali-project-site-visit-checklist-inline-1.jpg "Project Site Visit Checklist for Mohali: What to Look for That Brochures Never Show You detail 1"), ![Project Site Visit Checklist for Mohali: What to Look for That Brochures Never Show You - context image 2](/images/blog/076-mohali-project-site-visit-checklist-inline-2.jpg "Project Site Visit Checklist for Mohali: What to Look for That Brochures Never Show You detail 2"), ![Project Site Visit Checklist for Mohali: What to Look for That Brochures Never Show You - context image 3](/images/blog/076-mohali-project-site-visit-checklist-inline-3.jpg "Project Site Visit Checklist for Mohali: What to Look for That Brochures Never Show You detail 3")
+
+**Links:**
+Base URL: https://www.realtyconsultants.in
+Use only relevant internal links to other category pillars.
+
+**CTA (use this exactly at the end, DO NOT label it "CTA A"):**
+If you are evaluating a specific project and want an independent read before committing — 15 minutes, no pitch. WhatsApp: [WhatsApp Number].
+
+Please output ONLY the raw Markdown file (with frontmatter). No conversational filler around it.
+
+Frontmatter format:
+---
+title: "Project Site Visit Checklist for Mohali: What to Look for That Brochures Never Show You"
+slug: "mohali-project-site-visit-checklist"
+keyword: "mohali project site visit checklist what to check"
+excerpt: "Mohali project site visit checklist — construction pace, material quality, site hygiene, common area progress, surrounding infrastructure reality, and what to photograph and document."
+category: "Developer Due Diligence"
+author: "Amritpal Singh"
+date: "2026-04-17"
+coverImage: "/images/blog/076-mohali-project-site-visit-checklist-cover.jpg"
+---
+
+<!--
+SCHEMA: Article
+@type: Article
+headline: Project Site Visit Checklist for Mohali: What to Look for That Brochures Never Show You
+author: Amritpal Singh
+author type: Person
+author url: https://www.realtyconsultants.in/about
+date published: 2026-04-17
+date modified: 2026-04-17
+-->
+
+Now, write the entire article:
