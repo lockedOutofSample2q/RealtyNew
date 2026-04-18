@@ -67,7 +67,7 @@ export default function BlogClient({ posts }: { posts: any[] }) {
                   : "bg-transparent border-transparent text-black/40 hover:text-black hover:bg-black/5"
               }`}
             >
-              {getLabel(cat)}
+              {getBlogLabel(cat)}
             </button>
           ))}
         </div>
