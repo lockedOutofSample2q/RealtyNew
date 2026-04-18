@@ -1,4 +1,4 @@
-import { allPosts } from "../../../.contentlayer/generated";
+import { allPosts } from "contentlayer/generated";
 import { compareDesc } from "date-fns";
 import BlogClient from "./BlogClient";
 

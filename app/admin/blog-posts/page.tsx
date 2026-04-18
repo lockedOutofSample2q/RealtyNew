@@ -5,7 +5,7 @@
 // This page shows existing posts and guides how to add new ones
 // ============================================================
 
-import { allPosts } from "../../../.contentlayer/generated";
+import { allPosts } from "contentlayer/generated";
 import { compareDesc } from "date-fns";
 import { formatDate } from "@/lib/utils";
 import { FileText, ExternalLink, Github } from "lucide-react";

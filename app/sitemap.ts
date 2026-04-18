@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import { createAdminClient } from "@/lib/supabase";
 
-import { allPosts } from "../.contentlayer/generated";
+import { allPosts } from "contentlayer/generated";
 import { siteConfig } from "@/config/site";
 import type { Property } from "@/types";
 
