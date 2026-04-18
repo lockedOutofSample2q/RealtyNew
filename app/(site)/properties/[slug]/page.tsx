@@ -26,7 +26,7 @@ export async function generateStaticParams() {
   try {
     const supabase = createAdminClient();
     const { data } = await supabase.from("properties").select("slug");
-    return (data ?? []).map((p) => ({ slug: p.slug }));
+    return (data ?? []).map((p: { slug: string }) => ({ slug: p.slug }));
   } catch {
     return [];
   }
