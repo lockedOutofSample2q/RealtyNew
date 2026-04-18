@@ -17,7 +17,6 @@ import PriceDisplay from "./PriceDisplay";
 import PropertyPriceInline from "./PropertyPriceInline";
 
 const PropertyDetailMap = dynamic(() => import("./PropertyDetailMap"), {
-  ssr: false,
   loading: () => <div className="w-full h-full bg-[#e8f0e8] animate-pulse rounded-xl" />,
 });
 
