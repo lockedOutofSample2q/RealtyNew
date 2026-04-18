@@ -22,6 +22,16 @@ const PropertyDetailMap = dynamic(() => import("./PropertyDetailMap"), {
 
 interface Props { params: { slug: string } }
 
+export async function generateStaticParams() {
+  try {
+    const supabase = createAdminClient();
+    const { data } = await supabase.from("properties").select("slug");
+    return (data ?? []).map((p) => ({ slug: p.slug }));
+  } catch {
+    return [];
+  }
+}
+
 async function getProperty(slug: string): Promise<Property | null> {
   // Check demo first (so page works without Supabase)
   const demo = undefined;

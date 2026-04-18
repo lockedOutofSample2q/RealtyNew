@@ -8,6 +8,25 @@ import type { Metadata } from "next";
 import { Toaster } from "sonner";
 import "@/styles/globals.css";
 import { seoDefaults, siteConfig } from "@/config/site";
+import { Cormorant_Garamond, DM_Sans, DM_Mono } from "next/font/google";
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-display",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-body",
+});
+
+const dmMono = DM_Mono({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-mono",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -40,7 +59,7 @@ export default function RootLayout({
         {/* Cloudflare Web Analytics — paste your token below */}
         {/* <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "YOUR_TOKEN"}'></script> */}
       </head>
-      <body className="overflow-x-hidden">
+      <body className={`${cormorant.variable} ${dmSans.variable} ${dmMono.variable} overflow-x-hidden font-body`}>
         {children}
         <Toaster
           position="bottom-right"

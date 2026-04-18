@@ -9,8 +9,8 @@ import type { Property } from "@/types";
 
 // Fix Leaflet marker icons
 const icon = L.icon({
-  iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
-  shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
+  iconUrl: "/assets/marker-icon.png",
+  shadowUrl: "/assets/marker-shadow.png",
   iconSize: [25, 41],
   iconAnchor: [12, 41],
 });
@@ -79,7 +79,7 @@ export default function PropertiesMap({ properties }: { properties: Property[] }
                   <div className="flex items-center justify-between gap-4 border-t border-gray-100 pt-2">
                     <span className="font-body font-bold text-xs">{formatPrice(p.price)}</span>
                     <Link
-                      href={`/${p.slug}`}
+                      href={`/properties/${p.slug}`}
                       className="text-[10px] font-bold text-blue-600 hover:underline uppercase tracking-wider"
                     >
                       Details
