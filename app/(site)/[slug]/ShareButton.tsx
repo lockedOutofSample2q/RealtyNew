@@ -6,6 +6,7 @@ export default function ShareButton({ title }: { title: string }) {
   const [copied, setCopied] = useState(false);
 
   async function handleShare() {
+    if (typeof window === 'undefined') return;
     const url = window.location.href;
 
     // Use native share sheet if available (mobile)

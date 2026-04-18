@@ -12,19 +12,20 @@ import BlogSidebar from "./BlogSidebar";
 import MDXContent from "./MDXContent";
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
-  return allPosts.flatMap((p) => [
-    { slug: p._raw.flattenedPath.replace("blog/", "") },
-    ...(p.slug && p.slug !== p._raw.flattenedPath.replace("blog/", "") ? [{ slug: p.slug }] : [])
+  return allPosts.flatMap((p: any) => [
+    { slug: p._raw.flattenedPath.replace(/^blog[\\/]/, "") },
+    ...(p.slug && p.slug !== p._raw.flattenedPath.replace(/^blog[\\/]/, "") ? [{ slug: p.slug }] : [])
   ]);
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = allPosts.find((p) => 
-    p._raw.flattenedPath.replace("blog/", "") === params.slug || 
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
+  const post = allPosts.find((p: any) => 
+    p._raw.flattenedPath.replace(/^blog[\\/]/, "") === params.slug || 
     (p as any).slug === params.slug
   );
   if (!post) return {};
@@ -39,19 +40,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function BlogPostPage({ params }: Props) {
-  const post = allPosts.find((p) => 
-    p._raw.flattenedPath.replace("blog/", "") === params.slug || 
+export default async function BlogPostPage(props: Props) {
+  const params = await props.params;
+  const post = allPosts.find((p: any) => 
+    p._raw.flattenedPath.replace(/^blog[\\/]/, "") === params.slug || 
     (p as any).slug === params.slug
   );
   if (!post) notFound();
 
   // Related posts: same category first, then fill from others
   const sameCat = allPosts.filter(
-    (p) => p.slug !== post.slug && p.category === post.category
+    (p: any) => p.slug !== post.slug && p.category === post.category
   );
   const others = allPosts.filter(
-    (p) => p.slug !== post.slug && p.category !== post.category
+    (p: any) => p.slug !== post.slug && p.category !== post.category
   );
   const related = [...sameCat, ...others].slice(0, 3);
 
@@ -110,7 +112,7 @@ export default function BlogPostPage({ params }: Props) {
           {/* Main content */}
           <div className="flex-1 min-w-0">
             <div className="prose-monter">
-              <MDXContent code={post.body.code} />
+              <MDXContent code={post.body.raw} />
             </div>
           </div>
 

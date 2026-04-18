@@ -22,11 +22,10 @@ async function getProperty(id: string): Promise<Property | null> {
   }
 }
 
-export default async function EditPropertyPage({
-  params,
-}: {
-  params: { id: string };
+export default async function EditPropertyPage(props: {
+  params: Promise<{ id: string }>;
 }) {
+  const params = await props.params;
   const property = await getProperty(params.id);
   if (!property) notFound();
 

@@ -1,10 +1,9 @@
-"use client";
-
+// Remove unused client directive and convert to server component mapping where possible, but since next-contentlayer exposes hooks we keep it. Wait, useMDXComponent uses useMemo internally which requires React hooks. So let's keep "use client" but remove React.memo inside it if there. 
 import React from "react";
-import { useMDXComponent } from "next-contentlayer/hooks";
 import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
+import { MDXRemote } from "next-mdx-remote/rsc";
 
 // Custom callout box for MDX: <Callout type="tip">text</Callout>
 function Callout({ type = "tip", children }: { type?: "tip" | "info" | "warning"; children: React.ReactNode }) {
@@ -13,7 +12,7 @@ function Callout({ type = "tip", children }: { type?: "tip" | "info" | "warning"
     info: { border: "border-l-[3px] border-blue-500", bg: "bg-blue-50", label: "Note", labelColor: "text-blue-700" },
     warning: { border: "border-l-[3px] border-amber-400", bg: "bg-amber-50", label: "Important", labelColor: "text-amber-700" },
   };
-  const s = styles[type];
+  const s = styles[type] || styles.tip;
   return (
     <div className={`my-6 px-5 py-4 ${s.bg} ${s.border}`}>
       <p className={`text-[11px] font-bold tracking-[0.12em] uppercase mb-1.5 ${s.labelColor}`}>{s.label}</p>
@@ -59,24 +58,17 @@ const CustomLink = (props: any) => {
 };
 
 export default function MDXContent({ code }: { code: string }) {
-  const Component = useMDXComponent(code);
   return (
-    <Component
+    <MDXRemote
+      source={code}
       components={{
         a: CustomLink,
-        img: ({ src, alt }: any) => (
-          <div className="my-8 overflow-hidden">
-            <Image
-              src={src}
-              alt={alt ?? ""}
-              width={800}
-              height={450}
-              className="w-full object-cover"
-            />
+        Callout,
+        img: (props: any) => (
+          <div className="my-8 overflow-hidden rounded-xl">
+            <Image {...props} alt={props.alt || ""} width={800} height={450} className="w-full object-cover" />
           </div>
         ),
-        Callout,
-        ProTip: ({ children }: { children: React.ReactNode }) => <Callout type="tip">{children}</Callout>,
       }}
     />
   );

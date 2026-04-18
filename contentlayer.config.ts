@@ -84,12 +84,12 @@ export const Post = defineDocumentType(() => ({
   computedFields: {
     slug: {
       type: "string",
-      resolve: (post) => post._raw.flattenedPath.replace("blog/", ""),
+      resolve: (post) => post._raw.flattenedPath.replace(/^blog[\\/]/, ""),
     },
     url: {
       type: "string",
       resolve: (post) =>
-        `/blog/${post._raw.flattenedPath.replace("blog/", "")}`,
+        `/blog/${post._raw.flattenedPath.replace(/^blog[\\/]/, "")}`,
     },
     readingTime: {
       type: "string",

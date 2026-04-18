@@ -12,10 +12,10 @@ import {
   Film, Bell, Shield, ExternalLink, Images, ArrowRight,
 } from "lucide-react";
 import type { Property, NearbyLandmark } from "@/types";
-import InquiryForm, { PropertyGallery } from "./InquiryForm";
-import PriceDisplay from "./PriceDisplay";
-import PropertyPriceInline from "./PropertyPriceInline";
-import PropertyDetailMapClient from "./PropertyDetailMapClient";
+import InquiryForm, { PropertyGallery } from "../properties/[slug]/InquiryForm";
+import PriceDisplay from "../properties/[slug]/PriceDisplay";
+import PropertyPriceInline from "../properties/[slug]/PropertyPriceInline";
+import PropertyDetailMapClient from "../properties/[slug]/PropertyDetailMapClient";
 
 interface Props { params: Promise<{ slug: string }> }
 
@@ -23,7 +23,7 @@ export async function generateStaticParams() {
   try {
     const supabase = createAdminClient();
     const { data } = await supabase.from("properties").select("slug");
-    return (data ?? []).map((p: { slug: string }) => ({ slug: p.slug }));
+    return (data ?? []).map((p: any) => ({ slug: p.slug }));
   } catch {
     return [];
   }
