@@ -16,11 +16,17 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  return allPosts.map((p) => ({ slug: p.slug }));
+  return allPosts.flatMap((p) => [
+    { slug: p._raw.flattenedPath.replace("blog/", "") },
+    ...(p.slug && p.slug !== p._raw.flattenedPath.replace("blog/", "") ? [{ slug: p.slug }] : [])
+  ]);
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = allPosts.find((p) => p.slug === params.slug);
+  const post = allPosts.find((p) => 
+    p._raw.flattenedPath.replace("blog/", "") === params.slug || 
+    (p as any).slug === params.slug
+  );
   if (!post) return {};
   return {
     title: post.title,
@@ -34,7 +40,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default function BlogPostPage({ params }: Props) {
-  const post = allPosts.find((p) => p.slug === params.slug);
+  const post = allPosts.find((p) => 
+    p._raw.flattenedPath.replace("blog/", "") === params.slug || 
+    (p as any).slug === params.slug
+  );
   if (!post) notFound();
 
   // Related posts: same category first, then fill from others
