@@ -19,7 +19,6 @@ async function getProperties(): Promise<Property[]> {
     const { data } = await supabase
       .from("properties")
       .select("*")
-      .eq("listing_type", "properties")
       .order("featured", { ascending: false })
       .order("created_at", { ascending: false });
     const live = (data ?? []) as Property[];

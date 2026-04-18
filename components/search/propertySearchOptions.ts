@@ -27,7 +27,7 @@ export const PROPERTY_TYPES = [
 
 export const APARTMENT_TYPES = ["All", "Apartment", "Studio", "Penthouse"];
 export const HOUSE_TYPES = ["All", "Villa", "Townhouse"];
-export const LAND_TYPES = ["All", "Residential", "Commercial", "Agricultural", "Industrial"];
+export const LAND_TYPES = ["All", "Residential", "Commercial", "Agricultural", "Industrial", "Land", "Plot"];
 
 export const BEDROOMS = ["Any", "Studio", "1", "2", "3", "4", "5+"];
 export const FURNISHING = ["All furnishings", "Furnished", "Unfurnished", "Partly furnished"];

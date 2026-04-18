@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 import { formatDate } from "@/lib/utils";
 import { Clock, ChevronRight } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import { getBlogLabel } from "@/lib/blog-utils";
 import BlogSidebar from "./BlogSidebar";
 import MDXContent from "./MDXContent";
 
@@ -57,12 +58,12 @@ export default function BlogPostPage({ params }: Props) {
         <nav className="flex items-center gap-1.5 text-[13px] text-black/40 mb-7 font-body">
           <Link href="/blog" className="hover:text-black transition-colors">Blog</Link>
           <ChevronRight size={13} />
-          <span className="text-black/60">{post.category}</span>
+          <span className="text-black/60">{getBlogLabel(post.category)}</span>
         </nav>
 
         {/* Category badge */}
         <span className="inline-block border border-black/15 rounded-full px-4 py-1.5 text-[11px] font-semibold tracking-[0.12em] uppercase text-black/50 mb-6">
-          {post.category}
+          {getBlogLabel(post.category)}
         </span>
 
         {/* Title */}
@@ -136,7 +137,7 @@ export default function BlogPostPage({ params }: Props) {
                   </div>
                   <div className="p-5">
                     <span className="text-[10px] font-semibold tracking-[0.12em] uppercase text-black/35 block mb-2">
-                      {p.category}
+                      {getBlogLabel(p.category)}
                     </span>
                     <h3 className="font-body text-[14px] font-semibold text-black leading-snug mb-2 line-clamp-2 group-hover:text-black/70 transition-colors">
                       {p.title}

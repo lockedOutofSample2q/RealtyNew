@@ -4,20 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { formatDate } from "@/lib/utils";
+import { getBlogLabel } from "@/lib/blog-utils";
 import { Search, ArrowRight } from "lucide-react";
 
 export default function BlogClient({ posts }: { posts: any[] }) {
   const [activeCategory, setActiveCategory] = useState("All");
-  const categories = [
-    "All",
-    "Market News",
-    "Investment Tips",
-    "Community Spotlight",
-    "Legal Updates",
-    "Lifestyle",
-    "Market Analysis",
-    "Buyer Guide",
-  ];
+
+  // Extract unique categories from actual posts
+  const dynamicCategories = ["All", ...Array.from(new Set(posts.map(p => p.category)))];
   
   const featured = posts.find((p) => p.featured) ?? posts[0];
   const rest = posts.filter((p) => p._id !== featured?._id);
@@ -63,7 +57,7 @@ export default function BlogClient({ posts }: { posts: any[] }) {
       {/* Filters and Search */}
       <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-6 mb-[4vh] border-b border-black/5 pb-6">
         <div className="flex flex-row gap-2 overflow-x-auto pb-2 md:pb-0 no-scrollbar select-none">
-          {categories.map((cat) => (
+          {dynamicCategories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
@@ -73,7 +67,7 @@ export default function BlogClient({ posts }: { posts: any[] }) {
                   : "bg-transparent border-transparent text-black/40 hover:text-black hover:bg-black/5"
               }`}
             >
-              {cat}
+              {getLabel(cat)}
             </button>
           ))}
         </div>

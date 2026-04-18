@@ -37,7 +37,7 @@ export interface Property {
   id: string;
   title: string;
   slug: string;
-  type: "apartment" | "villa" | "penthouse" | "townhouse" | "studio";
+  type: "apartment" | "villa" | "penthouse" | "townhouse" | "studio" | "residential" | "commercial" | "agricultural" | "industrial" | "land" | "plot";
   status: "available" | "sold" | "rented" | "properties";
   listing_type: "sale" | "lands" | "properties";
   price: number;
