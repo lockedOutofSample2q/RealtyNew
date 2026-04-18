@@ -49,9 +49,9 @@ export default function ContactClient() {
     "w-full bg-transparent border-b border-black/10 text-black placeholder:text-black/40 font-body text-[15px] py-4 outline-none focus:border-black transition-colors";
 
   return (
-    <div className="pt-[var(--nav-height)] min-h-screen bg-white">
+    <div className="min-h-screen">
       {/* ── Hero Section ────────────────────────────────────────── */}
-      <section className="bg-black text-white pt-20 pb-24 px-6 relative overflow-hidden">
+      <section className="bg-black text-white pt-[calc(var(--nav-height)+4rem)] pb-24 px-6 relative overflow-hidden">
         <div className="container-site max-w-4xl mx-auto text-center relative z-10">
           <div className="inline-block border border-white/20 bg-white/5 rounded-full px-4 py-1.5 mb-8">
             <span className="font-body text-[13px] tracking-wide text-white/80">Contact</span>
