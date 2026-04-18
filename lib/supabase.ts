@@ -34,6 +34,9 @@ export function createClient() {
       auth: {
         getUser: async () => ({ data: { user: null } }),
         getSession: async () => ({ data: { session: null } }),
+        signInWithPassword: async () => {
+          throw new Error("Supabase credentials missing. Check your .env file.");
+        }
       }
     } as any;
   }

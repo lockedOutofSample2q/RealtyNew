@@ -3,6 +3,8 @@
 import React from "react";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import Image from "next/image";
+import Link from "next/link";
+import { siteConfig } from "@/config/site";
 
 // Custom callout box for MDX: <Callout type="tip">text</Callout>
 function Callout({ type = "tip", children }: { type?: "tip" | "info" | "warning"; children: React.ReactNode }) {
@@ -20,11 +22,48 @@ function Callout({ type = "tip", children }: { type?: "tip" | "info" | "warning"
   );
 }
 
+const CustomLink = (props: any) => {
+  const href = props.href;
+  const isInternalLink = href && (href.startsWith("/") || href.startsWith("#"));
+
+  // Handle placeholders in text
+  let children = props.children;
+  if (typeof children === "string") {
+    if (children.includes("[WhatsApp Number]")) {
+      return (
+        <a 
+          href={`https://wa.me/${siteConfig.contact.phone.replace(/[^0-9]/g, "")}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-emerald-600 font-bold hover:underline"
+        >
+          {siteConfig.contact.phone} (WhatsApp)
+        </a>
+      );
+    }
+  }
+
+  if (isInternalLink) {
+    return (
+      <Link href={href} {...props}>
+        {children}
+      </Link>
+    );
+  }
+
+  return (
+    <a target="_blank" rel="noopener noreferrer" {...props}>
+      {children}
+    </a>
+  );
+};
+
 export default function MDXContent({ code }: { code: string }) {
   const Component = useMDXComponent(code);
   return (
     <Component
       components={{
+        a: CustomLink,
         img: ({ src, alt }: any) => (
           <div className="my-8 overflow-hidden">
             <Image

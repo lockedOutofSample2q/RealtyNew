@@ -16,12 +16,17 @@ export default function AdminLogin() {
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
-    if (error) {
-      toast.error("Invalid credentials");
+    try {
+      const { error } = await supabase.auth.signInWithPassword({ email, password });
+      if (error) {
+        toast.error(error.message || "Invalid credentials");
+        setLoading(false);
+      } else {
+        router.push("/admin/dashboard");
+      }
+    } catch (err: any) {
+      toast.error(err.message || "An unexpected error occurred");
       setLoading(false);
-    } else {
-      router.push("/admin/dashboard");
     }
   }
 
