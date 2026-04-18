@@ -9,6 +9,9 @@
     "lint": "next lint",
     "db:generate": "supabase gen types typescript --local > types/supabase.ts"
   },
+  "engines": {
+    "node": "18.x"
+  },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.4.0",
     "@hookform/resolvers": "^3.4.2",
