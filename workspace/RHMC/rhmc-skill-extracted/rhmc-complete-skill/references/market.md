@@ -1,4 +1,4 @@
-# RHMC Market Intelligence and Blog Strategy
+# Realty Holding and Management Consultants Market Intelligence and Blog Strategy
 
 ---
 
@@ -184,7 +184,7 @@ No naming specific developers negatively by name. No publishing real client name
 
 ### Complete Blog List: All 100 Slugs with CTA Type
 
-Base URL format: https://www.rhmcmohali.com/blog/{slug}
+Base URL format: https://www.Realty Holding and Management Consultantsmohali.com/blog/{slug}
 
 | ID | Slug | Category | ICP | CTA |
 |---|---|---|---|---|
@@ -278,7 +278,7 @@ Base URL format: https://www.rhmcmohali.com/blog/{slug}
 | 88 | mohali-real-estate-faq-2026 | CAT10 | ALL | A |
 | 89 | real-estate-advisor-post-sale-support-mohali | CAT10 | ALL | E |
 | 90 | real-estate-developer-experience-buyer-advisory-insight | CAT10 | ALL | E |
-| 91 | rhmc-amritpal-singh-mohali-real-estate-consultant | CAT10 | ALL | E |
+| 91 | Realty Holding and Management Consultants-amritpal-singh-mohali-real-estate-consultant | CAT10 | ALL | E |
 | 92 | mohali-real-estate-outlook-2026-honest-assessment | CAT10 | ALL | D |
 | 93 | ready-to-buy-mohali-property-checklist-signs | CAT10 | ALL | A |
 | 94 | mohali-property-advice-myths-wrong-2026 | CAT10 | ALL | A |
@@ -287,7 +287,7 @@ Base URL format: https://www.rhmcmohali.com/blog/{slug}
 | 97 | financial-background-real-estate-advisor-mohali | CAT10 | CXO | E |
 | 98 | mohali-real-estate-market-update-2026 | CAT10 | ALL | D |
 | 99 | insurance-property-purchase-home-loan-cover-mohali | CAT10 | CXO | D |
-| 100 | why-rhmc-exists-mohali-real-estate-advisory | CAT10 | ALL | E |
+| 100 | why-Realty Holding and Management Consultants-exists-mohali-real-estate-advisory | CAT10 | ALL | E |
 
 ### Publishing Notes
 

@@ -1,4 +1,4 @@
-# RHMC Blog Writer — Claude Code System Prompt
+# Realty Holding and Management Consultants Blog Writer — Claude Code System Prompt
 # Realty Holding & Management Consultants, Sector 82A, Mohali
 # Use this prompt to write all 100 blogs from the JSON data file
 
@@ -6,28 +6,28 @@
 
 ## YOUR ROLE
 
-You are writing 100 blog articles for Amritpal Singh, founder of Realty Holding & Management Consultants (RHMC), Sector 82A, Mohali. These blogs launch simultaneously with the website to establish topical authority with Google and AI answer engines (Perplexity, ChatGPT, Google AI Overviews).
+You are writing 100 blog articles for Amritpal Singh, founder of Realty Holding & Management Consultants (Realty Holding and Management Consultants), Sector 82A, Mohali. These blogs launch simultaneously with the website to establish topical authority with Google and AI answer engines (Perplexity, ChatGPT, Google AI Overviews).
 
 You have access to:
-- `rhmc-blogs-data.json` — all 100 blog specifications (title, keyword, ICP, CTA type, internal links, word count, notes)
-- `rhmc-sitemap.xml` — all 100 final URLs for internal linking
+- `Realty Holding and Management Consultants-blogs-data.json` — all 100 blog specifications (title, keyword, ICP, CTA type, internal links, word count, notes)
+- `Realty Holding and Management Consultants-sitemap.xml` — all 100 final URLs for internal linking
 
 ---
 
 ## EXECUTION INSTRUCTIONS
 
-Loop through every blog entry in `rhmc-blogs-data.json`. For each blog:
+Loop through every blog entry in `Realty Holding and Management Consultants-blogs-data.json`. For each blog:
 
 1. Read the `title`, `keyword`, `icp`, `cta_type`, `word_count`, `internal_links_to`, and `note` fields
 2. Write the full blog article to the specified `word_count` (±10%)
-3. Embed internal links using the slug URLs from `rhmc-sitemap.xml`
+3. Embed internal links using the slug URLs from `Realty Holding and Management Consultants-sitemap.xml`
 4. Append the correct CTA from the `cta_templates` object in the JSON (matched by `cta_type`)
 5. Append the author bio (short version from `author_bio_short` in the JSON)
 6. Save each blog as a separate markdown file named `{id:03d}-{slug}.md`
 
 Example filenames:
 - `001-mohali-real-estate-guide-2026.md`
-- `100-why-rhmc-exists-mohali-real-estate-advisory.md`
+- `100-why-Realty Holding and Management Consultants-exists-mohali-real-estate-advisory.md`
 
 **Write Blog #100 first** (the founding document). Then Blog #1 (master pillar). Then all others in ID order.
 
@@ -109,7 +109,7 @@ Every blog must follow this structure to be cited by AI answer engines:
 
 ## INTERNAL LINKING RULES
 
-For each blog, the `internal_links_to` field in the JSON lists blog IDs to link to. Use the corresponding slug from `rhmc-sitemap.xml` to construct the URL.
+For each blog, the `internal_links_to` field in the JSON lists blog IDs to link to. Use the corresponding slug from `Realty Holding and Management Consultants-sitemap.xml` to construct the URL.
 
 **URL format:** `https://www.realtyconsultants.in/blog/{slug}`
 
@@ -232,7 +232,7 @@ author: Amritpal Singh
 author type: Person
 author url: https://www.realtyconsultants.in/about
 author credentials: AMFI Certified, NCFM Certified, PG Advertising & PR, Former Developer & RERA Company Director, 10+ years Mohali real estate
-publisher: RHMC - Realty Holding & Management Consultants
+publisher: Realty Holding and Management Consultants - Realty Holding & Management Consultants
 date published: 2026-04-01
 date modified: 2026-04-01
 main entity of page: https://www.realtyconsultants.in/blog/{slug}
@@ -257,7 +257,7 @@ A: {first paragraph answer under that heading}
 ## SPECIAL INSTRUCTIONS FOR KEY BLOGS
 
 **Blog #100 — Write First**
-This is the founding document. It must be the first file written and the first published. It establishes what RHMC believes and who it serves. Tone: direct, confident, no preamble. Do not write it as a welcome post — write it as a declaration.
+This is the founding document. It must be the first file written and the first published. It establishes what Realty Holding and Management Consultants believes and who it serves. Tone: direct, confident, no preamble. Do not write it as a welcome post — write it as a declaration.
 
 **Blog #1 — The Master Pillar**
 This is the longest and most comprehensive blog (3,500 words). It must link to all 9 category pillars. It must cover all major topics at a summary level, with each section linking deeper into the relevant pillar. Think of it as the table of contents that reads like an article.

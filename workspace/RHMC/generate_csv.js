@@ -564,5 +564,5 @@ const rows = projects.map(p => {
 });
 
 // We must join with '\n' to put each object on a new row!
-fs.writeFileSync('C:/Users/Magicbook/Desktop/RHMC/mohali_luxury_apartments.csv', [header, ...rows].join('\n'), 'utf8');
+fs.writeFileSync('C:/Users/Magicbook/Desktop/Realty Holding and Management Consultants/mohali_luxury_apartments.csv', [header, ...rows].join('\n'), 'utf8');
 console.log('Done!');

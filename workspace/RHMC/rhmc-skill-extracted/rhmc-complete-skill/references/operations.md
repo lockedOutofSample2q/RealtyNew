@@ -1,4 +1,4 @@
-# RHMC Operations System: Complete Reference
+# Realty Holding and Management Consultants Operations System: Complete Reference
 
 The full operating system for Realty Holding & Management Consultants.
 Two-person team: Amritpal Singh (principal) + Hargun (operations, content, CRM, automation).
@@ -272,7 +272,7 @@ Never post without: 5+ photos, exact sector, carpet area, RERA number, floor pla
 - Description line 3: Project specifics — developer, amenities, RERA number
 - Description line 4: Investment angle — current psf rate, appreciation, rental yield
 - Description line 5: "For video walkthrough plus complete documents: WhatsApp [number]"
-- Description line 6: Amritpal Singh | RERA Reg: [number] | RHMC
+- Description line 6: Amritpal Singh | RERA Reg: [number] | Realty Holding and Management Consultants
 
 ---
 

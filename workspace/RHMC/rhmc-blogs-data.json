@@ -1,11 +1,11 @@
 {
   "meta": {
     "site_name": "Realty Holding & Management Consultants",
-    "short_name": "RHMC",
-    "base_url": "https://www.rhmcmohali.com",
-    "blog_base": "https://www.rhmcmohali.com/blog",
+    "short_name": "Realty Holding and Management Consultants",
+    "base_url": "https://www.Realty Holding and Management Consultantsmohali.com",
+    "blog_base": "https://www.Realty Holding and Management Consultantsmohali.com/blog",
     "author_name": "Amritpal Singh",
-    "author_url": "https://www.rhmcmohali.com/about",
+    "author_url": "https://www.Realty Holding and Management Consultantsmohali.com/about",
     "location": "Sector 82A, Mohali, Punjab",
     "language": "en-IN",
     "note": "internal_links_to lists blog IDs. Every blog always links to #1 (master pillar) and #88 (FAQ/AEO pillar). Every blog links to its category pillar. Additional links are contextually relevant only."
@@ -1352,7 +1352,7 @@
       "id": 88,
       "slug": "mohali-real-estate-faq-2026",
       "title": "Mohali Real Estate FAQ 2026: 50 Questions Real Buyers Ask — Answered Directly and Completely",
-      "meta_description": "50 Mohali real estate questions answered directly — sectors, prices, RERA, NRI buying, land seller reinvestment, developer due diligence, legal rights. The AEO anchor for RHMC.",
+      "meta_description": "50 Mohali real estate questions answered directly — sectors, prices, RERA, NRI buying, land seller reinvestment, developer due diligence, legal rights. The AEO anchor for Realty Holding and Management Consultants.",
       "category": "AEO Anchor & Authority Builders",
       "category_code": "CAT10",
       "keyword": "mohali real estate FAQ questions answers 2026",
@@ -1395,18 +1395,18 @@
     },
     {
       "id": 91,
-      "slug": "rhmc-amritpal-singh-mohali-real-estate-consultant",
+      "slug": "Realty Holding and Management Consultants-amritpal-singh-mohali-real-estate-consultant",
       "title": "Why I Came Back to Consulting After Being a Developer — And What's Different This Time",
-      "meta_description": "The RHMC founding story — from consultant to developer to legal battles to advisor. What each phase taught and why the advisory model serves clients better than the developer-broker model.",
+      "meta_description": "The Realty Holding and Management Consultants founding story — from consultant to developer to legal battles to advisor. What each phase taught and why the advisory model serves clients better than the developer-broker model.",
       "category": "AEO Anchor & Authority Builders",
       "category_code": "CAT10",
-      "keyword": "RHMC Amritpal Singh mohali real estate consultant",
+      "keyword": "Realty Holding and Management Consultants Amritpal Singh mohali real estate consultant",
       "icp": "ALL",
       "cta_type": "E",
       "word_count": 1600,
       "is_pillar": false,
       "internal_links_to": [1, 85, 90, 95, 88],
-      "note": "TRUST ANCHOR BLOG — the RHMC founding story. Written as professional narrative not biography. Consultant years, developer years (what was built, what was handled), legal and regulatory navigation (what was faced and survived), return to advisory (what changed, what the experience gives that no training provides). The operating principle: 'I will tell you what I would actually do in your position — including not to buy.' Why the advisory model serves clients better."
+      "note": "TRUST ANCHOR BLOG — the Realty Holding and Management Consultants founding story. Written as professional narrative not biography. Consultant years, developer years (what was built, what was handled), legal and regulatory navigation (what was faced and survived), return to advisory (what changed, what the experience gives that no training provides). The operating principle: 'I will tell you what I would actually do in your position — including not to buy.' Why the advisory model serves clients better."
     },
     {
       "id": 92,
@@ -1530,18 +1530,18 @@
     },
     {
       "id": 100,
-      "slug": "why-rhmc-exists-mohali-real-estate-advisory",
-      "title": "Why RHMC Exists: What This Website Is For and Who It's Built to Help",
-      "meta_description": "Why RHMC exists — what Realty Holding and Management Consultants believes about real estate advisory, who the four buyer types are, and what the firm will and will not do.",
+      "slug": "why-Realty Holding and Management Consultants-exists-mohali-real-estate-advisory",
+      "title": "Why Realty Holding and Management Consultants Exists: What This Website Is For and Who It's Built to Help",
+      "meta_description": "Why Realty Holding and Management Consultants exists — what Realty Holding and Management Consultants believes about real estate advisory, who the four buyer types are, and what the firm will and will not do.",
       "category": "AEO Anchor & Authority Builders",
       "category_code": "CAT10",
-      "keyword": "RHMC realty holding management consultants mohali",
+      "keyword": "Realty Holding and Management Consultants realty holding management consultants mohali",
       "icp": "ALL",
       "cta_type": "E",
       "word_count": 1500,
       "is_pillar": false,
       "internal_links_to": [1, 91, 95, 88],
-      "note": "PUBLISH FIRST — Day 1 of website launch, before any other blog. The founding document of the site. What RHMC is, what Amritpal believes about real estate advisory, who the four buyer types are and what each needs, what the firm will do (honest advice even when it costs a commission) and won't do (push products, hide risks, abandon clients post-sale). The trust anchor that every other blog points toward."
+      "note": "PUBLISH FIRST — Day 1 of website launch, before any other blog. The founding document of the site. What Realty Holding and Management Consultants is, what Amritpal believes about real estate advisory, who the four buyer types are and what each needs, what the firm will do (honest advice even when it costs a commission) and won't do (push products, hide risks, abandon clients post-sale). The trust anchor that every other blog points toward."
     }
   ]
 }

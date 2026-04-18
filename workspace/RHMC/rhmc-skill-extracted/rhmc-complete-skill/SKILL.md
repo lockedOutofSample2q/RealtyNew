@@ -1,13 +1,13 @@
 ---
-name: rhmc-complete
+name: Realty Holding and Management Consultants-complete
 description: >
   Complete knowledge base for Amritpal Singh and Realty Holding & Management
-  Consultants (RHMC), Sector 82A, Mohali, Punjab.
+  Consultants (Realty Holding and Management Consultants), Sector 82A, Mohali, Punjab.
 
-  USE THIS SKILL for every task involving RHMC — blogs, website copy, WhatsApp,
+  USE THIS SKILL for every task involving Realty Holding and Management Consultants — blogs, website copy, WhatsApp,
   Instagram Reels, Facebook ads, YouTube scripts, LinkedIn posts, sales scripts,
   objection handling, due diligence, client advisory, content strategy, SEO/AEO,
-  CRM logic, automation flows, lead qualification, or any RHMC communication.
+  CRM logic, automation flows, lead qualification, or any Realty Holding and Management Consultants communication.
 
   Contains: Amritpal's complete credentials, all 4 ICP profiles with full
   psychology, 7 pre-contact trust videos, CRM and n8n automation system,
@@ -17,10 +17,10 @@ description: >
   doctrine, editorial voice calibrated from transcripts, Mohali market data,
   and regulatory body context (GMADA, PUDA, PSPCL, Municipal, Forest Dept).
 
-  Always read this skill before writing or advising anything for RHMC.
+  Always read this skill before writing or advising anything for Realty Holding and Management Consultants.
 ---
 
-# RHMC Complete Knowledge Base
+# Realty Holding and Management Consultants Complete Knowledge Base
 
 Everything known about Amritpal Singh and Realty Holding & Management Consultants.
 This is the single source of truth. Read this file fully before every task.
@@ -31,10 +31,10 @@ Reference files contain the deep detail — this file tells you when to read the
 ## THE FIRM
 
 **Full name:** Realty Holding & Management Consultants
-**Short form:** RHMC
+**Short form:** Realty Holding and Management Consultants
 **Principal:** Amritpal Singh
 **Address:** Sector 82A, Mohali, Punjab
-**Website:** https://www.rhmcmohali.com
+**Website:** https://www.Realty Holding and Management Consultantsmohali.com
 **Team:** Amritpal Singh (principal) + Hargun (operations, content, CRM, automation)
 
 **The positioning in one sentence:**
@@ -68,7 +68,7 @@ Tell clients what you would actually do with their money. Including when the ans
 | Legal experience | Builder-buyer conflicts, cheque bouncing, title disputes, partnership breakdown, forest department approval cancellation — all faced and resolved personally |
 | Newspaper | Editor of RNIS-registered fortnightly newspaper, English and Hindi editions. Initiated Hindi edition through SDM, Public Relations Department, RNIS coordination |
 | Media | Media partner for real estate exhibition organisers in Punjab |
-| RERA | Director of RERA-approved private limited company (prior firm). RERA licence in process for RHMC proprietorship |
+| RERA | Director of RERA-approved private limited company (prior firm). RERA licence in process for Realty Holding and Management Consultants proprietorship |
 | YouTube | Channel live. Approximately 53 subscribers and 80 hours watch time at start. Posting short and long-form videos. Growing |
 | Geography | Mohali, Chandigarh, Panchkula, Banga, Anandpur Sahib |
 | Property categories | Residential flats, GMADA/licensed plots, agricultural land, industrial plots and sheds, commercial SCOs, pre-launch bookings |

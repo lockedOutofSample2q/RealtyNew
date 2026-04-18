@@ -1,4 +1,4 @@
-# RHMC Voice, Copywriting Doctrine, and Platform Rules
+# Realty Holding and Management Consultants Voice, Copywriting Doctrine, and Platform Rules
 
 ---
 
@@ -154,7 +154,7 @@ Schema required: Article schema with author name and URL, FAQ schema on question
   Example: "Free Brief: Where Mohali Land Sellers Are Reinvesting Rs 1Cr+ in 2026"
 - Post time: 7-9 AM or 7-9 PM for Tricity audience
 
-### LinkedIn Posts (Amritpal Singh personal profile and RHMC company page, both)
+### LinkedIn Posts (Amritpal Singh personal profile and Realty Holding and Management Consultants company page, both)
 
 - Opening line: no "I" to start. No preamble. Start with the insight or data point.
 - Tone: peer professional. The CXO reads this.
@@ -223,7 +223,7 @@ Audio: lapel mic attached and level-tested. Echo checked before every recording.
 
 ## ANTI-PATTERNS TO ELIMINATE
 
-**Self-absorption:** Copy about the firm, not the client. "We at RHMC offer..." is wrong. "If you have been burned before..." is right.
+**Self-absorption:** Copy about the firm, not the client. "We at Realty Holding and Management Consultants offer..." is wrong. "If you have been burned before..." is right.
 
 **Vague dream outcomes:** "Great returns" without specificity. Always attach a number to every claim.
 

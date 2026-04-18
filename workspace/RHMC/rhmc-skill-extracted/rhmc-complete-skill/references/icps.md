@@ -1,4 +1,4 @@
-# RHMC ICP Profiles: Complete Reference
+# Realty Holding and Management Consultants ICP Profiles: Complete Reference
 
 ---
 
