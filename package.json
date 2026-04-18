@@ -10,7 +10,11 @@
     "db:generate": "supabase gen types typescript --local > types/supabase.ts"
   },
   "engines": {
-    "node": "18.x"
+    "node": "20.x"
+  },
+  "overrides": {
+    "@effect-ts/system": "0.57.5",
+    "@effect-ts/core": "0.60.5"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.4.0",
