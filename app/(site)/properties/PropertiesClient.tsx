@@ -1,87 +1,30 @@
 "use client";
-import { useState, useMemo, useEffect } from "react";
-import dynamic from "next/dynamic";
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
-import { Bed, Bath, Maximize2, Search, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 import type { Property } from "@/types";
-import PropertySearchBar from "@/components/search/PropertySearchBar";
-import PillSelect from "@/components/ui/PillSelect";
-import PillMultiSelect from "@/components/ui/PillMultiSelect";
-import PropertyCard from "@/components/ui/PropertyCard";
-import { useCurrency } from "@/context/CurrencyContext";
-import {
-  DEFAULT_PROPERTY_FILTERS,
-  CITIES,
-  SECTORS_BY_CITY,
-  PROPERTY_TYPES,
-  BEDROOMS,
-  FURNISHING,
-  type PropertySearchFilters,
-  type SearchTab,
-} from "@/components/search/propertySearchOptions";
+import { usePropertyFilters } from "@/hooks/usePropertyFilters";
+import { PropertiesHero } from "@/components/properties/PropertiesHero";
+import { MobileSearchModal } from "@/components/properties/MobileSearchModal";
+import { PropertiesResultsBar } from "@/components/properties/PropertiesResultsBar";
+import { PropertiesGrid } from "@/components/properties/PropertiesGrid";
+import { PropertiesMapContainer } from "@/components/properties/PropertiesMapContainer";
 
-// Leaflet must not SSR
-const PropertiesMap = dynamic(() => import("@/components/ui/PropertiesMap"), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-full bg-[#e8e0d8] flex items-center justify-center">
-      <span className="text-sm text-black/40">Loading map…</span>
-    </div>
-  ),
-});
-
-// ── Main Client Component ─────────────────────────────────────
 interface Props {
   properties: Property[];
 }
 
-function parseMaxPrice(priceLabel: string): number | null {
-  if (!priceLabel) return null;
-  const digits = priceLabel.replace(/[^\d]/g, "");
-  if (!digits) return null;
-  const n = Number(digits);
-  return Number.isFinite(n) && n > 0 ? n : null;
-}
-
-function normalize(text: string | undefined | null): string {
-  return (text ?? "").toLowerCase().replace(/[-\s]+/g, " ").trim();
-}
-
 export default function PropertiesClient({ properties }: Props) {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
-  const [tab, setTab] = useState<SearchTab>(
-    (searchParams.get("tab") as SearchTab) || "apartments"
-  );
-  const [filters, setFilters] = useState<PropertySearchFilters>({
-    ...DEFAULT_PROPERTY_FILTERS,
-    city: searchParams.get("city") ?? "",
-    sector: searchParams.getAll("sector").filter(Boolean) || [],
-    type: searchParams.get("type") ?? "",
-    bedrooms: searchParams.get("bedrooms") ?? "",
-    furnishing: searchParams.get("furnishing") ?? "",
-    price: searchParams.get("price") ?? "",
-    currency: searchParams.get("currency") ?? "INR",
-  });
-  const [leafletReady, setLeafletReady] = useState(false);
+  const {
+    tab,
+    filters,
+    setFilters,
+    filtered,
+    handleSearch,
+    handleTabChange,
+    resetFilters,
+  } = usePropertyFilters(properties);
 
-  useEffect(() => {
-    setTab((searchParams.get("tab") as SearchTab) || "apartments");
-    setFilters({
-      ...DEFAULT_PROPERTY_FILTERS,
-      city: searchParams.get("city") ?? "",
-      sector: searchParams.getAll("sector").filter(Boolean) || [],
-      type: searchParams.get("type") ?? "",
-      bedrooms: searchParams.get("bedrooms") ?? "",
-      furnishing: searchParams.get("furnishing") ?? "",
-      price: searchParams.get("price") ?? "",
-      currency: searchParams.get("currency") ?? "INR",
-    });
-  }, [searchParams]);
+  const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
+  const [leafletReady, setLeafletReady] = useState(false);
 
   useEffect(() => {
     // Leaflet needs the CSS too
@@ -89,276 +32,39 @@ export default function PropertiesClient({ properties }: Props) {
     setLeafletReady(true);
   }, []);
 
-  const filtered = useMemo(() => {
-    const maxPrice = parseMaxPrice(filters.price);
-    const desiredType = normalize(filters.type);
-    const desiredCity = normalize(filters.city);
-    const desiredSector = filters.sector;
-    const desiredFurnishing = normalize(filters.furnishing);
-
-    return properties.filter((p) => {
-      // ── TYPE/TAB LOGIC ──────────────────────────────────────
-      const pType = normalize(p.type);
-      if (tab === "apartments") {
-        if (!["apartment", "studio", "penthouse"].includes(pType)) return false;
-      } else if (tab === "houses") {
-        if (!["villa", "townhouse"].includes(pType)) return false;
-      } else if (tab === "lands") {
-        // assume if it's a land, its type typically says 'land', 'plot', etc.
-        // or by category if Supabase has it. Let's filter loosely.
-        if (!["residential", "commercial", "agricultural", "industrial", "land", "plot"].includes(pType)) return false;
-      }
-
-      if (filters.bedrooms && tab !== "lands") {
-        if (filters.bedrooms === "Studio") {
-          if ((p.bedrooms ?? 0) !== 0) return false;
-        } else if (filters.bedrooms === "5+") {
-          if ((p.bedrooms ?? 0) < 5) return false;
-        } else {
-          const n = Number(filters.bedrooms);
-          if (Number.isFinite(n) && p.bedrooms !== n) return false;
-        }
-      }
-
-      if (maxPrice && p.price > maxPrice && p.price > 0) return false;
-
-      if (desiredType && desiredType !== "all") {
-        if (normalize(p.type) !== desiredType) return false;
-      }
-
-      if (desiredCity && desiredCity !== "all") {
-        const inLocation = normalize(p.location).includes(desiredCity);
-        const inCommunity = normalize(p.community).includes(desiredCity);
-        if (!inLocation && !inCommunity) return false;
-      }
-
-      if (desiredSector && desiredSector.length > 0 && !desiredSector.includes("All") && !desiredSector.includes("all")) {
-        const inSector = desiredSector.some(sec => {
-          const normSec = normalize(sec);
-          return normalize(p.location).includes(normSec) || normalize(p.community).includes(normSec);
-        });
-        if (!inSector) return false;
-      }
-
-      if (desiredFurnishing && desiredFurnishing !== "all furnishings") {
-        const propertyFurnishing = normalize(
-          p.furnishing === "semi-furnished" ? "partly furnished" : p.furnishing
-        );
-        if (propertyFurnishing !== desiredFurnishing) return false;
-      }
-
-      return true;
-    });
-  }, [properties, filters]);
-
-  function handleSearch(e?: React.FormEvent, forcedTab?: SearchTab) {
-    if (e) e.preventDefault();
-    const activeTab = forcedTab || tab;
-
-    const params = new URLSearchParams();
-    params.set("tab", activeTab);
-    if (filters.city) params.set("city", filters.city);
-    if (filters.sector && filters.sector.length > 0) {
-      if (typeof filters.sector === "string") {
-        params.append("sector", filters.sector);
-      } else {
-        filters.sector.forEach(s => params.append("sector", s));
-      }
-    }
-    if (filters.type) params.set("type", filters.type);
-    if (filters.bedrooms && tab !== "lands") params.set("bedrooms", filters.bedrooms);
-    if (filters.furnishing && tab !== "lands") params.set("furnishing", filters.furnishing);
-    if (filters.price) params.set("price", filters.price);
-    if (filters.currency) params.set("currency", filters.currency);
-
-    router.push(`/properties?${params.toString()}`);
-  }
-
-  const handleTabChange = (newTab: SearchTab) => {
-    setTab(newTab);
-    handleSearch(undefined, newTab);
-  };
-
   return (
     <div className="min-h-screen bg-white">
-      {/* ── Hero ──────────────────────────────────────────── */}
-      <div className="relative w-full h-[52vh] min-h-[360px] flex flex-col items-center justify-center pt-[var(--nav-height)]">
-        {/* Background image */}
-        <Image
-          src="/assets/images/home/hero-bg.jpg"
-          alt="Properties properties"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/55" />
+      <PropertiesHero
+        tab={tab}
+        onTabChange={handleTabChange}
+        filters={filters}
+        setFilters={setFilters}
+        onSearch={handleSearch}
+        onOpenMobileSearch={() => setIsSearchModalOpen(true)}
+      />
 
-        {/* Text */}
-        <div className="relative z-10 text-center px-4">
-          <h1 className="text-white font-semibold text-[clamp(1.8rem,4vw,3rem)] leading-[1.2] tracking-tight max-w-2xl mx-auto mb-3">
-            Properties in Mohali and Tricity: Verified, Evaluated, Honestly Presented
-          </h1>
-          <p className="text-white/60 text-[clamp(13px,1.2vw,15px)] max-w-lg mx-auto">
-            Every listing here has been evaluated for RERA compliance, developer track record, and current market value against comparable transactions. If a property is on this page, it is because the numbers support it. Not because a developer is paying for placement.
-          </p>
-        </div>
+      <MobileSearchModal
+        isOpen={isSearchModalOpen}
+        onClose={() => setIsSearchModalOpen(false)}
+        tab={tab}
+        onTabChange={handleTabChange}
+        filters={filters}
+        setFilters={setFilters}
+        onSearch={handleSearch}
+        onReset={resetFilters}
+      />
 
-        {/* Mobile: pill button */}
-        <button
-          onClick={() => setIsSearchModalOpen(true)}
-          className="md:hidden relative z-10 mt-6 w-[90%] max-w-[400px] bg-white text-black py-4 px-6 rounded-2xl flex items-center gap-3 shadow-xl font-body font-medium active:scale-95 transition-transform"
-        >
-          <Search size={20} className="text-black/50 shrink-0" />
-          <span className="flex-1 text-left text-[15px]">
-            {[filters.city, ...(Array.isArray(filters.sector) ? filters.sector : []), filters.type, filters.bedrooms, filters.furnishing, filters.price].some(Boolean) ? "Filters active — tap to edit" : "Search properties"}
-          </span>
-        </button>
+      <PropertiesResultsBar count={filtered.length} />
 
-        {/* Desktop: full inline bar */}
-        <PropertySearchBar
-          tab={tab}
-          setTab={handleTabChange}
-          filters={filters}
-          setFilters={setFilters}
-          onSubmit={handleSearch}
-          className="hidden md:block relative z-10 mt-8 w-[90%] max-w-[1100px]"
-        />
-      </div>
-
-      {/* ── Mobile Search Bottom Sheet ─────────────────────── */}
-      <AnimatePresence>
-        {isSearchModalOpen && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setIsSearchModalOpen(false)}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[999]"
-            />
-            <motion.div
-              initial={{ y: "100%" }}
-              animate={{ y: 0 }}
-              exit={{ y: "100%" }}
-              transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="fixed bottom-0 left-0 right-0 bg-[#F3F4F6] rounded-t-2xl z-[1000] p-6 max-h-[90vh] overflow-y-auto"
-            >
-              <div className="flex items-center justify-between mb-8">
-                <h2 className="font-display text-2xl font-semibold text-black">Filter</h2>
-                <button
-                  onClick={() => setIsSearchModalOpen(false)}
-                  className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md active:scale-90 transition-transform"
-                >
-                  <X size={20} className="text-black" />
-                </button>
-              </div>
-
-              <div className="flex bg-white rounded-2xl p-1 mb-8 shadow-sm">
-                {(["apartments", "houses", "lands"] as const).map((t) => (
-                  <button
-                    key={t}
-                    onClick={() => handleTabChange(t)}
-                    className={`flex-1 py-3.5 text-sm font-semibold rounded-xl transition-all ${
-                      tab === t ? "bg-black text-white shadow-lg" : "text-black/40"
-                    }`}
-                  >
-                    {t.charAt(0).toUpperCase() + t.slice(1)}
-                  </button>
-                ))}
-              </div>
-
-              <form onSubmit={(e) => { handleSearch(e); setIsSearchModalOpen(false); }} className="flex flex-col gap-10">
-                <PillSelect
-                  label="City"
-                  value={filters.city}
-                  options={CITIES}
-                  onChange={(city) => setFilters({ ...filters, city: city, sector: [] })}
-                  placeholder="All Cities"
-                />
-                <PillMultiSelect
-                  label="Sector / Area"
-                  value={filters.sector}
-                  options={filters.city && SECTORS_BY_CITY[filters.city] ? SECTORS_BY_CITY[filters.city] : ["All"]}
-                  onChange={(sector) => setFilters({ ...filters, sector })}
-                  placeholder="All Areas"
-                />
-                <PillSelect
-                  label="Property Type"
-                  value={filters.type}
-                  options={PROPERTY_TYPES}
-                  onChange={(type) => setFilters({ ...filters, type })}
-                  placeholder="All Types"
-                />
-                <PillSelect
-                  label="Bedrooms"
-                  value={filters.bedrooms}
-                  options={BEDROOMS}
-                  onChange={(beds) => setFilters({ ...filters, bedrooms: beds })}
-                  placeholder="Any"
-                />
-                <PillSelect
-                  label="Furnishing"
-                  value={filters.furnishing}
-                  options={FURNISHING}
-                  onChange={(furn) => setFilters({ ...filters, furnishing: furn })}
-                  placeholder="All"
-                />
-
-                <div className="mt-4 flex flex-col gap-4 border-t border-black/5 pt-8">
-                  <button
-                    type="button"
-                    onClick={() => setFilters(DEFAULT_PROPERTY_FILTERS)}
-                    className="text-center font-body text-[13px] font-bold uppercase tracking-widest text-black/40 hover:text-black"
-                  >
-                    Reset filters
-                  </button>
-                  <button
-                    type="submit"
-                    className="w-full bg-black text-white py-5 rounded-2xl font-bold text-[15px] shadow-xl active:scale-[0.98] transition-transform"
-                  >
-                    Show results
-                  </button>
-                </div>
-              </form>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
-
-      {/* ── Results bar ───────────────────────────────────── */}
-      <div className="border-b border-black/6 px-6 py-3 flex items-center">
-        <span className="text-[13px] text-black/50 font-medium">
-          {filtered.length} {filtered.length === 1 ? "property" : "properties"}
-        </span>
-      </div>
-
-      {/* ── Cards + Map ───────────────────────────────────── */}
       <div className="flex flex-col md:flex-row">
-        {/* Left: scrollable property grid — on mobile appears after map via order */}
-        <div className="order-2 md:order-1 w-full md:w-[58%] p-4 md:p-6 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5 content-start">
-          {filtered.map((p) => (
-            <PropertyCard key={p.id} property={p} variant="image-bg" />
-          ))}
-          {filtered.length === 0 && (
-            <div className="col-span-1 sm:col-span-2 py-24 text-center">
-              <p className="text-black/40 text-sm">No properties match your filters.</p>
-              <button
-                onClick={() => setFilters(DEFAULT_PROPERTY_FILTERS)}
-                className="mt-3 text-sm text-black underline"
-              >
-                Clear filters
-              </button>
-            </div>
-          )}
-        </div>
-
-        {/* Map — full width on mobile (above listings), sticky sidebar on desktop */}
-        <div className="order-1 md:order-2 w-full h-[45vw] min-h-[260px] max-h-[380px] md:hidden">
-          {leafletReady && <PropertiesMap properties={filtered} />}
-        </div>
-        <div className="hidden md:block order-2 md:w-[42%] sticky top-[var(--nav-height)] h-[calc(100vh-var(--nav-height))] shrink-0">
-          {leafletReady && <PropertiesMap properties={filtered} />}
-        </div>
+        <PropertiesGrid
+          properties={filtered}
+          onResetFilters={resetFilters}
+        />
+        <PropertiesMapContainer
+          properties={filtered}
+          leafletReady={leafletReady}
+        />
       </div>
     </div>
   );

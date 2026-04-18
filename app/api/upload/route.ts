@@ -44,6 +44,21 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "No file provided (field name must be 'file')" }, { status: 400 });
   }
 
+  // ── Validation: Size and Type ───────────────────────────────
+  const MAX_SIZE = 5 * 1024 * 1024; // 5MB
+  const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp", "image/avif"];
+
+  if (file.size > MAX_SIZE) {
+    return NextResponse.json({ error: "File too large (max 5MB)" }, { status: 400 });
+  }
+
+  if (!ALLOWED_TYPES.includes(file.type)) {
+    return NextResponse.json(
+      { error: `Invalid file type: ${file.type}. Allowed: JPG, PNG, WEBP, AVIF` },
+      { status: 400 }
+    );
+  }
+
   // ── Forward to Cloudflare Images ────────────────────────────
   const cfForm = new FormData();
   cfForm.append("file", file);

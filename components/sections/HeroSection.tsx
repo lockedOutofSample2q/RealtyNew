@@ -45,6 +45,18 @@ export default function HeroSection() {
   const backgroundY = useTransform(scrollY, [0, 1000], ["0%", "20%"]);
   const backgroundScale = useTransform(scrollY, [0, 1000], [1.05, 1.15]);
 
+  // Prevent scrolling when modal is open
+  useEffect(() => {
+    if (isSearchModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isSearchModalOpen]);
+
   function handleSearch(e: React.FormEvent) {
     e.preventDefault();
     const params = new URLSearchParams();
@@ -160,7 +172,7 @@ export default function HeroSection() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 onClick={() => setIsSearchModalOpen(false)}
-                className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[999]"
+                className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[2000]"
               />
               {/* Bottom Sheet Modal */}
               <motion.div
@@ -168,7 +180,7 @@ export default function HeroSection() {
                 animate={{ y: 0 }}
                 exit={{ y: "100%" }}
                 transition={{ type: "spring", damping: 30, stiffness: 300 }}
-                className="fixed bottom-0 left-0 right-0 bg-[#F3F4F6] rounded-t-[32px] z-[1000] p-6 max-h-[90vh] overflow-y-auto"
+                className="fixed bottom-0 left-0 right-0 bg-[#F3F4F6] rounded-t-[32px] z-[2001] p-6 max-h-[90vh] overflow-y-auto"
               >
                 <div className="flex items-center justify-between mb-8">
                   <h2 className="font-display text-2xl font-semibold text-black">Filter</h2>

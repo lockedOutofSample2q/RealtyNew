@@ -47,12 +47,13 @@ export default function Navbar() {
   const isListingPage = ["/properties", "/lands", "/properties"].includes(pathname || "");
   
   // These specific pages have dark hero sections at the top
-  const darkHeaderPages = ["/", "/properties", "/lands", "/about", "/contact", "/booking", "/relocation"];
+  const darkHeaderPages = ["/", "/properties", "/lands", "/about", "/contact", "/booking", "/relocation", "/privacy", "/terms", "/cookies", "/imprint"];
   
   // Robust check if current page is in the dark header list
   const isDarkHeroPage = darkHeaderPages.some(page => {
     if (page === "/") return pathname === "/";
-    return pathname?.startsWith(page);
+    // Check if the current pathname starts with any of the dark header pages OR is a blog post
+    return pathname?.startsWith(page) || pathname?.startsWith("/blog/");
   });
 
   const useDarkText = !isDarkHeroPage && !isOpen;
@@ -89,14 +90,14 @@ export default function Navbar() {
         <div className="px-6 md:px-12 flex items-center justify-between">
           
           {/* ── Logo ─────────────────────────────────────── */}
-          <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 group z-50">
-            <div className={cn("flex flex-col items-center leading-none font-display", useDarkText ? "text-black" : "text-white")}>
-              <span className="text-xl font-bold tracking-tighter uppercase flex items-center gap-1.5">
+          <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 group z-50 max-w-[70%] sm:max-w-none">
+            <div className={cn("flex flex-col items-start leading-none font-display", useDarkText ? "text-black" : "text-white")}>
+              <span className="text-sm xs:text-base sm:text-xl font-bold tracking-tighter uppercase flex flex-wrap items-center gap-x-1.5 gap-y-0.5">
                 {siteConfig.name.split(' ').map((word, i) => (
                   <span key={i} className={i > 0 ? "opacity-50 font-medium" : ""}>{word}</span>
                 ))}
               </span>
-              <span className="text-[8px] tracking-[0.4em] font-medium opacity-70 uppercase -translate-y-1 pl-1">
+              <span className="text-[7px] sm:text-[8px] tracking-[0.2em] sm:tracking-[0.4em] font-medium opacity-70 uppercase mt-0.5 pl-0.5">
                 {siteConfig.tagline}
               </span>
             </div>

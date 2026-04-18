@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: seoDefaults.titleTemplate,
   },
   description: seoDefaults.description,
-  openGraph: seoDefaults.openGraph as any,
+  openGraph: seoDefaults.openGraph as Metadata["openGraph"],
   twitter: {
     card: "summary_large_image",
     title: seoDefaults.defaultTitle,
@@ -40,7 +40,7 @@ export default function RootLayout({
         {/* Cloudflare Web Analytics — paste your token below */}
         {/* <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "YOUR_TOKEN"}'></script> */}
       </head>
-      <body>
+      <body className="overflow-x-hidden">
         {children}
         <Toaster
           position="bottom-right"

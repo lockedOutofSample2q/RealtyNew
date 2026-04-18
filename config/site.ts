@@ -186,6 +186,18 @@ export const homeCarousels = {
   },
   lands: {
     title: "Land Listings in Punjab",
-    subtitle: "GMADA plots, licensed residential plots, and agricultural land across Mohali, Chandigarh, and Greater Punjab. Selected for clear title, location merit, and resale liquidity."
+    subtitle: "GMADA plots, licensed residential plots, and agricultural land across Mohali, lifestyle meritorious, and resale liquidity."
+  }
+};
+
+// ── Properties Page ──────────────────────────────────────────
+export const propertiesPage = {
+  metadata: {
+    title: "Properties in Mohali and Tricity: Verified, Evaluated, Honestly Presented",
+    description: "Verified property listings in Mohali and Tricity: pre-launch, resale, and ready possession. Evaluated for RERA compliance, developer track record, and fair pricing.",
+  },
+  hero: {
+    headline: "Properties in Mohali and Tricity: Verified, Evaluated, Honestly Presented",
+    subline: "Every listing here has been evaluated for RERA compliance, developer track record, and current market value against comparable transactions. If a property is on this page, it is because the numbers support it. Not because a developer is paying for placement.",
   }
 };

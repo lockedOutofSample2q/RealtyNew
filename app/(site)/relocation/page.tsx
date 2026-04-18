@@ -1,9 +1,10 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Search, FileText, Map } from 'lucide-react';
+import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
-  title: "Relocation Services | Amritpal Singh Advisory",
+  title: `Relocation Services | ${siteConfig.name}`,
   description: "Relocating to Mohali or Tricity? Property selection, documentation guidance, and community orientation from an advisor with 10+ years on the ground.",
 };
 

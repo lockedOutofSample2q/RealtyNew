@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { createAdminClient } from "@/lib/supabase";
 import type { Property } from "@/types";
+import { propertiesPage } from "@/config/site";
 
 import PropertiesClient from "./PropertiesClient";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {
-  title: "Properties in Mohali and Tricity: Verified, Evaluated, Honestly Presented",
-  description: "Verified property listings in Mohali and Tricity: pre-launch, resale, and ready possession. Evaluated for RERA compliance, developer track record, and fair pricing.",
+  title: propertiesPage.metadata.title,
+  description: propertiesPage.metadata.description,
 };
 
 export const revalidate = 60;
