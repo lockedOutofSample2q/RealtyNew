@@ -116,7 +116,7 @@ export default async function BlogPostPage(props: Props) {
           {/* Main content */}
           <div className="flex-1 min-w-0">
             <div className="prose-monter">
-              <MDXContent code={post.body.raw} />
+              <MDXContent code={post.body.code} />
             </div>
           </div>
 
