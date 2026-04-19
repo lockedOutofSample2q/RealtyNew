@@ -10,12 +10,16 @@ export default function CookiesPage() {
   const lastUpdated = "April 18, 2026"
 
   return (
-    <main className="min-h-screen bg-white pt-[var(--nav-height)]">
+    <main className="min-h-screen">
+      <div className="bg-black text-white pt-[calc(var(--nav-height)+4rem)] pb-24 px-6 relative overflow-hidden">
+        <div className="container-site">
+          <h1 className="font-display text-[clamp(2.5rem,5vw,4rem)] font-medium mb-4">Cookie Policy</h1>
+          <p className="text-white/40 text-sm">Last Updated: {lastUpdated}</p>
+        </div>
+      </div>
+
       <div className="container-site py-16 md:py-24">
         <div className="max-w-3xl">
-          <h1 className="font-display text-[clamp(2.5rem,5vw,4rem)] font-medium mb-4">Cookie Policy</h1>
-          <p className="text-black/40 text-sm mb-12">Last Updated: {lastUpdated}</p>
-
           <div className="prose-monter space-y-10 text-black/70">
             <section>
               <h2 className="text-black font-semibold text-xl mb-4">1. What Are Cookies?</h2>
