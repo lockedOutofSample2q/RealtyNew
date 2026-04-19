@@ -9,8 +9,9 @@ import { Search, ArrowRight } from "lucide-react";
 
 export default function BlogClient({ posts }: { posts: any[] }) {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [displayCount, setDisplayCount] = useState(9);
 
-  // Extract unique categories from actual posts
+  // ... (category extraction logic remains the same)
   const dynamicCategories = ["All", ...Array.from(new Set(posts.map(p => p.category)))];
   
   const featured = posts.find((p) => p.featured) ?? posts[0];
@@ -20,8 +21,14 @@ export default function BlogClient({ posts }: { posts: any[] }) {
     ? rest 
     : rest.filter(post => post.category === activeCategory);
 
+  const paginatedPosts = filteredPosts.slice(0, displayCount);
+  const hasMore = displayCount < filteredPosts.length;
+
+  const loadMore = () => setDisplayCount(prev => prev + 9);
+
   return (
     <div className="w-[95%] max-w-[1240px] mx-auto px-[2%] pb-[12vh]">
+      {/* ... (Header and Filters remain the same) ... */}
       
       {/* Header */}
       <div className="flex flex-col items-center text-center mb-[8vh]">
@@ -131,8 +138,8 @@ export default function BlogClient({ posts }: { posts: any[] }) {
       )}
 
       {/* Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {filteredPosts.map((post, idx) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        {paginatedPosts.map((post, idx) => (
           <Link
             key={post._id}
             href={post.url}
@@ -144,10 +151,11 @@ export default function BlogClient({ posts }: { posts: any[] }) {
                 alt={post.title}
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
+                sizes="(max-width: 768px) 100vw, 33vw"
               />
               <div className="absolute top-5 left-5 bg-black px-3 py-1.5 rounded-md shadow-sm">
                 <span className="text-white text-[10px] font-bold tracking-widest uppercase">
-                  {post.category}
+                  {getBlogLabel(post.category)}
                 </span>
               </div>
             </div>
@@ -173,7 +181,20 @@ export default function BlogClient({ posts }: { posts: any[] }) {
             </div>
           </Link>
         ))}
-        {filteredPosts.length === 0 && (
+      </div>
+
+      {hasMore && (
+        <div className="flex justify-center mt-12">
+          <button
+            onClick={loadMore}
+            className="px-10 py-4 bg-white border border-black/10 text-black font-body font-semibold rounded-full hover:bg-black hover:text-white transition-all duration-300 shadow-sm hover:shadow-xl active:scale-95"
+          >
+            Load More Articles
+          </button>
+        </div>
+      )}
+
+      {filteredPosts.length === 0 && (
           <div className="col-span-1 sm:col-span-2 lg:col-span-3 text-center py-20 bg-white rounded-[32px] shadow-sm">
              <p className="text-[#6D6B66] text-lg font-medium">No articles found in this category.</p>
           </div>
