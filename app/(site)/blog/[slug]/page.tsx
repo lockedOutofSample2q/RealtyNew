@@ -62,27 +62,27 @@ export default async function BlogPostPage(props: Props) {
   return (
     <article className="min-h-screen bg-white">
       
-      {/* ── White Hero Header ────────────────────────────────── */}
-      <div className="bg-white text-black pt-[calc(var(--nav-height)+2rem)] md:pt-[calc(var(--nav-height)+4rem)] pb-24 px-6 relative overflow-hidden border-b border-black/[0.03]">
+      {/* ── Dark Hero Header ────────────────────────────────── */}
+      <div className="bg-black text-white pt-[calc(var(--nav-height)+2rem)] md:pt-[calc(var(--nav-height)+4rem)] pb-24 px-6 relative overflow-hidden">
         <div className="container-site relative z-10">
           
           {/* Breadcrumb for SEO & Navigation */}
-          <nav className="flex items-center gap-2 text-[11px] md:text-[13px] text-black/35 mb-8 md:mb-12 font-body">
-            <Link href="/" className="hover:text-black transition-colors">Home</Link>
+          <nav className="flex items-center gap-2 text-[11px] md:text-[13px] text-white/40 mb-8 md:mb-12 font-body">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <ChevronRight size={10} />
-            <Link href="/blog" className="hover:text-black transition-colors">Blog</Link>
+            <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
             <ChevronRight size={10} />
-            <span className="text-black/60 line-clamp-1 max-w-[200px] md:max-w-none">{post.title}</span>
+            <span className="text-white/80 line-clamp-1 max-w-[200px] md:max-w-none">{post.title}</span>
           </nav>
 
           <div className="max-w-4xl">
-            <span className="inline-block border border-black/10 bg-black/[0.02] rounded-full px-4 py-1.5 text-[11px] font-semibold tracking-[0.12em] uppercase text-black/50 mb-6">
+            <span className="inline-block border border-white/20 bg-white/5 rounded-full px-4 py-1.5 text-[11px] font-semibold tracking-[0.12em] uppercase text-white/70 mb-6">
               {getBlogLabel(post.category)}
             </span>
-            <h1 className="font-display text-[clamp(2.5rem,5vw,4.2rem)] font-medium leading-[1.1] mb-8 text-black">
+            <h1 className="font-display text-[clamp(2.5rem,5vw,4.2rem)] font-medium leading-[1.1] mb-8 text-white">
               {post.title}
             </h1>
-            <div className="flex items-center gap-5 text-[14px] text-black/40 font-body">
+            <div className="flex items-center gap-5 text-white/40 text-[14px] font-body">
               <span>{formatDate(post.date)}</span>
               <span className="flex items-center gap-1.5">
                 <Clock size={14} />
@@ -92,8 +92,8 @@ export default async function BlogPostPage(props: Props) {
           </div>
         </div>
 
-        {/* Subtle decorative element for the white room feel */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-black/[0.01] to-transparent pointer-events-none" />
+        {/* Decorative elements for the dark room feel */}
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/[0.03] to-transparent pointer-events-none" />
       </div>
 
       {/* ── Cover Image (Overlapping) ────────────────────── */}

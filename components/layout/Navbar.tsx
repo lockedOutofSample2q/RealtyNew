@@ -52,8 +52,8 @@ export default function Navbar() {
   // Robust check if current page is in the dark header list
   const isDarkHeroPage = darkHeaderPages.some(page => {
     if (page === "/") return pathname === "/";
-    // Check if the current pathname starts with any of the dark header pages
-    return pathname?.startsWith(page);
+    // Check if the current pathname starts with any of the dark header pages OR is a blog post
+    return pathname?.startsWith(page) || pathname?.startsWith("/blog/");
   });
 
   const useDarkText = !isDarkHeroPage && !isOpen;
