@@ -51,17 +51,17 @@ export const navItems: NavItem[] = [
 export const footerLinks = {
   quick: [
     { label: "Properties", href: "/properties" },
-    
-    { label: "List Your Property", href: "/list-your-property" },
-    { label: "Mortgage Calculator", href: "/mortgage-calculator" },
-    { label: "Book a Consultation", href: "/booking" },
+    { label: "Land Listings", href: "/properties?tab=lands" },
     { label: "Relocation Services", href: "/relocation" },
-    { label: "Blog", href: "/blog" },
+    { label: "Mortgage Calculator", href: "/mortgage-calculator" },
+    { label: "List Your Property", href: "/list-your-property" },
+    { label: "Market Blog", href: "/blog" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
     { label: "Cookie Policy", href: "/cookies" },
+    { label: "Imprint", href: "/imprint" },
   ],
 };
 
