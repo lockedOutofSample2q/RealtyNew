@@ -66,7 +66,16 @@ export function usePropertyFilters(properties: Property[]) {
       } else if (tab === "houses") {
         if (!["villa", "townhouse"].includes(pType)) return false;
       } else if (tab === "lands") {
-        if (!["residential", "commercial", "agricultural", "industrial", "land", "plot"].includes(pType)) return false;
+        const isLandType = ["residential", "commercial", "agricultural", "industrial", "land", "plot"].includes(pType);
+        const hasLandKeywords = 
+          normalize(p.title).includes("land") || 
+          normalize(p.title).includes("plot") || 
+          normalize(p.description).includes("land") || 
+          normalize(p.description).includes("plot") ||
+          normalize(p.slug).includes("land") ||
+          normalize(p.slug).includes("plot");
+        
+        if (!isLandType && !hasLandKeywords) return false;
       }
 
       if (filters.bedrooms && tab !== "lands") {
