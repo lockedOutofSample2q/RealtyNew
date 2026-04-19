@@ -13,10 +13,10 @@
 
 /* ── CSS Variables (Design Tokens) ──────────────────────────── */
 :root {
-  /* Fonts */
-  --font-display: var(--font-display, 'Cormorant Garamond', serif);
-  --font-body: var(--font-body, 'DM Sans', sans-serif);
-  --font-mono: var(--font-mono, 'DM Mono', monospace);
+  /* Fonts - Injected from layout.tsx */
+  --font-display: var(--font-cormorant), 'Cormorant Garamond', serif;
+  --font-body: var(--font-dm-sans), 'DM Sans', sans-serif;
+  --font-mono: var(--font-dm-mono), 'DM Mono', monospace;
 
   /* Colors */
   --background: #FFFFFF;

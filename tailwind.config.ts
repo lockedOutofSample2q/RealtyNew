@@ -48,12 +48,12 @@ const config: Config = {
 
       // ── Typography ───────────────────────────────────────
       fontFamily: {
-        // Display: used for headings (imported in globals.css)
-        display: ["var(--font-display)", "serif"],
+        // Display: used for headings (injected from layout.tsx)
+        display: ["var(--font-cormorant)", "serif"],
         // Body: clean and readable
-        body: ["var(--font-body)", "sans-serif"],
+        body: ["var(--font-dm-sans)", "sans-serif"],
         // Mono: code blocks in blog
-        mono: ["var(--font-mono)", "monospace"],
+        mono: ["var(--font-dm-mono)", "monospace"],
       },
 
       // ── Spacing Scale ────────────────────────────────────
