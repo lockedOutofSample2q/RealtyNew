@@ -8,7 +8,7 @@ import type { Property } from "@/types";
 export const revalidate = 3600; // Auto-rebuild the sitemap every hour
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = siteConfig.url || "https://www.monterealestate.ae";
+  const baseUrl = "https://www.realtyconsultants.in";
 
   // 1. Static Pages
   const staticRoutes = [
