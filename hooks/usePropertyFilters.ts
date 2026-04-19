@@ -59,29 +59,45 @@ export function usePropertyFilters(properties: Property[]) {
     const desiredFurnishing = normalize(filters.furnishing);
 
     return properties.filter((p) => {
-      // ── TYPE/TAB LOGIC ──────────────────────────────────────
       const pType = normalize(p.type);
+      const pTitle = normalize(p.title);
+      const pSlug = normalize(p.slug);
+      const pDesc = normalize(p.description);
+      const pDev = normalize(p.developer);
+
+      // ── Detection Logic ─────────────────────────────────────
+      // Homeland is a brand that sells apartments, but has "land" in the name.
+      const isHomeland = pTitle.includes("homeland") || pDev.includes("homeland") || pSlug.includes("homeland");
+      
+      // Keywords that indicate a Land/Plot listing
+      const hasLandKeywords = 
+        pTitle.includes("land") || 
+        pTitle.includes("plot") || 
+        pTitle.includes("bigga") ||
+        pTitle.includes("kanal") ||
+        pTitle.includes("gaj") ||
+        pDesc.includes("land") || 
+        pDesc.includes("plot") ||
+        pSlug.includes("land") ||
+        pSlug.includes("plot");
+
+      const isExplicitLandType = ["residential", "commercial", "agricultural", "industrial", "land", "plot"].includes(pType);
+      
+      // A property is a "Land" listing if it has the type OR keywords, UNLESS it is Homeland.
+      const isLandListing = (isExplicitLandType || hasLandKeywords) && !isHomeland;
+
+      // ── TYPE/TAB LOGIC ──────────────────────────────────────
       if (tab === "apartments") {
+        // If it's detected as a land listing, it doesn't belong in apartments
+        if (isLandListing) return false;
+        // Otherwise, must be an apartment type
         if (!["apartment", "studio", "penthouse"].includes(pType)) return false;
-      } else if (tab === "houses") {
+      } 
+      else if (tab === "houses") {
         if (!["villa", "townhouse"].includes(pType)) return false;
-      } else if (tab === "lands") {
-        // Exclude strictly residential building types even if they have "land" in the name (e.g. Homeland)
-        if (["apartment", "studio", "penthouse"].includes(pType)) return false;
-
-        // Brand-specific exclusion for 'Homeland' apartments
-        if (normalize(p.title).includes("homeland") || normalize(p.developer).includes("homeland")) return false;
-
-        const isLandType = ["residential", "commercial", "agricultural", "industrial", "land", "plot"].includes(pType);
-        const hasLandKeywords = 
-          normalize(p.title).includes("land") || 
-          normalize(p.title).includes("plot") || 
-          normalize(p.description).includes("land") || 
-          normalize(p.description).includes("plot") ||
-          normalize(p.slug).includes("land") ||
-          normalize(p.slug).includes("plot");
-        
-        if (!isLandType && !hasLandKeywords) return false;
+      } 
+      else if (tab === "lands") {
+        if (!isLandListing) return false;
       }
 
       if (filters.bedrooms && tab !== "lands") {
