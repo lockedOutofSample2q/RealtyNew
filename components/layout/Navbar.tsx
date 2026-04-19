@@ -110,6 +110,9 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={() => setCurrencyOpen(!currencyOpen)}
+                aria-label={`Select currency (current: ${currency})`}
+                aria-expanded={currencyOpen}
+                aria-haspopup="listbox"
                 className={cn(
                   "flex items-center gap-1 cursor-pointer transition-colors whitespace-nowrap shrink-0 focus:outline-none",
                   useDarkText ? "text-black/90 hover:text-black" : "text-white/90 hover:text-white"
@@ -126,12 +129,16 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 4 }}
                     transition={{ duration: 0.15 }}
+                    role="listbox"
                     className="absolute right-0 top-[calc(100%+8px)] bg-white rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.15)] border border-black/5 overflow-hidden z-[200] min-w-[80px]"
                   >
                     {CURRENCIES.map((c) => (
                       <button
                         key={c}
                         type="button"
+                        role="option"
+                        aria-selected={currency === c}
+                        aria-label={`Change currency to ${c}`}
                         onClick={() => { handleCurrencyChange(c); setCurrencyOpen(false); }}
                         className={cn(
                           "w-full text-left px-4 py-2.5 font-body text-[12px] font-bold tracking-widest uppercase transition-colors",
