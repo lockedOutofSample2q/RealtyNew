@@ -13,19 +13,19 @@ import { Cormorant_Garamond, DM_Sans, DM_Mono } from "next/font/google";
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-cormorant",
+  variable: "--font-display",
 });
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-dm-sans",
+  variable: "--font-body",
 });
 
 const dmMono = DM_Mono({
   subsets: ["latin"],
   weight: ["400"],
-  variable: "--font-dm-mono",
+  variable: "--font-mono",
 });
 
 export const metadata: Metadata = {

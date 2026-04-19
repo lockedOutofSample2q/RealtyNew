@@ -31,12 +31,12 @@ const CustomLink = (props: any) => {
   if (typeof children === "string" && children.includes("[WhatsApp Number]")) {
     return (
       <a 
-        href={`https://wa.me/${siteConfig.contact.phone.replace(/[^0-9]/g, "")}`}
+        href={`https://wa.me/917814613916`}
         target="_blank"
         rel="noopener noreferrer"
         className="text-emerald-600 font-bold hover:underline"
       >
-        {siteConfig.contact.phone} (WhatsApp)
+        917814613916 (WhatsApp)
       </a>
     );
   }
