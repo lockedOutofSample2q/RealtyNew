@@ -60,19 +60,19 @@ export default async function BlogPostPage(props: Props) {
   const postUrl = `${siteConfig.url}/blog/${post.slug}`;
 
   return (
-    <article className="min-h-screen">
+    <article className="min-h-screen bg-white">
       
       {/* ── Dark Hero Header ────────────────────────────────── */}
-      <div className="bg-black text-white pt-[calc(var(--nav-height)+4rem)] pb-24 px-6 relative overflow-hidden">
+      <div className="bg-black text-white pt-[calc(var(--nav-height)+2rem)] md:pt-[calc(var(--nav-height)+4rem)] pb-24 px-6 relative overflow-hidden">
         <div className="container-site relative z-10">
           
           {/* Breadcrumb for SEO & Navigation */}
-          <nav className="flex items-center gap-2 text-[13px] text-white/40 mb-10 font-body">
+          <nav className="flex items-center gap-2 text-[11px] md:text-[13px] text-white/40 mb-8 md:mb-12 font-body">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <ChevronRight size={12} />
+            <ChevronRight size={10} />
             <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
-            <ChevronRight size={12} />
-            <span className="text-white/80 line-clamp-1">{post.title}</span>
+            <ChevronRight size={10} />
+            <span className="text-white/80 line-clamp-1 max-w-[200px] md:max-w-none">{post.title}</span>
           </nav>
 
           <div className="max-w-4xl">
