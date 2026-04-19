@@ -66,6 +66,12 @@ export function usePropertyFilters(properties: Property[]) {
       } else if (tab === "houses") {
         if (!["villa", "townhouse"].includes(pType)) return false;
       } else if (tab === "lands") {
+        // Exclude strictly residential building types even if they have "land" in the name (e.g. Homeland)
+        if (["apartment", "studio", "penthouse"].includes(pType)) return false;
+
+        // Brand-specific exclusion for 'Homeland' apartments
+        if (normalize(p.title).includes("homeland") || normalize(p.developer).includes("homeland")) return false;
+
         const isLandType = ["residential", "commercial", "agricultural", "industrial", "land", "plot"].includes(pType);
         const hasLandKeywords = 
           normalize(p.title).includes("land") || 
