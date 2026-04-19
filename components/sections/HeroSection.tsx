@@ -91,15 +91,22 @@ export default function HeroSection() {
 
       {/* ── Parallax Background ── */}
       <motion.div
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-0 w-full h-full -z-10"
         style={{
           y: backgroundY,
           scale: backgroundScale,
-          backgroundImage: `url(/assets/images/home/hero-bg.jpg)`,
-          backgroundSize: "cover",
-          backgroundPosition: "center top",
         }}
-      />
+      >
+        <Image
+          src="/assets/images/home/hero-bg.jpg"
+          alt="Luxury Real Estate in Mohali"
+          fill
+          priority
+          className="object-cover object-[center_top]"
+          sizes="100vw"
+          quality={85}
+        />
+      </motion.div>
 
       {/* ── Overlays ── */}
       {/* Top-left dark vignette (keeps text readable) */}
@@ -146,6 +153,7 @@ export default function HeroSection() {
           {/* Mobile Search Button */}
           <button
             onClick={() => setIsSearchModalOpen(true)}
+            aria-label="Open search filters"
             className="md:hidden w-full max-w-[400px] bg-white text-black py-4 px-6 rounded-2xl flex items-center gap-3 shadow-xl font-body font-medium transition-transform active:scale-95"
           >
             <Search size={20} className="text-black/50" />
@@ -186,6 +194,7 @@ export default function HeroSection() {
                   <h2 className="font-display text-2xl font-semibold text-black">Filter</h2>
                   <button
                     onClick={() => setIsSearchModalOpen(false)}
+                    aria-label="Close search filters"
                     className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md active:scale-90 transition-transform"
                   >
                     <X size={20} className="text-black" />
@@ -284,7 +293,7 @@ export default function HeroSection() {
             <div key={i} className="flex-shrink-0 px-10 opacity-55 hover:opacity-90 transition-opacity duration-300">
               <Image
                 src={`/assets/images/logos/${logo.file}`}
-                alt={logo.name}
+                alt={`${logo.name} logo`}
                 width={120}
                 height={36}
                 className="h-7 w-auto object-contain"

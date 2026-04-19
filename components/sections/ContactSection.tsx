@@ -175,6 +175,8 @@ export default function ContactSection() {
                     key={label}
                     type="button"
                     onClick={() => setForm({ ...form, contactMethod: label })}
+                    aria-label={`Select contact method: ${label}`}
+                    aria-pressed={form.contactMethod === label}
                     className={`flex items-center gap-2 px-4 py-2.5 rounded-lg font-body text-[13px] font-medium transition-all border ${
                       form.contactMethod === label
                         ? "border-black/30 bg-black/[0.04] text-black"
@@ -199,6 +201,8 @@ export default function ContactSection() {
                     key={label}
                     type="button"
                     onClick={() => setForm({ ...form, preferredTime: label })}
+                    aria-label={`Select preferred time: ${label}`}
+                    aria-pressed={form.preferredTime === label}
                     className={`flex items-center gap-2 px-4 py-2.5 rounded-lg font-body text-[13px] font-medium transition-all border ${
                       form.preferredTime === label
                         ? "border-black/30 bg-black/[0.04] text-black"

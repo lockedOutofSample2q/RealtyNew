@@ -48,6 +48,7 @@ export default function PropertySearchBar({
           <button
             key={t}
             onClick={() => setTab(t)}
+            aria-label={`Show ${t} search options`}
             className={`relative font-body text-[14px] font-medium transition-colors pb-1 ${
               tab === t ? "text-white" : "text-white/35 hover:text-white/60"
             }`}

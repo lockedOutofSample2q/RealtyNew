@@ -50,6 +50,7 @@ export default function AboutHero() {
                   fill
                   className="object-cover"
                   priority
+                  sizes="(max-width: 640px) 100vw, 25vw"
                 />
               </motion.div>
 

@@ -38,6 +38,8 @@ export default function FaqSection() {
             >
               <button
                 onClick={() => setOpen(open === i ? null : i)}
+                aria-expanded={open === i}
+                aria-label={`Toggle answer for: ${faq.question}`}
                 className="w-full flex items-center justify-between py-6 text-left hover:bg-gray-50/50 transition-colors group px-2 rounded-xl"
               >
                 <div className="flex gap-6 md:gap-10 items-center font-display text-black md:text-xl font-medium pr-8">

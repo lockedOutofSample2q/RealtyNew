@@ -69,22 +69,46 @@ export default function Footer() {
           {hasSocial && (
             <div className="flex items-center gap-4">
               {siteConfig.social.instagram && (
-                <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-[var(--gold)] transition-colors">
+                <a 
+                  href={siteConfig.social.instagram} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="Follow us on Instagram"
+                  className="text-white/40 hover:text-[var(--gold)] transition-colors"
+                >
                   <Instagram size={18} />
                 </a>
               )}
               {siteConfig.social.facebook && (
-                <a href={siteConfig.social.facebook} target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-[var(--gold)] transition-colors">
+                <a 
+                  href={siteConfig.social.facebook} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="Follow us on Facebook"
+                  className="text-white/40 hover:text-[var(--gold)] transition-colors"
+                >
                   <Facebook size={18} />
                 </a>
               )}
               {siteConfig.social.linkedin && (
-                <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-[var(--gold)] transition-colors">
+                <a 
+                  href={siteConfig.social.linkedin} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="Follow us on LinkedIn"
+                  className="text-white/40 hover:text-[var(--gold)] transition-colors"
+                >
                   <Linkedin size={18} />
                 </a>
               )}
               {siteConfig.social.youtube && (
-                <a href={siteConfig.social.youtube} target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-[var(--gold)] transition-colors">
+                <a 
+                  href={siteConfig.social.youtube} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="Subscribe to our YouTube channel"
+                  className="text-white/40 hover:text-[var(--gold)] transition-colors"
+                >
                   <Youtube size={18} />
                 </a>
               )}
