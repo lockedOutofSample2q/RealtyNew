@@ -1,21 +1,18 @@
 import { MetadataRoute } from "next";
 import { createAdminClient } from "@/lib/supabase";
-
-import { allPosts } from "contentlayer/generated";
 import { siteConfig } from "@/config/site";
 import type { Property } from "@/types";
 
-export const revalidate = 3600; // Auto-rebuild the sitemap every hour
+export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://www.realtyconsultants.in";
 
-  // 1. Static Pages
+  // 1. Static Pages (Removed /blog)
   const staticRoutes = [
     "",
     "/properties",
     "/about",
-    "/blog",
     "/contact",
     "/booking",
     "/list-your-property",
@@ -55,14 +52,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.9,
   }));
 
-  // 3. Get all blog posts from Contentlayer
-  const blogRoutes = allPosts.map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.date || new Date()),
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
-  }));
-
-  // Return combined array
-  return [...staticRoutes, ...propertyRoutes, ...blogRoutes];
+  // Return combined array (No blogRoutes)
+  return [...staticRoutes, ...propertyRoutes];
 }
