@@ -60,41 +60,45 @@ export default async function BlogPostPage(props: Props) {
   const postUrl = `${siteConfig.url}/blog/${post.slug}`;
 
   return (
-    <article className="min-h-screen bg-white pt-[var(--nav-height)]">
+    <article className="min-h-screen">
+      
+      {/* ── Dark Hero Header ────────────────────────────────── */}
+      <div className="bg-black text-white pt-[calc(var(--nav-height)+4rem)] pb-24 px-6 relative overflow-hidden">
+        <div className="container-site relative z-10">
+          
+          {/* Breadcrumb for SEO & Navigation */}
+          <nav className="flex items-center gap-2 text-[13px] text-white/40 mb-10 font-body">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <ChevronRight size={12} />
+            <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+            <ChevronRight size={12} />
+            <span className="text-white/80 line-clamp-1">{post.title}</span>
+          </nav>
 
-      {/* ── Header ───────────────────────────────────────── */}
-      <div className="container-site pt-14 pb-10">
-
-        {/* Breadcrumb */}
-        <nav className="flex items-center gap-1.5 text-[13px] text-black/40 mb-7 font-body">
-          <Link href="/blog" className="hover:text-black transition-colors">Blog</Link>
-          <ChevronRight size={13} />
-          <span className="text-black/60">{getBlogLabel(post.category)}</span>
-        </nav>
-
-        {/* Category badge */}
-        <span className="inline-block border border-black/15 rounded-full px-4 py-1.5 text-[11px] font-semibold tracking-[0.12em] uppercase text-black/50 mb-6">
-          {getBlogLabel(post.category)}
-        </span>
-
-        {/* Title */}
-        <h1 className="font-body text-[clamp(2rem,4vw,3.2rem)] font-semibold text-black leading-[1.15] tracking-tight max-w-3xl mb-6">
-          {post.title}
-        </h1>
-
-        {/* Meta */}
-        <div className="flex items-center gap-5 text-[14px] text-black/40 font-body">
-          <span>{formatDate(post.date)}</span>
-          <span className="flex items-center gap-1.5">
-            <Clock size={14} />
-            {post.readingTime}
-          </span>
+          <div className="max-w-4xl">
+            <span className="inline-block border border-white/20 bg-white/5 rounded-full px-4 py-1.5 text-[11px] font-semibold tracking-[0.12em] uppercase text-white/70 mb-6">
+              {getBlogLabel(post.category)}
+            </span>
+            <h1 className="font-display text-[clamp(2.5rem,5vw,4.2rem)] font-medium leading-[1.1] mb-8">
+              {post.title}
+            </h1>
+            <div className="flex items-center gap-5 text-[14px] text-white/40 font-body">
+              <span>{formatDate(post.date)}</span>
+              <span className="flex items-center gap-1.5">
+                <Clock size={14} />
+                {post.readingTime}
+              </span>
+            </div>
+          </div>
         </div>
+
+        {/* Decorative elements for the dark room feel */}
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/[0.03] to-transparent pointer-events-none" />
       </div>
 
-      {/* ── Cover Image ──────────────────────────────────── */}
-      <div className="container-site pb-12">
-        <div className="relative w-full h-[clamp(320px,50vw,600px)] overflow-hidden rounded-2xl bg-black/5">
+      {/* ── Cover Image (Overlapping) ────────────────────── */}
+      <div className="container-site -mt-16 relative z-20 pb-16">
+        <div className="relative w-full h-[clamp(320px,50vw,700px)] overflow-hidden rounded-[32px] shadow-2xl bg-black/5">
           <Image
             src={post.coverImage}
             alt={post.title}
