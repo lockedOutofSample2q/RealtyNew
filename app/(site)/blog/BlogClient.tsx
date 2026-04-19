@@ -199,7 +199,6 @@ export default function BlogClient({ posts }: { posts: any[] }) {
              <p className="text-[#6D6B66] text-lg font-medium">No articles found in this category.</p>
           </div>
         )}
-      </div>
 
     </div>
   );
