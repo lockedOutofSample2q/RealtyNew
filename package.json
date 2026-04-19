@@ -12,6 +12,12 @@
   "engines": {
     "node": "20.x"
   },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "> 0.5%",
+    "not ie 11"
+  ],
   "overrides": {
     "@effect-ts/system": "0.57.5",
     "@effect-ts/core": "0.60.5"
