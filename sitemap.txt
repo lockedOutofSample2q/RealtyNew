@@ -1,0 +1,113 @@
+Page: Home (/)
+    - Navbar: Liquid glass theme with links to Home, Properties, Blog, Tools (with
+      sub-menu for EMI, Price Trends, Eligibility), Guides, About, Contact, and "List
+      Property" button.
+    - Hero Header Section: Striking "Find Your Place in Mohali" headline with liquid
+      glass search filters (Lands, Apartments, Houses) that trigger dynamic results.
+    - Features List Section: Key service tiles: Investment Advisory, Transparent
+      Dealings, and Local Expertise.
+    - About Snippet Section: Highlight of the firm's 10-year Punjab expertise with a
+      stats bar (4+ Years, 125+ Properties Sold, INR 84Cr+ Transactions).
+    - Portfolio List Section: Featured property carousels (Properties Worth Looking At /
+      Land Listings) with high-signal badges like "RERA Verified."
+    - Testimonials Section: Card-based client feedback highlighting trust and successful
+      Mohali investments.
+    - Blog Teaser Section: Latest market insights (IT City growth, Airport Road trends)
+      with excerpts and category tags.
+    - Faq Section: Accordion-style common questions regarding pre-launch risks and Mohali
+      market entry.
+    - Contact Section: Visual CTA for strategy calls and property evaluations.
+    - Footer: Extended 4-column grid (Explore, Free Tools, Contact, Legal) including
+      newsletter signup, social icons, and office map link.
+
+  ---
+
+  Page: Free Tools Hub (/tools)
+    - Header: Suite overview for Mohali real estate buyers and investors.
+    - Tools Grid: Interactive tiles for EMI Calculator, Price Trend Analysis, and Loan
+      Eligibility Checker.
+    - CTA Section: Link to personalized strategy consultations.
+
+  Page: EMI / Home Loan Calculator (/mortgage-calculator)
+    - Interactive Form: Sliders for Property Price, Down Payment (%, INR), Interest Rate,
+      and Tenure.
+    - Live Breakdown: Doughnut chart showing Principal vs. Interest, monthly EMI results,
+      and total amount payable.
+    - Residency Toggle: Logic-switches for Resident vs. NRI LTV (Loan-to-Value) limits.
+
+  Page: Price Trend Mohali (/tools/price-trend)
+    - Stats Bar: Avg. Price Growth (12.5%), Top Demand Sectors, and Rental Yield targets.
+    - Sector Analysis: Comparison table for prime zones (Sector 82A, Aerocity, IT City)
+      with trend indicators (Up/Stable).
+    - Market Insights: Deep-dive text into infrastructure impact (Bharatmala, Airport
+      Road expansion).
+
+  Page: Housing Loan Eligibility (/tools/loan-eligibility)
+    - Interactive Checker: Inputs for Gross Monthly Income, Existing EMIs, Tenure, and
+      Rate.
+    - Eligibility Result: Instant calculation of "Estimated Eligible Loan Amount" based
+      on standard 50% FOIR (Fixed Obligation to Income Ratio).
+
+  ---
+
+  Page: Apartments & Flats (/apartments)
+    - Targeted Listings: Pre-filtered view of the property engine showing only
+      residential flats and studios.
+    - Interactive Grid: Map-linked search with filters for furnishing, price, and
+      currency (INR/USD/CAD/AUD).
+
+  Page: Villas & Houses (/houses)
+    - Targeted Listings: Filtered view for independent homes, townhouses, and villas.
+    - Map View: Geospatial pins for all available independent properties in gated
+      communities.
+
+  Page: Lands & Plots (/lands)
+    - Targeted Listings: Filtered view for GMADA plots, agricultural land, and licensed
+      residential plots.
+    - Investment Focus: Data-heavy listings focused on area (Kanal/Gaj) and growth
+      corridor proximity.
+
+  ---
+
+  Page: Property Listing Page (Dynamic) (/properties/[slug] or /[slug])
+    - Interactive Gallery: Liquid glass image slider with video support and "Share"
+      functionality.
+    - Technical Overview: Detailed tables for Payment Plans (Down payment,
+      Construction-linked, Handover).
+    - Amenity Grid: Icon-based community features (Infinity Pool, Gym, etc.).
+    - Location Intelligence: Integrated Map with "Nearby Landmarks" (Time by Car/Walk).
+    - Agent Sidebar: Sticky inquiry form with direct agent contact details and RERA
+      developer info.
+
+  ---
+
+  Page: Investment Guides (/guides)
+    - Resource Hub: Visual tiles for "Property Document Verification," "RERA Punjab
+      Guide," and "GMADA Allotment."
+    - Guides List: Deep-dive content pieces for NRI and first-time buyers in Punjab.
+
+  ---
+
+  Page: Faq (Full Page) (/faq)
+    - Comprehensive Database: Detailed Q&A covering transparency, advisory fees, market
+      cycles, and legal procedures.
+    - Contact CTA: Direct link to the inquiry team for specific queries.
+
+  ---
+
+  Page: Blog (/blog)
+    - Content Grid: SEO-optimized list of market trends, investment tips, and project
+      reviews.
+    - Search/Filter: Category filtering (Market Insights, Investment, News).
+
+  ---
+
+  Page: Contact Us (/contact)
+    - Engagement Hub: Multi-field inquiry form, direct WhatsApp link, and physical office
+      address with Google Maps integration.
+
+  ---
+
+  Page: Legal Pages (/privacy, /terms, /cookies)
+    - Regulatory Content: GDPR/FEMA compliant policies covering data privacy, cookie
+      usage, and investment disclaimers.

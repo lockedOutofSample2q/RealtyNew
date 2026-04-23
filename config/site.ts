@@ -41,23 +41,40 @@ export const siteConfig: SiteConfig = {
 export const navItems: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "Properties", href: "/properties" },
-  
   { label: "Blog", href: "/blog" },
+  { 
+    label: "Tools", 
+    href: "/tools",
+    children: [
+      { label: "EMI Calculator", href: "/mortgage-calculator" },
+      { label: "Price Trends", href: "/tools/price-trend" },
+      { label: "Loan Eligibility", href: "/tools/loan-eligibility" },
+    ]
+  },
+  { label: "Guides", href: "/guides" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
+  { label: "List Property", href: "/list-your-property" },
 ];
 
 // ── Footer Links ─────────────────────────────────────────────
 export const footerLinks = {
   quick: [
     { label: "Properties", href: "/properties" },
-    { label: "Land Listings", href: "/properties?tab=lands" },
+    { label: "Apartments", href: "/apartments" },
+    { label: "Houses", href: "/houses" },
+    { label: "Lands", href: "/lands" },
     { label: "Relocation Services", href: "/relocation" },
-    { label: "Mortgage Calculator", href: "/mortgage-calculator" },
-    { label: "List Your Property", href: "/list-your-property" },
     { label: "Market Blog", href: "/blog" },
   ],
+  tools: [
+    { label: "EMI Calculator", href: "/mortgage-calculator" },
+    { label: "Price Trends", href: "/tools/price-trend" },
+    { label: "Loan Eligibility", href: "/tools/loan-eligibility" },
+    { label: "Sector Maps", href: "/properties" },
+  ],
   legal: [
+    { label: "FAQ", href: "/faq" },
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
     { label: "Cookie Policy", href: "/cookies" },

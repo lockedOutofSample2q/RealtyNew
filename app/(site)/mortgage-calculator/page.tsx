@@ -63,18 +63,15 @@ export default function MortgageCalculatorPage() {
 
       {/* Hero Section */}
       <div className="bg-white border-b border-black/5">
-        <div className="container-site max-w-[1200px] mx-auto pt-20 pb-16 px-6 text-center">
+        <div className="container-site max-w-3xl mx-auto pt-20 pb-16 px-6 text-center">
           <span className="font-body text-[11px] font-bold tracking-widest uppercase text-black/40 mb-4 block">
-            Tools & Calculators
+            EMI / Home Loan Calculator
           </span>
-          <h1 className="font-display text-4xl md:text-5xl font-semibold mb-4 tracking-tight">
-            MORTGAGE CALCULATOR
+          <h1 className="font-display text-5xl font-semibold mb-4 tracking-tight">
+            Mortgage Calculator
           </h1>
           <p className="font-body text-black/60 text-lg max-w-xl mx-auto">
-            Plan Your Dream Property
-          </p>
-          <p className="font-body text-black/50 text-sm max-w-2xl mx-auto mt-4 leading-relaxed">
-            Estimate your monthly mortgage payments with our calculator. Adjust the property price, down payment, interest rate, and term to see how they impact your cost.
+            Estimate your monthly mortgage payments and plan your dream property.
           </p>
         </div>
       </div>

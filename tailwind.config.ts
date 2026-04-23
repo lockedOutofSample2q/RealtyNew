@@ -1,9 +1,3 @@
-// tailwind.config.ts
-// ============================================================
-// DESIGN TOKENS — Edit brand colors/fonts here
-// All colors reference CSS variables defined in styles/globals.css
-// ============================================================
-
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -16,9 +10,7 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      // ── Brand Colors ────────────────────────────────────
       colors: {
-        // Core palette
         charcoal: {
           DEFAULT: "#0D0D0D",
           50: "#1A1A1A",
@@ -26,18 +18,6 @@ const config: Config = {
           200: "#0D0D0D",
           300: "#080808",
         },
-        gold: {
-          DEFAULT: "#C9A84C",
-          light: "#E8C97A",
-          dark: "#A8893A",
-          muted: "#C9A84C33",
-        },
-        cream: {
-          DEFAULT: "#F5F0E8",
-          dark: "#E8E0D0",
-        },
-
-        // Semantic
         background: "var(--background)",
         foreground: "var(--foreground)",
         border: "var(--border)",
@@ -45,24 +25,25 @@ const config: Config = {
         accent: "var(--accent)",
         card: "var(--card)",
       },
-
-      // ── Typography ───────────────────────────────────────
       fontFamily: {
-        // Display: used for headings (injected from layout.tsx)
         display: ["var(--font-cormorant)", "serif"],
-        // Body: clean and readable
         body: ["var(--font-dm-sans)", "sans-serif"],
-        // Mono: code blocks in blog
         mono: ["var(--font-dm-mono)", "monospace"],
       },
-
-      // ── Spacing Scale ────────────────────────────────────
       spacing: {
-        "section": "6rem",   // Standard section padding
+        1: "4px",
+        2: "8px",
+        3: "12px",
+        4: "16px",
+        6: "24px",
+        8: "32px",
+        10: "40px",
+        12: "48px",
+        14: "56px",
+        16: "64px",
+        "section": "6rem",
         "section-sm": "3rem",
       },
-
-      // ── Animations ───────────────────────────────────────
       animation: {
         "fade-up": "fadeUp 0.6s ease forwards",
         "fade-in": "fadeIn 0.4s ease forwards",
@@ -92,17 +73,20 @@ const config: Config = {
           "100%": { transform: "translateX(-50%)" },
         },
       },
-
-      // ── Shadows ──────────────────────────────────────────
       boxShadow: {
-        "gold": "0 0 30px rgba(201, 168, 76, 0.15)",
-        "card": "0 4px 40px rgba(0,0,0,0.4)",
-        "card-hover": "0 8px 60px rgba(0,0,0,0.6)",
+        subtle: "0 2px 10px rgba(0, 0, 0, 0.05)",
+        medium: "0 4px 20px rgba(0, 0, 0, 0.08)",
+        elevated: "0 8px 30px rgba(0, 0, 0, 0.12)",
+        hover: "0 12px 40px rgba(0, 0, 0, 0.15)",
+        "card": "0 4px 40px rgba(0,0,0,0.05)",
+        "card-hover": "0 8px 60px rgba(0,0,0,0.1)",
       },
-
-      // ── Border Radius ────────────────────────────────────
       borderRadius: {
-        "4xl": "2rem",
+        sm: "8px",
+        md: "12px",
+        lg: "16px",
+        xl: "24px",
+        "4xl": "32px",
       },
     },
   },
@@ -110,3 +94,4 @@ const config: Config = {
 };
 
 export default config;
+

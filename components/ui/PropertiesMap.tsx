@@ -35,7 +35,11 @@ const DEFAULT_CENTER: [number, number] = [30.6973, 76.6903]; // Mohali center
 function MapResizer() {
   const map = useMap();
   useEffect(() => {
-    setTimeout(() => { map.invalidateSize(); }, 400);
+    // Small delay to ensure container is rendered
+    const timer = setTimeout(() => { 
+      map.invalidateSize(); 
+    }, 400);
+    return () => clearTimeout(timer);
   }, [map]);
   return null;
 }

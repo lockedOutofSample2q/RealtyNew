@@ -11,6 +11,8 @@ import PropertiesCarousel from "@/components/sections/PropertiesCarousel";
 import ServicesSection from "@/components/sections/ServicesSection";
 import FaqSection from "@/components/sections/FaqSection";
 import ContactSection from "@/components/sections/ContactSection";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import BlogTeaserSection from "@/components/sections/BlogTeaserSection";
 import { createAdminClient } from "@/lib/supabase";
 import { homeCarousels } from "@/config/site";
 import type { Property } from "@/types";
@@ -76,6 +78,8 @@ export default async function HomePage() {
         inverted
       />
       <ServicesSection />
+      <TestimonialsSection />
+      <BlogTeaserSection />
       <FaqSection />
       <ContactSection />
     </>

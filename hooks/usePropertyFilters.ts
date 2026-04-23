@@ -20,11 +20,11 @@ function normalize(text: string | undefined | null): string {
   return (text ?? "").toLowerCase().replace(/[-\s]+/g, " ").trim();
 }
 
-export function usePropertyFilters(properties: Property[]) {
+export function usePropertyFilters(properties: Property[], initialTab?: SearchTab) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [tab, setTab] = useState<SearchTab>(
-    (searchParams.get("tab") as SearchTab) || "apartments"
+    initialTab || (searchParams.get("tab") as SearchTab) || "apartments"
   );
   const [filters, setFilters] = useState<PropertySearchFilters>({
     ...DEFAULT_PROPERTY_FILTERS,

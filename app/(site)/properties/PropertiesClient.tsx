@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import type { Property } from "@/types";
 import { usePropertyFilters } from "@/hooks/usePropertyFilters";
+import { SearchTab } from "@/components/search/propertySearchOptions";
 import { PropertiesHero } from "@/components/properties/PropertiesHero";
 import { MobileSearchModal } from "@/components/properties/MobileSearchModal";
 import { PropertiesResultsBar } from "@/components/properties/PropertiesResultsBar";
@@ -10,9 +11,10 @@ import { PropertiesMapContainer } from "@/components/properties/PropertiesMapCon
 
 interface Props {
   properties: Property[];
+  initialTab?: SearchTab;
 }
 
-export default function PropertiesClient({ properties }: Props) {
+export default function PropertiesClient({ properties, initialTab }: Props) {
   const {
     tab,
     filters,
@@ -21,7 +23,7 @@ export default function PropertiesClient({ properties }: Props) {
     handleSearch,
     handleTabChange,
     resetFilters,
-  } = usePropertyFilters(properties);
+  } = usePropertyFilters(properties, initialTab);
 
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [leafletReady, setLeafletReady] = useState(false);

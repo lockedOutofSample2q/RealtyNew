@@ -1,3 +1,4 @@
+﻿// components/layout/Navbar.tsx
 "use client";
 
 import { useState, useEffect, useRef } from "react";
@@ -10,8 +11,6 @@ import { cn } from "@/lib/utils";
 import { useCurrency, type Currency } from "@/context/CurrencyContext";
 
 const CURRENCIES: Currency[] = ["INR", "USD", "CAD", "AUD"];
-
-const MENU_TOP_POSITIONS = ["18vh", "27vh", "36vh", "45vh", "54vh", "63vh"];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -85,26 +84,19 @@ export default function Navbar() {
   return (
     <>
       <header
-        className="absolute top-0 left-0 right-0 z-[60] bg-transparent py-4 md:py-6"
+        className="absolute top-0 left-0 right-0 z-[60] bg-transparent py-6"
       >
-        <div className="px-6 md:px-12 flex items-center justify-between">
+        <div className="container-site flex items-center justify-between">
           
-          {/* ── Logo ─────────────────────────────────────── */}
-          <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 group z-50 max-w-[70%] sm:max-w-none">
-            <div className={cn("flex flex-col items-start leading-none font-display", useDarkText ? "text-black" : "text-white")}>
-              <span className="text-sm xs:text-base sm:text-xl font-bold tracking-tighter uppercase flex flex-wrap items-center gap-x-1.5 gap-y-0.5">
-                {siteConfig.name.split(' ').map((word, i) => (
-                  <span key={i} className={i > 0 ? "opacity-50 font-medium" : ""}>{word}</span>
-                ))}
-              </span>
-              <span className="text-[7px] sm:text-[8px] tracking-[0.2em] sm:tracking-[0.4em] font-medium opacity-70 uppercase mt-0.5 pl-0.5">
-                {siteConfig.tagline}
-              </span>
+          {/* -- Logo --------------------------------------- */}
+          <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 group z-50">
+            <div className={cn("relative h-20 sm:h-24 w-auto transition-opacity", useDarkText ? "opacity-100" : "opacity-100 invert")}>
+              <img src="/assets/logo.png" alt={siteConfig.name} className="h-full w-auto object-contain" />
             </div>
           </Link>
 
-          {/* ── Controls (EN + Hamburger/Close) ──────────── */}
-          <div className="flex items-center gap-6 z-50">
+          {/* -- Controls (EN + Hamburger/Close) ------------ */}
+          <div className="flex items-center gap-8 z-50">
             {/* Currency selector */}
             <div className="hidden sm:block relative" ref={currencyRef}>
               <button
@@ -114,12 +106,12 @@ export default function Navbar() {
                 aria-expanded={currencyOpen}
                 aria-haspopup="listbox"
                 className={cn(
-                  "flex items-center gap-1 cursor-pointer transition-colors whitespace-nowrap shrink-0 focus:outline-none",
-                  useDarkText ? "text-black/90 hover:text-black" : "text-white/90 hover:text-white"
+                  "flex items-center gap-1 cursor-pointer transition-colors whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal rounded-sm",
+                  useDarkText ? "text-charcoal/80 hover:text-charcoal" : "text-white/80 hover:text-white"
                 )}
               >
-                <span className="font-body text-[11px] font-bold tracking-widest uppercase leading-none">{currency}</span>
-                <ChevronDown size={11} className={cn("opacity-70 shrink-0 transition-transform duration-200", currencyOpen && "rotate-180")} />
+                <span className="font-body text-xs font-semibold tracking-widest uppercase leading-none">{currency}</span>
+                <ChevronDown size={14} className={cn("opacity-70 shrink-0 transition-transform duration-200", currencyOpen && "rotate-180")} />
               </button>
 
               <AnimatePresence>
@@ -130,7 +122,7 @@ export default function Navbar() {
                     exit={{ opacity: 0, y: 4 }}
                     transition={{ duration: 0.15 }}
                     role="listbox"
-                    className="absolute right-0 top-[calc(100%+8px)] bg-white rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.15)] border border-black/5 overflow-hidden z-[200] min-w-[80px]"
+                    className="absolute right-0 top-[calc(100%+8px)] bg-white rounded-lg shadow-medium border border-border overflow-hidden z-[200] min-w-[80px]"
                   >
                     {CURRENCIES.map((c) => (
                       <button
@@ -141,10 +133,10 @@ export default function Navbar() {
                         aria-label={`Change currency to ${c}`}
                         onClick={() => { handleCurrencyChange(c); setCurrencyOpen(false); }}
                         className={cn(
-                          "w-full text-left px-4 py-2.5 font-body text-[12px] font-bold tracking-widest uppercase transition-colors",
+                          "w-full text-left px-4 py-3 font-body text-xs font-semibold tracking-widest uppercase transition-colors outline-none",
                           currency === c
-                            ? "bg-black text-white"
-                            : "text-black/60 hover:bg-black/5 hover:text-black"
+                            ? "bg-charcoal text-white"
+                            : "text-charcoal/60 hover:bg-black/5 hover:text-charcoal focus:bg-black/5"
                         )}
                       >
                         {c}
@@ -157,15 +149,15 @@ export default function Navbar() {
 
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={cn("hover:opacity-70 transition-opacity focus:outline-none", useDarkText ? "text-black" : "text-white")}
+              className={cn("hover:opacity-70 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal rounded-sm", useDarkText ? "text-charcoal" : "text-white")}
               aria-label="Toggle menu"
             >
               {isOpen ? (
-                <X size={24} strokeWidth={1.5} />
+                <X size={28} strokeWidth={1.5} />
               ) : (
-                <div className="flex flex-col gap-[6px] w-[22px]">
-                  <div className={cn("w-full h-[1.5px] rounded-full", useDarkText ? "bg-black" : "bg-white")}></div>
-                  <div className={cn("w-full h-[1.5px] rounded-full", useDarkText ? "bg-black" : "bg-white")}></div>
+                <div className="flex flex-col gap-[6px] w-[24px]">
+                  <div className={cn("w-full h-[1.5px] rounded-full", useDarkText ? "bg-charcoal" : "bg-white")}></div>
+                  <div className={cn("w-full h-[1.5px] rounded-full", useDarkText ? "bg-charcoal" : "bg-white")}></div>
                 </div>
               )}
             </button>
@@ -173,7 +165,7 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* ── Full Screen Overlay Menu ─────────────────────── */}
+      {/* -- Full Screen Overlay Menu ----------------------- */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -181,76 +173,66 @@ export default function Navbar() {
             initial="closed"
             animate="open"
             exit="exit"
-            className="fixed inset-0 z-[50] w-full h-full bg-[#111111]/96 backdrop-blur-2xl"
+            className="fixed inset-0 z-[50] w-full h-full bg-charcoal/95 backdrop-blur-2xl"
           >
-            {/* Dark gradient overlay for that dim room feel from screenshot */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/45 to-black/18 pointer-events-none" />
-
-            <div className="relative z-10 h-screen px-6 md:px-12">
-
-              {/* Main vertical links (each item has frame-relative anchor) */}
-              <nav className="absolute left-[6.25rem] md:left-[7.75rem] top-0 w-[min(560px,80vw)] h-screen">
-                {navItems.map((item, i) => (
+            <div className="relative z-10 h-screen container-site flex flex-col justify-end pb-[10vh]">
+              <nav className="flex flex-col gap-2 md:gap-4 mb-10 ml-0 md:ml-[min(5vw,60px)]">
+                {navItems.filter(item => item.label !== "Tools").map((item, i) => (
                   <motion.div
                     custom={i}
                     variants={linkVariants}
                     initial="closed"
                     animate="open"
                     key={item.label}
-                    className="absolute left-0"
-                    style={{ top: MENU_TOP_POSITIONS[i] }}
                   >
                     <Link
                       href={item.href}
                       onClick={() => setIsOpen(false)}
-                      className={cn(
-                        "font-display font-light text-[clamp(37px,4.55vw,75px)] leading-[1.12] [letter-spacing:calc(0.015em+1pt)] transition-colors duration-400 block w-max max-w-full",
-                        pathname === item.href
-                          ? "text-white"
-                          : "text-white/50 hover:text-white/80"
-                      )}
+                      className="group flex items-baseline w-full"
                     >
-                      {item.label}
+                      <span className="font-display text-2xl sm:text-3xl md:text-5xl text-white/80 group-hover:text-white transition-colors whitespace-nowrap">
+                        {item.label}
+                      </span>
                     </Link>
                   </motion.div>
                 ))}
               </nav>
 
-              {/* Bottom section inside same full-screen frame (frame-relative anchors) */}
-              <motion.div 
-                initial={{ opacity: 0 }} 
-                animate={{ opacity: 1 }} 
-                transition={{ delay: 0.8, duration: 0.5 }}
-                className="absolute left-[6.25rem] md:left-[7.75rem] bottom-[3.8vh] w-[min(760px,88vw)] flex flex-col gap-6"
-              >
-                <div className="flex flex-wrap items-center gap-6">
-                  {footerLinks.quick.slice(0, 4).map((util) => (
-                    <Link
-                      key={util.label}
-                      href={util.href}
-                      onClick={() => setIsOpen(false)}
-                      className="font-body text-[11px] md:text-[12px] font-normal text-white/60 hover:text-white transition-colors"
-                    >
-                      {util.label}
-                    </Link>
-                  ))}
-                </div>
-
-                {/* Contact Info */}
-                <div className="flex flex-col gap-1 font-body text-[13px] md:text-[14px] text-white/60 tracking-wide">
-                  <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-white transition-colors">
-                    {siteConfig.contact.email}
-                  </a>
-                  <a href={`tel:${siteConfig.contact.phone}`} className="hover:text-white transition-colors">
-                    {siteConfig.contact.phone}
-                  </a>
-                </div>
-              </motion.div>
-
-              <div className="absolute right-[6.25rem] md:right-[7.75rem] bottom-[3.8vh] font-body text-[11px] uppercase tracking-[0.16em] text-white/50">
-                {siteConfig.contact.address.split(',').slice(-2).join(',').trim()}
+              {/* Tools as a small link on the right */}
+              <div className="flex justify-end mb-8 md:mb-12 ml-0 md:ml-[min(5vw,60px)]">
+                <Link
+                  href="/tools"
+                  onClick={() => setIsOpen(false)}
+                  className="font-body text-xs md:text-sm uppercase tracking-widest text-white/60 hover:text-white transition-colors border border-white/20 rounded-full px-4 py-1 shadow-sm bg-black/30"
+                  style={{ minWidth: 90, textAlign: 'center' }}
+                >
+                  Tools
+                </Link>
               </div>
 
+              <motion.div 
+                className="flex flex-col md:flex-row md:items-end justify-between gap-8 ml-0 md:ml-[min(5vw,60px)]"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+              >
+                <div className="flex flex-col gap-1">
+                  <p className="font-body text-[10px] uppercase tracking-[0.2em] text-white/30 mb-2">Get in touch</p>
+                  <a href={`tel:${siteConfig.contact.phone}`} className="font-body text-lg md:text-xl text-white/70 hover:text-white transition-colors">
+                    {siteConfig.contact.phone}
+                  </a>
+                  <a href={`mailto:${siteConfig.contact.email}`} className="font-body text-lg md:text-xl text-white/70 hover:text-white transition-colors">
+                    {siteConfig.contact.email}
+                  </a>
+                </div>
+                <div className="flex flex-wrap gap-x-6 gap-y-2 border-t md:border-t-0 border-white/10 pt-6 md:pt-0">
+                  {footerLinks.legal.map(link => (
+                     <Link key={link.label} href={link.href} onClick={() => setIsOpen(false)} className="font-body text-[10px] md:text-xs uppercase tracking-widest text-white/40 hover:text-white transition-colors">
+                       {link.label}
+                     </Link>
+                  ))}
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         )}
@@ -258,3 +240,4 @@ export default function Navbar() {
     </>
   );
 }
+

@@ -25,7 +25,11 @@ export default function LeadsAdmin() {
     setLoading(true);
     try {
       if (!supabase.from) throw new Error("Supabase not initialized");
-      let q = supabase.from("leads").select("*").order("created_at", { ascending: false });
+      let q = supabase
+        .from("leads")
+        .select("*, apartments(title), houses(title), lands(title)")
+        .order("created_at", { ascending: false });
+      
       if (filter !== "all") q = q.eq("status", filter);
       const { data } = await q;
       setLeads(data ?? []);
@@ -75,22 +79,33 @@ export default function LeadsAdmin() {
         ) : leads.length === 0 ? (
           <div className="text-center py-12 font-body text-sm text-white/30">No leads found</div>
         ) : (
-          leads.map((lead) => (
-            <div
-              key={lead.id}
-              className="bg-[#141414] border border-white/5 p-5 flex flex-col sm:flex-row sm:items-center gap-4"
-            >
-              {/* Info */}
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="font-body text-sm font-medium text-white">{lead.name}</span>
-                  <span className={`font-body text-xs px-2 py-0.5 capitalize ${STATUS_COLORS[lead.status] ?? "bg-white/5 text-white/40"}`}>
-                    {lead.status}
-                  </span>
-                  <span className="font-body text-xs bg-white/5 text-white/40 px-2 py-0.5 capitalize">
-                    {lead.source}
-                  </span>
-                </div>
+          leads.map((lead) => {
+            const propertyTitle = 
+              lead.apartments?.title || 
+              lead.houses?.title || 
+              lead.lands?.title;
+            
+            return (
+              <div
+                key={lead.id}
+                className="bg-[#141414] border border-white/5 p-5 flex flex-col sm:flex-row sm:items-center gap-4"
+              >
+                {/* Info */}
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="font-body text-sm font-medium text-white">{lead.name}</span>
+                    <span className={`font-body text-xs px-2 py-0.5 capitalize ${STATUS_COLORS[lead.status] ?? "bg-white/5 text-white/40"}`}>
+                      {lead.status}
+                    </span>
+                    <span className="font-body text-xs bg-white/5 text-white/40 px-2 py-0.5 capitalize">
+                      {lead.source}
+                    </span>
+                    {propertyTitle && (
+                      <span className="font-body text-[10px] text-[var(--gold)] border border-[var(--gold)]/20 px-2 py-0.5 rounded">
+                        {propertyTitle}
+                      </span>
+                    )}
+                  </div>
                 <div className="flex flex-wrap gap-4 text-white/50">
                   <a href={`mailto:${lead.email}`} className="flex items-center gap-1.5 font-body text-xs hover:text-white transition-colors">
                     <Mail size={12} /> {lead.email}

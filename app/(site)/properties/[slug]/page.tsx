@@ -185,7 +185,7 @@ export default async function PropertyDetailPage(props: Props) {
             <div className="flex items-center gap-5 sm:gap-10 flex-wrap border-y border-black/8 py-6 mb-10">
               <div>
                 <p className="text-[10px] uppercase tracking-widest text-black/35 mb-1">Size</p>
-                <p className="text-[17px] font-bold text-black">{property.area_sqft.toLocaleString()} sqft</p>
+                <p className="text-[17px] font-bold text-black">{property.area_sqft ? `${property.area_sqft.toLocaleString()} sqft` : 'N/A'}</p>
               </div>
               {property.bedrooms !== null && (
                 <div>
@@ -432,7 +432,11 @@ export default async function PropertyDetailPage(props: Props) {
               {/* Inquiry Form */}
               <div className="p-5 border-b border-black/8">
                 <p className="text-[13px] font-semibold text-black mb-4">Request Information</p>
-                <InquiryForm propertyId={property.id} propertyTitle={property.title} />
+                <InquiryForm 
+                  propertyId={property.id} 
+                  propertyTitle={property.title} 
+                  entityType={property.entity_type}
+                />
               </div>
 
               {/* Agent */}

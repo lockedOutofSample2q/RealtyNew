@@ -41,7 +41,7 @@ export default function AboutLeadership() {
             </div>
             
             <h2 className="text-white text-[clamp(1.5rem,2.5vw,3rem)] font-light leading-[1.3] tracking-tight mb-[4vh] italic">
-              "I have been a developer who built projects and a buyer who fought to protect one. I have sat across the table from every type of problem this market can create. When I advise a client, I am not reading from a playbook. I am telling them what I have learned from being on the inside of every one of these situations. That is not something I was born with. It cost time, money, and in some cases years. It is also why clients trust me with decisions that cost crores."
+                " Poori duniya vikau hai, bas keemat sahi milni chahidi hai  "
             </h2>
 
             <p className="text-white text-[clamp(18px,1.5vw,24px)] font-light mb-[0.5vh]">

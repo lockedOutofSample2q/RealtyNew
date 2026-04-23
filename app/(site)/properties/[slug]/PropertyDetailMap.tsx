@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -23,9 +23,14 @@ export default function PropertyDetailMap({
   lng: number;
   title: string;
 }) {
+  const [isMounted, setIsMounted] = useState(false);
+
   useEffect(() => {
     L.Marker.prototype.options.icon = PIN;
+    setIsMounted(true);
   }, []);
+
+  if (!isMounted) return <div className="w-full h-full bg-slate-50" />;
 
   return (
     <MapContainer

@@ -34,11 +34,11 @@ export default function FeaturedClient() {
     setLoading(true);
     const { data } = await supabase
       .from("properties")
-      .select("id, title, location, community, images, price, price_currency, featured_sections")
+      .select("id, title, location, community, images, price, price_currency, featured_sections, entity_type")
       .order("created_at", { ascending: false });
 
     if (data) {
-      setProperties(data as Property[]);
+      setProperties(data as any[]);
       
       const newSelected: Record<string, string[]> = {};
       SECTIONS.forEach((s) => { newSelected[s.id] = []; });
@@ -89,8 +89,9 @@ export default function FeaturedClient() {
         // Only update if changed
         const oldSections = p.featured_sections || [];
         if (JSON.stringify(newSections.sort()) !== JSON.stringify(oldSections.sort())) {
+          const tableName = (p as any).entity_type === "house" ? "houses" : (p as any).entity_type === "land" ? "lands" : "apartments";
           await supabase
-            .from("properties")
+            .from(tableName)
             .update({ featured_sections: newSections })
             .eq("id", p.id);
         }

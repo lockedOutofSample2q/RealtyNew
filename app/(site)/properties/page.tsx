@@ -16,14 +16,20 @@ export const revalidate = 60;
 async function getProperties(): Promise<Property[]> {
   try {
     const supabase = createAdminClient();
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from("properties")
       .select("*")
       .order("featured", { ascending: false })
       .order("created_at", { ascending: false });
-    const live = (data ?? []) as Property[];
-    return live.length > 0 ? live : [];
-  } catch {
+    
+    if (error) {
+      console.error("Properties Fetch Error:", error);
+      return [];
+    }
+    
+    return (data ?? []) as Property[];
+  } catch (err) {
+    console.error("Properties Runtime Error:", err);
     return [];
   }
 }

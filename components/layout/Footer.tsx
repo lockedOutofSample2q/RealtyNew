@@ -1,64 +1,57 @@
-// components/layout/Footer.tsx
-// ============================================================
-// FOOTER
-// EDIT: Links and content in config/site.ts
-// ============================================================
-
+﻿// components/layout/Footer.tsx
 import Link from "next/link";
 import { Instagram, Facebook, Linkedin, Youtube, Mail, Phone, MapPin } from "lucide-react";
 import { siteConfig, footerLinks } from "@/config/site";
+import { Button } from "@/components/ui/Button";
+import { Input } from "@/components/ui/Input";
 
 export default function Footer() {
   const year = new Date().getFullYear();
   const hasSocial = Object.values(siteConfig.social).some(Boolean);
 
   return (
-    <footer className="bg-[#080808] border-t border-white/5">
-      {/* ── Newsletter Banner ───────────────────────────────── */}
-      <div className="border-b border-white/[0.06]">
+    <footer className="bg-charcoal text-white border-t border-white/10">
+      {/* -- Newsletter Banner --------------------------------- */}
+      <div className="border-b border-white/10">
         <div className="container-site py-16 flex flex-col md:flex-row items-start justify-between gap-10">
           <div className="max-w-sm">
-            <h3 className="font-display text-3xl text-white font-medium leading-tight mb-3">
+            <h3 className="font-display text-3xl font-medium leading-tight mb-3">
               {siteConfig.tagline}
             </h3>
-            <p className="font-body text-sm text-white/50 mt-1 leading-relaxed">
-              Stay informed about the latest outcomes in {siteConfig.contact.address.split(',').slice(-2, -1)[0].trim()}. Subscribe to our newsletter for exclusive insights.
+            <p className="font-body text-sm text-white/60 mt-1 leading-relaxed">
+              Stay informed about the latest outcomes in {siteConfig.contact.address.split(',').slice(-2, -1)[0]?.trim() || ''}. Subscribe to our newsletter for exclusive insights.
             </p>
           </div>
           <form
             action="/api/subscribe"
             method="POST"
-            className="flex gap-3 w-full max-w-md mt-2"
+            className="flex flex-col sm:flex-row gap-4 w-full max-w-md mt-2"
           >
-            <input
+            <Input
               type="email"
               name="email"
               placeholder="Enter your email address"
               required
-              className="flex-1 bg-white/5 border border-white/10 rounded-xl px-5 py-3.5 text-sm font-body text-white placeholder:text-white/30 outline-none focus:border-white/30 transition-colors"
+              className="flex-1 bg-transparent border-white/20 text-white placeholder:text-white/40 focus-visible:border-white h-12"
             />
-            <button
+            <Button
               type="submit"
-              className="px-6 py-3.5 bg-white text-black text-sm font-body font-semibold rounded-xl hover:bg-gray-100 transition-colors whitespace-nowrap flex items-center gap-2"
+              variant="secondary"
+              className="bg-white text-charcoal border-white hover:bg-white/90 h-12 px-6"
             >
-              Subscribe →
-            </button>
+              Subscribe
+            </Button>
           </form>
         </div>
       </div>
 
-      {/* ── Main Footer Grid ─────────────────────────────── */}
-      <div className="container-site py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      {/* -- Main Footer Grid ------------------------------- */}
+      <div className="container-site py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* Brand */}
         <div className="lg:col-span-1">
-          <Link href="/" className="inline-block mb-5">
-            <div className="flex flex-col leading-none font-display">
-              <span className="text-xl font-bold tracking-tighter uppercase text-white">
-                {siteConfig.name.split(' ')[0]}<span className="opacity-50 font-medium">{siteConfig.name.split(' ').slice(1).join(' ')}</span>
-              </span>
-              <span className="text-[8px] tracking-[0.4em] font-medium opacity-70 uppercase mt-1 text-white">
-                {siteConfig.tagline}
-              </span>
+          <Link href="/" className="inline-block mb-6">
+            <div className="relative h-24 sm:h-32 w-auto">
+              <img src="/assets/logo.png" alt={siteConfig.name} className="h-full w-auto object-contain invert" />
             </div>
           </Link>
           <p className="font-body text-sm text-white/50 leading-relaxed mb-6 max-w-[220px]">
@@ -74,9 +67,9 @@ export default function Footer() {
                   target="_blank" 
                   rel="noopener noreferrer" 
                   aria-label="Follow us on Instagram"
-                  className="text-white/40 hover:text-[var(--gold)] transition-colors"
+                  className="text-white/40 hover:text-white transition-colors"
                 >
-                  <Instagram size={18} />
+                  <Instagram size={20} />
                 </a>
               )}
               {siteConfig.social.facebook && (
@@ -85,9 +78,9 @@ export default function Footer() {
                   target="_blank" 
                   rel="noopener noreferrer" 
                   aria-label="Follow us on Facebook"
-                  className="text-white/40 hover:text-[var(--gold)] transition-colors"
+                  className="text-white/40 hover:text-white transition-colors"
                 >
-                  <Facebook size={18} />
+                  <Facebook size={20} />
                 </a>
               )}
               {siteConfig.social.linkedin && (
@@ -96,9 +89,9 @@ export default function Footer() {
                   target="_blank" 
                   rel="noopener noreferrer" 
                   aria-label="Follow us on LinkedIn"
-                  className="text-white/40 hover:text-[var(--gold)] transition-colors"
+                  className="text-white/40 hover:text-white transition-colors"
                 >
-                  <Linkedin size={18} />
+                  <Linkedin size={20} />
                 </a>
               )}
               {siteConfig.social.youtube && (
@@ -107,9 +100,9 @@ export default function Footer() {
                   target="_blank" 
                   rel="noopener noreferrer" 
                   aria-label="Subscribe to our YouTube channel"
-                  className="text-white/40 hover:text-[var(--gold)] transition-colors"
+                  className="text-white/40 hover:text-white transition-colors"
                 >
-                  <Youtube size={18} />
+                  <Youtube size={20} />
                 </a>
               )}
             </div>
@@ -118,11 +111,30 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div>
-          <h4 className="font-body text-xs tracking-widest uppercase text-[var(--gold)] mb-5">
+          <h4 className="font-body text-xs tracking-widest uppercase text-white/80 mb-6">
             Explore
           </h4>
-          <ul className="space-y-3">
+          <ul className="space-y-4">
             {footerLinks.quick.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="font-body text-sm text-white/50 hover:text-white transition-colors"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Tools */}
+        <div>
+          <h4 className="font-body text-xs tracking-widest uppercase text-white/80 mb-6">
+            Free Tools
+          </h4>
+          <ul className="space-y-4">
+            {footerLinks.tools.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
@@ -137,7 +149,7 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <h4 className="font-body text-xs tracking-widest uppercase text-[var(--gold)] mb-5">
+          <h4 className="font-body text-xs tracking-widest uppercase text-white/80 mb-6">
             Contact
           </h4>
           <ul className="space-y-4">
@@ -146,7 +158,7 @@ export default function Footer() {
                 href={`tel:${siteConfig.contact.phone}`}
                 className="flex items-start gap-3 font-body text-sm text-white/50 hover:text-white transition-colors"
               >
-                <Phone size={14} className="mt-0.5 shrink-0 text-[var(--gold)]" />
+                <Phone size={16} className="mt-0.5 shrink-0 text-white/80" />
                 {siteConfig.contact.phone}
               </a>
             </li>
@@ -155,25 +167,30 @@ export default function Footer() {
                 href={`mailto:${siteConfig.contact.email}`}
                 className="flex items-start gap-3 font-body text-sm text-white/50 hover:text-white transition-colors"
               >
-                <Mail size={14} className="mt-0.5 shrink-0 text-[var(--gold)]" />
+                <Mail size={16} className="mt-0.5 shrink-0 text-white/80" />
                 {siteConfig.contact.email}
               </a>
             </li>
             <li className="flex items-start gap-3 font-body text-sm text-white/50">
-              <MapPin size={14} className="mt-0.5 shrink-0 text-[var(--gold)]" />
-              <a href={siteConfig.contact.mapUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--gold)] transition-colors">
+              <MapPin size={16} className="mt-0.5 shrink-0 text-white/80" />
+              <a href={siteConfig.contact.mapUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors leading-relaxed">
                 {siteConfig.contact.address}
               </a>
+            </li>
+            <li>
+              <Link href="/faq" className="font-body text-sm text-white/50 hover:text-white transition-colors">
+                FAQ
+              </Link>
             </li>
           </ul>
         </div>
 
         {/* Legal */}
         <div>
-          <h4 className="font-body text-xs tracking-widest uppercase text-[var(--gold)] mb-5">
+          <h4 className="font-body text-xs tracking-widest uppercase text-white/80 mb-6">
             Legal
           </h4>
-          <ul className="space-y-3">
+          <ul className="space-y-4">
             {footerLinks.legal.map((link) => (
               <li key={link.href}>
                 <Link
@@ -188,32 +205,20 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* ── Bottom Bar ───────────────────────────────────── */}
-      <div className="border-t border-white/[0.05]">
-        <div className="container-site py-5 flex flex-col sm:flex-row items-center justify-between gap-3 flex-wrap">
+      {/* -- Bottom Bar ------------------------------------- */}
+      <div className="border-t border-white/10">
+        <div className="container-site py-6 flex flex-col sm:flex-row items-center justify-between gap-4 flex-wrap">
           <div className="flex items-center gap-3">
-            <Link href="/" className="flex items-center gap-1.5 opacity-70 hover:opacity-100 transition-opacity">
-              <span className="font-display text-sm font-light text-white lowercase tracking-wider">
-                {siteConfig.name.split(' ').map(w => w[0]).join('').toLowerCase()} | {siteConfig.name.split(' ')[0].toLowerCase()}
+            <Link href="/" className="flex items-center gap-1.5 opacity-60 hover:opacity-100 transition-opacity">
+              <span className="font-display text-sm text-white uppercase tracking-widest">
+                {siteConfig.name}
               </span>
             </Link>
-            <span className="font-body text-xs text-white/30">© {year} {siteConfig.name}. All rights reserved.</span>
           </div>
-          <div className="flex items-center gap-4 flex-wrap">
-            {footerLinks.legal.map((l) => (
-              <Link key={l.href} href={l.href} className="font-body text-[11px] text-white/25 hover:text-white/60 transition-colors">
-                {l.label}
-              </Link>
-            ))}
-            <Link href="/sitemap.xml" className="font-body text-[11px] text-white/25 hover:text-white/60 transition-colors">
-              Sitemap
-            </Link>
-            <Link href="/admin" className="font-body text-[11px] text-white/25 hover:text-white/60 transition-colors">
-              Admin
-            </Link>
-          </div>
+          <span className="font-body text-xs text-white/40">� {year} {siteConfig.name}. All rights reserved.</span>
         </div>
       </div>
     </footer>
   );
 }
+

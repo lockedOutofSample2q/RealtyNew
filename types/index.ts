@@ -83,6 +83,9 @@ export interface Property {
   agent_photo?: string;
   agent_languages?: string[];
 
+  // Split tables support
+  entity_type?: "apartment" | "house" | "land";
+
   // Upcoming infrastructure
   upcoming_infrastructure?: string[];
 
@@ -99,6 +102,9 @@ export interface Lead {
   message?: string;
   source: "contact" | "property" | "list-property" | "newsletter" | "relocation";
   property_id?: string;
+  apartment_id?: string;
+  house_id?: string;
+  land_id?: string;
   status: "new" | "contacted" | "qualified" | "closed";
   created_at: string;
 }
@@ -154,6 +160,7 @@ export interface NavItem {
   label: string;
   href: string;
   external?: boolean;
+  children?: { label: string; href: string }[];
 }
 
 // ── Search Filters ────────────────────────────────────────────

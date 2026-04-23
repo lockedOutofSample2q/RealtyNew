@@ -47,15 +47,38 @@ export async function POST(req: NextRequest) {
     }
 
     const supabase = createAdminClient();
-    const { error } = await supabase.from("leads").insert({
+    
+    const leadData: any = {
       name: fullName,
       email: data.email,
       phone: data.phone ?? "",
       message: finalMessage,
       source: data.source,
-      property_id: data.property_id ?? null,
       status: "new",
-    } as any);
+    };
+
+    // Handle split tables IDs
+    if (body.entityType === "apartment" || body.apartment_id) {
+      leadData.apartment_id = body.apartment_id || data.property_id;
+    } else if (body.entityType === "house" || body.house_id) {
+      leadData.house_id = body.house_id || data.property_id;
+    } else if (body.entityType === "land" || body.land_id) {
+      leadData.land_id = body.land_id || data.property_id;
+    } else if (data.property_id) {
+      // Fallback: Try to find entity type from VIEW
+      const { data: prop } = await supabase
+        .from("properties")
+        .select("entity_type")
+        .eq("id", data.property_id)
+        .single();
+      
+      if (prop?.entity_type === "apartment") leadData.apartment_id = data.property_id;
+      else if (prop?.entity_type === "house") leadData.house_id = data.property_id;
+      else if (prop?.entity_type === "land") leadData.land_id = data.property_id;
+      else leadData.property_id = data.property_id; // For properties_old or other cases
+    }
+
+    const { error } = await supabase.from("leads").insert(leadData);
 
     if (error) throw error;
 

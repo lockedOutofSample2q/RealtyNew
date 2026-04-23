@@ -212,9 +212,11 @@ const COUNTRY_CODES = [
 export default function InquiryForm({
   propertyId,
   propertyTitle,
+  entityType,
 }: {
   propertyId: string;
   propertyTitle: string;
+  entityType?: "apartment" | "house" | "land";
 }) {
   const [countryCode, setCountryCode] = useState("+971");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -234,6 +236,7 @@ export default function InquiryForm({
           phone,
           source: "property",
           property_id: propertyId,
+          entityType,
           message: `Inquiry about: ${propertyTitle}`,
         }),
       });

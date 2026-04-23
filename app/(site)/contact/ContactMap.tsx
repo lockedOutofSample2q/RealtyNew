@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { siteConfig } from "@/config/site";
 import L from "leaflet";
@@ -16,6 +16,15 @@ const CustomIcon = L.divIcon({
 });
 
 export default function ContactMap() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+    return () => setIsMounted(false);
+  }, []);
+
+  if (!isMounted) return <div className="w-full h-full bg-slate-50" />;
+
   return (
     <div style={{ padding: "0", margin: "0", width: "100%", height: "100%" }}>
       <MapContainer
