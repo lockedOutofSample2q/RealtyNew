@@ -50,8 +50,8 @@ export default function Footer() {
         {/* Brand */}
         <div className="lg:col-span-1">
           <Link href="/" className="inline-block mb-6">
-            <div className="relative h-24 sm:h-32 w-auto">
-              <img src="/assets/logo.png" alt={siteConfig.name} className="h-full w-auto object-contain" />
+            <div className="relative h-28 sm:h-36 w-auto">
+              <img src="/assets/logo-light-theme.svg" alt={siteConfig.name} className="h-full w-auto object-contain" />
             </div>
           </Link>
           <p className="font-body text-sm text-white/50 leading-relaxed mb-6 max-w-[220px]">

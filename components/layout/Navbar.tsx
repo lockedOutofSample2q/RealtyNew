@@ -1,4 +1,4 @@
-﻿// components/layout/Navbar.tsx
+// components/layout/Navbar.tsx
 "use client";
 
 import { useState, useEffect, useRef } from "react";
@@ -93,8 +93,15 @@ export default function Navbar() {
           
           {/* -- Logo --------------------------------------- */}
           <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 group z-50">
-            <div className={cn("relative h-20 sm:h-24 w-auto transition-opacity", useDarkText ? "opacity-100" : "opacity-100")}>
-              <img src="/assets/logo.png" alt={siteConfig.name} className="h-full w-auto object-contain" />
+            <div className={cn("relative h-28 sm:h-36 w-auto transition-opacity")}>
+              <img 
+                src={useDarkText ? "/assets/logo-dark-theme.svg" : "/assets/logo-light-theme.svg"} 
+                alt={siteConfig.name} 
+                className={cn(
+                  "h-full w-auto object-contain",
+                  pathname === "/" && !useDarkText && "brightness-0 invert"
+                )} 
+              />
             </div>
           </Link>
 
@@ -178,41 +185,64 @@ export default function Navbar() {
             exit="exit"
             className="fixed inset-0 z-[50] w-full h-full bg-charcoal/95 backdrop-blur-2xl"
           >
-            <div className="relative z-10 h-screen container-site flex flex-col justify-end pb-[10vh]">
-              <nav className="flex flex-col gap-2 md:gap-4 mb-10 ml-0 md:ml-[min(5vw,60px)]">
-                {navItems.filter(item => item.label !== "Tools").map((item, i) => (
+            <div className="relative z-10 h-screen container-site flex flex-col pt-32 pb-12">
+              {/* Main content grid */}
+              <div className="flex-1 flex flex-col justify-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 ml-0 md:ml-[min(5vw,60px)]">
+                  {/* Left Column: Main Nav */}
+                  <nav className="flex flex-col gap-4 md:gap-6">
+                    {navItems.filter(item => item.label !== "Tools").map((item, i) => (
+                      <motion.div
+                        custom={i}
+                        variants={linkVariants}
+                        initial="closed"
+                        animate="open"
+                        key={item.label}
+                      >
+                        <Link
+                          href={item.href}
+                          onClick={() => setIsOpen(false)}
+                          className="group flex items-baseline w-full"
+                        >
+                          <span className="font-display text-2xl sm:text-3xl md:text-5xl text-white/80 group-hover:text-white transition-colors whitespace-nowrap">
+                            {item.label}
+                          </span>
+                        </Link>
+                      </motion.div>
+                    ))}
+                  </nav>
+
+                  {/* Right Column: Tools */}
                   <motion.div
-                    custom={i}
+                    custom={navItems.length}
                     variants={linkVariants}
                     initial="closed"
                     animate="open"
-                    key={item.label}
+                    className="flex flex-col justify-center"
                   >
-                    <Link
-                      href={item.href}
-                      onClick={() => setIsOpen(false)}
-                      className="group flex items-baseline w-full"
-                    >
-                      <span className="font-display text-2xl sm:text-3xl md:text-5xl text-white/80 group-hover:text-white transition-colors whitespace-nowrap">
-                        {item.label}
-                      </span>
-                    </Link>
+                    <p className="font-body text-[10px] uppercase tracking-[0.2em] text-white/30 mb-8">Free Tools</p>
+                    <div className="flex flex-col gap-1">
+                      {navItems.find(item => item.label === "Tools")?.children?.map((tool) => (
+                        <Link
+                          key={tool.label}
+                          href={tool.href}
+                          onClick={() => setIsOpen(false)}
+                          className="group flex flex-col"
+                        >
+                          <span className="font-display text-base sm:text-lg md:text-xl text-white/60 group-hover:text-white transition-colors">
+                            {tool.label}
+                          </span>
+                          <span className="font-body text-[9px] text-white/20 uppercase tracking-widest mt-0.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                            View Tool
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
                   </motion.div>
-                ))}
-              </nav>
-
-              {/* Tools as a small link on the right */}
-              <div className="flex justify-end mb-8 md:mb-12 ml-0 md:ml-[min(5vw,60px)]">
-                <Link
-                  href="/tools"
-                  onClick={() => setIsOpen(false)}
-                  className="font-body text-xs md:text-sm uppercase tracking-widest text-white/60 hover:text-white transition-colors border border-white/20 rounded-full px-4 py-1 shadow-sm bg-black/30"
-                  style={{ minWidth: 90, textAlign: 'center' }}
-                >
-                  Tools
-                </Link>
+                </div>
               </div>
 
+              {/* Bottom section (Contact + Legal) */}
               <motion.div 
                 className="flex flex-col md:flex-row md:items-end justify-between gap-8 ml-0 md:ml-[min(5vw,60px)]"
                 initial={{ opacity: 0 }}
@@ -243,4 +273,3 @@ export default function Navbar() {
     </>
   );
 }
-

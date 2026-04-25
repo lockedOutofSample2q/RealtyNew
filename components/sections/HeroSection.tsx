@@ -8,6 +8,7 @@ import Image from "next/image";
 import PillSelect from "@/components/ui/PillSelect";
 import PillMultiSelect from "@/components/ui/PillMultiSelect";
 import PropertySearchBar from "@/components/search/PropertySearchBar";
+import { cn } from "@/lib/utils";
 import {
   BEDROOMS,
   FURNISHING,
@@ -20,21 +21,22 @@ import {
 
 // Logos from mohali developers
 const LOGOS = [
-  { file: "DLF_logo.svg",     name: "DLF" },
-  { file: "Emaar.png",        name: "Emaar" },
-  { file: "atlantis.png",     name: "Atlantis" },
-  { file: "gb_realty.png",    name: "GB Realty" },
-  { file: "hero_homes.png",   name: "Hero Homes" },
-  { file: "homeland.png",     name: "Homeland" },
-  { file: "horizon.png",      name: "Horizon" },
-  { file: "jlpl.webp",        name: "JLPL" },
-  { file: "joygrand.png",     name: "Joygrand" },
-  { file: "jubilee.jpg",      name: "Jubilee" },
-  { file: "marbella.png",     name: "Marbella" },
-  { file: "mdb.png",          name: "MDB" },
-  { file: "noble.png",        name: "Noble" },
-  { file: "omaxe.png",        name: "Omaxe" },
-  { file: "stj_mcc.png",      name: "STJ MCC" },
+  { file: "acme.svg",           name: "Acme",           mono: false },
+  { file: "dlf.svg",            name: "DLF",            mono: true },
+  { file: "emaar.svg",          name: "Emaar",          mono: true },
+  { file: "gbrealty.svg",       name: "GB Realty",      mono: true },
+  { file: "hero_homes.svg",     name: "Hero Homes",     mono: true },
+  { file: "homeland.svg",       name: "Homeland",       mono: true },
+  { file: "horizon.svg",        name: "Horizon",        mono: true },
+  { file: "jlpl.svg",           name: "JLPL",           mono: true },
+  { file: "joygrand.svg",       name: "Joygrand",       mono: true },
+  { file: "jubilee.svg",        name: "Jubilee",        mono: true },
+  { file: "marbella.svg",       name: "Marbella",       mono: true },
+  { file: "mdb.svg",            name: "MDB",            mono: true },
+  { file: "medallion.svg",      name: "Medallion",      mono: true },
+  { file: "noble_callista.svg", name: "Noble Callista", mono: true },
+  { file: "omaxe.svg",          name: "Omaxe",          mono: true },
+  { file: "sbp.svg",            name: "SBP",            mono: false },
 ];
 
 export default function HeroSection() {
@@ -89,26 +91,28 @@ export default function HeroSection() {
   const tickerLogos = [...LOGOS, ...LOGOS];
 
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden">
+    <section className="relative min-h-screen flex flex-col z-20">
 
       {/* ── Parallax Background ── */}
-      <motion.div
-        className="absolute inset-0 w-full h-full -z-10"
-        style={{
-          y: backgroundY,
-          scale: backgroundScale,
-        }}
-      >
-        <Image
-          src="/assets/images/home/hero-bg.jpg"
-          alt="Luxury Real Estate in Mohali"
-          fill
-          priority
-          className="object-cover object-[center_top]"
-          sizes="(max-width: 768px) 100vw, 100vw"
-          quality={75}
-        />
-      </motion.div>
+      <div className="absolute inset-0 w-full h-full -z-10 overflow-hidden">
+        <motion.div
+          className="absolute inset-0 w-full h-full"
+          style={{
+            y: backgroundY,
+            scale: backgroundScale,
+          }}
+        >
+          <Image
+            src={heroContent.backgroundImage}
+            alt="Luxury Real Estate in Mohali"
+            fill
+            priority
+            className="object-cover object-[center_top]"
+            sizes="(max-width: 768px) 100vw, 100vw"
+            quality={75}
+          />
+        </motion.div>
+      </div>
 
       {/* ── Overlays ── */}
       {/* Top-left dark vignette (keeps text readable) */}
@@ -118,7 +122,7 @@ export default function HeroSection() {
       {/* NO bottom white fade — removed */}
 
       {/* ── Main Content ── */}
-      <div className="relative z-10 flex-1 flex flex-col justify-center w-full max-w-[1100px] mx-auto px-6 pt-40 pb-10">
+      <div className="relative z-30 flex-1 flex flex-col justify-center w-full max-w-[1100px] mx-auto px-6 pt-40 pb-10">
 
         {/* Headline */}
         <motion.h1
@@ -294,14 +298,28 @@ export default function HeroSection() {
           {tickerLogos.map((logo, i) => (
             <div 
               key={i} 
-              className="flex-shrink-0 mx-4 opacity-85 hover:opacity-100 transition-all duration-300 bg-white/95 rounded-lg p-3 flex items-center justify-center w-40 h-16 shadow-sm hover:scale-105"
+              className={cn(
+                "flex-shrink-0 mx-3 opacity-60 hover:opacity-100 transition-all duration-300 relative h-14 hover:scale-110",
+                logo.name === "Omaxe" ? "w-48" : 
+                logo.name === "Homeland" ? "w-56" :
+                "w-64",
+                logo.name === "Medallion" && "translate-y-1.5",
+                logo.name === "MDB" && "-translate-y-1.5",
+                logo.name === "Noble Callista" && "translate-y-1"
+              )}
             >
               <Image
                 src={`/assets/images/logos/${logo.file}`}
                 alt={`${logo.name} logo`}
-                width={130}
-                height={50}
-                className="max-h-full max-w-full object-contain"
+                fill
+                className={cn(
+                  "object-contain",
+                  logo.mono && "brightness-0 invert",
+                  logo.name === "Homeland" && "scale-[2.2]",
+                  logo.name === "Medallion" && "scale-[0.8]",
+                  logo.name === "Acme" && "scale-[0.7]",
+                  logo.name === "Omaxe" && "scale-[1.7]"
+                )}
               />
             </div>
           ))}
