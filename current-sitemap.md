@@ -182,27 +182,18 @@ Database: Supabase with property listings, agent profiles, leads/subscribers, an
 - **File:** [app/(site)/privacy/page.tsx](app/(site)/privacy/page.tsx)
 - **Page Title:** "Privacy Policy"
 - **Purpose:** Legal privacy statement
-- **Status:** Placeholder - "Replace with legal text"
 
 ### 15. **Cookie Policy Page**
 - **Route:** `/cookies`
 - **File:** [app/(site)/cookies/page.tsx](app/(site)/cookies/page.tsx)
 - **Page Title:** "Cookie Policy"
 - **Purpose:** Information about cookies used on the site
-- **Status:** Placeholder - "Describe cookies used on the site"
 
 ### 16. **Terms & Conditions Page**
 - **Route:** `/terms`
 - **File:** [app/(site)/terms/page.tsx](app/(site)/terms/page.tsx)
 - **Page Title:** "Terms & Conditions"
 - **Purpose:** Terms of service and legal terms
-- **Status:** Placeholder - "Replace with legal text"
-
-### 17. **Imprint Page**
-- **Route:** `/imprint`
-- **File:** [app/(site)/imprint/page.tsx](app/(site)/imprint/page.tsx)
-- **Purpose:** Legal imprint with company details (European requirement)
-- **Status:** Placeholder - "Company details and legal imprint"
 
 ---
 
@@ -381,8 +372,6 @@ app/
 │   │   └── page.tsx                 # /cookies
 │   ├── terms/
 │   │   └── page.tsx                 # /terms
-│   ├── imprint/
-│   │   └── page.tsx                 # /imprint
 │   └── layout.tsx                   # (site) layout wrapper
 │
 ├── admin/                           # Admin routes (protected)
@@ -444,7 +433,7 @@ app/
 - Lead inquiry tracking in admin
 
 ### **Legal & Compliance**
-- Privacy, Cookies, Terms, Imprint pages
+- Privacy, Cookies, and Terms of Service pages
 - RERA compliance messaging on properties
 
 ---
@@ -496,9 +485,8 @@ All pages include proper Next.js metadata for SEO:
 
 ## 📝 Summary
 
-**Total Routes:** 26 page.tsx files  
-**Public Routes:** 17 (under `(site)`)  
+**Total Routes:** 25 page.tsx files  
+**Public Routes:** 16 (under `(site)`)  
 **Admin Routes:** 9 (under `admin`)  
 
 **Architecture:** Next.js App Router with route groups, dynamic routes `[slug]` & `[id]`, server/client hybrid rendering, ISR revalidation, and Supabase backend.
-

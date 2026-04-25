@@ -46,7 +46,7 @@ export default function Navbar() {
   const isListingPage = ["/properties", "/lands", "/properties"].includes(pathname || "");
   
   // These specific pages have dark hero sections at the top
-  const darkHeaderPages = ["/", "/properties", "/lands", "/about", "/contact", "/booking", "/relocation", "/privacy", "/terms", "/cookies", "/imprint"];
+  const darkHeaderPages = ["/", "/properties", "/lands", "/about", "/contact", "/booking", "/relocation"];
   
   // Robust check if current page is in the dark header list
   const isDarkHeroPage = darkHeaderPages.some(page => {
@@ -84,7 +84,10 @@ export default function Navbar() {
   return (
     <>
       <header
-        className="absolute top-0 left-0 right-0 z-[60] bg-transparent py-6"
+        className={cn(
+          "absolute top-0 left-0 right-0 z-[60] py-6 transition-all duration-300",
+          useDarkText ? "bg-white/95 backdrop-blur-md border-b border-black/5" : "bg-transparent"
+        )}
       >
         <div className="container-site flex items-center justify-between">
           
