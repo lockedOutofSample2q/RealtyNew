@@ -38,11 +38,11 @@ export default function GuidesPage() {
   return (
     <div className="pt-[var(--nav-height)] min-h-screen bg-white">
       {/* Hero */}
-      <div className="bg-charcoal py-24 text-white">
+      <div className="bg-white py-24 text-charcoal border-b border-black/5">
         <div className="container-site">
           <h1 className="text-5xl md:text-7xl font-display font-semibold mb-6">Investment Guides</h1>
-          <p className="text-xl text-white/60 max-w-2xl">
-            Empowering investors with deep local knowledge and transparent data.
+          <p className="text-xl text-black/60 max-w-2xl leading-relaxed">
+            Empowering investors with deep local knowledge, transparent data, and strategic property insights.
           </p>
         </div>
       </div>
@@ -71,17 +71,17 @@ export default function GuidesPage() {
       </div>
 
       {/* CTA */}
-      <div className="bg-black text-white py-24">
+      <div className="bg-black/5 py-24">
         <div className="container-site flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="max-w-xl">
-            <h2 className="text-3xl md:text-5xl font-display font-medium mb-6">Want a customized strategy?</h2>
-            <p className="text-xl text-white/60">
+            <h2 className="text-3xl md:text-5xl font-display font-medium mb-6 text-charcoal">Want a customized strategy?</h2>
+            <p className="text-xl text-black/60">
               Our guides provide the foundation. Our consultations provide the specific roadmap for your portfolio.
             </p>
           </div>
           <Link
             href="/contact"
-            className="bg-white text-charcoal px-12 py-5 rounded-full font-body font-bold uppercase tracking-widest text-sm hover:bg-white/90 transition-colors shrink-0"
+            className="bg-charcoal text-white px-12 py-5 rounded-full font-body font-bold uppercase tracking-widest text-sm hover:bg-black transition-colors shrink-0"
           >
             Book a Strategy Call
           </Link>

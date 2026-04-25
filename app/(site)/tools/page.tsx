@@ -38,10 +38,10 @@ export default function ToolsPage() {
   return (
     <div className="pt-[var(--nav-height)] min-h-screen bg-white">
       {/* Hero */}
-      <div className="bg-charcoal py-24 text-white">
+      <div className="bg-white py-24 text-black border-b border-black/10">
         <div className="container-site text-center">
           <h1 className="text-5xl md:text-7xl font-display font-semibold mb-6">Free Tools</h1>
-          <p className="text-xl text-white/60 max-w-2xl mx-auto">
+          <p className="text-xl text-black/60 max-w-2xl mx-auto">
             Easy-to-use tools for real estate buyers, investors, and homeowners in Mohali.
           </p>
         </div>
@@ -77,7 +77,7 @@ export default function ToolsPage() {
       {/* CTA */}
       <div className="bg-black/5 py-24 text-center">
         <div className="container-site">
-          <h2 className="text-3xl md:text-5xl font-display font-medium mb-8">Need personalized advice?</h2>
+          <h2 className="text-3xl md:text-5xl font-display font-medium mb-8 text-charcoal">Need personalized advice?</h2>
           <p className="text-xl text-black/60 mb-12 max-w-xl mx-auto">
             Our advisors can provide custom investment analysis based on your financial goals.
           </p>
