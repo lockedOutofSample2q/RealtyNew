@@ -51,7 +51,7 @@ export default function Footer() {
         <div className="lg:col-span-1">
           <Link href="/" className="inline-block mb-6">
             <div className="relative h-24 sm:h-32 w-auto">
-              <img src="/assets/logo.png" alt={siteConfig.name} className="h-full w-auto object-contain invert" />
+              <img src="/assets/logo.png" alt={siteConfig.name} className="h-full w-auto object-contain" />
             </div>
           </Link>
           <p className="font-body text-sm text-white/50 leading-relaxed mb-6 max-w-[220px]">

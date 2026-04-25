@@ -18,14 +18,8 @@ interface PropertiesMapContainerProps {
 
 export function PropertiesMapContainer({ properties, leafletReady }: PropertiesMapContainerProps) {
   return (
-    <>
-      {/* Map — full width on mobile (above listings), sticky sidebar on desktop */}
-      <div className="order-1 md:order-2 w-full h-[45vw] min-h-[260px] max-h-[380px] md:hidden">
-        {leafletReady && <PropertiesMap properties={properties} />}
-      </div>
-      <div className="hidden md:block order-2 md:w-[42%] sticky top-[var(--nav-height)] h-[calc(100vh-var(--nav-height))] shrink-0">
-        {leafletReady && <PropertiesMap properties={properties} />}
-      </div>
-    </>
+    <div className="order-1 md:order-2 w-full md:w-[42%] h-[45vw] min-h-[260px] max-h-[380px] md:h-[calc(100vh-var(--nav-height))] md:min-h-[calc(100vh-var(--nav-height))] md:max-h-none md:sticky md:top-[var(--nav-height)] shrink-0 z-0 relative">
+      {leafletReady && <PropertiesMap properties={properties} />}
+    </div>
   );
 }

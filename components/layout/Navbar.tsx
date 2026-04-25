@@ -90,7 +90,7 @@ export default function Navbar() {
           
           {/* -- Logo --------------------------------------- */}
           <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 group z-50">
-            <div className={cn("relative h-20 sm:h-24 w-auto transition-opacity", useDarkText ? "opacity-100" : "opacity-100 invert")}>
+            <div className={cn("relative h-20 sm:h-24 w-auto transition-opacity", useDarkText ? "opacity-100" : "opacity-100")}>
               <img src="/assets/logo.png" alt={siteConfig.name} className="h-full w-auto object-contain" />
             </div>
           </Link>

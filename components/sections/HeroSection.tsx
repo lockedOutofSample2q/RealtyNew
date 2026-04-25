@@ -18,21 +18,23 @@ import {
   type SearchTab,
 } from "@/components/search/propertySearchOptions";
 
-// 13 logos from public/assets/images/logos/
+// Logos from mohali developers
 const LOGOS = [
-  { file: "emaar.svg",        name: "Emaar" },
-  { file: "meraas.svg",       name: "Meraas" },
-  { file: "nakheel.svg",      name: "Nakheel" },
-  { file: "omniyat.svg",      name: "Omniyat" },
-  { file: "sobha.svg",        name: "Sobha Realty" },
-  { file: "aldar.svg",        name: "Aldar" },
-  { file: "binghatti.svg",    name: "Binghatti" },
-  { file: "ellington.svg",    name: "Ellington" },
-  { file: "damac.svg",        name: "Damac" },
-  { file: "azizi.svg",        name: "Azizi" },
-  { file: "meydan.svg",       name: "Meydan" },
-  { file: "select-group.svg", name: "Select Group" },
-  { file: "mag.svg",          name: "MAG" },
+  { file: "DLF_logo.svg",     name: "DLF" },
+  { file: "Emaar.png",        name: "Emaar" },
+  { file: "atlantis.png",     name: "Atlantis" },
+  { file: "gb_realty.png",    name: "GB Realty" },
+  { file: "hero_homes.png",   name: "Hero Homes" },
+  { file: "homeland.png",     name: "Homeland" },
+  { file: "horizon.png",      name: "Horizon" },
+  { file: "jlpl.webp",        name: "JLPL" },
+  { file: "joygrand.png",     name: "Joygrand" },
+  { file: "jubilee.jpg",      name: "Jubilee" },
+  { file: "marbella.png",     name: "Marbella" },
+  { file: "mdb.png",          name: "MDB" },
+  { file: "noble.png",        name: "Noble" },
+  { file: "omaxe.png",        name: "Omaxe" },
+  { file: "stj_mcc.png",      name: "STJ MCC" },
 ];
 
 export default function HeroSection() {
@@ -286,18 +288,20 @@ export default function HeroSection() {
         <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-black/60 to-transparent z-10 pointer-events-none" />
 
         <div
-          className="flex items-center"
+          className="flex items-center w-max py-2"
           style={{ animation: "hero-ticker 32s linear infinite" }}
         >
           {tickerLogos.map((logo, i) => (
-            <div key={i} className="flex-shrink-0 px-10 opacity-55 hover:opacity-90 transition-opacity duration-300">
+            <div 
+              key={i} 
+              className="flex-shrink-0 mx-4 opacity-85 hover:opacity-100 transition-all duration-300 bg-white/95 rounded-lg p-3 flex items-center justify-center w-40 h-16 shadow-sm hover:scale-105"
+            >
               <Image
                 src={`/assets/images/logos/${logo.file}`}
                 alt={`${logo.name} logo`}
-                width={120}
-                height={36}
-                className="h-7 w-auto object-contain"
-                style={{ filter: "brightness(0) invert(1)" }}
+                width={130}
+                height={50}
+                className="max-h-full max-w-full object-contain"
               />
             </div>
           ))}
