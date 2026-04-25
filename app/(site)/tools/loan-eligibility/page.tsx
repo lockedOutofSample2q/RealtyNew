@@ -27,7 +27,7 @@ export default function LoanEligibilityPage() {
   const sliderClass = "w-full h-1 bg-black/10 rounded-full appearance-none outline-none slider-thumb";
 
   return (
-    <div className="pt-[var(--nav-height)] min-h-screen bg-[#F9F9F9] text-black">
+    <div className="pt-[var(--nav-height)] min-h-screen bg-white text-black">
       <style dangerouslySetInnerHTML={{__html: `
         .slider-thumb::-webkit-slider-thumb {
           appearance: none;

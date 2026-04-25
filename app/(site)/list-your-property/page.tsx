@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ListYourPropertyPage() {
   return (
-    <div className="pt-[var(--nav-height)] min-h-screen bg-[#F9F9F9]">
+    <div className="pt-[var(--nav-height)] min-h-screen bg-white">
       {/* Hero Section */}
       <div className="bg-white border-b border-black/5">
         <div className="container-site max-w-3xl mx-auto pt-20 pb-16 px-6 text-center">

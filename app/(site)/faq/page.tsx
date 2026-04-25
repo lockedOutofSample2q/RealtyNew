@@ -11,10 +11,10 @@ export default function FaqPage() {
   return (
     <div className="pt-[var(--nav-height)] min-h-screen bg-white">
       {/* Hero */}
-      <div className="bg-charcoal py-24 text-white">
+      <div className="bg-white py-24 text-black border-b border-black/10">
         <div className="container-site">
           <h1 className="text-5xl md:text-7xl font-display font-semibold mb-6">FAQ</h1>
-          <p className="text-xl text-white/60 max-w-2xl">
+          <p className="text-xl text-black/60 max-w-2xl">
             Everything you need to know about investing in Mohali real estate.
           </p>
         </div>
