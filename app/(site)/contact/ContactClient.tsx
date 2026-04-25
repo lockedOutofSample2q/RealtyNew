@@ -51,15 +51,15 @@ export default function ContactClient() {
   return (
     <div className="min-h-screen">
       {/* ── Hero Section ────────────────────────────────────────── */}
-      <section className="bg-black text-white pt-[calc(var(--nav-height)+4rem)] pb-24 px-6 relative overflow-hidden">
+      <section className="bg-white text-black pt-[calc(var(--nav-height)+4rem)] pb-24 px-6 border-b border-black/5 relative overflow-hidden">
         <div className="container-site max-w-4xl mx-auto text-center relative z-10">
-          <div className="inline-block border border-white/20 bg-white/5 rounded-full px-4 py-1.5 mb-8">
-            <span className="font-body text-[13px] tracking-wide text-white/80">Contact</span>
+          <div className="inline-block border border-black/10 bg-black/5 rounded-full px-4 py-1.5 mb-8">
+            <span className="font-body text-[13px] tracking-wide text-black/50 uppercase font-bold">Contact</span>
           </div>
           <h1 className="font-display text-4xl md:text-[56px] font-medium leading-[1.1] mb-6">
             Speak directly with an advisor.
           </h1>
-          <p className="font-body text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="font-body text-black/60 text-lg max-w-2xl mx-auto leading-relaxed">
             Whether you are evaluating a specific property, deciding what to do with a land acquisition payout, or looking at Mohali from abroad: bring the question and get a direct answer.
           </p>
         </div>
