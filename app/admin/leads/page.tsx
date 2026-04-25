@@ -139,9 +139,10 @@ export default function LeadsAdmin() {
                 </select>
               </div>
             </div>
-          ))
-        )}
-      </div>
+          );
+        })
+      )}
+    </div>
     </div>
   );
 }
