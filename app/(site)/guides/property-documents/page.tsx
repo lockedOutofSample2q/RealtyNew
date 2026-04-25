@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Metadata } from "next";
 import LeadMagnetClient from "./LeadMagnetClient";
 
@@ -57,7 +58,9 @@ export default function PropertyDocumentsPage() {
               <h2 className="font-display text-3xl text-charcoal font-medium mb-3">Download the PDF</h2>
               <p className="font-body text-sm text-muted">Enter your details to receive immediate access to the checklist.</p>
             </div>
-            <LeadMagnetClient />
+            <Suspense fallback={<div className="h-64 flex items-center justify-center">Loading form...</div>}>
+              <LeadMagnetClient />
+            </Suspense>
           </div>
         </div>
       </div>

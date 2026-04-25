@@ -83,38 +83,46 @@ export default function LeadMagnetClient() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
-      <Input
-        label="Full Name"
-        type="text"
-        required
-        placeholder="Enter your full name"
-        value={formData.name}
-        onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-      />
-      <Input
-        label="Email Address"
-        type="email"
-        required
-        placeholder="Enter your email address"
-        value={formData.email}
-        onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-      />
-      <Input
-        label="WhatsApp Number"
-        type="tel"
-        required
-        placeholder="Enter your WhatsApp number"
-        value={formData.whatsapp}
-        onChange={(e) => setFormData(prev => ({ ...prev, whatsapp: e.target.value }))}
-      />
-      <Input
-        label="City"
-        type="text"
-        required
-        placeholder="Enter your city"
-        value={formData.city}
-        onChange={(e) => setFormData(prev => ({ ...prev, city: e.target.value }))}
-      />
+      <div>
+        <label className="block text-sm font-medium text-charcoal mb-1">Full Name</label>
+        <Input
+          type="text"
+          required
+          placeholder="Enter your full name"
+          value={formData.name}
+          onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+        />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-charcoal mb-1">Email Address</label>
+        <Input
+          type="email"
+          required
+          placeholder="Enter your email address"
+          value={formData.email}
+          onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+        />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-charcoal mb-1">WhatsApp Number</label>
+        <Input
+          type="tel"
+          required
+          placeholder="Enter your WhatsApp number"
+          value={formData.whatsapp}
+          onChange={(e) => setFormData(prev => ({ ...prev, whatsapp: e.target.value }))}
+        />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-charcoal mb-1">City</label>
+        <Input
+          type="text"
+          required
+          placeholder="Enter your city"
+          value={formData.city}
+          onChange={(e) => setFormData(prev => ({ ...prev, city: e.target.value }))}
+        />
+      </div>
 
       <Button 
         type="submit" 
