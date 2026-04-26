@@ -16,6 +16,7 @@ import InquiryForm, { PropertyGallery } from "./InquiryForm";
 import PriceDisplay from "./PriceDisplay";
 import PropertyPriceInline from "./PropertyPriceInline";
 import PropertyDetailMapClient from "./PropertyDetailMapClient";
+import PropertyCard from "@/components/ui/PropertyCard";
 
 interface Props { params: Promise<{ slug: string }> }
 
@@ -30,15 +31,42 @@ export async function generateStaticParams() {
 }
 
 async function getProperty(slug: string): Promise<Property | null> {
-  // Check demo first (so page works without Supabase)
-  const demo = undefined;
-  if (demo) return demo;
   try {
     const supabase = createAdminClient();
-    const { data } = await supabase.from("properties").select("*").eq("slug", slug).single();
+    const { data, error } = await supabase
+      .from("properties")
+      .select("*")
+      .eq("slug", slug)
+      .single();
+    
+    if (error) {
+      console.error(`Error fetching property [${slug}]:`, error);
+      return null;
+    }
     return data as Property | null;
-  } catch {
+  } catch (err) {
+    console.error(`Runtime error fetching property [${slug}]:`, err);
     return null;
+  }
+}
+
+async function getRelatedProperties(property: Property): Promise<Property[]> {
+  try {
+    const supabase = createAdminClient();
+    const { data, error } = await supabase
+      .from("properties")
+      .select("*")
+      .neq("id", property.id)
+      .or(`community.eq."${property.community}",type.eq."${property.type}"`)
+      .limit(4);
+    
+    if (error) {
+      console.error("Error fetching related properties:", error);
+      return [];
+    }
+    return (data ?? []) as Property[];
+  } catch {
+    return [];
   }
 }
 
@@ -47,7 +75,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const p = await getProperty(params.slug);
   if (!p) return {};
   return {
-    title: p.title,
+    title: `${p.title} | Monte Real Estate`,
     description: p.description?.slice(0, 160),
     openGraph: { images: p.images?.[0] ? [{ url: p.images[0] }] : [] },
   };
@@ -98,6 +126,8 @@ export default async function PropertyDetailPage(props: Props) {
   const params = await props.params;
   const property = await getProperty(params.slug);
   if (!property) notFound();
+
+  const related = await getRelatedProperties(property);
 
   const backHref = property.listing_type === "lands" ? "/lands" : "/properties";
   const backLabel = property.listing_type === "lands" ? "Lands" : "Properties";
@@ -201,13 +231,15 @@ export default async function PropertyDetailPage(props: Props) {
 
             {/* Off Plan Highlights */}
             {(property.highlights?.length ?? 0) > 0 && (
-              <section className="mb-10">
-                <h2 className="text-[18px] font-bold text-black mb-6">Off Plan Highlights</h2>
-                <div className="grid grid-cols-2 gap-x-8 gap-y-3">
+              <section className="mb-12">
+                <h2 className="text-[20px] font-bold text-black mb-6">Property Highlights</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {property.highlights!.map((h) => (
-                    <div key={h} className="flex items-start gap-2.5">
-                      <Check size={13} className="text-black shrink-0 mt-1" />
-                      <span className="text-[13px] text-black/65 leading-relaxed">{h}</span>
+                    <div key={h} className="flex items-center gap-3 bg-black/[0.02] border border-black/5 rounded-xl p-4 transition-colors hover:bg-black/[0.04]">
+                      <div className="w-8 h-8 rounded-full bg-black/5 flex items-center justify-center shrink-0">
+                        <Check size={14} className="text-black" />
+                      </div>
+                      <span className="text-[14px] text-black/75 font-medium leading-tight">{h}</span>
                     </div>
                   ))}
                 </div>
@@ -441,41 +473,42 @@ export default async function PropertyDetailPage(props: Props) {
 
               {/* Agent */}
               <div className="p-5 border-b border-black/8">
-                <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center justify-between mb-4">
                   <p className="text-[10px] font-semibold uppercase tracking-widest text-black/35">Contact Agent</p>
-                  <p className="text-[9px] uppercase tracking-widest text-black/25">Monte Real Estate</p>
+                  <p className="text-[9px] uppercase tracking-widest text-black/25 text-right max-w-[150px]">Realty Holding and Management Consultants</p>
                 </div>
-                {property.agent_name && (
-                  <div className="flex items-start gap-3">
-                    <div className="relative w-11 h-11 rounded-full overflow-hidden bg-black/10 shrink-0">
-                      {property.agent_photo && (
-                        <Image src={property.agent_photo} alt={property.agent_name} fill className="object-cover" />
-                      )}
+                <div className="flex items-start gap-4">
+                  <div className="relative w-14 h-14 rounded-full overflow-hidden bg-black/5 shrink-0 border border-black/5">
+                    <Image 
+                      src="/assets/images/leadership/amritpal.jpg" 
+                      alt="Amritpal Singh" 
+                      fill 
+                      className="object-cover" 
+                    />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-[15px] font-bold text-black leading-tight mb-0.5">Amritpal Singh</p>
+                    <p className="text-[12px] text-black/45 mb-3 font-medium">Founder & Principal Advisor</p>
+                    
+                    <div className="space-y-1.5">
+                      <a href="mailto:hello@realtyconsultants.in" className="flex items-center gap-2 text-[13px] text-black/60 hover:text-black transition-colors bg-black/[0.03] px-3 py-2 rounded-lg group">
+                        <span className="truncate">hello@realtyconsultants.in</span>
+                      </a>
+                      <a href="tel:+917814613916" className="flex items-center gap-2 text-[13px] text-black/60 hover:text-black transition-colors bg-black/[0.03] px-3 py-2 rounded-lg">
+                        <span className="font-semibold">+91 78146 13916</span>
+                      </a>
                     </div>
-                    <div>
-                      <p className="text-[14px] font-semibold text-black leading-tight">{property.agent_name}</p>
-                      {property.agent_title && (
-                        <p className="text-[12px] text-black/45 mb-1.5">{property.agent_title}</p>
-                      )}
-                      {property.agent_email && (
-                        <p className="text-[12px] text-black/45">{property.agent_email}</p>
-                      )}
-                      {property.agent_phone && (
-                        <p className="text-[12px] text-black/45 mb-2">{property.agent_phone}</p>
-                      )}
-                      {(property.agent_languages?.length ?? 0) > 0 && (
-                        <div className="flex items-center gap-1.5 flex-wrap">
-                          <span className="text-[10px] text-black/30">Languages</span>
-                          {property.agent_languages!.map((l) => (
-                            <span key={l} className="text-[10px] bg-black/5 px-1.5 py-0.5 rounded text-black/60">
-                              {l}
-                            </span>
-                          ))}
-                        </div>
-                      )}
+
+                    <div className="mt-4 flex items-center gap-2 flex-wrap">
+                      <span className="text-[9px] text-black/30 uppercase tracking-wider font-bold">Languages</span>
+                      {["English", "Punjabi", "Hindi"].map((l) => (
+                        <span key={l} className="text-[10px] bg-black/5 px-2 py-0.5 rounded-md text-black/60 font-medium">
+                          {l}
+                        </span>
+                      ))}
                     </div>
                   </div>
-                )}
+                </div>
               </div>
 
               {/* Developer */}
@@ -505,6 +538,34 @@ export default async function PropertyDetailPage(props: Props) {
           </aside>
 
         </div>
+
+        {/* ── RELATED PROPERTIES ────────────────────────── */}
+        {related.length > 0 && (
+          <section className="mt-24 pt-24 border-t border-black/5">
+            <div className="flex items-center justify-between mb-10">
+              <div>
+                <h2 className="text-[24px] md:text-[32px] font-bold text-black tracking-tight">Similar Properties</h2>
+                <p className="text-black/40 text-[14px] mt-1">Discover other exceptional opportunities in {property.community}.</p>
+              </div>
+              <Link href={backHref} className="hidden md:flex items-center gap-2 text-[14px] font-semibold text-black hover:gap-3 transition-all">
+                View all {backLabel} <ArrowRight size={16} />
+              </Link>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {related.map((p) => (
+                <PropertyCard key={p.id} property={p} />
+              ))}
+            </div>
+
+            <div className="mt-10 md:hidden">
+              <Link href={backHref} className="flex items-center justify-center gap-2 text-[14px] font-semibold text-black border border-black/10 rounded-xl py-4">
+                View all {backLabel} <ArrowRight size={16} />
+              </Link>
+            </div>
+          </section>
+        )}
+
       </div>
     </div>
   );

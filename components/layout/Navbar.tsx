@@ -173,11 +173,11 @@ export default function Navbar() {
               aria-label="Toggle menu"
             >
               {isOpen ? (
-                <X className="w-[3.5vw] h-[3.5vw] sm:w-[2.5vw] sm:h-[2.5vw]" strokeWidth={1.5} />
+                <X className="w-[3vw] h-[3vw] sm:w-[1.8vw] sm:h-[1.8vw]" strokeWidth={1.5} />
               ) : (
-                <div className="flex flex-col gap-[0.6vw] sm:gap-[0.5vw] w-[4vw] sm:w-[2.2vw]">
-                  <div className={cn("w-full h-[0.4vw] sm:h-[0.12vw] rounded-full", useDarkText ? "bg-charcoal" : "bg-white")}></div>
-                  <div className={cn("w-full h-[0.4vw] sm:h-[0.12vw] rounded-full", useDarkText ? "bg-charcoal" : "bg-white")}></div>
+                <div className="flex flex-col gap-[0.5vw] sm:gap-[0.4vw] w-[3.5vw] sm:w-[1.8vw]">
+                  <div className={cn("w-full h-[0.35vw] sm:h-[0.1vw] rounded-full", useDarkText ? "bg-charcoal" : "bg-white")}></div>
+                  <div className={cn("w-full h-[0.35vw] sm:h-[0.1vw] rounded-full", useDarkText ? "bg-charcoal" : "bg-white")}></div>
                 </div>
               )}
             </button>

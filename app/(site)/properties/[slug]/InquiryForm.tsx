@@ -199,14 +199,15 @@ function getVimeoId(url: string) {
 
 // ── INQUIRY FORM COMPONENT (Original) ───────────────────────
 const COUNTRY_CODES = [
+  { code: "+91",  label: "🇮🇳 +91" },
   { code: "+971", label: "🇦🇪 +971" },
   { code: "+44",  label: "🇬🇧 +44" },
   { code: "+1",   label: "🇺🇸 +1" },
-  { code: "+91",  label: "🇮🇳 +91" },
+  { code: "+1-CA", label: "🇨🇦 +1" },
+  { code: "+61",  label: "🇦🇺 +61" },
   { code: "+33",  label: "🇫🇷 +33" },
   { code: "+49",  label: "🇩🇪 +49" },
-  { code: "+7",   label: "🇷🇺 +7" },
-  { code: "+86",  label: "🇨🇳 +86" },
+  { code: "+65",  label: "🇸🇬 +65" },
 ];
 
 export default function InquiryForm({
@@ -218,7 +219,7 @@ export default function InquiryForm({
   propertyTitle: string;
   entityType?: "apartment" | "house" | "land";
 }) {
-  const [countryCode, setCountryCode] = useState("+971");
+  const [countryCode, setCountryCode] = useState("+91");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
