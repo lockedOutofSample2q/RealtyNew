@@ -212,7 +212,7 @@ export default async function PropertyDetailPage(props: Props) {
             <p className="text-[15px] text-black/60 leading-relaxed mb-8">{property.description}</p>
 
             {/* Stats */}
-            <div className="flex items-center gap-5 sm:gap-10 flex-wrap border-y border-black/8 py-6 mb-10">
+            <div className="flex items-center gap-5 sm:gap-10 flex-wrap border-y border-black/8 py-6 mb-8">
               <div>
                 <p className="text-[10px] uppercase tracking-widest text-black/35 mb-1">Size</p>
                 <p className="text-[17px] font-bold text-black">{property.area_sqft ? `${property.area_sqft.toLocaleString()} sqft` : 'N/A'}</p>
@@ -226,6 +226,24 @@ export default async function PropertyDetailPage(props: Props) {
               <div>
                 <p className="text-[10px] uppercase tracking-widest text-black/35 mb-1">Bathrooms</p>
                 <p className="text-[17px] font-bold text-black">{property.bathrooms}</p>
+              </div>
+            </div>
+
+            {/* Timeline / Status */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-10 pb-8 border-b border-black/8">
+              <div className="flex flex-col">
+                <span className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-orange-500 font-bold mb-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
+                  {property.status === 'off-plan' ? 'Under Construction' : property.status}
+                </span>
+              </div>
+              <div>
+                <p className="text-[10px] uppercase tracking-widest text-black/35 mb-1">Completion</p>
+                <p className="text-[14px] font-bold text-black">{property.completion_date || 'TBA'}</p>
+              </div>
+              <div>
+                <p className="text-[10px] uppercase tracking-widest text-black/35 mb-1">Handover</p>
+                <p className="text-[14px] font-bold text-black">{property.handover_date || property.completion_date || 'TBA'}</p>
               </div>
             </div>
 

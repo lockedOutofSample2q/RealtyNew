@@ -44,16 +44,44 @@ async function reseed() {
       latitude: 30.696103744735183,
       longitude: 76.70589230394643,
       furnishing: "semi-furnished",
-      description: "Homeland Regalia is the pinnacle of ultra-luxury in Mohali's Sector 77. Designed for the elite, these 4 and 5 BHK residences offer unmatched privacy, towering architecture, and panoramic views of the cityscape. Located directly on the Airport Road, it ensures instant access to Tricity's major hubs.",
+      description: "Homeland Regalia is a modern sanctuary within Mohali, offering luxury-inspired living with lush greenery, serene golf course views, and world-class amenities. It features luxury apartments and townhouses with minimalist architecture, premium interiors, and seamless connectivity to key Mohali locations.",
       features: ["Smart Home Automation", "Private Elevators", "VRV Air Conditioning", "Grand Lobbies"],
-      highlights: ["Airport Road frontage, Sector 77, Mohali", "Exclusive HNI community", "Unobstructed views", "Modern sanctuary"],
-      amenities: ["Rooftop Infinity Pool", "State-of-the-art Gym", "Concierge Service", "Spa & Salon", "BBQ Area", "Kids Pool"],
+      highlights: [
+        "Championship golf course",
+        "Contemporary architecture",
+        "Pedestrian-friendly paths",
+        "Golf-inspired living",
+        "Refined living experience",
+        "Picturesque green landscapes",
+        "Elegant residences",
+        "Seamless connectivity",
+        "Modern sanctuary",
+        "Family-oriented community"
+      ],
+      amenities: ["Infinity Edge Pool", "Kids Pool", "BBQ Area", "Padel Court", "Outdoor Yoga Area", "GYM", "Indoor Kids Play Area", "Retail and F&B", "Outdoor Fitness"],
       images: homelandRegaliaImages,
       agent_name: "Amritpal Singh",
       agent_phone: "+91 7814613916",
       agent_email: "hello@realtyconsultants.in",
       featured: true,
-      featured_sections: ["home_hero", "home_latest"]
+      featured_sections: ["home_hero", "home_latest"],
+      completion_date: "September 30, 2029",
+      handover_date: "September 30, 2029",
+      payment_plan: {
+        down_payment: 10,
+        during_construction: 70,
+        on_handover: 20
+      },
+      nearby_landmarks: [
+        { name: "Al Maktoum International Airport", time: 5, transport: "car" },
+        { name: "Dubai Marina", time: 30, transport: "car" },
+        { name: "Downtown Dubai", time: 35, transport: "car" },
+        { name: "Burj Khalifa", time: 35, transport: "car" },
+        { name: "Dubai International Airport", time: 45, transport: "car" },
+        { name: "Expo City", time: 27, transport: "car" },
+        { name: "Dubai Creek Harbour", time: 28, transport: "car" },
+        { name: "Dubai Hills Estate", time: 27, transport: "car" }
+      ]
     },
     {
       title: "Marbella Grand IT City Premium Residences",
