@@ -45,3 +45,14 @@ export const contactTimes = [
   { label: "Evening",   icon: "moon" },
   { label: "Anytime",   icon: "clock" },
 ];
+
+// ── Contact Subjects ──────────────────────────────────────────
+export const contactSubjects = [
+  "Investment Advice",
+  "Selling a Property",
+  "Buying a Home",
+  "Land Acquisition",
+  "NRI Consultation",
+  "Market Report Inquiry",
+  "Other",
+];

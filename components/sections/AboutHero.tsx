@@ -21,7 +21,7 @@ export default function AboutHero() {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
 
   return (
-    <section ref={containerRef} className="relative w-full pt-[16vh] pb-[6vh] bg-black overflow-hidden flex flex-col justify-start" style={{ minHeight: '90vh' }}>
+    <section ref={containerRef} className="relative w-full pt-[calc(var(--nav-height)+4vh)] pb-[6vh] bg-black overflow-hidden flex flex-col justify-start" style={{ minHeight: '90vh' }}>
       <div className="w-[95%] mx-auto h-[50vh] sm:h-[60vh] lg:h-[68vh] flex flex-col">
         <div className="flex flex-row w-full h-full gap-[1%]">
           {PANELS.map((panel, idx) => (

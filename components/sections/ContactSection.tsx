@@ -5,6 +5,7 @@ import { siteConfig } from "@/config/site";
 import { contactContent, projectTypes, contactMethods, contactTimes } from "@/config/contact";
 import { motion } from "framer-motion";
 import { Mail, Phone, MessageCircle, Sun, Clock, Moon } from "lucide-react";
+import FormSelect from "@/components/ui/FormSelect";
 
 // Icon map — keeps JSX out of the config file
 const METHOD_ICONS: Record<string, React.ReactNode> = {
@@ -138,30 +139,14 @@ export default function ContactSection() {
                 onChange={(e) => setForm({ ...form, company: e.target.value })}
                 className={inputClass}
               />
-              <div className="relative">
-                <label className="block font-body text-[11px] text-gray-400 mb-0.5 tracking-wide">
-                  Project Type *
-                </label>
-                <div className="relative">
-                  <select
-                    required
-                    value={form.projectType}
-                    onChange={(e) => setForm({ ...form, projectType: e.target.value })}
-                    className="w-full bg-transparent border-b border-gray-200 text-black font-body text-[15px] py-3.5 outline-none focus:border-gray-500 transition-colors appearance-none cursor-pointer pr-8"
-                  >
-                    <option value="" disabled>Select Project Type</option>
-                    {projectTypes.map((t) => (
-                      <option key={t} value={t}>{t}</option>
-                    ))}
-                  </select>
-                  {/* Chevron */}
-                  <div className="absolute right-1 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
-                    <svg width="12" height="7" viewBox="0 0 12 7" fill="none">
-                      <path d="M1 1L6 6L11 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                </div>
-              </div>
+              <FormSelect
+                label="Project Type"
+                required
+                value={form.projectType}
+                options={projectTypes}
+                onChange={(val) => setForm({ ...form, projectType: val })}
+                placeholder="Select Project Type"
+              />
             </div>
 
             {/* Contact Method */}

@@ -122,7 +122,7 @@ export default function HeroSection() {
       {/* NO bottom white fade — removed */}
 
       {/* ── Main Content ── */}
-      <div className="relative z-30 flex-1 flex flex-col justify-center w-full max-w-[1100px] mx-auto px-6 pt-40 pb-10">
+      <div className="relative z-30 flex-1 flex flex-col justify-center w-full max-w-[1100px] mx-auto px-6 pt-[calc(var(--nav-height)+3rem)] pb-10">
 
         {/* Headline */}
         <motion.h1

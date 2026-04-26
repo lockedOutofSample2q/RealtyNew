@@ -5,6 +5,8 @@ import { Phone, Mail, MapPin, MessageCircle, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { toast } from "sonner";
 import { siteConfig } from "@/config/site";
+import { contactSubjects } from "@/config/contact";
+import FormSelect from "@/components/ui/FormSelect";
 
 // Reusing leaflet map logic since Mapbox implies an interactive map.
 const ContactMap = dynamic(() => import("./ContactMap"), {
@@ -157,12 +159,12 @@ export default function ContactClient() {
                   className={inputClass}
                 />
               </div>
-              <input
-                type="text"
-                placeholder="Subject"
+              <FormSelect
+                label="Subject"
                 value={form.subject}
-                onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                className={inputClass}
+                options={contactSubjects}
+                onChange={(val) => setForm({ ...form, subject: val })}
+                placeholder="How can we help?"
               />
               <div className="pt-2">
                 <textarea

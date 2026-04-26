@@ -51,7 +51,9 @@ export default function Navbar() {
   // Robust check if current page is in the dark header list
   const isDarkHeroPage = darkHeaderPages.some(page => {
     if (page === "/") return pathname === "/";
-    // Check if the current pathname starts with any of the dark header pages
+    if (page === "/properties") return pathname === "/properties";
+    if (page === "/lands") return pathname === "/lands";
+    // For other pages like /about, /booking, /relocation, we use startsWith
     return pathname?.startsWith(page);
   });
 
@@ -85,15 +87,15 @@ export default function Navbar() {
     <>
       <header
         className={cn(
-          "absolute top-0 left-0 right-0 z-[60] py-6 transition-all duration-300 border-b",
+          "absolute top-0 left-0 right-0 z-[60] pt-[2vw] pb-[3vw] transition-all duration-300 border-b",
           useDarkText ? "bg-white/95 backdrop-blur-md border-black/5" : "bg-transparent border-transparent"
         )}
       >
-        <div className="container-site flex items-center justify-between">
+        <div className="w-[94%] mx-auto flex items-center justify-between">
           
           {/* -- Logo --------------------------------------- */}
           <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 group z-50">
-            <div className="relative h-28 sm:h-36 aspect-[1756/925]">
+            <div className="relative h-[10vw] sm:h-[6vw] aspect-[1756/925]">
               <img 
                 src="/assets/logo-light-theme.svg" 
                 alt={siteConfig.name} 
@@ -114,7 +116,7 @@ export default function Navbar() {
           </Link>
 
           {/* -- Controls (EN + Hamburger/Close) ------------ */}
-          <div className="flex items-center gap-8 z-50">
+          <div className="flex items-center gap-[2.5vw] z-50">
             {/* Currency selector */}
             <div className="hidden sm:block relative" ref={currencyRef}>
               <button
@@ -124,23 +126,23 @@ export default function Navbar() {
                 aria-expanded={currencyOpen}
                 aria-haspopup="listbox"
                 className={cn(
-                  "flex items-center gap-1 cursor-pointer transition-colors whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal rounded-sm",
+                  "flex items-center gap-[0.4vw] cursor-pointer transition-colors whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal rounded-sm",
                   useDarkText ? "text-charcoal/80 hover:text-charcoal" : "text-white/80 hover:text-white"
                 )}
               >
-                <span className="font-body text-xs font-semibold tracking-widest uppercase leading-none">{currency}</span>
-                <ChevronDown size={14} className={cn("opacity-70 shrink-0 transition-transform duration-200", currencyOpen && "rotate-180")} />
+                <span className="font-body text-[1vw] font-semibold tracking-widest uppercase leading-none">{currency}</span>
+                <ChevronDown className={cn("w-[1.2vw] h-[1.2vw] opacity-70 shrink-0 transition-transform duration-200", currencyOpen && "rotate-180")} />
               </button>
 
               <AnimatePresence>
                 {currencyOpen && (
                   <motion.div
-                    initial={{ opacity: 0, y: 6 }}
+                    initial={{ opacity: 0, y: "0.5vw" }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 4 }}
+                    exit={{ opacity: 0, y: "0.4vw" }}
                     transition={{ duration: 0.15 }}
                     role="listbox"
-                    className="absolute right-0 top-[calc(100%+8px)] bg-white rounded-lg shadow-medium border border-border overflow-hidden z-[200] min-w-[80px]"
+                    className="absolute right-0 top-[calc(100%+0.8vw)] bg-white rounded-[0.8vw] shadow-medium border border-border overflow-hidden z-[200] min-w-[6vw]"
                   >
                     {CURRENCIES.map((c) => (
                       <button
@@ -151,7 +153,7 @@ export default function Navbar() {
                         aria-label={`Change currency to ${c}`}
                         onClick={() => { handleCurrencyChange(c); setCurrencyOpen(false); }}
                         className={cn(
-                          "w-full text-left px-4 py-3 font-body text-xs font-semibold tracking-widest uppercase transition-colors outline-none",
+                          "w-full text-left px-[1.2vw] py-[0.8vw] font-body text-[0.8vw] font-semibold tracking-widest uppercase transition-colors outline-none",
                           currency === c
                             ? "bg-charcoal text-white"
                             : "text-charcoal/60 hover:bg-black/5 hover:text-charcoal focus:bg-black/5"
@@ -171,11 +173,11 @@ export default function Navbar() {
               aria-label="Toggle menu"
             >
               {isOpen ? (
-                <X size={28} strokeWidth={1.5} />
+                <X className="w-[3.5vw] h-[3.5vw] sm:w-[2.5vw] sm:h-[2.5vw]" strokeWidth={1.5} />
               ) : (
-                <div className="flex flex-col gap-[6px] w-[24px]">
-                  <div className={cn("w-full h-[1.5px] rounded-full", useDarkText ? "bg-charcoal" : "bg-white")}></div>
-                  <div className={cn("w-full h-[1.5px] rounded-full", useDarkText ? "bg-charcoal" : "bg-white")}></div>
+                <div className="flex flex-col gap-[0.6vw] sm:gap-[0.5vw] w-[4vw] sm:w-[2.2vw]">
+                  <div className={cn("w-full h-[0.4vw] sm:h-[0.12vw] rounded-full", useDarkText ? "bg-charcoal" : "bg-white")}></div>
+                  <div className={cn("w-full h-[0.4vw] sm:h-[0.12vw] rounded-full", useDarkText ? "bg-charcoal" : "bg-white")}></div>
                 </div>
               )}
             </button>
@@ -193,12 +195,12 @@ export default function Navbar() {
             exit="exit"
             className="fixed inset-0 z-[50] w-full h-full bg-charcoal/95 backdrop-blur-2xl"
           >
-            <div className="relative z-10 h-screen container-site flex flex-col pt-32 pb-12">
+            <div className="relative z-10 h-screen w-[92%] mx-auto flex flex-col pt-[10vw] pb-[5vw]">
               {/* Main content grid */}
               <div className="flex-1 flex flex-col justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 ml-0 md:ml-[min(5vw,60px)]">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-[5vw] ml-0 md:ml-[4vw]">
                   {/* Left Column: Main Nav */}
-                  <nav className="flex flex-col gap-4 md:gap-6">
+                  <nav className="flex flex-col gap-[1.2vw]">
                     {navItems.filter(item => item.label !== "Tools").map((item, i) => (
                       <motion.div
                         custom={i}
@@ -212,7 +214,7 @@ export default function Navbar() {
                           onClick={() => setIsOpen(false)}
                           className="group flex items-baseline w-full"
                         >
-                          <span className="font-display text-2xl sm:text-3xl md:text-5xl text-white/80 group-hover:text-white transition-colors whitespace-nowrap">
+                          <span className="font-display text-[6vw] sm:text-[4.5vw] md:text-[2.8vw] text-white/80 group-hover:text-white transition-colors whitespace-nowrap leading-none">
                             {item.label}
                           </span>
                         </Link>
@@ -228,8 +230,8 @@ export default function Navbar() {
                     animate="open"
                     className="flex flex-col justify-center"
                   >
-                    <p className="font-body text-[10px] uppercase tracking-[0.2em] text-white/30 mb-8">Free Tools</p>
-                    <div className="flex flex-col gap-1">
+                    <p className="font-body text-[0.8vw] uppercase tracking-[0.2em] text-white/30 mb-[1.8vw]">Free Tools</p>
+                    <div className="flex flex-col gap-[0.7vw]">
                       {navItems.find(item => item.label === "Tools")?.children?.map((tool) => (
                         <Link
                           key={tool.label}
@@ -237,10 +239,10 @@ export default function Navbar() {
                           onClick={() => setIsOpen(false)}
                           className="group flex flex-col"
                         >
-                          <span className="font-display text-base sm:text-lg md:text-xl text-white/60 group-hover:text-white transition-colors">
+                          <span className="font-display text-[2.8vw] sm:text-[2vw] md:text-[1.2vw] text-white/60 group-hover:text-white transition-colors">
                             {tool.label}
                           </span>
-                          <span className="font-body text-[9px] text-white/20 uppercase tracking-widest mt-0.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <span className="font-body text-[0.65vw] text-white/20 uppercase tracking-widest mt-[0.1vw] opacity-0 group-hover:opacity-100 transition-opacity">
                             View Tool
                           </span>
                         </Link>
@@ -252,23 +254,23 @@ export default function Navbar() {
 
               {/* Bottom section (Contact + Legal) */}
               <motion.div 
-                className="flex flex-col md:flex-row md:items-end justify-between gap-8 ml-0 md:ml-[min(5vw,60px)]"
+                className="flex flex-col md:flex-row md:items-end justify-between gap-[3vw] ml-0 md:ml-[4vw]"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6, duration: 0.8 }}
               >
-                <div className="flex flex-col gap-1">
-                  <p className="font-body text-[10px] uppercase tracking-[0.2em] text-white/30 mb-2">Get in touch</p>
-                  <a href={`tel:${siteConfig.contact.phone}`} className="font-body text-lg md:text-xl text-white/70 hover:text-white transition-colors">
+                <div className="flex flex-col gap-[0.4vw]">
+                  <p className="font-body text-[0.8vw] uppercase tracking-[0.2em] text-white/30 mb-[0.7vw]">Get in touch</p>
+                  <a href={`tel:${siteConfig.contact.phone}`} className="font-body text-[2.2vw] sm:text-[1.8vw] md:text-[1.1vw] text-white/70 hover:text-white transition-colors">
                     {siteConfig.contact.phone}
                   </a>
-                  <a href={`mailto:${siteConfig.contact.email}`} className="font-body text-lg md:text-xl text-white/70 hover:text-white transition-colors">
+                  <a href={`mailto:${siteConfig.contact.email}`} className="font-body text-[2.2vw] sm:text-[1.8vw] md:text-[1.1vw] text-white/70 hover:text-white transition-colors">
                     {siteConfig.contact.email}
                   </a>
                 </div>
-                <div className="flex flex-wrap gap-x-6 gap-y-2 border-t md:border-t-0 border-white/10 pt-6 md:pt-0">
+                <div className="flex flex-wrap gap-x-[2.2vw] gap-y-[0.7vw] border-t md:border-t-0 border-white/10 pt-[2.2vw] md:pt-0">
                   {footerLinks.legal.map(link => (
-                     <Link key={link.label} href={link.href} onClick={() => setIsOpen(false)} className="font-body text-[10px] md:text-xs uppercase tracking-widest text-white/40 hover:text-white transition-colors">
+                     <Link key={link.label} href={link.href} onClick={() => setIsOpen(false)} className="font-body text-[0.9vw] sm:text-[0.8vw] md:text-[0.6vw] uppercase tracking-widest text-white/40 hover:text-white transition-colors">
                        {link.label}
                      </Link>
                   ))}
