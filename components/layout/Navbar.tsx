@@ -85,21 +85,29 @@ export default function Navbar() {
     <>
       <header
         className={cn(
-          "absolute top-0 left-0 right-0 z-[60] py-6 transition-all duration-300",
-          useDarkText ? "bg-white/95 backdrop-blur-md border-b border-black/5" : "bg-transparent"
+          "absolute top-0 left-0 right-0 z-[60] py-6 transition-all duration-300 border-b",
+          useDarkText ? "bg-white/95 backdrop-blur-md border-black/5" : "bg-transparent border-transparent"
         )}
       >
         <div className="container-site flex items-center justify-between">
           
           {/* -- Logo --------------------------------------- */}
           <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 group z-50">
-            <div className={cn("relative h-28 sm:h-36 w-auto transition-opacity")}>
+            <div className="relative h-28 sm:h-36 aspect-[1756/925]">
               <img 
-                src={useDarkText ? "/assets/logo-dark-theme.svg" : "/assets/logo-light-theme.svg"} 
+                src="/assets/logo-light-theme.svg" 
                 alt={siteConfig.name} 
                 className={cn(
-                  "h-full w-auto object-contain",
-                  pathname === "/" && !useDarkText && "brightness-0 invert"
+                  "absolute inset-0 h-full w-full object-contain object-left transition-opacity duration-300",
+                  useDarkText ? "opacity-100" : "opacity-0"
+                )} 
+              />
+              <img 
+                src="/assets/logo-dark-theme.svg" 
+                alt={siteConfig.name} 
+                className={cn(
+                  "absolute inset-0 h-full w-full object-contain object-left transition-opacity duration-300",
+                  !useDarkText ? "opacity-100" : "opacity-0"
                 )} 
               />
             </div>
