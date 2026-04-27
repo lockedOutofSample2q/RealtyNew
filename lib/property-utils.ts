@@ -23,7 +23,10 @@ export function enrichProperty(property: Property): Property {
   const faqMatch = cleanDescription.match(/\[FAQS\]([\s\S]*?)\[\/FAQS\]/);
   if (faqMatch) {
     try {
-      faqs = JSON.parse(faqMatch[1]);
+      const parsed = JSON.parse(faqMatch[1].trim());
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        faqs = parsed;
+      }
     } catch (e) {
       console.error("Failed to parse embedded FAQs", e);
     }
@@ -35,7 +38,10 @@ export function enrichProperty(property: Property): Property {
   const landmarkMatch = cleanDescription.match(/\[LANDMARKS\]([\s\S]*?)\[\/LANDMARKS\]/);
   if (landmarkMatch) {
     try {
-      landmarks = JSON.parse(landmarkMatch[1]);
+      const parsed = JSON.parse(landmarkMatch[1].trim());
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        landmarks = parsed;
+      }
     } catch (e) {
       console.error("Failed to parse embedded landmarks", e);
     }
@@ -49,7 +55,7 @@ export function enrichProperty(property: Property): Property {
     bedrooms_max: property.bedrooms_max || metadata.bedrooms_max,
     address: property.address || metadata.address,
     description: cleanDescription,
-    faqs: faqs,
-    nearby_landmarks: landmarks
+    faqs: (faqs && faqs.length > 0) ? faqs : property.faqs,
+    nearby_landmarks: (landmarks && landmarks.length > 0) ? landmarks : property.nearby_landmarks
   } as Property;
 }
