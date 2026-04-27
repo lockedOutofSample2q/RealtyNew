@@ -377,7 +377,10 @@ export default async function ApartmentDetailPage(props: Props) {
             {/* Overview */}
             <section className="mb-14">
               <h2 className="text-[18px] font-bold text-black mb-6 font-display">Property Overview</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              <div className={cn(
+                "grid grid-cols-1 gap-5",
+                property.payment_plan ? "md:grid-cols-2 lg:grid-cols-3" : "md:grid-cols-2"
+              )}>
                 {/* 1. Payment Plan */}
                 {property.payment_plan && (
                   <div className="bg-white border border-black/8 rounded-[24px] p-8 flex flex-col justify-between min-h-[440px]">
