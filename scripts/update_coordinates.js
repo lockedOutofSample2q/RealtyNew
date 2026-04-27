@@ -22,11 +22,11 @@ async function updatePreciseCoordinates() {
 
   const slug = 'homeland-regalia-mohali';
   
-  // Precise project coordinates provided by user
-  const latitude = 30.698256593747015;
-  const longitude = 76.70678732459825;
+  // New precise project coordinates provided by user
+  const latitude = 30.696527511220815;
+  const longitude = 76.70637781716424;
 
-  console.log(`Updating precise project coordinates for ${slug}...`);
+  console.log(`Updating precise project coordinates for ${slug} to ${latitude}, ${longitude}...`);
 
   const { error } = await supabase
     .from('apartments')
@@ -34,7 +34,7 @@ async function updatePreciseCoordinates() {
     .eq('slug', slug);
   
   if (error) console.error('Error:', error.message);
-  else console.log('✅ Successfully updated project coordinates to precise location.');
+  else console.log('✅ Successfully updated project coordinates.');
 }
 
 updatePreciseCoordinates();
