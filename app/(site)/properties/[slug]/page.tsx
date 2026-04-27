@@ -456,16 +456,24 @@ export default async function PropertyDetailPage(props: Props) {
                 {(property.nearby_landmarks?.length ?? 0) > 0 && (
                   <div className="flex flex-col">
                     <h2 className="text-[18px] font-bold text-black mb-5 font-display">Nearby Landmarks</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 flex-1">
-                      {property.nearby_landmarks!.map((lm) => (
-                        <div key={lm.name} className="bg-[#FBFBFB] border border-black/[0.03] rounded-[24px] p-6 text-left hover:bg-white hover:shadow-md transition-all">
-                          <p className="text-[13px] font-semibold text-black/40 mb-2 leading-tight uppercase tracking-widest">{lm.name}</p>
-                          <div className="flex items-baseline gap-1">
-                            <p className="text-[32px] font-bold text-black leading-none font-display">{lm.time}</p>
-                            <p className="text-[12px] font-bold text-black/40">MIN</p>
+                    <div className="grid grid-cols-2 lg:grid-cols-2 border border-black/5 rounded-[24px] overflow-hidden bg-[#FBFBFB] flex-1">
+                      {property.nearby_landmarks!.map((lm, i) => (
+                        <div key={lm.name} className={cn(
+                          "p-6 text-left border-black/5 transition-all hover:bg-white group",
+                          i % 2 === 0 ? "border-r" : "",
+                          i < property.nearby_landmarks!.length - (property.nearby_landmarks!.length % 2 === 0 ? 2 : 1) ? "border-b" : ""
+                        )}>
+                          <p className="text-[12px] font-medium text-black/50 mb-3 group-hover:text-black transition-colors leading-tight min-h-[32px]">
+                            {lm.name}
+                          </p>
+                          <div className="flex items-baseline gap-1 mb-2">
+                            <p className="text-[32px] font-bold text-black leading-none font-display tabular-nums">
+                              {lm.time}
+                            </p>
+                            <p className="text-[12px] font-bold text-black">min</p>
                           </div>
-                          <p className="text-[10px] uppercase tracking-[0.2em] text-black/25 mt-3 font-bold">
-                            {transportLabel(lm.transport)}
+                          <p className="text-[10px] uppercase tracking-[0.1em] text-black/30 font-bold">
+                            BY {lm.transport.toUpperCase()}
                           </p>
                         </div>
                       ))}

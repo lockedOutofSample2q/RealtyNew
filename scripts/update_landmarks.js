@@ -15,25 +15,14 @@ if (fs.existsSync(envPath)) {
   });
 }
 
-async function updatePropertyWithEmbeddedData() {
+async function updateLandmarks() {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
   const supabase = createClient(supabaseUrl, supabaseKey);
 
   const slug = 'homeland-regalia-mohali';
   
-  // Get current description to append to it
-  const { data: current } = await supabase
-    .from('apartments')
-    .select('description')
-    .eq('slug', slug)
-    .single();
-  
-  if (!current) return;
-
-  const baseDescription = current.description.split('[LANDMARKS]')[0].trim();
-
-  const landmarks = [
+  const nearby_landmarks = [
     { name: "CP 67 Mall", time: "5", transport: "car" },
     { name: "PCA Stadium", time: "10", transport: "car" },
     { name: "Fortis Hospital", time: "12", transport: "car" },
@@ -42,17 +31,15 @@ async function updatePropertyWithEmbeddedData() {
     { name: "International Airport", time: "20", transport: "car" }
   ];
 
-  const fullDescription = `${baseDescription}\n\n[LANDMARKS]${JSON.stringify(landmarks)}[/LANDMARKS]`;
-
-  console.log(`Updating ${slug} with embedded landmarks...`);
+  console.log(`Updating landmarks for ${slug}...`);
 
   const { error } = await supabase
     .from('apartments')
-    .update({ description: fullDescription })
+    .update({ nearby_landmarks })
     .eq('slug', slug);
   
   if (error) console.error('Error:', error.message);
-  else console.log('✅ Updated apartments table with embedded landmarks.');
+  else console.log('✅ Successfully updated nearby landmarks.');
 }
 
-updatePropertyWithEmbeddedData();
+updateLandmarks();
