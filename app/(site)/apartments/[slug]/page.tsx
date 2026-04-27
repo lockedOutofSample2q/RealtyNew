@@ -527,7 +527,7 @@ export default async function ApartmentDetailPage(props: Props) {
                   </div>
                   <div>
                     <p className="text-sm font-bold text-black group-hover:underline">Amritpal Singh</p>
-                    <p className="text-[11px] text-black/40">Founder & Advisor</p>
+                    <p className="text-[11px] text-black/40">Founder & CEO</p>
                   </div>
                 </Link>
               </div>

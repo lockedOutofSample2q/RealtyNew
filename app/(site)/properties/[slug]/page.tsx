@@ -566,7 +566,7 @@ export default async function PropertyDetailPage(props: Props) {
                   <div className="flex-1 min-w-0">
                     <Link href="/about" className="block group">
                       <p className="text-[15px] font-bold text-black leading-tight mb-0.5 group-hover:underline">Amritpal Singh</p>
-                      <p className="text-[12px] text-black/45 mb-3 font-medium">Founder & Principal Advisor</p>
+                      <p className="text-[12px] text-black/45 mb-3 font-medium">Founder & CEO</p>
                     </Link>
                     
                     <div className="space-y-1.5">

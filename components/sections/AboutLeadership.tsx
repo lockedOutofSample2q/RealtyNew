@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -48,7 +48,7 @@ export default function AboutLeadership() {
               Amritpal Singh
             </p>
             <p className="text-white/60 text-[clamp(14px,1.2vw,18px)] font-light">
-              Founder
+              Founder & CEO
             </p>
           </motion.div>
 
