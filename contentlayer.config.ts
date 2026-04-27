@@ -98,10 +98,22 @@ export const Post = defineDocumentType(() => ({
   },
 }));
 
+// ── Property Forensics Schema ────────────────────────────────
+export const Forensics = defineDocumentType(() => ({
+  name: "Forensics",
+  filePathPattern: `**/*.md`,
+  contentType: "markdown",
+  fields: {
+    title: { type: "string" },
+    slug: { type: "string" },
+    last_audit: { type: "date" },
+  },
+}));
+
 // ── Source Config ────────────────────────────────────────────
 export default makeSource({
   contentDirPath: "content",
-  documentTypes: [Post],
+  documentTypes: [Post, Forensics],
   mdx: {
     remarkPlugins: [remarkGfm as any],
     rehypePlugins: [rehypeSlug as any, rehypeHighlight as any],

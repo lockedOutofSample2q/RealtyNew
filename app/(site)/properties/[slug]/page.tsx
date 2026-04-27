@@ -1,3 +1,7 @@
+/**
+ * Property Detail Page
+ * Context File: /content/properties/[slug].md
+ */
 import { createAdminClient } from "@/lib/supabase";
 
 import { notFound } from "next/navigation";
