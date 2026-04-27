@@ -1,7 +1,7 @@
 "use client";
 // components/admin/ImageUploader.tsx
 // ============================================================
-// Drag & drop image uploader → Cloudflare Images CDN
+// Drag & drop image uploader → Local Storage
 //
 // Props:
 //   value    — current array of image URLs
@@ -36,7 +36,7 @@ export default function ImageUploader({ value, onChange, maxImages = 20 }: Props
   const [dragOverIndex, setDragOverIndex] = useState<number | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  // ── Upload a single file to Cloudflare ─────────────────────
+  // ── Upload a single file ─────────────────────
   async function uploadFile(file: File): Promise<string> {
     const form = new FormData();
     form.append("file", file);
@@ -141,7 +141,7 @@ export default function ImageUploader({ value, onChange, maxImages = 20 }: Props
             <span style={{ color: GOLD }} className="font-medium">Click to upload</span> or drag & drop
           </p>
           <p className="font-body text-xs text-[#aaa] mt-1">
-            PNG, JPG, WebP — uploads to Cloudflare CDN
+            PNG, JPG, WebP — uploads to local storage
           </p>
         </div>
         <input
@@ -165,7 +165,7 @@ export default function ImageUploader({ value, onChange, maxImages = 20 }: Props
                 {u.status === "uploading" && (
                   <div className="flex items-center gap-1.5 mt-1">
                     <div className="w-3 h-3 rounded-full border-2 animate-spin" style={{ borderColor: GOLD, borderTopColor: "transparent" }} />
-                    <span className="font-body text-xs text-[#aaa]">Uploading to Cloudflare...</span>
+                    <span className="font-body text-xs text-[#aaa]">Uploading...</span>
                   </div>
                 )}
                 {u.status === "done" && (

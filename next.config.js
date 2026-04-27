@@ -9,6 +9,7 @@ const { withContentlayer } = require("next-contentlayer");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: false,
   turbopack: {},
   // ── Image domains ────────────────────────────────────────
   images: {
@@ -29,7 +30,7 @@ const nextConfig = {
     formats: ["image/avif", "image/webp"],
   },
 
-  // ── Headers (Security & Cloudflare CDN cache hints) ─────────
+  // ── Headers (Security & Cache hints) ─────────
   async headers() {
     return [
       {
@@ -46,18 +47,18 @@ const nextConfig = {
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.google-analytics.com https://static.cloudflareinsights.com",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.google-analytics.com",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com",
-              "img-src 'self' blob: data: https://*.supabase.co https://images.unsplash.com https://imagedelivery.net https://*.tile.openstreetmap.org https://unpkg.com",
+              "img-src 'self' blob: data: https://*.supabase.co https://images.unsplash.com https://*.tile.openstreetmap.org https://*.basemaps.cartocdn.com https://unpkg.com",
               "font-src 'self' https://fonts.gstatic.com",
-              "connect-src 'self' https://*.supabase.co https://api.cloudflare.com https://*.google-analytics.com",
+              "connect-src 'self' https://*.supabase.co https://*.google-analytics.com",
               "frame-ancestors 'none'",
             ].join("; "),
           },
         ],
       },
       {
-        // Cache static assets via Cloudflare CDN
+        // Cache static assets
         source: "/images/(.*)",
         headers: [
           {

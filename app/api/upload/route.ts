@@ -1,36 +1,17 @@
 // app/api/upload/route.ts
 // ============================================================
-// Cloudflare Images upload proxy
+// Local File Upload
 //
-// Required env vars (add to .env.local + Vercel):
-//   CLOUDFLARE_ACCOUNT_ID      — found in Cloudflare Dashboard → Overview
-//   CLOUDFLARE_IMAGES_TOKEN    — Cloudflare Dashboard → My Profile → API Tokens
-//                                (create with "Cloudflare Images: Edit" permission)
-//   CLOUDFLARE_IMAGES_HASH     — e.g. "abc123def" from your delivery URL
-//                                imagedelivery.net/{HASH}/image_id/public
-//
+// Saves files to public/assets/images/uploaded/
 // Usage: POST /api/upload  (multipart/form-data, field name = "file")
-// Returns: { url: "https://imagedelivery.net/{hash}/{id}/public" }
+// Returns: { url: "/assets/images/uploaded/{filename}" }
 // ============================================================
 
 import { NextRequest, NextResponse } from "next/server";
-
-const ACCOUNT_ID = process.env.CLOUDFLARE_ACCOUNT_ID;
-const API_TOKEN  = process.env.CLOUDFLARE_IMAGES_TOKEN;
-const HASH       = process.env.CLOUDFLARE_IMAGES_HASH;
+import { writeFile } from "node:fs/promises";
+import { join } from "node:path";
 
 export async function POST(req: NextRequest) {
-  // ── Guard: credentials missing ──────────────────────────────
-  if (!ACCOUNT_ID || !API_TOKEN || !HASH) {
-    return NextResponse.json(
-      {
-        error: "Cloudflare Images not configured",
-        hint: "Add CLOUDFLARE_ACCOUNT_ID, CLOUDFLARE_IMAGES_TOKEN, and CLOUDFLARE_IMAGES_HASH to your environment variables.",
-      },
-      { status: 503 }
-    );
-  }
-
   // ── Parse incoming file ─────────────────────────────────────
   let formData: FormData;
   try {
@@ -45,11 +26,11 @@ export async function POST(req: NextRequest) {
   }
 
   // ── Validation: Size and Type ───────────────────────────────
-  const MAX_SIZE = 5 * 1024 * 1024; // 5MB
+  const MAX_SIZE = 10 * 1024 * 1024; // 10MB
   const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp", "image/avif"];
 
   if (file.size > MAX_SIZE) {
-    return NextResponse.json({ error: "File too large (max 5MB)" }, { status: 400 });
+    return NextResponse.json({ error: "File too large (max 10MB)" }, { status: 400 });
   }
 
   if (!ALLOWED_TYPES.includes(file.type)) {
@@ -59,36 +40,27 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  // ── Forward to Cloudflare Images ────────────────────────────
-  const cfForm = new FormData();
-  cfForm.append("file", file);
-
-  let cfRes: Response;
+  // ── Save to Local File System ───────────────────────────────
   try {
-    cfRes = await fetch(
-      `https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}/images/v1`,
-      {
-        method: "POST",
-        headers: { Authorization: `Bearer ${API_TOKEN}` },
-        body: cfForm,
-      }
-    );
+    const bytes = await file.arrayBuffer();
+    const buffer = Buffer.from(bytes);
+
+    // Sanitize filename: remove special chars, add timestamp
+    const cleanName = file.name.replace(/[^a-zA-Z0-9.-]/g, "_");
+    const filename = `${Date.now()}-${cleanName}`;
+    
+    // Path relative to project root for writing
+    const path = join(process.cwd(), "public", "assets", "images", "uploaded", filename);
+    
+    await writeFile(path, buffer);
+    
+    // Path for public access
+    const url = `/assets/images/uploaded/${filename}`;
+
+    console.log(`File uploaded to: ${path}`);
+    return NextResponse.json({ url, filename });
   } catch (err: any) {
-    return NextResponse.json({ error: "Upload to Cloudflare failed", detail: err.message }, { status: 502 });
+    console.error("Upload error:", err);
+    return NextResponse.json({ error: "Failed to save file", detail: err.message }, { status: 500 });
   }
-
-  const json = await cfRes.json() as any;
-
-  if (!cfRes.ok || !json.success) {
-    return NextResponse.json(
-      { error: "Cloudflare rejected the upload", detail: json.errors ?? json },
-      { status: cfRes.status }
-    );
-  }
-
-  // ── Return public URL ────────────────────────────────────────
-  const imageId = json.result.id as string;
-  const url = `https://imagedelivery.net/${HASH}/${imageId}/public`;
-
-  return NextResponse.json({ url, id: imageId });
 }

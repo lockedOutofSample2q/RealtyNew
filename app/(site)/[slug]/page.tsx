@@ -423,8 +423,8 @@ export default async function PropertyDetailPage(props: Props) {
           </div>
 
           {/* ── RIGHT STICKY SIDEBAR ──────────────────────── */}
-          <aside className="order-first lg:order-last lg:sticky lg:top-[calc(var(--nav-height)+1rem)]">
-            <div className="border border-black/10 rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.06)]">
+          <aside className="order-first lg:order-last lg:sticky lg:top-[var(--nav-height)] lg:pt-10 transition-all">
+            <div className="border border-black/10 rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.06)] bg-white">
 
               {/* Price */}
               <PriceDisplay price={price} listingLabel={listingLabel} />

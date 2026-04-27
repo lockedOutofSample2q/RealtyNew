@@ -17,6 +17,7 @@ import PriceDisplay from "./PriceDisplay";
 import PropertyPriceInline from "./PropertyPriceInline";
 import PropertyDetailMapClient from "./PropertyDetailMapClient";
 import PropertyCard from "@/components/ui/PropertyCard";
+import { AmenityIcon } from "@/components/ui/AmenityIcons";
 
 interface Props { params: Promise<{ slug: string }> }
 
@@ -33,17 +34,33 @@ export async function generateStaticParams() {
 async function getProperty(slug: string): Promise<Property | null> {
   try {
     const supabase = createAdminClient();
-    const { data, error } = await supabase
+    
+    // 1. Fetch from properties view/table (primary source)
+    const { data: property, error } = await supabase
       .from("properties")
       .select("*")
       .eq("slug", slug)
       .single();
     
-    if (error) {
-      console.error(`Error fetching property [${slug}]:`, error);
+    if (error || !property) {
+      if (error) console.error(`Error fetching property [${slug}]:`, error);
       return null;
     }
-    return data as Property | null;
+
+    // 2. If it's an apartment, enrich with data from apartments table
+    if (property.type === 'apartment' || property.entity_type === 'apartment') {
+      const { data: aptData } = await supabase
+        .from("apartments")
+        .select("*")
+        .eq("slug", slug)
+        .single();
+      
+      if (aptData) {
+        return { ...property, ...aptData } as Property;
+      }
+    }
+
+    return property as Property | null;
   } catch (err) {
     console.error(`Runtime error fetching property [${slug}]:`, err);
     return null;
@@ -83,30 +100,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 
 export const revalidate = 60;
 
-// ── Amenity icon lookup ───────────────────────────────────────
-const AMENITY_ICON_MAP: Record<string, React.ElementType> = {
-  pool: Waves, "swimming pool": Waves, "infinity pool": Waves,
-  gym: Dumbbell, fitness: Dumbbell,
-  spa: Bell, concierge: Bell,
-  "bbq": Flame, "bbq area": Flame,
-  jogging: Activity, "jogging track": Activity, "running track": Activity,
-  "kids pool": Droplets, "kids' pool": Droplets, "dedicated kids' pool": Droplets,
-  "function room": Users,
-  parking: Car, "covered parking": Car, "valet parking": Car,
-  garden: Leaf, nature: Leaf,
-  "beach access": Waves, beach: Waves, "lagoon access": Waves,
-  "rooftop": Building2, "rooftop terrace": Building2,
-  tennis: Target, "tennis court": Target,
-  sauna: Thermometer,
-  "business center": Briefcase,
-  cinema: Film, "cinema room": Film,
-  security: Shield,
-};
-
-function AmenityIcon({ name }: { name: string }) {
-  const Icon = AMENITY_ICON_MAP[name.toLowerCase()] ?? Check;
-  return <Icon size={16} strokeWidth={1.5} className="text-black/50 shrink-0" />;
-}
+// Icon component is now imported from @/components/ui/AmenityIcons
 
 // ── Transport label ───────────────────────────────────────────
 function transportLabel(t: NearbyLandmark["transport"]) {
@@ -188,8 +182,8 @@ export default async function PropertyDetailPage(props: Props) {
           {/* ── LEFT CONTENT ──────────────────────────────── */}
           <div>
             {/* Title row */}
-            <div className="flex items-start justify-between gap-4 mb-3">
-              <h1 className="text-[clamp(1.8rem,3vw,2.6rem)] font-bold text-black leading-tight tracking-tight">
+            <div className="flex flex-col sm:flex-row items-start justify-between gap-4 mb-3">
+              <h1 className="text-[clamp(1.8rem,3vw,2.6rem)] font-bold text-black leading-tight tracking-tight font-display">
                 {property.title}
               </h1>
               {property.developer && (
@@ -199,7 +193,7 @@ export default async function PropertyDetailPage(props: Props) {
                   </div>
                   <div className="flex flex-col">
                     <span className="text-[10px] text-black/35 font-medium uppercase tracking-wider leading-none mb-0.5">Developed by</span>
-                    <span className="text-[14px] font-bold text-black leading-none">{property.developer}</span>
+                    <span className="text-[14px] font-bold text-black leading-none font-display">{property.developer}</span>
                   </div>
                 </div>
               )}
@@ -214,43 +208,60 @@ export default async function PropertyDetailPage(props: Props) {
             {/* Stats */}
             <div className="flex items-center gap-5 sm:gap-10 flex-wrap border-y border-black/8 py-6 mb-8">
               <div>
-                <p className="text-[10px] uppercase tracking-widest text-black/35 mb-1">Size</p>
-                <p className="text-[17px] font-bold text-black">{property.area_sqft ? `${property.area_sqft.toLocaleString()} sqft` : 'N/A'}</p>
+                <p className="text-[10px] uppercase tracking-widest text-black/35 mb-1 font-bold">Size</p>
+                <p className="text-[17px] font-bold text-black font-display">{property.area_sqft ? `${property.area_sqft.toLocaleString()} sqft` : 'N/A'}</p>
               </div>
               {property.bedrooms !== null && (
                 <div>
-                  <p className="text-[10px] uppercase tracking-widest text-black/35 mb-1">Bedrooms</p>
-                  <p className="text-[17px] font-bold text-black">{bedroomsDisplay}</p>
+                  <p className="text-[10px] uppercase tracking-widest text-black/35 mb-1 font-bold">Bedrooms</p>
+                  <p className="text-[17px] font-bold text-black font-display">{bedroomsDisplay}</p>
                 </div>
               )}
               <div>
-                <p className="text-[10px] uppercase tracking-widest text-black/35 mb-1">Bathrooms</p>
-                <p className="text-[17px] font-bold text-black">{property.bathrooms}</p>
+                <p className="text-[10px] uppercase tracking-widest text-black/35 mb-1 font-bold">Bathrooms</p>
+                <p className="text-[17px] font-bold text-black font-display">{property.bathrooms}</p>
               </div>
+              {property.rera_number && (
+                <div>
+                  <p className="text-[10px] uppercase tracking-widest text-black/35 mb-1 font-bold">RERA No.</p>
+                  <p className="text-[14px] font-bold text-black font-display">{property.rera_number}</p>
+                </div>
+              )}
             </div>
 
-            {/* Timeline / Status */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-10 pb-8 border-b border-black/8">
+            {/* Timeline / Status / Forensics */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-y-8 gap-x-12 mb-10 pb-8 border-b border-black/8">
               <div className="flex flex-col">
                 <span className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-orange-500 font-bold mb-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
                   {property.status === 'off-plan' ? 'Under Construction' : property.status}
                 </span>
+                <p className="text-[14px] font-bold text-black font-display">Development</p>
               </div>
               <div>
-                <p className="text-[10px] uppercase tracking-widest text-black/35 mb-1">Completion</p>
-                <p className="text-[14px] font-bold text-black">{property.completion_date || 'TBA'}</p>
+                <p className="text-[10px] uppercase tracking-widest text-black/35 mb-1 font-bold">Completion</p>
+                <p className="text-[14px] font-bold text-black font-display">{property.completion_date || 'TBA'}</p>
               </div>
               <div>
-                <p className="text-[10px] uppercase tracking-widest text-black/35 mb-1">Handover</p>
-                <p className="text-[14px] font-bold text-black">{property.handover_date || property.completion_date || 'TBA'}</p>
+                <p className="text-[10px] uppercase tracking-widest text-black/35 mb-1 font-bold">Handover</p>
+                <p className="text-[14px] font-bold text-black font-display">{property.handover_date || property.completion_date || 'TBA'}</p>
               </div>
+              {(property.tower_count || property.floor_count) && (
+                <div>
+                  <p className="text-[10px] uppercase tracking-widest text-black/35 mb-1 font-bold">Scale</p>
+                  <p className="text-[14px] font-bold text-black font-display">
+                    {property.tower_count ? `${property.tower_count} Towers` : ''}
+                    {property.tower_count && property.floor_count ? ', ' : ''}
+                    {property.floor_count ? `${property.floor_count} Floors` : ''}
+                  </p>
+                </div>
+              )}
             </div>
 
             {/* Off Plan Highlights */}
             {(property.highlights?.length ?? 0) > 0 && (
               <section className="mb-12">
-                <h2 className="text-[20px] font-bold text-black mb-6">Property Highlights</h2>
+                <h2 className="text-[20px] font-bold text-black mb-6 font-display">Property Highlights</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {property.highlights!.map((h) => (
                     <div key={h} className="flex items-center gap-3 bg-black/[0.02] border border-black/5 rounded-xl p-4 transition-colors hover:bg-black/[0.04]">
@@ -267,7 +278,7 @@ export default async function PropertyDetailPage(props: Props) {
             {/* Off Plan Details */}
             {(property.type || property.building_name || (property.interior_features?.length ?? 0) > 0) && (
               <section className="mb-10">
-                <h2 className="text-[18px] font-bold text-black mb-5">Off Plan Details</h2>
+                <h2 className="text-[18px] font-bold text-black mb-5 font-display">Off Plan Details</h2>
                 <div className="border border-black/8 rounded-2xl p-6">
                   <div className="grid grid-cols-2 gap-6 mb-5">
                     {property.type && (
@@ -298,7 +309,7 @@ export default async function PropertyDetailPage(props: Props) {
             {/* Community Amenities */}
             {(property.amenities?.length ?? 0) > 0 && (
               <section className="mb-10">
-                <h2 className="text-[18px] font-bold text-black mb-6">Community Amenities</h2>
+                <h2 className="text-[18px] font-bold text-black mb-6 font-display">Community Amenities</h2>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-4">
                   {property.amenities!.map((a) => (
                     <div key={a} className="flex items-center gap-2.5">
@@ -313,7 +324,7 @@ export default async function PropertyDetailPage(props: Props) {
             {/* Community Amenities Gallery */}
             {(property.amenities_gallery?.length ?? 0) > 0 && (
               <section className="mb-10">
-                <h2 className="text-[18px] font-bold text-black mb-5">Community Amenities Gallery</h2>
+                <h2 className="text-[18px] font-bold text-black mb-5 font-display">Community Amenities Gallery</h2>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {property.amenities_gallery!.map((src, i) => (
                     <div key={i} className="relative aspect-square rounded-2xl overflow-hidden bg-black/5">
@@ -327,95 +338,97 @@ export default async function PropertyDetailPage(props: Props) {
             {/* ── TECHNICAL OVERVIEW (Redesigned) ───────────────── */}
             {(property.payment_plan || property.unit_types_image || (property.documents?.length ?? 0) > 0) && (
               <section className="mb-14">
-                <h2 className="text-[18px] font-bold text-black mb-6">Property Overview</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <h2 className="text-[18px] font-bold text-black mb-6 font-display">Property Overview</h2>
+                
+                <div className="flex flex-col gap-5">
+                  {/* Row 1: Payment Plan & Unit Types */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    {/* 1. Payment Plan */}
+                    {property.payment_plan && (
+                      <div className="bg-white border border-black/8 rounded-[24px] p-8 flex flex-col justify-between min-h-[440px]">
+                        <div>
+                          <h3 className="text-[17px] font-bold text-black mb-8 font-display">Payment Plan</h3>
 
-                  {/* 1. Payment Plan */}
-                  {property.payment_plan && (
-                    <div className="bg-white border border-black/8 rounded-[24px] p-8 flex flex-col justify-between min-h-[440px]">
-                      <div>
-                        <h3 className="text-[17px] font-bold text-black mb-8">Payment Plan</h3>
-
-                        <div className="grid grid-cols-2 gap-y-10 gap-x-6">
-                          <div>
-                            <p className="text-[10px] uppercase tracking-widest text-black/35 font-bold mb-1">Down Payment</p>
-                            <p className="text-[34px] font-bold text-black leading-none">{property.payment_plan.down_payment}%</p>
-                            <p className="text-[12px] text-black/40 mt-1.5">Upon booking</p>
-                          </div>
-                          <div>
-                            <p className="text-[10px] uppercase tracking-widest text-black/35 font-bold mb-1">During Construction</p>
-                            <p className="text-[34px] font-bold text-black leading-none">{property.payment_plan.during_construction}%</p>
-                            <p className="text-[12px] text-black/40 mt-1.5">In installments</p>
-                          </div>
-                          <div className="col-span-2">
-                             <div className="h-[1px] bg-black/5 w-full my-2" />
-                            <p className="text-[10px] uppercase tracking-widest text-black/35 font-bold mb-1">On Handover</p>
-                            <p className="text-[34px] font-bold text-black leading-none">{property.payment_plan.on_handover}%</p>
-                            <p className="text-[12px] text-black/40 mt-1.5">Final payment</p>
+                          <div className="grid grid-cols-2 gap-y-10 gap-x-6">
+                            <div>
+                              <p className="text-[10px] uppercase tracking-widest text-black/35 font-bold mb-1">Down Payment</p>
+                              <p className="text-[34px] font-bold text-black leading-none font-display">{property.payment_plan.down_payment}%</p>
+                              <p className="text-[12px] text-black/40 mt-1.5">Upon booking</p>
+                            </div>
+                            <div>
+                              <p className="text-[10px] uppercase tracking-widest text-black/35 font-bold mb-1">During Construction</p>
+                              <p className="text-[34px] font-bold text-black leading-none font-display">{property.payment_plan.during_construction}%</p>
+                              <p className="text-[12px] text-black/40 mt-1.5">In installments</p>
+                            </div>
+                            <div className="col-span-2">
+                               <div className="h-[1px] bg-black/5 w-full my-2" />
+                              <p className="text-[10px] uppercase tracking-widest text-black/35 font-bold mb-1">On Handover</p>
+                              <p className="text-[34px] font-bold text-black leading-none font-display">{property.payment_plan.on_handover}%</p>
+                              <p className="text-[12px] text-black/40 mt-1.5">Final payment</p>
+                            </div>
                           </div>
                         </div>
-                      </div>
 
-                      <div className="border-t border-black/8 pt-6 mt-8">
-                        <p className="text-[10px] uppercase tracking-widest text-black/35 font-bold mb-1">Total Investment</p>
-                        <PropertyPriceInline price={price} className="text-[20px] font-bold text-black" />
+                        <div className="border-t border-black/8 pt-6 mt-8">
+                          <p className="text-[10px] uppercase tracking-widest text-black/35 font-bold mb-1">Total Investment</p>
+                          <PropertyPriceInline price={price} className="text-[20px] font-bold text-black font-display" />
+                        </div>
                       </div>
-                    </div>
-                  )}
+                    )}
 
-                  {/* 2. Unit Types & Sizes */}
-                  <div className="relative rounded-[24px] overflow-hidden min-h-[440px] group cursor-pointer">
-                    <Image
-                      src={property.unit_types_image || property.images?.[0] || "/assets/images/home/about.jpg"}
-                      alt="Unit Types & Sizes"
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-black/20" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-8">
-                      <p className="text-white font-bold text-[20px] mb-3 leading-tight">Unit Types & Sizes</p>
-                      <span className="inline-flex items-center gap-2 text-[11px] bg-white/20 backdrop-blur-md text-white border border-white/30 font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
-                        COMING SOON
-                      </span>
-                    </div>
-                    {/* Icon corner */}
-                    <div className="absolute bottom-8 right-8 w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
-                       <Images size={18} className="text-white" />
+                    {/* 2. Unit Types & Sizes */}
+                    <div className="relative rounded-[24px] overflow-hidden min-h-[440px] group cursor-pointer">
+                      <Image
+                        src={property.unit_types_image || property.images?.[0] || "/assets/images/home/about.jpg"}
+                        alt="Unit Types & Sizes"
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-black/20" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                      <div className="absolute bottom-0 left-0 right-0 p-8">
+                        <p className="text-white font-bold text-[24px] mb-3 leading-tight font-display">Unit Types & Sizes</p>
+                        <span className="inline-flex items-center gap-2 text-[11px] bg-white/20 backdrop-blur-md text-white border border-white/30 font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
+                          {property.unit_types_coming_soon ? 'AVAILABLE ON REQUEST' : 'VIEW DETAILS'}
+                        </span>
+                      </div>
+                      {/* Icon corner */}
+                      <div className="absolute bottom-8 right-8 w-12 h-12 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
+                         <Images size={20} className="text-white" />
+                      </div>
                     </div>
                   </div>
 
-                  {/* 3. Resources / Links */}
-                  <div className="flex flex-col gap-3">
+                  {/* Row 2: Resources (Same Line, Healthy Space) */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                     {[
-                      { name: "Floor Plan Download", status: "COMING SOON" },
-                      { name: "Documents & Brochure", status: "COMING SOON" },
-                      { name: "Terms & Conditions", status: "COMING SOON" }
+                      { name: "Floor Plan Download", status: "AVAILABLE", href: "#" },
+                      { name: "Documents & Brochure", status: "DOWNLOAD NOW", href: "#" },
+                      { name: "Technical Specifications", status: "VIEW PDF", href: "#" }
                     ].map((doc, idx) => (
                       <div
                         key={idx}
-                        className="flex-1 bg-white border border-black/8 rounded-[24px] p-8 flex items-center justify-between group hover:border-black/20 transition-all cursor-pointer"
+                        className="bg-white border border-black/8 rounded-[24px] p-8 flex items-center justify-between group hover:border-black/20 transition-all cursor-pointer min-h-[140px]"
                       >
-                        <div className="flex flex-col gap-1">
-                          <span className="text-[16px] font-bold text-black/70 group-hover:text-black transition-colors">{doc.name}</span>
+                        <div className="flex flex-col gap-1.5">
+                          <span className="text-[17px] font-bold text-black/80 group-hover:text-black transition-colors font-display leading-tight">{doc.name}</span>
                           <span className="text-[10px] text-black/30 font-bold tracking-widest">{doc.status}</span>
                         </div>
-                        <div className="w-10 h-10 rounded-full border border-black/5 flex items-center justify-center text-black/20 group-hover:text-black group-hover:border-black/10 transition-all">
-                          <ArrowRight size={18} />
+                        <div className="w-11 h-11 rounded-full border border-black/5 flex items-center justify-center text-black/20 group-hover:text-black group-hover:border-black/10 transition-all shrink-0 ml-4">
+                          <ArrowRight size={20} />
                         </div>
                       </div>
                     ))}
                   </div>
-
                 </div>
               </section>
             )}
 
-            <section>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-                <div>
-                  <h2 className="text-[18px] font-bold text-black mb-5">Location</h2>
-                  <div className="h-[240px] rounded-2xl overflow-hidden border border-black/8">
+            <section className="mb-14">
+              <div className="grid grid-cols-1 md:grid-cols-[1fr_minmax(300px,420px)] gap-8 md:gap-10">
+                <div className="flex flex-col">
+                  <h2 className="text-[18px] font-bold text-black mb-5 font-display">Location</h2>
+                  <div className="flex-1 min-h-[340px] rounded-[32px] overflow-hidden border border-black/8 shadow-sm">
                     {property.latitude && property.longitude ? (
                         <PropertyDetailMapClient
                         lat={property.latitude}
@@ -423,8 +436,8 @@ export default async function PropertyDetailPage(props: Props) {
                         title={property.title}
                       />
                     ) : (
-                      <div className="w-full h-full bg-[#e8f0e8] flex items-center justify-center">
-                        <p className="text-[13px] text-black/30">Map unavailable</p>
+                      <div className="w-full h-full bg-[#f8f8f8] flex items-center justify-center">
+                        <p className="text-[13px] text-black/30">Map coordinates missing</p>
                       </div>
                     )}
                   </div>
@@ -432,15 +445,17 @@ export default async function PropertyDetailPage(props: Props) {
 
                 {/* Nearby Landmarks */}
                 {(property.nearby_landmarks?.length ?? 0) > 0 && (
-                  <div>
-                    <h2 className="text-[18px] font-bold text-black mb-5">Nearby Landmarks</h2>
-                    <div className="grid grid-cols-2 gap-3">
+                  <div className="flex flex-col">
+                    <h2 className="text-[18px] font-bold text-black mb-5 font-display">Nearby Landmarks</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 flex-1">
                       {property.nearby_landmarks!.map((lm) => (
-                        <div key={lm.name} className="bg-black/[0.03] rounded-xl p-3 text-left">
-                          <p className="text-[12px] font-semibold text-black mb-1 leading-tight">{lm.name}</p>
-                          <p className="text-[22px] font-bold text-black leading-none">{lm.time}</p>
-                          <p className="text-[10px] text-black/35 mt-0.5">min</p>
-                          <p className="text-[10px] uppercase tracking-widest text-black/30 mt-1">
+                        <div key={lm.name} className="bg-[#FBFBFB] border border-black/[0.03] rounded-[24px] p-6 text-left hover:bg-white hover:shadow-md transition-all">
+                          <p className="text-[13px] font-semibold text-black/40 mb-2 leading-tight uppercase tracking-widest">{lm.name}</p>
+                          <div className="flex items-baseline gap-1">
+                            <p className="text-[32px] font-bold text-black leading-none font-display">{lm.time}</p>
+                            <p className="text-[12px] font-bold text-black/40">MIN</p>
+                          </div>
+                          <p className="text-[10px] uppercase tracking-[0.2em] text-black/25 mt-3 font-bold">
                             {transportLabel(lm.transport)}
                           </p>
                         </div>
@@ -454,7 +469,7 @@ export default async function PropertyDetailPage(props: Props) {
             {/* ── UPCOMING INFRASTRUCTURE ─────────────────────── */}
             {(property.upcoming_infrastructure?.length ?? 0) > 0 && (
               <section className="mt-14 pt-14 border-t border-black/5">
-                <h2 className="text-[18px] font-bold text-black mb-8">Upcoming Infrastructure & Projects</h2>
+                <h2 className="text-[18px] font-bold text-black mb-8 font-display">Upcoming Infrastructure & Projects</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {property.upcoming_infrastructure!.map((item, i) => (
                     <div key={i} className="flex items-start gap-4 p-6 bg-[#FBFBFB] border border-black/[0.03] rounded-[24px]">
@@ -473,8 +488,8 @@ export default async function PropertyDetailPage(props: Props) {
           </div>
 
           {/* ── RIGHT STICKY SIDEBAR ──────────────────────── */}
-          <aside className="order-first lg:order-last lg:sticky lg:top-[calc(var(--nav-height)+1rem)]">
-            <div className="border border-black/10 rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.06)]">
+          <aside className="order-first lg:order-last lg:sticky lg:top-24">
+            <div className="border border-black/10 rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.06)] bg-white">
 
               {/* Price */}
               <PriceDisplay price={price} listingLabel={listingLabel} />
@@ -496,17 +511,19 @@ export default async function PropertyDetailPage(props: Props) {
                   <p className="text-[9px] uppercase tracking-widest text-black/25 text-right max-w-[150px]">Realty Holding and Management Consultants</p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="relative w-14 h-14 rounded-full overflow-hidden bg-black/5 shrink-0 border border-black/5">
+                  <Link href="/about" className="relative w-14 h-14 rounded-full overflow-hidden bg-black/5 shrink-0 border border-black/5 group hover:ring-2 ring-black/5 transition-all">
                     <Image 
                       src="/assets/images/leadership/amritpal.jpg" 
                       alt="Amritpal Singh" 
                       fill 
                       className="object-cover" 
                     />
-                  </div>
+                  </Link>
                   <div className="flex-1 min-w-0">
-                    <p className="text-[15px] font-bold text-black leading-tight mb-0.5">Amritpal Singh</p>
-                    <p className="text-[12px] text-black/45 mb-3 font-medium">Founder & Principal Advisor</p>
+                    <Link href="/about" className="block group">
+                      <p className="text-[15px] font-bold text-black leading-tight mb-0.5 group-hover:underline">Amritpal Singh</p>
+                      <p className="text-[12px] text-black/45 mb-3 font-medium">Founder & Principal Advisor</p>
+                    </Link>
                     
                     <div className="space-y-1.5">
                       <a href="mailto:hello@realtyconsultants.in" className="flex items-center gap-2 text-[13px] text-black/60 hover:text-black transition-colors bg-black/[0.03] px-3 py-2 rounded-lg group">
@@ -562,7 +579,7 @@ export default async function PropertyDetailPage(props: Props) {
           <section className="mt-24 pt-24 border-t border-black/5">
             <div className="flex items-center justify-between mb-10">
               <div>
-                <h2 className="text-[24px] md:text-[32px] font-bold text-black tracking-tight">Similar Properties</h2>
+                <h2 className="text-[24px] md:text-[32px] font-bold text-black tracking-tight font-display">Similar Properties</h2>
                 <p className="text-black/40 text-[14px] mt-1">Discover other exceptional opportunities in {property.community}.</p>
               </div>
               <Link href={backHref} className="hidden md:flex items-center gap-2 text-[14px] font-semibold text-black hover:gap-3 transition-all">

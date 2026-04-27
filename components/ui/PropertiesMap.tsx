@@ -46,11 +46,20 @@ function MapResizer() {
 
 export default function PropertiesMap({ properties }: { properties: Property[] }) {
   const { formatPrice } = useCurrency();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const [mapId] = useState(() => "map-" + Math.random().toString(36).substring(7));
+
+  if (!isMounted) return null;
 
   return (
     <div className="w-full h-full rounded-2xl overflow-hidden shadow-inner border border-black/5">
       <MapContainer
-        key={new Date().getTime()}
+        id={mapId}
         center={DEFAULT_CENTER}
         zoom={12}
         style={{ height: "100%", width: "100%" }}

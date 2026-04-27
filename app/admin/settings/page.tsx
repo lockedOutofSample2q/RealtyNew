@@ -134,7 +134,6 @@ export default function SettingsPage() {
         {[
           { label: "Vercel Dashboard", href: "https://vercel.com/dashboard" },
           { label: "Supabase Dashboard", href: "https://supabase.com/dashboard" },
-          { label: "Cloudflare Dashboard", href: "https://dash.cloudflare.com" },
         ].map((link) => (
           <a
             key={link.label}

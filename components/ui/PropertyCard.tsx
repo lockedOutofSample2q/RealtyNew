@@ -16,11 +16,18 @@ interface PropertyCardProps {
 export default function PropertyCard({ property, className, variant = "standard" }: PropertyCardProps) {
   const { formatPrice } = useCurrency();
   const image = property.images?.[0] ?? "/assets/images/home/about.jpg";
-  const isLands = property.listing_type === "lands";
+  const isLands = property.listing_type === "lands" || property.entity_type === "land";
+  
+  // Determine link path
+  const detailHref = property.entity_type === "apartment" ? `/apartments/${property.slug}` :
+                   property.entity_type === "house" ? `/houses/${property.slug}` :
+                   (property.entity_type === "land" || property.entity_type === "lands") ? `/lands/${property.slug}` :
+                   `/properties/${property.slug}`;
+
   if (variant === "image-bg") {
     return (
       <Link
-        href={`/properties/${property.slug}`}
+        href={detailHref}
         className={cn(
           "group relative block overflow-hidden rounded-xl aspect-[4/5] bg-charcoal-50",
           className
@@ -84,7 +91,7 @@ export default function PropertyCard({ property, className, variant = "standard"
   // Standard Variant
   return (
     <Link
-      href={`/properties/${property.slug}`}
+      href={detailHref}
       className={cn(
         "group flex flex-col bg-white rounded-xl overflow-hidden border border-border shadow-subtle hover:shadow-hover transition-all duration-500",
         className
@@ -120,7 +127,8 @@ export default function PropertyCard({ property, className, variant = "standard"
           {property.bedrooms != null && (
             <div className="flex items-center gap-2 text-charcoal">
               <span className="font-body text-xs font-semibold tracking-wide">
-                {property.bedrooms === 0 ? "Studio" : property.bedrooms} BEDS
+                {property.bedrooms === 0 ? "Studio" : 
+                 (property.bedrooms_max && property.bedrooms_max !== property.bedrooms) ? `${property.bedrooms}-${property.bedrooms_max}` : property.bedrooms} BEDS
               </span>
             </div>
           )}
@@ -137,7 +145,11 @@ export default function PropertyCard({ property, className, variant = "standard"
           )}
           {property.area_sqft != null && (
             <div className="flex items-center gap-2 text-charcoal">
-              <span className="font-body text-xs font-semibold tracking-wide">{property.area_sqft.toLocaleString()} SQFT</span>
+              <span className="font-body text-xs font-semibold tracking-wide">
+                {property.area_sqft_max && property.area_sqft_max !== property.area_sqft ? 
+                  `${property.area_sqft.toLocaleString()}-${property.area_sqft_max.toLocaleString()}` : 
+                  property.area_sqft.toLocaleString()} SQFT
+              </span>
             </div>
           )}
         </div>
@@ -145,8 +157,13 @@ export default function PropertyCard({ property, className, variant = "standard"
         {/* Footer (Price & Button) */}
         <div className="flex items-center justify-between pt-4 border-t border-white/20">
           <div className="font-display text-xl text-charcoal font-medium tracking-tight">
-            {formatPrice(property.price)}
-            {isLands && <span className="font-body text-sm text-muted font-normal ml-1">/yr</span>}
+            {property.price > 0 ? (
+              <>
+                {formatPrice(property.price)}
+                {property.price_max && property.price_max > property.price && ` - ${formatPrice(property.price_max)}`}
+                {isLands && <span className="font-body text-sm text-muted font-normal ml-1">/yr</span>}
+              </>
+            ) : "Price on request"}
           </div>
           <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:bg-charcoal group-hover:text-white transition-all duration-300 shrink-0 shadow-subtle">
             <ArrowRight size={16} className="group-hover:-rotate-45 transition-transform duration-300" />

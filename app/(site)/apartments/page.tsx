@@ -3,6 +3,7 @@ import { createAdminClient } from "@/lib/supabase";
 import type { Property } from "@/types";
 import { Suspense } from "react";
 import PropertiesClient from "../properties/PropertiesClient";
+import { enrichProperty } from "@/lib/property-utils";
 
 export const metadata: Metadata = {
   title: "Apartments & Flats in Mohali | Realty Holding & Management Consultants",
@@ -21,7 +22,7 @@ async function getProperties(): Promise<Property[]> {
       .order("created_at", { ascending: false });
     
     if (error) return [];
-    return (data ?? []) as Property[];
+    return (data ?? []).map(enrichProperty) as Property[];
   } catch {
     return [];
   }

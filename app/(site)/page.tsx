@@ -16,6 +16,7 @@ import BlogTeaserSection from "@/components/sections/BlogTeaserSection";
 import { createAdminClient } from "@/lib/supabase";
 import { homeCarousels } from "@/config/site";
 import type { Property } from "@/types";
+import { enrichProperty } from "@/lib/property-utils";
 
 // Fetch fresh properties at build time (ISR every 60s)
 export const revalidate = 60;
@@ -47,9 +48,9 @@ async function getHomeData() {
       ]);
 
     return {
-      featured: featured as Property | null,
-      latest: (latest ?? []) as Property[],
-      rentals: (rentals ?? []) as Property[],
+      featured: (featured ? enrichProperty(featured as Property) : null),
+      latest: (latest ?? []).map(enrichProperty) as Property[],
+      rentals: (rentals ?? []).map(enrichProperty) as Property[],
     };
   } catch {
     // Return empty data if DB not connected (dev mode)

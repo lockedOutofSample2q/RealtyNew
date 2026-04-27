@@ -137,15 +137,15 @@ export function PropertyGallery({ images, videos = [], title, imageCountOverride
             <button onClick={(e) => { e.stopPropagation(); handlePrev(); }} className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 p-4 rounded-full text-white/40 hover:text-white transition-colors z-[110]"><ChevronLeft size={44} strokeWidth={1.5} /></button>
             <button onClick={(e) => { e.stopPropagation(); handleNext(); }} className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 p-4 rounded-full text-white/40 hover:text-white transition-colors z-[110]"><ChevronRight size={44} strokeWidth={1.5} /></button>
 
-            <div className="relative w-full h-full flex items-center justify-center" onClick={() => setIndex(null)}>
-              <div className="relative max-w-6xl w-full h-full flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
+            <div className="relative w-full h-full flex flex-col items-center justify-center" onClick={() => setIndex(null)}>
+              <div className="relative max-w-6xl w-full flex-1 flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.95 }}
-                    className="w-full h-full flex items-center justify-center"
+                    className="w-full h-full flex items-center justify-center p-4"
                   >
                     {mediaItems[index].type === "video" ? (
                       <VideoPlayer url={mediaItems[index].url} />
@@ -156,6 +156,30 @@ export function PropertyGallery({ images, videos = [], title, imageCountOverride
                     )}
                   </motion.div>
                 </AnimatePresence>
+              </div>
+
+              {/* Thumbnail Strip */}
+              <div 
+                className="w-full max-w-4xl px-4 pb-8 flex items-center justify-center gap-2 overflow-x-auto no-scrollbar shrink-0"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {mediaItems.map((item, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setIndex(i)}
+                    className={cn(
+                      "relative w-16 h-12 md:w-20 md:h-14 rounded-lg overflow-hidden border-2 transition-all shrink-0",
+                      index === i ? "border-white scale-110 z-10" : "border-transparent opacity-40 hover:opacity-100"
+                    )}
+                  >
+                    <MediaThumbnail item={item} title={`${title} thumb ${i}`} />
+                    {item.type === "video" && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+                        <Play size={12} fill="white" className="text-white" />
+                      </div>
+                    )}
+                  </button>
+                ))}
               </div>
             </div>
           </motion.div>

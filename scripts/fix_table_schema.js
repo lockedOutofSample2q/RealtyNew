@@ -18,6 +18,8 @@ async function fixSchema() {
     -- Add missing columns to apartments
     ALTER TABLE apartments ADD COLUMN IF NOT EXISTS address text;
     ALTER TABLE apartments ADD COLUMN IF NOT EXISTS bedrooms_max integer;
+    ALTER TABLE apartments ADD COLUMN IF NOT EXISTS completion_date text;
+    ALTER TABLE apartments ADD COLUMN IF NOT EXISTS handover_date text;
     ALTER TABLE apartments ADD COLUMN IF NOT EXISTS amenities_gallery text[] DEFAULT '{}';
     ALTER TABLE apartments ADD COLUMN IF NOT EXISTS interior_features text[] DEFAULT '{}';
     ALTER TABLE apartments ADD COLUMN IF NOT EXISTS nearby_landmarks jsonb DEFAULT '[]';
@@ -37,6 +39,8 @@ async function fixSchema() {
     -- Add missing columns to houses
     ALTER TABLE houses ADD COLUMN IF NOT EXISTS address text;
     ALTER TABLE houses ADD COLUMN IF NOT EXISTS bedrooms_max integer;
+    ALTER TABLE houses ADD COLUMN IF NOT EXISTS completion_date text;
+    ALTER TABLE houses ADD COLUMN IF NOT EXISTS handover_date text;
     ALTER TABLE houses ADD COLUMN IF NOT EXISTS amenities_gallery text[] DEFAULT '{}';
     ALTER TABLE houses ADD COLUMN IF NOT EXISTS interior_features text[] DEFAULT '{}';
     ALTER TABLE houses ADD COLUMN IF NOT EXISTS nearby_landmarks jsonb DEFAULT '[]';
@@ -76,7 +80,7 @@ async function fixSchema() {
         amenities, amenities_gallery, interior_features, nearby_landmarks, latitude, longitude,
         payment_plan, documents, unit_types_image,
         agent_name, agent_title, agent_email, agent_phone, agent_photo, agent_languages,
-        upcoming_infrastructure, address,
+        upcoming_infrastructure, address, completion_date, handover_date,
         'apartment' AS entity_type
     FROM apartments
     UNION ALL
@@ -87,7 +91,7 @@ async function fixSchema() {
         amenities, amenities_gallery, interior_features, nearby_landmarks, latitude, longitude,
         payment_plan, documents, unit_types_image,
         agent_name, agent_title, agent_email, agent_phone, agent_photo, agent_languages,
-        upcoming_infrastructure, address,
+        upcoming_infrastructure, address, completion_date, handover_date,
         'house' AS entity_type
     FROM houses
     UNION ALL
@@ -98,7 +102,7 @@ async function fixSchema() {
         '{}'::text[] AS amenities, '{}'::text[] AS amenities_gallery, '{}'::text[] AS interior_features, nearby_landmarks, latitude, longitude,
         NULL::jsonb AS payment_plan, '[]'::jsonb AS documents, NULL::text AS unit_types_image,
         agent_name, agent_title, agent_email, agent_phone, agent_photo, agent_languages,
-        upcoming_infrastructure, address,
+        upcoming_infrastructure, address, NULL::text AS completion_date, NULL::text AS handover_date,
         'lands' AS entity_type
     FROM lands;
   `;

@@ -41,14 +41,44 @@ export interface Property {
   status: "available" | "sold" | "rented" | "properties";
   listing_type: "sale" | "lands" | "properties";
   price: number;
+  price_max?: number;
   price_currency: "INR" | "USD" | "CAD" | "AUD";
   bedrooms: number | null;
   bedrooms_max?: number | null;
   bathrooms: number;
+  bathrooms_max?: number | null;
   area_sqft: number;
+  area_sqft_max?: number;
   location: string;
+  address?: string;
   community: string;
-  developer?: string;
+  developer: string;
+  developer_website?: string;
+
+  // Rich Apartment Forensics
+  rera_number?: string;
+  completion_date?: string;
+  handover_date?: string;
+  tower_count?: number;
+  floor_count?: number;
+  total_units?: number;
+  project_area_acres?: number;
+
+  transfer_trap_analysis?: string;
+  lifestyle_tax_analysis?: string;
+  maintenance_fee_psft?: number;
+  utility_analysis?: string;
+
+  unit_types?: Array<{
+    bhk: string; // e.g. "3+1BHK"
+    type_count?: number; // e.g. 5 (for "5 Types")
+    size_min: number;
+    size_max?: number;
+    price?: string;
+  }>;
+  payment_plan_notes?: string;
+  amenities_gallery?: string[];
+  interior_features?: string[];
   developer_website?: string;
   furnishing: "furnished" | "unfurnished" | "semi-furnished";
   description: string;
