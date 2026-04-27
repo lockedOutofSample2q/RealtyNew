@@ -11,6 +11,7 @@ import {
   Car, Leaf, Building2, Target, Thermometer, Briefcase,
   Film, Bell, Shield, ExternalLink, Images, ArrowRight,
 } from "lucide-react";
+import { cn } from "@/lib/utils";
 import type { Property, NearbyLandmark } from "@/types";
 import InquiryForm, { PropertyGallery } from "./InquiryForm";
 import PriceDisplay from "./PriceDisplay";

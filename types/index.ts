@@ -38,7 +38,7 @@ export interface Property {
   title: string;
   slug: string;
   type: "apartment" | "villa" | "penthouse" | "townhouse" | "studio" | "residential" | "commercial" | "agricultural" | "industrial" | "land" | "plot";
-  status: "available" | "sold" | "rented" | "properties";
+  status: "available" | "sold" | "rented" | "off-plan";
   listing_type: "sale" | "lands" | "properties";
   price: number;
   price_max?: number;
@@ -79,9 +79,6 @@ export interface Property {
     price?: string;
   }>;
   payment_plan_notes?: string;
-  amenities_gallery?: string[];
-  interior_features?: string[];
-  developer_website?: string;
   furnishing: "furnished" | "unfurnished" | "semi-furnished";
   description: string;
   features: string[];
@@ -93,7 +90,6 @@ export interface Property {
 
   // Extended fields
   building_name?: string;
-  address?: string;
   highlights?: string[];
   amenities?: string[];
   amenities_gallery?: string[];
