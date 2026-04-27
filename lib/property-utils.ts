@@ -20,12 +20,41 @@ export function enrichProperty(property: Property): Property {
       area_sqft_max: property.area_sqft_max || metadata.area_sqft_max,
       bedrooms_max: property.bedrooms_max || metadata.bedrooms_max,
       address: property.address || metadata.address,
-      // Strip metadata from description
-      description: property.description.replace(/\[METADATA\].*?\[\/METADATA\]/, '').trim()
-    };
+    // Strip metadata from description
+    let cleanDescription = property.description.replace(/\[METADATA\].*?\[\/METADATA\]/, '').trim();
+    
+    // 3. Handle embedded FAQs
+    let faqs = property.faqs;
+    const faqMatch = cleanDescription.match(/\[FAQS\](.*?)\[\/FAQS\]/);
+    if (faqMatch) {
+      try {
+        faqs = JSON.parse(faqMatch[1]);
+        cleanDescription = cleanDescription.replace(/\[FAQS\].*?\[\/FAQS\]/, '').trim();
+      } catch (e) {
+        console.error("Failed to parse embedded FAQs", e);
+      }
+    }
 
-    return enriched as Property;
+    return {
+      ...property,
+      price_max: property.price_max || metadata.price_max,
+      area_sqft_max: property.area_sqft_max || metadata.area_sqft_max,
+      bedrooms_max: property.bedrooms_max || metadata.bedrooms_max,
+      address: property.address || metadata.address,
+      description: cleanDescription,
+      faqs: faqs
+    } as Property;
   } catch (e) {
-    return property;
+    // Even if JSON parse fails, try to handle FAQs separately
+    let cleanDescription = property.description;
+    let faqs = property.faqs;
+    const faqMatch = cleanDescription.match(/\[FAQS\](.*?)\[\/FAQS\]/);
+    if (faqMatch) {
+      try {
+        faqs = JSON.parse(faqMatch[1]);
+        cleanDescription = cleanDescription.replace(/\[FAQS\].*?\[\/FAQS\]/, '').trim();
+      } catch (ee) {}
+    }
+    return { ...property, description: cleanDescription, faqs: faqs } as Property;
   }
 }

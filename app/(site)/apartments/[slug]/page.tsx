@@ -12,13 +12,10 @@ import {
   Film, Bell, Shield, ExternalLink, Images, ArrowRight,
 } from "lucide-react";
 import type { Property, NearbyLandmark } from "@/types";
-import { enrichProperty } from "@/lib/property-utils";
-import { cn } from "@/lib/utils";
-import InquiryForm, { PropertyGallery } from "../../properties/[slug]/InquiryForm";
-import PriceDisplay from "../../properties/[slug]/PriceDisplay";
-import PropertyPriceInline from "../../properties/[slug]/PropertyPriceInline";
 import PropertyDetailMapClient from "../../properties/[slug]/PropertyDetailMapClient";
 import PropertyCard from "@/components/ui/PropertyCard";
+import { AmenityIcon } from "@/components/ui/AmenityIcons";
+import { enrichProperty } from "@/lib/property-utils";
 
 interface Props { params: Promise<{ slug: string }> }
 
@@ -86,30 +83,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 
 export const revalidate = 60;
 
-// ── Amenity icon lookup ───────────────────────────────────────
-const AMENITY_ICON_MAP: Record<string, React.ElementType> = {
-  pool: Waves, "swimming pool": Waves, "infinity pool": Waves,
-  gym: Dumbbell, fitness: Dumbbell,
-  spa: Bell, concierge: Bell,
-  "bbq": Flame, "bbq area": Flame,
-  jogging: Activity, "jogging track": Activity, "running track": Activity,
-  "kids pool": Droplets, "kids' pool": Droplets, "dedicated kids' pool": Droplets,
-  "function room": Users,
-  parking: Car, "covered parking": Car, "valet parking": Car,
-  garden: Leaf, nature: Leaf,
-  "beach access": Waves, beach: Waves, "lagoon access": Waves,
-  "rooftop": Building2, "rooftop terrace": Building2,
-  tennis: Target, "tennis court": Target,
-  sauna: Thermometer,
-  "business center": Briefcase,
-  cinema: Film, "cinema room": Film,
-  security: Shield,
-};
-
-function AmenityIcon({ name }: { name: string }) {
-  const Icon = AMENITY_ICON_MAP[name.toLowerCase()] ?? Check;
-  return <Icon size={16} strokeWidth={1.5} className="text-black/50 shrink-0" />;
-}
+// Icon component is now imported from @/components/ui/AmenityIcons
 
 // ── Transport label ───────────────────────────────────────────
 function transportLabel(t: NearbyLandmark["transport"]) {
@@ -181,8 +155,8 @@ export default async function ApartmentDetailPage(props: Props) {
           {/* ── LEFT CONTENT ──────────────────────────────── */}
           <div>
             {/* Title row */}
-            <div className="flex items-start justify-between gap-4 mb-3">
-              <h1 className="text-[clamp(1.8rem,3vw,2.6rem)] font-bold text-black leading-tight tracking-tight">
+            <div className="flex flex-col sm:flex-row items-start justify-between gap-4 mb-3">
+              <h1 className="text-[clamp(1.8rem,3vw,2.6rem)] font-bold text-black leading-tight tracking-tight font-display">
                 {property.title}
               </h1>
               {property.developer && (
@@ -192,7 +166,7 @@ export default async function ApartmentDetailPage(props: Props) {
                   </div>
                   <div className="flex flex-col">
                     <span className="text-[10px] text-black/35 font-medium uppercase tracking-wider leading-none mb-0.5">Developed by</span>
-                    <span className="text-[14px] font-bold text-black leading-none">{property.developer}</span>
+                    <span className="text-[14px] font-bold text-black leading-none font-display">{property.developer}</span>
                   </div>
                 </div>
               )}
@@ -241,13 +215,13 @@ export default async function ApartmentDetailPage(props: Props) {
             </div>
 
             {/* Timeline / Status (Cleaned) */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-16">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 mb-16">
               <div className="flex flex-col">
                 <span className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-orange-500 font-bold mb-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
                   {property.status === 'off-plan' ? 'Under Construction' : property.status}
                 </span>
-                <p className="text-[12px] text-black/40 font-medium">RERA: {property.rera_number || 'Pending'}</p>
+                <p className="text-[14px] font-bold text-black font-display">Development</p>
               </div>
               <div>
                 <p className="text-[10px] uppercase tracking-widest text-black/35 mb-1.5 font-bold">RERA Deadline</p>
@@ -286,10 +260,19 @@ export default async function ApartmentDetailPage(props: Props) {
               </section>
             )}
 
-            {/* Highlights (Flat style matching s5.png) */}
+            {/* Project Highlights */}
             {(property.highlights?.length ?? 0) > 0 && (
               <section className="mb-16">
-                <h2 className="text-[22px] font-bold text-black mb-8">Off Plan Highlights</h2>
+                <div className="flex items-baseline justify-between mb-8">
+                  <h2 className="text-[22px] font-bold text-black font-display">Project Highlights</h2>
+                  {(property.tower_count || property.floor_count) && (
+                    <span className="text-[12px] text-black/40 font-medium">
+                      {property.tower_count ? `${property.tower_count} Towers` : ''}
+                      {property.tower_count && property.floor_count ? ' • ' : ''}
+                      {property.floor_count ? `${property.floor_count} Floors` : ''}
+                    </span>
+                  )}
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-5">
                   {property.highlights!.map((h) => (
                     <div key={h} className="flex items-start gap-4">
@@ -339,28 +322,7 @@ export default async function ApartmentDetailPage(props: Props) {
               </section>
             )}
 
-            {/* Technical Breakdown */}
-            <section className="mb-12">
-              <h2 className="text-[18px] font-bold text-black mb-5">Development Scale</h2>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                <div className="border border-black/8 rounded-xl p-4 text-center">
-                  <p className="text-[10px] uppercase text-black/35 font-bold mb-1">Towers</p>
-                  <p className="text-[18px] font-bold text-black">{property.tower_count || '—'}</p>
-                </div>
-                <div className="border border-black/8 rounded-xl p-4 text-center">
-                  <p className="text-[10px] uppercase text-black/35 font-bold mb-1">Floors</p>
-                  <p className="text-[18px] font-bold text-black">{property.floor_count || '—'}</p>
-                </div>
-                <div className="border border-black/8 rounded-xl p-4 text-center">
-                  <p className="text-[10px] uppercase text-black/35 font-bold mb-1">Total Units</p>
-                  <p className="text-[18px] font-bold text-black">{property.total_units || '—'}</p>
-                </div>
-                <div className="border border-black/8 rounded-xl p-4 text-center">
-                  <p className="text-[10px] uppercase text-black/35 font-bold mb-1">Area</p>
-                  <p className="text-[18px] font-bold text-black">{property.project_area_acres ? `${property.project_area_acres} Acres` : '—'}</p>
-                </div>
-              </div>
-            </section>
+            {/* Technical Breakdown removed - integrated into Highlights */}
 
             {/* Details */}
             {(property.type || property.building_name || (property.interior_features?.length ?? 0) > 0 || (property.features?.length ?? 0) > 0) && (
@@ -396,7 +358,7 @@ export default async function ApartmentDetailPage(props: Props) {
             {/* Amenities */}
             {(property.amenities?.length ?? 0) > 0 && (
               <section className="mb-10">
-                <h2 className="text-[18px] font-bold text-black mb-6">Amenities</h2>
+                <h2 className="text-[18px] font-bold text-black mb-6 font-display">Amenities</h2>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-4">
                   {property.amenities!.map((a) => (
                     <div key={a} className="flex items-center gap-2.5">
@@ -410,7 +372,7 @@ export default async function ApartmentDetailPage(props: Props) {
 
             {/* Overview */}
             <section className="mb-14">
-              <h2 className="text-[18px] font-bold text-black mb-6">Property Overview</h2>
+              <h2 className="text-[18px] font-bold text-black mb-6 font-display">Property Overview</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {/* 1. Payment Plan */}
                 {property.payment_plan && (
@@ -465,9 +427,9 @@ export default async function ApartmentDetailPage(props: Props) {
             {/* Map & Landmarks */}
             <section>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div>
-                  <h2 className="text-[18px] font-bold text-black mb-5">Location</h2>
-                  <div className="h-[300px] rounded-2xl overflow-hidden border border-black/8">
+                <div className="flex flex-col">
+                  <h2 className="text-[18px] font-bold text-black mb-5 font-display">Location</h2>
+                  <div className="flex-1 min-h-[300px] rounded-2xl overflow-hidden border border-black/8 shadow-sm">
                     {property.latitude && property.longitude ? (
                       <PropertyDetailMapClient
                         lat={property.latitude}
@@ -481,14 +443,17 @@ export default async function ApartmentDetailPage(props: Props) {
                 </div>
 
                 {property.nearby_landmarks && property.nearby_landmarks.length > 0 && (
-                  <div>
-                    <h2 className="text-[18px] font-bold text-black mb-5">Connectivity</h2>
-                    <div className="grid grid-cols-2 gap-4">
+                  <div className="flex flex-col">
+                    <h2 className="text-[18px] font-bold text-black mb-5 font-display">Connectivity</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-1">
                       {property.nearby_landmarks.map((lm) => (
-                        <div key={lm.name} className="bg-black/[0.02] p-4 rounded-xl">
-                          <p className="text-[11px] font-bold text-black/40 uppercase mb-1">{lm.name}</p>
-                          <p className="text-xl font-bold text-black">{lm.time} min</p>
-                          <p className="text-[9px] uppercase tracking-widest text-black/20 mt-1">{transportLabel(lm.transport)}</p>
+                        <div key={lm.name} className="bg-[#FBFBFB] border border-black/[0.03] rounded-2xl p-6 text-left hover:bg-white hover:shadow-md transition-all">
+                          <p className="text-[12px] font-bold text-black/40 uppercase mb-2 tracking-widest">{lm.name}</p>
+                          <div className="flex items-baseline gap-1">
+                            <p className="text-[32px] font-bold text-black leading-none font-display">{lm.time}</p>
+                            <p className="text-[12px] font-bold text-black/40">MIN</p>
+                          </div>
+                          <p className="text-[9px] uppercase tracking-[0.2em] text-black/20 mt-3 font-bold">{transportLabel(lm.transport)}</p>
                         </div>
                       ))}
                     </div>
@@ -496,6 +461,25 @@ export default async function ApartmentDetailPage(props: Props) {
                 )}
               </div>
             </section>
+
+            {/* ── INVESTMENT FAQ ───────────────────────────────── */}
+            {(property.faqs?.length ?? 0) > 0 && (
+              <section className="mt-14 pt-14 border-t border-black/5">
+                <h2 className="text-[22px] font-bold text-black mb-8 font-display">Investment FAQ</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                  {property.faqs!.map((faq, i) => (
+                    <div key={i} className="group">
+                      <h3 className="text-[16px] font-bold text-black mb-3 group-hover:text-orange-600 transition-colors leading-tight">
+                        {faq.question}
+                      </h3>
+                      <p className="text-black/60 text-[14px] leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
           </div>
 
           {/* ── RIGHT SIDEBAR ────────────────────────────── */}

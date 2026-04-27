@@ -121,6 +121,8 @@ export interface Property {
   // Upcoming infrastructure
   upcoming_infrastructure?: string[];
 
+  faqs?: Array<{ question: string; answer: string }>;
+
   created_at: string;
   updated_at: string;
 }

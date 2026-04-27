@@ -258,10 +258,19 @@ export default async function PropertyDetailPage(props: Props) {
               )}
             </div>
 
-            {/* Off Plan Highlights */}
+            {/* Project Highlights */}
             {(property.highlights?.length ?? 0) > 0 && (
               <section className="mb-12">
-                <h2 className="text-[20px] font-bold text-black mb-6 font-display">Property Highlights</h2>
+                <div className="flex items-baseline justify-between mb-6">
+                  <h2 className="text-[20px] font-bold text-black font-display">Project Highlights</h2>
+                  {(property.tower_count || property.floor_count) && (
+                    <span className="text-[12px] text-black/40 font-medium">
+                      {property.tower_count ? `${property.tower_count} Towers` : ''}
+                      {property.tower_count && property.floor_count ? ' • ' : ''}
+                      {property.floor_count ? `${property.floor_count} Floors` : ''}
+                    </span>
+                  )}
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {property.highlights!.map((h) => (
                     <div key={h} className="flex items-center gap-3 bg-black/[0.02] border border-black/5 rounded-xl p-4 transition-colors hover:bg-black/[0.04]">
@@ -466,7 +475,24 @@ export default async function PropertyDetailPage(props: Props) {
               </div>
             </section>
 
-            {/* ── UPCOMING INFRASTRUCTURE ─────────────────────── */}
+            {/* ── INVESTMENT FAQ ───────────────────────────────── */}
+            {(property.faqs?.length ?? 0) > 0 && (
+              <section className="mt-14 pt-14 border-t border-black/5">
+                <h2 className="text-[22px] font-bold text-black mb-8 font-display">Investment FAQ</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                  {property.faqs!.map((faq, i) => (
+                    <div key={i} className="group">
+                      <h3 className="text-[16px] font-bold text-black mb-3 group-hover:text-orange-600 transition-colors leading-tight">
+                        {faq.question}
+                      </h3>
+                      <p className="text-black/60 text-[14px] leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
             {(property.upcoming_infrastructure?.length ?? 0) > 0 && (
               <section className="mt-14 pt-14 border-t border-black/5">
                 <h2 className="text-[18px] font-bold text-black mb-8 font-display">Upcoming Infrastructure & Projects</h2>
