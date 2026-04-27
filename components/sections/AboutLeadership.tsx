@@ -18,7 +18,7 @@ export default function AboutLeadership() {
             className="w-full lg:w-[45%] h-[50vh] lg:h-[80vh] relative overflow-hidden shrink-0 rounded-lg"
           >
             <Image
-              src="/assets/images/about/ceo.png"
+              src="/assets/images/leadership/amritpal.jpg"
               alt="Amritpal Singh - Founder"
               fill
               className="object-cover object-top"

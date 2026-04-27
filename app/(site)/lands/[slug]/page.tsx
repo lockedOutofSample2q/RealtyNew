@@ -100,11 +100,14 @@ function transportLabel(t: NearbyLandmark["transport"]) {
   return { car: "BY CAR", walk: "BY WALK", metro: "BY METRO", bus: "BY BUS" }[t];
 }
 
+import { enrichProperty } from "@/lib/property-utils";
+
 export default async function LandDetailPage(props: Props) {
   const params = await props.params;
-  const property = await getProperty(params.slug);
-  if (!property) notFound();
+  const rawProperty = await getProperty(params.slug);
+  if (!rawProperty) notFound();
 
+  const property = enrichProperty(rawProperty);
   const related = await getRelatedProperties(property);
 
   const backHref = "/lands";
@@ -221,14 +224,29 @@ export default async function LandDetailPage(props: Props) {
                 </div>
 
                 {property.nearby_landmarks && property.nearby_landmarks.length > 0 && (
-                  <div>
-                    <h2 className="text-[18px] font-bold text-black mb-5">Connectivity</h2>
-                    <div className="grid grid-cols-2 gap-4">
-                      {property.nearby_landmarks.map((lm) => (
-                        <div key={lm.name} className="bg-black/[0.02] p-4 rounded-xl">
-                          <p className="text-[11px] font-bold text-black/40 uppercase mb-1">{lm.name}</p>
-                          <p className="text-xl font-bold text-black">{lm.time} min</p>
-                          <p className="text-[9px] uppercase tracking-widest text-black/20 mt-1">{transportLabel(lm.transport)}</p>
+                  <div className="flex flex-col">
+                    <h2 className="text-[18px] font-bold text-black mb-5 font-display">Nearby Landmarks</h2>
+                    <div className="grid grid-cols-2 lg:grid-cols-3 border border-black/5 rounded-2xl overflow-hidden bg-[#FBFBFB]">
+                      {property.nearby_landmarks.map((lm, i) => (
+                        <div key={lm.name} className={cn(
+                          "p-6 text-left border-black/5 transition-all hover:bg-white group",
+                          i % 3 !== 2 ? "lg:border-r" : "",
+                          i < 3 ? "lg:border-b" : "",
+                          i % 2 !== 1 ? "max-lg:border-r" : "",
+                          i < 4 ? "max-lg:border-b" : ""
+                        )}>
+                          <p className="text-[12px] font-medium text-black/50 mb-3 group-hover:text-black transition-colors leading-tight min-h-[32px]">
+                            {lm.name}
+                          </p>
+                          <div className="flex items-baseline gap-1 mb-2">
+                            <p className="text-[32px] font-bold text-black leading-none font-display tabular-nums">
+                              {lm.time}
+                            </p>
+                            <p className="text-[12px] font-bold text-black">min</p>
+                          </div>
+                          <p className="text-[10px] uppercase tracking-[0.1em] text-black/30 font-bold">
+                            BY {lm.transport.toUpperCase()}
+                          </p>
                         </div>
                       ))}
                     </div>
@@ -236,6 +254,25 @@ export default async function LandDetailPage(props: Props) {
                 )}
               </div>
             </section>
+
+            {/* ── FAQs ─────────────────────────────────────── */}
+            {property.faqs && property.faqs.length > 0 && (
+              <section className="mt-14 pt-14 border-t border-black/5">
+                <h2 className="text-[22px] font-bold text-black mb-8 font-display">Investment FAQ</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+                  {property.faqs.map((faq, i) => (
+                    <div key={i} className="group">
+                      <h3 className="text-[16px] font-bold text-black mb-3 group-hover:text-orange-600 transition-colors leading-tight">
+                        {faq.question}
+                      </h3>
+                      <p className="text-[14px] text-black/60 leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
           </div>
 
           {/* ── RIGHT SIDEBAR ────────────────────────────── */}
