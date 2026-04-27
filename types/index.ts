@@ -59,6 +59,8 @@ export interface Property {
   rera_number?: string;
   completion_date?: string;
   handover_date?: string;
+  price_sqft_min?: number;
+  price_sqft_max?: number;
   tower_count?: number;
   floor_count?: number;
   total_units?: number;
