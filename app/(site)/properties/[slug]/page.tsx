@@ -121,11 +121,14 @@ function PaymentBar({ pct }: { pct: number }) {
   );
 }
 
+import { enrichProperty } from "@/lib/property-utils";
+
 export default async function PropertyDetailPage(props: Props) {
   const params = await props.params;
-  const property = await getProperty(params.slug);
-  if (!property) notFound();
+  const rawProperty = await getProperty(params.slug);
+  if (!rawProperty) notFound();
 
+  const property = enrichProperty(rawProperty);
   const related = await getRelatedProperties(property);
 
   const backHref = property.listing_type === "lands" ? "/lands" : "/properties";
@@ -458,15 +461,17 @@ export default async function PropertyDetailPage(props: Props) {
                 </div>
 
                 {/* Nearby Landmarks */}
-                {(property.nearby_landmarks?.length ?? 0) > 0 && (
+                {property.nearby_landmarks && property.nearby_landmarks.length > 0 && (
                   <div className="flex flex-col">
                     <h2 className="text-[18px] font-bold text-black mb-5 font-display">Nearby Landmarks</h2>
-                    <div className="grid grid-cols-2 lg:grid-cols-2 border border-black/5 rounded-[24px] overflow-hidden bg-[#FBFBFB] flex-1">
-                      {property.nearby_landmarks!.map((lm, i) => (
+                    <div className="grid grid-cols-2 lg:grid-cols-3 border border-black/5 rounded-2xl overflow-hidden bg-[#FBFBFB]">
+                      {property.nearby_landmarks.map((lm, i) => (
                         <div key={lm.name} className={cn(
                           "p-6 text-left border-black/5 transition-all hover:bg-white group",
-                          i % 2 === 0 ? "border-r" : "",
-                          i < property.nearby_landmarks!.length - (property.nearby_landmarks!.length % 2 === 0 ? 2 : 1) ? "border-b" : ""
+                          i % 3 !== 2 ? "lg:border-r" : "",
+                          i < 3 ? "lg:border-b" : "",
+                          i % 2 !== 1 ? "max-lg:border-r" : "",
+                          i < 4 ? "max-lg:border-b" : ""
                         )}>
                           <p className="text-[12px] font-medium text-black/50 mb-3 group-hover:text-black transition-colors leading-tight min-h-[32px]">
                             {lm.name}
