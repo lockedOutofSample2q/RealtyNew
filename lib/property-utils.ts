@@ -13,13 +13,6 @@ export function enrichProperty(property: Property): Property {
   try {
     const metadata = JSON.parse(metadataMatch[1]);
     
-    // Merge metadata only if native fields are missing
-    const enriched = {
-      ...property,
-      price_max: property.price_max || metadata.price_max,
-      area_sqft_max: property.area_sqft_max || metadata.area_sqft_max,
-      bedrooms_max: property.bedrooms_max || metadata.bedrooms_max,
-      address: property.address || metadata.address,
     // Strip metadata from description
     let cleanDescription = property.description.replace(/\[METADATA\].*?\[\/METADATA\]/, '').trim();
     
