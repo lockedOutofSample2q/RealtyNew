@@ -265,7 +265,15 @@ export default async function GenericDetailPage(props: Props) {
                 <PriceDisplay price={property.price} price_max={property.price_max} listingLabel={listingLabel} />
                 <div className="p-6 border-b border-black/5">
                   <p className="text-sm font-bold text-black mb-4 font-display">Inquire About This Property</p>
-                  <InquiryForm propertyId={property.id} propertyTitle={property.title} entityType={property.entity_type as any} />
+                  <InquiryForm 
+                    propertyId={property.id} 
+                    propertyTitle={property.title} 
+                    entityType={
+                      property.entity_type === 'apartment' ? 'apartment' :
+                      property.entity_type === 'house' ? 'house' :
+                      'land'
+                    } 
+                  />
                 </div>
                 <div className="p-6">
                   <p className="text-[10px] font-bold uppercase tracking-widest text-black/35 mb-4">Assigned Advisor</p>

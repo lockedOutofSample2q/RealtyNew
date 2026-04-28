@@ -238,7 +238,7 @@ export default async function LandDetailPage(props: Props) {
                 <PriceDisplay price={property.price} price_max={property.price_max} listingLabel={listingLabel} />
                 <div className="p-6 border-b border-black/5">
                   <p className="text-sm font-bold text-black mb-4 font-display">Inquire About This Land</p>
-                  <InquiryForm propertyId={property.id} propertyTitle={property.title} entityType="lands" />
+                  <InquiryForm propertyId={property.id} propertyTitle={property.title} entityType="land" />
                 </div>
                 <div className="p-6">
                   <p className="text-[10px] font-bold uppercase tracking-widest text-black/35 mb-4">Assigned Advisor</p>
