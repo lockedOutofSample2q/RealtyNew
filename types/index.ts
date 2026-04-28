@@ -81,6 +81,7 @@ export interface Property {
   payment_plan_notes?: string;
   furnishing: "furnished" | "unfurnished" | "semi-furnished";
   description: string;
+  meta_description?: string;
   features: string[];
   images: string[];
   featured_sections?: string[];
