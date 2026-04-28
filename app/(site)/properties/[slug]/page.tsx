@@ -105,7 +105,6 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     description: p.meta_description || p.description?.slice(0, 160),
     openGraph: { images: p.images?.[0] ? [{ url: p.images[0] }] : [] },
     twitter: { card: 'summary_large_image', images: p.images?.[0] ? [p.images[0]] : [] },
-    icons: { icon: p.images?.[0] || '/favicon.ico', apple: p.images?.[0] || '/favicon.ico' },
     other: {
       thumbnail: p.images?.[0] || '/favicon.ico'
     }
