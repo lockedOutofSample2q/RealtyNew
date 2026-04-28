@@ -87,7 +87,7 @@ export default async function GenericDetailPage(props: Props) {
 
   const backHref = "/properties";
   const backLabel = "Properties";
-  const listingLabel = property.entity_type === 'lands' ? 'Land For Sale' : 'Property For Sale';
+  const listingLabel = property.entity_type === 'land' ? 'Land For Sale' : 'Property For Sale';
 
   return (
     <>
