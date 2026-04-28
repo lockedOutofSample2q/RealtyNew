@@ -117,8 +117,33 @@ export default async function ApartmentDetailPage(props: Props) {
 
   const price = property.price;
 
+  
+  // Generate FAQ Schema
+  let faqSchema = null;
+  if ((property.faqs?.length ?? 0) > 0) {
+    faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": property.faqs!.map((faq) => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    };
+  }
+
   return (
-    <div className="bg-white min-h-screen pt-[var(--nav-height)]">
+    <>
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+    <main className="bg-white min-h-screen pt-[var(--nav-height)]">
 
       {/* ── Breadcrumb ──────────────────────────────────── */}
       <div className="border-b border-black/6">
@@ -149,7 +174,7 @@ export default async function ApartmentDetailPage(props: Props) {
       </div>
 
       {/* ── Content ─────────────────────────────────────── */}
-      <div className="container-site pb-24">
+      <article className="container-site pb-24">
         {/* Address */}
         {property.address && (
           <p className="text-[12px] text-black/40 mb-4 flex items-center gap-1">
@@ -546,7 +571,8 @@ export default async function ApartmentDetailPage(props: Props) {
             </div>
           </section>
         )}
-      </div>
-    </div>
+      </article>
+    </main>
+    </>
   );
 }

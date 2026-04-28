@@ -97,7 +97,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const p = await getProperty(params.slug);
   if (!p) return {};
   return {
-    title: `${p.title} | Monte Real Estate`,
+    title: `${p.title} | Realty Holding and Management Consultants`,
     description: p.description?.slice(0, 160),
     openGraph: { images: p.images?.[0] ? [{ url: p.images[0] }] : [] },
   };
@@ -144,8 +144,33 @@ export default async function PropertyDetailPage(props: Props) {
 
   const price = property.price;
 
+  
+  // Generate FAQ Schema
+  let faqSchema = null;
+  if ((property.faqs?.length ?? 0) > 0) {
+    faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": property.faqs!.map((faq) => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    };
+  }
+
   return (
-    <div className="bg-white min-h-screen pt-[var(--nav-height)]">
+    <>
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+    <main className="bg-white min-h-screen pt-[var(--nav-height)]">
 
       {/* ── Breadcrumb ──────────────────────────────────── */}
       <div className="border-b border-black/6">
@@ -176,7 +201,7 @@ export default async function PropertyDetailPage(props: Props) {
       </div>
 
       {/* ── Content ─────────────────────────────────────── */}
-      <div className="container-site pb-24">
+      <article className="container-site pb-24">
         {/* Address */}
         {property.address && (
           <p className="text-[12px] text-black/40 mb-4 flex items-center gap-1">
@@ -645,7 +670,8 @@ export default async function PropertyDetailPage(props: Props) {
           </section>
         )}
 
-      </div>
-    </div>
+      </article>
+    </main>
+    </>
   );
 }

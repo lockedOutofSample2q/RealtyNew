@@ -439,7 +439,7 @@ export default async function PropertyDetailPage(props: Props) {
               <div className="p-5 border-b border-black/8">
                 <div className="flex items-center justify-between mb-3">
                   <p className="text-[10px] font-semibold uppercase tracking-widest text-black/35">Contact Agent</p>
-                  <p className="text-[9px] uppercase tracking-widest text-black/25">Monte Real Estate</p>
+                  <p className="text-[9px] uppercase tracking-widest text-black/25">Realty Holding and Management Consultants</p>
                 </div>
                 {property.agent_name && (
                   <div className="flex items-start gap-3">
