@@ -75,10 +75,19 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;
   const p = await getProperty(params.slug);
   if (!p) return {};
+  
+  // Strip any existing brand names from the DB title so they don't get double-appended
+  const cleanTitle = p.title.replace(/\s*\|\s*Monte Real Estate/gi, '').replace(/\s*\|\s*Realty Holding and Management Consultants/gi, '');
+
   return {
-    title: `${p.title} | Lands & Plots in Mohali`,
+    title: cleanTitle,
     description: p.description?.slice(0, 160),
     openGraph: { images: p.images?.[0] ? [{ url: p.images[0] }] : [] },
+    twitter: { card: 'summary_large_image', images: p.images?.[0] ? [p.images[0]] : [] },
+    icons: { icon: p.images?.[0] || '/favicon.ico', apple: p.images?.[0] || '/favicon.ico' },
+    other: {
+      thumbnail: p.images?.[0] || '/favicon.ico'
+    }
   };
 }
 
@@ -138,8 +147,8 @@ export default async function LandDetailPage(props: Props) {
   return (
     <>
       {faqSchema && (
-        <script
-          type="application/ld+json"
+        <meta name="thumbnail" content={property.images?.[0] || "/favicon.ico"} />
+        <script type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
