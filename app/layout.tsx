@@ -9,6 +9,7 @@ import { Toaster } from "sonner";
 import "@/styles/globals.css";
 import { seoDefaults, siteConfig } from "@/config/site";
 import { Cormorant_Garamond, DM_Sans, DM_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -75,6 +76,7 @@ export default function RootLayout({
             },
           }}
         />
+        <Analytics />
       </body>
     </html>
   );
