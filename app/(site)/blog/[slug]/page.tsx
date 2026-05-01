@@ -8,9 +8,9 @@ import MdxContent from "@/components/blog/MdxContent";
 import { siteConfig } from "@/config/site";
 
 interface PostPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: PostPageProps) {
