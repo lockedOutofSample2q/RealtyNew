@@ -17,29 +17,39 @@ export const revalidate = 60;
 async function getProperties(): Promise<Property[]> {
   try {
     const supabase = createAdminClient();
-    const { data, error } = await supabase
-      .from("properties")
-      .select("*")
-      .order("featured", { ascending: false })
-      .order("created_at", { ascending: false });
     
-    if (error) {
-      console.error("Properties Fetch Error:", error);
-      return [];
-    }
+    // Fetch from all three tables
+    const [apartmentsRes, housesRes, landsRes] = await Promise.all([
+      supabase.from("apartments").select("*"),
+      supabase.from("houses").select("*"),
+      supabase.from("lands").select("*")
+    ]);
+
+    const apartments = (apartmentsRes.data ?? []).map(p => enrichProperty({ ...p, entity_type: 'apartment' }));
+    const houses = (housesRes.data ?? []).map(p => enrichProperty({ ...p, entity_type: 'house' }));
+    const lands = (landsRes.data ?? []).map(p => enrichProperty({ ...p, entity_type: 'land' }));
+
+    // Combine and sort by featured and created_at
+    const all = [...apartments, ...houses, ...lands] as Property[];
     
-    return (data ?? []).map(enrichProperty) as Property[];
+    return all.sort((a, b) => {
+      if (a.featured !== b.featured) return a.featured ? -1 : 1;
+      return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+    });
   } catch (err) {
-    console.error("Properties Runtime Error:", err);
+    console.error("Properties Fetch Error:", err);
     return [];
   }
 }
 
-export default async function PropertiesPage() {
+export default async function PropertiesPage({ searchParams }: { searchParams: Promise<{ tab?: string }> }) {
+  const params = await searchParams;
   const properties = await getProperties();
+  const initialTab = (params.tab as any) || "apartments";
+  
   return (
     <Suspense fallback={null}>
-      <PropertiesClient properties={properties} />
+      <PropertiesClient properties={properties} initialTab={initialTab} />
     </Suspense>
   );
 }

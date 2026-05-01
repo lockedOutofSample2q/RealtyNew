@@ -5,13 +5,21 @@ import type { Property } from "@/types";
 interface PropertiesGridProps {
   properties: Property[];
   onResetFilters: () => void;
+  hoveredId?: string | null;
+  onHover?: (id: string | null) => void;
 }
 
-export function PropertiesGrid({ properties, onResetFilters }: PropertiesGridProps) {
+export function PropertiesGrid({ properties, onResetFilters, hoveredId, onHover }: PropertiesGridProps) {
   return (
     <div className="order-2 md:order-1 w-full md:w-[58%] p-4 md:p-6 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5 content-start">
       {properties.map((p) => (
-        <PropertyCard key={p.id} property={p} variant="image-bg" />
+        <PropertyCard 
+          key={p.id} 
+          property={p} 
+          variant="image-bg" 
+          isHovered={hoveredId === p.id}
+          onHover={(isHovering) => onHover?.(isHovering ? p.id : null)}
+        />
       ))}
       {properties.length === 0 && (
         <div className="col-span-1 sm:col-span-2 py-24 text-center">

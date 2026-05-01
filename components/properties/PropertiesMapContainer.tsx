@@ -14,12 +14,22 @@ const PropertiesMap = dynamic(() => import("@/components/ui/PropertiesMap"), {
 interface PropertiesMapContainerProps {
   properties: Property[];
   leafletReady: boolean;
+  onPropertyClick?: (p: Property) => void;
+  hoveredId?: string | null;
+  onHover?: (id: string | null) => void;
 }
 
-export function PropertiesMapContainer({ properties, leafletReady }: PropertiesMapContainerProps) {
+export function PropertiesMapContainer({ properties, leafletReady, onPropertyClick, hoveredId, onHover }: PropertiesMapContainerProps) {
   return (
     <div className="order-1 md:order-2 w-full md:w-[45%] h-[50vh] md:h-[94vh] md:sticky md:top-[3vh] self-start shrink-0 z-0 relative p-4 md:pl-0 md:pr-6">
-      {leafletReady && <PropertiesMap properties={properties} />}
+      {leafletReady && (
+        <PropertiesMap 
+          properties={properties} 
+          onPropertyClick={onPropertyClick} 
+          hoveredId={hoveredId}
+          onHover={onHover}
+        />
+      )}
     </div>
   );
 }

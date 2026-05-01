@@ -44,7 +44,17 @@ function MapResizer() {
   return null;
 }
 
-export default function PropertiesMap({ properties }: { properties: Property[] }) {
+export default function PropertiesMap({ 
+  properties, 
+  onPropertyClick, 
+  hoveredId, 
+  onHover 
+}: { 
+  properties: Property[], 
+  onPropertyClick?: (p: Property) => void,
+  hoveredId?: string | null,
+  onHover?: (id: string | null) => void
+}) {
   const { formatPrice } = useCurrency();
   const [isMounted, setIsMounted] = useState(false);
 
@@ -57,7 +67,7 @@ export default function PropertiesMap({ properties }: { properties: Property[] }
   if (!isMounted) return null;
 
   return (
-    <div className="w-full h-full rounded-[40px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-black/5">
+    <div className="w-full h-full rounded-[40px] overflow-hidden border border-black/5">
       <MapContainer
         id={mapId}
         center={DEFAULT_CENTER}
@@ -74,32 +84,58 @@ export default function PropertiesMap({ properties }: { properties: Property[] }
         <MapResizer />
 
         {properties.map((p) => {
+          const isHovered = hoveredId === p.id;
           const position: [number, number] = (p.latitude && p.longitude)
             ? [p.latitude, p.longitude]
             : (COMMUNITY_COORDS[p.community] || DEFAULT_CENTER);
 
-          // Create a custom black circle icon
+          // Create a custom icon that changes based on hover
+          const iconColor = isHovered ? '#ef4444' : 'black'; // Red if hovered, black otherwise
+          const iconScale = isHovered ? 'scale(1.3)' : 'scale(1)';
+          
           const customIcon = L.divIcon({
             className: 'custom-div-icon',
-            html: `<div style="background-color: black; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; items-center; justify-content: center; font-size: 10px; font-weight: bold; border: 2px solid white; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">1</div>`,
+            html: `<div style="background-color: ${iconColor}; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: bold; border: 2px solid white; transition: all 0.3s ease; transform: ${iconScale}; z-index: ${isHovered ? 1000 : 1};">1</div>`,
             iconSize: [32, 32],
             iconAnchor: [16, 16],
           });
 
           return (
-            <Marker key={p.id} position={position} icon={customIcon}>
+            <Marker 
+              key={p.id} 
+              position={position} 
+              icon={customIcon}
+              eventHandlers={{
+                mouseover: () => onHover?.(p.id),
+                mouseout: () => onHover?.(null),
+              }}
+            >
               <Popup className="property-popup">
                 <div className="p-1 min-w-[180px]">
+                  {p.images?.[0] && (
+                    <div className="relative w-full h-24 mb-3 rounded-lg overflow-hidden">
+                      <img src={p.images[0]} alt={p.title} className="object-cover w-full h-full" />
+                    </div>
+                  )}
                   <h4 className="font-display font-bold text-sm mb-1 leading-tight">{p.title}</h4>
                   <p className="text-[11px] text-gray-500 mb-2">{p.community}</p>
                   <div className="flex items-center justify-between gap-4 border-t border-gray-100 pt-2">
                     <span className="font-body font-bold text-xs">{formatPrice(p.price)}</span>
-                    <Link
-                      href={`/properties/${p.slug}`}
-                      className="text-[10px] font-bold text-blue-600 hover:underline uppercase tracking-wider"
-                    >
-                      Details
-                    </Link>
+                    {onPropertyClick ? (
+                      <button
+                        onClick={() => onPropertyClick(p)}
+                        className="text-[10px] font-bold text-black hover:underline uppercase tracking-wider text-right"
+                      >
+                        Enquire
+                      </button>
+                    ) : (
+                      <Link
+                        href={`/properties/${p.slug}`}
+                        className="text-[10px] font-bold text-blue-600 hover:underline uppercase tracking-wider"
+                      >
+                        Details
+                      </Link>
+                    )}
                   </div>
                 </div>
               </Popup>

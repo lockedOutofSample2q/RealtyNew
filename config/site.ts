@@ -42,8 +42,8 @@ export const navItems: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "Properties", href: "/properties" },
   { label: "Blog", href: "/blog" },
-  { 
-    label: "Tools", 
+  {
+    label: "Tools",
     href: "/tools",
     children: [
       { label: "Mortgage Calculator", href: "/tools/mortgage-calculator" },
@@ -65,7 +65,7 @@ export const footerLinks = {
     { label: "Properties", href: "/properties" },
     { label: "Apartments", href: "/apartments" },
     { label: "Houses", href: "/houses" },
-    { label: "Lands", href: "/lands" },
+    { label: "Lands", href: "/properties?tab=lands" },
     { label: "Relocation Services", href: "/relocation" },
     { label: "Market Blog", href: "/blog" },
   ],
@@ -88,7 +88,7 @@ export const footerLinks = {
 export const heroContent = {
   headline: "Find Your Place\nin Mohali",
   subline:
-    "Off-market investments and luxury assets, curated for those who know exactly what they want.",
+    "Mohali real estate Investments and Luxury assets, curated for those who know exactly what they want.",
   ctaPrimary: { label: "Explore Properties", href: "/properties" },
   ctaSecondary: { label: "Talk to an Advisor", href: "/contact" },
   // Background image (place in /public/images/hero.jpg or use Supabase URL)

@@ -11,9 +11,17 @@ interface PropertyCardProps {
   property: Property;
   className?: string;
   variant?: "standard" | "image-bg";
+  isHovered?: boolean;
+  onHover?: (isHovering: boolean) => void;
 }
 
-export default function PropertyCard({ property, className, variant = "standard" }: PropertyCardProps) {
+export default function PropertyCard({ 
+  property, 
+  className, 
+  variant = "standard",
+  isHovered,
+  onHover 
+}: PropertyCardProps) {
   const { formatPrice } = useCurrency();
   const image = property.images?.[0] ?? "/assets/images/home/about.jpg";
   const isLands = property.listing_type === "lands" || property.entity_type === "land";
@@ -93,8 +101,11 @@ export default function PropertyCard({ property, className, variant = "standard"
   return (
     <Link
       href={detailHref}
+      onMouseEnter={() => onHover?.(true)}
+      onMouseLeave={() => onHover?.(false)}
       className={cn(
-        "group flex flex-col bg-white rounded-xl overflow-hidden border border-border shadow-subtle hover:shadow-hover transition-all duration-500",
+        "group flex flex-col bg-white rounded-xl overflow-hidden border border-border transition-all duration-500",
+        isHovered && "ring-2 ring-black ring-offset-2 scale-[1.02] z-10",
         className
       )}
     >
@@ -108,7 +119,7 @@ export default function PropertyCard({ property, className, variant = "standard"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
           quality={90}
         />
-        <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full shadow-subtle">
+        <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-border">
           <span className="font-body text-xs uppercase tracking-widest text-charcoal font-bold">
             {isLands ? "Rent" : "Buy"}
           </span>
