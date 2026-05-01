@@ -70,7 +70,7 @@ export default function PropertiesMap({ properties }: { properties: Property[] }
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
           url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
         />
-        <ZoomControl position="topright" />
+        <ZoomControl position="topleft" />
         <MapResizer />
 
         {properties.map((p) => {
