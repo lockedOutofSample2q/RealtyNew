@@ -206,7 +206,7 @@ export default function ContactClient() {
                 </div>
               </Link>
               <Link
-                href="/mortgage-calculator"
+                href="/tools/mortgage-calculator"
                 className="group flex items-center justify-between p-6 bg-[#F8F8F8] hover:bg-black hover:text-white rounded-2xl transition-colors duration-300"
               >
                 <div>

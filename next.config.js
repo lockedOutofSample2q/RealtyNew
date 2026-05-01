@@ -73,8 +73,11 @@ const nextConfig = {
   // ── Redirects ────────────────────────────────────────────
   async redirects() {
     return [
-      // Keep old URLs working if migrating
-      // { source: '/properties', destination: '/off-plan', permanent: true },
+      {
+        source: "/mortgage-calculator",
+        destination: "/tools/mortgage-calculator",
+        permanent: true,
+      },
     ];
   },
 };

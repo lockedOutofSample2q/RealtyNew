@@ -46,7 +46,7 @@ export const navItems: NavItem[] = [
     label: "Tools", 
     href: "/tools",
     children: [
-      { label: "EMI Calculator", href: "/mortgage-calculator" },
+      { label: "EMI Calculator", href: "/tools/mortgage-calculator" },
       { label: "Price Trends", href: "/tools/price-trend" },
       { label: "Loan Eligibility", href: "/tools/loan-eligibility" },
     ]
@@ -68,7 +68,7 @@ export const footerLinks = {
     { label: "Market Blog", href: "/blog" },
   ],
   tools: [
-    { label: "EMI Calculator", href: "/mortgage-calculator" },
+    { label: "EMI Calculator", href: "/tools/mortgage-calculator" },
     { label: "Price Trends", href: "/tools/price-trend" },
     { label: "Loan Eligibility", href: "/tools/loan-eligibility" },
     { label: "Sector Maps", href: "/properties" },

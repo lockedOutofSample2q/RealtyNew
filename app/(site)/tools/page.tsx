@@ -11,7 +11,7 @@ const tools = [
   {
     title: "EMI / Home Loan Calculator",
     description: "Plan your investment with our easy-to-use mortgage calculator.",
-    href: "/mortgage-calculator",
+    href: "/tools/mortgage-calculator",
     icon: Calculator,
   },
   {
