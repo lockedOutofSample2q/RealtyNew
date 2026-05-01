@@ -13,6 +13,9 @@ import AboutLeadership from "@/components/sections/AboutLeadership";
 export const metadata = {
   title: "About | The Background No Other Advisor in Mohali Can Claim",
   description: "Amritpal Singh brings over 10 years of experience across every side of the real estate transaction in Mohali.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 export default function AboutPage() {

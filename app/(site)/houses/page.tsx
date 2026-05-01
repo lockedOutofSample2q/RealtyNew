@@ -8,6 +8,9 @@ import { enrichProperty } from "@/lib/property-utils";
 export const metadata: Metadata = {
   title: "Villas & Houses in Mohali | Realty Holding & Management Consultants",
   description: "Browse premium villas and houses for sale in Mohali. Independent homes in gated communities and prime sectors.",
+  alternates: {
+    canonical: "/houses",
+  },
 };
 
 export const revalidate = 60;

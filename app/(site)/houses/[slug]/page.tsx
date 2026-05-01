@@ -72,7 +72,10 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   return {
     title: { absolute: cleanTitle },
     description: p.meta_description || p.description?.slice(0, 160),
-    other: { thumbnail: p.images?.[0] || '/favicon.ico' }
+    other: { thumbnail: p.images?.[0] || '/favicon.ico' },
+    alternates: {
+      canonical: `/properties/${p.slug}`,
+    }
   };
 }
 

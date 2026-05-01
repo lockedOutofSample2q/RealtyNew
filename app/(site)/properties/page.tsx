@@ -10,6 +10,9 @@ import { enrichProperty } from "@/lib/property-utils";
 export const metadata: Metadata = {
   title: propertiesPage.metadata.title,
   description: propertiesPage.metadata.description,
+  alternates: {
+    canonical: "/properties",
+  },
 };
 
 export const revalidate = 60;

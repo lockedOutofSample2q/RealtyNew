@@ -82,6 +82,9 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     description: p.meta_description || p.description?.slice(0, 160),
     other: {
       thumbnail: p.images?.[0] || '/favicon.ico'
+    },
+    alternates: {
+      canonical: `/properties/${p.slug}`,
     }
   };
 }

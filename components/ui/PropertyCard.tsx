@@ -27,10 +27,7 @@ export default function PropertyCard({
   const isLands = property.listing_type === "lands" || property.entity_type === "land";
   
   // Determine link path
-  const detailHref = property.entity_type === "apartment" ? `/apartments/${property.slug}` :
-                   property.entity_type === "house" ? `/houses/${property.slug}` :
-                   (property.entity_type === "land" || property.entity_type === "lands") ? `/lands/${property.slug}` :
-                   `/properties/${property.slug}`;
+  const detailHref = `/properties/${property.slug}`;
 
   if (variant === "image-bg") {
     return (
