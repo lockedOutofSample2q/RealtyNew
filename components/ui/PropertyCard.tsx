@@ -13,6 +13,7 @@ interface PropertyCardProps {
   variant?: "standard" | "image-bg";
   isHovered?: boolean;
   onHover?: (isHovering: boolean) => void;
+  customHref?: string;
 }
 
 export default function PropertyCard({ 
@@ -20,14 +21,15 @@ export default function PropertyCard({
   className, 
   variant = "standard",
   isHovered,
-  onHover 
+  onHover,
+  customHref
 }: PropertyCardProps) {
   const { formatPrice } = useCurrency();
   const image = property.images?.[0] ?? "/assets/images/home/about.jpg";
   const isLands = property.listing_type === "lands" || property.entity_type === "land";
   
   // Determine link path
-  const detailHref = `/properties/${property.slug}`;
+  const detailHref = customHref ?? `/properties/${property.slug}`;
 
   if (variant === "image-bg") {
     return (

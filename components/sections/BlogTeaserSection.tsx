@@ -2,25 +2,15 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const posts = [
   {
     title: "Why Your Mohali Real Estate Strategy Is Already Outdated: The Vision Premium of 2026",
     category: "Investment Strategy",
     date: "May 01, 2026",
-    href: "/blog/mohali-real-estate-investment-strategy-2026"
-  },
-  {
-    title: "Commercial Property: Airport Road vs Aerocity",
-    category: "Investment Advisory",
-    date: "April 10, 2026",
-    href: "/blog"
-  },
-  {
-    title: "RERA Punjab: A Guide for NRI Buyers",
-    category: "Legal & Compliance",
-    date: "April 05, 2026",
-    href: "/blog"
+    href: "/blog/mohali-real-estate-investment-strategy-2026",
+    image: "/assets/images/blog/holographic-2026-mohali-master-plan-realty-holding-management-consultants.webp"
   }
 ];
 
@@ -56,7 +46,13 @@ export default function BlogTeaserSection() {
             >
               <Link href={post.href} className="group block">
                 <div className="aspect-video rounded-[24px] bg-black/5 mb-6 overflow-hidden relative">
-                   <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/5 transition-colors" />
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/5 transition-colors" />
                 </div>
                 <p className="font-body text-[10px] font-bold uppercase tracking-widest text-black/40 mb-3">
                   {post.category} • {post.date}
