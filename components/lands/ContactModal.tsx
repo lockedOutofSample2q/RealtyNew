@@ -23,6 +23,8 @@ export default function ContactModal({ property, isOpen, onClose }: ContactModal
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
+    if (!property) return;
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -103,7 +105,7 @@ export default function ContactModal({ property, isOpen, onClose }: ContactModal
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-black text-white py-4 rounded-xl font-body font-medium text-sm flex items-center justify-center gap-2 hover:bg-charcoal transition-all shadow-lg shadow-black/10 disabled:opacity-50"
+                className="w-full bg-black text-white py-4 rounded-xl font-body font-medium text-sm flex items-center justify-center gap-2 hover:bg-charcoal transition-all disabled:opacity-50"
               >
                 {loading ? "Sending..." : "Submit Interest"}
                 {!loading && <Send size={14} />}
