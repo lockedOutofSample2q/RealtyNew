@@ -41,7 +41,7 @@ const LOGOS = [
 
 export default function HeroSection() {
   const router = useRouter();
-  const [tab, setTab] = useState<SearchTab>("apartments");
+  const [tab, setTab] = useState<SearchTab>("flats");
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [filters, setFilters] = useState(DEFAULT_PROPERTY_FILTERS);
 
@@ -192,15 +192,15 @@ export default function HeroSection() {
                 </div>
 
                 <div className="flex bg-white rounded-2xl p-1 mb-8 shadow-sm">
-                  {(["apartments", "houses", "lands"] as const).map((t) => (
+                  {([ "flats", "houses", "lands" ] as const).map((t) => (
                     <button
                       key={t}
                       onClick={() => setTab(t)}
-                      className={`flex-1 py-3.5 text-sm font-semibold rounded-xl transition-all ${
+                      className={`relative flex-1 py-3.5 text-sm font-semibold rounded-xl transition-all ${
                         tab === t ? "bg-black text-white shadow-lg" : "text-black/40"
                       }`}
                     >
-                      {t.charAt(0).toUpperCase() + t.slice(1)}
+                      {t === "flats" ? "Flats" : t === "houses" ? "Houses" : "Lands"}
                     </button>
                   ))}
                 </div>

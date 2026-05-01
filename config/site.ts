@@ -24,7 +24,7 @@ export const siteConfig: SiteConfig = {
     phone: "+91 7814613916",
     whatsapp: "+917814613916",
     email: "hello@realtyconsultants.in",
-    address: "E328 Industrial area phase 8A, Mohali, Punjab",
+    address: "Phase 8A, E328, Industrial Area, Sector 75, Sahibzada Ajit Singh Nagar, Punjab 160055",
     mapUrl: "https://maps.app.goo.gl/KzAE7k1HB1RKPkHE6",
   },
 
@@ -63,7 +63,7 @@ export const navItems: NavItem[] = [
 export const footerLinks = {
   quick: [
     { label: "Properties", href: "/properties" },
-    { label: "Apartments", href: "/apartments" },
+    { label: "Flats", href: "/apartments" },
     { label: "Houses", href: "/houses" },
     { label: "Lands", href: "/properties?tab=lands" },
     { label: "Market Blog", href: "/blog" },
@@ -170,7 +170,7 @@ export const faqs = [
   },
   {
     question: "What returns can I realistically expect from Mohali real estate?",
-    answer: "In growth corridors like E328 Industrial area phase 8A, the Airport Road commercial belt, and the Bharatmala-linked industrial zones near Rajpura, appreciation has been significant. Commercial units on Airport Road that were available at ₹3–4 crore some years ago now trade at ₹12–16 crore. Industrial land purchased at ₹18.70 lakh per vigha was valued at ₹45 lakh per vigha six months later. But these outcomes came from buying before the infrastructure was visible. Not after. I will tell you where the next vision corridor is, and I will tell you when I think a market is overpriced. Both equally."
+    answer: "In growth corridors like Phase 8A, E328, Industrial Area, Sector 75, Sahibzada Ajit Singh Nagar, Punjab 160055, the Airport Road commercial belt, and the Bharatmala-linked industrial zones near Rajpura, appreciation has been significant. Commercial units on Airport Road that were available at ₹3–4 crore some years ago now trade at ₹12–16 crore. Industrial land purchased at ₹18.70 lakh per vigha was valued at ₹45 lakh per vigha six months later. But these outcomes came from buying before the infrastructure was visible. Not after. I will tell you where the next vision corridor is, and I will tell you when I think a market is overpriced. Both equally."
   }
 ];
 

@@ -33,7 +33,7 @@ const LOCATIONS = [
   "MBR City",
 ];
 
-const PROPERTY_TYPES = ["All Types", "Apartment", "Villa", "Penthouse", "Townhouse", "Studio"];
+const PROPERTY_TYPES = ["All Types", "Flat", "Villa", "Penthouse", "Townhouse", "Studio"];
 const BEDROOMS = ["Any", "Studio", "1", "2", "3", "4", "5+"];
 const FURNISHING = ["Any", "Furnished", "Unfurnished", "Semi-Furnished"];
 

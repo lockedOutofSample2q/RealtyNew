@@ -20,7 +20,7 @@ const PLACEHOLDERS: Partial<Property>[] = Array.from({ length: 4 }, (_, i) => ({
   id: `placeholder-${i}`,
   title: "Luxury Residence",
   slug: "#",
-  type: "apartment",
+  type: "flat",
   status: "available",
   listing_type: "sale",
   price: 2500000 + i * 500000,
@@ -163,7 +163,7 @@ export default function PropertiesCarousel({
               Find Property with us
             </h3>
             <p className="font-body text-gray-500 mb-auto leading-relaxed text-sm">
-              Explore a wide range of properties tailored to your lifestyle and budget. From luxurious apartments to family homes.
+              Explore a wide range of properties tailored to your lifestyle and budget. From luxurious flats to family homes.
             </p>
             <div className="mt-8">
               <span className="block font-body text-[13px] font-bold text-gray-400 mb-3 tracking-wide">View all 1,200+</span>

@@ -27,7 +27,7 @@ import { useRouter } from "next/navigation";
 
 const NAV = [
   { label: "Dashboard", href: "/admin/dashboard", icon: LayoutDashboard },
-  { label: "Apartments", href: "/admin/apartments", icon: Building2 },
+  { label: "Flats", href: "/admin/apartments", icon: Building2 },
   { label: "Houses", href: "/admin/houses", icon: Building2 },
   { label: "Lands", href: "/admin/lands", icon: Building2 },
   { label: "Leads", href: "/admin/leads", icon: Users },

@@ -11,7 +11,7 @@ import {
   SECTORS_BY_CITY,
   PRICES,
   PROPERTY_TYPES,
-  APARTMENT_TYPES,
+  FLAT_TYPES,
   HOUSE_TYPES,
   LAND_TYPES,
   type PropertySearchFilters,
@@ -44,7 +44,7 @@ export default function PropertySearchBar({
       
       <div className="relative z-10 px-6 py-5">
         <div className="flex gap-6 mb-5 px-1">
-        {(["apartments", "houses", "lands"] as const).map((t) => (
+        {(["flats", "houses", "lands"] as const).map((t) => (
           <button
             key={t}
             onClick={() => setTab(t)}
@@ -85,7 +85,7 @@ export default function PropertySearchBar({
         <CustomSelect
           label="Property Type"
           value={filters.type}
-          options={tab === "apartments" ? APARTMENT_TYPES : tab === "houses" ? HOUSE_TYPES : LAND_TYPES}
+          options={tab === "flats" ? FLAT_TYPES : tab === "houses" ? HOUSE_TYPES : LAND_TYPES}
           onChange={(type) => setFilters({ ...filters, type })}
           placeholder="All"
         />

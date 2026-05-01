@@ -18,14 +18,16 @@ export const SECTORS_BY_CITY: Record<string, string[]> = {
 
 export const PROPERTY_TYPES = [
   "All",
-  "Apartment",
+  "Flat",
   "Villa",
   "Penthouse",
   "Townhouse",
   "Studio",
+  "Plot",
+  "Commercial",
 ];
 
-export const APARTMENT_TYPES = ["All", "Apartment", "Studio", "Penthouse"];
+export const FLAT_TYPES = ["All", "Flat", "Studio", "Penthouse"];
 export const HOUSE_TYPES = ["All", "Villa", "Townhouse"];
 export const LAND_TYPES = ["All", "Residential", "Commercial", "Agricultural", "Industrial", "Land", "Plot"];
 
@@ -33,7 +35,7 @@ export const BEDROOMS = ["Any", "Studio", "1", "2", "3", "4", "5+"];
 export const FURNISHING = ["All furnishings", "Furnished", "Unfurnished", "Partly furnished"];
 export const PRICES = ["Any Price", "1,000,000", "5,000,000", "10,000,000", "20,000,000", "50,000,000"];
 
-export type SearchTab = "apartments" | "houses" | "lands";
+export type SearchTab = "flats" | "houses" | "lands";
 
 export interface PropertySearchFilters {
   city: string;

@@ -76,7 +76,7 @@ export function MobileSearchModal({
             </div>
 
             <div className="flex bg-white rounded-2xl p-1 mb-8 shadow-sm">
-              {(["apartments", "houses", "lands"] as const).map((t) => (
+              {(["flats", "houses", "lands"] as const).map((t) => (
                 <button
                   key={t}
                   onClick={() => onTabChange(t)}
@@ -84,7 +84,7 @@ export function MobileSearchModal({
                     tab === t ? "bg-black text-white shadow-lg" : "text-black/40"
                   }`}
                 >
-                  {t.charAt(0).toUpperCase() + t.slice(1)}
+                  {t === "flats" ? "Flats" : t === "houses" ? "Houses" : "Lands"}
                 </button>
               ))}
             </div>

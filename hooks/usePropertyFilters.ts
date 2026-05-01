@@ -38,7 +38,7 @@ export function usePropertyFilters(properties: Property[], initialTab?: SearchTa
   });
 
   useEffect(() => {
-    setTab((searchParams.get("tab") as SearchTab) || "apartments");
+    setTab((searchParams.get("tab") as SearchTab) || "flats");
     setFilters({
       ...DEFAULT_PROPERTY_FILTERS,
       city: searchParams.get("city") ?? "",

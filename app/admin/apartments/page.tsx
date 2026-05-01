@@ -54,7 +54,7 @@ export default function ApartmentsAdmin() {
     <div>
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="font-display text-2xl text-white font-light">Apartments</h1>
+          <h1 className="font-display text-2xl text-white font-light">Flats</h1>
           <p className="font-body text-xs text-white/40 mt-1">{apartments.length} total listings</p>
         </div>
         <button
