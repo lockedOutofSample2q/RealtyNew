@@ -51,7 +51,12 @@ export default function Navbar() {
   // Robust check if current page is in the dark header list
   const isDarkHeroPage = darkHeaderPages.some(page => {
     if (page === "/") return pathname === "/";
-    // Check for exact match or sub-route
+    
+    // For listing categories, only the index pages are dark hero. 
+    // Detail pages (/properties/[slug], etc) are light/white.
+    const isListingIndex = ["/properties", "/lands", "/apartments", "/houses"].includes(page);
+    if (isListingIndex) return pathname === page;
+
     return pathname === page || pathname?.startsWith(`${page}/`);
   });
 
