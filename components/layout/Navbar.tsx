@@ -56,8 +56,7 @@ export default function Navbar() {
   });
 
   const useDarkText = !isDarkHeroPage && !isOpen;
-  const isPropertiesPage = pathname === "/properties" || pathname?.startsWith("/properties/");
-  const showLightLogo = useDarkText || isPropertiesPage;
+  const showLightLogo = useDarkText;
 
   // Prevent scrolling when menu is open
   useEffect(() => {
