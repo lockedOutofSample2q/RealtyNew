@@ -18,7 +18,7 @@ interface PropertiesMapContainerProps {
 
 export function PropertiesMapContainer({ properties, leafletReady }: PropertiesMapContainerProps) {
   return (
-    <div className="order-1 md:order-2 w-full md:w-[42%] h-[45vw] min-h-[260px] max-h-[380px] md:h-[120vh] md:min-h-[700px] md:sticky md:top-[-10vh] self-start shrink-0 z-0 relative p-4 md:pl-0 md:pr-4">
+    <div className="order-1 md:order-2 w-full md:w-[45%] h-[45vw] min-h-[260px] max-h-[380px] md:h-[88vh] md:min-h-[600px] md:sticky md:top-[6vh] self-start shrink-0 z-0 relative p-4 md:pl-0 md:pr-6">
       {leafletReady && <PropertiesMap properties={properties} />}
     </div>
   );
