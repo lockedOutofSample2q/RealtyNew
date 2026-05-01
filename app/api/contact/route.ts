@@ -15,7 +15,7 @@ const schema = z.object({
   email: z.string().email(),
   phone: z.string().optional(),
   message: z.string().optional(),
-  source: z.enum(["contact", "property", "list-property", "newsletter", "relocation"]),
+  source: z.enum(["contact", "property", "list-property", "newsletter", "relocation", "land_listing"]),
   property_id: z.string().optional(),
   // Extra fields from various forms
   company: z.string().optional(),
