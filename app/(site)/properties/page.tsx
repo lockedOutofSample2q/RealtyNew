@@ -25,9 +25,9 @@ async function getProperties(): Promise<Property[]> {
       supabase.from("lands").select("*")
     ]);
 
-    const apartments = (apartmentsRes.data ?? []).map(p => enrichProperty({ ...p, entity_type: 'apartment' }));
-    const houses = (housesRes.data ?? []).map(p => enrichProperty({ ...p, entity_type: 'house' }));
-    const lands = (landsRes.data ?? []).map(p => enrichProperty({ ...p, entity_type: 'land' }));
+    const apartments = (apartmentsRes.data ?? []).map((p: any) => enrichProperty({ ...p, entity_type: 'apartment' }));
+    const houses = (housesRes.data ?? []).map((p: any) => enrichProperty({ ...p, entity_type: 'house' }));
+    const lands = (landsRes.data ?? []).map((p: any) => enrichProperty({ ...p, entity_type: 'land' }));
 
     // Combine and sort by featured and created_at
     const all = [...apartments, ...houses, ...lands] as Property[];
