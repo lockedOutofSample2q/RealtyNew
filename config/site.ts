@@ -46,13 +46,13 @@ export const navItems: NavItem[] = [
     label: "Tools", 
     href: "/tools",
     children: [
-      { label: "EMI Calculator", href: "/tools/mortgage-calculator" },
+      { label: "Mortgage Calculator", href: "/tools/mortgage-calculator" },
       { label: "Price Trends", href: "/tools/price-trend" },
       { label: "Loan Eligibility", href: "/tools/loan-eligibility" },
     ]
   },
   { label: "Guides", href: "/guides" },
-  { label: "Mortgage Calculator", href: "/tools/mortgage-calculator" },
+
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
   { label: "List Property", href: "/list-your-property" },
