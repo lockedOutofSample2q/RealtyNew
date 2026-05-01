@@ -32,7 +32,7 @@ export function PropertiesHero({
   ].some(Boolean);
 
   return (
-    <div className="relative w-full h-[52vh] min-h-[360px] flex flex-col items-center justify-center pt-[calc(var(--nav-height)+2rem)]">
+    <div className="relative w-full h-[52vh] min-h-[360px] flex flex-col items-center justify-center pt-[var(--nav-height)]">
       <Image
         src="/assets/images/home/hero-bg.jpg"
         alt="Properties properties"
