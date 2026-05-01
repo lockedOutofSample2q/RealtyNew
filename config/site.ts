@@ -66,7 +66,6 @@ export const footerLinks = {
     { label: "Apartments", href: "/apartments" },
     { label: "Houses", href: "/houses" },
     { label: "Lands", href: "/properties?tab=lands" },
-    { label: "Relocation Services", href: "/relocation" },
     { label: "Market Blog", href: "/blog" },
   ],
   tools: [

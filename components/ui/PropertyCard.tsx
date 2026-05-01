@@ -66,16 +66,16 @@ export default function PropertyCard({
         </div>
 
         {/* Glassmorphism Details Card */}
-        <div className="absolute inset-x-4 bottom-4 bg-white/10 backdrop-blur-xl border border-white/20 p-5 rounded-lg shadow-hover flex flex-col justify-end translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-          <h3 className="font-display text-xl text-white font-medium mb-1 line-clamp-1">
+        <div className="absolute inset-x-5 bottom-5 bg-white/10 backdrop-blur-xl border border-white/20 p-7 rounded-2xl shadow-hover flex flex-col justify-end translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+          <h3 className="font-display text-2xl text-white font-medium mb-1 line-clamp-1">
             {property.title}
           </h3>
-          <div className="flex items-center gap-2 text-white/80 mb-4">
-            <span className="font-body text-sm">{property.community}, {property.location}</span>
+          <div className="flex items-center gap-2 text-white/80 mb-6">
+            <span className="font-body text-sm tracking-wide">{property.community}, {property.location}</span>
           </div>
           
-          <div className="flex items-center justify-between pt-4 border-t border-white/20">
-            <div className="font-display text-lg text-white font-semibold flex items-baseline">
+          <div className="flex items-center justify-between pt-6 border-t border-white/20">
+            <div className="font-display text-xl text-white font-semibold flex items-baseline tracking-tight">
               {property.price > 0 ? (
                 <>
                   {formatPrice(property.price)}
@@ -85,8 +85,8 @@ export default function PropertyCard({
                 <span className="text-sm text-white/60 italic font-normal">Price on request</span>
               )}
             </div>
-            <div className="w-8 h-8 rounded-full bg-white text-charcoal flex items-center justify-center group-hover:-rotate-45 transition-transform duration-500 shrink-0">
-               <ArrowRight size={14} />
+            <div className="w-10 h-10 rounded-full bg-white text-charcoal flex items-center justify-center group-hover:-rotate-45 transition-transform duration-500 shrink-0 shadow-lg">
+               <ArrowRight size={18} />
             </div>
           </div>
         </div>
@@ -124,20 +124,20 @@ export default function PropertyCard({
       </div>
 
       {/* Content */}
-      <div className="p-6">
-        <h3 className="font-display text-xl leading-tight text-charcoal font-medium mb-2 line-clamp-1">
+      <div className="p-8">
+        <h3 className="font-display text-2xl leading-tight text-charcoal font-medium mb-3 line-clamp-1 tracking-tight">
           {property.title}
         </h3>
-        <p className="font-body text-sm text-muted mb-4 line-clamp-1">
+        <p className="font-body text-sm text-muted mb-6 line-clamp-1 tracking-wide">
           {property.community}, {property.location}
         </p>
 
         {/* Specs */}
-        <div className="flex items-center justify-start gap-4 mb-6 opacity-80 flex-wrap">
+        <div className="flex items-center justify-start gap-4 mb-8 opacity-80 flex-wrap">
           {property.bedrooms != null && (
             <div className="flex items-center gap-2 text-charcoal">
-              <span className="font-body text-xs font-semibold tracking-wide">
-                {property.bedrooms === 0 ? "Studio" : 
+              <span className="font-body text-xs font-semibold tracking-widest">
+                {property.bedrooms === 0 ? "STUDIO" : 
                  (property.bedrooms_max && property.bedrooms_max !== property.bedrooms) ? `${property.bedrooms}-${property.bedrooms_max}` : property.bedrooms} BEDS
               </span>
             </div>
@@ -147,7 +147,7 @@ export default function PropertyCard({
           )}
           {property.bathrooms != null && (
             <div className="flex items-center gap-2 text-charcoal">
-              <span className="font-body text-xs font-semibold tracking-wide">{property.bathrooms} BATHS</span>
+              <span className="font-body text-xs font-semibold tracking-widest">{property.bathrooms} BATHS</span>
             </div>
           )}
           {(property.bedrooms != null || property.bathrooms != null) && property.area_sqft != null && (
@@ -155,7 +155,7 @@ export default function PropertyCard({
           )}
           {property.area_sqft != null && (
             <div className="flex items-center gap-2 text-charcoal">
-              <span className="font-body text-xs font-semibold tracking-wide">
+              <span className="font-body text-xs font-semibold tracking-widest">
                 {property.area_sqft_max && property.area_sqft_max !== property.area_sqft ? 
                   `${property.area_sqft.toLocaleString()}-${property.area_sqft_max.toLocaleString()}` : 
                   property.area_sqft.toLocaleString()} SQFT
@@ -165,18 +165,18 @@ export default function PropertyCard({
         </div>
 
         {/* Footer (Price & Button) */}
-        <div className="flex items-center justify-between pt-4 border-t border-white/20">
-          <div className="font-display text-xl text-charcoal font-medium tracking-tight">
+        <div className="flex items-center justify-between pt-6 border-t border-black/5">
+          <div className="font-display text-2xl text-charcoal font-semibold tracking-tight">
             {property.price > 0 ? (
               <>
                 {formatPrice(property.price)}
                 {property.price_max && property.price_max > property.price && ` - ${formatPrice(property.price_max)}`}
                 {isLands && <span className="font-body text-sm text-muted font-normal ml-1">/yr</span>}
               </>
-            ) : "Price on request"}
+            ) : <span className="text-sm text-muted italic font-normal">Price on request</span>}
           </div>
-          <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:bg-charcoal group-hover:text-white transition-all duration-300 shrink-0 shadow-subtle">
-            <ArrowRight size={16} className="group-hover:-rotate-45 transition-transform duration-300" />
+          <div className="w-11 h-11 rounded-full border border-border flex items-center justify-center group-hover:bg-charcoal group-hover:text-white transition-all duration-300 shrink-0 shadow-subtle">
+            <ArrowRight size={18} className="group-hover:-rotate-45 transition-transform duration-300" />
           </div>
         </div>
       </div>

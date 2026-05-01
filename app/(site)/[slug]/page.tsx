@@ -102,7 +102,7 @@ export default async function PropertyDetailPage(props: Props) {
   const property = await getProperty(params.slug);
   if (!property) notFound();
 
-  const backHref = property.listing_type === "lands" ? "/lands" : "/properties";
+  const backHref = property.listing_type === "lands" ? "/properties?tab=lands" : "/properties";
   const backLabel = property.listing_type === "lands" ? "Lands" : "Properties";
   const listingLabel =
     property.listing_type === "properties" ? "Properties For Sale" :

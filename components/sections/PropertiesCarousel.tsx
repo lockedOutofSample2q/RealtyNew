@@ -47,7 +47,7 @@ export default function PropertiesCarousel({
 }: Props) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const items = properties.length > 0 ? properties : (PLACEHOLDERS as Property[]);
-  const href = type === "lands" ? "/lands" : "/properties";
+  const href = type === "lands" ? "/properties?tab=lands" : "/properties";
 
   function scroll(dir: "left" | "right") {
     if (!scrollRef.current) return;

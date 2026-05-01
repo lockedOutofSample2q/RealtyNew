@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 
 const posts = [
   {
-    title: "The Rise of Mohali's IT City Corridor",
-    category: "Market Trends",
-    date: "April 15, 2026",
-    href: "/blog"
+    title: "Why Your Mohali Real Estate Strategy Is Already Outdated: The Vision Premium of 2026",
+    category: "Investment Strategy",
+    date: "May 01, 2026",
+    href: "/blog/mohali-real-estate-investment-strategy-2026"
   },
   {
     title: "Commercial Property: Airport Road vs Aerocity",
