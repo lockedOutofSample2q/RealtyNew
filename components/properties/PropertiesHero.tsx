@@ -44,7 +44,7 @@ export function PropertiesHero({
       <div className="absolute inset-0 bg-black/55" />
 
       <div className="relative z-10 text-center px-4">
-        <h1 className="font-display font-medium text-white text-[clamp(1.8rem,4vw,3rem)] leading-[1.05] tracking-tight max-w-2xl mx-auto mb-5">
+        <h1 className="font-display font-medium text-white text-5xl md:text-7xl lg:text-[80px] leading-[1.05] tracking-tight max-w-4xl mx-auto mb-5">
           {propertiesPage.hero.headline}
         </h1>
         <p className="font-body font-light text-white/85 text-[clamp(13px,1.2vw,15px)] leading-relaxed max-w-lg mx-auto">
