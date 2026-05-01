@@ -62,7 +62,12 @@ export function PropertyGallery({ images, videos = [], title, imageCountOverride
         >
           {mediaItems[0] ? (
             <>
-              <MediaThumbnail item={mediaItems[0]} title={title} className="transition-transform duration-700 group-hover:scale-105" />
+              <MediaThumbnail 
+                item={mediaItems[0]} 
+                title={title} 
+                className="transition-transform duration-700 group-hover:scale-105" 
+                priority 
+              />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
               {mediaItems[0].type === "video" && (
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -189,7 +194,7 @@ export function PropertyGallery({ images, videos = [], title, imageCountOverride
   );
 }
 
-function MediaThumbnail({ item, title, className }: { item: MediaItem; title: string; className?: string }) {
+function MediaThumbnail({ item, title, className, priority }: { item: MediaItem; title: string; className?: string; priority?: boolean }) {
   if (!item) return null;
   let src = item.url;
   if (item.type === "video") {
@@ -203,8 +208,9 @@ function MediaThumbnail({ item, title, className }: { item: MediaItem; title: st
       alt={title} 
       fill 
       className={cn("object-cover", className)} 
-      quality={90}
+      quality={80}
       sizes="(max-width: 768px) 100vw, 800px"
+      priority={priority}
     />
   );
 }
