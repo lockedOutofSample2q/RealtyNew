@@ -22,7 +22,7 @@ async function getProperties(): Promise<Property[]> {
       .order("created_at", { ascending: false });
     
     if (error) return [];
-    return (data ?? []).map(p => enrichProperty({ ...p, entity_type: 'house' })) as Property[];
+    return (data ?? []).map((p: any) => enrichProperty({ ...p, entity_type: 'house' })) as Property[];
   } catch {
     return [];
   }
