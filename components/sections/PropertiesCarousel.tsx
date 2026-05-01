@@ -47,7 +47,7 @@ export default function PropertiesCarousel({
 }: Props) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const items = properties.length > 0 ? properties : (PLACEHOLDERS as Property[]);
-  const href = type === "lands" ? "/properties?tab=lands" : "/properties";
+  const href = type === "lands" ? "/properties?tab=lands&currency=INR" : "/properties";
 
   function scroll(dir: "left" | "right") {
     if (!scrollRef.current) return;
@@ -101,7 +101,11 @@ export default function PropertiesCarousel({
           >
             {items.slice(0, 3).map((p) => (
               <motion.div key={p.id} variants={itemVariants}>
-                <PropertyCard property={p} variant="image-bg" />
+                <PropertyCard 
+                  property={p} 
+                  variant="image-bg" 
+                  customHref="/properties?tab=lands&currency=INR"
+                />
               </motion.div>
             ))}
           </motion.div>

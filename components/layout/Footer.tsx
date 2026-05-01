@@ -1,4 +1,4 @@
-﻿// components/layout/Footer.tsx
+// components/layout/Footer.tsx
 import Link from "next/link";
 import { Instagram, Facebook, Linkedin, Youtube, Mail, Phone, MapPin } from "lucide-react";
 import { siteConfig, footerLinks } from "@/config/site";
@@ -45,7 +45,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* -- Main Footer Grid ------------------------------- */}
+      {/* -- Main Footer Grid (Links & Brand) ------------------------------- */}
       <div className="container-site py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* Brand */}
         <div className="lg:col-span-1">
@@ -109,6 +109,25 @@ export default function Footer() {
           )}
         </div>
 
+        {/* Legal Links (Moved Up) */}
+        <div>
+          <h4 className="font-body text-xs tracking-widest uppercase text-white/80 mb-6">
+            Legal
+          </h4>
+          <ul className="space-y-4">
+            {footerLinks.legal.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="font-body text-sm text-white/50 hover:text-white transition-colors"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
         {/* Quick Links */}
         <div>
           <h4 className="font-body text-xs tracking-widest uppercase text-white/80 mb-6">
@@ -146,62 +165,66 @@ export default function Footer() {
             ))}
           </ul>
         </div>
+      </div>
 
-        {/* Contact */}
-        <div>
-          <h4 className="font-body text-xs tracking-widest uppercase text-white/80 mb-6">
-            Contact
-          </h4>
-          <ul className="space-y-4">
-            <li>
-              <a
-                href={`tel:${siteConfig.contact.phone}`}
-                className="flex items-start gap-3 font-body text-sm text-white/50 hover:text-white transition-colors"
-              >
-                <Phone size={16} className="mt-0.5 shrink-0 text-white/80" />
-                {siteConfig.contact.phone}
-              </a>
-            </li>
-            <li>
-              <a
-                href={`mailto:${siteConfig.contact.email}`}
-                className="flex items-start gap-3 font-body text-sm text-white/50 hover:text-white transition-colors"
-              >
-                <Mail size={16} className="mt-0.5 shrink-0 text-white/80" />
-                {siteConfig.contact.email}
-              </a>
-            </li>
-            <li className="flex items-start gap-3 font-body text-sm text-white/50">
-              <MapPin size={16} className="mt-0.5 shrink-0 text-white/80" />
-              <a href={siteConfig.contact.mapUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors leading-relaxed">
-                {siteConfig.contact.address}
-              </a>
-            </li>
-            <li>
-              <Link href="/faq" className="font-body text-sm text-white/50 hover:text-white transition-colors">
-                FAQ
-              </Link>
-            </li>
-          </ul>
-        </div>
+      {/* -- Centered Map & Contact Section ---------------------------- */}
+      <div className="border-t border-white/10 bg-white/[0.02]">
+        <div className="container-site py-20 flex flex-col items-center text-center">
+          <div className="max-w-2xl w-full">
+            <h4 className="font-display text-3xl font-medium mb-10">Visit Our Office</h4>
+            
+            {/* Map Container */}
+            <div className="w-full aspect-[21/9] rounded-[32px] overflow-hidden border border-white/10 mb-12 grayscale invert opacity-80 hover:grayscale-0 hover:invert-0 hover:opacity-100 transition-all duration-700">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.563724816155!2d76.70295847614534!3d30.70258168709325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fef95b706c9a9%3A0x6a2c262a74c2e6f!2sIndustrial%20Area%20Phase%208A%2C%20Mohali%2C%20Punjab!5e0!3m2!1sen!2sin!4v1714578000000!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
 
-        {/* Legal */}
-        <div>
-          <h4 className="font-body text-xs tracking-widest uppercase text-white/80 mb-6">
-            Legal
-          </h4>
-          <ul className="space-y-4">
-            {footerLinks.legal.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="font-body text-sm text-white/50 hover:text-white transition-colors"
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+              <div className="flex flex-col items-center">
+                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mb-4 text-white/60">
+                   <Phone size={18} />
+                </div>
+                <a href={`tel:${siteConfig.contact.phone}`} className="font-body text-sm text-white/50 hover:text-white transition-colors">
+                  {siteConfig.contact.phone}
+                </a>
+              </div>
+
+              <div className="flex flex-col items-center">
+                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mb-4 text-white/60">
+                   <Mail size={18} />
+                </div>
+                <a href={`mailto:${siteConfig.contact.email}`} className="font-body text-sm text-white/50 hover:text-white transition-colors">
+                  {siteConfig.contact.email}
+                </a>
+              </div>
+
+              <div className="flex flex-col items-center">
+                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mb-4 text-white/60">
+                   <MapPin size={18} />
+                </div>
+                <p className="font-body text-sm text-white/50 leading-relaxed mb-4">
+                  {siteConfig.contact.address}
+                </p>
+                <Button 
+                  asChild
+                  variant="outline" 
+                  size="sm"
+                  className="border-white/20 text-white hover:bg-white hover:text-charcoal transition-all rounded-full"
                 >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+                  <a href={siteConfig.contact.mapUrl} target="_blank" rel="noopener noreferrer">
+                    Visit Us
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -215,10 +238,11 @@ export default function Footer() {
               </span>
             </Link>
           </div>
-          <span className="font-body text-xs text-white/40">� {year} {siteConfig.name}. All rights reserved.</span>
+          <span className="font-body text-xs text-white/40">© {year} {siteConfig.name}. All rights reserved.</span>
         </div>
       </div>
     </footer>
+
   );
 }
 
