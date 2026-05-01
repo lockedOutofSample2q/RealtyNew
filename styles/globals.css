@@ -112,28 +112,32 @@ a {
 
 /* Offset controls from rounded corners */
 .leaflet-top.leaflet-left {
-  margin-top: 15px !important;
-  margin-left: 15px !important;
+  margin-top: 40px !important;
+  margin-left: 40px !important;
 }
 
 .leaflet-control-zoom {
   border: none !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2) !important;
   border-radius: 12px !important;
   overflow: hidden;
+  z-index: 1000 !important;
 }
 
 .leaflet-control-zoom-in, .leaflet-control-zoom-out {
-  background-color: white !important;
-  color: black !important;
-  width: 36px !important;
-  height: 36px !important;
-  line-height: 36px !important;
-  font-size: 18px !important;
-  border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+  background-color: #1a1a1a !important;
+  color: white !important;
+  width: 44px !important;
+  height: 44px !important;
+  line-height: 44px !important;
+  font-size: 22px !important;
+  border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .leaflet-control-zoom-in:hover, .leaflet-control-zoom-out:hover {
-  background-color: #f8f8f8 !important;
+  background-color: #333 !important;
 }
 
