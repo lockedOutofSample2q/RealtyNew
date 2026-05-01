@@ -69,7 +69,7 @@ export const footerLinks = {
     { label: "Market Blog", href: "/blog" },
   ],
   tools: [
-    { label: "EMI Calculator", href: "/tools/mortgage-calculator" },
+    { label: "Mortgage Calculator", href: "/tools/mortgage-calculator" },
     { label: "Price Trends", href: "/tools/price-trend" },
     { label: "Loan Eligibility", href: "/tools/loan-eligibility" },
     { label: "Sector Maps", href: "/properties" },
