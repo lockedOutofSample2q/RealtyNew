@@ -64,7 +64,7 @@ async function updateRegalia() {
       featured: true, // Marking as featured
       documents: documents as any,
       agent_name: "Amritpal Singh",
-      agent_title: "Founder & CEO",
+      agent_title: "MD",
       agent_email: "hello@realtyconsultants.in",
       agent_phone: "+91 78146 13916",
       agent_photo: "/assets/images/leadership/amritpal.jpg",

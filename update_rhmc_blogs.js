@@ -15,8 +15,8 @@ const blogDir = path.join(process.cwd(), 'content/blog');
 
 const ADVISORY_REGEX = /\*\*The Advisory Take:\*\* Success in \*\*(.*?)\*\* hinges on surgical due diligence across GMADA and RERA Punjab\. At RHMC, we prioritize verified developer cash flow data and infrastructure-led corridors over speculative market promises\. Independent evaluation isn't an option: it's the requirement for long-term liquidity\./g;
 
-const NEW_BIO_BOLD = "**Amritpal Singh** is the founder of Realty Holding & Management Consultants, Sector 82A, Mohali. With over 10 years across real estate development, government liaisoning, capital markets, and media, he has personally closed 180+ transactions across all property categories in Punjab. AMFI and NCFM certified.";
-const NEW_BIO_PLAIN = "Amritpal Singh is the founder of Realty Holding & Management Consultants, Sector 82A, Mohali. With over 10 years across real estate development, government liaisoning, capital markets, and media, he has personally closed 180+ transactions across all property categories in Punjab. AMFI and NCFM certified.";
+const NEW_BIO_BOLD = "**Amritpal Singh** is the MD of Realty Holding & Management Consultants, Sector 82A, Mohali. With over 10 years across real estate development, government liaisoning, capital markets, and media, he has personally closed 180+ transactions across all property categories in Punjab. AMFI and NCFM certified.";
+const NEW_BIO_PLAIN = "Amritpal Singh is the MD of Realty Holding & Management Consultants, Sector 82A, Mohali. With over 10 years across real estate development, government liaisoning, capital markets, and media, he has personally closed 180+ transactions across all property categories in Punjab. AMFI and NCFM certified.";
 
 const CTA = `If you are evaluating a specific project in Mohali and want an independent read before you commit, [book a 15-minute consultation](/booking). No pitch. No pressure. Just the answer.`;
 
@@ -77,7 +77,7 @@ Success in **${keyword}** hinges on surgical due diligence across GMADA and RERA
   }
 
   // 4. Bio and CTA
-  const ANY_BIO_REGEX = /(?:\*\*|)Amritpal Singh(?:\*\*|) is the founder of Realty Holding (?:and|&) Management Consultants, .*?\. With over 10 years across real estate development, government liaisoning, capital markets, and media, he has personally closed 180\+ transactions across all property categories in Punjab\. AMFI and NCFM certified\./g;
+  const ANY_BIO_REGEX = /(?:\*\*|)Amritpal Singh(?:\*\*|) is the (?:founder|MD) of Realty Holding (?:and|&) Management Consultants, .*?\. With over 10 years across real estate development, government liaisoning, capital markets, and media, he has personally closed 180\+ transactions across all property categories in Punjab\. AMFI and NCFM certified\./g;
 
   let ctaAdded = content.includes('/booking');
   content = content.replace(ANY_BIO_REGEX, (match) => {

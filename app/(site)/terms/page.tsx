@@ -58,7 +58,7 @@ export default function TermsPage() {
             <section>
               <h2 className="text-black font-semibold text-xl mb-4">5. Limitation of Liability</h2>
               <p>
-                In no event shall {siteConfig.name} or its founder be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on this website, even if we have been notified of the possibility of such damage.
+                In no event shall {siteConfig.name} or its MD be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on this website, even if we have been notified of the possibility of such damage.
               </p>
             </section>
 

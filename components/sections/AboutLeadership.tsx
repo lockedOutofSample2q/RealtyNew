@@ -19,7 +19,7 @@ export default function AboutLeadership() {
           >
             <Image
               src="/assets/images/leadership/amritpal.jpg"
-              alt="Amritpal Singh - Founder"
+              alt="Amritpal Singh - MD"
               fill
               className="object-cover object-top"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -48,7 +48,7 @@ export default function AboutLeadership() {
               Amritpal Singh
             </p>
             <p className="text-white/60 text-[clamp(14px,1.2vw,18px)] font-light">
-              Founder & CEO
+              MD
             </p>
           </motion.div>
 

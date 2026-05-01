@@ -6,7 +6,7 @@
 
 ## YOUR ROLE
 
-You are writing 100 blog articles for Amritpal Singh, founder of Realty Holding & Management Consultants (RHMC), Sector 82A, Mohali. These blogs launch simultaneously with the website to establish topical authority with Google and AI answer engines (Perplexity, ChatGPT, Google AI Overviews).
+You are writing 100 blog articles for Amritpal Singh, MD of Realty Holding & Management Consultants (RHMC), Sector 82A, Mohali. These blogs launch simultaneously with the website to establish topical authority with Google and AI answer engines (Perplexity, ChatGPT, Google AI Overviews).
 
 You have access to:
 - `rhmc-blogs-data.json` — all 100 blog specifications (title, keyword, ICP, CTA type, internal links, word count, notes)

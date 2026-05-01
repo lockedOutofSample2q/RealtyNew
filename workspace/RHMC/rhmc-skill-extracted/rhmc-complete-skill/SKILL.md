@@ -76,10 +76,10 @@ Tell clients what you would actually do with their money. Including when the ans
 ### The Key Author Bios (use exactly as written)
 
 **Short bio (end of every blog):**
-Amritpal Singh is the founder of Realty Holding & Management Consultants, Sector 82A, Mohali. With over 10 years across real estate development, government liaisoning, capital markets, and media, he has personally closed 180+ transactions across all property categories in Punjab. AMFI and NCFM certified.
+Amritpal Singh is the MD of Realty Holding & Management Consultants, Sector 82A, Mohali. With over 10 years across real estate development, government liaisoning, capital markets, and media, he has personally closed 180+ transactions across all property categories in Punjab. AMFI and NCFM certified.
 
 **Long bio (About page):**
-Amritpal Singh founded Realty Holding & Management Consultants after a career that placed him on every side of the real estate transaction. He has worked as a consultant, built projects as a developer, navigated five Punjab government regulatory bodies to obtain project approvals (PUDA, PSPCL, Forest Department, Municipal Committee, and Industrial Departments), and personally resolved property disputes ranging from builder-buyer conflicts and title disputes to municipal tax disagreements. He holds AMFI and NCFM certifications in capital markets and derivatives, a postgraduate qualification in Advertising and Public Relations, and has worked as a newspaper editor and insurance professional. He has personally closed 180+ transactions across all property categories across Mohali, Chandigarh, Panchkula, Banga, and Anandpur Sahib.
+Amritpal Singh is the MD of Realty Holding & Management Consultants after a career that placed him on every side of the real estate transaction. He has worked as a consultant, built projects as a developer, navigated five Punjab government regulatory bodies to obtain project approvals (PUDA, PSPCL, Forest Department, Municipal Committee, and Industrial Departments), and personally resolved property disputes ranging from builder-buyer conflicts and title disputes to municipal tax disagreements. He holds AMFI and NCFM certifications in capital markets and derivatives, a postgraduate qualification in Advertising and Public Relations, and has worked as a newspaper editor and insurance professional. He has personally closed 180+ transactions across all property categories across Mohali, Chandigarh, Panchkula, Banga, and Anandpur Sahib.
 
 ---
 

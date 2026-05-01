@@ -282,13 +282,13 @@ A clear recommendation, whether to buy, wait, or avoid, with the reasoning behin
 
 **Section Heading:** The Advisor Behind the Advisory
 
-**CEO/Founder Quote, Option A:**
+**MD Quote, Option A:**
 "I have been a developer who built projects and a buyer who fought to protect one. I have sat across the table from every type of problem this market can create. When I advise a client, I am not reading from a playbook. I am telling them what I have learned from being on the inside of every one of these situations. That is not something I was born with. It cost time, money, and in some cases years. It is also why clients trust me with decisions that cost crores."
-Amritpal Singh, Founder
+Amritpal Singh, MD
 
-**CEO/Founder Quote, Option B:**
+**MD Quote, Option B:**
 "The real estate market in Mohali has changed enormously, in prices, in regulation, and in the quality of information available to buyers. What has not changed is this: the deals that make people wealthy are the ones that were made before the opportunity was obvious. My job is to show clients where that is right now, before the market prices it in. My other job, equally important, is to tell them when something is not worth the risk."
-Amritpal Singh, Founder
+Amritpal Singh, MD
 
 ---
 ---

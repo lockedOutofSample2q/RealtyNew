@@ -283,7 +283,7 @@ export default async function GenericDetailPage(props: Props) {
                     </div>
                     <div>
                       <p className="text-sm font-bold text-black font-display">Amritpal Singh</p>
-                      <p className="text-[11px] text-black/40">Founder & CEO</p>
+                      <p className="text-[11px] text-black/40">MD</p>
                     </div>
                   </div>
                 </div>
