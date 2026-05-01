@@ -52,6 +52,7 @@ export const navItems: NavItem[] = [
     ]
   },
   { label: "Guides", href: "/guides" },
+  { label: "Mortgage Calculator", href: "/tools/mortgage-calculator" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
   { label: "List Property", href: "/list-your-property" },
