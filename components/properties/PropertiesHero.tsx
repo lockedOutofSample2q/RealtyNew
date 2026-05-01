@@ -47,7 +47,7 @@ export function PropertiesHero({
         <h1 className="font-display font-medium text-white text-5xl md:text-7xl lg:text-[80px] leading-[1.05] tracking-tight max-w-4xl mx-auto mb-5">
           {propertiesPage.hero.headline}
         </h1>
-        <p className="font-body font-light text-white/85 text-[clamp(13px,1.2vw,15px)] leading-relaxed max-w-lg mx-auto">
+        <p className="font-body font-light text-white/85 text-[clamp(13px,1.2vw,15px)] leading-relaxed mx-auto max-w-none">
           {propertiesPage.hero.subline}
         </p>
       </div>
