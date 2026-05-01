@@ -65,39 +65,15 @@ export function usePropertyFilters(properties: Property[], initialTab?: SearchTa
       const pDesc = normalize(p.description);
       const pDev = normalize(p.developer);
 
-      // ── Detection Logic ─────────────────────────────────────
-      // Homeland is a brand that sells apartments, but has "land" in the name.
-      const isHomeland = pTitle.includes("homeland") || pDev.includes("homeland") || pSlug.includes("homeland");
-      
-      // Keywords that indicate a Land/Plot listing
-      const hasLandKeywords = 
-        pTitle.includes("land") || 
-        pTitle.includes("plot") || 
-        pTitle.includes("bigga") ||
-        pTitle.includes("kanal") ||
-        pTitle.includes("gaj") ||
-        pDesc.includes("land") || 
-        pDesc.includes("plot") ||
-        pSlug.includes("land") ||
-        pSlug.includes("plot");
-
-      const isExplicitLandType = ["residential", "commercial", "agricultural", "industrial", "land", "plot"].includes(pType);
-      
-      // A property is a "Land" listing if it has the type OR keywords, UNLESS it is Homeland.
-      const isLandListing = (isExplicitLandType || hasLandKeywords) && !isHomeland;
-
-      // ── TYPE/TAB LOGIC ──────────────────────────────────────
+      // ── TYPE/TAB LOGIC (Strictly based on entity_type) ──────
       if (tab === "apartments") {
-        // If it's detected as a land listing, it doesn't belong in apartments
-        if (isLandListing) return false;
-        // Otherwise, must be an apartment type
-        if (!["apartment", "studio", "penthouse"].includes(pType)) return false;
+        if (p.entity_type !== 'apartment') return false;
       } 
       else if (tab === "houses") {
-        if (!["villa", "townhouse"].includes(pType)) return false;
+        if (p.entity_type !== 'house') return false;
       } 
       else if (tab === "lands") {
-        if (!isLandListing) return false;
+        if (p.entity_type !== 'land') return false;
       }
 
       if (filters.bedrooms && tab !== "lands") {

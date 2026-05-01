@@ -3,6 +3,7 @@ import { createAdminClient } from "@/lib/supabase";
 import type { Property } from "@/types";
 import { Suspense } from "react";
 import PropertiesClient from "../properties/PropertiesClient";
+import { enrichProperty } from "@/lib/property-utils";
 
 export const metadata: Metadata = {
   title: "Lands & Plots in Mohali | Realty Holding & Management Consultants",
@@ -15,13 +16,13 @@ async function getProperties(): Promise<Property[]> {
   try {
     const supabase = createAdminClient();
     const { data, error } = await supabase
-      .from("properties")
+      .from("lands")
       .select("*")
       .order("featured", { ascending: false })
       .order("created_at", { ascending: false });
     
     if (error) return [];
-    return (data ?? []) as Property[];
+    return (data ?? []).map(p => enrichProperty({ ...p, entity_type: 'land' })) as Property[];
   } catch {
     return [];
   }

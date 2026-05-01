@@ -39,6 +39,7 @@ export function PropertiesHero({
         fill
         className="object-cover"
         priority
+        quality={100}
       />
       <div className="absolute inset-0 bg-black/55" />
 

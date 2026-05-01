@@ -16,13 +16,13 @@ async function getProperties(): Promise<Property[]> {
   try {
     const supabase = createAdminClient();
     const { data, error } = await supabase
-      .from("properties")
+      .from("apartments")
       .select("*")
       .order("featured", { ascending: false })
       .order("created_at", { ascending: false });
     
     if (error) return [];
-    return (data ?? []).map(enrichProperty) as Property[];
+    return (data ?? []).map(p => enrichProperty({ ...p, entity_type: 'apartment' })) as Property[];
   } catch {
     return [];
   }

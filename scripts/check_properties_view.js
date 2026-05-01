@@ -1,27 +1,17 @@
-const { createClient } = require('@supabase/supabase-js');
-require('dotenv').config({ path: '.env.local' });
+import { createClient } from '@supabase/supabase-js';
 
-async function check() {
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const supabase = createClient(supabaseUrl, supabaseKey);
 
-  if (!supabaseUrl || !supabaseKey) {
-    console.error('Missing Supabase credentials');
-    process.exit(1);
-  }
-
-  const supabase = createClient(supabaseUrl, supabaseKey);
-
-  const { data, error } = await supabase
-    .from('properties')
-    .select('title, slug, entity_type')
-    .ilike('title', '%Homeland Regalia%');
-
+async function checkView() {
+  // Try raw query to see all data in 'properties'
+  const { data: sample, error } = await supabase.from('properties').select('title, type, entity_type');
   if (error) {
-    console.error('Error:', error);
+    console.error(error);
   } else {
-    console.log('Properties found:', data);
+    console.log(JSON.stringify(sample, null, 2));
   }
 }
 
-check();
+checkView();

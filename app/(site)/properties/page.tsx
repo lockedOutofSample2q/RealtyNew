@@ -5,6 +5,7 @@ import { propertiesPage } from "@/config/site";
 
 import PropertiesClient from "./PropertiesClient";
 import { Suspense } from "react";
+import { enrichProperty } from "@/lib/property-utils";
 
 export const metadata: Metadata = {
   title: propertiesPage.metadata.title,
@@ -27,7 +28,7 @@ async function getProperties(): Promise<Property[]> {
       return [];
     }
     
-    return (data ?? []) as Property[];
+    return (data ?? []).map(enrichProperty) as Property[];
   } catch (err) {
     console.error("Properties Runtime Error:", err);
     return [];

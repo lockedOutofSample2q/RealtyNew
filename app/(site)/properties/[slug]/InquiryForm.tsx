@@ -197,7 +197,16 @@ function MediaThumbnail({ item, title, className }: { item: MediaItem; title: st
     if (ytId) src = `https://img.youtube.com/vi/${ytId}/maxresdefault.jpg`;
     else return <div className={cn("w-full h-full bg-black flex items-center justify-center text-white/20", className)}><Play size={32} /></div>;
   }
-  return <Image src={src} alt={title} fill className={cn("object-cover", className)} />;
+  return (
+    <Image 
+      src={src} 
+      alt={title} 
+      fill 
+      className={cn("object-cover", className)} 
+      quality={90}
+      sizes="(max-width: 768px) 100vw, 800px"
+    />
+  );
 }
 
 function VideoPlayer({ url }: { url: string }) {
