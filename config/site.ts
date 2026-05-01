@@ -215,7 +215,8 @@ export const propertiesPage = {
     description: "Verified property listings in Mohali and Tricity: pre-launch, resale, and ready possession. Evaluated for RERA compliance, developer track record, and fair pricing.",
   },
   hero: {
-    headline: "Properties in Mohali and Tricity: Verified, Evaluated, Honestly Presented",
-    subline: "Every listing here has been evaluated for RERA compliance, developer track record, and current market value against comparable transactions. If a property is on this page, it is because the numbers support it. Not because a developer is paying for placement.",
+    headline: "Find Your Place\nin Mohali",
+    subline: "Investments and luxury assets, curated for those who know exactly what they want.",
+    backgroundImage: "/assets/images/home/hero.jpg",
   }
 };

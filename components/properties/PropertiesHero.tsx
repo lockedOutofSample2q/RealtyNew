@@ -34,7 +34,7 @@ export function PropertiesHero({
   return (
     <div className="relative w-full h-auto min-h-[55vh] flex flex-col items-center justify-center pt-[calc(var(--nav-height)+3rem)] pb-20">
       <Image
-        src="/assets/images/home/hero-bg.jpg"
+        src={propertiesPage.hero.backgroundImage}
         alt="Properties properties"
         fill
         className="object-cover"
