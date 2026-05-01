@@ -46,15 +46,13 @@ export default function Navbar() {
   const isListingPage = ["/properties", "/lands", "/properties"].includes(pathname || "");
   
   // These specific pages have dark hero sections at the top
-  const darkHeaderPages = ["/", "/properties", "/lands", "/about", "/booking", "/relocation"];
+  const darkHeaderPages = ["/", "/properties", "/lands", "/apartments", "/houses", "/about", "/booking", "/relocation"];
   
   // Robust check if current page is in the dark header list
   const isDarkHeroPage = darkHeaderPages.some(page => {
     if (page === "/") return pathname === "/";
-    if (page === "/properties") return pathname === "/properties";
-    if (page === "/lands") return pathname === "/lands";
-    // For other pages like /about, /booking, /relocation, we use startsWith
-    return pathname?.startsWith(page);
+    // Check for exact match or sub-route
+    return pathname === page || pathname?.startsWith(`${page}/`);
   });
 
   const useDarkText = !isDarkHeroPage && !isOpen;
