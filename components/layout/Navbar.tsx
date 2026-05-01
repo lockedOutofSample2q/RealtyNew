@@ -85,7 +85,7 @@ export default function Navbar() {
     <>
       <header
         className={cn(
-          "absolute top-0 left-0 right-0 z-[60] pt-[2vw] pb-[3vw] transition-all duration-300 border-b",
+          "absolute top-0 left-0 right-0 z-[60] pt-4 pb-4 sm:pt-6 sm:pb-6 transition-all duration-300 border-b",
           useDarkText ? "bg-white/95 backdrop-blur-md border-black/5" : "bg-transparent border-transparent"
         )}
       >
@@ -93,7 +93,7 @@ export default function Navbar() {
           
           {/* -- Logo --------------------------------------- */}
           <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 group z-50">
-            <div className="relative h-[10vw] sm:h-[6vw] aspect-[1756/925]">
+            <div className="relative h-10 sm:h-12 aspect-[1756/925]">
               <img 
                 src="/assets/logo-light-theme.svg" 
                 alt={siteConfig.name} 
@@ -128,8 +128,8 @@ export default function Navbar() {
                   useDarkText ? "text-charcoal/80 hover:text-charcoal" : "text-white/80 hover:text-white"
                 )}
               >
-                <span className="font-body text-[1vw] font-semibold tracking-widest uppercase leading-none">{currency}</span>
-                <ChevronDown className={cn("w-[1.2vw] h-[1.2vw] opacity-70 shrink-0 transition-transform duration-200", currencyOpen && "rotate-180")} />
+                <span className="font-body text-xs sm:text-sm font-semibold tracking-widest uppercase leading-none">{currency}</span>
+                <ChevronDown className={cn("w-4 h-4 opacity-70 shrink-0 transition-transform duration-200", currencyOpen && "rotate-180")} />
               </button>
 
               <AnimatePresence>
@@ -171,11 +171,11 @@ export default function Navbar() {
               aria-label="Toggle menu"
             >
               {isOpen ? (
-                <X className="w-[3vw] h-[3vw] sm:w-[1.8vw] sm:h-[1.8vw]" strokeWidth={1.5} />
+                <X className="w-6 h-6 sm:w-7 sm:h-7" strokeWidth={1.5} />
               ) : (
-                <div className="flex flex-col gap-[0.5vw] sm:gap-[0.4vw] w-[3.5vw] sm:w-[1.8vw]">
-                  <div className={cn("w-full h-[0.35vw] sm:h-[0.1vw] rounded-full", useDarkText ? "bg-charcoal" : "bg-white")}></div>
-                  <div className={cn("w-full h-[0.35vw] sm:h-[0.1vw] rounded-full", useDarkText ? "bg-charcoal" : "bg-white")}></div>
+                <div className="flex flex-col gap-1.5 sm:gap-1 w-6 sm:w-7">
+                  <div className={cn("w-full h-0.5 rounded-full", useDarkText ? "bg-charcoal" : "bg-white")}></div>
+                  <div className={cn("w-full h-0.5 rounded-full", useDarkText ? "bg-charcoal" : "bg-white")}></div>
                 </div>
               )}
             </button>
