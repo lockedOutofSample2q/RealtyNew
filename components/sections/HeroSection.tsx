@@ -93,25 +93,19 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col z-20">
 
-      {/* ── Parallax Background ── */}
+      {/* ── Background ── */}
       <div className="absolute inset-0 w-full h-full -z-10 overflow-hidden">
-        <motion.div
-          className="absolute inset-0 w-full h-full"
-          style={{
-            y: backgroundY,
-            scale: backgroundScale,
-          }}
-        >
+        <div className="absolute inset-0 w-full h-full">
           <Image
             src={heroContent.backgroundImage}
             alt="Luxury Real Estate in Mohali"
             fill
             priority
             className="object-cover object-[center_top]"
-            sizes="(max-width: 768px) 100vw, 100vw"
-            quality={75}
+            sizes="100vw"
+            quality={85}
           />
-        </motion.div>
+        </div>
       </div>
 
       {/* ── Overlays ── */}
@@ -125,29 +119,19 @@ export default function HeroSection() {
       <div className="relative z-30 flex-1 flex flex-col justify-center w-full max-w-[1100px] mx-auto px-6 pt-[calc(var(--nav-height)+3rem)] pb-10">
 
         {/* Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-          className="font-display font-medium text-white mb-5 text-5xl md:text-7xl lg:text-[80px] tracking-tight leading-[1.05] text-center"
-        >
+        <h1 className="font-display font-medium text-white mb-5 text-5xl md:text-7xl lg:text-[80px] tracking-tight leading-[1.05] text-center">
             {heroContent.headline.split('\n').map((line, i) => (
               <span key={i}>
                 {line}
                 <br />
               </span>
             ))}
-          </motion.h1>
+        </h1>
 
-          {/* Subline */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-            className="font-body text-white/85 text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed font-light text-center"
-          >
-            {heroContent.subline}
-          </motion.p>
+        {/* Subline */}
+        <p className="font-body text-white/85 text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed font-light text-center">
+          {heroContent.subline}
+        </p>
 
         {/* ── Search Widget (Desktop & Mobile) ── */}
         <motion.div
