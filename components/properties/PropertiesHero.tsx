@@ -44,10 +44,10 @@ export function PropertiesHero({
       <div className="absolute inset-0 bg-black/55" />
 
       <div className="relative z-10 text-center px-4">
-        <h1 className="text-white font-semibold text-[clamp(1.8rem,4vw,3rem)] leading-[1.2] tracking-tight max-w-2xl mx-auto mb-3">
+        <h1 className="font-display font-medium text-white mb-5 text-5xl md:text-7xl lg:text-[80px] tracking-tight leading-[1.05] text-center max-w-4xl mx-auto">
           {propertiesPage.hero.headline}
         </h1>
-        <p className="text-white/60 text-[clamp(13px,1.2vw,15px)] max-w-lg mx-auto">
+        <p className="font-body text-white/85 text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed font-light text-center">
           {propertiesPage.hero.subline}
         </p>
       </div>

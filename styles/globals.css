@@ -105,16 +105,9 @@ a {
 /* Prevents map components from overlapping the Navbar (z-[60]) */
 .leaflet-container {
   z-index: 10 !important;
-  cursor: default !important;
-}
-.leaflet-grab {
-  cursor: default !important;
-}
-.leaflet-dragging .leaflet-grab {
-  cursor: move !important;
 }
 .leaflet-top, .leaflet-bottom {
-  z-index: 100 !important;
+  z-index: 20 !important;
 }
 
 /* Offset controls from rounded corners */
