@@ -9,19 +9,32 @@ import { enrichProperty } from "@/lib/property-utils";
 
 export async function generateMetadata({ searchParams }: { searchParams: Promise<{ tab?: string }> }): Promise<Metadata> {
   const params = await searchParams;
-  const tab = params.tab || "apartments";
+  const tab = params.tab || "flats";
   
   let title = propertiesPage.metadata.title;
   
-  if (tab === "apartments") {
-    title = "Buy Flat in Mohali with Realty Holding & Management Consultants";
+  if (tab === "flats") {
+    title = "Buy flat in Mohali with Realty Holding And Management Consultants";
+  } else if (tab === "houses") {
+    title = "Buy house in Mohali with Realty Holding And Management Consultants";
   } else if (tab === "lands") {
-    title = "Buy Land in Mohali with Realty Holding & Management Consultants";
+    title = "Buy land in Mohali with Realty Holding And Management Consultants";
   }
   
   return {
-    title,
+    title: {
+      absolute: title,
+    },
     description: propertiesPage.metadata.description,
+    openGraph: {
+      title,
+      description: propertiesPage.metadata.description,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: propertiesPage.metadata.description,
+    },
     alternates: {
       canonical: "/properties",
     },
@@ -61,7 +74,7 @@ async function getProperties(): Promise<Property[]> {
 export default async function PropertiesPage({ searchParams }: { searchParams: Promise<{ tab?: string }> }) {
   const params = await searchParams;
   const properties = await getProperties();
-  const initialTab = (params.tab as any) || "apartments";
+  const initialTab = (params.tab as any) || "flats";
   
   return (
     <Suspense fallback={null}>

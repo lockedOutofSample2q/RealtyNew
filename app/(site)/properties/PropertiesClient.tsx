@@ -39,6 +39,18 @@ export default function PropertiesClient({ properties, initialTab }: Props) {
     setLeafletReady(true);
   }, []);
 
+  useEffect(() => {
+    let title = "Properties in Mohali and Tricity: Verified, Evaluated, Honestly Presented";
+    if (tab === "flats") {
+      title = "Buy flat in Mohali with Realty Holding And Management Consultants";
+    } else if (tab === "houses") {
+      title = "Buy house in Mohali with Realty Holding And Management Consultants";
+    } else if (tab === "lands") {
+      title = "Buy land in Mohali with Realty Holding And Management Consultants";
+    }
+    document.title = title;
+  }, [tab]);
+
   const handleLandEnquire = (p: Property) => {
     setSelectedLand(p);
     setIsLandModalOpen(true);
