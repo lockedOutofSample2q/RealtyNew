@@ -175,7 +175,7 @@ export default function Footer() {
           {/* Map Container */}
           <div className="w-full aspect-[21/9] rounded-[32px] overflow-hidden border border-white/10 mb-12 grayscale invert opacity-80 hover:grayscale-0 hover:invert-0 hover:opacity-100 transition-all duration-700">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.563724816155!2d76.70295847614534!3d30.70258168709325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fef95b706c9a9%3A0x6a2c262a74c2e6f!2sIndustrial%20Area%20Phase%208A%2C%20Mohali%2C%20Punjab!5e0!3m2!1sen!2sin!4v1714578000000!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4453.716732769541!2d76.690384!3d30.6973996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fef18ce4a8b75%3A0xb683c7bdfec33781!2sRealty%20Holding%20and%20Management%20Consultants!5e1!3m2!1sen!2sin!4v1777694291691!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0 }}

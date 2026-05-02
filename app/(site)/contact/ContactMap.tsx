@@ -6,7 +6,7 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
 // E328 Industrial area phase 8A, Mohali
-const position: [number, number] = [30.69738317022751, 76.69031176711192];
+const position: [number, number] = [30.697598112132287, 76.69033031116615];
 
 const CustomIcon = L.divIcon({
   className: "bg-transparent border-none",
