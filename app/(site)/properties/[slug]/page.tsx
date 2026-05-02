@@ -18,6 +18,7 @@ import InquiryForm, { PropertyGallery } from "./InquiryForm";
 import PriceDisplay from "./PriceDisplay";
 import PropertyPriceInline from "./PropertyPriceInline";
 import PropertyDetailMapClient from "./PropertyDetailMapClient";
+import { siteConfig } from "@/config/site";
 
 interface Props { params: Promise<{ slug: string }> }
 
