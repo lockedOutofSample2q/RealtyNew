@@ -52,7 +52,7 @@ export function PropertyGallery({ images, videos = [], title, imageCountOverride
 
   return (
     <div className="py-4 select-none">
-      <div className="flex gap-1 h-[260px] sm:h-[340px] md:h-[420px]">
+      <div className="flex gap-1 h-[320px] sm:h-[460px] md:h-[580px]">
         <div 
           onClick={() => mediaItems[0] && setIndex(0)}
           className={cn(
@@ -82,7 +82,7 @@ export function PropertyGallery({ images, videos = [], title, imageCountOverride
           )}
         </div>
 
-        <div className="hidden md:grid grid-cols-2 gap-1 w-[340px] shrink-0">
+        <div className="hidden md:grid grid-cols-2 gap-1 w-[440px] shrink-0">
           {[1, 2, 3, 4].map((i) => (
             <div 
               key={i} 
