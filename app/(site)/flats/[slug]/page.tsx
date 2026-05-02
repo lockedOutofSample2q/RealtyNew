@@ -110,6 +110,62 @@ export default async function ApartmentDetailPage(props: Props) {
 
   const price = property.price;
 
+  // Generate Schema.org markup
+  const propertySchema = {
+    "@context": "https://schema.org",
+    "@type": ["RealEstateListing", "Product"],
+    "name": property.title,
+    "description": property.meta_description || property.description,
+    "url": `https://www.realtyconsultants.in/flats/${property.slug}`,
+    "image": property.images || [],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": property.address,
+      "addressLocality": "Mohali",
+      "addressRegion": "Punjab",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": property.latitude,
+      "longitude": property.longitude
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": property.price,
+      "priceCurrency": property.price_currency || "INR",
+      "availability": property.status === "available" ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+      "url": `https://www.realtyconsultants.in/flats/${property.slug}`
+    },
+    "amenityFeature": (property.nearby_landmarks || []).map(lm => ({
+      "@type": "LocationFeatureSpecification",
+      "name": lm.name,
+      "value": `${lm.time} min by ${lm.transport}`,
+      "hoursAvailable": null
+    })),
+    "subjectOf": [
+      {
+        "@type": "FloorPlan",
+        "name": `${property.title} - Floor Plan`,
+        "layoutImage": property.unit_types_image || property.images?.[0],
+        "numberOfRooms": property.bedrooms,
+        "floorSize": {
+          "@type": "QuantitativeValue",
+          "value": property.area_sqft,
+          "unitCode": "FTK"
+        }
+      },
+      ...(property.documents || [])
+        .filter(doc => doc.name.toLowerCase().includes("floor plan") || doc.name.toLowerCase().includes("site plan"))
+        .map(doc => ({
+          "@type": "DigitalDocument",
+          "name": doc.name,
+          "url": `https://www.realtyconsultants.in${doc.url}`,
+          "fileFormat": "application/pdf"
+        }))
+    ]
+  };
+
   let faqSchema = null;
   if ((property.faqs?.length ?? 0) > 0) {
     faqSchema = {
@@ -134,6 +190,10 @@ export default async function ApartmentDetailPage(props: Props) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(propertySchema) }}
+      />
       <meta name="thumbnail" content={property.images?.[0] || "/favicon.ico"} />
       <main className="bg-white min-h-screen pt-[var(--nav-height)]">
 

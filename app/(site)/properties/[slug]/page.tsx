@@ -132,18 +132,49 @@ export default async function PropertyDetailPage(props: Props) {
 
   const propertySchema = {
     "@context": "https://schema.org",
-    "@type": "RealEstateListing",
+    "@type": ["RealEstateListing", "Product"],
     "name": property.title,
     "description": property.meta_description || property.description,
     "url": `${siteConfig.url}/properties/${property.slug}`,
-    "image": property.images?.[0],
+    "image": property.images || [],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": property.address,
       "addressLocality": "Mohali",
       "addressRegion": "Punjab",
       "addressCountry": "IN"
-    }
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": property.latitude,
+      "longitude": property.longitude
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": property.price,
+      "priceCurrency": property.price_currency || "INR",
+      "availability": property.status === "available" ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+      "url": `${siteConfig.url}/properties/${property.slug}`
+    },
+    "amenityFeature": (property.nearby_landmarks || []).map(lm => ({
+      "@type": "LocationFeatureSpecification",
+      "name": lm.name,
+      "value": `${lm.time} min by ${lm.transport}`,
+      "hoursAvailable": null
+    })),
+    "subjectOf": [
+      {
+        "@type": "FloorPlan",
+        "name": `${property.title} - Floor Plan`,
+        "layoutImage": property.unit_types_image || property.images?.[0],
+        "numberOfRooms": property.bedrooms,
+        "floorSize": {
+          "@type": "QuantitativeValue",
+          "value": property.area_sqft,
+          "unitCode": "FTK"
+        }
+      }
+    ]
   };
 
   return (
