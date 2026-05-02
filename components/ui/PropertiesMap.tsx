@@ -119,23 +119,33 @@ export default function PropertiesMap({
                   )}
                   <h4 className="font-display font-bold text-sm mb-1 leading-tight">{p.title}</h4>
                   <p className="text-[11px] text-gray-500 mb-2">{p.community}</p>
-                  <div className="flex items-center justify-between gap-4 border-t border-gray-100 pt-2">
-                    <span className="font-body font-bold text-xs">{formatPrice(p.price)}</span>
-                    {onPropertyClick ? (
-                      <button
-                        onClick={() => onPropertyClick(p)}
-                        className="text-[10px] font-bold text-black hover:underline uppercase tracking-wider text-right"
-                      >
-                        Enquire
-                      </button>
-                    ) : (
-                      <Link
-                        href={`/properties/${p.slug}`}
-                        className="text-[10px] font-bold text-blue-600 hover:underline uppercase tracking-wider"
-                      >
-                        Details
-                      </Link>
-                    )}
+                  <div className="border-t border-gray-100 pt-2 space-y-2">
+                    <div className="flex items-center justify-between gap-4">
+                      <span className="font-body font-bold text-xs">{formatPrice(p.price)}</span>
+                      {onPropertyClick ? (
+                        <button
+                          onClick={() => onPropertyClick(p)}
+                          className="text-[10px] font-bold text-black hover:underline uppercase tracking-wider text-right"
+                        >
+                          Enquire
+                        </button>
+                      ) : (
+                        <Link
+                          href={`/properties/${p.slug}`}
+                          className="text-[10px] font-bold text-blue-600 hover:underline uppercase tracking-wider"
+                        >
+                          Details
+                        </Link>
+                      )}
+                    </div>
+                    <a 
+                      href={`https://www.google.com/maps/search/?api=1&query=${position[0]},${position[1]}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block text-[10px] font-bold text-black/30 hover:text-black hover:underline uppercase tracking-wider"
+                    >
+                      Open on Map
+                    </a>
                   </div>
                 </div>
               </Popup>
