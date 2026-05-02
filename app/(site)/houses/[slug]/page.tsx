@@ -147,8 +147,46 @@ export default async function HouseDetailPage(props: Props) {
           "value": property.area_sqft,
           "unitCode": "FTK"
         }
+      },
+      ...(property.documents || [])
+        .filter(doc => doc.name.toLowerCase().includes("floor plan") || doc.name.toLowerCase().includes("site plan"))
+        .map(doc => ({
+          "@type": "DigitalDocument",
+          "name": doc.name,
+          "url": `https://www.realtyconsultants.in${doc.url}`,
+          "fileFormat": "application/pdf"
+        })),
+      ...(property.videos || []).map(videoUrl => ({
+        "@type": "VideoObject",
+        "name": `${property.title} - Property Video`,
+        "description": `Video tour of ${property.title}`,
+        "thumbnailUrl": property.images?.[0],
+        "contentUrl": videoUrl,
+        "uploadDate": property.created_at || new Date().toISOString()
+      }))
+    ],
+    "brand": property.developer ? {
+      "@type": "Organization",
+      "name": property.developer,
+      "url": property.developer_website
+    } : null,
+    "broker": {
+      "@type": "Person",
+      "name": "Amritpal Singh",
+      "jobTitle": "Managing Director",
+      "worksFor": {
+        "@type": "RealEstateAgent",
+        "name": "Realty Holding and Management Consultants",
+        "url": "https://www.realtyconsultants.in"
       }
-    ]
+    },
+    "numberOfBedrooms": property.bedrooms,
+    "numberOfBathrooms": property.bathrooms,
+    "floorSize": {
+      "@type": "QuantitativeValue",
+      "value": property.area_sqft,
+      "unitCode": "FTK"
+    }
   };
 
   const faqSchema = property.faqs && property.faqs.length > 0 ? {
