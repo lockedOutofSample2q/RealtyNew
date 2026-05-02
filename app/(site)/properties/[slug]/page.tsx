@@ -156,12 +156,20 @@ export default async function PropertyDetailPage(props: Props) {
       "availability": property.status === "available" ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
       "url": `${siteConfig.url}/properties/${property.slug}`
     },
-    "amenityFeature": (property.nearby_landmarks || []).map(lm => ({
-      "@type": "LocationFeatureSpecification",
-      "name": lm.name,
-      "value": `${lm.time} min by ${lm.transport}`,
-      "hoursAvailable": null
-    })),
+    "amenityFeature": [
+      ...(property.nearby_landmarks || []).map(lm => ({
+        "@type": "LocationFeatureSpecification",
+        "name": lm.name,
+        "value": `${lm.time} min by ${lm.transport}`,
+        "hoursAvailable": null
+      })),
+      ...(property.upcoming_infrastructure || []).map(item => ({
+        "@type": "LocationFeatureSpecification",
+        "name": `Upcoming: ${item}`,
+        "value": "Future Development",
+        "hoursAvailable": null
+      }))
+    ],
     "subjectOf": [
       {
         "@type": "FloorPlan",
