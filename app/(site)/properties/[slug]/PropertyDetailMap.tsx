@@ -26,7 +26,6 @@ export default function PropertyDetailMap({
   title: string;
 }) {
   const [isMounted, setIsMounted] = useState(false);
-  const [mapTheme, setMapTheme] = useState<"light" | "satellite">("light");
 
   useEffect(() => {
     L.Marker.prototype.options.icon = PIN;
@@ -34,7 +33,6 @@ export default function PropertyDetailMap({
   }, []);
 
   if (!isMounted) return <div className="w-full h-full bg-slate-50" />;
-
   return (
     <div className="w-full h-full relative">
       <MapContainer
@@ -45,18 +43,8 @@ export default function PropertyDetailMap({
         scrollWheelZoom={false}
       >
         <TileLayer
-          key={mapTheme}
-          attribution={
-            mapTheme === "light"
-              ? '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-              : '&copy; Google Maps'
-          }
-          url={
-            mapTheme === "light"
-              ? "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
-              : "https://{s}.google.com/vt/lyrs=y&x={x}&y={y}&z={z}"
-          }
-          subdomains={mapTheme === "satellite" ? ["mt0", "mt1", "mt2", "mt3"] : ["a", "b", "c", "d"]}
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
         />
         <Marker position={[lat, lng]} icon={PIN}>
           <Popup>
@@ -74,28 +62,6 @@ export default function PropertyDetailMap({
           </Popup>
         </Marker>
       </MapContainer>
-
-      {/* Theme Toggle Button */}
-      <div className="absolute bottom-6 right-6 z-[1000]">
-        <button
-          onClick={() => setMapTheme(mapTheme === "light" ? "satellite" : "light")}
-          className="flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur-md border border-black/10 rounded-full shadow-lg hover:bg-white transition-all group/btn"
-        >
-          <div className={cn(
-            "w-5 h-5 rounded-md overflow-hidden border border-black/5 transition-transform group-hover/btn:scale-110",
-            mapTheme === "light" ? "bg-black/5" : "bg-blue-500"
-          )}>
-            <img 
-              src={mapTheme === "light" ? "/assets/images/lands/cholta-khurd-satellite-pin.png" : "/assets/images/home/hero.jpg"} 
-              className="w-full h-full object-cover opacity-80"
-              alt="Theme Preview"
-            />
-          </div>
-          <span className="text-[10px] font-bold uppercase tracking-widest text-black">
-            {mapTheme === "light" ? "Satellite" : "Map"}
-          </span>
-        </button>
-      </div>
     </div>
   );
 }
