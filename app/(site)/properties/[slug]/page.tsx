@@ -251,7 +251,9 @@ export default async function PropertyDetailPage(props: Props) {
               <section className="mb-10">
                 <h2 className="text-[18px] font-bold text-black mb-5">Amenities Gallery</h2>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                  {property.amenities_gallery!.filter(s => s && s.trim() !== "").map((src, i) => (
+                  {property.amenities_gallery!
+                    .filter(s => typeof s === 'string' && s.trim() !== "" && (s.startsWith('/') || s.startsWith('http')))
+                    .map((src, i) => (
                     <div key={i} className="relative aspect-square rounded-2xl overflow-hidden bg-black/5">
                       <Image src={src} alt={`Amenity ${i + 1}`} fill className="object-cover" />
                     </div>
