@@ -251,7 +251,7 @@ export default async function PropertyDetailPage(props: Props) {
               <section className="mb-10">
                 <h2 className="text-[18px] font-bold text-black mb-5">Amenities Gallery</h2>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                  {property.amenities_gallery!.map((src, i) => (
+                  {property.amenities_gallery!.filter(s => s && s.trim() !== "").map((src, i) => (
                     <div key={i} className="relative aspect-square rounded-2xl overflow-hidden bg-black/5">
                       <Image src={src} alt={`Amenity ${i + 1}`} fill className="object-cover" />
                     </div>
@@ -323,7 +323,7 @@ export default async function PropertyDetailPage(props: Props) {
 
                   {/* 3. Resources / Links */}
                   <div className="flex flex-col gap-3">
-                    {(property.documents || []).map((doc, idx) => (
+                    {(property.documents || []).filter(doc => doc.url && doc.url.trim() !== "").map((doc, idx) => (
                       <a
                         key={idx}
                         href={doc.url}
