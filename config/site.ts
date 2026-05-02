@@ -63,7 +63,7 @@ export const navItems: NavItem[] = [
 export const footerLinks = {
   quick: [
     { label: "Properties", href: "/properties" },
-    { label: "Flats", href: "/apartments" },
+    { label: "Flats", href: "/flats" },
     { label: "Houses", href: "/houses" },
     { label: "Lands", href: "/properties?tab=lands" },
     { label: "Market Blog", href: "/blog" },

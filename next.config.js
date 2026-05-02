@@ -78,6 +78,11 @@ const nextConfig = {
         destination: "/tools/mortgage-calculator",
         permanent: true,
       },
+      {
+        source: "/apartments",
+        destination: "/flats",
+        permanent: true,
+      },
     ];
   },
 };

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Premium Flats in Mohali | Realty Holding & Management Consultants",
   description: "Explore luxury flats for sale in Mohali. Verified listings with detailed floor plans, pricing, and amenities.",
   alternates: {
-    canonical: "/apartments",
+    canonical: "/flats",
   },
 };
 

@@ -31,12 +31,16 @@ export default function PropertyCard({
   // Determine link path
   const detailHref = customHref ?? `/properties/${property.slug}`;
 
+  const CardWrapper = isLands ? "div" : Link;
+  const wrapperProps = isLands ? {} : { href: detailHref };
+
   if (variant === "image-bg") {
     return (
-      <Link
-        href={detailHref}
+      <CardWrapper
+        {...(wrapperProps as any)}
         className={cn(
           "group relative block overflow-hidden rounded-xl aspect-[4/5] bg-charcoal-50",
+          !isLands && "cursor-pointer",
           className
         )}
       >
@@ -54,7 +58,7 @@ export default function PropertyCard({
         <div className="absolute top-5 left-5 right-5 flex justify-between items-start">
           <div className="bg-white/20 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-full">
             <span className="font-body text-xs uppercase tracking-widest text-white font-bold">
-              {isLands ? "For Rent" : "For Sale"}
+              {isLands ? "Buy" : "For Sale"}
             </span>
           </div>
 
@@ -81,30 +85,32 @@ export default function PropertyCard({
               {property.price > 0 ? (
                 <>
                   {formatPrice(property.price)}
-                  {isLands && <span className="font-body text-xs text-white/70 ml-1">/yr</span>}
                 </>
               ) : (
                 <span className="text-sm text-white/60 italic font-normal">Price on request</span>
               )}
             </div>
-            <div className="w-10 h-10 rounded-full bg-white text-charcoal flex items-center justify-center group-hover:-rotate-45 transition-transform duration-500 shrink-0 shadow-lg">
-               <ArrowRight size={18} />
-            </div>
+            {!isLands && (
+              <div className="w-10 h-10 rounded-full bg-white text-charcoal flex items-center justify-center group-hover:-rotate-45 transition-transform duration-500 shrink-0 shadow-lg">
+                 <ArrowRight size={18} />
+              </div>
+            )}
           </div>
         </div>
-      </Link>
+      </CardWrapper>
     );
   }
 
   // Standard Variant
   return (
-    <Link
-      href={detailHref}
-      onMouseEnter={() => onHover?.(true)}
-      onMouseLeave={() => onHover?.(false)}
+    <CardWrapper
+      {...(wrapperProps as any)}
+      onMouseEnter={() => !isLands && onHover?.(true)}
+      onMouseLeave={() => !isLands && onHover?.(false)}
       className={cn(
         "group flex flex-col bg-white rounded-xl overflow-hidden border border-border transition-all duration-500",
-        isHovered && "ring-2 ring-black ring-offset-2 scale-[1.02] z-10",
+        isHovered && !isLands && "ring-2 ring-black ring-offset-2 scale-[1.02] z-10",
+        !isLands && "cursor-pointer",
         className
       )}
     >
@@ -120,7 +126,7 @@ export default function PropertyCard({
         />
         <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-border">
           <span className="font-body text-xs uppercase tracking-widest text-charcoal font-bold">
-            {isLands ? "Rent" : "Buy"}
+            {isLands ? "Buy" : "Buy"}
           </span>
         </div>
       </div>
@@ -173,16 +179,17 @@ export default function PropertyCard({
               <>
                 {formatPrice(property.price)}
                 {property.price_max && property.price_max > property.price && ` - ${formatPrice(property.price_max)}`}
-                {isLands && <span className="font-body text-sm text-muted font-normal ml-1">/yr</span>}
               </>
             ) : <span className="text-sm text-muted italic font-normal">Price on request</span>}
           </div>
-          <div className="w-11 h-11 rounded-full border border-border flex items-center justify-center group-hover:bg-charcoal group-hover:text-white transition-all duration-300 shrink-0 shadow-subtle">
-            <ArrowRight size={18} className="group-hover:-rotate-45 transition-transform duration-300" />
-          </div>
+          {!isLands && (
+            <div className="w-11 h-11 rounded-full border border-border flex items-center justify-center group-hover:bg-charcoal group-hover:text-white transition-all duration-300 shrink-0 shadow-subtle">
+              <ArrowRight size={18} className="group-hover:-rotate-45 transition-transform duration-300" />
+            </div>
+          )}
         </div>
       </div>
-    </Link>
+    </CardWrapper>
   );
 }
 

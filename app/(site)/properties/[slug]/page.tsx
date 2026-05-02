@@ -27,7 +27,10 @@ interface Props { params: Promise<{ slug: string }> }
 export async function generateStaticParams() {
   try {
     const supabase = createAdminClient();
-    const { data } = await supabase.from("properties").select("slug");
+    const { data } = await supabase
+      .from("properties")
+      .select("slug")
+      .not("listing_type", "eq", "lands");
     return (data ?? []).map((p: any) => ({ slug: p.slug }));
   } catch {
     return [];

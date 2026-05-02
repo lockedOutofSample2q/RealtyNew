@@ -46,7 +46,7 @@ export default function Navbar() {
   const isListingPage = ["/properties"].includes(pathname || "");
   
   // These specific pages have dark hero sections at the top
-  const darkHeaderPages = ["/", "/properties", "/apartments", "/houses", "/about", "/booking"];
+  const darkHeaderPages = ["/", "/properties", "/flats", "/houses", "/about", "/booking"];
   
   // Robust check if current page is in the dark header list
   const isDarkHeroPage = darkHeaderPages.some(page => {
@@ -54,7 +54,7 @@ export default function Navbar() {
     
     // For listing categories, only the index pages are dark hero. 
     // Detail pages (/properties/[slug], etc) are light/white.
-    const isListingIndex = ["/properties", "/apartments", "/houses"].includes(page);
+    const isListingIndex = ["/properties", "/flats", "/houses"].includes(page);
     if (isListingIndex) return pathname === page;
 
     return pathname === page || pathname?.startsWith(`${page}/`);

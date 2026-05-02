@@ -99,8 +99,8 @@ export default async function ApartmentDetailPage(props: Props) {
   const property = enrichProperty(rawProperty);
   const related = await getRelatedProperties(property);
 
-  const backHref = "/apartments";
-  const backLabel = "Apartments";
+  const backHref = "/flats";
+  const backLabel = "Flats";
   const listingLabel = "Apartment For Sale";
 
   const bedroomsDisplay =
