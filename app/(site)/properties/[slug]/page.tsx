@@ -149,7 +149,15 @@ export default async function PropertyDetailPage(props: Props) {
       "latitude": property.latitude,
       "longitude": property.longitude
     },
-    "offers": {
+    "offers": property.price_max ? {
+      "@type": "AggregateOffer",
+      "lowPrice": property.price,
+      "highPrice": property.price_max,
+      "priceCurrency": property.price_currency || "INR",
+      "availability": property.status === "available" ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+      "offerCount": 1,
+      "url": `${siteConfig.url}/properties/${property.slug}`
+    } : {
       "@type": "Offer",
       "price": property.price,
       "priceCurrency": property.price_currency || "INR",
@@ -185,7 +193,7 @@ export default async function PropertyDetailPage(props: Props) {
         "floorSize": {
           "@type": "QuantitativeValue",
           "value": property.area_sqft,
-          "unitCode": "FTK"
+          "unitText": "sq.ft"
         }
       },
       ...(property.documents || [])
