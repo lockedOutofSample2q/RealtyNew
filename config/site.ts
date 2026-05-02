@@ -177,7 +177,7 @@ export const faqs = [
 // ── SEO Defaults ─────────────────────────────────────────────
 export const seoDefaults = {
   titleTemplate: "%s | Realty Holding and Management Consultants",
-  defaultTitle: "Property Dealer in Mohali | Realty Holding and Management Consultants",
+  defaultTitle: "Buy flats and lands in Mohali with Trust | Realty Holding and Management Consultants ",
   description: siteConfig.description,
   openGraph: {
     type: "website",
