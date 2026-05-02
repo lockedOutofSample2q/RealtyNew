@@ -105,14 +105,14 @@ export default function PropertiesMap({
               className="flex items-center gap-2 px-4 py-2.5 bg-white/90 backdrop-blur-md border border-black/10 rounded-full shadow-lg hover:bg-white transition-all group/btn"
             >
               <div className={cn(
-                "w-6 h-6 rounded-md overflow-hidden border border-black/5 transition-transform group-hover/btn:scale-110",
-                mapTheme === "light" ? "bg-black/5" : "bg-blue-500"
+                "w-7 h-7 rounded-full flex items-center justify-center border border-black/5 transition-all shadow-sm",
+                mapTheme === "light" ? "bg-black/5 text-black" : "bg-blue-600 text-white shadow-blue-200"
               )}>
-                <img 
-                  src={mapTheme === "light" ? "/assets/images/lands/cholta-khurd-satellite-pin.png" : "/assets/images/home/hero.jpg"} 
-                  className="w-full h-full object-cover opacity-80"
-                  alt="Theme Preview"
-                />
+                {mapTheme === "light" ? (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                ) : (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                )}
               </div>
               <span className="text-[11px] font-bold uppercase tracking-widest text-black">
                 {mapTheme === "light" ? "Satellite View" : "Map View"}
