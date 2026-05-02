@@ -24,7 +24,7 @@ export function usePropertyFilters(properties: Property[], initialTab?: SearchTa
   const router = useRouter();
   const searchParams = useSearchParams();
   const [tab, setTab] = useState<SearchTab>(
-    initialTab || (searchParams.get("tab") as SearchTab) || "apartments"
+    initialTab || (searchParams.get("tab") as SearchTab) || "flats"
   );
   const [filters, setFilters] = useState<PropertySearchFilters>({
     ...DEFAULT_PROPERTY_FILTERS,
@@ -66,7 +66,7 @@ export function usePropertyFilters(properties: Property[], initialTab?: SearchTa
       const pDev = normalize(p.developer);
 
       // ── TYPE/TAB LOGIC (Strictly based on entity_type) ──────
-      if (tab === "apartments") {
+      if (tab === "flats") {
         if (p.entity_type !== 'apartment') return false;
       } 
       else if (tab === "houses") {
