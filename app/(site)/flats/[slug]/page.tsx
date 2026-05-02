@@ -149,6 +149,12 @@ export default async function ApartmentDetailPage(props: Props) {
         "name": `Upcoming: ${item}`,
         "value": "Future Development",
         "hoursAvailable": null
+      })),
+      ...(property.amenities || []).map(amenity => ({
+        "@type": "LocationFeatureSpecification",
+        "name": amenity,
+        "value": true,
+        "hoursAvailable": null
       }))
     ],
     "subjectOf": [
