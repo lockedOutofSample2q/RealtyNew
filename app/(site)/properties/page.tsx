@@ -7,13 +7,26 @@ import PropertiesClient from "./PropertiesClient";
 import { Suspense } from "react";
 import { enrichProperty } from "@/lib/property-utils";
 
-export const metadata: Metadata = {
-  title: propertiesPage.metadata.title,
-  description: propertiesPage.metadata.description,
-  alternates: {
-    canonical: "/properties",
-  },
-};
+export async function generateMetadata({ searchParams }: { searchParams: Promise<{ tab?: string }> }): Promise<Metadata> {
+  const params = await searchParams;
+  const tab = params.tab || "apartments";
+  
+  let title = propertiesPage.metadata.title;
+  
+  if (tab === "apartments") {
+    title = "Buy Flat in Mohali with Realty Holding & Management Consultants";
+  } else if (tab === "lands") {
+    title = "Buy Land in Mohali with Realty Holding & Management Consultants";
+  }
+  
+  return {
+    title,
+    description: propertiesPage.metadata.description,
+    alternates: {
+      canonical: "/properties",
+    },
+  };
+}
 
 export const revalidate = 60;
 
