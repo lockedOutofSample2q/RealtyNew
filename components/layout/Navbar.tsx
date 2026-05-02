@@ -91,7 +91,7 @@ export default function Navbar() {
     <>
       <header
         className={cn(
-          "absolute top-0 left-0 right-0 z-[60] py-4 sm:py-6 transition-all duration-300 border-b",
+          "absolute top-0 left-0 right-0 z-[60] pt-[2vw] pb-[3vw] transition-all duration-300 border-b",
           useDarkText ? "bg-white/95 backdrop-blur-md border-black/5" : "bg-transparent border-transparent"
         )}
       >
@@ -99,7 +99,7 @@ export default function Navbar() {
           
           {/* -- Logo --------------------------------------- */}
           <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 group z-50">
-            <div className="relative h-10 sm:h-14 aspect-[1756/925]">
+            <div className="relative h-[10vw] sm:h-[6vw] aspect-[1756/925]">
               <img 
                 src="/assets/logo-light-theme.svg" 
                 alt={siteConfig.name} 

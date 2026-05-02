@@ -17,9 +17,9 @@
   --card: #F9F9F9;
   --card-hover: #F0F0F0;
 
-  --nav-height: 100px;
+  --nav-height: 180px;
   @media (max-width: 768px) {
-    --nav-height: 60px;
+    --nav-height: 100px;
   }
   --max-width: 1320px;
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
