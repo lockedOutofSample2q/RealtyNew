@@ -6,6 +6,8 @@ import { X, ChevronLeft, ChevronRight, Play, Images, Share2 } from "lucide-react
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
+const isValidUrl = (s: any) => typeof s === 'string' && s.trim() !== "" && (s.startsWith('/') || s.startsWith('http'));
+
 // ── PROPERTY GALLERY COMPONENT ──────────────────────────────
 interface PropertyGalleryProps {
   images: string[];
@@ -197,10 +199,16 @@ export function PropertyGallery({ images, videos = [], title, imageCountOverride
 function MediaThumbnail({ item, title, className, priority }: { item: MediaItem; title: string; className?: string; priority?: boolean }) {
   if (!item) return null;
   let src = item.url;
+  if (!isValidUrl(src) && item.type === "image") {
+    return <div className={cn("w-full h-full bg-black/5 flex items-center justify-center text-black/10", className)}><Images size={32} /></div>;
+  }
   if (item.type === "video") {
     const ytId = getYouTubeId(item.url);
     if (ytId) src = `https://img.youtube.com/vi/${ytId}/maxresdefault.jpg`;
     else return <div className={cn("w-full h-full bg-black flex items-center justify-center text-white/20", className)}><Play size={32} /></div>;
+  }
+  if (!isValidUrl(src)) {
+     return <div className={cn("w-full h-full bg-black/5 flex items-center justify-center text-black/10", className)}><Images size={32} /></div>;
   }
   return (
     <Image 

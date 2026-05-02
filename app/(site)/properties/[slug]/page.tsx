@@ -20,6 +20,8 @@ import PropertyPriceInline from "./PropertyPriceInline";
 import PropertyDetailMapClient from "./PropertyDetailMapClient";
 import { siteConfig } from "@/config/site";
 
+const isValidUrl = (s: any) => typeof s === 'string' && s.trim() !== "" && (s.startsWith('/') || s.startsWith('http'));
+
 interface Props { params: Promise<{ slug: string }> }
 
 export async function generateStaticParams() {
@@ -304,7 +306,7 @@ export default async function PropertyDetailPage(props: Props) {
                   {/* 2. Unit Types & Sizes */}
                   <div className="relative rounded-[24px] overflow-hidden min-h-[440px] group cursor-pointer">
                     <Image
-                      src={property.unit_types_image || property.images?.[0] || "/assets/images/home/about.jpg"}
+                      src={isValidUrl(property.unit_types_image) ? property.unit_types_image! : (isValidUrl(property.images?.[0]) ? property.images![0] : "/assets/images/home/about.jpg")}
                       alt="Unit Types & Sizes"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
