@@ -56,6 +56,7 @@ export default function PropertiesMap({
   onHover?: (id: string | null) => void
 }) {
   const { formatPrice } = useCurrency();
+  const [mapTheme, setMapTheme] = useState<"light" | "satellite">("light");
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -67,7 +68,7 @@ export default function PropertiesMap({
   if (!isMounted) return null;
 
   return (
-    <div className="w-full h-full rounded-[40px] overflow-hidden border border-black/5">
+    <div className="w-full h-full rounded-[40px] overflow-hidden border border-black/5 relative group">
       <MapContainer
         id={mapId}
         center={DEFAULT_CENTER}
@@ -76,12 +77,41 @@ export default function PropertiesMap({
         scrollWheelZoom={false}
         zoomControl={false}
       >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-          url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
-        />
+        {mapTheme === "light" ? (
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+            url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+          />
+        ) : (
+          <TileLayer
+            attribution='Map data &copy; <a href="https://www.google.com/intl/en_in/help/terms_maps.html">Google</a>'
+            url="https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}"
+          />
+        )}
         <ZoomControl position="topleft" />
         <MapResizer />
+
+        {/* Theme Toggle Button */}
+        <div className="absolute bottom-6 right-6 z-[1000]">
+          <button
+            onClick={() => setMapTheme(mapTheme === "light" ? "satellite" : "light")}
+            className="flex items-center gap-2 px-4 py-2.5 bg-white/90 backdrop-blur-md border border-black/10 rounded-full shadow-lg hover:bg-white transition-all group/btn"
+          >
+            <div className={cn(
+              "w-6 h-6 rounded-md overflow-hidden border border-black/5 transition-transform group-hover/btn:scale-110",
+              mapTheme === "light" ? "bg-black/5" : "bg-blue-500"
+            )}>
+              <img 
+                src={mapTheme === "light" ? "/assets/images/lands/cholta-khurd-satellite-pin.png" : "/assets/images/home/hero.jpg"} 
+                className="w-full h-full object-cover opacity-80"
+                alt="Theme Preview"
+              />
+            </div>
+            <span className="text-[11px] font-bold uppercase tracking-widest text-black">
+              {mapTheme === "light" ? "Satellite View" : "Map View"}
+            </span>
+          </button>
+        </div>
 
         {properties.map((p) => {
           const isHovered = hoveredId === p.id;
