@@ -6,6 +6,7 @@ import "leaflet/dist/leaflet.css";
 import Link from "next/link";
 import { useCurrency } from "@/context/CurrencyContext";
 import type { Property } from "@/types";
+import { cn } from "@/lib/utils";
 
 // Fix Leaflet marker icons
 const icon = L.icon({
