@@ -90,6 +90,7 @@ export default function PropertiesClient({ properties, initialTab }: Props) {
           onPropertyClick={tab === "lands" ? handleLandEnquire : undefined}
           hoveredId={hoveredPropertyId}
           onHover={setHoveredPropertyId}
+          tab={tab}
         />
       </div>
 
