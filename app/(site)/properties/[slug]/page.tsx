@@ -113,8 +113,49 @@ export default async function PropertyDetailPage(props: Props) {
 
   const price = property.price;
 
+  // Generate Schema.org markup
+  const faqSchema = property.faqs && property.faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": property.faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  } : null;
+
+  const propertySchema = {
+    "@context": "https://schema.org",
+    "@type": "RealEstateListing",
+    "name": property.title,
+    "description": property.meta_description || property.description,
+    "url": `${siteConfig.url}/properties/${property.slug}`,
+    "image": property.images?.[0],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": property.address,
+      "addressLocality": "Mohali",
+      "addressRegion": "Punjab",
+      "addressCountry": "IN"
+    }
+  };
+
   return (
     <div className="bg-white min-h-screen pt-[var(--nav-height)]">
+      {/* SEO Schemas */}
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(propertySchema) }}
+      />
 
       {/* ── Breadcrumb ──────────────────────────────────── */}
       <div className="border-b border-black/6">

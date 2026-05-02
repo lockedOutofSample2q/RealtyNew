@@ -4,6 +4,7 @@ import { Instagram, Facebook, Linkedin, Youtube, Mail, Phone, MapPin } from "luc
 import { siteConfig, footerLinks } from "@/config/site";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
+import FooterMapWrapper from "./FooterMapWrapper";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -173,16 +174,8 @@ export default function Footer() {
           <h4 className="font-display text-3xl font-medium mb-10">Visit Our Office</h4>
           
           {/* Map Container */}
-          <div className="w-full aspect-[21/9] rounded-[32px] overflow-hidden border border-white/10 mb-12 opacity-90 hover:opacity-100 transition-all duration-700">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4453.716732769541!2d76.690384!3d30.6973996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fef18ce4a8b75%3A0xb683c7bdfec33781!2sRealty%20Holding%20and%20Management%20Consultants!5e1!3m2!1sen!2sin!4v1777694291691!5m2!1sen!2sin"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+          <div className="w-full aspect-[21/9] rounded-[32px] overflow-hidden border border-white/10 mb-12 opacity-90 hover:opacity-100 transition-all duration-700 bg-white/5">
+            <FooterMapWrapper />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start w-full">

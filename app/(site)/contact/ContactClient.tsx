@@ -9,7 +9,7 @@ import { contactSubjects } from "@/config/contact";
 import FormSelect from "@/components/ui/FormSelect";
 
 // Reusing leaflet map logic since Mapbox implies an interactive map.
-const ContactMap = dynamic(() => import("./ContactMap"), {
+const ContactMap = dynamic(() => import("@/components/ui/ContactMap"), {
   ssr: false,
   loading: () => <div className="w-full h-full bg-black/10" />
 });

@@ -8,8 +8,28 @@ import { faqs } from "@/config/site";
 export default function FaqSection() {
   const [open, setOpen] = useState<number | null>(0);
 
+  // Generate FAQ Schema
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
     <section className="section-padding bg-white">
+      {/* FAQ Schema for Google */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      
       <div className="container-site max-w-4xl flex flex-col items-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
