@@ -8,7 +8,6 @@ import { useState, useEffect } from "react";
 import { Plus, Pencil, Trash2, Search } from "lucide-react";
 import { createClient } from "@/lib/supabase";
 import { toast } from "sonner";
-import Link from "next/navigation";
 import { useRouter } from "next/navigation";
 
 export default function ApartmentsAdmin() {

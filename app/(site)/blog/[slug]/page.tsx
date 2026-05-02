@@ -4,7 +4,7 @@ import Image from "next/image";
 import { format, parseISO } from "date-fns";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import MdxContent from "@/components/blog/MdxContent";
+import { MDXRemote } from "next-mdx-remote/rsc";
 import { siteConfig } from "@/config/site";
 
 interface PostPageProps {
@@ -118,7 +118,7 @@ export default async function PostPage({ params }: PostPageProps) {
           </div>
 
           <div className="prose prose-lg prose-charcoal max-w-none prose-headings:font-serif">
-            <MdxContent code={post.body.code} />
+            <MDXRemote source={post.body.raw} />
           </div>
         </div>
       </div>

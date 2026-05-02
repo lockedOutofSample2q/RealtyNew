@@ -9,7 +9,7 @@ export function cn(...inputs: ClassValue[]) {
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   asChild?: boolean
-  variant?: "primary" | "secondary" | "ghost"
+  variant?: "primary" | "secondary" | "ghost" | "outline"
   size?: "sm" | "md" | "lg" | "icon"
 }
 
@@ -25,6 +25,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           {
             "bg-charcoal text-white hover:bg-black/80": variant === "primary",
             "border border-border bg-white text-charcoal hover:bg-charcoal/5": variant === "secondary",
+            "border border-white/20 bg-transparent text-white hover:bg-white hover:text-charcoal": variant === "outline",
             "text-charcoal hover:bg-charcoal/5 hover:text-charcoal": variant === "ghost",
             "h-9 px-4 rounded-md": size === "sm",
             "h-12 px-6 rounded-lg": size === "md",

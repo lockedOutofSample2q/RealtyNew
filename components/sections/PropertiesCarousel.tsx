@@ -20,7 +20,7 @@ const PLACEHOLDERS: Partial<Property>[] = Array.from({ length: 4 }, (_, i) => ({
   id: `placeholder-${i}`,
   title: "Luxury Residence",
   slug: "#",
-  type: "flat",
+  type: "apartment",
   status: "available",
   listing_type: "sale",
   price: 2500000 + i * 500000,
