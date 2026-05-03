@@ -79,7 +79,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   };
 }
 
-export const revalidate = 60;
+export const revalidate = 604800; // 1 week
 
 export default async function HouseDetailPage(props: Props) {
   const params = await props.params;

@@ -41,8 +41,8 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   };
 }
 
-// Disable caching to ensure real-time updates from Supabase
-export const revalidate = 0;
+// Enable weekly caching (ISR every 7 days)
+export const revalidate = 604800;
 
 async function getProperties(): Promise<Property[]> {
   try {

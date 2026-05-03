@@ -19,8 +19,8 @@ import type { Property } from "@/types";
 import { enrichProperty } from "@/lib/property-utils";
 
 // Fetch fresh properties at build time (ISR every 60s)
-// Disable caching to ensure real-time updates from Supabase
-export const revalidate = 0;
+// Enable weekly caching (ISR every 7 days)
+export const revalidate = 604800;
 
 async function getHomeData() {
   try {
