@@ -32,7 +32,7 @@ export default function PropertyCard({
   const detailHref = customHref ?? `/properties/${property.slug}`;
 
   const CardWrapper = Link;
-  const wrapperProps = { href: isLands ? "/lands" : detailHref };
+  const wrapperProps = { href: isLands ? "/properties?tab=lands" : detailHref };
 
   if (variant === "image-bg") {
     return (
