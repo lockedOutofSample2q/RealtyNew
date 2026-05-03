@@ -9,6 +9,7 @@ import { Toaster } from "sonner";
 import "@/styles/globals.css";
 import { seoDefaults, siteConfig } from "@/config/site";
 import { Cormorant_Garamond, DM_Sans, DM_Mono } from "next/font/google";
+import Script from "next/script";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -122,6 +123,20 @@ export default function RootLayout({
         />
       </head>
       <body className={`${cormorant.variable} ${dmSans.variable} ${dmMono.variable} overflow-x-hidden font-body`}>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-ZWNKTZ1M1S"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-ZWNKTZ1M1S');
+          `}
+        </Script>
         {children}
         <Toaster
           position="bottom-right"
