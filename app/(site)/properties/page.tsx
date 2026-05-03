@@ -41,7 +41,8 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   };
 }
 
-export const revalidate = 60;
+// Disable caching to ensure real-time updates from Supabase
+export const revalidate = 0;
 
 async function getProperties(): Promise<Property[]> {
   try {

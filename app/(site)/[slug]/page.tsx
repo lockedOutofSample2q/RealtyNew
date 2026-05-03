@@ -59,7 +59,8 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   };
 }
 
-export const revalidate = 60;
+// Disable caching to ensure real-time updates from Supabase
+export const revalidate = 0;
 
 // ── Amenity icon lookup ───────────────────────────────────────
 const AMENITY_ICON_MAP: Record<string, React.ElementType> = {
