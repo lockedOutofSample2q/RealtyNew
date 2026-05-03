@@ -31,16 +31,15 @@ export default function PropertyCard({
   // Determine link path
   const detailHref = customHref ?? `/properties/${property.slug}`;
 
-  const CardWrapper = isLands ? "div" : Link;
-  const wrapperProps = isLands ? {} : { href: detailHref };
+  const CardWrapper = Link;
+  const wrapperProps = { href: isLands ? "/properties?tab=lands" : detailHref };
 
   if (variant === "image-bg") {
     return (
       <CardWrapper
         {...(wrapperProps as any)}
         className={cn(
-          "group relative block overflow-hidden rounded-xl aspect-[4/5] bg-charcoal-50",
-          !isLands && "cursor-pointer",
+          "group relative block overflow-hidden rounded-xl aspect-[4/5] bg-charcoal-50 cursor-pointer",
           className
         )}
       >
@@ -105,12 +104,11 @@ export default function PropertyCard({
   return (
     <CardWrapper
       {...(wrapperProps as any)}
-      onMouseEnter={() => !isLands && onHover?.(true)}
-      onMouseLeave={() => !isLands && onHover?.(false)}
+      onMouseEnter={() => onHover?.(true)}
+      onMouseLeave={() => onHover?.(false)}
       className={cn(
-        "group flex flex-col bg-white rounded-xl overflow-hidden border border-border transition-all duration-500",
-        isHovered && !isLands && "ring-2 ring-black ring-offset-2 scale-[1.02] z-10",
-        !isLands && "cursor-pointer",
+        "group flex flex-col bg-white rounded-xl overflow-hidden border border-border transition-all duration-500 cursor-pointer",
+        isHovered && "ring-2 ring-black ring-offset-2 scale-[1.02] z-10",
         className
       )}
     >
