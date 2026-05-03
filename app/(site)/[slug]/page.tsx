@@ -192,7 +192,13 @@ export default async function PropertyDetailPage(props: Props) {
             <div className="flex items-center gap-5 sm:gap-10 flex-wrap border-y border-black/8 py-6 mb-10">
               <div>
                 <p className="text-[10px] uppercase tracking-widest text-black/35 mb-1">Size</p>
-                <p className="text-[17px] font-bold text-black">{property.area_sqft ? `${property.area_sqft.toLocaleString()} sqft` : 'N/A'}</p>
+                <p className="text-[17px] font-bold text-black">
+                  {property.area_sqft ? (
+                    property.area_sqft_max && property.area_sqft_max !== property.area_sqft ? 
+                    `${property.area_sqft.toLocaleString()} - ${property.area_sqft_max.toLocaleString()} sqft` :
+                    `${property.area_sqft.toLocaleString()} sqft`
+                  ) : 'N/A'}
+                </p>
               </div>
               {property.bedrooms !== null && (
                 <div>

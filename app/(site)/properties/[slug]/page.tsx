@@ -331,7 +331,11 @@ export default async function PropertyDetailPage(props: Props) {
               <div>
                 <p className="text-[10px] uppercase tracking-widest text-black/35 mb-1.5 font-bold">Size</p>
                 <p className="text-[17px] font-bold text-black font-display">
-                  {property.area_sqft ? `${property.area_sqft.toLocaleString()} sqft` : 'N/A'}
+                  {property.area_sqft ? (
+                    property.area_sqft_max && property.area_sqft_max !== property.area_sqft ? 
+                    `${property.area_sqft.toLocaleString()} - ${property.area_sqft_max.toLocaleString()} sqft` :
+                    `${property.area_sqft.toLocaleString()} sqft`
+                  ) : 'N/A'}
                 </p>
               </div>
               {property.bedrooms !== null && (

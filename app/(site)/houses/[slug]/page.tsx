@@ -93,7 +93,10 @@ export default async function HouseDetailPage(props: Props) {
   const backLabel = "Houses";
   const listingLabel = "House For Sale";
 
-  const bedroomsDisplay = property.bedrooms === 0 ? "Studio" : String(property.bedrooms ?? "—");
+  const bedroomsDisplay =
+    property.bedrooms_max && property.bedrooms_max !== property.bedrooms
+      ? `${property.bedrooms}-${property.bedrooms_max}`
+      : property.bedrooms === 0 ? "Studio" : String(property.bedrooms ?? "—");
 
   // Generate Schema.org markup
   const propertySchema = {
@@ -290,7 +293,11 @@ export default async function HouseDetailPage(props: Props) {
                 <div>
                   <p className="text-[10px] uppercase tracking-widest text-black/35 mb-1.5 font-bold">Size</p>
                   <p className="text-[17px] font-bold text-black font-display">
-                    {property.area_sqft ? `${property.area_sqft.toLocaleString()} sqft` : 'N/A'}
+                    {property.area_sqft ? (
+                      property.area_sqft_max && property.area_sqft_max !== property.area_sqft ? 
+                      `${property.area_sqft.toLocaleString()} - ${property.area_sqft_max.toLocaleString()} sqft` :
+                      `${property.area_sqft.toLocaleString()} sqft`
+                    ) : 'N/A'}
                   </p>
                 </div>
                 {property.bedrooms !== null && (
