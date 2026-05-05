@@ -59,9 +59,6 @@ export default function PropertyCard({
           className
         )}
       >
-        <Link href={isLands ? "/properties?tab=lands" : detailHref} className="absolute inset-0 z-0">
-          <span className="sr-only">View Details for {property.title}</span>
-        </Link>
         <Image
           src={image}
           alt={fullAltText}
@@ -115,6 +112,9 @@ export default function PropertyCard({
             )}
           </div>
         </div>
+        <Link href={isLands ? "/properties?tab=lands" : detailHref} className="absolute inset-0 z-10">
+          <span className="sr-only">View Details for {property.title}</span>
+        </Link>
       </CardWrapper>
     );
   }
@@ -131,9 +131,6 @@ export default function PropertyCard({
         className
       )}
     >
-      <Link href={isLands ? "/properties?tab=lands" : detailHref} className="absolute inset-0 z-0">
-        <span className="sr-only">View Details for {property.title}</span>
-      </Link>
       {/* Image */}
       <div className="relative overflow-hidden aspect-[4/3] rounded-t-xl group-hover:opacity-90 transition-opacity duration-500">
         <Image
@@ -209,6 +206,9 @@ export default function PropertyCard({
           )}
         </div>
       </div>
+      <Link href={isLands ? "/properties?tab=lands" : detailHref} className="absolute inset-0 z-10">
+        <span className="sr-only">View Details for {property.title}</span>
+      </Link>
     </CardWrapper>
   );
 }
