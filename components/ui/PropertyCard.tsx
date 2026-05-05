@@ -34,6 +34,22 @@ export default function PropertyCard({
   const CardWrapper = "div";
   const wrapperProps = {};
 
+  const seoKeywords = [
+    "best real estate consultant in mohali",
+    "property dealer mohali",
+    "real estate agent mohali",
+    "invest in mohali",
+    "buy land in mohali"
+  ];
+  const seed1 = property.slug.length % seoKeywords.length;
+  const seed2 = (property.slug.charCodeAt(0) + property.slug.charCodeAt(property.slug.length - 1)) % seoKeywords.length;
+  const idx1 = seed1;
+  const idx2 = seed1 === seed2 ? (seed1 + 1) % seoKeywords.length : seed2;
+  const selectedKeywords = `${seoKeywords[idx1]}, ${seoKeywords[idx2]}`;
+  
+  const baseAlt = `${property.title} — ${property.bedrooms ? `${property.bedrooms_max && property.bedrooms_max !== property.bedrooms ? `${property.bedrooms}-${property.bedrooms_max}` : property.bedrooms} BHK ` : ''}flat for sale in ${property.location || "Mohali"}, Mohali`;
+  const fullAltText = `${baseAlt} | ${selectedKeywords} | Realty Holding and Management Consultants`;
+
   if (variant === "image-bg") {
     return (
       <CardWrapper
@@ -48,7 +64,7 @@ export default function PropertyCard({
         </Link>
         <Image
           src={image}
-          alt={`${property.title} — ${property.bedrooms ? `${property.bedrooms_max && property.bedrooms_max !== property.bedrooms ? `${property.bedrooms}-${property.bedrooms_max}` : property.bedrooms} BHK ` : ''}flat for sale in ${property.location || "Mohali"}, Mohali`}
+          alt={fullAltText}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-[1.5s] ease-out"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
@@ -122,7 +138,7 @@ export default function PropertyCard({
       <div className="relative overflow-hidden aspect-[4/3] rounded-t-xl group-hover:opacity-90 transition-opacity duration-500">
         <Image
           src={image}
-          alt={`${property.title} — ${property.bedrooms ? `${property.bedrooms_max && property.bedrooms_max !== property.bedrooms ? `${property.bedrooms}-${property.bedrooms_max}` : property.bedrooms} BHK ` : ''}flat for sale in ${property.location || "Mohali"}, Mohali`}
+          alt={fullAltText}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-[1.5s] ease-out"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
