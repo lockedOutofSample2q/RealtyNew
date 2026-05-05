@@ -82,6 +82,8 @@ export interface Property {
   furnishing: "furnished" | "unfurnished" | "semi-furnished";
   description: string;
   meta_description?: string;
+  og_title?: string;
+  og_description?: string;
   features: string[];
   images: string[];
   featured_sections?: string[];

@@ -40,9 +40,18 @@ export async function generateStaticParams() {
 async function getProperty(slug: string): Promise<Property | null> {
   try {
     const supabase = createAdminClient();
-    const { data } = await supabase.from("properties").select("*").eq("slug", slug).single();
-    if (!data) return null;
-    return enrichProperty(data as Property);
+    
+    // Fallback search across physical tables to get full columns including og_title
+    let { data } = await supabase.from("apartments").select("*").eq("slug", slug).single();
+    if (data) return enrichProperty({ ...data, entity_type: 'apartment' } as Property);
+    
+    ({ data } = await supabase.from("houses").select("*").eq("slug", slug).single());
+    if (data) return enrichProperty({ ...data, entity_type: 'house' } as Property);
+    
+    ({ data } = await supabase.from("lands").select("*").eq("slug", slug).single());
+    if (data) return enrichProperty({ ...data, entity_type: 'land' } as Property);
+    
+    return null;
   } catch {
     return null;
   }
@@ -54,11 +63,20 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   if (!p) return {};
   
   const cleanTitle = p.title.replace(/\s*\|\s*Monte Real Estate/gi, '').replace(/\s*\|\s*Realty Holding and Management Consultants/gi, '');
+  const titleStr = p.og_title || cleanTitle;
+  const descStr = p.og_description || p.meta_description || p.description?.slice(0, 160);
 
   return {
-    title: { absolute: cleanTitle },
-    description: p.meta_description || p.description?.slice(0, 160),
-    openGraph: { images: p.images?.[0] ? [{ url: p.images[0] }] : [] },
+    title: { absolute: titleStr },
+    description: descStr,
+    openGraph: {
+      title: titleStr,
+      description: descStr,
+      url: `${siteConfig.url}/properties/${p.slug}`,
+      siteName: "Realty Holding & Management Consultants",
+      type: "website",
+      images: p.images?.[0] ? [{ url: p.images[0] }] : undefined,
+    },
     alternates: {
       canonical: `/properties/${p.slug}`,
     },

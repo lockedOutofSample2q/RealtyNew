@@ -34,7 +34,7 @@ async function getProperty(slug: string): Promise<Property | null> {
   try {
     const supabase = createAdminClient();
     const { data, error } = await supabase
-      .from("properties")
+      .from("houses")
       .select("*")
       .eq("slug", slug)
       .single();
@@ -68,10 +68,20 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   if (!p) return {};
   
   const cleanTitle = p.title.replace(/\s*\|\s*Monte Real Estate/gi, '').replace(/\s*\|\s*Realty Holding and Management Consultants/gi, '');
+  const titleStr = p.og_title || cleanTitle;
+  const descStr = p.og_description || p.meta_description || p.description?.slice(0, 160);
 
   return {
-    title: { absolute: cleanTitle },
-    description: p.meta_description || p.description?.slice(0, 160),
+    title: { absolute: titleStr },
+    description: descStr,
+    openGraph: {
+      title: titleStr,
+      description: descStr,
+      url: `https://www.realtyconsultants.in/properties/${p.slug}`,
+      siteName: "Realty Holding & Management Consultants",
+      type: "website",
+      images: p.images?.[0] ? [{ url: p.images[0] }] : undefined,
+    },
     other: { thumbnail: p.images?.[0] || '/favicon.ico' },
     alternates: {
       canonical: `/properties/${p.slug}`,
