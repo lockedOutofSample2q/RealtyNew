@@ -12,9 +12,11 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   const tab = params.tab || "flats";
   
   let title = propertiesPage.metadata.title;
+  let description = propertiesPage.metadata.description;
   
   if (tab === "flats") {
-    title = "Buy flat in Mohali with Realty Holding And Management Consultants";
+    title = "Buy Flat in Mohali | Realty Holding and Management Consultants";
+    description = "Looking to buy flat in Mohali? Browse verified listings — pre-launch, resale & ready possession. RERA compliant. Trusted consultants in Tricity. Call now.";
   } else if (tab === "houses") {
     title = "Buy house in Mohali with Realty Holding And Management Consultants";
   } else if (tab === "lands") {
@@ -25,18 +27,26 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
     title: {
       absolute: title,
     },
-    description: propertiesPage.metadata.description,
+    description,
     openGraph: {
       title,
-      description: propertiesPage.metadata.description,
+      description,
+      images: [
+        {
+          url: "https://www.realtyconsultants.in/og-properties.jpg",
+          width: 1200,
+          height: 630,
+        }
+      ]
     },
     twitter: {
       card: "summary_large_image",
       title,
-      description: propertiesPage.metadata.description,
+      description,
+      images: ["https://www.realtyconsultants.in/og-properties.jpg"]
     },
     alternates: {
-      canonical: "/properties",
+      canonical: "https://www.realtyconsultants.in/properties",
     },
   };
 }

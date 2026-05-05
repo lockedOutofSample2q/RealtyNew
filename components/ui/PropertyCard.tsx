@@ -31,8 +31,8 @@ export default function PropertyCard({
   // Determine link path
   const detailHref = customHref ?? `/properties/${property.slug}`;
 
-  const CardWrapper = Link;
-  const wrapperProps = { href: isLands ? "/properties?tab=lands" : detailHref };
+  const CardWrapper = "div";
+  const wrapperProps = {};
 
   if (variant === "image-bg") {
     return (
@@ -43,9 +43,12 @@ export default function PropertyCard({
           className
         )}
       >
+        <Link href={isLands ? "/properties?tab=lands" : detailHref} className="absolute inset-0 z-0">
+          <span className="sr-only">View Details for {property.title}</span>
+        </Link>
         <Image
           src={image}
-          alt={property.title}
+          alt={`${property.title} — ${property.bedrooms ? `${property.bedrooms_max && property.bedrooms_max !== property.bedrooms ? `${property.bedrooms}-${property.bedrooms_max}` : property.bedrooms} BHK ` : ''}flat for sale in ${property.location || "Mohali"}, Mohali`}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-[1.5s] ease-out"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
@@ -112,11 +115,14 @@ export default function PropertyCard({
         className
       )}
     >
+      <Link href={isLands ? "/properties?tab=lands" : detailHref} className="absolute inset-0 z-0">
+        <span className="sr-only">View Details for {property.title}</span>
+      </Link>
       {/* Image */}
       <div className="relative overflow-hidden aspect-[4/3] rounded-t-xl group-hover:opacity-90 transition-opacity duration-500">
         <Image
           src={image}
-          alt={property.title}
+          alt={`${property.title} — ${property.bedrooms ? `${property.bedrooms_max && property.bedrooms_max !== property.bedrooms ? `${property.bedrooms}-${property.bedrooms_max}` : property.bedrooms} BHK ` : ''}flat for sale in ${property.location || "Mohali"}, Mohali`}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-[1.5s] ease-out"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"

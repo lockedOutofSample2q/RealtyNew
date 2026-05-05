@@ -42,7 +42,7 @@ export default function PropertiesClient({ properties, initialTab }: Props) {
   useEffect(() => {
     let title = "Properties in Mohali and Tricity: Verified, Evaluated, Honestly Presented";
     if (tab === "flats") {
-      title = "Buy flat in Mohali with Realty Holding And Management Consultants";
+      title = "Buy Flat in Mohali | Realty Holding and Management Consultants";
     } else if (tab === "houses") {
       title = "Buy house in Mohali with Realty Holding And Management Consultants";
     } else if (tab === "lands") {
@@ -56,8 +56,40 @@ export default function PropertiesClient({ properties, initialTab }: Props) {
     setIsLandModalOpen(true);
   };
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Flats for Sale in Mohali",
+    "description": "Browse verified flats for sale in Mohali. Pre-launch, resale and ready possession listings by Realty Consultants.",
+    "url": "https://www.realtyconsultants.in/properties/",
+    "itemListElement": filtered.map((p, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": `${p.title} — ${p.bedrooms ? `${p.bedrooms_max && p.bedrooms_max !== p.bedrooms ? `${p.bedrooms}-${p.bedrooms_max}` : p.bedrooms} BHK ` : ''}Flat for Sale, ${p.location || 'Mohali'}`,
+      "url": `https://www.realtyconsultants.in/properties/${p.slug}`
+    }))
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      {tab === "flats" && (
+        <div className="sr-only">
+          <h1>Buy Flat in Mohali</h1>
+          <p>
+            Buy flat in Mohali with verified listings from Realty Consultants.
+            Explore 2 BHK, 3 BHK, and 4 BHK flats for sale in Mohali across
+            top sectors including Sector 82A, 66B, 78, and the GMADA IT City
+            corridor. All properties evaluated for RERA compliance, builder
+            track record, and fair pricing. Whether you are looking for a
+            pre-launch flat in Mohali, a resale apartment, or ready possession,
+            our consultants guide you through every step.
+          </p>
+        </div>
+      )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
       <PropertiesHero
         tab={tab}
         onTabChange={handleTabChange}
