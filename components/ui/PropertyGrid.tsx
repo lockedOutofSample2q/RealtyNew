@@ -20,17 +20,12 @@ interface Props {
 
 const LOCATIONS = [
   "All Locations",
-  "Downtown Dubai",
-  "Dubai Marina",
-  "Palm Jumeirah",
-  "Business Bay",
-  "JVC",
-  "DIFC",
-  "Dubai Hills",
-  "Creek Harbour",
-  "Emaar Beachfront",
-  "JBR",
-  "MBR City",
+  "IT City",
+  "Sector 82A",
+  "Sector 77",
+  "Sector 66",
+  "Sector 82",
+  "Airport Road",
 ];
 
 const PROPERTY_TYPES = ["All Types", "Flat", "Villa", "Penthouse", "Townhouse", "Studio"];

@@ -117,12 +117,12 @@ export const aboutSnippet = {
 // ── About Carousel Items ─────────────────────────────────────
 export const aboutCarouselItems = [
   {
-    title: "Evoq Antalia by Ambika",
-    location: "Sector 66, Airport Road, Mohali",
-    description: "An exclusive enclave of 180 apartments across 4.4 acres. Features a 50,000 sq. ft. Novotel-managed clubhouse and standard VRV air conditioning.",
-    price: "INR 43,700,000",
-    badges: ["Novotel Clubhouse", "VRV AC", "Low Density"],
-    image: "/assets/images/home/about.jpg",
+    title: "Marbella Royce",
+    location: "IT City, Sector 82A, Mohali",
+    description: "Palatial 3/4 BHK residences in the heart of IT City. Known for double-height ceilings, massive private decks, and an Olympic-sized swimming pool.",
+    price: "INR 35,000,000",
+    badges: ["Olympic Pool", "Private Decks", "Prime Sector"],
+    image: "/assets/images/home/services.jpg",
   },
   {
     title: "Homeland Regalia",
@@ -133,12 +133,12 @@ export const aboutCarouselItems = [
     image: "/assets/images/home/hero-bg.jpg",
   },
   {
-    title: "Marbella Royce",
-    location: "IT City, Sector 82A, Mohali",
-    description: "Palatial 3/4 BHK residences in the heart of IT City. Known for double-height ceilings, massive private decks, and an Olympic-sized swimming pool.",
-    price: "INR 35,000,000",
-    badges: ["Olympic Pool", "Private Decks", "Prime Sector"],
-    image: "/assets/images/home/services.jpg",
+    title: "Evoq Antalia",
+    location: "Sector 66, Airport Road, Mohali",
+    description: "An exclusive enclave of 180 apartments across 4.4 acres. Features a 50,000 sq. ft. Novotel-managed clubhouse and standard VRV air conditioning.",
+    price: "INR 43,700,000",
+    badges: ["Novotel Clubhouse", "VRV AC", "Low Density"],
+    image: "/assets/images/home/about.jpg",
   },
 ];
 
