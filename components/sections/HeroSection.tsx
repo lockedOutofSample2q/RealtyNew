@@ -2,8 +2,7 @@
 import { useState, useEffect } from "react";
 import { heroContent } from "@/config/site";
 import { useRouter } from "next/navigation";
-import Search from "lucide-react/dist/esm/icons/search";
-import X from "lucide-react/dist/esm/icons/x";
+import { Search, X } from "lucide-react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import PillSelect from "@/components/ui/PillSelect";
