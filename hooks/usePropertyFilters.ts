@@ -38,7 +38,11 @@ export function usePropertyFilters(properties: Property[], initialTab?: SearchTa
   });
 
   useEffect(() => {
-    setTab((searchParams.get("tab") as SearchTab) || "flats");
+    const tabFromUrl = searchParams.get("tab") as SearchTab;
+    if (tabFromUrl) {
+      setTab(tabFromUrl);
+    }
+    
     setFilters({
       ...DEFAULT_PROPERTY_FILTERS,
       city: searchParams.get("city") ?? "",
@@ -123,7 +127,8 @@ export function usePropertyFilters(properties: Property[], initialTab?: SearchTa
     const activeTab = forcedTab || tab;
 
     const params = new URLSearchParams();
-    params.set("tab", activeTab);
+    // tab is now part of the path, but we keep it in query for the main /properties page if needed
+    // however, we'll redirect to the clean path
     if (filters.city) params.set("city", filters.city);
     if (filters.sector && filters.sector.length > 0) {
       if (typeof filters.sector === "string") {
@@ -138,7 +143,9 @@ export function usePropertyFilters(properties: Property[], initialTab?: SearchTa
     if (filters.price) params.set("price", filters.price);
     if (filters.currency) params.set("currency", filters.currency);
 
-    router.push(`/properties?${params.toString()}`);
+    const queryString = params.toString();
+    const path = `/properties/${activeTab}`;
+    router.push(queryString ? `${path}?${queryString}` : path);
   }
 
   const handleTabChange = (newTab: SearchTab) => {
