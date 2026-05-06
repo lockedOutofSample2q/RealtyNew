@@ -334,11 +334,3 @@ export default function InquiryForm({
     </form>
   );
 }
-tatus === "loading" ? "Sending…" : "Request Information"}
-      </button>
-      {status === "error" && (
-        <p className="text-[12px] text-red-500 text-center">Something went wrong. Please try again.</p>
-      )}
-    </form>
-  );
-}
