@@ -4,8 +4,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import X from "lucide-react/dist/esm/icons/x";
-import ChevronDown from "lucide-react/dist/esm/icons/chevron-down";
+import { X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig, navItems, footerLinks } from "@/config/site";
 import { cn } from "@/lib/utils";
