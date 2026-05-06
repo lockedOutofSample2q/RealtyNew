@@ -122,7 +122,7 @@ export const aboutCarouselItems = [
     description: "Palatial 3/4 BHK residences in the heart of IT City. Known for double-height ceilings, massive private decks, and an Olympic-sized swimming pool.",
     price: "INR 35,000,000",
     badges: ["Olympic Pool", "Private Decks", "Prime Sector"],
-    image: "/assets/images/home/services.jpg",
+    image: "/images/properties/marbella-royce/unnamed_1.webp",
   },
   {
     title: "Homeland Regalia",
@@ -130,7 +130,7 @@ export const aboutCarouselItems = [
     description: "Ultra-luxury landmark designed by Hafeez Contractor. Offers 90+ world-class amenities and 24/7 concierge services in Punjab's most powerful address.",
     price: "INR 25,000,000",
     badges: ["Hafeez Contractor", "90+ Amenities", "Sky Lounge"],
-    image: "/assets/images/home/hero-bg.jpg",
+    image: "/images/properties/homeland-regalia/image_5.webp",
   },
   {
     title: "Evoq Antalia",
@@ -138,7 +138,7 @@ export const aboutCarouselItems = [
     description: "An exclusive enclave of 180 apartments across 4.4 acres. Features a 50,000 sq. ft. Novotel-managed clubhouse and standard VRV air conditioning.",
     price: "INR 43,700,000",
     badges: ["Novotel Clubhouse", "VRV AC", "Low Density"],
-    image: "/assets/images/home/about.jpg",
+    image: "/images/properties/evoq-antalia/image_5.webp",
   },
 ];
 
