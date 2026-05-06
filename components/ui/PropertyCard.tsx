@@ -126,7 +126,7 @@ export default function PropertyCard({
       onMouseEnter={() => onHover?.(true)}
       onMouseLeave={() => onHover?.(false)}
       className={cn(
-        "group flex flex-col bg-white rounded-xl overflow-hidden border border-border transition-all duration-500 cursor-pointer",
+        "group relative flex flex-col bg-white rounded-xl overflow-hidden border border-border transition-all duration-500 cursor-pointer",
         isHovered && "ring-2 ring-black ring-offset-2 scale-[1.02] z-10",
         className
       )}
