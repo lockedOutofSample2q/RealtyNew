@@ -56,7 +56,7 @@ const PLACEHOLDERS: Partial<Property>[] = [
     developer: "Homeland Group",
     description: "Ultra-luxury landmark designed by Hafeez Contractor. Offers 90+ world-class amenities.",
     features: ["90+ Amenities", "Concierge", "Sky Lounge"],
-    images: ["/assets/images/home/regalia.webp"],
+    images: ["/assets/images/home/regalia.jpg"],
     featured: true,
     created_at: new Date().toISOString(),
     updated_at: new Date().toISOString(),
