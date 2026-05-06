@@ -83,11 +83,6 @@ const nextConfig = {
         destination: "/flats",
         permanent: true,
       },
-      {
-        source: "/properties",
-        destination: "/properties?tab=flats&currency=INR",
-        permanent: true,
-      },
     ];
   },
 };
