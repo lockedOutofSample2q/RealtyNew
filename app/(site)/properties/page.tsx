@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { createAdminClient } from "@/lib/supabase";
 import type { Property } from "@/types";
-import { propertiesPage } from "@/config/site";
+import { propertiesPage, siteConfig } from "@/config/site";
 
 import PropertiesClient from "./PropertiesClient";
 import { Suspense } from "react";
@@ -86,10 +86,68 @@ export default async function PropertiesPage({ searchParams }: { searchParams: P
   const params = await searchParams;
   const properties = await getProperties();
   const initialTab = (params.tab as any) || "flats";
-  
+
+  let filteredProperties = properties;
+  if (initialTab === "flats") {
+    filteredProperties = properties.filter((p: any) => p.entity_type === 'apartment');
+  } else if (initialTab === "houses") {
+    filteredProperties = properties.filter((p: any) => p.entity_type === 'house');
+  } else if (initialTab === "lands") {
+    filteredProperties = properties.filter((p: any) => p.entity_type === 'land');
+  }
+
+  const siteUrl = siteConfig.url;
+  const canonicalUrl = `${siteUrl}/properties${initialTab !== "flats" ? `?tab=${initialTab}` : ""}`;
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": siteUrl
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Properties",
+        "item": `${siteUrl}/properties`
+      }
+    ]
+  };
+
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": filteredProperties.map((prop, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "url": `${siteUrl}/properties/${prop.slug}`
+    }))
+  };
+
+  const collectionPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": initialTab === "flats" ? "Buy Flat in Mohali" : (initialTab === "houses" ? "Buy House in Mohali" : "Buy Land in Mohali"),
+    "description": propertiesPage.metadata.description,
+    "url": canonicalUrl,
+    "mainEntity": itemListSchema
+  };
+
+  const jsonLd = [breadcrumbSchema, collectionPageSchema];
+
   return (
-    <Suspense fallback={null}>
-      <PropertiesClient properties={properties} initialTab={initialTab} />
-    </Suspense>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <Suspense fallback={null}>
+        <PropertiesClient properties={properties} initialTab={initialTab} />
+      </Suspense>
+    </>
   );
 }

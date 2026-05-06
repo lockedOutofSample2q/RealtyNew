@@ -1,6 +1,7 @@
 /**
  * Property Detail Page - Houses
  */
+import { siteConfig } from "@/config/site";
 import { createAdminClient } from "@/lib/supabase";
 import { notFound } from "next/navigation";
 import Image from "next/image";
@@ -111,11 +112,11 @@ export default async function HouseDetailPage(props: Props) {
   // Generate Schema.org markup
   const propertySchema = {
     "@context": "https://schema.org",
-    "@type": ["RealEstateListing", "Product"],
+    "@type": ["RealEstateListing", "SingleFamilyResidence"],
     "name": property.title,
     "description": property.meta_description || property.description,
-    "url": `https://www.realtyconsultants.in/houses/${property.slug}`,
-    "image": property.images || [],
+    "url": `${siteConfig.url}/houses/${property.slug}`,
+    "image": (property.images || []).map(img => img.startsWith('http') ? img : `${siteConfig.url}${img}`),
     "address": {
       "@type": "PostalAddress",
       "streetAddress": property.address,
@@ -229,6 +230,31 @@ export default async function HouseDetailPage(props: Props) {
     }))
   } : null;
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": siteConfig.url
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Houses",
+        "item": `${siteConfig.url}/houses`
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": property.title,
+        "item": `${siteConfig.url}/houses/${property.slug}`
+      }
+    ]
+  };
+
   return (
     <>
       {faqSchema && (
@@ -237,6 +263,10 @@ export default async function HouseDetailPage(props: Props) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(propertySchema) }}

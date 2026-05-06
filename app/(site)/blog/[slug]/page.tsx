@@ -58,8 +58,68 @@ export default async function PostPage({ params }: PostPageProps) {
     notFound();
   }
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": `${siteConfig.url}${post.url}/#blogposting`,
+        "mainEntityOfPage": `${siteConfig.url}${post.url}`,
+        "headline": post.title,
+        "name": post.title,
+        "description": post.excerpt,
+        "datePublished": post.date,
+        "dateModified": post.date, // Using same date as modified if not available
+        "author": {
+          "@type": "Person",
+          "@id": post.author_url || `${siteConfig.url}/#person`,
+          "name": post.author,
+          "url": post.author_url || siteConfig.url
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": `${siteConfig.url}/#organization`,
+          "name": siteConfig.name,
+          "logo": {
+            "@type": "ImageObject",
+            "url": `${siteConfig.url}/icon.png`
+          }
+        },
+        "image": post.coverImage.startsWith('http') ? post.coverImage : `${siteConfig.url}${post.coverImage}`
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${siteConfig.url}${post.url}/#breadcrumb`,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": siteConfig.url
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": `${siteConfig.url}/blog`
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": post.title,
+            "item": `${siteConfig.url}${post.url}`
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <article className="min-h-screen bg-white pt-[var(--nav-height)] pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {post.schema && (
         <script
           type="application/ld+json"

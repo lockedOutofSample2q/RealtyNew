@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { format, parseISO } from "date-fns";
 import { Metadata } from "next";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Blog | Market Insights | Realty Holding & Management Consultants",
@@ -14,8 +15,40 @@ export default function BlogPage() {
     return new Date(b.date).getTime() - new Date(a.date).getTime();
   });
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Market Insights | Realty Holding & Management Consultants",
+    "description": "Latest news, strategic property guides, and off-market real estate trends in Mohali carefully curated by our advisory board.",
+    "url": `${siteConfig.url}/blog`,
+    "publisher": {
+      "@type": "Organization",
+      "name": siteConfig.name,
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${siteConfig.url}/icon.png`
+      }
+    },
+    "blogPost": posts.map((post) => ({
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": post.excerpt,
+      "datePublished": post.date,
+      "author": {
+        "@type": "Person",
+        "name": post.author
+      },
+      "url": `${siteConfig.url}${post.url}`,
+      "image": post.coverImage.startsWith('http') ? post.coverImage : `${siteConfig.url}${post.coverImage}`
+    }))
+  };
+
   return (
     <div className="min-h-screen bg-white pt-[var(--nav-height)]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="container-site py-section">
         <div className="max-w-2xl mb-16">
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-medium text-charcoal mb-6">

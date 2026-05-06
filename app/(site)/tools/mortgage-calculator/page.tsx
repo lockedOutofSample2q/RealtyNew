@@ -50,6 +50,51 @@ export default function MortgageCalculatorPage() {
   
   return (
     <div className="pt-[var(--nav-height)] min-h-screen bg-white text-black">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "WebApplication",
+                "name": "Mortgage Calculator",
+                "description": "Estimate your monthly mortgage payments and plan your dream property.",
+                "applicationCategory": "FinanceApplication",
+                "operatingSystem": "All",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "0",
+                  "priceCurrency": "INR"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://www.realtyconsultants.in/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Tools",
+                    "item": "https://www.realtyconsultants.in/tools"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Mortgage Calculator",
+                    "item": "https://www.realtyconsultants.in/tools/mortgage-calculator"
+                  }
+                ]
+              }
+            ]
+          })
+        }}
+      />
       <style dangerouslySetInnerHTML={{__html: `
         .slider-thumb::-webkit-slider-thumb {
           appearance: none;

@@ -9,8 +9,84 @@ export const metadata: Metadata = {
 };
 
 export default function ListYourPropertyPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${siteConfig.url}/list-your-property/#webpage`,
+        "url": `${siteConfig.url}/list-your-property`,
+        "name": `List Your Property | ${siteConfig.name}`,
+        "description": "List your Mohali property with an advisor who brings pre-qualified HNI, CXO, and NRI buyers, not portal browsers. Professional valuation and honest marketing.",
+        "isPartOf": { "@id": `${siteConfig.url}/#website` },
+        "breadcrumb": { "@id": `${siteConfig.url}/list-your-property/#breadcrumb` }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${siteConfig.url}/list-your-property/#breadcrumb`,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": siteConfig.url
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "List Your Property",
+            "item": `${siteConfig.url}/list-your-property`
+          }
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "Professional Property Listing & Advisory",
+        "description": "Premium real estate advisory for Mohali property owners targeting HNI, CXO, and NRI buyers.",
+        "provider": { "@id": `${siteConfig.url}/#organization` },
+        "serviceType": "Real Estate Advisory",
+        "areaServed": "Mohali, India",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Listing Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Global Reach",
+                "description": "Reaching HNI buyers in Tricity, corporate executives relocating from major Indian metros, and NRI investors through direct advisory relationships."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Professional Valuation",
+                "description": "A pricing recommendation grounded in actual registered sale deeds, comparable transactions, and current market absorption data."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Premium Marketing",
+                "description": "Professional photography, video walkthrough, and a written property brief presenting your asset to serious buyers."
+              }
+            }
+          ]
+        }
+      }
+    ]
+  };
+
   return (
-    <div className="pt-[var(--nav-height)] min-h-screen bg-white">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="pt-[var(--nav-height)] min-h-screen bg-white">
       {/* Hero Section */}
       <div className="bg-white border-b border-black/5">
         <div className="container-site max-w-3xl mx-auto pt-20 pb-16 px-6 text-center">
@@ -68,42 +144,7 @@ export default function ListYourPropertyPage() {
           </div>
         </div>
       </section>
-
-      <section className="py-24 px-6">
-        <div className="container-site max-w-[1200px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div>
-              <div className="w-12 h-12 bg-black/5 rounded-2xl flex items-center justify-center mb-6">
-                <Globe size={24} className="text-black" strokeWidth={1.5} />
-              </div>
-              <h3 className="font-display text-xl mb-4">Global Reach</h3>
-              <p className="font-body text-black/60 leading-relaxed">
-                Your listing reaches HNI buyers in Tricity, corporate executives relocating from major Indian metros, and NRI investors in the UK, Canada, Gulf, and Australia, through direct advisory relationships, not paid portal placement.
-              </p>
-            </div>
-            
-            <div>
-              <div className="w-12 h-12 bg-black/5 rounded-2xl flex items-center justify-center mb-6">
-                <TrendingUp size={24} className="text-black" strokeWidth={1.5} />
-              </div>
-              <h3 className="font-display text-xl mb-4">Professional Valuation</h3>
-              <p className="font-body text-black/60 leading-relaxed">
-                A pricing recommendation grounded in actual registered sale deeds, comparable transactions in your sector, and current market absorption data. Not an inflated figure designed to win the listing.
-              </p>
-            </div>
-
-            <div>
-              <div className="w-12 h-12 bg-black/5 rounded-2xl flex items-center justify-center mb-6">
-                <Camera size={24} className="text-black" strokeWidth={1.5} />
-              </div>
-              <h3 className="font-display text-xl mb-4">Premium Marketing</h3>
-              <p className="font-body text-black/60 leading-relaxed">
-                Professional photography, video walkthrough, and a written property brief that presents your asset the way a serious buyer expects to receive it, with RERA details, specifications, and honest positioning.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
+    </>
   );
 }

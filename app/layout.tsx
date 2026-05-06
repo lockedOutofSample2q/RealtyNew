@@ -116,6 +116,24 @@ export default function RootLayout({
                     "https://www.linkedin.com/in/amritpal-singh-29b14795/",
                     "https://www.instagram.com/amritrealty"
                   ]
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://www.realtyconsultants.in/#website",
+                  "url": "https://www.realtyconsultants.in/",
+                  "name": "Realty Holding & Management Consultants",
+                  "description": "Mohali's non-conventional real estate consultancy. Luxury investments.",
+                  "publisher": {
+                    "@id": "https://www.realtyconsultants.in/#organization"
+                  },
+                  "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": {
+                      "@type": "EntryPoint",
+                      "urlTemplate": "https://www.realtyconsultants.in/properties?q={search_term_string}"
+                    },
+                    "query-input": "required name=search_term_string"
+                  }
                 }
               ]
             })

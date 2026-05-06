@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { siteConfig } from "@/config/site";
 import {
   ChevronLeft, ChevronRight, Share2, MapPin, Check,
   Building2, ExternalLink, Images, ArrowRight, FileText, Download
@@ -85,7 +86,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     openGraph: {
       title: titleStr,
       description: descStr,
-      url: `https://www.realtyconsultants.in/properties/${p.slug}`,
+      url: `${siteConfig.url}/flats/${p.slug}`,
       siteName: "Realty Holding & Management Consultants",
       type: "website",
       images: p.images?.[0] ? [{ url: p.images[0] }] : undefined,
@@ -94,7 +95,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       thumbnail: p.images?.[0] || '/favicon.ico'
     },
     alternates: {
-      canonical: `/properties/${p.slug}`,
+      canonical: `${siteConfig.url}/flats/${p.slug}`,
     }
   };
 }
@@ -120,14 +121,44 @@ export default async function ApartmentDetailPage(props: Props) {
 
   const price = property.price;
 
+  const getAbsoluteUrl = (url?: string) => {
+    if (!url) return undefined;
+    return url.startsWith('http') ? url : `${siteConfig.url}${url}`;
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": siteConfig.url
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Flats",
+        "item": `${siteConfig.url}/flats`
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": property.title,
+        "item": `${siteConfig.url}/flats/${property.slug}`
+      }
+    ]
+  };
+
   // Generate Schema.org markup
   const propertySchema = {
     "@context": "https://schema.org",
-    "@type": ["RealEstateListing", "Product"],
+    "@type": ["RealEstateListing", "Apartment"],
     "name": property.title,
     "description": property.meta_description || property.description,
-    "url": `https://www.realtyconsultants.in/flats/${property.slug}`,
-    "image": property.images || [],
+    "url": `${siteConfig.url}/flats/${property.slug}`,
+    "image": (property.images || []).map(img => getAbsoluteUrl(img)),
     "address": {
       "@type": "PostalAddress",
       "streetAddress": property.address,
@@ -147,13 +178,13 @@ export default async function ApartmentDetailPage(props: Props) {
       "priceCurrency": property.price_currency || "INR",
       "availability": property.status === "available" ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
       "offerCount": 1,
-      "url": `https://www.realtyconsultants.in/flats/${property.slug}`
+      "url": `${siteConfig.url}/flats/${property.slug}`
     } : {
       "@type": "Offer",
       "price": property.price,
       "priceCurrency": property.price_currency || "INR",
       "availability": property.status === "available" ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
-      "url": `https://www.realtyconsultants.in/flats/${property.slug}`
+      "url": `${siteConfig.url}/flats/${property.slug}`
     },
     "amenityFeature": [
       ...(property.nearby_landmarks || []).map(lm => ({
@@ -179,7 +210,7 @@ export default async function ApartmentDetailPage(props: Props) {
       {
         "@type": "FloorPlan",
         "name": `${property.title} - Floor Plan`,
-        "layoutImage": property.unit_types_image || property.images?.[0],
+        "layoutImage": getAbsoluteUrl(property.unit_types_image || property.images?.[0]),
         "numberOfRooms": property.bedrooms,
         "floorSize": {
           "@type": "QuantitativeValue",
@@ -192,19 +223,19 @@ export default async function ApartmentDetailPage(props: Props) {
         .map(doc => ({
           "@type": "DigitalDocument",
           "name": doc.name,
-          "url": `https://www.realtyconsultants.in${doc.url}`,
+          "url": getAbsoluteUrl(doc.url),
           "fileFormat": "application/pdf"
         })),
       ...(property.videos || []).map(videoUrl => ({
         "@type": "VideoObject",
         "name": `${property.title} - Property Video`,
         "description": `Video tour of ${property.title}`,
-        "thumbnailUrl": property.images?.[0],
+        "thumbnailUrl": getAbsoluteUrl(property.images?.[0]),
         "contentUrl": videoUrl,
         "uploadDate": property.created_at || new Date().toISOString()
       }))
     ],
-    "brand": property.developer ? {
+    "provider": property.developer ? {
       "@type": "Organization",
       "name": property.developer,
       "url": property.developer_website
@@ -216,7 +247,7 @@ export default async function ApartmentDetailPage(props: Props) {
       "worksFor": {
         "@type": "RealEstateAgent",
         "name": "Realty Holding and Management Consultants",
-        "url": "https://www.realtyconsultants.in"
+        "url": siteConfig.url
       }
     },
     "numberOfBedrooms": property.bedrooms,
@@ -252,6 +283,10 @@ export default async function ApartmentDetailPage(props: Props) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(propertySchema) }}

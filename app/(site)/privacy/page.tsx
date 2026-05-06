@@ -8,9 +8,28 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   const lastUpdated = "April 18, 2026"
+  const dateModified = "2026-04-18"
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": `Privacy Policy | ${siteConfig.name}`,
+    "description": `How we handle and protect your personal data at ${siteConfig.name}.`,
+    "url": `${siteConfig.url}/privacy`,
+    "dateModified": dateModified,
+    "publisher": {
+      "@type": "Organization",
+      "name": siteConfig.name,
+      "url": siteConfig.url,
+    },
+  }
 
   return (
     <main className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="bg-white text-black pt-[calc(var(--nav-height)+4rem)] pb-24 px-6 border-b border-black/10 relative overflow-hidden">
         <div className="container-site">
           <h1 className="font-display text-[clamp(2.5rem,5vw,4rem)] font-medium mb-4">Privacy Policy</h1>

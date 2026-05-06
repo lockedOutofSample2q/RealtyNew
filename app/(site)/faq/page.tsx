@@ -8,24 +8,60 @@ export const metadata: Metadata = {
 };
 
 export default function FaqPage() {
-  const faqSchema = {
+  const schema = {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
+    "@graph": [
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.realtyconsultants.in/faq/#faq",
+        "mainEntity": faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.realtyconsultants.in/faq/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.realtyconsultants.in/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "FAQ",
+            "item": "https://www.realtyconsultants.in/faq"
+          }
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.realtyconsultants.in/faq/#webpage",
+        "url": "https://www.realtyconsultants.in/faq",
+        "name": "Frequently Asked Questions | Realty Holding & Management Consultants",
+        "description": "Find answers to common questions about real estate investment, property buying process, and transparency in Mohali.",
+        "isPartOf": {
+          "@id": "https://www.realtyconsultants.in/#website"
+        },
+        "about": {
+          "@id": "https://www.realtyconsultants.in/#organization"
+        }
       }
-    }))
+    ]
   };
 
   return (
     <div className="pt-[var(--nav-height)] min-h-screen bg-white">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       {/* Hero */}
       <div className="bg-white py-24 text-black border-b border-black/10">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { TrendingUp, BarChart3, MapPin, Info } from "lucide-react";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Mohali Real Estate Price Trends | Realty Holding & Management Consultants",
@@ -20,8 +21,62 @@ const sectors = [
 ];
 
 export default function PriceTrendPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": `${siteConfig.url}/tools/price-trend#application`,
+        "name": "Mohali Real Estate Price Trends Tool",
+        "url": `${siteConfig.url}/tools/price-trend`,
+        "description": "Analyze real estate price trends in Mohali. Sector-wise analysis, historical growth data, and market demand insights.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "All",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "INR"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": `${siteConfig.url}/#organization`,
+          "name": siteConfig.name,
+          "url": siteConfig.url
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${siteConfig.url}/tools/price-trend#breadcrumb`,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": siteConfig.url
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": `${siteConfig.url}/tools`
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Price Trends",
+            "item": `${siteConfig.url}/tools/price-trend`
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <div className="pt-[var(--nav-height)] min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero Section */}
       <div className="bg-white border-b border-black/5">
         <div className="container-site max-w-3xl mx-auto pt-20 pb-16 px-6 text-center">

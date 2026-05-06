@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BookOpen, FileText, ShieldCheck, Map } from "lucide-react";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Real Estate Guides Mohali | Realty Holding & Management Consultants",
@@ -35,8 +36,52 @@ const guides = [
 ];
 
 export default function GuidesPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": `${siteConfig.url}/guides#webpage`,
+        "url": `${siteConfig.url}/guides`,
+        "name": "Real Estate Guides Mohali | Realty Holding & Management Consultants",
+        "description": "Empowering investors with deep local knowledge, transparent data, and strategic property insights.",
+        "mainEntity": {
+          "@type": "ItemList",
+          "itemListElement": guides.map((guide, index) => ({
+            "@type": "ListItem",
+            "position": index + 1,
+            "url": `${siteConfig.url}${guide.href}`,
+            "name": guide.title,
+            "description": guide.description
+          }))
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": siteConfig.url
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Guides",
+            "item": `${siteConfig.url}/guides`
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <div className="pt-[var(--nav-height)] min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero */}
       <div className="bg-white py-24 text-charcoal border-b border-black/5">
         <div className="container-site">

@@ -4,6 +4,7 @@ import type { Property } from "@/types";
 import { Suspense } from "react";
 import PropertiesClient from "../properties/PropertiesClient";
 import { enrichProperty } from "@/lib/property-utils";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Premium Flats in Mohali | Realty Holding & Management Consultants",
@@ -33,9 +34,60 @@ async function getProperties(): Promise<Property[]> {
 
 export default async function ApartmentsPage() {
   const properties = await getProperties();
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": `${siteConfig.url}/flats`,
+        name: "Premium Flats in Mohali | Realty Holding & Management Consultants",
+        description: "Explore luxury flats for sale in Mohali. Verified listings with detailed floor plans, pricing, and amenities.",
+        url: `${siteConfig.url}/flats`,
+        isPartOf: {
+          "@id": `${siteConfig.url}/#website`,
+        },
+        about: {
+          "@id": `${siteConfig.url}/#organization`,
+        },
+      },
+      {
+        "@type": "ItemList",
+        itemListElement: properties.map((prop, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          url: `${siteConfig.url}/properties/${prop.slug}`,
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: siteConfig.url,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Flats",
+            item: `${siteConfig.url}/flats`,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
-    <Suspense fallback={null}>
-      <PropertiesClient properties={properties} initialTab="flats" />
-    </Suspense>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <Suspense fallback={null}>
+        <PropertiesClient properties={properties} initialTab="flats" />
+      </Suspense>
+    </>
   );
 }

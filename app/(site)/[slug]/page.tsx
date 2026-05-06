@@ -119,8 +119,101 @@ export default async function PropertyDetailPage(props: Props) {
 
   const price = property.price;
 
+  const domain = "https://rhmc.in";
+  const getAbsoluteUrl = (url: string) => {
+    if (!url) return url;
+    if (url.startsWith("http")) return url;
+    return `${domain}${url.startsWith("/") ? "" : "/"}${url}`;
+  };
+
+  const imagesAbsolute = (property.images || []).map(getAbsoluteUrl);
+  const imageToUse = imagesAbsolute[0] || `${domain}/assets/images/home/about.jpg`;
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": `${domain}/`
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": backLabel,
+        "item": `${domain}${backHref.split('?')[0]}`
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": property.title,
+        "item": `${domain}/properties/${property.slug}`
+      }
+    ]
+  };
+
+  let propertyType = "SingleFamilyResidence";
+  if (property.listing_type === "lands") {
+    propertyType = "Landform";
+  } else if (property.type?.toLowerCase().includes("apartment")) {
+    propertyType = "Apartment";
+  }
+
+  const aboutSchema: any = {
+    "@type": propertyType,
+    "name": property.title,
+    "description": property.description,
+    "image": imageToUse,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": property.address || "",
+      "addressLocality": "Mohali",
+      "addressRegion": "Punjab",
+      "addressCountry": "IN"
+    }
+  };
+
+  if (propertyType !== "Landform" && property.bedrooms) {
+    aboutSchema.numberOfRooms = property.bedrooms;
+  }
+  
+  if (property.area_sqft) {
+    aboutSchema.floorSize = {
+      "@type": "QuantitativeValue",
+      "value": property.area_sqft,
+      "unitCode": "FTK"
+    };
+  }
+
+  const realEstateSchema = {
+    "@context": "https://schema.org",
+    "@type": "RealEstateListing",
+    "name": property.title,
+    "description": property.description,
+    "image": imagesAbsolute.length > 0 ? imagesAbsolute : undefined,
+    "url": `${domain}/properties/${property.slug}`,
+    "offers": {
+      "@type": "Offer",
+      "price": property.price || 0,
+      "priceCurrency": "INR",
+      "availability": "https://schema.org/InStock",
+      "url": `${domain}/properties/${property.slug}`
+    },
+    "about": aboutSchema
+  };
+
   return (
     <div className="bg-white min-h-screen pt-[var(--nav-height)]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(realEstateSchema) }}
+      />
 
       {/* ── Breadcrumb ──────────────────────────────────── */}
       <div className="border-b border-black/6">

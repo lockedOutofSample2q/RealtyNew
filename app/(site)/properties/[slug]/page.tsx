@@ -149,13 +149,43 @@ export default async function PropertyDetailPage(props: Props) {
     }))
   } : null;
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": siteConfig.url
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": backLabel,
+        "item": `${siteConfig.url}${backHref.startsWith('/') ? '' : '/'}${backHref}`
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": property.title,
+        "item": `${siteConfig.url}/properties/${property.slug}`
+      }
+    ]
+  };
+
+  const getAbsoluteUrl = (url: string | undefined | null) => {
+    if (!url) return undefined;
+    return url.startsWith('http') ? url : `${siteConfig.url}${url.startsWith('/') ? '' : '/'}${url}`;
+  };
+
   const propertySchema = {
     "@context": "https://schema.org",
-    "@type": ["RealEstateListing", "Product"],
+    "@type": property.entity_type === 'apartment' ? ["RealEstateListing", "Apartment"] : property.entity_type === 'house' ? ["RealEstateListing", "SingleFamilyResidence"] : "RealEstateListing",
     "name": property.title,
     "description": property.meta_description || property.description,
     "url": `${siteConfig.url}/properties/${property.slug}`,
-    "image": property.images || [],
+    "image": (property.images || []).map(getAbsoluteUrl),
     "address": {
       "@type": "PostalAddress",
       "streetAddress": property.address,
@@ -207,7 +237,7 @@ export default async function PropertyDetailPage(props: Props) {
       {
         "@type": "FloorPlan",
         "name": `${property.title} - Floor Plan`,
-        "layoutImage": property.unit_types_image || property.images?.[0],
+        "layoutImage": getAbsoluteUrl(property.unit_types_image || property.images?.[0]),
         "numberOfRooms": property.bedrooms,
         "floorSize": {
           "@type": "QuantitativeValue",
@@ -220,15 +250,15 @@ export default async function PropertyDetailPage(props: Props) {
         .map(doc => ({
           "@type": "DigitalDocument",
           "name": doc.name,
-          "url": `${siteConfig.url}${doc.url}`,
+          "url": getAbsoluteUrl(doc.url),
           "fileFormat": "application/pdf"
         })),
       ...(property.videos || []).map(videoUrl => ({
         "@type": "VideoObject",
         "name": `${property.title} - Property Video`,
         "description": `Video tour of ${property.title}`,
-        "thumbnailUrl": property.images?.[0],
-        "contentUrl": videoUrl,
+        "thumbnailUrl": getAbsoluteUrl(property.images?.[0]),
+        "contentUrl": getAbsoluteUrl(videoUrl),
         "uploadDate": property.created_at || new Date().toISOString()
       }))
     ],
@@ -259,6 +289,10 @@ export default async function PropertyDetailPage(props: Props) {
   return (
     <div className="bg-white min-h-screen pt-[var(--nav-height)]">
       {/* SEO Schemas */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {faqSchema && (
         <script
           type="application/ld+json"

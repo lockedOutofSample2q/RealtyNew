@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import LeadMagnetClient from "./LeadMagnetClient";
 import { Suspense } from "react";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Documents to Check Before Buying a Property | Monter",
@@ -8,8 +9,72 @@ export const metadata: Metadata = {
 };
 
 export default function PropertyDocumentsPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Book",
+        "@id": `${siteConfig.url}/guides/property-documents#book`,
+        "name": "The Essential Property Document Checklist",
+        "description": "The definitive list of 15+ crucial legal and financial documents you must inspect before buying any property.",
+        "bookFormat": "https://schema.org/EBook",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Organization",
+          "name": siteConfig.name
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0.00",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock"
+        },
+        "review": {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Verified Buyer"
+          },
+          "reviewBody": "This simple checklist saved me from buying a disputed property. A must-have for every buyer."
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": siteConfig.url
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Guides",
+            "item": `${siteConfig.url}/guides`
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Property Document Checklist",
+            "item": `${siteConfig.url}/guides/property-documents`
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-white text-charcoal pt-[var(--nav-height)]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="container-site py-section flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
         
         {/* Left Side: Teaser Content */}

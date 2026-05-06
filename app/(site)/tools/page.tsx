@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Calculator, TrendingUp, UserCheck, Map } from "lucide-react";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Free Real Estate Tools | Realty Holding & Management Consultants",
@@ -35,8 +36,57 @@ const tools = [
 ];
 
 export default function ToolsPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": `${siteConfig.url}/tools#webpage`,
+        "url": `${siteConfig.url}/tools`,
+        "name": "Free Real Estate Tools | Realty Holding & Management Consultants",
+        "description": "Suite of free tools for real estate buyers in Mohali: EMI calculator, price trends, and loan eligibility checker.",
+        "isPartOf": {
+          "@id": `${siteConfig.url}/#website`
+        },
+        "about": {
+          "@type": "ItemList",
+          "itemListElement": tools
+            .filter(tool => tool.href.startsWith('/tools/'))
+            .map((tool, index) => ({
+              "@type": "ListItem",
+              "position": index + 1,
+              "url": `${siteConfig.url}${tool.href}`,
+              "name": tool.title
+            }))
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${siteConfig.url}/tools#breadcrumb`,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": siteConfig.url
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": `${siteConfig.url}/tools`
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <div className="pt-[var(--nav-height)] min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero */}
       <div className="bg-white py-24 text-black border-b border-black/10">
         <div className="container-site text-center">
