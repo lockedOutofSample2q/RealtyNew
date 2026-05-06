@@ -19,8 +19,8 @@ import type { Property } from "@/types";
 import { enrichProperty } from "@/lib/property-utils";
 
 // Fetch fresh properties at build time (ISR every 60s)
-// Enable weekly caching (ISR every 7 days)
-export const revalidate = 604800;
+// Enable hourly caching (ISR every 1 hour)
+export const revalidate = 3600;
 
 async function getHomeData() {
   try {
