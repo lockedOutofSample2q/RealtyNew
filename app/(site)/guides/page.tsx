@@ -17,20 +17,20 @@ const guides = [
   },
   {
     title: "Understanding RERA Punjab",
-    description: "How to use the RERA portal to verify developer claims and project timelines.",
-    href: "/blog",
+    description: "How to use the RERA portal to verify developer claims and project timelines. (Coming Soon)",
+    href: "#",
     icon: ShieldCheck,
   },
   {
     title: "Mohali Market Cycle 2026",
-    description: "In-depth analysis of current supply vs demand in residential and commercial sectors.",
-    href: "/blog",
+    description: "In-depth analysis of current supply vs demand in residential and commercial sectors. (Coming Soon)",
+    href: "#",
     icon: BookOpen,
   },
   {
     title: "GMADA Allotment Guide",
-    description: "Everything you need to know about GMADA plot auctions and allotment processes.",
-    href: "/blog",
+    description: "Everything you need to know about GMADA plot auctions and allotment processes. (Coming Soon)",
+    href: "#",
     icon: Map,
   },
 ];

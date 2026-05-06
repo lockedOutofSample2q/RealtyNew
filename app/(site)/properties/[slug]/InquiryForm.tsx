@@ -213,7 +213,7 @@ function MediaThumbnail({ item, title, className, priority }: { item: MediaItem;
   return (
     <Image 
       src={src} 
-      alt={title} 
+      alt={`${title} - Property Gallery Image | Realty Holding & Management Consultants`} 
       fill 
       className={cn("object-cover", className)} 
       quality={80}

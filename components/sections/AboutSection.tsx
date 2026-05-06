@@ -44,12 +44,12 @@ export default function AboutSection() {
           >
             About
           </motion.span>
-          <motion.p 
+          <motion.h2 
             style={{ color: textColor }}
             className="font-body font-semibold text-[26px] md:text-3xl lg:text-4xl leading-[1.3] max-w-4xl mx-auto tracking-tight transition-colors duration-75"
           >
             {aboutSnippet.headline}
-          </motion.p>
+          </motion.h2>
           <motion.p 
             style={{ color: textColor }}
             className="font-body font-semibold text-[26px] md:text-3xl lg:text-4xl leading-[1.3] mt-8 max-w-4xl mx-auto tracking-tight transition-colors duration-75"

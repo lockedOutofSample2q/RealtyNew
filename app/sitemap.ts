@@ -44,8 +44,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const supabase = createAdminClient();
     const { data } = await supabase
       .from("properties")
-      .select("slug, updated_at, listing_type")
-      .not("listing_type", "eq", "lands");
+      .select("slug, updated_at, listing_type");
       
     if (data && data.length > 0) {
       properties = (data as any[]);
