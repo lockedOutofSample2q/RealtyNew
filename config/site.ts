@@ -40,7 +40,15 @@ export const siteConfig: SiteConfig = {
 // EDIT: Add, remove, or reorder nav items here.
 export const navItems: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "Properties", href: "/properties" },
+  { 
+    label: "Properties", 
+    href: "/properties",
+    children: [
+      { label: "Flats in Mohali", href: "/properties/flats" },
+      { label: "Houses in Mohali", href: "/properties/houses" },
+      { label: "Plots & Land", href: "/properties/lands" },
+    ]
+  },
   { label: "Blog", href: "/blog" },
   {
     label: "Tools",
@@ -62,10 +70,10 @@ export const navItems: NavItem[] = [
 // ── Footer Links ─────────────────────────────────────────────
 export const footerLinks = {
   quick: [
-    { label: "Properties", href: "/properties" },
-    { label: "Flats", href: "/flats" },
-    { label: "Houses", href: "/houses" },
-    { label: "Lands", href: "/properties?tab=lands" },
+    { label: "All Properties", href: "/properties" },
+    { label: "Flats", href: "/properties/flats" },
+    { label: "Houses", href: "/properties/houses" },
+    { label: "Lands", href: "/properties/lands" },
     { label: "Market Blog", href: "/blog" },
   ],
   tools: [

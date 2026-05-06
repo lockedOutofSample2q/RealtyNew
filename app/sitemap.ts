@@ -13,8 +13,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const routes = [
     { path: "", priority: 1.0 },                 // Home Base
     { path: "/properties", priority: 0.9 },      // Money Hub
-    { path: "/flats", priority: 0.9 },           // Money Hub
-    { path: "/houses", priority: 0.9 },          // Money Hub
+    { path: "/properties/flats", priority: 0.9 }, 
+    { path: "/properties/houses", priority: 0.9 },
+    { path: "/properties/lands", priority: 0.9 },
+    { path: "/flats", priority: 0.9 },           // Keep legacy for now
+    { path: "/houses", priority: 0.9 },          // Keep legacy for now
     { path: "/blog", priority: 0.8 },            // High-Value Hub
     { path: "/tools/price-trend", priority: 0.7 }, // Trust & Tools
     { path: "/faq", priority: 0.7 },             // Trust & Tools

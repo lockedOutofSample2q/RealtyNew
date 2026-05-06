@@ -51,53 +51,21 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   };
 }
 
-// Enable weekly caching (ISR every 7 days)
-export const revalidate = 604800;
-
-async function getProperties(): Promise<Property[]> {
-  try {
-    const supabase = createAdminClient();
-    
-    // Fetch from all three tables
-    const [apartmentsRes, housesRes, landsRes] = await Promise.all([
-      supabase.from("apartments").select("*"),
-      supabase.from("houses").select("*"),
-      supabase.from("lands").select("*")
-    ]);
-
-    const apartments = (apartmentsRes.data ?? []).map((p: any) => enrichProperty({ ...p, entity_type: 'apartment' }));
-    const houses = (housesRes.data ?? []).map((p: any) => enrichProperty({ ...p, entity_type: 'house' }));
-    const lands = (landsRes.data ?? []).map((p: any) => enrichProperty({ ...p, entity_type: 'land' }));
-
-    // Combine and sort by featured and created_at
-    const all = [...apartments, ...houses, ...lands] as Property[];
-    
-    return all.sort((a, b) => {
-      if (a.featured !== b.featured) return a.featured ? -1 : 1;
-      return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
-    });
-  } catch (err) {
-    console.error("Properties Fetch Error:", err);
-    return [];
-  }
-}
+import { redirect } from "next/navigation";
 
 export default async function PropertiesPage({ searchParams }: { searchParams: Promise<{ tab?: string }> }) {
   const params = await searchParams;
-  const properties = await getProperties();
-  const initialTab = (params.tab as any) || "flats";
+  const initialTab = params.tab;
 
-  let filteredProperties = properties;
-  if (initialTab === "flats") {
-    filteredProperties = properties.filter((p: any) => p.entity_type === 'apartment');
-  } else if (initialTab === "houses") {
-    filteredProperties = properties.filter((p: any) => p.entity_type === 'house');
-  } else if (initialTab === "lands") {
-    filteredProperties = properties.filter((p: any) => p.entity_type === 'land');
-  }
+  if (initialTab === "flats") redirect("/properties/flats");
+  if (initialTab === "houses") redirect("/properties/houses");
+  if (initialTab === "lands") redirect("/properties/lands");
+
+  const properties = await getProperties();
+  const currentTab = "flats"; // Default for generic hub
 
   const siteUrl = siteConfig.url;
-  const canonicalUrl = `${siteUrl}/properties${initialTab !== "flats" ? `?tab=${initialTab}` : ""}`;
+  const canonicalUrl = `${siteUrl}/properties`;
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",

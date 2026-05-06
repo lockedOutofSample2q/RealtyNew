@@ -58,7 +58,7 @@ export function PropertyGallery({ images, videos = [], title, imageCountOverride
         <div 
           onClick={() => mediaItems[0] && setIndex(0)}
           className={cn(
-            "relative flex-1 overflow-hidden rounded-2xl md:rounded-l-2xl md:rounded-r-none bg-black/5 group",
+            "relative flex-1 overflow-hidden rounded-2xl md:rounded-l-2xl md:rounded-r-none bg-black/5 group aspect-[4/3] md:aspect-auto",
             mediaItems[0] ? "cursor-pointer" : ""
           )}
         >
@@ -327,6 +327,14 @@ export default function InquiryForm({
         className="w-full bg-black text-white text-[13px] font-semibold py-3 rounded-xl hover:bg-black/80 transition-colors disabled:opacity-60"
       >
         {status === "loading" ? "Sending…" : "Request Information"}
+      </button>
+      {status === "error" && (
+        <p className="text-[12px] text-red-500 text-center">Something went wrong. Please try again.</p>
+      )}
+    </form>
+  );
+}
+tatus === "loading" ? "Sending…" : "Request Information"}
       </button>
       {status === "error" && (
         <p className="text-[12px] text-red-500 text-center">Something went wrong. Please try again.</p>

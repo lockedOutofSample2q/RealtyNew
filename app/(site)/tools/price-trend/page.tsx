@@ -141,6 +141,26 @@ export default function PriceTrendPage() {
               <span>Data updated as of April 2026</span>
             </div>
           </div>
+
+          <div className="mt-24 space-y-12">
+            <h2 className="text-3xl font-display font-medium">How to interpret this data</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div>
+                <h3 className="text-xl font-display font-medium mb-4">Capital Appreciation vs. Rental Yield</h3>
+                <p className="text-black/60 leading-relaxed">
+                  High-growth sectors like 82A and IT City are currently driven by capital appreciation. Conversely, established sectors like 66 and 70 offer stable rental yields due to proximity to established commercial hubs.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-display font-medium mb-4">Supply & Demand Dynamics</h3>
+                <p className="text-black/60 leading-relaxed">
+                  Price trends in Mohali are currently influenced by a supply-side constraint in premium 3BHK and 4BHK configurations. Emerging corridors like Airport Road are seeing rapid absorption of new inventory.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
         <aside className="lg:col-span-4">
           <div className="sticky top-28 space-y-8">

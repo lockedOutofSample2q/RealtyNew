@@ -101,7 +101,10 @@ function PaymentBar({ pct }: { pct: number }) {
   );
 }
 
-export default async function PropertyDetailPage(props: Props) {
+export const revalidate = 604800; // 1 week
+
+export default async function PropertyCatchAllPage(props: Props) {
+
   const params = await props.params;
   const property = await getProperty(params.slug);
   if (!property) notFound();

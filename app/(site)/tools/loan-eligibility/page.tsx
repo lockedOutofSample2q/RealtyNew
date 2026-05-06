@@ -174,6 +174,47 @@ export default function LoanEligibilityPage() {
           </div>
         </div>
       </div>
+
+      {/* Educational Content */}
+      <div className="container-site py-24 border-t border-black/5">
+        <div className="max-w-3xl">
+          <h2 className="text-3xl font-display font-medium mb-12">How to interpret this data</h2>
+          
+          <div className="space-y-12">
+            <div>
+              <h3 className="text-xl font-display font-medium mb-4">What is FOIR?</h3>
+              <p className="text-black/60 leading-relaxed">
+                FOIR stands for Fixed Obligation to Income Ratio. Most banks in India use a standard FOIR of 50%. This means your total monthly commitments (including the new home loan EMI and any existing loans) should not exceed 50% of your gross monthly income.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-display font-medium mb-4">What is a safe Loan-to-Value (LTV)?</h3>
+              <p className="text-black/60 leading-relaxed">
+                While banks may fund up to 80-90% of the property value, a safe LTV is typically around 70-75%. Maintaining a higher down payment reduces your interest burden over time and improves your loan approval chances.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-display font-medium mb-4">Factors affecting your eligibility</h3>
+              <ul className="space-y-4 text-black/60">
+                <li className="flex gap-4">
+                  <span className="font-bold text-black">CIBIL Score:</span>
+                  A score of 750 or above is ideal for securing the lowest interest rates.
+                </li>
+                <li className="flex gap-4">
+                  <span className="font-bold text-black">Age:</span>
+                  Younger applicants often qualify for longer tenures (up to 30 years), increasing the eligible amount.
+                </li>
+                <li className="flex gap-4">
+                  <span className="font-bold text-black">Employment:</span>
+                  Stable employment with reputed organizations or a consistent business track record is preferred.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

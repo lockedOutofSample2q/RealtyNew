@@ -2,7 +2,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import ArrowRight from "lucide-react/dist/esm/icons/arrow-right";
 import type { Property } from "@/types";
 import { cn } from "@/lib/utils";
 import { useCurrency } from "@/context/CurrencyContext";
