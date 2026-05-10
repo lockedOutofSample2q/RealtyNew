@@ -77,8 +77,14 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       type: "website",
       images: p.images?.[0] ? [{ url: p.images[0] }] : undefined,
     },
+    twitter: {
+      card: "summary_large_image",
+      title: titleStr,
+      description: descStr,
+      images: p.images?.[0] ? [p.images[0]] : undefined,
+    },
     alternates: {
-      canonical: `/properties/${p.slug}`,
+      canonical: `${siteConfig.url}/properties/${p.slug}`,
     },
   };
 }
@@ -268,21 +274,29 @@ export default async function PropertyDetailPage(props: Props) {
       "url": property.developer_website
     } : null,
     "broker": {
-      "@type": "Person",
-      "name": "Amritpal Singh",
-      "jobTitle": "Managing Director",
-      "worksFor": {
-        "@type": "RealEstateAgent",
-        "name": "Realty Holding and Management Consultants",
-        "url": siteConfig.url
+      "@type": "RealEstateAgent",
+      "name": "Realty Holding & Management Consultants",
+      "url": siteConfig.url,
+      "telephone": "+917814613916",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Phase 8A, E328, Industrial Area, Sector 75",
+        "addressLocality": "Mohali",
+        "addressRegion": "Punjab",
+        "postalCode": "160055",
+        "addressCountry": "IN"
       }
     },
-    "numberOfBedrooms": property.bedrooms,
+    "numberOfBedrooms": property.bedrooms_max && property.bedrooms_max !== property.bedrooms 
+      ? `${property.bedrooms}-${property.bedrooms_max}` 
+      : property.bedrooms,
     "numberOfBathrooms": property.bathrooms,
     "floorSize": {
       "@type": "QuantitativeValue",
       "value": property.area_sqft,
-      "unitCode": "FTK"
+      "minValue": property.area_sqft,
+      "maxValue": property.area_sqft_max || property.area_sqft,
+      "unitCode": "SQF"
     }
   };
 
@@ -496,26 +510,63 @@ export default async function PropertyDetailPage(props: Props) {
                   )}
 
                   {/* 2. Unit Types & Sizes */}
-                  <div className="relative rounded-[24px] overflow-hidden min-h-[440px] group cursor-pointer">
-                    <Image
-                      src={isValidUrl(property.unit_types_image) ? property.unit_types_image! : (isValidUrl(property.images?.[0]) ? property.images![0] : "/assets/images/home/about.jpg")}
-                      alt="Unit Types & Sizes"
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-black/20" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-8">
-                      <p className="text-white font-bold text-[20px] mb-3 leading-tight">Unit Types & Sizes</p>
-                      <span className="inline-flex items-center gap-2 text-[11px] bg-white/20 backdrop-blur-md text-white border border-white/30 font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
-                        {property.unit_types_coming_soon ? "COMING SOON" : "AVAILABLE"}
-                      </span>
+                  {property.unit_types && property.unit_types.length > 0 ? (
+                    <div className="col-span-1 md:col-span-2 lg:col-span-2 bg-white border border-black/8 rounded-[24px] p-8 overflow-hidden">
+                      <h3 className="text-[17px] font-bold text-black mb-6">Unit Types & Sizes</h3>
+                      <div className="overflow-x-auto">
+                        <table className="w-full text-left text-[14px]">
+                          <thead>
+                            <tr className="border-b border-black/5">
+                              <th className="py-3 font-semibold text-black/40 uppercase tracking-wider text-[10px]">Configuration</th>
+                              <th className="py-3 font-semibold text-black/40 uppercase tracking-wider text-[10px]">Size</th>
+                              <th className="py-3 font-semibold text-black/40 uppercase tracking-wider text-[10px]">Price</th>
+                              <th className="py-3 font-semibold text-black/40 uppercase tracking-wider text-[10px]">Status</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {property.unit_types.map((ut, idx) => (
+                              <tr key={idx} className="border-b border-black/[0.03] last:border-0">
+                                <td className="py-4 font-bold text-black">{ut.bhk}</td>
+                                <td className="py-4 text-black/60">
+                                  {ut.size_min.toLocaleString()} {ut.size_max ? `- ${ut.size_max.toLocaleString()}` : ""} sqft
+                                </td>
+                                <td className="py-4 text-black/60">{ut.price || "Price on request"}</td>
+                                <td className="py-4">
+                                  <span className="inline-block px-2 py-0.5 rounded bg-black/5 text-black/40 text-[10px] font-bold uppercase tracking-wider">
+                                    Available
+                                  </span>
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                      <p className="text-[11px] text-black/30 mt-6 italic">
+                        * Prices are indicative and subject to change. Contact us for the current payment plan and floor-wise pricing.
+                      </p>
                     </div>
-                    {/* Icon corner */}
-                    <div className="absolute bottom-8 right-8 w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
-                       <Images size={18} className="text-white" />
+                  ) : (
+                    <div className="relative rounded-[24px] overflow-hidden min-h-[440px] group cursor-pointer">
+                      <Image
+                        src={isValidUrl(property.unit_types_image) ? property.unit_types_image! : (isValidUrl(property.images?.[0]) ? property.images![0] : "/assets/images/home/about.jpg")}
+                        alt="Unit Types & Sizes"
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-black/20" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                      <div className="absolute bottom-0 left-0 right-0 p-8">
+                        <p className="text-white font-bold text-[20px] mb-3 leading-tight">Unit Types & Sizes</p>
+                        <span className="inline-flex items-center gap-2 text-[11px] bg-white/20 backdrop-blur-md text-white border border-white/30 font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
+                          {property.unit_types_coming_soon ? "COMING SOON" : "AVAILABLE"}
+                        </span>
+                      </div>
+                      {/* Icon corner */}
+                      <div className="absolute bottom-8 right-8 w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
+                         <Images size={18} className="text-white" />
+                      </div>
                     </div>
-                  </div>
+                  )}
 
                   {/* 3. Resources / Links */}
                   <div className="flex flex-col gap-3">
@@ -587,17 +638,20 @@ export default async function PropertyDetailPage(props: Props) {
               <section className="mt-14 pt-14 border-t border-black/5">
                 <h2 className="text-[18px] font-bold text-black mb-8">Upcoming Infrastructure & Projects</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {property.upcoming_infrastructure!.map((item, i) => (
-                    <div key={i} className="flex items-start gap-4 p-6 bg-[#FBFBFB] border border-black/[0.03] rounded-[24px]">
-                      <div className="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center shrink-0">
-                         <Building2 size={18} className="text-black/40" />
+                  {property.upcoming_infrastructure!.map((item, i) => {
+                    const [title, desc] = item.includes('|') ? item.split('|') : [item, "Future development set to enhance connectivity and community value in this area."];
+                    return (
+                      <div key={i} className="flex items-start gap-4 p-6 bg-[#FBFBFB] border border-black/[0.03] rounded-[24px]">
+                        <div className="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center shrink-0">
+                           <Building2 size={18} className="text-black/40" />
+                        </div>
+                        <div>
+                          <p className="text-black font-semibold text-[15px] mb-1">{title}</p>
+                          <p className="text-black/40 text-[13px] leading-relaxed">{desc}</p>
+                        </div>
                       </div>
-                      <div>
-                        <p className="text-black font-semibold text-[15px] mb-1">{item}</p>
-                        <p className="text-black/40 text-[13px] leading-relaxed">Future development set to enhance connectivity and community value in this area.</p>
-                      </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </section>
             )}
