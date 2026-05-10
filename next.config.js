@@ -83,6 +83,26 @@ const nextConfig = {
         destination: "/flats",
         permanent: true,
       },
+      {
+        source: "/ananda-crown",
+        destination: "/properties/ananda-crown-mohali-3-4-BHK-flat-sector-78",
+        permanent: true,
+      },
+      {
+        source: "/properties/ananda-crown",
+        destination: "/properties/ananda-crown-mohali-3-4-BHK-flat-sector-78",
+        permanent: true,
+      },
+      {
+        source: "/properties/anada-crown",
+        destination: "/properties/ananda-crown-mohali-3-4-BHK-flat-sector-78",
+        permanent: true,
+      },
+      {
+        source: "/proeprties/ananda-crown",
+        destination: "/properties/ananda-crown-mohali-3-4-BHK-flat-sector-78",
+        permanent: true,
+      },
     ];
   },
 };
