@@ -242,7 +242,7 @@ export default async function PropertyDetailPage(props: Props) {
         },
         "reviewBody": "Premium location and unique lifestyle amenity. Pricing is on the higher side but justified given the golf range and AC flats."
       }
-    ] : undefined,
+    ] : undefined),
     "offers": property.price_max ? {
       "@type": "AggregateOffer",
       "lowPrice": property.price,
