@@ -209,15 +209,15 @@ export default async function PropertyDetailPage(props: Props) {
       "latitude": property.latitude,
       "longitude": property.longitude
     },
-    "alternateName": property.alternate_names || (p.slug === "beverly-golf-avenue" ? ["Beverly Hills Mohali", "Beverly Golf Avenue"] : undefined),
-    "aggregateRating": (property as any).aggregate_rating || (p.slug === "beverly-golf-avenue" ? {
+    "alternateName": property.alternate_names || (property.slug === "beverly-golf-avenue" ? ["Beverly Hills Mohali", "Beverly Golf Avenue"] : undefined),
+    "aggregateRating": (property as any).aggregate_rating || (property.slug === "beverly-golf-avenue" ? {
       "@type": "AggregateRating",
       "ratingValue": "4.5",
       "reviewCount": "12",
       "bestRating": "5",
       "worstRating": "1"
     } : undefined),
-    "review": (property as any).reviews || (p.slug === "beverly-golf-avenue" ? [
+    "review": (property as any).reviews || (property.slug === "beverly-golf-avenue" ? [
       {
         "@type": "Review",
         "reviewRating": {
