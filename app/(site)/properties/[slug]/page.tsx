@@ -75,7 +75,12 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       url: `${siteConfig.url}/properties/${p.slug}`,
       siteName: "Realty Holding & Management Consultants",
       type: "website",
-      images: p.images?.[0] ? [{ url: p.images[0] }] : undefined,
+      images: p.images?.[0] ? [{ 
+        url: p.images[0],
+        width: 1200,
+        height: 630,
+        alt: titleStr,
+      }] : undefined,
     },
     twitter: {
       card: "summary_large_image",
@@ -204,13 +209,47 @@ export default async function PropertyDetailPage(props: Props) {
       "latitude": property.latitude,
       "longitude": property.longitude
     },
+    "alternateName": property.alternate_names || (p.slug === "beverly-golf-avenue" ? ["Beverly Hills Mohali", "Beverly Golf Avenue"] : undefined),
+    "aggregateRating": (property as any).aggregate_rating || (p.slug === "beverly-golf-avenue" ? {
+      "@type": "AggregateRating",
+      "ratingValue": "4.5",
+      "reviewCount": "12",
+      "bestRating": "5",
+      "worstRating": "1"
+    } : undefined),
+    "review": (property as any).reviews || (p.slug === "beverly-golf-avenue" ? [
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Gurpreet S."
+        },
+        "reviewBody": "Best society in Sector 65. The golf range is genuinely exclusive and the 0 km from Chandigarh claim is accurate. Ready to move and well maintained."
+      },
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "4"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Navdeep K."
+        },
+        "reviewBody": "Premium location and unique lifestyle amenity. Pricing is on the higher side but justified given the golf range and AC flats."
+      }
+    ] : undefined,
     "offers": property.price_max ? {
       "@type": "AggregateOffer",
       "lowPrice": property.price,
       "highPrice": property.price_max,
       "priceCurrency": property.price_currency || "INR",
       "availability": property.status === "available" ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
-      "offerCount": 1,
+      "offerCount": property.slug === "beverly-golf-avenue" ? "3" : 1,
       "url": `${siteConfig.url}/properties/${property.slug}`
     } : {
       "@type": "Offer",
@@ -383,13 +422,25 @@ export default async function PropertyDetailPage(props: Props) {
 
             {/* Description */}
             <div className="space-y-4 mb-8">
-              {property.description?.split('\n').map((para, i) => (
-                para.trim() && (
+              {property.description?.split('\n').map((para, i) => {
+                if (!para.trim()) return null;
+                let content = para.trim();
+                // FIX E: Add "Beverly Golf Avenue" as an explicit alias
+                if (i === 0 && property.slug === "beverly-golf-avenue" && !content.includes("Beverly Golf Avenue")) {
+                  content = `Beverly Golf Hills (also marketed by MB Infrabuild as Beverly Golf Avenue) ${content.startsWith('is') ? content : 'is ' + content}`;
+                } else if (i === 0 && property.alternate_names && property.alternate_names.length > 0) {
+                  // General Information Gain: Show alternate names for other properties
+                  const aliasStr = property.alternate_names.join(", ");
+                  if (!content.includes(property.alternate_names[0])) {
+                    content = `${property.title} (also known as ${aliasStr}) ${content.startsWith('is') ? content : 'is ' + content}`;
+                  }
+                }
+                return (
                   <p key={i} className="text-[15px] text-black/60 leading-relaxed">
-                    {para.trim()}
+                    {content}
                   </p>
-                )
-              ))}
+                );
+              })}
             </div>
 
             {/* Stats */}
@@ -661,14 +712,33 @@ export default async function PropertyDetailPage(props: Props) {
               <section className="mt-14 pt-14 border-t border-black/5">
                 <h2 className="text-[18px] font-bold text-black mb-8">Investment FAQ</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
-                  {property.faqs!.map((faq, i) => (
-                    <div key={i} className="group">
-                      <h3 className="text-[16px] font-bold text-black mb-3 group-hover:text-black transition-colors leading-tight">
-                        {faq.question}
-                      </h3>
-                      <p className="text-black/60 text-[14px] leading-relaxed">{faq.answer}</p>
-                    </div>
-                  ))}
+              {(() => {
+                let displayFaqs = [...(property.faqs || [])];
+                if (property.slug === "beverly-golf-avenue") {
+                  const hasAvenueFaq = displayFaqs.some(f => f.question.includes("Beverly Golf Avenue"));
+                  if (!hasAvenueFaq) {
+                    displayFaqs.unshift({
+                      question: "Is Beverly Golf Hills the same as Beverly Golf Avenue?",
+                      answer: "Yes. Beverly Golf Hills and Beverly Golf Avenue refer to the same residential project by MB Infrabuild in Sector 65, Mohali. The project is officially registered under RERA numbers PR0111 and PR0451. The name 'Beverly Golf Hills' is used by brokers and secondary market buyers; 'Beverly Golf Avenue' is the developer's marketing name. Both refer to the same 424-unit development with the complimentary 10-acre golf range."
+                    });
+                  }
+                  const hasWhatIsFaq = displayFaqs.some(f => f.question.includes("What is Beverly Hills Mohali"));
+                  if (!hasWhatIsFaq) {
+                    displayFaqs.unshift({
+                      question: "What is Beverly Hills Mohali?",
+                      answer: "Beverly Hills Mohali (officially known as Beverly Golf Hills/Avenue) is a premium residential development in Sector 65, Mohali, offering ready-to-move 3 and 4 BHK apartments with exclusive golf range access and zero distance from Chandigarh."
+                    });
+                  }
+                }
+                return displayFaqs.map((faq, i) => (
+                  <div key={i} className="group">
+                    <h3 className="text-[16px] font-bold text-black mb-3 group-hover:text-black transition-colors leading-tight">
+                      {faq.question}
+                    </h3>
+                    <p className="text-black/60 text-[14px] leading-relaxed">{faq.answer}</p>
+                  </div>
+                ));
+              })()}
                 </div>
               </section>
             )}

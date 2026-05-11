@@ -121,6 +121,7 @@ export interface Property {
   upcoming_infrastructure?: string[];
 
   faqs?: Array<{ question: string; answer: string }>;
+  alternate_names?: string[];
 
   created_at: string;
   updated_at: string;

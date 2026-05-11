@@ -103,6 +103,11 @@ const nextConfig = {
         destination: "/properties/ananda-crown-mohali-3-4-BHK-flat-sector-78",
         permanent: true,
       },
+      {
+        source: "/properties/beverly-golf-hills",
+        destination: "/properties/beverly-golf-avenue",
+        permanent: true,
+      },
     ];
   },
 };

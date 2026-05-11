@@ -102,6 +102,7 @@ function defaultForm(p?: any | null) {
     agent_languages:     p?.agent_languages?.join(", ") ?? "",
     upcoming_infrastructure: arrayToLines(p?.upcoming_infrastructure),
     videos:              arrayToLines(p?.videos),
+    alternate_names:     arrayToLines(p?.alternate_names),
   };
 }
 
@@ -204,6 +205,7 @@ export default function ApartmentForm({ apartment }: { apartment?: any | null })
         : null,
       upcoming_infrastructure: linesToArray(form.upcoming_infrastructure),
       videos: linesToArray(form.videos),
+      alternate_names: linesToArray(form.alternate_names),
       updated_at: new Date().toISOString(),
     };
 
@@ -364,6 +366,11 @@ export default function ApartmentForm({ apartment }: { apartment?: any | null })
                 <label htmlFor="featured" className="font-body text-sm text-[#555]">
                   Featured property
                 </label>
+              </div>
+              <div className="pt-2">
+                <label className={lc}>Alternate Names / Aliases (one per line)</label>
+                <textarea rows={3} value={form.alternate_names} onChange={(e) => f("alternate_names", e.target.value)} className={tc} placeholder="e.g. Beverly Golf Hills" />
+                <p className="text-[10px] text-black/30 mt-1 italic">Used for SEO entity bridging and rich snippets.</p>
               </div>
             </div>
           </Section>
