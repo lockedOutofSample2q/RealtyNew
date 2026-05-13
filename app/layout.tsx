@@ -155,6 +155,12 @@ export default function RootLayout({
             gtag('config', 'G-ZWNKTZ1M1S');
           `}
         </Script>
+        {/* Ahrefs Analytics */}
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="Qm6W5Qeb+IdgA8tRuYFgHQ"
+          strategy="afterInteractive"
+        />
         {children}
         <Toaster
           position="bottom-right"
