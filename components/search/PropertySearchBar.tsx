@@ -84,13 +84,15 @@ export default function PropertySearchBar({
           placeholder="All"
         />
 
-        <CustomSelect
-          label="Property Type"
-          value={filters.type}
-          options={tab === "flats" ? FLAT_TYPES : tab === "houses" ? HOUSE_TYPES : LAND_TYPES}
-          onChange={(type) => setFilters({ ...filters, type })}
-          placeholder="All"
-        />
+        {tab !== "flats" && (
+          <CustomSelect
+            label="Property Type"
+            value={filters.type}
+            options={tab === "houses" ? HOUSE_TYPES : LAND_TYPES}
+            onChange={(type) => setFilters({ ...filters, type })}
+            placeholder="All"
+          />
+        )}
 
         {tab !== "lands" && (
           <>

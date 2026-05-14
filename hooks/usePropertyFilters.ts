@@ -74,7 +74,7 @@ export function usePropertyFilters(
       // Filter by current tab (entity_type) first
       if (tab === "flats" && p.entity_type !== 'apartment') return;
       if (tab === "houses" && p.entity_type !== 'house') return;
-      if (tab === "lands" && p.entity_type !== 'land') return;
+      if (tab === "lands" && p.entity_type !== 'land' && p.entity_type !== 'lands') return;
 
       const loc = p.location || p.community || "";
       
@@ -114,7 +114,7 @@ export function usePropertyFilters(
         if (p.entity_type !== 'house') return false;
       } 
       else if (tab === "lands") {
-        if (p.entity_type !== 'land') return false;
+        if (p.entity_type !== 'land' && p.entity_type !== 'lands') return false;
       }
 
       if (filters.bedrooms && tab !== "lands") {

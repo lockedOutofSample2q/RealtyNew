@@ -115,7 +115,7 @@ export interface Property {
   agent_languages?: string[];
 
   // Split tables support
-  entity_type?: "apartment" | "house" | "land";
+  entity_type?: "apartment" | "house" | "land" | "lands";
 
   // Upcoming infrastructure
   upcoming_infrastructure?: string[];

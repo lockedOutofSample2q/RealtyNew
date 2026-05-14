@@ -8,6 +8,8 @@ import {
   CITIES,
   SECTORS_BY_CITY,
   PROPERTY_TYPES,
+  HOUSE_TYPES,
+  LAND_TYPES,
   BEDROOMS,
   FURNISHING,
   type PropertySearchFilters,
@@ -112,27 +114,33 @@ export function MobileSearchModal({
                 onChange={(sector) => setFilters({ ...filters, sector })}
                 placeholder="All Areas"
               />
-              <PillSelect
-                label="Property Type"
-                value={filters.type}
-                options={PROPERTY_TYPES}
-                onChange={(type) => setFilters({ ...filters, type })}
-                placeholder="All Types"
-              />
-              <PillSelect
-                label="Bedrooms"
-                value={filters.bedrooms}
-                options={BEDROOMS}
-                onChange={(beds) => setFilters({ ...filters, bedrooms: beds })}
-                placeholder="Any"
-              />
-              <PillSelect
-                label="Furnishing"
-                value={filters.furnishing}
-                options={FURNISHING}
-                onChange={(furn) => setFilters({ ...filters, furnishing: furn })}
-                placeholder="All"
-              />
+              {tab !== "flats" && (
+                <PillSelect
+                  label="Property Type"
+                  value={filters.type}
+                  options={tab === "houses" ? HOUSE_TYPES : LAND_TYPES}
+                  onChange={(type) => setFilters({ ...filters, type })}
+                  placeholder="All Types"
+                />
+              )}
+              {tab !== "lands" && (
+                <>
+                  <PillSelect
+                    label="Bedrooms"
+                    value={filters.bedrooms}
+                    options={BEDROOMS}
+                    onChange={(beds) => setFilters({ ...filters, bedrooms: beds })}
+                    placeholder="Any"
+                  />
+                  <PillSelect
+                    label="Furnishing"
+                    value={filters.furnishing}
+                    options={FURNISHING}
+                    onChange={(furn) => setFilters({ ...filters, furnishing: furn })}
+                    placeholder="All"
+                  />
+                </>
+              )}
 
               <div className="mt-4 flex flex-col gap-4 border-t border-black/5 pt-8">
                 <button
