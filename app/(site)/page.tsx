@@ -48,31 +48,50 @@ async function getHomeData() {
           .limit(6),
         supabase
           .from("properties")
-          .select("community, location")
+          .select("community, location, entity_type")
           .eq("status", "available"),
       ]);
 
-    const sectorsSet = new Set<string>();
+    const sectorsByTab: Record<SearchTab, Set<string>> = {
+      flats: new Set<string>(),
+      houses: new Set<string>(),
+      lands: new Set<string>(),
+    };
+
     if (locData) {
-      locData.forEach((p: { community?: string, location?: string }) => {
-        if (p.community) sectorsSet.add(p.community);
-        if (p.location) sectorsSet.add(p.location);
+      locData.forEach((p: { community?: string, location?: string, entity_type: string }) => {
+        let tab: SearchTab | null = null;
+        if (p.entity_type === 'apartment') tab = 'flats';
+        else if (p.entity_type === 'house') tab = 'houses';
+        else if (p.entity_type === 'land') tab = 'lands';
+
+        if (tab) {
+          if (p.community) sectorsByTab[tab].add(p.community);
+          if (p.location) sectorsByTab[tab].add(p.location);
+        }
       });
     }
-    const sectors = Array.from(sectorsSet).sort();
-    if (!sectors.includes("All") && sectors.length > 0) {
-      sectors.unshift("All");
-    }
+
+    const availableSectors = {
+      flats: ["All", ...Array.from(sectorsByTab.flats).sort()],
+      houses: ["All", ...Array.from(sectorsByTab.houses).sort()],
+      lands: ["All", ...Array.from(sectorsByTab.lands).sort()],
+    };
 
     return {
       featured: (featured ? enrichProperty(featured as Property) : null),
       latest: (latest ?? []).map(enrichProperty) as Property[],
       rentals: (rentals ?? []).map(enrichProperty) as Property[],
-      availableSectors: sectors.length > 0 ? sectors : undefined,
+      availableSectors,
     };
   } catch {
     // Return empty data if DB not connected (dev mode)
-    return { featured: null, latest: [], rentals: [], availableSectors: undefined };
+    return { 
+      featured: null, 
+      latest: [], 
+      rentals: [], 
+      availableSectors: { flats: ["All"], houses: ["All"], lands: ["All"] } 
+    };
   }
 }
 
@@ -81,7 +100,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <HeroSection availableSectors={availableSectors} />
+      <HeroSection sectorOptions={availableSectors} />
       <AboutSection />
       <PropertiesCarousel
         title={homeCarousels.properties.title}

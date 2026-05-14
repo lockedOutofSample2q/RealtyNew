@@ -40,14 +40,16 @@ const LOGOS = [
 ];
 
 interface HeroSectionProps {
-  availableSectors?: string[];
+  sectorOptions?: { flats: string[], houses: string[], lands: string[] };
 }
 
-export default function HeroSection({ availableSectors }: HeroSectionProps = {}) {
+export default function HeroSection({ sectorOptions }: HeroSectionProps = {}) {
   const router = useRouter();
   const [tab, setTab] = useState<SearchTab>("flats");
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [filters, setFilters] = useState(DEFAULT_PROPERTY_FILTERS);
+
+  const activeSectors = sectorOptions ? sectorOptions[tab] : undefined;
 
   const { scrollY } = useScroll();
   const backgroundY = useTransform(scrollY, [0, 1000], ["0%", "20%"]);
@@ -222,7 +224,7 @@ export default function HeroSection({ availableSectors }: HeroSectionProps = {})
                   <PillMultiSelect
                   label="Sector / Area"
                   value={filters.sector}
-                  options={filters.city && SECTORS_BY_CITY[filters.city] ? SECTORS_BY_CITY[filters.city] : ["All"]}
+                  options={activeSectors && activeSectors.length > 0 ? activeSectors : filters.city && SECTORS_BY_CITY[filters.city] ? SECTORS_BY_CITY[filters.city] : ["All"]}
                     onChange={(sector) => setFilters({ ...filters, sector })}
                     placeholder="All Areas"
                   />

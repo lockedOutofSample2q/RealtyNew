@@ -66,13 +66,16 @@ export function usePropertyFilters(
     }
   }, [searchParams]);
 
-  // Dynamically compute available sectors based on the loaded properties and selected city
+  // Dynamically compute available sectors based on the loaded properties, selected city, and current tab
   const availableSectors = useMemo(() => {
     const sectors = new Set<string>();
     
     properties.forEach(p => {
-      // Basic split of location to extract parts. 
-      // If your data has a specific format, you can adjust this.
+      // Filter by current tab (entity_type) first
+      if (tab === "flats" && p.entity_type !== 'apartment') return;
+      if (tab === "houses" && p.entity_type !== 'house') return;
+      if (tab === "lands" && p.entity_type !== 'land') return;
+
       const loc = p.location || p.community || "";
       
       // If a city is selected, only consider properties in that city
@@ -82,13 +85,9 @@ export function usePropertyFilters(
         }
       }
       
-      // Try to extract Sector XX, Phase XX, etc.
-      // For simplicity, if your data already has clean community/location names, 
-      // we can just use those. Let's assume community is the sector/area.
       if (p.community) {
         sectors.add(p.community);
       } else if (p.location) {
-        // Fallback to location
         const parts = p.location.split(',').map(s => s.trim());
         if (parts.length > 0) {
           sectors.add(parts[0]);
@@ -97,7 +96,7 @@ export function usePropertyFilters(
     });
     
     return ["All", ...Array.from(sectors).sort()];
-  }, [properties, filters.city]);
+  }, [properties, filters.city, tab]);
 
   const filtered = useMemo(() => {
     const maxPrice = parseMaxPrice(filters.price);
