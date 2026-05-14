@@ -605,6 +605,17 @@ export default async function PropertyCatchAllPage(props: Props) {
                 </div>
               )}
 
+              {/* EMI Calculator */}
+              <div className="p-5 bg-[#F8F9FA] border-t border-black/8">
+                <p className="text-[13px] font-semibold text-black mb-2">Estimate your EMI for this property</p>
+                <Link
+                  href={`/tools/mortgage-calculator?price=${price || ''}`}
+                  className="block w-full text-center bg-black text-white py-2.5 rounded-lg text-[12px] font-semibold hover:bg-black/80 transition-colors"
+                >
+                  EMI Calculator &rarr;
+                </Link>
+              </div>
+
             </div>
           </aside>
 

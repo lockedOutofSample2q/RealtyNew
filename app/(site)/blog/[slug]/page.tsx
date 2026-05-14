@@ -180,6 +180,13 @@ export default async function PostPage({ params }: PostPageProps) {
           <div className="prose prose-lg prose-charcoal max-w-none prose-headings:font-serif">
             <MDXRemote source={post.body.raw} />
           </div>
+
+          <div className="mt-16 p-8 bg-[#F8F9FA] rounded-2xl border border-black/5 text-center">
+            <h3 className="font-display text-2xl font-semibold mb-4 text-charcoal">Planning a property purchase in Mohali?</h3>
+            <p className="text-black/70 mb-6">
+              Use our free <Link href="/tools/mortgage-calculator" className="text-blue-600 font-semibold hover:underline">EMI Calculator for Mohali property</Link> to estimate your monthly payments before you visit the site &rarr;
+            </p>
+          </div>
         </div>
       </div>
     </article>
