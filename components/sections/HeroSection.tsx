@@ -39,7 +39,11 @@ const LOGOS = [
   { file: "sbp.svg",            name: "SBP",            mono: false },
 ];
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  availableSectors?: string[];
+}
+
+export default function HeroSection({ availableSectors }: HeroSectionProps = {}) {
   const router = useRouter();
   const [tab, setTab] = useState<SearchTab>("flats");
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
@@ -157,6 +161,7 @@ export default function HeroSection() {
             setFilters={setFilters}
             onSubmit={handleSearch}
             className="hidden md:block w-full"
+            availableSectors={availableSectors}
           />
         </motion.div>
 

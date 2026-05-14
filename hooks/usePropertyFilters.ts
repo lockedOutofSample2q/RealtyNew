@@ -20,21 +20,28 @@ function normalize(text: string | undefined | null): string {
   return (text ?? "").toLowerCase().replace(/[-\s]+/g, " ").trim();
 }
 
-export function usePropertyFilters(properties: Property[], initialTab?: SearchTab) {
+export function usePropertyFilters(
+  properties: Property[],
+  initialTab?: SearchTab,
+  initialFilters?: Partial<PropertySearchFilters>
+) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [tab, setTab] = useState<SearchTab>(
     initialTab || (searchParams.get("tab") as SearchTab) || "flats"
   );
+
   const [filters, setFilters] = useState<PropertySearchFilters>({
     ...DEFAULT_PROPERTY_FILTERS,
-    city: searchParams.get("city") ?? "",
-    sector: searchParams.getAll("sector").filter(Boolean) || [],
-    type: searchParams.get("type") ?? "",
-    bedrooms: searchParams.get("bedrooms") ?? "",
-    furnishing: searchParams.get("furnishing") ?? "",
-    price: searchParams.get("price") ?? "",
-    currency: searchParams.get("currency") ?? "INR",
+    city: searchParams.get("city") ?? initialFilters?.city ?? "",
+    sector: searchParams.getAll("sector").filter(Boolean).length > 0 
+      ? searchParams.getAll("sector").filter(Boolean) 
+      : initialFilters?.sector ?? [],
+    type: searchParams.get("type") ?? initialFilters?.type ?? "",
+    bedrooms: searchParams.get("bedrooms") ?? initialFilters?.bedrooms ?? "",
+    furnishing: searchParams.get("furnishing") ?? initialFilters?.furnishing ?? "",
+    price: searchParams.get("price") ?? initialFilters?.price ?? "",
+    currency: searchParams.get("currency") ?? initialFilters?.currency ?? "INR",
   });
 
   useEffect(() => {
@@ -43,17 +50,54 @@ export function usePropertyFilters(properties: Property[], initialTab?: SearchTa
       setTab(tabFromUrl);
     }
     
-    setFilters({
-      ...DEFAULT_PROPERTY_FILTERS,
-      city: searchParams.get("city") ?? "",
-      sector: searchParams.getAll("sector").filter(Boolean) || [],
-      type: searchParams.get("type") ?? "",
-      bedrooms: searchParams.get("bedrooms") ?? "",
-      furnishing: searchParams.get("furnishing") ?? "",
-      price: searchParams.get("price") ?? "",
-      currency: searchParams.get("currency") ?? "INR",
-    });
+    // Only update from search params if they exist, otherwise keep current filters 
+    // to preserve initialFilters if we are on a clean URL.
+    if (Array.from(searchParams.keys()).length > 0) {
+      setFilters({
+        ...DEFAULT_PROPERTY_FILTERS,
+        city: searchParams.get("city") ?? "",
+        sector: searchParams.getAll("sector").filter(Boolean) || [],
+        type: searchParams.get("type") ?? "",
+        bedrooms: searchParams.get("bedrooms") ?? "",
+        furnishing: searchParams.get("furnishing") ?? "",
+        price: searchParams.get("price") ?? "",
+        currency: searchParams.get("currency") ?? "INR",
+      });
+    }
   }, [searchParams]);
+
+  // Dynamically compute available sectors based on the loaded properties and selected city
+  const availableSectors = useMemo(() => {
+    const sectors = new Set<string>();
+    
+    properties.forEach(p => {
+      // Basic split of location to extract parts. 
+      // If your data has a specific format, you can adjust this.
+      const loc = p.location || p.community || "";
+      
+      // If a city is selected, only consider properties in that city
+      if (filters.city && filters.city !== "All") {
+        if (!normalize(loc).includes(normalize(filters.city))) {
+          return;
+        }
+      }
+      
+      // Try to extract Sector XX, Phase XX, etc.
+      // For simplicity, if your data already has clean community/location names, 
+      // we can just use those. Let's assume community is the sector/area.
+      if (p.community) {
+        sectors.add(p.community);
+      } else if (p.location) {
+        // Fallback to location
+        const parts = p.location.split(',').map(s => s.trim());
+        if (parts.length > 0) {
+          sectors.add(parts[0]);
+        }
+      }
+    });
+    
+    return ["All", ...Array.from(sectors).sort()];
+  }, [properties, filters.city]);
 
   const filtered = useMemo(() => {
     const maxPrice = parseMaxPrice(filters.price);
@@ -63,12 +107,6 @@ export function usePropertyFilters(properties: Property[], initialTab?: SearchTa
     const desiredFurnishing = normalize(filters.furnishing);
 
     return properties.filter((p) => {
-      const pType = normalize(p.type);
-      const pTitle = normalize(p.title);
-      const pSlug = normalize(p.slug);
-      const pDesc = normalize(p.description);
-      const pDev = normalize(p.developer);
-
       // ── TYPE/TAB LOGIC (Strictly based on entity_type) ──────
       if (tab === "flats") {
         if (p.entity_type !== 'apartment') return false;
@@ -126,9 +164,28 @@ export function usePropertyFilters(properties: Property[], initialTab?: SearchTa
     if (e) e.preventDefault();
     const activeTab = forcedTab || tab;
 
+    // Check if ONLY a single sector is selected (and no other complex filters that require query params)
+    // For now, if there's exactly one sector, and it's for 'flats', we can route to the clean URL.
+    const isCleanSectorRoute = activeTab === "flats" && filters.sector.length === 1 && filters.sector[0] !== "All" && filters.sector[0] !== "all";
+    
+    if (isCleanSectorRoute) {
+      const sectorSlug = filters.sector[0].toLowerCase().replace(/\s+/g, '-');
+      // If there are other filters, append them as query params to the clean URL
+      const params = new URLSearchParams();
+      if (filters.city) params.set("city", filters.city);
+      if (filters.type) params.set("type", filters.type);
+      if (filters.bedrooms) params.set("bedrooms", filters.bedrooms);
+      if (filters.furnishing) params.set("furnishing", filters.furnishing);
+      if (filters.price) params.set("price", filters.price);
+      if (filters.currency && filters.currency !== "INR") params.set("currency", filters.currency);
+      
+      const queryString = params.toString();
+      const path = `/flats/${sectorSlug}`;
+      router.push(queryString ? `${path}?${queryString}` : path);
+      return;
+    }
+
     const params = new URLSearchParams();
-    // tab is now part of the path, but we keep it in query for the main /properties page if needed
-    // however, we'll redirect to the clean path
     if (filters.city) params.set("city", filters.city);
     if (filters.sector && filters.sector.length > 0) {
       if (typeof filters.sector === "string") {
@@ -159,6 +216,7 @@ export function usePropertyFilters(properties: Property[], initialTab?: SearchTa
     filters,
     setFilters,
     filtered,
+    availableSectors,
     handleSearch,
     handleTabChange,
     resetFilters: () => setFilters(DEFAULT_PROPERTY_FILTERS),

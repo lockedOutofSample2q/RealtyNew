@@ -77,7 +77,7 @@ export default function PropertySearchBar({
         <MultiSelect
           label="Sector / Area"
           value={filters.sector}
-          options={filters.city && SECTORS_BY_CITY[filters.city] ? SECTORS_BY_CITY[filters.city] : ["All"]}
+          options={availableSectors && availableSectors.length > 0 ? availableSectors : filters.city && SECTORS_BY_CITY[filters.city] ? SECTORS_BY_CITY[filters.city] : ["All"]}
           onChange={(sector) => setFilters({ ...filters, sector })}
           placeholder="All"
         />

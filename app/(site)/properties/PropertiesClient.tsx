@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import type { Property } from "@/types";
 import { usePropertyFilters } from "@/hooks/usePropertyFilters";
-import { SearchTab } from "@/components/search/propertySearchOptions";
+import { SearchTab, type PropertySearchFilters } from "@/components/search/propertySearchOptions";
 import { PropertiesHero } from "@/components/properties/PropertiesHero";
 import { MobileSearchModal } from "@/components/properties/MobileSearchModal";
 import { PropertiesResultsBar } from "@/components/properties/PropertiesResultsBar";
@@ -14,18 +14,20 @@ import ContactModal from "@/components/lands/ContactModal";
 interface Props {
   properties: Property[];
   initialTab?: SearchTab;
+  initialFilters?: Partial<PropertySearchFilters>;
 }
 
-export default function PropertiesClient({ properties, initialTab }: Props) {
+export default function PropertiesClient({ properties, initialTab, initialFilters }: Props) {
   const {
     tab,
     filters,
     setFilters,
     filtered,
+    availableSectors,
     handleSearch,
     handleTabChange,
     resetFilters,
-  } = usePropertyFilters(properties, initialTab);
+  } = usePropertyFilters(properties, initialTab, initialFilters);
 
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [leafletReady, setLeafletReady] = useState(false);
@@ -110,6 +112,7 @@ export default function PropertiesClient({ properties, initialTab }: Props) {
         setFilters={setFilters}
         onSearch={handleSearch}
         onOpenMobileSearch={() => setIsSearchModalOpen(true)}
+        availableSectors={availableSectors}
       />
 
       <MobileSearchModal
@@ -121,6 +124,7 @@ export default function PropertiesClient({ properties, initialTab }: Props) {
         setFilters={setFilters}
         onSearch={handleSearch}
         onReset={resetFilters}
+        availableSectors={availableSectors}
       />
 
       <PropertiesResultsBar count={filtered.length} />

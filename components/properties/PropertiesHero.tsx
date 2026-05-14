@@ -12,6 +12,7 @@ interface PropertiesHeroProps {
   setFilters: (filters: PropertySearchFilters) => void;
   onSearch: (e?: React.FormEvent) => void;
   onOpenMobileSearch: () => void;
+  availableSectors?: string[];
 }
 
 export function PropertiesHero({
@@ -21,6 +22,7 @@ export function PropertiesHero({
   setFilters,
   onSearch,
   onOpenMobileSearch,
+  availableSectors,
 }: PropertiesHeroProps) {
   const isFilterActive = [
     filters.city,
@@ -68,6 +70,7 @@ export function PropertiesHero({
         filters={filters}
         setFilters={setFilters}
         onSubmit={onSearch}
+        availableSectors={availableSectors}
         className="hidden md:block relative z-10 mt-8 w-[90%] max-w-[1100px]"
       />
     </div>

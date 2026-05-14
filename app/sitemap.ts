@@ -71,6 +71,28 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
+  // 4. Sector SEO Landing Pages (Priority 0.8: Landing Pages)
+  let sectorPages: any[] = [];
+  try {
+    const supabase = createAdminClient();
+    const { data } = await supabase
+      .from("sector_seo")
+      .select("sector_slug, updated_at");
+      
+    if (data && data.length > 0) {
+      sectorPages = data;
+    }
+  } catch (error) {
+    console.error("Sitemap: Failed to fetch sector SEO pages.", error);
+  }
+
+  const sectorRoutes = sectorPages.map((item) => ({
+    url: `${baseUrl}/flats/${item.sector_slug}`,
+    lastModified: new Date(item.updated_at || new Date()),
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+
   // Return combined array
-  return [...staticRoutes, ...propertyRoutes, ...blogRoutes];
+  return [...staticRoutes, ...propertyRoutes, ...blogRoutes, ...sectorRoutes];
 }

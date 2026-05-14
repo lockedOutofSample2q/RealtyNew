@@ -23,6 +23,7 @@ interface MobileSearchModalProps {
   setFilters: (filters: PropertySearchFilters) => void;
   onSearch: (e?: React.FormEvent) => void;
   onReset: () => void;
+  availableSectors?: string[];
 }
 
 export function MobileSearchModal({
@@ -34,6 +35,7 @@ export function MobileSearchModal({
   setFilters,
   onSearch,
   onReset,
+  availableSectors,
 }: MobileSearchModalProps) {
   // Prevent scrolling when modal is open
   useEffect(() => {
@@ -106,7 +108,7 @@ export function MobileSearchModal({
               <PillMultiSelect
                 label="Sector / Area"
                 value={filters.sector}
-                options={filters.city && SECTORS_BY_CITY[filters.city] ? SECTORS_BY_CITY[filters.city] : ["All"]}
+                options={availableSectors && availableSectors.length > 0 ? availableSectors : filters.city && SECTORS_BY_CITY[filters.city] ? SECTORS_BY_CITY[filters.city] : ["All"]}
                 onChange={(sector) => setFilters({ ...filters, sector })}
                 placeholder="All Areas"
               />

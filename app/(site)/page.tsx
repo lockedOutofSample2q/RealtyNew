@@ -26,7 +26,7 @@ async function getHomeData() {
   try {
     const supabase = createAdminClient();
 
-    const [{ data: featured }, { data: latest }, { data: rentals }] =
+    const [{ data: featured }, { data: latest }, { data: rentals }, { data: locData }] =
       await Promise.all([
         supabase
           .from("properties")
@@ -46,25 +46,42 @@ async function getHomeData() {
           .or('featured_sections.cs.{"home_lands"},listing_type.eq.lands')
           .order("created_at", { ascending: false })
           .limit(6),
+        supabase
+          .from("properties")
+          .select("community, location")
+          .eq("status", "available"),
       ]);
+
+    const sectorsSet = new Set<string>();
+    if (locData) {
+      locData.forEach((p) => {
+        if (p.community) sectorsSet.add(p.community);
+        if (p.location) sectorsSet.add(p.location);
+      });
+    }
+    const sectors = Array.from(sectorsSet).sort();
+    if (!sectors.includes("All") && sectors.length > 0) {
+      sectors.unshift("All");
+    }
 
     return {
       featured: (featured ? enrichProperty(featured as Property) : null),
       latest: (latest ?? []).map(enrichProperty) as Property[],
       rentals: (rentals ?? []).map(enrichProperty) as Property[],
+      availableSectors: sectors.length > 0 ? sectors : undefined,
     };
   } catch {
     // Return empty data if DB not connected (dev mode)
-    return { featured: null, latest: [], rentals: [] };
+    return { featured: null, latest: [], rentals: [], availableSectors: undefined };
   }
 }
 
 export default async function HomePage() {
-  const { featured, latest, rentals } = await getHomeData();
+  const { featured, latest, rentals, availableSectors } = await getHomeData();
 
   return (
     <>
-      <HeroSection />
+      <HeroSection availableSectors={availableSectors} />
       <AboutSection />
       <PropertiesCarousel
         title={homeCarousels.properties.title}
