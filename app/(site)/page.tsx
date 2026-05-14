@@ -54,7 +54,7 @@ async function getHomeData() {
 
     const sectorsSet = new Set<string>();
     if (locData) {
-      locData.forEach((p) => {
+      locData.forEach((p: { community?: string, location?: string }) => {
         if (p.community) sectorsSet.add(p.community);
         if (p.location) sectorsSet.add(p.location);
       });

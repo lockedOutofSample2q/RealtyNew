@@ -27,6 +27,7 @@ interface PropertySearchBarProps {
   setFilters: (filters: PropertySearchFilters) => void;
   onSubmit: (e: React.FormEvent) => void;
   className?: string;
+  availableSectors?: string[];
 }
 
 export default function PropertySearchBar({
@@ -36,6 +37,7 @@ export default function PropertySearchBar({
   setFilters,
   onSubmit,
   className,
+  availableSectors,
 }: PropertySearchBarProps) {
   const { currency } = useCurrency();
   return (
