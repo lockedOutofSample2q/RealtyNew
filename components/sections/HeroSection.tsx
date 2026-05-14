@@ -163,7 +163,7 @@ export default function HeroSection({ sectorOptions }: HeroSectionProps = {}) {
             setFilters={setFilters}
             onSubmit={handleSearch}
             className="hidden md:block w-full"
-            availableSectors={availableSectors}
+            availableSectors={activeSectors}
           />
         </motion.div>
 

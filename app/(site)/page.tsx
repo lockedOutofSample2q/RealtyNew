@@ -16,6 +16,7 @@ import BlogTeaserSection from "@/components/sections/BlogTeaserSection";
 import { createAdminClient } from "@/lib/supabase";
 import { homeCarousels } from "@/config/site";
 import type { Property } from "@/types";
+import type { SearchTab } from "@/components/search/propertySearchOptions";
 import { enrichProperty } from "@/lib/property-utils";
 
 // Fetch fresh properties at build time (ISR every 60s)
