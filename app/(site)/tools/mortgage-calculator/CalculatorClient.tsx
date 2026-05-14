@@ -288,73 +288,74 @@ function CalculatorInner({ props }: { props: CalculatorProps }) {
         </div>
 
         {/* Results Panel */}
-        <div className="lg:col-span-5 relative space-y-8">
-          <div className="sticky top-28 bg-white rounded-[32px] shadow-[0_8px_40px_rgba(0,0,0,0.06)] border border-black/5 overflow-hidden">
-            
-            {/* Chart Area */}
-            <div className="p-10 flex flex-col items-center border-b border-black/5">
-              <div className="font-body text-[13px] font-bold uppercase tracking-widest text-black/40 mb-8">Payment Breakdown</div>
+        <div className="lg:col-span-5 relative">
+          <div className="sticky top-28 space-y-8">
+            <div className="bg-white rounded-[32px] shadow-[0_8px_40px_rgba(0,0,0,0.06)] border border-black/5 overflow-hidden">
               
-              {/* CSS Doughnut Chart */}
-              <div className="relative w-48 h-48 rounded-full flex items-center justify-center shadow-inner" style={{
-                background: `conic-gradient(#000000 0% ${principalPct}%, #E5E7EB ${principalPct}% 100%)`
-              }}>
-                <div className="absolute inset-2 bg-white rounded-full flex flex-col items-center justify-center">
-                  <span className="font-body text-xs text-black/60 uppercase tracking-widest mb-1">Monthly</span>
-                  <span className="font-display font-medium text-3xl text-black">{fmt(results.monthly)}</span>
+              {/* Chart Area */}
+              <div className="p-10 flex flex-col items-center border-b border-black/5">
+                <div className="font-body text-[13px] font-bold uppercase tracking-widest text-black/40 mb-8">Payment Breakdown</div>
+                
+                {/* CSS Doughnut Chart */}
+                <div className="relative w-48 h-48 rounded-full flex items-center justify-center shadow-inner" style={{
+                  background: `conic-gradient(#000000 0% ${principalPct}%, #E5E7EB ${principalPct}% 100%)`
+                }}>
+                  <div className="absolute inset-2 bg-white rounded-full flex flex-col items-center justify-center">
+                    <span className="font-body text-xs text-black/60 uppercase tracking-widest mb-1">Monthly</span>
+                    <span className="font-display font-medium text-3xl text-black">{fmt(results.monthly)}</span>
+                  </div>
+                </div>
+
+                <div className="flex w-full justify-between mt-10 px-4">
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-sm bg-black" />
+                    <span className="font-body text-xs text-black/60 font-semibold">Principal ({principalPct.toFixed(1)}%)</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-sm bg-[#E5E7EB]" />
+                    <span className="font-body text-xs text-black/60 font-semibold">Interest ({(100-principalPct).toFixed(1)}%)</span>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex w-full justify-between mt-10 px-4">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-sm bg-black" />
-                  <span className="font-body text-xs text-black/60 font-semibold">Principal ({principalPct.toFixed(1)}%)</span>
+              {/* Boxes */}
+              <div className="grid grid-cols-2 p-6 gap-4">
+                <div className="bg-[#F8F9FA] rounded-2xl p-5 border border-black/5">
+                   <div className="font-body text-[11px] text-black/60 uppercase tracking-wider font-bold mb-2">Loan Amount</div>
+                   <div className="font-display text-xl font-medium text-black">{fmt(results.loan)}</div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-sm bg-[#E5E7EB]" />
-                  <span className="font-body text-xs text-black/60 font-semibold">Interest ({(100-principalPct).toFixed(1)}%)</span>
+                <div className="bg-[#F8F9FA] rounded-2xl p-5 border border-black/5">
+                   <div className="font-body text-[11px] text-black/60 uppercase tracking-wider font-bold mb-2">Total Interest</div>
+                   <div className="font-display text-xl font-medium text-black">{fmt(results.totalInterest)}</div>
                 </div>
+              </div>
+
+              <div className="bg-black text-white p-8 m-6 rounded-2xl flex items-center justify-between mt-2">
+                 <div>
+                    <div className="font-body text-xs text-white/60 uppercase tracking-widest mb-1 font-semibold">Total Amount Paid</div>
+                    <div className="font-display text-3xl font-medium">{fmt(results.totalPaid)}</div>
+                 </div>
               </div>
             </div>
 
-            {/* Boxes */}
-            <div className="grid grid-cols-2 p-6 gap-4">
-              <div className="bg-[#F8F9FA] rounded-2xl p-5 border border-black/5">
-                 <div className="font-body text-[11px] text-black/60 uppercase tracking-wider font-bold mb-2">Loan Amount</div>
-                 <div className="font-display text-xl font-medium text-black">{fmt(results.loan)}</div>
-              </div>
-              <div className="bg-[#F8F9FA] rounded-2xl p-5 border border-black/5">
-                 <div className="font-body text-[11px] text-black/60 uppercase tracking-wider font-bold mb-2">Total Interest</div>
-                 <div className="font-display text-xl font-medium text-black">{fmt(results.totalInterest)}</div>
-              </div>
-            </div>
-
-            <div className="bg-black text-white p-8 m-6 rounded-2xl flex items-center justify-between mt-2">
-               <div>
-                  <div className="font-body text-xs text-white/60 uppercase tracking-widest mb-1 font-semibold">Total Amount Paid</div>
-                  <div className="font-display text-3xl font-medium">{fmt(results.totalPaid)}</div>
+            {/* Retention Hook */}
+            <div className="bg-[#F9FAFB] p-8 rounded-3xl border border-black/5">
+               <h2 className="font-display text-2xl font-semibold mb-4">
+                 What {fmt(results.monthly)}/month gets you in {city} right now &rarr;
+               </h2>
+               <div className="space-y-4 mb-6">
+                  <div className="bg-white p-4 rounded-xl shadow-sm border border-black/5">
+                     <div className="font-body font-semibold text-lg">Browse Affordable Options</div>
+                     <div className="text-sm text-black/60">Properties that match your EMI budget</div>
+                     <div className="mt-2 text-black font-medium">Budget: ~{fmt(price)}</div>
+                     <Link href={`/properties?maxPrice=${price}`} className="text-blue-600 text-sm font-semibold mt-2 inline-block">View matching properties &rarr;</Link>
+                  </div>
                </div>
+               <Link href="/tools/loan-eligibility" className="w-full inline-block text-center py-3 bg-black text-white rounded-lg font-semibold text-sm hover:bg-black/80 transition">
+                  Check how much loan you qualify for &rarr;
+               </Link>
             </div>
           </div>
-
-          {/* Retention Hook */}
-          <div className="bg-[#F9FAFB] p-8 rounded-3xl border border-black/5">
-             <h2 className="font-display text-2xl font-semibold mb-4">
-               What {fmt(results.monthly)}/month gets you in {city} right now &rarr;
-             </h2>
-             <div className="space-y-4 mb-6">
-                <div className="bg-white p-4 rounded-xl shadow-sm border border-black/5">
-                   <div className="font-body font-semibold text-lg">Browse Affordable Options</div>
-                   <div className="text-sm text-black/60">Properties that match your EMI budget</div>
-                   <div className="mt-2 text-black font-medium">Budget: ~{fmt(price)}</div>
-                   <Link href={`/properties?maxPrice=${price}`} className="text-blue-600 text-sm font-semibold mt-2 inline-block">View matching properties &rarr;</Link>
-                </div>
-             </div>
-             <Link href="/tools/loan-eligibility" className="w-full inline-block text-center py-3 bg-black text-white rounded-lg font-semibold text-sm hover:bg-black/80 transition">
-                Check how much loan you qualify for &rarr;
-             </Link>
-          </div>
-
         </div>
       </div>
 
