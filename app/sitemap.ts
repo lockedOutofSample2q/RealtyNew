@@ -72,20 +72,56 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // 4. Sector SEO Landing Pages (Priority 0.8: Landing Pages)
-  let sectorPages: any[] = [];
+  let sectorPages: { sector_slug: string; updated_at?: string }[] = [];
   try {
     const supabase = createAdminClient();
-    const { data } = await supabase
+
+    // First, get explicit SEO pages
+    const { data: seoData } = await supabase
       .from("sector_seo")
       .select("sector_slug, updated_at");
-      
-    if (data && data.length > 0) {
-      sectorPages = data;
+
+    // Second, extract unique communities and locations from properties
+    const { data: propData } = await supabase
+      .from("properties")
+      .select("community, location, updated_at")
+      .eq("entity_type", "apartment");
+
+    const sectorSet = new Map<string, Date>();
+
+    if (seoData) {
+      seoData.forEach((item: any) => {
+        sectorSet.set(item.sector_slug, new Date(item.updated_at || new Date()));
+      });
     }
+
+    if (propData) {
+      propData.forEach((p: any) => {
+        const date = new Date(p.updated_at || new Date());
+
+        if (p.community) {
+          const slug = p.community.toLowerCase().replace(/\s+/g, '-');
+          if (!sectorSet.has(slug) || sectorSet.get(slug)! < date) {
+            sectorSet.set(slug, date);
+          }
+        }
+
+        if (p.location) {
+          const firstLoc = p.location.split(',')[0].trim().toLowerCase().replace(/\s+/g, '-');
+          if (firstLoc && (!sectorSet.has(firstLoc) || sectorSet.get(firstLoc)! < date)) {
+            sectorSet.set(firstLoc, date);
+          }
+        }
+      });
+    }
+
+    sectorPages = Array.from(sectorSet.entries()).map(([slug, date]) => ({
+      sector_slug: slug,
+      updated_at: date.toISOString(),
+    }));
   } catch (error) {
     console.error("Sitemap: Failed to fetch sector SEO pages.", error);
   }
-
   const sectorRoutes = sectorPages.map((item: { sector_slug: string; updated_at?: string }) => ({
     url: `${baseUrl}/flats/${item.sector_slug}`,
     lastModified: new Date(item.updated_at || new Date()),
