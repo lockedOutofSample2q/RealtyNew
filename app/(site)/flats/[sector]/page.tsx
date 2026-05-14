@@ -85,7 +85,7 @@ export async function generateStaticParams() {
     return [];
   }
   
-  return data.map((item) => ({
+  return data.map((item: { sector_slug: string }) => ({
     sector: item.sector_slug,
   }));
 }

@@ -86,7 +86,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error("Sitemap: Failed to fetch sector SEO pages.", error);
   }
 
-  const sectorRoutes = sectorPages.map((item) => ({
+  const sectorRoutes = sectorPages.map((item: { sector_slug: string; updated_at?: string }) => ({
     url: `${baseUrl}/flats/${item.sector_slug}`,
     lastModified: new Date(item.updated_at || new Date()),
     changeFrequency: "weekly" as const,
