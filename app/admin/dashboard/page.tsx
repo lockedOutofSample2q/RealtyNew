@@ -53,7 +53,7 @@ export default async function DashboardPage() {
       <div className="mb-8">
         <h1 className="font-display text-2xl text-white font-light">Dashboard</h1>
         <p className="font-body text-sm text-white/40 mt-1">
-          Overview of your Monter platform
+          Overview of your Realty platform
         </p>
       </div>
 

@@ -1,4 +1,4 @@
-# Monter Real Estate — Developer & Deployment Guide
+# Realty Holding Real Estate — Developer & Deployment Guide
 
 ## Stack Overview
 
@@ -18,8 +18,8 @@
 
 ```bash
 # Clone your repository
-git clone https://github.com/YOUR_USERNAME/monter-real-estate.git
-cd monter-real-estate
+git clone https://github.com/YOUR_USERNAME/Realty Holding-real-estate.git
+cd Realty Holding-real-estate
 
 # Install dependencies
 npm install
@@ -38,7 +38,7 @@ npm run dev
 ## 2. Supabase Setup
 
 1. Go to [supabase.com](https://supabase.com) → New Project
-2. Name it `monter-real-estate`, choose a region close to UAE (e.g. Frankfurt or Mumbai)
+2. Name it `Realty Holding-real-estate`, choose a region close to UAE (e.g. Frankfurt or Mumbai)
 3. Copy your project URL and keys from **Project Settings → API**
 4. Go to **SQL Editor** → paste the entire contents of `supabase/schema.sql` → Run
 5. Create an admin user: **Authentication → Users → Add User** (use your email + strong password)
@@ -63,7 +63,7 @@ npm run dev
 
 ### Vercel Settings to Configure
 - **Project Settings → General**: Set Production Branch to `main`
-- **Project Settings → Domains**: Add `monterealestate.ae` and `www.monterealestate.ae`
+- **Project Settings → Domains**: Add `Realty Holdingealestate.ae` and `www.Realty Holdingealestate.ae`
 - **Project Settings → Environment Variables**: Add all 4 env vars
 
 ---
@@ -71,7 +71,7 @@ npm run dev
 ## 4. Cloudflare Setup (DNS + CDN)
 
 ### Domain Configuration
-1. Go to [dash.cloudflare.com](https://dash.cloudflare.com) → Add Site → enter `monterealestate.ae`
+1. Go to [dash.cloudflare.com](https://dash.cloudflare.com) → Add Site → enter `Realty Holdingealestate.ae`
 2. Update your domain registrar's nameservers to Cloudflare's nameservers
 3. Wait for DNS propagation (up to 24 hours)
 
@@ -87,7 +87,7 @@ CNAME   www     cname.vercel-dns.com            OFF
 ### Cloudflare CDN for Static Assets
 After DNS is working, you can enable CDN caching rules:
 1. **Rules → Cache Rules** → Create rule
-2. Match: `monterealestate.ae/images/*`
+2. Match: `Realty Holdingealestate.ae/images/*`
 3. Cache: Override, TTL 1 year
 4. This caches your property images at Cloudflare's edge globally
 
@@ -116,7 +116,7 @@ The blog uses **Contentlayer** — MDX files are your CMS.
    category: "Market Insights"
    coverImage: "/images/blog/cover.jpg"
    featured: false
-   tags: ["Dubai", "Investment"]
+   tags: ["Mohali", "Investment"]
    ---
 
 3. Write your post in Markdown below the ---
@@ -126,7 +126,7 @@ The blog uses **Contentlayer** — MDX files are your CMS.
    git push
 
 5. Vercel builds in ~60 seconds → post is live at:
-   monterealestate.ae/blog/your-post-slug
+   Realty Holdingealestate.ae/blog/your-post-slug
 ```
 
 **Category options:** `Market Insights` | `Off Plan` | `Rentals` | `Investment` | `Lifestyle` | `News`
@@ -135,7 +135,7 @@ The blog uses **Contentlayer** — MDX files are your CMS.
 
 ## 6. Admin Dashboard
 
-Access at: `https://www.monterealestate.ae/admin/login`
+Access at: `https://www.Realty Holdingealestate.ae/admin/login`
 
 | Section | What you can do |
 |---------|----------------|
@@ -184,7 +184,7 @@ Upload images to **Supabase Storage** → copy the public URL → paste into the
 ## 8. File Structure Reference
 
 ```
-monter/
+Realty Holding/
 ├── app/
 │   ├── layout.tsx                 Root layout, metadata, fonts
 │   ├── not-found.tsx              404 page

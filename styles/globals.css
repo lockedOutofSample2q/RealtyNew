@@ -102,7 +102,7 @@ a {
 
 ::selection { background: rgba(0,0,0,0.1); color: #000; }
 
-.prose-monter { color: #3a3a3a; line-height: 1.85; font-size: 16.5px; }
+.prose-premium { color: #3a3a3a; line-height: 1.85; font-size: 16.5px; }
 
 /* ── LEAFLET MAP Z-INDEX FIX ─────────────────────────────── */
 /* Prevents map components from overlapping the Navbar (z-[60]) */

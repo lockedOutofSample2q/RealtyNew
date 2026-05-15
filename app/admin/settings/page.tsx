@@ -119,7 +119,7 @@ export default function SettingsPage() {
             ["NEXT_PUBLIC_SUPABASE_URL", "Your Supabase project URL"],
             ["NEXT_PUBLIC_SUPABASE_ANON_KEY", "Supabase anon/public key"],
             ["SUPABASE_SERVICE_ROLE_KEY", "Supabase service role key (server-only, never expose)"],
-            ["NEXT_PUBLIC_SITE_URL", "https://www.monterealestate.ae"],
+            ["NEXT_PUBLIC_SITE_URL", "https://www.realtyconsultants.in"],
           ].map(([key, desc]) => (
             <div key={key} className="flex items-start gap-4">
               <span className="text-[var(--gold-light)] shrink-0">{key}</span>

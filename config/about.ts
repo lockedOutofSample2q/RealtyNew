@@ -46,7 +46,7 @@ export const aboutValues = {
     },
     {
       title: "Achievement",
-      text: "We measure our success by the milestones we reach and the impact we make in Dubai's real estate market. Each completed project is a testament to our team's relentless drive for achievement.",
+      text: "We measure our success by the milestones we reach and the impact we make in Mohali's real estate market. Each completed project is a testament to our team's relentless drive for achievement.",
     },
     {
       title: "Commitment",
@@ -54,7 +54,7 @@ export const aboutValues = {
     },
     {
       title: "Innovation",
-      text: "We embrace cutting-edge technology and creative solutions to deliver exceptional real estate experiences that set new standards in Dubai's property market.",
+      text: "We embrace cutting-edge technology and creative solutions to deliver exceptional real estate experiences that set new standards in Mohali's property market.",
     },
     {
       title: "Teamwork",
@@ -62,7 +62,7 @@ export const aboutValues = {
     },
     {
       title: "Growth",
-      text: "We continuously evolve and adapt to the dynamic real estate landscape, growing alongside our clients and the communities we serve in Dubai and the UAE.",
+      text: "We continuously evolve and adapt to the dynamic real estate landscape, growing alongside our clients and the communities we serve in Mohali and Punjab.",
     },
   ],
 };
@@ -105,9 +105,9 @@ export const aboutOffice = {
   // Section heading
   heading: "Visit Our Office",
 
-  location: "Prime Tower, Business Bay\nDubai, United Arab Emirates",
-  phone: "+971 58 534 7884",
-  email: "info@monterealestate.ae",
+  location: "Phase 8A, E328, Industrial Area\nSector 75, Mohali, Punjab 160055",
+  phone: "+91 7814613916",
+  email: "hello@realtyconsultants.in",
 
   // Image displayed beside the contact details (path relative to /public)
   image: "/assets/images/home/about.jpg",

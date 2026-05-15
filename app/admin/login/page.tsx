@@ -34,8 +34,8 @@ export default function AdminLogin() {
     <div className="min-h-screen bg-[#0D0D0D] flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
         <div className="text-center mb-10">
-          <span className="font-display text-3xl text-white lowercase">mont</span>
-          <span className="font-display text-3xl text-[var(--gold)] lowercase">er</span>
+          <span className="font-display text-3xl text-white lowercase">real</span>
+          <span className="font-display text-3xl text-[var(--gold)] lowercase">ty</span>
           <p className="font-body text-sm text-white/40 mt-2">Admin Dashboard</p>
         </div>
 

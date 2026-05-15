@@ -42,7 +42,7 @@ export default function BlogPostsAdmin() {
           <li>Add required frontmatter (see template below)</li>
           <li>Write your post in Markdown below the frontmatter</li>
           <li>Commit and push to GitHub — Vercel auto-builds within 60 seconds</li>
-          <li>Post is live at <code className="bg-white/5 px-1.5 py-0.5 rounded text-[var(--gold-light)]">monterealestate.ae/blog/your-post-slug</code></li>
+          <li>Post is live at <code className="bg-white/5 px-1.5 py-0.5 rounded text-[var(--gold-light)]">realtyconsultants.in/blog/your-post-slug</code></li>
         </ol>
       </div>
 

@@ -1,7 +1,7 @@
 # GURU NANAK DEV UNIVERSITY, AMRITSAR
 ## Six Months Industrial Training Report
 ## ON
-# MONTER - REAL ESTATE DISCOVERY & INVESTMENT PLATFORM
+# Realty - REAL ESTATE DISCOVERY & INVESTMENT PLATFORM
 
 Project submitted for partial fulfillment for the degree of
 ### BACHELOR OF TECHNOLOGY
@@ -21,7 +21,7 @@ Ashutosh Singla
 
 ## DECLARATION
 
-I hereby declare that the Industrial Training Report entitled ("Monter - Real Estate Discovery & Investment Platform") is an authentic record of my own work as requirements of 6-months Industrial Training during the period from January, 2026 to May, 2026 for the award of degree of B. Tech. (CSE) from Department of Computer Engineering and Technology, Guru Nanak Dev University, Amritsar under the guidance of Dr. Sandeep Sharma.
+I hereby declare that the Industrial Training Report entitled ("Realty - Real Estate Discovery & Investment Platform") is an authentic record of my own work as requirements of 6-months Industrial Training during the period from January, 2026 to May, 2026 for the award of degree of B. Tech. (CSE) from Department of Computer Engineering and Technology, Guru Nanak Dev University, Amritsar under the guidance of Dr. Sandeep Sharma.
 
 **Date:** 11 May 2026
 
@@ -63,16 +63,16 @@ Lastly, I would like to thank the almighty and my parents for their moral suppor
 
 ## 1. INTRODUCTION TO THE PROJECT
 
-**Monter** is a specialized real estate discovery platform designed to streamline the process of finding and investing in residential and commercial properties in the Mohali and GMADA (Greater Mohali Area Development Authority) regions. Unlike generic real estate portals, Monter provides a curated experience with high-fidelity data, interactive maps, and regional insights tailored for local investors and homebuyers.
+**Realty** is a specialized real estate discovery platform designed to streamline the process of finding and investing in residential and commercial properties in the Mohali and GMADA (Greater Mohali Area Development Authority) regions. Unlike generic real estate portals, Realty provides a curated experience with high-fidelity data, interactive maps, and regional insights tailored for local investors and homebuyers.
 
 ### 1.1 Proposed System
-The Monter platform is a full-stack web application built with the **Next.js 15 App Router** and **Supabase**. It offers a seamless interface for users to:
+The Realty platform is a full-stack web application built with the **Next.js 15 App Router** and **Supabase**. It offers a seamless interface for users to:
 - Browse and filter residential apartments, villas, and industrial lands.
 - Access detailed regional insights and development plans (GMADA Master Plans).
 - Inquire about properties through an integrated lead management system.
 - Read professional real estate blogs managed via a Git-based MDX workflow.
 
-### 1.2 Components of Monter
+### 1.2 Components of Realty
 - **Property Search Engine:** A multi-dimensional filtering system allowing users to sort by price, location, bedrooms, and furnishing status.
 - **Admin Dashboard:** A secure portal for property agents to add, update, or remove listings in real-time.
 - **Interactive Maps:** Integration with Leaflet to show property locations and regional master plans.
@@ -103,7 +103,7 @@ The Monter platform is a full-stack web application built with the **Next.js 15 
 ## 3. INTRODUCTION TO TOOLS
 
 ### 3.1 Next.js 15 & React 19
-Next.js 15 provides the foundational framework for Monter, utilizing the App Router for efficient server-side rendering (SSR) and client-side navigation. React 19 introduces improved hook management and concurrent rendering features that enhance user experience.
+Next.js 15 provides the foundational framework for Realty, utilizing the App Router for efficient server-side rendering (SSR) and client-side navigation. React 19 introduces improved hook management and concurrent rendering features that enhance user experience.
 
 ### 3.2 Supabase (PostgreSQL)
 Supabase is used as the Backend-as-a-Service (BaaS), providing:
@@ -125,7 +125,7 @@ Contentlayer transforms markdown and MDX files into type-safe JSON data. This is
 The stack (Next.js + Supabase) is highly feasible as it eliminates the need for managing complex server infrastructure. The use of TypeScript ensures type safety across the application, reducing runtime errors.
 
 ### 4.2 Economic Feasibility
-Monter is economically viable due to the serverless nature of the chosen tools. Vercel and Supabase provide generous free tiers for development, and the pay-as-you-go model for production ensures costs scale only with usage.
+Realty is economically viable due to the serverless nature of the chosen tools. Vercel and Supabase provide generous free tiers for development, and the pay-as-you-go model for production ensures costs scale only with usage.
 
 ### 4.3 Operational Feasibility
 The system is designed with an intuitive Admin Dashboard, making it easy for non-technical users (real estate agents) to manage listings. The deployment pipeline is automated via Git, ensuring seamless updates.
@@ -159,7 +159,7 @@ The database is structured to handle relational data efficiently.
 ## 6. SYSTEM ARCHITECTURE & DFD
 
 ### 6.1 Architecture Overview
-Monter follows a **Serverless Architecture**. The frontend is hosted on Vercel, which communicates with Supabase via secure API calls. Images are served through a high-performance CDN.
+Realty follows a **Serverless Architecture**. The frontend is hosted on Vercel, which communicates with Supabase via secure API calls. Images are served through a high-performance CDN.
 
 ```mermaid
 graph TD
@@ -184,7 +184,7 @@ The following diagram illustrates the flow of data from user interaction to data
 sequenceDiagram
     participant U as User
     participant A as Admin
-    participant W as Monter Web App
+    participant W as Realty Web App
     participant S as Supabase DB
     
     U->>W: Search Property (Filters)
@@ -234,7 +234,7 @@ Custom TypeScript scripts (`audit_data_quality.ts`) are used to verify the consi
 
 ## 9. CONCLUSION & FUTURE SCOPE
 
-The Monter platform successfully bridges the gap between real estate data and end-investors in the Mohali region. By utilizing modern web technologies, it provides a fast, secure, and SEO-optimized platform.
+The Realty platform successfully bridges the gap between real estate data and end-investors in the Mohali region. By utilizing modern web technologies, it provides a fast, secure, and SEO-optimized platform.
 
 ### Future Scope
 - **AI Property Valuation:** Integrating machine learning models to predict property price trends.

@@ -31,7 +31,7 @@ export default function ContactModal({ property, isOpen, onClose }: ContactModal
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...form,
-          email: "land-enquiry@monter.in", // Placeholder email
+          email: "hello@realtyconsultants.in", // Placeholder email
           message: `Enquiry for Land: ${property.title}. Coordinates: ${property.latitude}, ${property.longitude}`,
           source: "land_listing",
           property_id: property.id

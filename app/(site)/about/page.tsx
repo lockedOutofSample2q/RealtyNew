@@ -1,7 +1,7 @@
 // app/site/about/page.tsx
 // ============================================================
 // ABOUT PAGE
-// Premium architectural layout matching monterealestate.ae
+// Premium architectural layout matching the brand's aesthetic
 // ============================================================
 
 import AboutHero from "@/components/sections/AboutHero";

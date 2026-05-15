@@ -262,7 +262,7 @@ function AgentFormModal({
             <div className="col-span-2">
               <label className={lc}>Full Name *</label>
               <input type="text" required value={form.name} onChange={(e) => f("name", e.target.value)}
-                className={ic} placeholder="Armina Hakobyan" />
+                className={ic} placeholder="Amritpal Singh" />
             </div>
             <div>
               <label className={lc}>Title</label>
@@ -272,12 +272,12 @@ function AgentFormModal({
             <div>
               <label className={lc}>Phone</label>
               <input type="text" value={form.phone} onChange={(e) => f("phone", e.target.value)}
-                className={ic} placeholder="+971 50 123 4567" />
+                className={ic} placeholder="+91 7814613916" />
             </div>
             <div className="col-span-2">
               <label className={lc}>Email</label>
               <input type="email" value={form.email} onChange={(e) => f("email", e.target.value)}
-                className={ic} placeholder="agent@monterealestate.ae" />
+                className={ic} placeholder="agent@realtyconsultants.in" />
             </div>
             <div className="col-span-2">
               <label className={lc}>Languages (comma-separated)</label>

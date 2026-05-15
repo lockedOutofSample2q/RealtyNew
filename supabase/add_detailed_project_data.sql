@@ -39,7 +39,7 @@ SET
     {"stage": "On Handover", "percentage": "40%", "milestone": "Final payment"}
   ]'::jsonb,
   agent_contact = '{
-    "name": "Armina Crnovrsanin", "role": "CEO", "email": "armina@monterealestate.ae", "phone": "+971 50 529 8618", 
+    "name": "Amritpal Singh", "role": "CEO", "email": "hello@realtyconsultants.in", "phone": "+91 7814613916", 
     "languages": ["German", "English"], "photo": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150"
   }'::jsonb
 WHERE slug IN ('enara-by-omniyat', 'marina-heights-penthouse', 'creek-harbour-1-bed');
@@ -54,8 +54,8 @@ INSERT INTO properties (
   floor_plan_url, brochure_url, terms_url, location_coordinates, nearby_landmarks,
   agent_contact, description, images
 ) VALUES (
-  'The Alba Residences 2', 'the-alba-residences-2', 'apartment', 'off-plan', 'off-plan', true, 0, 'AED',
-  'East Crescent, Palm Jumeirah, Dubai, UAE', 'Palm Jumeirah', 'OMNIYAT', 'unfurnished',
+  'The Alba Residences 2', 'the-alba-residences-2', 'apartment', 'off-plan', 'off-plan', true, 0, 'INR',
+  'East Crescent, Palm Jumeirah, Mohali, Punjab', 'Palm Jumeirah', 'OMNIYAT', 'unfurnished',
   '4,700 - 42,900 sqft', '3-4', 1, 'March 1, 2028', 'March 1, 2028',
   ARRAY[
     'Architecture by Zaha Hadid Architects',
@@ -88,7 +88,7 @@ INSERT INTO properties (
     {"name": "Burj Khalifa", "time": "33 min", "by": "CAR"}
   ]'::jsonb,
   '{
-    "name": "Armina Crnovrsanin", "role": "CEO", "email": "armina@monterealestate.ae", "phone": "+971 50 529 8618", 
+    "name": "Amritpal Singh", "role": "CEO", "email": "hello@realtyconsultants.in", "phone": "+91 7814613916", 
     "languages": ["German", "English"], "photo": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?width=150"
   }'::jsonb,
   'The Alba Residences redefines luxury living on Palm Jumeirah''s Eastern Crescent, offering an exclusive sanctuary focused on well-living. Designed by Zaha Hadid Architects and managed by Dorchester Collection, this mixed-use masterpiece features 60 luxury residences, including 3 and 4-bedroom simplex and duplex units, plus super penthouses. Residents enjoy 250 meters of private beachfront, expansive resort-style landscaping by Vladimir Djurovic, and seamless indoor-outdoor living with private plunge pools and balconies. A dedicated 3,000 m² wellness program includes longevity therapies, state-of-the-art fitness, and serene spaces, all set against breathtaking views of the Arabian Gulf, Burj Al Arab, and Burj Khalifa.',
@@ -113,8 +113,8 @@ INSERT INTO properties (
   floor_plan_url, brochure_url, terms_url, location_coordinates, nearby_landmarks,
   agent_contact, description, images
 ) VALUES (
-  'Eltiera Heights', 'eltiera-heights', 'apartment', 'off-plan', 'off-plan', true, 0, 'AED',
-  'Jumeirah Second, Dubai, Dubai, United Arab Emirates', 'Jumeirah', 'Ellington Properties', 'unfurnished',
+  'Eltiera Heights', 'eltiera-heights', 'apartment', 'off-plan', 'off-plan', true, 0, 'INR',
+  'Jumeirah Second, Mohali, Mohali, United Arab Emirates', 'Jumeirah', 'Ellington Properties', 'unfurnished',
   '800 sqft', '1-4', 1, 'December 1, 2028', 'December 1, 2028',
   ARRAY[
     'Urban living reimagined by Ellington',
@@ -154,14 +154,14 @@ INSERT INTO properties (
   '{"lat": 25.1388, "lng": 55.1500}'::jsonb,
   '[
     {"name": "Burj Khalifa", "time": "5 min", "by": "CAR"},
-    {"name": "Dubai Mall", "time": "6 min", "by": "CAR"},
-    {"name": "Dubai Airport", "time": "22 min", "by": "CAR"},
+    {"name": "Mohali Mall", "time": "6 min", "by": "CAR"},
+    {"name": "Mohali Airport", "time": "22 min", "by": "CAR"},
     {"name": "Burj Al Arab", "time": "17 min", "by": "CAR"},
     {"name": "Palm Jumeirah", "time": "26 min", "by": "CAR"},
-    {"name": "Dubai Marina", "time": "31 min", "by": "CAR"}
+    {"name": "Mohali Marina", "time": "31 min", "by": "CAR"}
   ]'::jsonb,
   '{
-    "name": "Armina Crnovrsanin", "role": "CEO", "email": "armina@monterealestate.ae", "phone": "+971 50 529 8618", 
+    "name": "Amritpal Singh", "role": "CEO", "email": "hello@realtyconsultants.in", "phone": "+91 7814613916", 
     "languages": ["German", "English"], "photo": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?width=150"
   }'::jsonb,
   'A sculptural residential tower in Jumeirah Islands featuring a rhythmic facade of glazing, screens, and metallic accents that responds to sunlight. The development offers serene living spaces with expansive windows, rooftop amenities, and a focus on light, form, and wellbeing, designed by Ellington Properties.',

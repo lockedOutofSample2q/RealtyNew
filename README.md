@@ -1,4 +1,4 @@
-# Monter Real Estate
+# Realty Holding Platform
 
 A modern, high-performance real estate platform built with Next.js (App Router), Tailwind CSS, and Supabase.
 

@@ -52,8 +52,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       {/* Logo */}
       <div className="px-6 py-6 border-b border-white/5">
         <Link href="/admin/dashboard" className="flex items-center gap-2">
-          <span className="font-display text-lg text-white lowercase">mont</span>
-          <span className="font-display text-lg text-[var(--gold)] lowercase">er</span>
+          <span className="font-display text-lg text-white lowercase">real</span>
+          <span className="font-display text-lg text-[var(--gold)] lowercase">ty</span>
           <span className="font-body text-xs text-white/30 ml-2 border border-white/10 px-2 py-0.5 rounded">
             Admin
           </span>

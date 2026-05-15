@@ -24,7 +24,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "monterealestate.ae",
+        hostname: "realtyconsultants.in",
       },
     ],
     formats: ["image/avif", "image/webp"],

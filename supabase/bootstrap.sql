@@ -1,5 +1,5 @@
 -- ============================================================
--- MONTE REAL ESTATE — SUPABASE BOOTSTRAP
+-- REALTY HOLDING AND MANAGEMENT CONSULTANTS — SUPABASE BOOTSTRAP
 -- ============================================================
 -- Run this ONCE in Supabase Dashboard → SQL Editor → New Query
 -- It is safe to re-run (uses IF NOT EXISTS + DROP IF EXISTS)
@@ -195,21 +195,21 @@ CREATE POLICY "Authenticated can view subscribers"
 INSERT INTO agents (name, title, email, phone, languages, bio, active)
 VALUES
   (
-    'Armina Crnovrsanin',
-    'CEO, Monte Real Estate',
-    'armina@monterealestate.ae',
-    '+971 58 534 7884',
-    ARRAY['English', 'Arabic', 'Bosnian'],
-    'Founder and CEO of Monte Real Estate. Specialises in luxury off-plan and high-value investor acquisitions across Dubai.',
+    'Amritpal Singh',
+    'Founder, Realty Holding & Management Consultants',
+    'hello@realtyconsultants.in',
+    '+91 7814613916',
+    ARRAY['English', 'Punjabi', 'Hindi'],
+    'Founder and Principal Consultant at Realty Holding and Management Consultants. Specialises in luxury investments and high-value acquisitions across Mohali.',
     true
   ),
   (
-    'Omar Al Farsi',
+    'Rohan Sharma',
     'Investment Advisor',
-    'omar@monterealestate.ae',
-    '+971 55 987 6543',
-    ARRAY['English', 'Arabic'],
-    'Works with overseas buyers and yield-focused portfolios across Dubai Marina and Creek Harbour.',
+    'info@realtyconsultants.in',
+    '+91 9876543210',
+    ARRAY['English', 'Punjabi', 'Hindi'],
+    'Works with investors and yield-focused portfolios across Mohali and Tricity.',
     true
   )
 ON CONFLICT (email) DO UPDATE SET
@@ -239,7 +239,7 @@ VALUES
     ARRAY['Sea View','Private Pool','Concierge','Gym','Spa','Valet Parking'],
     ARRAY['https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200','https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1200'],
     true,
-    'Armina Crnovrsanin', 'CEO, Monte Real Estate', 'armina@monterealestate.ae', '+971 58 534 7884', ARRAY['English','Arabic','Bosnian']
+    'Amritpal Singh', 'Founder, Realty Holding & Management Consultants', 'hello@realtyconsultants.in', '+91 7814613916', ARRAY['English','Punjabi','Hindi']
   ),
   (
     'Creek Horizon Tower',
@@ -251,7 +251,7 @@ VALUES
     ARRAY['Creek View','Smart Home','Infinity Pool','Rooftop Terrace'],
     ARRAY['https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200','https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1200'],
     false,
-    'Omar Al Farsi', 'Investment Advisor', 'omar@monterealestate.ae', '+971 55 987 6543', ARRAY['English','Arabic']
+    'Rohan Sharma', 'Investment Advisor', 'info@realtyconsultants.in', '+91 9876543210', ARRAY['English','Punjabi','Hindi']
   ),
   (
     'Tilal Al Ghaf Villas',
@@ -263,7 +263,7 @@ VALUES
     ARRAY['Lagoon Access','Private Garden','Maid''s Room','4-Car Garage','Smart Home'],
     ARRAY['https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200','https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200'],
     true,
-    'Armina Crnovrsanin', 'CEO, Monte Real Estate', 'armina@monterealestate.ae', '+971 58 534 7884', ARRAY['English','Arabic','Bosnian']
+    'Amritpal Singh', 'Founder, Realty Holding & Management Consultants', 'hello@realtyconsultants.in', '+91 7814613916', ARRAY['English','Punjabi','Hindi']
   ),
   (
     'Marina Heights Penthouse',
@@ -275,7 +275,7 @@ VALUES
     ARRAY['Marina View','Private Pool','Chef''s Kitchen','Beach Access','Smart Home'],
     ARRAY['https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200'],
     false,
-    'Omar Al Farsi', 'Investment Advisor', 'omar@monterealestate.ae', '+971 55 987 6543', ARRAY['English','Arabic']
+    'Rohan Sharma', 'Investment Advisor', 'info@realtyconsultants.in', '+91 9876543210', ARRAY['English','Punjabi','Hindi']
   ),
   (
     'Creek Harbour 1-Bed',
@@ -287,7 +287,7 @@ VALUES
     ARRAY['Creek View','Fully Furnished','Gym','Pool','Covered Parking'],
     ARRAY['https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200'],
     false,
-    'Armina Crnovrsanin', 'CEO, Monte Real Estate', 'armina@monterealestate.ae', '+971 58 534 7884', ARRAY['English','Arabic','Bosnian']
+    'Amritpal Singh', 'Founder, Realty Holding & Management Consultants', 'hello@realtyconsultants.in', '+91 7814613916', ARRAY['English','Punjabi','Hindi']
   )
 ON CONFLICT (slug) DO UPDATE SET
   title          = EXCLUDED.title,
