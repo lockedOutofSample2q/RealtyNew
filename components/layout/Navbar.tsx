@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig, navItems, footerLinks } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { useCurrency, type Currency } from "@/context/CurrencyContext";
+import { useHeader } from "@/context/HeaderContext";
 
 const CURRENCIES: Currency[] = ["INR", "USD", "CAD", "AUD"];
 
@@ -20,6 +21,7 @@ export default function Navbar() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const { currency, setCurrency: setGlobalCurrency } = useCurrency();
+  const { isTransparentOverride } = useHeader();
 
   const handleCurrencyChange = (c: Currency) => {
     setGlobalCurrency(c);
@@ -49,16 +51,18 @@ export default function Navbar() {
   const darkHeaderPages = ["/", "/properties", "/properties/flats", "/properties/houses", "/properties/lands", "/about", "/booking"];
   
   // Robust check if current page is in the dark header list
-  const isDarkHeroPage = darkHeaderPages.some(page => {
-    if (page === "/") return pathname === "/";
-    
-    // For listing categories, only the index pages are dark hero. 
-    // Detail pages (/properties/[slug], etc) are light/white.
-    const isListingIndex = ["/properties", "/properties/flats", "/properties/houses", "/properties/lands"].includes(page);
-    if (isListingIndex) return pathname === page || pathname === `${page}/`;
+  const isDarkHeroPage = isTransparentOverride !== null 
+    ? isTransparentOverride 
+    : darkHeaderPages.some(page => {
+        if (page === "/") return pathname === "/";
+        
+        // For listing categories, only the index pages are dark hero. 
+        // Detail pages (/properties/[slug], etc) are light/white.
+        const isListingIndex = ["/properties", "/properties/flats", "/properties/houses", "/properties/lands"].includes(page);
+        if (isListingIndex) return pathname === page || pathname === `${page}/`;
 
-    return pathname === page || pathname?.startsWith(`${page}/`);
-  });
+        return pathname === page || pathname?.startsWith(`${page}/`);
+      });
 
   const useDarkText = !isDarkHeroPage && !isOpen;
   const showLightLogo = useDarkText;

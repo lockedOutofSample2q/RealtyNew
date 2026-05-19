@@ -10,6 +10,7 @@ import { PropertiesGrid } from "@/components/properties/PropertiesGrid";
 import { PropertiesMapContainer } from "@/components/properties/PropertiesMapContainer";
 import LandsGrid from "@/components/lands/LandsGrid";
 import ContactModal from "@/components/lands/ContactModal";
+import HeaderTransparency from "@/components/layout/HeaderTransparency";
 
 interface Props {
   properties: Property[];
@@ -75,6 +76,7 @@ export default function PropertiesClient({ properties, initialTab, initialFilter
 
   return (
     <div className="min-h-screen bg-white">
+      <HeaderTransparency transparent={true} />
       {seoData ? (
         <div className="sr-only">
           {seoData.h1_heading && <h1>{seoData.h1_heading}</h1>}
