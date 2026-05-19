@@ -45,7 +45,7 @@ const SETTINGS_SECTIONS = [
     file: "public/images/",
     description: "Drop images here and reference them by path. Key images to replace:",
     items: [
-      "hero.jpg — home page background (1920×1080 minimum)",
+      "hero.webp — home page background (1920×1080 minimum)",
       "og-default.jpg — social share image (1200×630)",
       "property-placeholder.jpg — fallback for properties without images",
       "blog/ — folder for blog post cover images",

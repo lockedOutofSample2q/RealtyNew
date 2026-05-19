@@ -1,4 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
+import * as dotenv from 'dotenv';
+dotenv.config({ path: '.env.local' });
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
@@ -58,15 +60,15 @@ const upcoming_infrastructure = [
 ];
 
 const images = [
-  "/assets/images/apartments/homeland-heights/Homeland heights Mohali - realty holding and management consultants 1.jpg",
-  "/assets/images/apartments/homeland-heights/Homeland heights Mohali - realty holding and management consultants 2.jpg",
-  "/assets/images/apartments/homeland-heights/Homeland heights Mohali - realty holding and management consultants 3.jpg",
-  "/assets/images/apartments/homeland-heights/Homeland heights Mohali - realty holding and management consultants 4.jpg",
-  "/assets/images/apartments/homeland-heights/Homeland heights Mohali - realty holding and management consultants 5.jpg",
-  "/assets/images/apartments/homeland-heights/Homeland heights Mohali - realty holding and management consultants 6.jpg",
-  "/assets/images/apartments/homeland-heights/Homeland heights Mohali - realty holding and management consultants 7.jpg",
-  "/assets/images/apartments/homeland-heights/Homeland heights Mohali - realty holding and management consultants 8.jpg",
-  "/assets/images/apartments/homeland-heights/Homeland heights Mohali - realty holding and management consultants 9.jpg"
+  "/assets/images/apartments/homeland-heights/Homeland heights Mohali - realty holding and management consultants 1.webp",
+  "/assets/images/apartments/homeland-heights/Homeland heights Mohali - realty holding and management consultants 2.webp",
+  "/assets/images/apartments/homeland-heights/Homeland heights Mohali - realty holding and management consultants 3.webp",
+  "/assets/images/apartments/homeland-heights/Homeland heights Mohali - realty holding and management consultants 4.webp",
+  "/assets/images/apartments/homeland-heights/Homeland heights Mohali - realty holding and management consultants 5.webp",
+  "/assets/images/apartments/homeland-heights/Homeland heights Mohali - realty holding and management consultants 6.webp",
+  "/assets/images/apartments/homeland-heights/Homeland heights Mohali - realty holding and management consultants 7.webp",
+  "/assets/images/apartments/homeland-heights/Homeland heights Mohali - realty holding and management consultants 8.webp",
+  "/assets/images/apartments/homeland-heights/Homeland heights Mohali - realty holding and management consultants 9.webp"
 ];
 
 const documents = [

@@ -99,7 +99,7 @@ export const heroContent = {
   ctaPrimary: { label: "Explore Properties", href: "/properties" },
   ctaSecondary: { label: "Talk to an Advisor", href: "/contact" },
   // Background image (place in /public/images/hero.jpg or use Supabase URL)
-  backgroundImage: "/assets/images/home/hero.jpg",
+  backgroundImage: "/assets/images/home/hero.webp",
 };
 
 // ── About Snippet (Home Page) ────────────────────────────────
