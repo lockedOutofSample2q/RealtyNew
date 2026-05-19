@@ -1,10 +1,5 @@
 export const CITIES = [
-  "All",
   "Mohali",
-  "Zirakpur",
-  "Kharar",
-  "New Chandigarh",
-  "Rajpura",
 ];
 
 export const SECTORS_BY_CITY: Record<string, string[]> = {
@@ -48,7 +43,7 @@ export interface PropertySearchFilters {
 }
 
 export const DEFAULT_PROPERTY_FILTERS: PropertySearchFilters = {
-  city: "",
+  city: "Mohali",
   sector: [],
   type: "",
   bedrooms: "",

@@ -100,13 +100,7 @@ export function MobileSearchModal({
               }}
               className="flex flex-col gap-10"
             >
-              <PillSelect
-                label="City"
-                value={filters.city}
-                options={CITIES}
-                onChange={(city) => setFilters({ ...filters, city: city, sector: [] })}
-                placeholder="All Cities"
-              />
+
               <PillMultiSelect
                 label="Sector / Area"
                 value={filters.sector}

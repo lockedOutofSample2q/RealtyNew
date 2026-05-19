@@ -68,13 +68,7 @@ export default function PropertySearchBar({
       </div>
 
       <form onSubmit={onSubmit} className="flex flex-col md:flex-row items-end gap-3 w-full">
-        <CustomSelect
-          label="City"
-          value={filters.city}
-          options={CITIES}
-          onChange={(city) => setFilters({ ...filters, city, sector: [] })}
-          placeholder="All"
-        />
+
 
         <MultiSelect
           label="Sector / Area"
