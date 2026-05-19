@@ -1,5 +1,5 @@
 /**
- * Property Detail Page - Apartments
+ * Consolidated Sector SEO / Apartment Detail Page
  */
 import { createAdminClient } from "@/lib/supabase";
 import { notFound } from "next/navigation";
@@ -20,20 +20,28 @@ import PriceDisplay from "../../[slug]/PriceDisplay";
 import PropertyPriceInline from "../../[slug]/PropertyPriceInline";
 import PropertyDetailMapClient from "../../[slug]/PropertyDetailMapClient";
 import PropertyCard from "@/components/ui/PropertyCard";
+import PropertiesClient from "../../PropertiesClient";
+import { Suspense, cache } from "react";
 
 interface Props { params: Promise<{ slug: string }> }
 
-export async function generateStaticParams() {
+// ── Cache / Memoize Supabase queries to eliminate duplicate database calls ──
+const getSectorSeo = cache(async (sectorSlug: string) => {
   try {
     const supabase = createAdminClient();
-    const { data } = await supabase.from("apartments").select("slug");
-    return (data ?? []).map((p: { slug: string }) => ({ slug: p.slug }));
+    const { data, error } = await supabase
+      .from("sector_seo")
+      .select("*")
+      .eq("sector_slug", sectorSlug)
+      .single();
+    if (error) return null;
+    return data;
   } catch {
-    return [];
+    return null;
   }
-}
+});
 
-async function getProperty(slug: string): Promise<Property | null> {
+const getProperty = cache(async (slug: string): Promise<Property | null> => {
   try {
     const supabase = createAdminClient();
     const { data, error } = await supabase
@@ -51,9 +59,9 @@ async function getProperty(slug: string): Promise<Property | null> {
     console.error(`Runtime error fetching apartment [${slug}]:`, err);
     return null;
   }
-}
+});
 
-async function getRelatedProperties(property: Property): Promise<Property[]> {
+const getRelatedProperties = cache(async (property: Property): Promise<Property[]> => {
   try {
     const supabase = createAdminClient();
     const { data, error } = await supabase
@@ -69,43 +77,196 @@ async function getRelatedProperties(property: Property): Promise<Property[]> {
   } catch {
     return [];
   }
+});
+
+const getAllFlats = cache(async (): Promise<Property[]> => {
+  try {
+    const supabase = createAdminClient();
+    const { data, error } = await supabase
+      .from("apartments")
+      .select("*")
+      .order("featured", { ascending: false })
+      .order("created_at", { ascending: false });
+    
+    if (error) return [];
+    return (data ?? []).map((p: any) => enrichProperty({ ...p, entity_type: 'apartment' })) as Property[];
+  } catch {
+    return [];
+  }
+});
+
+// Helper to decode sector slug for labels
+function decodeSectorSlug(slug: string) {
+  return slug
+    .split("-")
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+export async function generateStaticParams() {
+  try {
+    const supabase = createAdminClient();
+    const [sectorsRes, apartmentsRes] = await Promise.all([
+      supabase.from("sector_seo").select("sector_slug"),
+      supabase.from("apartments").select("slug")
+    ]);
+    
+    const params = [];
+    if (sectorsRes.data) {
+      params.push(...sectorsRes.data.map((item: any) => ({ slug: item.sector_slug })));
+    }
+    if (apartmentsRes.data) {
+      params.push(...apartmentsRes.data.map((item: any) => ({ slug: item.slug })));
+    }
+    return params;
+  } catch {
+    return [];
+  }
 }
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;
-  const p = await getProperty(params.slug);
-  if (!p) return {};
-  
-  const cleanTitle = p.title.replace(/\s*\|\s*Monte Real Estate/gi, '').replace(/\s*\|\s*Realty Holding and Management Consultants/gi, '');
-  const titleStr = p.og_title || cleanTitle;
-  const descStr = p.og_description || p.meta_description || p.description?.slice(0, 160);
+  const slug = params.slug;
 
-  return {
-    title: { absolute: titleStr },
-    description: descStr,
-    openGraph: {
-      title: titleStr,
+  // 1. Check if it is a Sector SEO page
+  const seoData = await getSectorSeo(slug);
+  if (seoData) {
+    const decodedSector = decodeSectorSlug(slug);
+    return {
+      title: seoData.meta_title || `Flats in ${decodedSector} Mohali | Realty Consultants`,
+      description: seoData.meta_description || `Explore luxury flats and apartments in ${decodedSector}, Mohali. Verified listings with price, floor plans, and amenities.`,
+      alternates: {
+        canonical: `/properties/flats/${slug}`,
+      },
+    };
+  }
+
+  // 2. Check if it is an Apartment detail page
+  const p = await getProperty(slug);
+  if (p) {
+    const cleanTitle = p.title.replace(/\s*\|\s*Monte Real Estate/gi, '').replace(/\s*\|\s*Realty Holding and Management Consultants/gi, '');
+    const titleStr = p.og_title || cleanTitle;
+    const descStr = p.og_description || p.meta_description || p.description?.slice(0, 160);
+
+    return {
+      title: { absolute: titleStr },
       description: descStr,
-      url: `${siteConfig.url}/properties/flats/${p.slug}`,
-      siteName: "Realty Holding & Management Consultants",
-      type: "website",
-      images: p.images?.[0] ? [{ url: p.images[0] }] : undefined,
-    },
-    other: {
-      thumbnail: p.images?.[0] || '/favicon.ico'
-    },
-    alternates: {
-      canonical: `${siteConfig.url}/properties/flats/${p.slug}`,
-    }
-  };
+      openGraph: {
+        title: titleStr,
+        description: descStr,
+        url: `${siteConfig.url}/properties/flats/${p.slug}`,
+        siteName: "Realty Holding & Management Consultants",
+        type: "website",
+        images: p.images?.[0] ? [{ url: p.images[0] }] : undefined,
+      },
+      other: {
+        thumbnail: p.images?.[0] || '/favicon.ico'
+      },
+      alternates: {
+        canonical: `${siteConfig.url}/properties/flats/${p.slug}`,
+      }
+    };
+  }
+
+  return {};
 }
 
-export const revalidate = 604800; // 1 week
+// Enable weekly caching (ISR every 7 days)
+export const revalidate = 604800;
 
-export default async function ApartmentDetailPage(props: Props) {
+export default async function ApartmentOrSectorDetailPage(props: Props) {
   const params = await props.params;
-  const rawProperty = await getProperty(params.slug);
-  if (!rawProperty) notFound();
+  const slug = params.slug;
+
+  // ── BRANCH A: Render Sector SEO page ────────────────────────
+  const seoData = await getSectorSeo(slug);
+  if (seoData) {
+    const decodedSector = decodeSectorSlug(slug);
+    const properties = await getAllFlats();
+    const sectorProperties = properties.filter((p) => {
+      const loc = p.location?.toLowerCase() || "";
+      const com = p.community?.toLowerCase() || "";
+      const sec = decodedSector.toLowerCase();
+      return loc.includes(sec) || com.includes(sec);
+    });
+
+    const schema = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "@id": `${siteConfig.url}/properties/flats/${slug}`,
+          name: seoData?.meta_title || `Flats in ${decodedSector} Mohali | Realty Consultants`,
+          description: seoData?.meta_description || `Explore luxury flats and apartments in ${decodedSector}, Mohali. Verified listings with price, floor plans, and amenities.`,
+          url: `${siteConfig.url}/properties/flats/${slug}`,
+          isPartOf: {
+            "@id": `${siteConfig.url}/#website`,
+          },
+          about: {
+            "@id": `${siteConfig.url}/#organization`,
+          },
+        },
+        {
+          "@type": "ItemList",
+          itemListElement: sectorProperties.map((prop, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            url: `${siteConfig.url}/properties/${prop.slug}`,
+          })),
+        },
+        {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: siteConfig.url,
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Flats",
+              item: `${siteConfig.url}/properties/flats`,
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: decodedSector,
+              item: `${siteConfig.url}/properties/flats/${slug}`,
+            },
+          ],
+        },
+        ...(seoData?.faq_json ? [seoData.faq_json] : [])
+      ],
+    };
+
+    return (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+        <Suspense fallback={null}>
+          <PropertiesClient 
+            properties={properties} 
+            initialTab="flats" 
+            initialFilters={{ sector: [decodedSector] }}
+            seoData={{
+              h1_heading: seoData?.h1_heading || `Flats in ${decodedSector}`,
+              intro_paragraph: seoData?.intro_paragraph || undefined
+            }}
+          />
+        </Suspense>
+      </>
+    );
+  }
+
+  // ── BRANCH B: Render Apartment Detail page ──────────────────
+  const rawProperty = await getProperty(slug);
+  if (!rawProperty) {
+    notFound();
+  }
 
   const property = enrichProperty(rawProperty);
   const related = await getRelatedProperties(property);
@@ -371,7 +532,7 @@ export default async function ApartmentDetailPage(props: Props) {
               {/* Stats (Cleaned) */}
               <div className="flex items-center gap-5 sm:gap-14 flex-wrap py-6 mb-8 border-y border-black/5">
                 <div>
-                  <p className="text-[10px] uppercase tracking-widest text-black/35 mb-1.5">Size</p>
+                  <p className="text-[10px] uppercase tracking-widest text-black/35 mb-1.5 font-bold">Size</p>
                   <p className="text-[17px] font-bold text-black font-display">
                     {property.area_sqft 
                       ? property.area_sqft_max && property.area_sqft_max !== property.area_sqft
@@ -382,7 +543,7 @@ export default async function ApartmentDetailPage(props: Props) {
                 </div>
                 {property.bedrooms !== null && (
                   <div>
-                    <p className="text-[10px] uppercase tracking-widest text-black/35 mb-1.5">Bedrooms</p>
+                    <p className="text-[10px] uppercase tracking-widest text-black/35 mb-1.5 font-bold">Bedrooms</p>
                     <p className="text-[17px] font-bold text-black font-display">{bedroomsDisplay}</p>
                   </div>
                 )}

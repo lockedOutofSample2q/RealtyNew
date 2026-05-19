@@ -19,6 +19,8 @@ import PriceDisplay from "../../properties/[slug]/PriceDisplay";
 import PropertyDetailMapClient from "../../properties/[slug]/PropertyDetailMapClient";
 import PropertyCard from "@/components/ui/PropertyCard";
 
+import { cache } from "react";
+
 interface Props { params: Promise<{ slug: string }> }
 
 export async function generateStaticParams() {
@@ -31,7 +33,7 @@ export async function generateStaticParams() {
   }
 }
 
-async function getProperty(slug: string): Promise<Property | null> {
+const getProperty = cache(async (slug: string): Promise<Property | null> => {
   try {
     const supabase = createAdminClient();
     const { data, error } = await supabase
@@ -45,9 +47,9 @@ async function getProperty(slug: string): Promise<Property | null> {
   } catch {
     return null;
   }
-}
+});
 
-async function getRelatedProperties(property: Property): Promise<Property[]> {
+const getRelatedProperties = cache(async (property: Property): Promise<Property[]> => {
   try {
     const supabase = createAdminClient();
     const { data } = await supabase
@@ -61,7 +63,7 @@ async function getRelatedProperties(property: Property): Promise<Property[]> {
   } catch {
     return [];
   }
-}
+});
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;

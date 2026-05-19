@@ -18,6 +18,10 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 async function countAll() {
   const { count: propertiesCount } = await supabase.from('properties').select('id', { count: 'exact', head: true });
   console.log('Properties Count:', propertiesCount);
+  const { count: apartmentsCount } = await supabase.from('apartments').select('id', { count: 'exact', head: true });
+  console.log('Apartments Count:', apartmentsCount);
+  const { count: sectorSeoCount } = await supabase.from('sector_seo').select('id', { count: 'exact', head: true });
+  console.log('Sector SEO Count:', sectorSeoCount);
 }
 
 countAll();

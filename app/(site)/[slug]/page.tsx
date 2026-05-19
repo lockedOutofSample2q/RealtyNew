@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import type { Metadata } from "next";
+import { cache } from "react";
 import {
   ChevronLeft, ChevronRight, Share2, MapPin, Check,
   Waves, Dumbbell, Flame, Activity, Droplets, Users,
@@ -32,7 +33,7 @@ export async function generateStaticParams() {
   }
 }
 
-async function getProperty(slug: string): Promise<Property | null> {
+const getProperty = cache(async (slug: string): Promise<Property | null> => {
   // Check demo first (so page works without Supabase)
   const demo = undefined;
   if (demo) return demo;
@@ -43,7 +44,7 @@ async function getProperty(slug: string): Promise<Property | null> {
   } catch {
     return null;
   }
-}
+});
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;

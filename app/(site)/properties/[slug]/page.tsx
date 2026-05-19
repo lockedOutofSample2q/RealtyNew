@@ -20,6 +20,8 @@ import PropertyPriceInline from "./PropertyPriceInline";
 import PropertyDetailMapClient from "./PropertyDetailMapClient";
 import { siteConfig } from "@/config/site";
 
+import { Suspense, cache } from "react";
+
 const isValidUrl = (s: any) => typeof s === 'string' && s.trim() !== "" && (s.startsWith('/') || s.startsWith('http'));
 
 interface Props { params: Promise<{ slug: string }> }
@@ -37,7 +39,7 @@ export async function generateStaticParams() {
   }
 }
 
-async function getProperty(slug: string): Promise<Property | null> {
+const getProperty = cache(async (slug: string): Promise<Property | null> => {
   try {
     const supabase = createAdminClient();
     
@@ -55,7 +57,7 @@ async function getProperty(slug: string): Promise<Property | null> {
   } catch {
     return null;
   }
-}
+});
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;
