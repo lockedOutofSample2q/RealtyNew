@@ -745,7 +745,7 @@ export default async function PropertyDetailPage(props: Props) {
           </div>
 
           {/* ── RIGHT STICKY SIDEBAR ──────────────────────── */}
-          <aside className="order-first lg:order-last lg:sticky lg:top-[max(2rem,calc(50vh-320px))] transition-all">
+          <aside className="order-first lg:order-last lg:sticky lg:top-[max(2rem,calc(50vh-380px))] transition-all">
             <div className="border border-black/10 rounded-2xl overflow-hidden bg-white">
 
               {/* Price */}

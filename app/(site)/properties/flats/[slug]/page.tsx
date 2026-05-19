@@ -605,7 +605,7 @@ export default async function ApartmentDetailPage(props: Props) {
             </div>
 
             {/* ── RIGHT SIDEBAR ────────────────────────────── */}
-            <aside className="lg:sticky lg:top-[max(2rem,calc(50vh-320px))] transition-all">
+            <aside className="lg:sticky lg:top-[max(2rem,calc(50vh-380px))] transition-all">
               <div className="border border-black/10 rounded-2xl overflow-hidden bg-white shadow-sm">
                 <PriceDisplay price={price} price_max={property.price_max} listingLabel={listingLabel} />
                 
