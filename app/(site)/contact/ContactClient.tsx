@@ -11,7 +11,7 @@ import FormSelect from "@/components/ui/FormSelect";
 // Reusing leaflet map logic since Mapbox implies an interactive map.
 const ContactMap = dynamic(() => import("@/components/ui/ContactMap"), {
   ssr: false,
-  loading: () => <div className="w-full h-full bg-black/10" />
+  loading: () => <div className="w-full h-full bg-black/10 flex items-center justify-center font-body text-sm text-black/40">Loading Map...</div>
 });
 
 export default function ContactClient() {

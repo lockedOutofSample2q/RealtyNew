@@ -28,7 +28,7 @@ export const leadership = {
   name: "Amritpal Singh",
   title: "MD, Realty Holding and Management Consultants",
   // Path relative to /public
-  image: "/assets/images/about/ceo.png",
+  image: "/assets/images/about/ceo.webp",
   // Section eyebrow label (small uppercase text above the name)
   eyebrow: "Leadership",
 };

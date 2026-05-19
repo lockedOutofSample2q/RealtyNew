@@ -147,17 +147,17 @@ export const services = [
   {
     title: "Property Advisory",
     description: "Independent evaluation of any property before you commit: developer track record, RERA verification, payment plan analysis, and honest shortlisting. I will tell you what I would do in your position, including when the answer is not to buy.",
-    image: "/assets/images/home/real-estate-advisory-mohali.jpg"
+    image: "/assets/images/home/real-estate-advisory-mohali.webp"
   },
   {
     title: "Land & Plot Advisory",
     description: "From GMADA plot allotment to agricultural land reinvestment after an acquisition payout: guidance on licensed vs unlicensed status, capital gains implications, and which land in which location makes financial sense for your specific situation.",
-    image: "/assets/images/home/land-and-plot-investments-punjab.jpg"
+    image: "/assets/images/home/land-and-plot-investments-punjab.webp"
   },
   {
     title: "NRI & Remote Advisory",
     description: "End-to-end property advisory for NRI investors buying from the UK, Canada, Gulf, or Australia: FEMA compliance, POA structuring, video-verified site walkthroughs, and post-purchase support without you needing to be here.",
-    image: "/assets/images/home/nri-property-consultant-india.jpg"
+    image: "/assets/images/home/nri-property-consultant-india.webp"
   }
 ];
 
@@ -184,9 +184,9 @@ export const faqs = [
 
 // ── SEO Defaults ─────────────────────────────────────────────
 export const seoDefaults = {
-  titleTemplate: "%s | Realty Holding and Management Consultants",
-  defaultTitle: "Buy flats and lands in Mohali with Trust | Realty Holding and Management Consultants ",
-  description: siteConfig.description,
+  titleTemplate: "%s | Realty Consultants",
+  defaultTitle: "Buy Flats & Land in Mohali | Realty Consultants",
+  description: "Realty Holding & Management Consultants: Your trusted advisory for luxury flats, premium houses, and verified land investments in Mohali & Tricity.",
   openGraph: {
     type: "website",
     locale: "en_IN",
@@ -224,6 +224,6 @@ export const propertiesPage = {
   hero: {
     headline: "Find Your Place\nin Mohali",
     subline: "Investments and luxury assets, curated for those who know exactly what they want.",
-    backgroundImage: "/assets/images/home/hero.jpg",
+    backgroundImage: "/assets/images/home/hero.webp",
   }
 };

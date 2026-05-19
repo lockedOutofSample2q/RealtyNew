@@ -7,8 +7,13 @@ import { PropertiesHero } from "@/components/properties/PropertiesHero";
 import { MobileSearchModal } from "@/components/properties/MobileSearchModal";
 import { PropertiesResultsBar } from "@/components/properties/PropertiesResultsBar";
 import { PropertiesGrid } from "@/components/properties/PropertiesGrid";
-import { PropertiesMapContainer } from "@/components/properties/PropertiesMapContainer";
+import dynamic from "next/dynamic";
 import LandsGrid from "@/components/lands/LandsGrid";
+
+const PropertiesMapContainer = dynamic(
+  () => import("@/components/properties/PropertiesMapContainer").then(mod => mod.PropertiesMapContainer),
+  { ssr: false, loading: () => <div className="hidden lg:flex w-full h-full bg-slate-50 items-center justify-center font-body text-black/40 text-sm">Loading map...</div> }
+);
 import ContactModal from "@/components/lands/ContactModal";
 import HeaderTransparency from "@/components/layout/HeaderTransparency";
 
