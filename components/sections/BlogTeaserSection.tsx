@@ -4,17 +4,17 @@ import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const posts = [
-  {
-    title: "Why Your Mohali Real Estate Strategy Is Already Outdated: The Vision Premium of 2026",
-    category: "Investment Strategy",
-    date: "May 01, 2026",
-    href: "/blog/mohali-real-estate-investment-strategy-2026",
-    image: "/assets/images/blog/holographic-2026-mohali-master-plan-realty-holding-management-consultants.webp"
-  }
-];
+export interface BlogPostTeaser {
+  title: string;
+  category: string;
+  date: string;
+  href: string;
+  image: string;
+}
 
-export default function BlogTeaserSection() {
+export default function BlogTeaserSection({ posts }: { posts: BlogPostTeaser[] }) {
+  if (!posts || posts.length === 0) return null;
+
   return (
     <section className="py-24 bg-white">
       <div className="container-site">

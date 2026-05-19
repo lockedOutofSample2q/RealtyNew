@@ -36,13 +36,12 @@ function decodeSectorSlug(slug: string) {
     .join(" ");
 }
 
-async function getSectorProperties(decodedSector: string): Promise<Property[]> {
+async function getAllFlats(): Promise<Property[]> {
   try {
     const supabase = createAdminClient();
     const { data, error } = await supabase
       .from("apartments")
       .select("*")
-      .or(`location.ilike.%${decodedSector}%,community.ilike.%${decodedSector}%`)
       .order("featured", { ascending: false })
       .order("created_at", { ascending: false });
     
@@ -94,9 +93,16 @@ export default async function SectorFlatsPage({ params }: SectorPageProps) {
   const { sector } = await params;
   const decodedSector = decodeSectorSlug(sector);
   const [properties, seoData] = await Promise.all([
-    getSectorProperties(decodedSector),
+    getAllFlats(),
     getSectorSeo(sector)
   ]);
+
+  const sectorProperties = properties.filter((p) => {
+    const loc = p.location?.toLowerCase() || "";
+    const com = p.community?.toLowerCase() || "";
+    const sec = decodedSector.toLowerCase();
+    return loc.includes(sec) || com.includes(sec);
+  });
 
   const schema = {
     "@context": "https://schema.org",
@@ -116,7 +122,7 @@ export default async function SectorFlatsPage({ params }: SectorPageProps) {
       },
       {
         "@type": "ItemList",
-        itemListElement: properties.map((prop, index) => ({
+        itemListElement: sectorProperties.map((prop, index) => ({
           "@type": "ListItem",
           position: index + 1,
           url: `${siteConfig.url}/properties/${prop.slug}`,
@@ -155,19 +161,16 @@ export default async function SectorFlatsPage({ params }: SectorPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <div className="container mx-auto px-4 pt-8 pb-4">
-        {seoData?.h1_heading && (
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">{seoData.h1_heading}</h1>
-        )}
-        {seoData?.intro_paragraph && (
-          <p className="text-muted-foreground text-lg mb-8 max-w-4xl">{seoData.intro_paragraph}</p>
-        )}
-        {!seoData?.h1_heading && (
-          <h1 className="text-3xl md:text-4xl font-bold mb-8">Flats in {decodedSector}</h1>
-        )}
-      </div>
       <Suspense fallback={null}>
-        <PropertiesClient properties={properties} initialTab="flats" initialFilters={{ sector: [decodedSector] }} />
+        <PropertiesClient 
+          properties={properties} 
+          initialTab="flats" 
+          initialFilters={{ sector: [decodedSector] }}
+          seoData={{
+            h1_heading: seoData?.h1_heading || `Flats in ${decodedSector}`,
+            intro_paragraph: seoData?.intro_paragraph || undefined
+          }}
+        />
       </Suspense>
     </>
   );

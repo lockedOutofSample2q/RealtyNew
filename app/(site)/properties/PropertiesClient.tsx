@@ -15,9 +15,10 @@ interface Props {
   properties: Property[];
   initialTab?: SearchTab;
   initialFilters?: Partial<PropertySearchFilters>;
+  seoData?: { h1_heading?: string; intro_paragraph?: string };
 }
 
-export default function PropertiesClient({ properties, initialTab, initialFilters }: Props) {
+export default function PropertiesClient({ properties, initialTab, initialFilters, seoData }: Props) {
   const {
     tab,
     filters,
@@ -74,7 +75,12 @@ export default function PropertiesClient({ properties, initialTab, initialFilter
 
   return (
     <div className="min-h-screen bg-white">
-      {tab === "flats" && (
+      {seoData ? (
+        <div className="sr-only">
+          {seoData.h1_heading && <h1>{seoData.h1_heading}</h1>}
+          {seoData.intro_paragraph && <p>{seoData.intro_paragraph}</p>}
+        </div>
+      ) : tab === "flats" ? (
         <div className="sr-only">
           <h1>Buy Flat in Mohali</h1>
           <p>
@@ -100,7 +106,7 @@ export default function PropertiesClient({ properties, initialTab, initialFilter
             registration. Explore the best flats in Mohali today.
           </p>
         </div>
-      )}
+      ) : null}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}

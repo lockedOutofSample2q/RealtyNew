@@ -18,6 +18,8 @@ import { homeCarousels } from "@/config/site";
 import type { Property } from "@/types";
 import type { SearchTab } from "@/components/search/propertySearchOptions";
 import { enrichProperty } from "@/lib/property-utils";
+import { allPosts } from "contentlayer/generated";
+import { format, parseISO } from "date-fns";
 
 // Fetch fresh properties at build time (ISR every 60s)
 // Enable hourly caching (ISR every 1 hour)
@@ -99,6 +101,17 @@ async function getHomeData() {
 export default async function HomePage() {
   const { featured, latest, rentals, availableSectors } = await getHomeData();
 
+  const latestPosts = allPosts
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3)
+    .map((post) => ({
+      title: post.title,
+      category: post.category,
+      date: format(parseISO(post.date), "MMMM dd, yyyy"),
+      href: post.url,
+      image: post.coverImage,
+    }));
+
   return (
     <>
       <HeroSection sectorOptions={availableSectors} />
@@ -118,7 +131,7 @@ export default async function HomePage() {
       />
       <ServicesSection />
       <TestimonialsSection />
-      <BlogTeaserSection />
+      <BlogTeaserSection posts={latestPosts} />
       <FaqSection />
       <ContactSection />
     </>

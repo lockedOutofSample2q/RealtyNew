@@ -11,10 +11,14 @@ export default function FunnelLayout({
       {/* Minimal Header */}
       <header className="py-6 border-b border-black/5">
         <div className="container-site flex items-center justify-between">
-          <Link href="/" className="group">
-             <span className="font-display text-2xl font-light tracking-widest text-charcoal lowercase">
-               realty<span className="text-black/40">holding</span>
-             </span>
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="relative h-10 sm:h-12 aspect-[1756/925]">
+              <img 
+                src="/assets/logo-light-theme.svg" 
+                alt={siteConfig.name} 
+                className="h-full w-full object-contain object-left" 
+              />
+            </div>
           </Link>
           <div className="hidden sm:block">
             <a href={`tel:${siteConfig.contact.phone}`} className="font-body text-sm font-medium text-charcoal hover:text-black transition-colors">
