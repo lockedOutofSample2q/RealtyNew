@@ -3,7 +3,7 @@ import { createAdminClient } from "@/lib/supabase";
 import type { Property } from "@/types";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
-import PropertiesClient from "../../properties/PropertiesClient";
+import PropertiesClient from "../../PropertiesClient";
 import { enrichProperty } from "@/lib/property-utils";
 import { siteConfig } from "@/config/site";
 
@@ -63,7 +63,7 @@ export async function generateMetadata({ params }: SectorPageProps): Promise<Met
       title: seoData.meta_title || `Flats in ${decodedSector} Mohali | Realty Consultants`,
       description: seoData.meta_description || `Explore luxury flats and apartments in ${decodedSector}, Mohali. Verified listings with price, floor plans, and amenities.`,
       alternates: {
-        canonical: `/flats/${sector}`,
+        canonical: `/properties/flats/${sector}`,
       },
     };
   }
@@ -72,7 +72,7 @@ export async function generateMetadata({ params }: SectorPageProps): Promise<Met
     title: `Flats in ${decodedSector} Mohali | Realty Consultants`,
     description: `Explore luxury flats and apartments in ${decodedSector}, Mohali. Verified listings with price, floor plans, and amenities.`,
     alternates: {
-      canonical: `/flats/${sector}`,
+      canonical: `/properties/flats/${sector}`,
     },
   };
 }
@@ -114,10 +114,10 @@ export default async function SectorFlatsPage({ params }: SectorPageProps) {
     "@graph": [
       {
         "@type": "CollectionPage",
-        "@id": `${siteConfig.url}/flats/${sector}`,
+        "@id": `${siteConfig.url}/properties/flats/${sector}`,
         name: seoData?.meta_title || `Flats in ${decodedSector} Mohali | Realty Consultants`,
         description: seoData?.meta_description || `Explore luxury flats and apartments in ${decodedSector}, Mohali. Verified listings with price, floor plans, and amenities.`,
-        url: `${siteConfig.url}/flats/${sector}`,
+        url: `${siteConfig.url}/properties/flats/${sector}`,
         isPartOf: {
           "@id": `${siteConfig.url}/#website`,
         },
@@ -146,13 +146,13 @@ export default async function SectorFlatsPage({ params }: SectorPageProps) {
             "@type": "ListItem",
             position: 2,
             name: "Flats",
-            item: `${siteConfig.url}/flats`,
+            item: `${siteConfig.url}/properties/flats`,
           },
           {
             "@type": "ListItem",
             position: 3,
             name: decodedSector,
-            item: `${siteConfig.url}/flats/${sector}`,
+            item: `${siteConfig.url}/properties/flats/${sector}`,
           },
         ],
       },

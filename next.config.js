@@ -80,7 +80,7 @@ const nextConfig = {
       },
       {
         source: "/apartments",
-        destination: "/flats",
+        destination: "/properties/flats",
         permanent: true,
       },
       {

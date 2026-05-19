@@ -15,10 +15,10 @@ import type { Property, NearbyLandmark } from "@/types";
 import { AmenityIcon } from "@/components/ui/AmenityIcons";
 import { enrichProperty } from "@/lib/property-utils";
 import { cn } from "@/lib/utils";
-import InquiryForm, { PropertyGallery } from "../../properties/[slug]/InquiryForm";
-import PriceDisplay from "../../properties/[slug]/PriceDisplay";
-import PropertyPriceInline from "../../properties/[slug]/PropertyPriceInline";
-import PropertyDetailMapClient from "../../properties/[slug]/PropertyDetailMapClient";
+import InquiryForm, { PropertyGallery } from "../../[slug]/InquiryForm";
+import PriceDisplay from "../../[slug]/PriceDisplay";
+import PropertyPriceInline from "../../[slug]/PropertyPriceInline";
+import PropertyDetailMapClient from "../../[slug]/PropertyDetailMapClient";
 import PropertyCard from "@/components/ui/PropertyCard";
 
 interface Props { params: Promise<{ slug: string }> }
@@ -86,7 +86,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     openGraph: {
       title: titleStr,
       description: descStr,
-      url: `${siteConfig.url}/flats/${p.slug}`,
+      url: `${siteConfig.url}/properties/flats/${p.slug}`,
       siteName: "Realty Holding & Management Consultants",
       type: "website",
       images: p.images?.[0] ? [{ url: p.images[0] }] : undefined,
@@ -95,7 +95,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       thumbnail: p.images?.[0] || '/favicon.ico'
     },
     alternates: {
-      canonical: `${siteConfig.url}/flats/${p.slug}`,
+      canonical: `${siteConfig.url}/properties/flats/${p.slug}`,
     }
   };
 }
@@ -110,7 +110,7 @@ export default async function ApartmentDetailPage(props: Props) {
   const property = enrichProperty(rawProperty);
   const related = await getRelatedProperties(property);
 
-  const backHref = "/flats";
+  const backHref = "/properties/flats";
   const backLabel = "Flats";
   const listingLabel = "Apartment For Sale";
 
@@ -140,13 +140,13 @@ export default async function ApartmentDetailPage(props: Props) {
         "@type": "ListItem",
         "position": 2,
         "name": "Flats",
-        "item": `${siteConfig.url}/flats`
+        "item": `${siteConfig.url}/properties/flats`
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": property.title,
-        "item": `${siteConfig.url}/flats/${property.slug}`
+        "item": `${siteConfig.url}/properties/flats/${property.slug}`
       }
     ]
   };
@@ -157,7 +157,7 @@ export default async function ApartmentDetailPage(props: Props) {
     "@type": ["RealEstateListing", "Apartment"],
     "name": property.title,
     "description": property.meta_description || property.description,
-    "url": `${siteConfig.url}/flats/${property.slug}`,
+    "url": `${siteConfig.url}/properties/flats/${property.slug}`,
     "image": (property.images || []).map(img => getAbsoluteUrl(img)),
     "address": {
       "@type": "PostalAddress",
@@ -178,13 +178,13 @@ export default async function ApartmentDetailPage(props: Props) {
       "priceCurrency": property.price_currency || "INR",
       "availability": property.status === "available" ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
       "offerCount": 1,
-      "url": `${siteConfig.url}/flats/${property.slug}`
+      "url": `${siteConfig.url}/properties/flats/${property.slug}`
     } : {
       "@type": "Offer",
       "price": property.price,
       "priceCurrency": property.price_currency || "INR",
       "availability": property.status === "available" ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
-      "url": `${siteConfig.url}/flats/${property.slug}`
+      "url": `${siteConfig.url}/properties/flats/${property.slug}`
     },
     "amenityFeature": [
       ...(property.nearby_landmarks || []).map(lm => ({

@@ -179,7 +179,7 @@ export function usePropertyFilters(
       if (filters.currency && filters.currency !== "INR") params.set("currency", filters.currency);
       
       const queryString = params.toString();
-      const path = `/flats/${sectorSlug}`;
+      const path = `/properties/flats/${sectorSlug}`;
       router.push(queryString ? `${path}?${queryString}` : path);
       return;
     }

@@ -16,8 +16,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: "/properties/flats", priority: 0.9 }, 
     { path: "/properties/houses", priority: 0.9 },
     { path: "/properties/lands", priority: 0.9 },
-    { path: "/flats", priority: 0.9 },           // Keep legacy for now
-    { path: "/houses", priority: 0.9 },          // Keep legacy for now
     { path: "/blog", priority: 0.8 },            // High-Value Hub
     { path: "/tools/price-trend", priority: 0.7 }, // Trust & Tools
     { path: "/faq", priority: 0.7 },             // Trust & Tools
@@ -96,7 +94,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error("Sitemap: Failed to fetch sector SEO pages.", error);
   }
   const sectorRoutes = sectorPages.map((item: { sector_slug: string; updated_at?: string }) => ({
-    url: `${baseUrl}/flats/${item.sector_slug}`,
+    url: `${baseUrl}/properties/flats/${item.sector_slug}`,
     lastModified: new Date(item.updated_at || new Date()),
     changeFrequency: "weekly" as const,
     priority: 0.8,
