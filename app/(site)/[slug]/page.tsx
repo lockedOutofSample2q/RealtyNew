@@ -531,7 +531,7 @@ export default async function PropertyCatchAllPage(props: Props) {
           </div>
 
           {/* ── RIGHT STICKY SIDEBAR ──────────────────────── */}
-          <aside className="order-first lg:order-last lg:sticky lg:top-1/2 lg:-translate-y-1/2 transition-all">
+          <aside className="order-first lg:order-last lg:sticky lg:top-[max(2rem,calc(50vh-320px))] transition-all">
             <div className="border border-black/10 rounded-2xl overflow-hidden bg-white">
 
               {/* Price */}
