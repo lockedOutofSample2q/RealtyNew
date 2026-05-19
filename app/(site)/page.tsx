@@ -8,11 +8,13 @@
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
 import PropertiesCarousel from "@/components/sections/PropertiesCarousel";
-import ServicesSection from "@/components/sections/ServicesSection";
-import FaqSection from "@/components/sections/FaqSection";
-import ContactSection from "@/components/sections/ContactSection";
-import TestimonialsSection from "@/components/sections/TestimonialsSection";
-import BlogTeaserSection from "@/components/sections/BlogTeaserSection";
+import dynamic from "next/dynamic";
+
+const ServicesSection = dynamic(() => import("@/components/sections/ServicesSection"));
+const FaqSection = dynamic(() => import("@/components/sections/FaqSection"));
+const ContactSection = dynamic(() => import("@/components/sections/ContactSection"));
+const TestimonialsSection = dynamic(() => import("@/components/sections/TestimonialsSection"));
+const BlogTeaserSection = dynamic(() => import("@/components/sections/BlogTeaserSection"));
 import { createAdminClient } from "@/lib/supabase";
 import { homeCarousels } from "@/config/site";
 import type { Property } from "@/types";

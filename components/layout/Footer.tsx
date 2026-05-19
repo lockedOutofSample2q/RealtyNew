@@ -4,7 +4,11 @@ import { Instagram, Facebook, Linkedin, Youtube, Mail, Phone, MapPin } from "luc
 import { siteConfig, footerLinks } from "@/config/site";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
-import FooterMapWrapper from "./FooterMapWrapper";
+import dynamic from "next/dynamic";
+
+const FooterMapWrapper = dynamic(() => import("./FooterMapWrapper"), {
+  loading: () => <div className="w-full h-full bg-white/5 animate-pulse" />
+});
 
 export default function Footer() {
   const year = new Date().getFullYear();

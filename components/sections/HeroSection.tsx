@@ -109,7 +109,7 @@ export default function HeroSection({ sectorOptions }: HeroSectionProps = {}) {
             priority
             className="object-cover object-[center_top]"
             sizes="100vw"
-            quality={85}
+            quality={75}
           />
         </div>
       </div>
