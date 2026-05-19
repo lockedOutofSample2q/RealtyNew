@@ -81,37 +81,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       .from("sector_seo")
       .select("sector_slug, updated_at");
 
-    // Second, extract unique communities and locations from properties
-    const { data: propData } = await supabase
-      .from("properties")
-      .select("community, location, updated_at")
-      .eq("entity_type", "apartment");
-
     const sectorSet = new Map<string, Date>();
-
     if (seoData) {
       seoData.forEach((item: any) => {
         sectorSet.set(item.sector_slug, new Date(item.updated_at || new Date()));
-      });
-    }
-
-    if (propData) {
-      propData.forEach((p: any) => {
-        const date = new Date(p.updated_at || new Date());
-
-        if (p.community) {
-          const slug = p.community.toLowerCase().replace(/\s+/g, '-');
-          if (!sectorSet.has(slug) || sectorSet.get(slug)! < date) {
-            sectorSet.set(slug, date);
-          }
-        }
-
-        if (p.location) {
-          const firstLoc = p.location.split(',')[0].trim().toLowerCase().replace(/\s+/g, '-');
-          if (firstLoc && (!sectorSet.has(firstLoc) || sectorSet.get(firstLoc)! < date)) {
-            sectorSet.set(firstLoc, date);
-          }
-        }
       });
     }
 

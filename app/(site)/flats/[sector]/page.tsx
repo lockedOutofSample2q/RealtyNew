@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { createAdminClient } from "@/lib/supabase";
 import type { Property } from "@/types";
 import { Suspense } from "react";
+import { notFound } from "next/navigation";
 import PropertiesClient from "../../properties/PropertiesClient";
 import { enrichProperty } from "@/lib/property-utils";
 import { siteConfig } from "@/config/site";
@@ -96,6 +97,10 @@ export default async function SectorFlatsPage({ params }: SectorPageProps) {
     getAllFlats(),
     getSectorSeo(sector)
   ]);
+
+  if (!seoData) {
+    notFound();
+  }
 
   const sectorProperties = properties.filter((p) => {
     const loc = p.location?.toLowerCase() || "";
