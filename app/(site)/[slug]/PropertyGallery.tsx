@@ -53,6 +53,7 @@ export default function PropertyGallery({ images, title, imageCount }: Props) {
             fill
             className="object-cover hover:scale-[1.02] transition-transform duration-500"
             priority
+            unoptimized
           />
         </button>
 
@@ -73,6 +74,7 @@ export default function PropertyGallery({ images, title, imageCount }: Props) {
                   alt={`Gallery thumbnail ${i + 1} showcasing ${title} real estate project in Mohali`}
                   fill
                   className="object-cover hover:scale-[1.02] transition-transform duration-500"
+                  unoptimized
                 />
               ) : (
                 <div className="w-full h-full bg-black/5" />
@@ -131,6 +133,7 @@ export default function PropertyGallery({ images, title, imageCount }: Props) {
               height={900}
               className="object-contain max-h-[85vh] w-full rounded-xl"
               priority
+              unoptimized
             />
           </div>
 
@@ -153,7 +156,7 @@ export default function PropertyGallery({ images, title, imageCount }: Props) {
                     i === lightboxIndex ? "border-white opacity-100" : "border-transparent opacity-50 hover:opacity-80"
                   }`}
                 >
-                  <Image src={src} alt={`Thumbnail ${i + 1} of ${title} property interior and exterior`} fill className="object-cover" />
+                  <Image src={src} alt={`Thumbnail ${i + 1} of ${title} property interior and exterior`} fill className="object-cover" unoptimized />
                 </button>
               ))}
             </div>
