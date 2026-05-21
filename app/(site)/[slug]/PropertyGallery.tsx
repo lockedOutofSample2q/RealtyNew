@@ -49,7 +49,7 @@ export default function PropertyGallery({ images, title, imageCount }: Props) {
         >
           <Image
             src={images[0] ?? "/assets/images/home/about.jpg"}
-            alt={title}
+            alt={`${title} | Best Real Estate Consultant in Mohali | Property Dealer`}
             fill
             className="object-cover hover:scale-[1.02] transition-transform duration-500"
             priority
@@ -70,7 +70,7 @@ export default function PropertyGallery({ images, title, imageCount }: Props) {
               {images[i] ? (
                 <Image
                   src={images[i]}
-                  alt={`${title} ${i + 1}`}
+                  alt={`${title} - View ${i + 1} | Buy Property in Mohali | Realty Holding`}
                   fill
                   className="object-cover hover:scale-[1.02] transition-transform duration-500"
                 />
@@ -126,7 +126,7 @@ export default function PropertyGallery({ images, title, imageCount }: Props) {
           >
             <Image
               src={images[lightboxIndex]}
-              alt={`${title} — image ${lightboxIndex + 1}`}
+              alt={`${title} High Resolution Image ${lightboxIndex + 1} | Real Estate Agent in Mohali`}
               width={1400}
               height={900}
               className="object-contain max-h-[85vh] w-full rounded-xl"
@@ -153,7 +153,7 @@ export default function PropertyGallery({ images, title, imageCount }: Props) {
                     i === lightboxIndex ? "border-white opacity-100" : "border-transparent opacity-50 hover:opacity-80"
                   }`}
                 >
-                  <Image src={src} alt="" fill className="object-cover" />
+                  <Image src={src} alt={`${title} Gallery Thumbnail ${i + 1} | Invest in Mohali`} fill className="object-cover" />
                 </button>
               ))}
             </div>
