@@ -159,7 +159,13 @@ export default function PropertyCard({
 
         {/* Specs */}
         <div className="flex items-center justify-start gap-4 mb-8 opacity-80 flex-wrap">
-          {property.bedrooms != null && (
+          {property.unit_types && property.unit_types.length > 0 ? (
+            <div className="flex items-center gap-2 text-charcoal">
+              <span className="font-body text-xs font-semibold tracking-widest">
+                {property.unit_types.map(ut => ut.bhk).join(" • ").toUpperCase()}
+              </span>
+            </div>
+          ) : property.bedrooms != null && (
             <div className="flex items-center gap-2 text-charcoal">
               <span className="font-body text-xs font-semibold tracking-widest">
                 {property.bedrooms === 0 ? "STUDIO" : 
