@@ -97,7 +97,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 }
 
 // Enable weekly caching (ISR every 7 days)
-export const revalidate = 604800;
+export const revalidate = 3600;
 
 // ── Amenity icon lookup ───────────────────────────────────────
 const AMENITY_ICON_MAP: Record<string, React.ElementType> = {
@@ -524,7 +524,7 @@ export default async function PropertyDetailPage(props: Props) {
             )}
 
             {/* ── TECHNICAL OVERVIEW ───────────────────────────── */}
-            {(property.payment_plan || property.unit_types_image || (property.documents?.length ?? 0) > 0) && (
+            {(property.payment_plan || property.unit_types_image || (property.documents?.length ?? 0) > 0 || (property.unit_types?.length ?? 0) > 0) && (
               <section className="mb-14">
                 <h2 className="text-[18px] font-bold text-black mb-6">Property Overview</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -581,7 +581,22 @@ export default async function PropertyDetailPage(props: Props) {
                               <tr key={idx} className="border-b border-black/[0.03] last:border-0">
                                 <td className="py-4 font-bold text-black">{ut.bhk}</td>
                                 <td className="py-4 text-black/60">
-                                  {ut.size_min.toLocaleString()} {ut.size_max ? `- ${ut.size_max.toLocaleString()}` : ""} sqft
+                                  {(() => {
+                                    const minVal = ut.size_min ? Number(ut.size_min) : 0;
+                                    const maxVal = ut.size_max ? Number(ut.size_max) : 0;
+                                    const isMinValid = minVal >= 100;
+                                    const isMaxValid = maxVal >= 100;
+
+                                    if (isMinValid && isMaxValid && minVal !== maxVal) {
+                                      return `${minVal.toLocaleString()} - ${maxVal.toLocaleString()} sqft`;
+                                    } else if (isMinValid) {
+                                      return `${minVal.toLocaleString()} sqft`;
+                                    } else if (isMaxValid) {
+                                      return `${maxVal.toLocaleString()} sqft`;
+                                    } else {
+                                      return "—";
+                                    }
+                                  })()}
                                 </td>
                                 <td className="py-4 text-black/60">{ut.price || "Price on request"}</td>
                                 <td className="py-4">

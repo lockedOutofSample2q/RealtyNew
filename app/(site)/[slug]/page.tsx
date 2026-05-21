@@ -18,6 +18,8 @@ import PriceDisplay from "../properties/[slug]/PriceDisplay";
 import PropertyPriceInline from "../properties/[slug]/PropertyPriceInline";
 import PropertyDetailMapClient from "../properties/[slug]/PropertyDetailMapClient";
 
+const isValidUrl = (s: any) => typeof s === 'string' && s.trim() !== "" && (s.startsWith('/') || s.startsWith('http'));
+
 interface Props { params: Promise<{ slug: string }> }
 
 export async function generateStaticParams() {
@@ -61,7 +63,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 }
 
 // Enable weekly caching (ISR every 7 days)
-export const revalidate = 604800;
+export const revalidate = 3600;
 
 // ── Amenity icon lookup ───────────────────────────────────────
 const AMENITY_ICON_MAP: Record<string, React.ElementType> = {
@@ -384,7 +386,7 @@ export default async function PropertyCatchAllPage(props: Props) {
             )}
 
             {/* ── TECHNICAL OVERVIEW (Redesigned) ───────────────── */}
-            {(property.payment_plan || property.unit_types_image || (property.documents?.length ?? 0) > 0) && (
+            {(property.payment_plan || property.unit_types_image || (property.documents?.length ?? 0) > 0 || (property.unit_types?.length ?? 0) > 0) && (
               <section className="mb-14">
                 <h2 className="text-[18px] font-bold text-black mb-6">Property Overview</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -423,26 +425,78 @@ export default async function PropertyCatchAllPage(props: Props) {
                   )}
 
                   {/* 2. Unit Types & Sizes */}
-                  <div className="relative rounded-[24px] overflow-hidden min-h-[440px] group cursor-pointer">
-                    <Image
-                      src={property.unit_types_image || property.images?.[0] || "/assets/images/home/about.jpg"}
-                      alt="Unit Types & Sizes"
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-black/20" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-8">
-                      <p className="text-white font-bold text-[20px] mb-3 leading-tight">Unit Types & Sizes</p>
-                      <span className="inline-flex items-center gap-2 text-[11px] bg-white/20 backdrop-blur-md text-white border border-white/30 font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
-                        COMING SOON
-                      </span>
+                  {property.unit_types && property.unit_types.length > 0 ? (
+                    <div className="col-span-1 md:col-span-2 lg:col-span-2 bg-white border border-black/8 rounded-[24px] p-8 overflow-hidden">
+                      <h3 className="text-[17px] font-bold text-black mb-6">Unit Types & Sizes</h3>
+                      <div className="overflow-x-auto">
+                        <table className="w-full text-left text-[14px]">
+                          <thead>
+                            <tr className="border-b border-black/5">
+                              <th className="py-3 font-semibold text-black/40 uppercase tracking-wider text-[10px]">Configuration</th>
+                              <th className="py-3 font-semibold text-black/40 uppercase tracking-wider text-[10px]">Size</th>
+                              <th className="py-3 font-semibold text-black/40 uppercase tracking-wider text-[10px]">Price</th>
+                              <th className="py-3 font-semibold text-black/40 uppercase tracking-wider text-[10px]">Status</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {property.unit_types.map((ut, idx) => (
+                              <tr key={idx} className="border-b border-black/[0.03] last:border-0">
+                                <td className="py-4 font-bold text-black">{ut.bhk}</td>
+                                <td className="py-4 text-black/60">
+                                  {(() => {
+                                    const minVal = ut.size_min ? Number(ut.size_min) : 0;
+                                    const maxVal = ut.size_max ? Number(ut.size_max) : 0;
+                                    const isMinValid = minVal >= 100;
+                                    const isMaxValid = maxVal >= 100;
+
+                                    if (isMinValid && isMaxValid && minVal !== maxVal) {
+                                      return `${minVal.toLocaleString()} - ${maxVal.toLocaleString()} sqft`;
+                                    } else if (isMinValid) {
+                                      return `${minVal.toLocaleString()} sqft`;
+                                    } else if (isMaxValid) {
+                                      return `${maxVal.toLocaleString()} sqft`;
+                                    } else {
+                                      return "—";
+                                    }
+                                  })()}
+                                </td>
+                                <td className="py-4 text-black/60">{ut.price || "Price on request"}</td>
+                                <td className="py-4">
+                                  <span className="inline-block px-2 py-0.5 rounded bg-black/5 text-black/40 text-[10px] font-bold uppercase tracking-wider">
+                                    Available
+                                  </span>
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                      <p className="text-[11px] text-black/30 mt-6 italic">
+                        * Prices are indicative and subject to change. Contact us for the current payment plan and floor-wise pricing.
+                      </p>
                     </div>
-                    {/* Icon corner */}
-                    <div className="absolute bottom-8 right-8 w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
-                       <Images size={18} className="text-white" />
+                  ) : (
+                    <div className="relative rounded-[24px] overflow-hidden min-h-[440px] group cursor-pointer">
+                      <Image
+                        src={property.unit_types_image || property.images?.[0] || "/assets/images/home/about.jpg"}
+                        alt="Unit Types & Sizes"
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-black/20" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                      <div className="absolute bottom-0 left-0 right-0 p-8">
+                        <p className="text-white font-bold text-[20px] mb-3 leading-tight">Unit Types & Sizes</p>
+                        <span className="inline-flex items-center gap-2 text-[11px] bg-white/20 backdrop-blur-md text-white border border-white/30 font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
+                          COMING SOON
+                        </span>
+                      </div>
+                      {/* Icon corner */}
+                      <div className="absolute bottom-8 right-8 w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
+                         <Images size={18} className="text-white" />
+                      </div>
                     </div>
-                  </div>
+                  )}
 
                   {/* 3. Resources / Links */}
                   <div className="flex flex-col gap-3">

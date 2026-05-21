@@ -172,7 +172,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 }
 
 // Enable weekly caching (ISR every 7 days)
-export const revalidate = 604800;
+export const revalidate = 3600;
 
 export default async function ApartmentOrSectorDetailPage(props: Props) {
   const params = await props.params;
