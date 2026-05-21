@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
 };
 
-export const revalidate = 604800;
+export const revalidate = 3600;
 
 async function getFlats(): Promise<Property[]> {
   try {

@@ -92,7 +92,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   };
 }
 
-export const revalidate = 604800; // 1 week
+export const revalidate = 3600; // 1 week
 
 export default async function HouseDetailPage(props: Props) {
   const params = await props.params;

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
 };
 
-export const revalidate = 604800; // 1 week
+export const revalidate = 3600; // 1 week
 
 async function getProperties(): Promise<Property[]> {
   try {
