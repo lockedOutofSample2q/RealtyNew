@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
-import { Phone, Mail, MapPin, MessageCircle, ArrowRight } from "lucide-react";
+import { Phone, Mail, MapPin, Calendar, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { toast } from "sonner";
 import { siteConfig } from "@/config/site";
@@ -93,11 +93,11 @@ export default function ContactClient() {
               href: "#map",
             },
             {
-              icon: <MessageCircle size={24} className="text-black mb-4" strokeWidth={1.5} />,
-              title: "Live Chat",
-              desc: "Available 9 AM - 6 PM",
-              val: "Start Chat",
-              href: "#",
+              icon: <Calendar size={24} className="text-black mb-4" strokeWidth={1.5} />,
+              title: "Virtual Meet",
+              desc: "Book a 15-minute consultation",
+              val: "Schedule Now",
+              href: "/booking",
             },
           ].map((c) => (
             <a
@@ -212,6 +212,18 @@ export default function ContactClient() {
                 <div>
                   <h4 className="font-body font-semibold text-lg mb-1">Mortgage Calculator</h4>
                   <p className="font-body text-sm text-black/50 group-hover:text-white/60 transition-colors">Estimate your payments</p>
+                </div>
+                <div className="w-10 h-10 rounded-full bg-white group-hover:bg-white/20 flex items-center justify-center text-black group-hover:text-white transition-colors">
+                  <ArrowRight size={18} />
+                </div>
+              </Link>
+              <Link
+                href="/tools/loan-eligibility"
+                className="group flex items-center justify-between p-6 bg-[#F8F8F8] hover:bg-black hover:text-white rounded-2xl transition-colors duration-300"
+              >
+                <div>
+                  <h4 className="font-body font-semibold text-lg mb-1">Loan Eligibility</h4>
+                  <p className="font-body text-sm text-black/50 group-hover:text-white/60 transition-colors">Check your eligibility</p>
                 </div>
                 <div className="w-10 h-10 rounded-full bg-white group-hover:bg-white/20 flex items-center justify-center text-black group-hover:text-white transition-colors">
                   <ArrowRight size={18} />
