@@ -45,7 +45,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const supabase = createAdminClient();
     const { data } = await supabase
       .from("properties")
-      .select("slug, updated_at, listing_type");
+      .select("slug, updated_at, entity_type");
       
     if (data && data.length > 0) {
       properties = (data as any[]);
@@ -54,12 +54,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error("Sitemap: Failed to fetch properties from Supabase.", error);
   }
 
-  const propertyRoutes = properties.map((property) => ({
-    url: `${baseUrl}/properties/${property.slug}`,
-    lastModified: new Date(property.updated_at || new Date()),
-    changeFrequency: "weekly" as const,
-    priority: 0.8,
-  }));
+  const propertyRoutes = properties.map((property) => {
+    let typePath = "flats";
+    if (property.entity_type === "house") typePath = "houses";
+    if (property.entity_type === "land") typePath = "lands";
+    
+    return {
+      url: `${baseUrl}/properties/${typePath}/${property.slug}`,
+      lastModified: new Date(property.updated_at || new Date()),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    };
+  });
 
   // 3. Blog Posts from Contentlayer (Priority 0.7: Dwell Time)
   const blogRoutes = allPosts.map((post) => ({
