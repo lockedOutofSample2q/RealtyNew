@@ -237,7 +237,7 @@ function AgentFormModal({
           <div className="flex items-center gap-4">
             <div className="w-20 h-20 rounded-xl overflow-hidden shrink-0 border border-black/[0.07] bg-[#F7F6F3] flex items-center justify-center">
               {form.photo_url ? (
-                <img src={form.photo_url} alt="" className="w-full h-full object-cover" />
+                <img src={form.photo_url} alt="Agent photo preview" className="w-full h-full object-cover" />
               ) : (
                 <UserCircle2 size={36} className="text-[#ccc]" />
               )}

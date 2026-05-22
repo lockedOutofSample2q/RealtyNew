@@ -6,6 +6,7 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import type { Metadata } from "next";
 import { cache } from "react";
+import { siteConfig } from "@/config/site";
 import {
   ChevronLeft, ChevronRight, Share2, MapPin, Check,
   Waves, Dumbbell, Flame, Activity, Droplets, Users,
@@ -58,7 +59,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     description: p.description?.slice(0, 160),
     openGraph: { images: p.images?.[0] ? [{ url: p.images[0] }] : [] },
     alternates: {
-      canonical: `/properties/${p.slug}`,
+      canonical: `${siteConfig.url}/properties/${p.slug}`,
     },
   };
 }
@@ -193,6 +194,19 @@ export default async function PropertyCatchAllPage(props: Props) {
     };
   }
 
+  const faqSchema = property.faqs && property.faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": property.faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  } : null;
+
   const realEstateSchema = {
     "@context": "https://schema.org",
     "@type": "RealEstateListing",
@@ -216,6 +230,12 @@ export default async function PropertyCatchAllPage(props: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(realEstateSchema) }}
@@ -705,7 +725,10 @@ export default async function PropertyCatchAllPage(props: Props) {
         </div>
 
         {/* ── RELATED PROPERTIES ────────────────────────────── */}
-        <RelatedProperties entityType={property.entity_type} currentSlug={property.slug} />
+        {(() => {
+          const relType = (property.entity_type === "lands" || property.entity_type === "land") ? "land" : property.entity_type === "house" ? "house" : "apartment";
+          return <RelatedProperties entityType={relType} currentSlug={property.slug} />;
+        })()}
 
       </div>
     </div>

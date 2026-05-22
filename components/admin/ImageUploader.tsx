@@ -159,7 +159,7 @@ export default function ImageUploader({ value, onChange, maxImages = 20 }: Props
         <div className="space-y-2">
           {uploads.map((u) => (
             <div key={u.id} className="flex items-center gap-3 bg-white border border-black/[0.07] rounded-lg p-3">
-              <img src={u.preview} alt="" className="w-12 h-12 object-cover rounded-lg shrink-0" />
+              <img src={u.preview} alt="Upload preview" className="w-12 h-12 object-cover rounded-lg shrink-0" />
               <div className="flex-1 min-w-0">
                 <p className="font-body text-xs text-[#555] truncate">{u.file?.name}</p>
                 {u.status === "uploading" && (
@@ -207,7 +207,7 @@ export default function ImageUploader({ value, onChange, maxImages = 20 }: Props
                 opacity: dragIndex === i ? 0.5 : 1,
               }}
             >
-              <img src={url} alt="" className="w-full aspect-square object-cover" />
+              <img src={url} alt="Uploaded image" className="w-full aspect-square object-cover" />
               {/* Overlay */}
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100">
                 <a href={url} target="_blank" rel="noopener noreferrer"

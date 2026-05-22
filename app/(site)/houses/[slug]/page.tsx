@@ -92,14 +92,14 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     openGraph: {
       title: titleStr,
       description: descStr,
-      url: `https://www.realtyconsultants.in/properties/${p.slug}`,
+      url: `${siteConfig.url}/properties/${p.slug}`,
       siteName: "Realty Holding & Management Consultants",
       type: "website",
       images: p.images?.[0] ? [{ url: p.images[0] }] : undefined,
     },
     other: { thumbnail: p.images?.[0] || '/favicon.ico' },
     alternates: {
-      canonical: `/properties/${p.slug}`,
+      canonical: `${siteConfig.url}/properties/${p.slug}`,
     }
   };
 }

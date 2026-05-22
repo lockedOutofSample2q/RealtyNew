@@ -69,7 +69,7 @@ const getRelatedProperties = cache(async (property: Property): Promise<Property[
                    property.title.toLowerCase().includes('co-op') || 
                    property.title.toLowerCase().includes('society') || 
                    (property.community && property.community.toLowerCase().includes('coop')) ||
-                   (property.builder && property.builder.toLowerCase().includes('coop'));
+                   (property.developer && property.developer.toLowerCase().includes('coop'));
 
     let query = supabase
       .from("properties")
@@ -78,10 +78,10 @@ const getRelatedProperties = cache(async (property: Property): Promise<Property[
       .eq("entity_type", "apartment");
 
     if (isCoop) {
-      query = query.or('title.ilike.%coop%,title.ilike.%society%,community.ilike.%coop%,community.ilike.%society%,builder.ilike.%coop%');
+      query = query.or('title.ilike.%coop%,title.ilike.%society%,community.ilike.%coop%,community.ilike.%society%,developer.ilike.%coop%');
     } else {
-      if (property.builder) {
-        query = query.ilike("builder", `%${property.builder}%`);
+      if (property.developer) {
+        query = query.ilike("developer", `%${property.developer}%`);
       }
       if (property.price) {
         const minPrice = property.price * 0.8;
@@ -186,7 +186,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       openGraph: {
         title: titleStr,
         description: descStr,
-        url: `${siteConfig.url}/properties/flats/${p.slug}`,
+        url: `${siteConfig.url}/properties/${p.slug}`,
         siteName: "Realty Holding & Management Consultants",
         type: "website",
         images: p.images?.[0] ? [{ url: p.images[0] }] : undefined,
@@ -195,7 +195,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
         thumbnail: p.images?.[0] || '/favicon.ico'
       },
       alternates: {
-        canonical: `${siteConfig.url}/properties/flats/${p.slug}`,
+        canonical: `${siteConfig.url}/properties/${p.slug}`,
       }
     };
   }

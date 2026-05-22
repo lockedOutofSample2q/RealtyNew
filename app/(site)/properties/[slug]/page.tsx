@@ -858,7 +858,10 @@ export default async function PropertyDetailPage(props: Props) {
         </div>
 
         {/* ── RELATED PROPERTIES ────────────────────────────── */}
-        <RelatedProperties entityType={property.entity_type} currentSlug={property.slug} />
+        {(() => {
+          const relType = (property.entity_type === "lands" || property.entity_type === "land") ? "land" : property.entity_type === "house" ? "house" : "apartment";
+          return <RelatedProperties entityType={relType} currentSlug={property.slug} />;
+        })()}
 
       </div>
     </div>

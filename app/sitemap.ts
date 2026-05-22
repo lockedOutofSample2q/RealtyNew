@@ -55,12 +55,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
 
   const propertyRoutes = properties.map((property) => {
-    let typePath = "flats";
-    if (property.entity_type === "house") typePath = "houses";
-    if (property.entity_type === "land") typePath = "lands";
-    
     return {
-      url: `${baseUrl}/properties/${typePath}/${property.slug}`,
+      url: `${baseUrl}/properties/${property.slug}`,
       lastModified: new Date(property.updated_at || new Date()),
       changeFrequency: "weekly" as const,
       priority: 0.8,
