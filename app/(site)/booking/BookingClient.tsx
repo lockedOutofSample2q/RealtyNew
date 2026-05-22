@@ -73,7 +73,7 @@ export default function BookingClient() {
               {/* Calendly inline widget begin */}
               <div 
                 className="calendly-inline-widget w-full h-full" 
-                data-url="https://calendly.com/amritrealtyholding/10min?hide_gdpr_banner=1" 
+                data-url="https://calendly.com/realtyholdingandmanagementconsultants/10min?hide_gdpr_banner=1" 
                 style={{ minWidth: '320px', height: '100%', minHeight: '700px' }} 
               />
               {/* Calendly inline widget end */}
