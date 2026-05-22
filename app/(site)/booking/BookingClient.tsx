@@ -1,39 +1,11 @@
 "use client";
-import { useEffect } from "react";
+import { InlineWidget } from "react-calendly";
 import { CheckCircle2, Clock, ShieldCheck, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { siteConfig } from "@/config/site";
 
-declare global {
-  interface Window {
-    Calendly: any;
-  }
-}
-
 export default function BookingClient() {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
-    script.async = true;
-    
-    // Once the script loads, we need to manually initialize the widget
-    // because React renders the div dynamically and Calendly's auto-init might miss it
-    script.onload = () => {
-      if (window.Calendly) {
-        window.Calendly.initBadges();
-      }
-    };
-    
-    document.body.appendChild(script);
-
-    return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
-  }, []);
-
   return (
     <div className="min-h-screen bg-white">
       {/* ── Hero Section ────────────────────────────────────────── */}
@@ -84,14 +56,18 @@ export default function BookingClient() {
       <section className="pb-24 px-6">
         <div className="container-site max-w-[1000px] mx-auto">
           <div className="bg-white border border-black/10 rounded-3xl overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.04)]">
-            <div className="p-1 min-h-[700px]">
-              {/* Calendly inline widget begin */}
-              <div 
-                className="calendly-inline-widget w-full h-full" 
-                data-url="https://calendly.com/realtyholdingandmanagementconsultants/10min?hide_gdpr_banner=1" 
-                style={{ minWidth: '320px', height: '100%', minHeight: '700px' }} 
+            <div className="min-h-[700px]">
+              <InlineWidget 
+                url="https://calendly.com/realtyholdingandmanagementconsultants/10min"
+                styles={{
+                  height: '700px'
+                }}
+                pageSettings={{
+                  hideGdprBanner: true,
+                  hideLandingPageDetails: true,
+                  primaryColor: 'c9a84c',
+                }}
               />
-              {/* Calendly inline widget end */}
             </div>
           </div>
           
