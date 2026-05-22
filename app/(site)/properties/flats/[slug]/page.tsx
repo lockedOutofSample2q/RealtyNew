@@ -64,16 +64,48 @@ const getProperty = cache(async (slug: string): Promise<Property | null> => {
 const getRelatedProperties = cache(async (property: Property): Promise<Property[]> => {
   try {
     const supabase = createAdminClient();
-    const { data, error } = await supabase
+    
+    const isCoop = property.title.toLowerCase().includes('coop') || 
+                   property.title.toLowerCase().includes('co-op') || 
+                   property.title.toLowerCase().includes('society') || 
+                   (property.community && property.community.toLowerCase().includes('coop')) ||
+                   (property.builder && property.builder.toLowerCase().includes('coop'));
+
+    let query = supabase
       .from("properties")
       .select("*")
       .neq("id", property.id)
-      .eq("entity_type", "apartment")
-      .or(`community.eq."${property.community}",type.eq."${property.type}"`)
-      .limit(4);
+      .eq("entity_type", "apartment");
+
+    if (isCoop) {
+      query = query.or('title.ilike.%coop%,title.ilike.%society%,community.ilike.%coop%,community.ilike.%society%,builder.ilike.%coop%');
+    } else {
+      if (property.builder) {
+        query = query.ilike("builder", `%${property.builder}%`);
+      }
+      if (property.price) {
+        const minPrice = property.price * 0.8;
+        const maxPrice = property.price * 1.2;
+        query = query.gte("price", minPrice).lte("price", maxPrice);
+      }
+    }
+
+    const { data, error } = await query.limit(4);
     
     if (error) return [];
-    return (data ?? []) as Property[];
+    
+    // Fallback if no exact matches
+    if (!data || data.length === 0) {
+      const fallback = await supabase
+        .from("properties")
+        .select("*")
+        .neq("id", property.id)
+        .eq("entity_type", "apartment")
+        .limit(4);
+      return (fallback.data ?? []) as Property[];
+    }
+    
+    return data as Property[];
   } catch {
     return [];
   }

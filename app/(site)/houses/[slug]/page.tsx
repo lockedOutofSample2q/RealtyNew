@@ -52,14 +52,26 @@ const getProperty = cache(async (slug: string): Promise<Property | null> => {
 const getRelatedProperties = cache(async (property: Property): Promise<Property[]> => {
   try {
     const supabase = createAdminClient();
-    const { data } = await supabase
+    let query = supabase
       .from("properties")
       .select("*")
       .neq("id", property.id)
-      .eq("entity_type", "house")
-      .limit(4);
+      .eq("entity_type", "house");
+      
+    if (property.price) {
+      const minPrice = property.price * 0.8;
+      const maxPrice = property.price * 1.2;
+      query = query.gte("price", minPrice).lte("price", maxPrice);
+    }
     
-    return (data ?? []) as Property[];
+    const { data } = await query.limit(4);
+    
+    if (!data || data.length === 0) {
+      const fallback = await supabase.from("properties").select("*").neq("id", property.id).eq("entity_type", "house").limit(4);
+      return (fallback.data ?? []) as Property[];
+    }
+    
+    return data as Property[];
   } catch {
     return [];
   }
@@ -481,6 +493,18 @@ export default async function HouseDetailPage(props: Props) {
               </div>
             </aside>
           </div>
+
+          {/* ── RELATED ────────────────────────────────────── */}
+          {related.length > 0 && (
+            <section className="mt-20 pt-20 border-t border-black/5">
+              <h2 className="text-2xl font-bold text-black mb-8 font-display">Similar Houses</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {related.map((p) => (
+                  <PropertyCard key={p.id} property={enrichProperty(p)} />
+                ))}
+              </div>
+            </section>
+          )}
         </article>
       </main>
     </>
