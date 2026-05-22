@@ -4,7 +4,7 @@ import Image from "next/image";
 import { format, parseISO } from "date-fns";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { MDXRemote } from "next-mdx-remote/rsc";
+import MdxContent from "@/components/blog/MdxContent";
 import { siteConfig } from "@/config/site";
 
 interface PostPageProps {
@@ -18,6 +18,10 @@ export async function generateMetadata({ params }: PostPageProps) {
   const post = allPosts.find((post) => post.slug === slug);
   if (!post) return {};
 
+  const imageUrl = post.coverImage
+    ? (post.coverImage.startsWith("http") ? post.coverImage : `${siteConfig.url}${post.coverImage.startsWith("/") ? post.coverImage : `/${post.coverImage}`}`)
+    : undefined;
+
   return {
     title: post.title,
     description: post.excerpt,
@@ -26,20 +30,20 @@ export async function generateMetadata({ params }: PostPageProps) {
       description: post.excerpt,
       type: "article",
       url: `${siteConfig.url}/blog/${post.slug}`,
-      images: [
+      images: imageUrl ? [
         {
-          url: post.coverImage,
+          url: imageUrl,
           width: 1200,
           height: 630,
           alt: post.title,
         },
-      ],
+      ] : [],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.excerpt,
-      images: [post.coverImage],
+      images: imageUrl ? [imageUrl] : [],
     },
   };
 }
@@ -178,7 +182,7 @@ export default async function PostPage({ params }: PostPageProps) {
           </div>
 
           <div className="prose prose-lg prose-charcoal max-w-none prose-headings:font-serif">
-            <MDXRemote source={post.body.raw} />
+            <MdxContent code={post.body.code} />
           </div>
 
           <div className="mt-16 p-8 bg-[#F8F9FA] rounded-2xl border border-black/5 text-center">
