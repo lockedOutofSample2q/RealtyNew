@@ -22,7 +22,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: "/guides/property-documents", priority: 0.7 }, // Trust & Tools
     { path: "/about", priority: 0.5 },           // Admin
     { path: "/contact", priority: 0.5 },         // Admin
-    { path: "/booking", priority: 0.5 },         // Admin
+    { path: "/appointments", priority: 0.5 },         // Admin
     { path: "/list-your-property", priority: 0.5 }, // Admin
     { path: "/tools/mortgage-calculator", priority: 0.5 }, // Admin
     { path: "/tools/loan-eligibility", priority: 0.5 },   // Admin

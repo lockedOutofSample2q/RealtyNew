@@ -13,8 +13,8 @@ export default function BookingPage() {
     "@graph": [
       {
         "@type": "ContactPage",
-        "@id": `${siteConfig.url}/booking/#webpage`,
-        "url": `${siteConfig.url}/booking`,
+        "@id": `${siteConfig.url}/appointments/#webpage`,
+        "url": `${siteConfig.url}/appointments`,
         "name": "Book a Consultation | Amritpal Singh Advisory",
         "description": "Book a free 15-minute property consultation with Amritpal Singh. A direct answer on any property decision. No sales pitch. No pressure.",
         "breadcrumb": {
@@ -32,7 +32,7 @@ export default function BookingPage() {
               "@type": "ListItem",
               "position": 2,
               "item": {
-                "@id": `${siteConfig.url}/booking`,
+                "@id": `${siteConfig.url}/appointments`,
                 "name": "Booking"
               }
             }
@@ -41,7 +41,7 @@ export default function BookingPage() {
       },
       {
         "@type": "Service",
-        "@id": `${siteConfig.url}/booking/#service`,
+        "@id": `${siteConfig.url}/appointments/#service`,
         "name": "15-Minute Property Consultation",
         "description": "Free property consultation with Amritpal Singh",
         "offers": {

@@ -97,7 +97,7 @@ export default function ContactClient() {
               title: "Virtual Meet",
               desc: "Book a 15-minute consultation",
               val: "Schedule Now",
-              href: "/booking",
+              href: "/appointments",
             },
           ].map((c) => (
             <a
