@@ -56,11 +56,11 @@ export default function BookingClient() {
       <section className="pb-24 px-6">
         <div className="container-site max-w-[1000px] mx-auto">
           <div className="bg-white border border-black/10 rounded-3xl overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.04)]">
-            <div className="min-h-[700px]">
+            <div className="min-h-[900px]">
               <InlineWidget 
                 url="https://calendly.com/realtyholdingandmanagementconsultants/10min"
                 styles={{
-                  height: '700px'
+                  height: '900px'
                 }}
                 pageSettings={{
                   hideGdprBanner: true,
