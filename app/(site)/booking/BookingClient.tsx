@@ -1,89 +1,111 @@
 "use client";
 import Script from "next/script";
-import { Calendar, Clock, MapPin, Users, ArrowRight } from "lucide-react";
+import { CheckCircle2, Clock, ShieldCheck, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function BookingClient() {
   return (
-    <div className="pt-[var(--nav-height)] min-h-screen bg-white">
+    <div className="pt-[var(--nav-height)] min-h-screen bg-[#FDFDFD]">
       <Script 
         src="https://assets.calendly.com/assets/external/widget.js" 
         strategy="lazyOnload"
       />
 
-      {/* ── Hero Section ────────────────────────────────────────── */}
-      <section className="bg-black text-white pt-20 pb-24 px-6 relative overflow-hidden">
-        <div className="container-site max-w-4xl mx-auto text-center relative z-10">
-          <div className="inline-block border border-white/20 bg-white/5 rounded-full px-4 py-1.5 mb-8">
-            <span className="font-body text-[13px] tracking-wide text-white/80">Consultation</span>
-          </div>
-          <h1 className="font-display text-4xl md:text-[56px] font-medium leading-[1.1] mb-6 tracking-tight">
-            Book a 10-Minute Talk
-          </h1>
-          <p className="font-body text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
-            In 10 minutes, you will have a direct answer on whatever property decision you are facing. Whether you are looking to buy, sell, or simply need an honest second opinion on a project or price, I will provide the clarity you need.
-          </p>
-        </div>
-        
-        {/* Subtle background element */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/[0.03] rounded-full blur-[120px] pointer-events-none" />
-      </section>
-
-      {/* ── Benefits Section ────────────────────────────────────── */}
-      <section className="-mt-12 relative z-20 px-6 mb-20">
-        <div className="container-site max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[
-            {
-              icon: <Clock size={24} className="text-black mb-4" strokeWidth={1.5} />,
-              title: "10-Minute Talk",
-              desc: "A focused, direct answer to your current property question or dilemma."
-            },
-            {
-              icon: <Users size={24} className="text-black mb-4" strokeWidth={1.5} />,
-              title: "Expert Guidance",
-              desc: "Direct access to honest advice from a local market expert."
-            },
-            {
-              icon: <Calendar size={24} className="text-black mb-4" strokeWidth={1.5} />,
-              title: "Flexible Sync",
-              desc: "Easily reschedule or cancel if your plans change."
-            }
-          ].map((item, idx) => (
-            <div key={idx} className="bg-white border border-black/[0.08] rounded-2xl p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
-              {item.icon}
-              <h3 className="font-body font-semibold text-lg text-black mb-2">{item.title}</h3>
-              <p className="font-body text-sm text-black/50 leading-relaxed">{item.desc}</p>
+      <div className="container-site max-w-7xl mx-auto px-6 py-12 md:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+          
+          {/* Left Column: Context & Copy */}
+          <div className="lg:col-span-5 flex flex-col justify-center">
+            <div className="inline-block border border-gold/20 bg-gold/5 rounded-full px-4 py-1.5 mb-6 w-fit">
+              <span className="font-body text-[11px] font-bold uppercase tracking-[0.2em] text-gold">
+                Direct Advisory
+              </span>
             </div>
-          ))}
-        </div>
-      </section>
+            
+            <h1 className="font-serif text-4xl md:text-6xl text-charcoal mb-6 leading-[1.1] tracking-tight">
+              Book a 15-Minute Call
+            </h1>
+            
+            <p className="font-body text-charcoal/70 text-lg mb-10 leading-relaxed">
+              In 15 minutes, I will tell you exactly what I would do in your position. Whether you are evaluating an investment, checking a price, or selling land. No sales pitch. No pressure. Just the answer.
+            </p>
 
-      {/* ── Calendly Widget Section ────────────────────────────── */}
-      <section className="pb-24 px-6">
-        <div className="container-site max-w-[1000px] mx-auto">
-          <div className="bg-[#FBFBFB] border border-black/[0.05] rounded-[32px] overflow-hidden shadow-2xl">
-            <div className="p-1 min-h-[700px]">
+            <div className="space-y-6 mb-12">
+              <div className="flex items-start gap-4">
+                <div className="mt-1 bg-gold/10 p-2 rounded-full text-gold">
+                  <ShieldCheck size={20} />
+                </div>
+                <div>
+                  <h3 className="font-display font-semibold text-charcoal">Fiduciary Mindset</h3>
+                  <p className="text-sm text-charcoal/60 mt-1">We tell you when the right answer is not to buy.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="mt-1 bg-gold/10 p-2 rounded-full text-gold">
+                  <Clock size={20} />
+                </div>
+                <div>
+                  <h3 className="font-display font-semibold text-charcoal">Hard Facts, Fast</h3>
+                  <p className="text-sm text-charcoal/60 mt-1">We skip the pleasantries and dig into the numbers and legal realities.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="mt-1 bg-gold/10 p-2 rounded-full text-gold">
+                  <CheckCircle2 size={20} />
+                </div>
+                <div>
+                  <h3 className="font-display font-semibold text-charcoal">Zero Commitment</h3>
+                  <p className="text-sm text-charcoal/60 mt-1">The consultation is completely free with no obligation to proceed.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-8 border-t border-black/5">
+              <div className="flex items-center gap-4">
+                <Image 
+                  src="/icon.png" 
+                  alt="Realty Holding & Management Consultants" 
+                  width={48} 
+                  height={48}
+                  className="rounded-full shadow-sm border border-black/5 object-contain"
+                />
+                <div>
+                  <p className="font-display font-semibold text-charcoal">Amritpal Singh</p>
+                  <p className="text-[10px] text-charcoal/50 uppercase tracking-widest font-bold mt-1">Principal Advisor</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Widget */}
+          <div className="lg:col-span-7">
+            <div className="bg-white border border-black/5 rounded-[2rem] shadow-[0_8px_40px_rgba(0,0,0,0.04)] p-2 md:p-4 h-full min-h-[750px]">
               <div 
-                className="calendly-inline-widget" 
-                data-url="https://calendly.com/amritrealtyholding/10min?hide_landing_page_details=1&hide_gdpr_banner=1" 
-                style={{ minWidth: '320px', height: '700px' }} 
+                className="calendly-inline-widget w-full h-full rounded-3xl overflow-hidden" 
+                data-url="https://calendly.com/amritrealtyholding/10min?hide_landing_page_details=1&hide_gdpr_banner=1&primary_color=c9a84c" 
+                style={{ minWidth: '320px', height: '100%', minHeight: '750px' }} 
               />
             </div>
           </div>
-          
-          <div className="mt-12 text-center">
-            <p className="font-body text-black/40 text-sm mb-6">
-              Prefer to call us directly? Reach out at <a href="tel:+917814613916" className="text-black font-medium underline underline-offset-4">+91 7814613916</a>
-            </p>
-            <Link 
-              href="/contact" 
-              className="inline-flex items-center gap-2 text-black font-body font-medium text-[15px] hover:gap-3 transition-all"
-            >
-              Go to Contact Page <ArrowRight size={18} />
-            </Link>
-          </div>
+
         </div>
-      </section>
+
+        {/* Footer Link */}
+        <div className="mt-24 text-center pb-12 border-t border-black/5 pt-12">
+          <p className="font-body text-charcoal/40 text-sm mb-4">
+            Need urgent assistance? Call directly at <a href="tel:+917814613916" className="text-charcoal font-semibold hover:text-gold transition-colors">+91 7814613916</a>
+          </p>
+          <Link 
+            href="/contact" 
+            className="inline-flex items-center gap-2 text-gold font-body font-semibold text-sm hover:gap-3 transition-all"
+          >
+            Visit Contact Page <ArrowRight size={16} />
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
