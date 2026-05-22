@@ -5,6 +5,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { siteConfig } from "@/config/site";
 
+declare global {
+  interface Window {
+    Calendly: any;
+  }
+}
+
 export default function BookingClient() {
   useEffect(() => {
     const script = document.createElement("script");
