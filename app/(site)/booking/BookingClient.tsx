@@ -10,6 +10,15 @@ export default function BookingClient() {
     const script = document.createElement("script");
     script.src = "https://assets.calendly.com/assets/external/widget.js";
     script.async = true;
+    
+    // Once the script loads, we need to manually initialize the widget
+    // because React renders the div dynamically and Calendly's auto-init might miss it
+    script.onload = () => {
+      if (window.Calendly) {
+        window.Calendly.initBadges();
+      }
+    };
+    
     document.body.appendChild(script);
 
     return () => {
