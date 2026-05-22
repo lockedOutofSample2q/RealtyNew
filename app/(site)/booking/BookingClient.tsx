@@ -1,17 +1,25 @@
 "use client";
-import Script from "next/script";
+import { useEffect } from "react";
 import { CheckCircle2, Clock, ShieldCheck, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function BookingClient() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
   return (
     <div className="pt-[var(--nav-height)] min-h-screen bg-[#FDFDFD]">
-      <Script 
-        src="https://assets.calendly.com/assets/external/widget.js" 
-        strategy="lazyOnload"
-      />
-
       <div className="container-site max-w-7xl mx-auto px-6 py-12 md:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
           
@@ -83,11 +91,13 @@ export default function BookingClient() {
           {/* Right Column: Widget */}
           <div className="lg:col-span-7">
             <div className="bg-white border border-black/5 rounded-[2rem] shadow-[0_8px_40px_rgba(0,0,0,0.04)] p-2 md:p-4 h-full min-h-[750px]">
+              {/* Calendly inline widget begin */}
               <div 
                 className="calendly-inline-widget w-full h-full rounded-3xl overflow-hidden" 
-                data-url="https://calendly.com/amritrealtyholding/10min?hide_landing_page_details=1&hide_gdpr_banner=1&primary_color=c9a84c" 
+                data-url="https://calendly.com/amritrealtyholding/10min?hide_gdpr_banner=1" 
                 style={{ minWidth: '320px', height: '100%', minHeight: '750px' }} 
               />
+              {/* Calendly inline widget end */}
             </div>
           </div>
 
