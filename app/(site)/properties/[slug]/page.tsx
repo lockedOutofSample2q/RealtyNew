@@ -523,6 +523,33 @@ export default async function PropertyDetailPage(props: Props) {
               </section>
             )}
 
+            {/* Forensic Analysis */}
+            {(property.transfer_trap_analysis || property.lifestyle_tax_analysis) && (
+              <section className="mb-14">
+                <h2 className="text-[18px] font-bold text-black mb-6">Structural Audit & Forensics</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  {property.transfer_trap_analysis && (
+                    <div className="bg-orange-50/30 border border-orange-100 rounded-[24px] p-8">
+                      <h3 className="text-[11px] font-black text-orange-700 uppercase tracking-[0.2em] mb-4">The Transfer Trap</h3>
+                      <p className="text-[15px] text-orange-900/80 leading-relaxed font-medium">{property.transfer_trap_analysis}</p>
+                    </div>
+                  )}
+                  {property.lifestyle_tax_analysis && (
+                    <div className="bg-blue-50/30 border border-blue-100 rounded-[24px] p-8">
+                      <h3 className="text-[11px] font-black text-blue-700 uppercase tracking-[0.2em] mb-4">The Lifestyle Tax</h3>
+                      <p className="text-[15px] text-blue-900/80 leading-relaxed font-medium">{property.lifestyle_tax_analysis}</p>
+                      {property.maintenance_fee_psft && (
+                        <div className="mt-6 pt-6 border-t border-blue-100 flex items-center justify-between">
+                          <span className="text-[11px] font-bold text-blue-700 uppercase tracking-widest">Est. Maintenance</span>
+                          <span className="text-[18px] font-bold text-blue-900">₹{property.maintenance_fee_psft} / sq. ft.</span>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              </section>
+            )}
+
             {/* ── TECHNICAL OVERVIEW ───────────────────────────── */}
             {(property.payment_plan || property.unit_types_image || (property.documents?.length ?? 0) > 0 || (property.unit_types?.length ?? 0) > 0) && (
               <section className="mb-14">
