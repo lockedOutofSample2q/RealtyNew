@@ -83,11 +83,11 @@ export default function BookingClient() {
           <div className="mt-16 text-center">
             <div className="flex items-center justify-center gap-4 mb-8">
               <Image 
-                src="/icon.png" 
+                src="/assets/images/leadership/amritpal.jpg" 
                 alt="Realty Holding & Management Consultants" 
                 width={48} 
                 height={48}
-                className="rounded-full shadow-sm border border-black/5 object-contain"
+                className="rounded-full shadow-sm border border-black/5 object-cover"
               />
               <div className="text-left">
                 <p className="font-display font-semibold text-black">Amritpal Singh</p>
