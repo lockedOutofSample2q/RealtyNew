@@ -86,6 +86,10 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const titleStr = p.og_title || cleanTitle;
   const descStr = p.og_description || p.meta_description || p.description?.slice(0, 160);
 
+  const imageUrl = p.images?.[0]
+    ? (p.images[0].startsWith("http") ? p.images[0] : `${siteConfig.url}${p.images[0].startsWith("/") ? p.images[0] : `/${p.images[0]}`}`)
+    : undefined;
+
   return {
     title: { absolute: titleStr },
     description: descStr,
@@ -95,9 +99,15 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       url: `${siteConfig.url}/properties/${p.slug}`,
       siteName: "Realty Holding & Management Consultants",
       type: "website",
-      images: p.images?.[0] ? [{ url: p.images[0] }] : undefined,
+      images: imageUrl ? [{ url: imageUrl }] : undefined,
     },
-    other: { thumbnail: p.images?.[0] || '/favicon.ico' },
+    twitter: {
+      card: "summary_large_image",
+      title: titleStr,
+      description: descStr,
+      images: imageUrl ? [imageUrl] : undefined,
+    },
+    other: { thumbnail: imageUrl || '/favicon.ico' },
     alternates: {
       canonical: `${siteConfig.url}/properties/${p.slug}`,
     }

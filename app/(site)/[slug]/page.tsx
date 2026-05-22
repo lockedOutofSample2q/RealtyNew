@@ -54,10 +54,21 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;
   const p = await getProperty(params.slug);
   if (!p) return {};
+  const imageUrl = p.images?.[0]
+    ? (p.images[0].startsWith("http") ? p.images[0] : `${siteConfig.url}${p.images[0].startsWith("/") ? p.images[0] : `/${p.images[0]}`}`)
+    : undefined;
   return {
     title: p.title,
     description: p.description?.slice(0, 160),
-    openGraph: { images: p.images?.[0] ? [{ url: p.images[0] }] : [] },
+    openGraph: { 
+      images: imageUrl ? [{ url: imageUrl }] : [] 
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: p.title,
+      description: p.description?.slice(0, 160),
+      images: imageUrl ? [imageUrl] : [],
+    },
     alternates: {
       canonical: `${siteConfig.url}/properties/${p.slug}`,
     },
