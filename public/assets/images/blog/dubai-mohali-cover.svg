@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#F4F4F0"/>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#EAEAE5" stroke-width="1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  
+  <g transform="translate(100, 0)">
+      <rect x="200" y="150" width="120" height="480" fill="#1A1A1A"/>
+      <rect x="240" y="100" width="40" height="530" fill="#8A9A86"/>
+      <rect x="320" y="250" width="40" height="380" fill="#D94F33"/>
+      
+      <rect x="550" y="350" width="300" height="280" fill="#1A1A1A"/>
+      <rect x="500" y="450" width="400" height="180" fill="#8A9A86"/>
+      <rect x="750" y="300" width="150" height="330" fill="#D94F33"/>
+  </g>
+  
+  <text x="60" y="100" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="52" font-weight="bold" fill="#1A1A1A" letter-spacing="-1">DUBAI VS MOHALI</text>
+  <text x="62" y="140" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" font-weight="normal" fill="#1A1A1A" letter-spacing="4">A MARKET ASSESSMENT / 2026</text>
+</svg>
