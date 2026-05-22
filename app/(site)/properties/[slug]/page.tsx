@@ -19,6 +19,7 @@ import PriceDisplay from "./PriceDisplay";
 import PropertyPriceInline from "./PropertyPriceInline";
 import PropertyDetailMapClient from "./PropertyDetailMapClient";
 import { siteConfig } from "@/config/site";
+import RelatedProperties from "@/components/properties/RelatedProperties";
 
 import { Suspense, cache } from "react";
 
@@ -855,6 +856,10 @@ export default async function PropertyDetailPage(props: Props) {
           </aside>
 
         </div>
+
+        {/* ── RELATED PROPERTIES ────────────────────────────── */}
+        <RelatedProperties entityType={property.entity_type} currentSlug={property.slug} />
+
       </div>
     </div>
   );

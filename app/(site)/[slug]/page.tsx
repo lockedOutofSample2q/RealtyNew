@@ -17,6 +17,7 @@ import InquiryForm, { PropertyGallery } from "../properties/[slug]/InquiryForm";
 import PriceDisplay from "../properties/[slug]/PriceDisplay";
 import PropertyPriceInline from "../properties/[slug]/PropertyPriceInline";
 import PropertyDetailMapClient from "../properties/[slug]/PropertyDetailMapClient";
+import RelatedProperties from "@/components/properties/RelatedProperties";
 
 const isValidUrl = (s: any) => typeof s === 'string' && s.trim() !== "" && (s.startsWith('/') || s.startsWith('http'));
 
@@ -702,6 +703,10 @@ export default async function PropertyCatchAllPage(props: Props) {
           </aside>
 
         </div>
+
+        {/* ── RELATED PROPERTIES ────────────────────────────── */}
+        <RelatedProperties entityType={property.entity_type} currentSlug={property.slug} />
+
       </div>
     </div>
   );
