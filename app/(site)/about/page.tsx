@@ -54,8 +54,8 @@ export default function AboutPage() {
         },
         geo: {
           "@type": "GeoCoordinates",
-          latitude: 30.697434269865948,
-          longitude: 76.69049875106788
+          latitude: 30.697381977888533,
+          longitude: 76.69025000982366
         },
         sameAs: Object.values(siteConfig.social)
       },
