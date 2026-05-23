@@ -25,7 +25,7 @@ export const siteConfig: SiteConfig = {
     whatsapp: "+917814613916",
     email: "hello@realtyconsultants.in",
     address: "Phase 8A, E328, Industrial Area, Sector 75, Sahibzada Ajit Singh Nagar, Punjab 160055",
-    mapUrl: "https://maps.app.goo.gl/NcwYMo1wUp7YqLsQ9",
+    mapUrl: "https://maps.app.goo.gl/3xNnTgRUkC5eKcRG6",
   },
 
   social: {

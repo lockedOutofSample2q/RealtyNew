@@ -99,7 +99,7 @@ export default function RootLayout({
                     "https://www.youtube.com/@AmritRealty",
                     "https://www.facebook.com/people/AmritRealty/61587441234909/",
                     "https://www.linkedin.com/company/reality-holding-and-management-consultants",
-                    "https://maps.app.goo.gl/NcwYMo1wUp7YqLsQ9",
+                    "https://maps.app.goo.gl/3xNnTgRUkC5eKcRG6",
                     "https://wa.me/917814613916"
                   ],
                   "member": {
