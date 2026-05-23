@@ -45,8 +45,8 @@ export default function ContactPage() {
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": "30.6975981",
-          "longitude": "76.6903303"
+          "latitude": "30.697434269865948",
+          "longitude": "76.69049875106788"
         },
         "contactPoint": {
           "@type": "ContactPoint",

@@ -89,8 +89,8 @@ export default function RootLayout({
                   },
                   "geo": {
                     "@type": "GeoCoordinates",
-                    "latitude": "30.7028", 
-                    "longitude": "76.7111"
+                    "latitude": "30.697434269865948", 
+                    "longitude": "76.69049875106788"
                   },
                   "areaServed": [
                     "Mohali", "Banur", "Tepla Road", "Aerocity", "Aerotropolis", "New Chandigarh", "IT City"
@@ -99,7 +99,7 @@ export default function RootLayout({
                     "https://www.youtube.com/@AmritRealty",
                     "https://www.facebook.com/people/AmritRealty/61587441234909/",
                     "https://www.linkedin.com/company/reality-holding-and-management-consultants",
-                    "https://maps.app.goo.gl/H3Bxgv5v6fx3k3mEA",
+                    "https://maps.app.goo.gl/NcwYMo1wUp7YqLsQ9",
                     "https://wa.me/917814613916"
                   ],
                   "member": {
