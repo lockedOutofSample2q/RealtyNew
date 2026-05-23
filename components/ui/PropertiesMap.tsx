@@ -168,12 +168,18 @@ export default function PropertiesMap({
                           Enquire
                         </button>
                       ) : (
-                        <Link
-                          href={`/properties/${p.slug}`}
-                          className="text-[10px] font-bold text-blue-600 hover:underline uppercase tracking-wider"
-                        >
-                          Details
-                        </Link>
+                        (() => {
+                          const segment = (p.entity_type === "house") ? "houses" : "flats";
+                          const linkHref = (p.entity_type === "land" || p.listing_type === "lands") ? "/properties/lands" : `/properties/${segment}/${p.slug}`;
+                          return (
+                            <Link
+                              href={linkHref}
+                              className="text-[10px] font-bold text-blue-600 hover:underline uppercase tracking-wider"
+                            >
+                              Details
+                            </Link>
+                          );
+                        })()
                       )}
                     </div>
                     <a 

@@ -182,7 +182,7 @@ export default async function PostPage({ params }: PostPageProps) {
           </div>
 
           <div className="prose prose-lg prose-charcoal max-w-none prose-headings:font-serif">
-            <MdxContent code={post.body.code} />
+            <MdxContent source={post.body.raw} />
           </div>
 
           <div className="mt-16 p-8 bg-[#F8F9FA] rounded-2xl border border-black/5 text-center">

@@ -4,7 +4,7 @@ import { BookOpen, FileText, ShieldCheck, Map } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Real Estate Guides Mohali | Realty Holding & Management Consultants",
+  title: "Real Estate Guides Mohali",
   description: "Comprehensive guides for real estate investment in Mohali. Learn about property documents, market cycles, and RERA compliance.",
 };
 

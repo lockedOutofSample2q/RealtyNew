@@ -9,6 +9,12 @@ export const revalidate = 3600;
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://www.realtyconsultants.in";
 
+  const BLACKLISTED_SLUGS = [
+    "gurditpura", "kurali", "gandiya", "mindha-majra", "manakpur", "fauji-colony",
+    "gobindpura", "pilkhani", "ucha-khehra", "saneta", "zirakpur", "khaspur",
+    "raipur-kalan", "govindgarh"
+  ];
+
   // 1. Static Pages with Strategic Priorities
   const routes = [
     { path: "", priority: 1.0 },                 // Home Base
@@ -54,14 +60,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error("Sitemap: Failed to fetch properties from Supabase.", error);
   }
 
-  const propertyRoutes = properties.map((property) => {
-    return {
-      url: `${baseUrl}/properties/${property.slug}`,
-      lastModified: new Date(property.updated_at || new Date()),
-      changeFrequency: "weekly" as const,
-      priority: 0.8,
-    };
-  });
+  const propertyRoutes = properties
+    .filter((property) => property.entity_type !== "land" && !BLACKLISTED_SLUGS.includes(property.slug || ""))
+    .map((property) => {
+      const segment = property.entity_type === "house" ? "houses" : "flats";
+      return {
+        url: `${baseUrl}/properties/${segment}/${property.slug}`,
+        lastModified: new Date(property.updated_at || new Date()),
+        changeFrequency: "weekly" as const,
+        priority: 0.8,
+      };
+    });
 
   // 3. Blog Posts from Contentlayer (Priority 0.7: Dwell Time)
   const blogRoutes = allPosts.map((post) => ({
@@ -95,12 +104,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   } catch (error) {
     console.error("Sitemap: Failed to fetch sector SEO pages.", error);
   }
-  const sectorRoutes = sectorPages.map((item: { sector_slug: string; updated_at?: string }) => ({
-    url: `${baseUrl}/properties/flats/${item.sector_slug}`,
-    lastModified: new Date(item.updated_at || new Date()),
-    changeFrequency: "weekly" as const,
-    priority: 0.8,
-  }));
+  const sectorRoutes = sectorPages
+    .filter((item) => !BLACKLISTED_SLUGS.includes(item.sector_slug || ""))
+    .map((item: { sector_slug: string; updated_at?: string }) => ({
+      url: `${baseUrl}/properties/flats/${item.sector_slug}`,
+      lastModified: new Date(item.updated_at || new Date()),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    }));
 
   // Return combined array
   return [...staticRoutes, ...propertyRoutes, ...blogRoutes, ...sectorRoutes];

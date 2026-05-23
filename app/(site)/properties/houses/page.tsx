@@ -7,7 +7,7 @@ import { Suspense } from "react";
 import { enrichProperty } from "@/lib/property-utils";
 
 export const metadata: Metadata = {
-  title: "Buy House in Mohali | Realty Holding and Management Consultants",
+  title: "Villas & Independent Houses in Mohali",
   description: "Looking to buy a house or independent villa in Mohali? Explore premium properties in luxury sectors. Verified listings.",
   alternates: {
     canonical: `${siteConfig.url}/properties/houses`,
@@ -51,7 +51,7 @@ export default async function HousesCategoryPage() {
           "itemListElement": properties.map((p, i) => ({
             "@type": "ListItem",
             "position": i + 1,
-            "url": `${siteConfig.url}/properties/${p.slug}`
+            "url": `${siteConfig.url}/properties/houses/${p.slug}`
           }))
         }
       }

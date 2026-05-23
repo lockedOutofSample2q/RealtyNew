@@ -7,7 +7,7 @@ import { Suspense } from "react";
 import { enrichProperty } from "@/lib/property-utils";
 
 export const metadata: Metadata = {
-  title: "Buy Flat in Mohali | Realty Holding and Management Consultants",
+  title: "Buy Flats & Apartments in Mohali",
   description: "Looking to buy flat in Mohali? Browse verified listings — pre-launch, resale & ready possession. RERA compliant. Trusted consultants in Tricity. Call now.",
   alternates: {
     canonical: `${siteConfig.url}/properties/flats`,

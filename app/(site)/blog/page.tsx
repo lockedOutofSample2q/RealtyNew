@@ -6,7 +6,7 @@ import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Blog | Market Insights | Realty Holding & Management Consultants",
+  title: "Real Estate Blog & Market Insights",
   description: "The go-to blog for everything related to real estate in Mohali, strategic property guides, and off-market trends by Realty Holding & Management Consultants.",
 };
 

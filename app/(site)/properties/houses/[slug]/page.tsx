@@ -1,5 +1,5 @@
 /**
- * Property Detail Page - Houses
+ * Property Detail Page - Houses (Standardized Routing)
  */
 import { siteConfig } from "@/config/site";
 import { createAdminClient } from "@/lib/supabase";
@@ -14,9 +14,9 @@ import type { Property, NearbyLandmark } from "@/types";
 import { AmenityIcon } from "@/components/ui/AmenityIcons";
 import { enrichProperty } from "@/lib/property-utils";
 import { cn } from "@/lib/utils";
-import InquiryForm, { PropertyGallery } from "../../properties/[slug]/InquiryForm";
-import PriceDisplay from "../../properties/[slug]/PriceDisplay";
-import PropertyDetailMapClient from "../../properties/[slug]/PropertyDetailMapClient";
+import InquiryForm, { PropertyGallery } from "../../[slug]/InquiryForm";
+import PriceDisplay from "../../[slug]/PriceDisplay";
+import PropertyDetailMapClient from "../../[slug]/PropertyDetailMapClient";
 import PropertyCard from "@/components/ui/PropertyCard";
 
 import { cache } from "react";
@@ -84,7 +84,8 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   
   const cleanTitle = p.title.replace(/\s*\|\s*Monte Real Estate/gi, '').replace(/\s*\|\s*Realty Holding and Management Consultants/gi, '');
   const titleStr = p.og_title || cleanTitle;
-  const descStr = p.og_description || p.meta_description || p.description?.slice(0, 160);
+  // Optimize: Slice meta description to max 155 characters
+  const descStr = p.og_description || p.meta_description || p.description?.slice(0, 155);
 
   const imageUrl = p.images?.[0]
     ? (p.images[0].startsWith("http") ? p.images[0] : `${siteConfig.url}${p.images[0].startsWith("/") ? p.images[0] : `/${p.images[0]}`}`)
@@ -96,7 +97,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     openGraph: {
       title: titleStr,
       description: descStr,
-      url: `${siteConfig.url}/properties/${p.slug}`,
+      url: `${siteConfig.url}/properties/houses/${p.slug}`,
       siteName: "Realty Holding & Management Consultants",
       type: "website",
       images: imageUrl ? [{ url: imageUrl }] : undefined,
@@ -109,12 +110,12 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     },
     other: { thumbnail: imageUrl || '/favicon.ico' },
     alternates: {
-      canonical: `${siteConfig.url}/properties/${p.slug}`,
+      canonical: `${siteConfig.url}/properties/houses/${p.slug}`,
     }
   };
 }
 
-export const revalidate = 3600; // 1 week
+export const revalidate = 3600;
 
 export default async function HouseDetailPage(props: Props) {
   const params = await props.params;
@@ -124,7 +125,7 @@ export default async function HouseDetailPage(props: Props) {
   const property = enrichProperty(rawProperty);
   const related = await getRelatedProperties(property);
 
-  const backHref = "/houses";
+  const backHref = "/properties/houses";
   const backLabel = "Houses";
   const listingLabel = "House For Sale";
 
@@ -133,14 +134,19 @@ export default async function HouseDetailPage(props: Props) {
       ? `${property.bedrooms}-${property.bedrooms_max}`
       : property.bedrooms === 0 ? "Studio" : String(property.bedrooms ?? "—");
 
+  const getAbsoluteUrl = (url?: string) => {
+    if (!url) return "";
+    return url.startsWith('http') ? url : `${siteConfig.url}${url}`;
+  };
+
   // Generate Schema.org markup
   const propertySchema = {
     "@context": "https://schema.org",
     "@type": ["RealEstateListing", "SingleFamilyResidence"],
     "name": property.title,
     "description": property.meta_description || property.description,
-    "url": `${siteConfig.url}/houses/${property.slug}`,
-    "image": (property.images || []).map(img => img.startsWith('http') ? img : `${siteConfig.url}${img}`),
+    "url": `${siteConfig.url}/properties/houses/${property.slug}`,
+    "image": (property.images || []).map(img => getAbsoluteUrl(img)),
     "address": {
       "@type": "PostalAddress",
       "streetAddress": property.address,
@@ -160,13 +166,13 @@ export default async function HouseDetailPage(props: Props) {
       "priceCurrency": property.price_currency || "INR",
       "availability": property.status === "available" ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
       "offerCount": 1,
-      "url": `https://www.realtyconsultants.in/houses/${property.slug}`
+      "url": `${siteConfig.url}/properties/houses/${property.slug}`
     } : {
       "@type": "Offer",
       "price": property.price,
       "priceCurrency": property.price_currency || "INR",
       "availability": property.status === "available" ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
-      "url": `https://www.realtyconsultants.in/houses/${property.slug}`
+      "url": `${siteConfig.url}/properties/houses/${property.slug}`
     },
     "amenityFeature": [
       ...(property.nearby_landmarks || []).map(lm => ({
@@ -192,7 +198,7 @@ export default async function HouseDetailPage(props: Props) {
       {
         "@type": "FloorPlan",
         "name": `${property.title} - Floor Plan`,
-        "layoutImage": property.unit_types_image || property.images?.[0],
+        "layoutImage": getAbsoluteUrl(property.unit_types_image || property.images?.[0]),
         "numberOfRooms": property.bedrooms,
         "floorSize": {
           "@type": "QuantitativeValue",
@@ -205,14 +211,14 @@ export default async function HouseDetailPage(props: Props) {
         .map(doc => ({
           "@type": "DigitalDocument",
           "name": doc.name,
-          "url": `https://www.realtyconsultants.in${doc.url}`,
+          "url": getAbsoluteUrl(doc.url),
           "fileFormat": "application/pdf"
         })),
       ...(property.videos || []).map(videoUrl => ({
         "@type": "VideoObject",
         "name": `${property.title} - Property Video`,
         "description": `Video tour of ${property.title}`,
-        "thumbnailUrl": property.images?.[0],
+        "thumbnailUrl": getAbsoluteUrl(property.images?.[0]),
         "contentUrl": videoUrl,
         "uploadDate": property.created_at || new Date().toISOString()
       }))
@@ -229,7 +235,7 @@ export default async function HouseDetailPage(props: Props) {
       "worksFor": {
         "@type": "RealEstateAgent",
         "name": "Realty Holding and Management Consultants",
-        "url": "https://www.realtyconsultants.in"
+        "url": siteConfig.url
       }
     },
     "numberOfBedrooms": property.bedrooms,
@@ -268,13 +274,13 @@ export default async function HouseDetailPage(props: Props) {
         "@type": "ListItem",
         "position": 2,
         "name": "Houses",
-        "item": `${siteConfig.url}/houses`
+        "item": `${siteConfig.url}/properties/houses`
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": property.title,
-        "item": `${siteConfig.url}/houses/${property.slug}`
+        "item": `${siteConfig.url}/properties/houses/${property.slug}`
       }
     ]
   };
@@ -341,7 +347,7 @@ export default async function HouseDetailPage(props: Props) {
                 {listingLabel}
               </span>
 
-              {/* Description (Multi-paragraph support) */}
+              {/* Description */}
               <div className="space-y-4 mb-8">
                 {property.description?.split('\n').map((para, i) => (
                   para.trim() && (
@@ -382,7 +388,7 @@ export default async function HouseDetailPage(props: Props) {
                 )}
               </div>
 
-              {/* Analysis */}
+              {/* Forensics */}
               {(property.transfer_trap_analysis || property.lifestyle_tax_analysis) && (
                 <section className="mb-16">
                   <h2 className="text-[22px] font-bold text-black mb-8 font-display">Structural Audit & Forensics</h2>
@@ -403,7 +409,7 @@ export default async function HouseDetailPage(props: Props) {
                 </section>
               )}
 
-              {/* Highlights */}
+              {/* Key Highlights */}
               {(property.highlights?.length ?? 0) > 0 && (
                 <section className="mb-16">
                   <h2 className="text-[22px] font-bold text-black mb-8 font-display">Key Highlights</h2>
@@ -450,7 +456,7 @@ export default async function HouseDetailPage(props: Props) {
                 </section>
               )}
 
-              {/* Project Assets & Documents */}
+              {/* Project Assets */}
               {(property.documents?.length ?? 0) > 0 && (
                 <section className="mt-14 pt-14 border-t border-black/5">
                   <h2 className="text-[22px] font-bold text-black mb-8 font-display">Project Assets & Documents</h2>
@@ -504,7 +510,7 @@ export default async function HouseDetailPage(props: Props) {
             </aside>
           </div>
 
-          {/* ── RELATED ────────────────────────────────────── */}
+          {/* Related */}
           {related.length > 0 && (
             <section className="mt-20 pt-20 border-t border-black/5">
               <h2 className="text-2xl font-bold text-black mb-8 font-display">Similar Houses</h2>

@@ -29,7 +29,11 @@ export default function PropertyCard({
   const isLands = property.listing_type === "lands" || property.entity_type === "land";
   
   // Determine link path
-  const detailHref = customHref ?? `/properties/${property.slug}`;
+  let detailHref = customHref;
+  if (!detailHref) {
+    const segment = (property.entity_type === "house") ? "houses" : "flats";
+    detailHref = `/properties/${segment}/${property.slug}`;
+  }
 
   const CardWrapper = "div";
   const wrapperProps = {};
@@ -112,7 +116,7 @@ export default function PropertyCard({
             )}
           </div>
         </div>
-        <Link href={isLands ? "/properties?tab=lands" : detailHref} className="absolute inset-0 z-10">
+        <Link href={isLands ? "/properties/lands" : detailHref} className="absolute inset-0 z-10">
           <span className="sr-only">View Details for {property.title}</span>
         </Link>
       </CardWrapper>
@@ -212,7 +216,7 @@ export default function PropertyCard({
           )}
         </div>
       </div>
-      <Link href={isLands ? "/properties?tab=lands" : detailHref} className="absolute inset-0 z-10">
+      <Link href={isLands ? "/properties/lands" : detailHref} className="absolute inset-0 z-10">
         <span className="sr-only">View Details for {property.title}</span>
       </Link>
     </CardWrapper>

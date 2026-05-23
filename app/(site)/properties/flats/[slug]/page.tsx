@@ -127,6 +127,13 @@ const getAllFlats = cache(async (): Promise<Property[]> => {
   }
 });
 
+// Blacklisted land/plot sector slugs to exclude permanently
+const BLACKLISTED_SLUGS = [
+  "gurditpura", "kurali", "gandiya", "mindha-majra", "manakpur",
+  "fauji-colony", "gobindpura", "pilkhani", "ucha-khehra",
+  "saneta", "zirakpur", "khaspur", "raipur-kalan", "govindgarh"
+];
+
 // Helper to decode sector slug for labels
 function decodeSectorSlug(slug: string) {
   return slug
@@ -145,10 +152,16 @@ export async function generateStaticParams() {
     
     const params = [];
     if (sectorsRes.data) {
-      params.push(...sectorsRes.data.map((item: any) => ({ slug: item.sector_slug })));
+      const filteredSectors = sectorsRes.data
+        .map((item: any) => item.sector_slug)
+        .filter((slug: string) => !BLACKLISTED_SLUGS.includes(slug));
+      params.push(...filteredSectors.map((slug: string) => ({ slug })));
     }
     if (apartmentsRes.data) {
-      params.push(...apartmentsRes.data.map((item: any) => ({ slug: item.slug })));
+      const filteredApartments = apartmentsRes.data
+        .map((item: any) => item.slug)
+        .filter((slug: string) => !BLACKLISTED_SLUGS.includes(slug));
+      params.push(...filteredApartments.map((slug: string) => ({ slug })));
     }
     return params;
   } catch {
@@ -159,6 +172,10 @@ export async function generateStaticParams() {
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;
   const slug = params.slug;
+
+  if (BLACKLISTED_SLUGS.includes(slug)) {
+    return {};
+  }
 
   // 1. Check if it is a Sector SEO page
   const seoData = await getSectorSeo(slug);
@@ -178,7 +195,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   if (p) {
     const cleanTitle = p.title.replace(/\s*\|\s*Monte Real Estate/gi, '').replace(/\s*\|\s*Realty Holding and Management Consultants/gi, '');
     const titleStr = p.og_title || cleanTitle;
-    const descStr = p.og_description || p.meta_description || p.description?.slice(0, 160);
+    const descStr = p.og_description || p.meta_description || p.description?.slice(0, 155);
 
     const imageUrl = p.images?.[0]
       ? (p.images[0].startsWith("http") ? p.images[0] : `${siteConfig.url}${p.images[0].startsWith("/") ? p.images[0] : `/${p.images[0]}`}`)
@@ -190,7 +207,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       openGraph: {
         title: titleStr,
         description: descStr,
-        url: `${siteConfig.url}/properties/${p.slug}`,
+        url: `${siteConfig.url}/properties/flats/${p.slug}`,
         siteName: "Realty Holding & Management Consultants",
         type: "website",
         images: imageUrl ? [{ url: imageUrl }] : undefined,
@@ -205,7 +222,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
         thumbnail: imageUrl || '/favicon.ico'
       },
       alternates: {
-        canonical: `${siteConfig.url}/properties/${p.slug}`,
+        canonical: `${siteConfig.url}/properties/flats/${p.slug}`,
       }
     };
   }
@@ -219,6 +236,11 @@ export const revalidate = 3600;
 export default async function ApartmentOrSectorDetailPage(props: Props) {
   const params = await props.params;
   const slug = params.slug;
+
+  if (BLACKLISTED_SLUGS.includes(slug)) {
+    notFound();
+  }
+
 
   // ── BRANCH A: Render Sector SEO page ────────────────────────
   const seoData = await getSectorSeo(slug);
@@ -253,7 +275,7 @@ export default async function ApartmentOrSectorDetailPage(props: Props) {
           itemListElement: sectorProperties.map((prop, index) => ({
             "@type": "ListItem",
             position: index + 1,
-            url: `${siteConfig.url}/properties/${prop.slug}`,
+            url: `${siteConfig.url}/properties/flats/${prop.slug}`,
           })),
         },
         {

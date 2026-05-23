@@ -7,7 +7,7 @@ import { Suspense } from "react";
 import { enrichProperty } from "@/lib/property-utils";
 
 export const metadata: Metadata = {
-  title: "Buy Land in Mohali | Realty Holding and Management Consultants",
+  title: "Plots & Lands for Sale in Mohali",
   description: "Invest in GMADA plots and agricultural land in Mohali. High-growth investment opportunities. Expert advisory.",
   alternates: {
     canonical: `${siteConfig.url}/properties/lands`,
@@ -51,7 +51,7 @@ export default async function LandsCategoryPage() {
           "itemListElement": properties.map((p, i) => ({
             "@type": "ListItem",
             "position": i + 1,
-            "url": `${siteConfig.url}/properties/${p.slug}`
+            "url": `${siteConfig.url}/properties/lands`
           }))
         }
       }
