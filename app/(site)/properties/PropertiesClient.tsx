@@ -75,7 +75,7 @@ export default function PropertiesClient({ properties, initialTab, initialFilter
       "@type": "ListItem",
       "position": index + 1,
       "name": `${p.title} — ${p.bedrooms ? `${p.bedrooms_max && p.bedrooms_max !== p.bedrooms ? `${p.bedrooms}-${p.bedrooms_max}` : p.bedrooms} BHK ` : ''}Flat for Sale, ${p.location || 'Mohali'}`,
-      "url": `https://www.realtyconsultants.in/properties/${p.slug}`
+      "url": `https://www.realtyconsultants.in/properties/${p.entity_type === "house" ? "houses" : "flats"}/${p.slug}`
     }))
   };
 

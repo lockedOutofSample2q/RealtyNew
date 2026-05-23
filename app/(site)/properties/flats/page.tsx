@@ -51,7 +51,7 @@ export default async function FlatsCategoryPage() {
           "itemListElement": properties.map((p, i) => ({
             "@type": "ListItem",
             "position": i + 1,
-            "url": `${siteConfig.url}/properties/${p.slug}`
+            "url": `${siteConfig.url}/properties/flats/${p.slug}`
           }))
         }
       }

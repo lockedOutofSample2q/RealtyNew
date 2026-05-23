@@ -139,26 +139,15 @@ export default async function HouseDetailPage(props: Props) {
     return url.startsWith('http') ? url : `${siteConfig.url}${url}`;
   };
 
-  // Generate Schema.org markup
+  // Generate Schema.org markup — RealEstateListing wraps SingleFamilyResidence via mainEntity
+  // to avoid dual-root @type validation errors in Google Rich Results
   const propertySchema = {
     "@context": "https://schema.org",
-    "@type": ["RealEstateListing", "SingleFamilyResidence"],
+    "@type": "RealEstateListing",
     "name": property.title,
     "description": property.meta_description || property.description,
     "url": `${siteConfig.url}/properties/houses/${property.slug}`,
     "image": (property.images || []).map(img => getAbsoluteUrl(img)),
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": property.address,
-      "addressLocality": "Mohali",
-      "addressRegion": "Punjab",
-      "addressCountry": "IN"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": property.latitude,
-      "longitude": property.longitude
-    },
     "offers": property.price_max ? {
       "@type": "AggregateOffer",
       "lowPrice": property.price,
@@ -174,60 +163,6 @@ export default async function HouseDetailPage(props: Props) {
       "availability": property.status === "available" ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
       "url": `${siteConfig.url}/properties/houses/${property.slug}`
     },
-    "amenityFeature": [
-      ...(property.nearby_landmarks || []).map(lm => ({
-        "@type": "LocationFeatureSpecification",
-        "name": lm.name,
-        "value": `${lm.time} min by ${lm.transport}`,
-        "hoursAvailable": null
-      })),
-      ...(property.upcoming_infrastructure || []).map(item => ({
-        "@type": "LocationFeatureSpecification",
-        "name": `Upcoming: ${item}`,
-        "value": "Future Development",
-        "hoursAvailable": null
-      })),
-      ...(property.amenities || []).map(amenity => ({
-        "@type": "LocationFeatureSpecification",
-        "name": amenity,
-        "value": true,
-        "hoursAvailable": null
-      }))
-    ],
-    "subjectOf": [
-      {
-        "@type": "FloorPlan",
-        "name": `${property.title} - Floor Plan`,
-        "layoutImage": getAbsoluteUrl(property.unit_types_image || property.images?.[0]),
-        "numberOfRooms": property.bedrooms,
-        "floorSize": {
-          "@type": "QuantitativeValue",
-          "value": property.area_sqft,
-          "unitText": "sq.ft"
-        }
-      },
-      ...(property.documents || [])
-        .filter(doc => doc.name.toLowerCase().includes("floor plan") || doc.name.toLowerCase().includes("site plan"))
-        .map(doc => ({
-          "@type": "DigitalDocument",
-          "name": doc.name,
-          "url": getAbsoluteUrl(doc.url),
-          "fileFormat": "application/pdf"
-        })),
-      ...(property.videos || []).map(videoUrl => ({
-        "@type": "VideoObject",
-        "name": `${property.title} - Property Video`,
-        "description": `Video tour of ${property.title}`,
-        "thumbnailUrl": getAbsoluteUrl(property.images?.[0]),
-        "contentUrl": videoUrl,
-        "uploadDate": property.created_at || new Date().toISOString()
-      }))
-    ],
-    "brand": property.developer ? {
-      "@type": "Organization",
-      "name": property.developer,
-      "url": property.developer_website
-    } : null,
     "broker": {
       "@type": "Person",
       "name": "Amritpal Singh",
@@ -238,12 +173,85 @@ export default async function HouseDetailPage(props: Props) {
         "url": siteConfig.url
       }
     },
-    "numberOfBedrooms": property.bedrooms,
-    "numberOfBathrooms": property.bathrooms,
-    "floorSize": {
-      "@type": "QuantitativeValue",
-      "value": property.area_sqft,
-      "unitCode": "FTK"
+    "mainEntity": {
+      "@type": "SingleFamilyResidence",
+      "name": property.title,
+      "description": property.meta_description || property.description,
+      "url": `${siteConfig.url}/properties/houses/${property.slug}`,
+      "image": (property.images || []).map(img => getAbsoluteUrl(img)),
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": property.address,
+        "addressLocality": "Mohali",
+        "addressRegion": "Punjab",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": property.latitude,
+        "longitude": property.longitude
+      },
+      "amenityFeature": [
+        ...(property.nearby_landmarks || []).map(lm => ({
+          "@type": "LocationFeatureSpecification",
+          "name": lm.name,
+          "value": `${lm.time} min by ${lm.transport}`,
+          "hoursAvailable": null
+        })),
+        ...(property.upcoming_infrastructure || []).map(item => ({
+          "@type": "LocationFeatureSpecification",
+          "name": `Upcoming: ${item}`,
+          "value": "Future Development",
+          "hoursAvailable": null
+        })),
+        ...(property.amenities || []).map(amenity => ({
+          "@type": "LocationFeatureSpecification",
+          "name": amenity,
+          "value": true,
+          "hoursAvailable": null
+        }))
+      ],
+      "subjectOf": [
+        {
+          "@type": "FloorPlan",
+          "name": `${property.title} - Floor Plan`,
+          "layoutImage": getAbsoluteUrl(property.unit_types_image || property.images?.[0]),
+          "numberOfRooms": property.bedrooms,
+          "floorSize": {
+            "@type": "QuantitativeValue",
+            "value": property.area_sqft,
+            "unitText": "sq.ft"
+          }
+        },
+        ...(property.documents || [])
+          .filter(doc => doc.name.toLowerCase().includes("floor plan") || doc.name.toLowerCase().includes("site plan"))
+          .map(doc => ({
+            "@type": "DigitalDocument",
+            "name": doc.name,
+            "url": getAbsoluteUrl(doc.url),
+            "fileFormat": "application/pdf"
+          })),
+        ...(property.videos || []).map(videoUrl => ({
+          "@type": "VideoObject",
+          "name": `${property.title} - Property Video`,
+          "description": `Video tour of ${property.title}`,
+          "thumbnailUrl": getAbsoluteUrl(property.images?.[0]),
+          "contentUrl": videoUrl,
+          "uploadDate": property.created_at || new Date().toISOString()
+        }))
+      ],
+      "brand": property.developer ? {
+        "@type": "Organization",
+        "name": property.developer,
+        "url": property.developer_website
+      } : null,
+      "numberOfBedrooms": property.bedrooms,
+      "numberOfBathrooms": property.bathrooms,
+      "floorSize": {
+        "@type": "QuantitativeValue",
+        "value": property.area_sqft,
+        "unitCode": "FTK"
+      }
     }
   };
 

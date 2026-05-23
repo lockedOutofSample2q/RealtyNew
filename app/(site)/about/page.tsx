@@ -15,7 +15,7 @@ export const metadata = {
   title: "About Our Advisory",
   description: "Amritpal Singh brings over 10 years of experience across every side of the real estate transaction in Mohali.",
   alternates: {
-    canonical: "/about",
+    canonical: `${siteConfig.url}/about`,
   },
 };
 

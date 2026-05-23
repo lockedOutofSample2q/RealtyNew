@@ -61,7 +61,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
 
   const propertyRoutes = properties
-    .filter((property) => property.entity_type !== "land" && !BLACKLISTED_SLUGS.includes(property.slug || ""))
+    .filter((property) => (property.entity_type === "apartment" || property.entity_type === "house") && !BLACKLISTED_SLUGS.includes(property.slug || ""))
     .map((property) => {
       const segment = property.entity_type === "house" ? "houses" : "flats";
       return {
