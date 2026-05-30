@@ -22,6 +22,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: "/properties/flats", priority: 0.9 }, 
     { path: "/properties/houses", priority: 0.9 },
     { path: "/properties/lands", priority: 0.9 },
+    { path: "/properties/builders", priority: 0.8 }, // Builders Directory Hub
     { path: "/blog", priority: 0.8 },            // High-Value Hub
     { path: "/tools/price-trend", priority: 0.7 }, // Trust & Tools
     { path: "/faq", priority: 0.7 },             // Trust & Tools
@@ -113,6 +114,46 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     }));
 
+  // 5. Fetch live developers/builders from Supabase (Priority 0.7)
+  let buildersSlugs: string[] = [];
+  try {
+    const supabase = createAdminClient();
+    const [aptsRes, landsRes, housesRes] = await Promise.all([
+      supabase.from("apartments").select("developer"),
+      supabase.from("lands").select("developer"),
+      supabase.from("houses").select("developer"),
+    ]);
+
+    const devSet = new Set<string>();
+    
+    const slugify = (text: string) =>
+      text
+        .toString()
+        .toLowerCase()
+        .replace(/\s+/g, "-")
+        .replace(/[^\w\-]+/g, "")
+        .replace(/\-\-+/g, "-")
+        .replace(/^-+/, "")
+        .replace(/-+$/, "");
+
+    [...(aptsRes.data || []), ...(landsRes.data || []), ...(housesRes.data || [])].forEach((p: any) => {
+      if (p.developer && p.developer.trim() !== "" && p.developer.trim() !== "Independent") {
+        devSet.add(slugify(p.developer.trim()));
+      }
+    });
+
+    buildersSlugs = Array.from(devSet);
+  } catch (error) {
+    console.error("Sitemap: Failed to fetch builders from Supabase.", error);
+  }
+
+  const builderRoutes = buildersSlugs.map((slug) => ({
+    url: `${baseUrl}/properties/builders/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+
   // Return combined array
-  return [...staticRoutes, ...propertyRoutes, ...blogRoutes, ...sectorRoutes];
+  return [...staticRoutes, ...propertyRoutes, ...blogRoutes, ...sectorRoutes, ...builderRoutes];
 }
