@@ -1,11 +1,29 @@
 "use client";
-
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, Building2, Users, CheckCircle, Navigation, Globe, ExternalLink } from "lucide-react";
 import { useCurrency } from "@/context/CurrencyContext";
 import { Property } from "@/types";
 import PropertyCard from "@/components/ui/PropertyCard";
 import InquiryForm from "@/app/(site)/properties/[slug]/InquiryForm";
+
+const LOGO_MAPPING: Record<string, string> = {
+  "affinity-buildtech-affinity-group": "affinity.svg",
+  "ambika-realcon-pvt-ltd-ambika-infra-ventures-pvt-ltd": "ambika.svg",
+  "evoq-realtech-directors-gaurav-goyal-satish-katyal-brand-ambassador-hrithik-roshan": "evoq.svg",
+  "klv-builders-and-developers-pvt-ltd": "klv.svg",
+  "gillco-developers-and-builders-pvt-ltd-gillco-group": "gillco.svg",
+  "hero-realty-pvt-ltd-hero-group-usd-5-billion-enterprise": "hero_homes.svg",
+  "homeland-group": "homeland.svg",
+  "horizon-group-punjab": "horizon.svg",
+  "jlpl": "jlpl.svg",
+  "joy-homes-joy-group": "joygrand.svg",
+  "jubilee-group": "jubilee.svg",
+  "marbella-group-srg-group": "marbella.svg",
+  "turnstone-realty-medallion-group": "medallion.svg",
+  "noble-ventures-noble-group": "noble_callista.svg",
+};
+
 
 interface Builder {
   name: string;
@@ -69,8 +87,21 @@ export default function BuilderProfileClient({ builder, properties }: BuilderPro
             
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 relative z-10">
               {/* Initials Logo */}
-              <div className="w-20 h-20 rounded-2xl bg-charcoal/5 border border-charcoal/10 flex items-center justify-center font-display text-3xl font-semibold text-charcoal shrink-0 transition-all duration-500 shadow-sm">
-                {initials}
+              <div className="w-20 h-20 rounded-2xl bg-charcoal/5 border border-charcoal/10 flex items-center justify-center font-display text-3xl font-semibold text-charcoal shrink-0 transition-all duration-500 shadow-sm overflow-hidden relative">
+                {LOGO_MAPPING[builder.slug] ? (
+                  <div className="w-full h-full p-2 relative flex items-center justify-center bg-white">
+                    <Image
+                      src={`/assets/images/logos/${LOGO_MAPPING[builder.slug]}`}
+                      alt={`${builder.name} logo`}
+                      fill
+                      sizes="80px"
+                      className="object-contain p-1"
+                      style={{ filter: "brightness(0)" }}
+                    />
+                  </div>
+                ) : (
+                  initials
+                )}
               </div>
               
               <div>

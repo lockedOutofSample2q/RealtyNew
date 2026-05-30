@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" width="100%" height="100%">
+  <defs>
+    <!-- Vibrant Red Gradient -->
+    <linearGradient id="red-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EF4444" />
+      <stop offset="50%" stop-color="#DC2626" />
+      <stop offset="100%" stop-color="#991B1B" />
+    </linearGradient>
+  </defs>
+
+  <!-- Logo Mark: Stylized Red Triangle 'A' -->
+  <g transform="translate(130, 20)">
+    <!-- Red Triangle Body -->
+    <path d="M70,0 L140,110 L95,110 L70,70 L45,110 L0,110 Z" fill="url(#red-grad)" />
+    <!-- White Inner Gap and Nested Arrow shape -->
+    <path d="M70,25 L110,90 L95,90 L70,50 L45,90 L30,90 Z" fill="#FFFFFF" opacity="0.95" />
+    <!-- Center Red Arrow Accent -->
+    <path d="M70,40 L90,75 L80,75 L70,60 L60,75 L50,75 Z" fill="url(#red-grad)" />
+  </g>
+
+  <!-- Typography -->
+  <!-- "AMBIKA" -->
+  <text x="200" y="180" font-family="'Inter', 'Montserrat', 'Segoe UI', sans-serif" font-size="44" font-weight="900" fill="#1F2937" letter-spacing="3" text-anchor="middle">AMBIKA</text>
+  
+  <!-- Divider Lines for "GROUP" -->
+  <line x1="60" y1="205" x2="140" y2="205" stroke="#1F2937" stroke-width="3" />
+  <text x="200" y="214" font-family="'Inter', 'Montserrat', 'Segoe UI', sans-serif" font-size="24" font-weight="900" fill="#1F2937" letter-spacing="6" text-anchor="middle">GROUP</text>
+  <line x1="260" y1="205" x2="340" y2="205" stroke="#1F2937" stroke-width="3" />
+
+  <!-- Tagline: "INVEST FOR FUTURE" -->
+  <text x="200" y="250" font-family="'Inter', 'Segoe UI', sans-serif" font-size="16" font-weight="700" fill="#4B5563" letter-spacing="4" text-anchor="middle">INVEST FOR FUTURE</text>
+</svg>

@@ -1,10 +1,28 @@
 "use client";
-
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Search, Building2, Users, CheckCircle, Navigation } from "lucide-react";
 import { useCurrency } from "@/context/CurrencyContext";
 import { Property } from "@/types";
+
+const LOGO_MAPPING: Record<string, string> = {
+  "affinity-buildtech-affinity-group": "affinity.svg",
+  "ambika-realcon-pvt-ltd-ambika-infra-ventures-pvt-ltd": "ambika.svg",
+  "evoq-realtech-directors-gaurav-goyal-satish-katyal-brand-ambassador-hrithik-roshan": "evoq.svg",
+  "klv-builders-and-developers-pvt-ltd": "klv.svg",
+  "gillco-developers-and-builders-pvt-ltd-gillco-group": "gillco.svg",
+  "hero-realty-pvt-ltd-hero-group-usd-5-billion-enterprise": "hero_homes.svg",
+  "homeland-group": "homeland.svg",
+  "horizon-group-punjab": "horizon.svg",
+  "jlpl": "jlpl.svg",
+  "joy-homes-joy-group": "joygrand.svg",
+  "jubilee-group": "jubilee.svg",
+  "marbella-group-srg-group": "marbella.svg",
+  "turnstone-realty-medallion-group": "medallion.svg",
+  "noble-ventures-noble-group": "noble_callista.svg",
+};
+
 
 interface Builder {
   name: string;
@@ -24,21 +42,38 @@ interface BuildersClientProps {
 export default function BuildersClient({ builders }: BuildersClientProps) {
   const [searchTerm, setSearchTerm] = useState("");
   const [activeTab, setActiveTab] = useState<"all" | "corporate" | "coop">("all");
+  const [sortBy, setSortBy] = useState<"name" | "price-asc" | "price-desc">("name");
   const { formatPrice } = useCurrency();
 
-  // Filter builders
-  const filteredBuilders = builders.filter((b) => {
-    const matchesSearch = b.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          b.locations.some(loc => loc.toLowerCase().includes(searchTerm.toLowerCase()));
-    
-    if (activeTab === "corporate") {
-      return matchesSearch && !b.isCoop;
-    }
-    if (activeTab === "coop") {
-      return matchesSearch && b.isCoop;
-    }
-    return matchesSearch;
-  });
+  // Filter and Sort builders
+  const filteredBuilders = builders
+    .filter((b) => {
+      const matchesSearch = b.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                            b.locations.some(loc => loc.toLowerCase().includes(searchTerm.toLowerCase()));
+      
+      if (activeTab === "corporate") {
+        return matchesSearch && !b.isCoop;
+      }
+      if (activeTab === "coop") {
+        return matchesSearch && b.isCoop;
+      }
+      return matchesSearch;
+    })
+    .sort((a, b) => {
+      if (sortBy === "name") {
+        return a.name.localeCompare(b.name);
+      }
+      if (sortBy === "price-asc") {
+        // Put builders with no price at the end
+        const priceA = a.minPrice || Infinity;
+        const priceB = b.minPrice || Infinity;
+        return priceA - priceB;
+      }
+      if (sortBy === "price-desc") {
+        return b.minPrice - a.minPrice;
+      }
+      return 0;
+    });
 
   return (
     <div className="pt-[var(--nav-height)] min-h-screen bg-[#FDFDFD]">
@@ -100,18 +135,35 @@ export default function BuildersClient({ builders }: BuildersClientProps) {
             </button>
           </div>
 
-          {/* Search Box */}
-          <div className="relative flex-1 max-w-lg">
-            <span className="absolute inset-y-0 left-4 flex items-center pointer-events-none text-black/35">
-              <Search size={18} />
-            </span>
-            <input
-              type="text"
-              placeholder="Search developers, societies, or sectors..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-12 pr-6 py-4 rounded-2xl bg-black/[0.01] border border-black/5 focus:border-black/20 focus:bg-white text-sm outline-none transition-all font-body text-charcoal"
-            />
+          {/* Search Box & Sort Filter */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 flex-1 max-w-2xl">
+            <div className="relative flex-1">
+              <span className="absolute inset-y-0 left-4 flex items-center pointer-events-none text-black/35">
+                <Search size={18} />
+              </span>
+              <input
+                type="text"
+                placeholder="Search developers, societies, or sectors..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full pl-12 pr-6 py-4 rounded-2xl bg-black/[0.01] border border-black/5 focus:border-black/20 focus:bg-white text-sm outline-none transition-all font-body text-charcoal"
+              />
+            </div>
+            
+            <div className="relative shrink-0">
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value as any)}
+                className="w-full px-5 py-4 rounded-2xl bg-black/[0.01] border border-black/5 focus:border-black/20 focus:bg-white text-sm outline-none transition-all font-body text-charcoal cursor-pointer appearance-none pr-10"
+              >
+                <option value="name">Sort: Name (A-Z)</option>
+                <option value="price-asc">Sort: Price (Low to High)</option>
+                <option value="price-desc">Sort: Price (High to Low)</option>
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-black/45">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -128,6 +180,8 @@ export default function BuildersClient({ builders }: BuildersClientProps) {
                 .join("")
                 .toUpperCase();
 
+              const logoFile = LOGO_MAPPING[b.slug];
+
               return (
                 <div
                   key={b.slug}
@@ -136,8 +190,21 @@ export default function BuildersClient({ builders }: BuildersClientProps) {
                   <div>
                     {/* Header */}
                     <div className="flex justify-between items-start gap-4 mb-6">
-                      <div className="w-16 h-16 rounded-2xl bg-charcoal/5 border border-charcoal/10 flex items-center justify-center font-display text-2xl font-semibold text-charcoal shrink-0 group-hover:bg-charcoal group-hover:text-white transition-all duration-500 shadow-sm">
-                        {initials || b.name.substring(0, 2).toUpperCase()}
+                      <div className="w-16 h-16 rounded-2xl bg-charcoal/5 border border-charcoal/10 flex items-center justify-center font-display text-2xl font-semibold text-charcoal shrink-0 group-hover:bg-charcoal group-hover:text-white transition-all duration-500 shadow-sm overflow-hidden relative">
+                        {logoFile ? (
+                          <div className="w-full h-full p-2 relative flex items-center justify-center bg-white group-hover:bg-white transition-colors duration-500">
+                            <Image
+                              src={`/assets/images/logos/${logoFile}`}
+                              alt={`${b.name} logo`}
+                              fill
+                              sizes="64px"
+                              className="object-contain p-1 transition-all duration-500"
+                              style={{ filter: "brightness(0)" }}
+                            />
+                          </div>
+                        ) : (
+                          initials || b.name.substring(0, 2).toUpperCase()
+                        )}
                       </div>
                       
                       <div className="flex flex-col items-end gap-1.5">

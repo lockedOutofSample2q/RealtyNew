@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 240" width="100%" height="100%">
+  <defs>
+    <!-- Premium Copper / Rose Gold Gradient -->
+    <linearGradient id="rose-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B76E79" />
+      <stop offset="30%" stop-color="#C58F80" />
+      <stop offset="70%" stop-color="#E0B0A4" />
+      <stop offset="100%" stop-color="#A55A64" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background container for high-fidelity rendering -->
+  <rect width="100%" height="100%" fill="none" />
+
+  <g transform="translate(10, 10)">
+    <!-- Letter 'E' -->
+    <path d="M40,40 L110,40 L110,65 L70,65 L70,85 L105,85 L105,110 L70,110 L70,135 L110,135 L110,160 L40,160 Z" fill="url(#rose-gold)" />
+
+    <!-- Letter 'V' with White/Inverted Accent Arrow -->
+    <!-- Left leg of V (Rose gold) -->
+    <path d="M125,40 L155,40 L185,160 L155,160 Z" fill="url(#rose-gold)" />
+    <!-- Right leg / White Arrow (drawn as custom white overlay vector) -->
+    <path d="M185,160 L215,40 L235,40 L212,130 L185,160 Z" fill="#FFFFFF" />
+    <!-- Upward arrow head -->
+    <path d="M205,30 L235,30 L220,10 Z" fill="#FFFFFF" />
+    <!-- Small rose gold shadow/split line next to white arrow for definition -->
+    <path d="M185,160 L215,40 L223,40 L193,160 Z" fill="url(#rose-gold)" />
+
+    <!-- Letter 'O' (Circular Loop) -->
+    <path d="M295,40 C260,40 235,67 235,100 C235,133 260,160 295,160 C330,160 355,133 355,100 C355,67 330,40 295,40 Z M295,65 C315,65 330,80 330,100 C330,120 315,135 295,135 C275,135 260,120 260,100 C260,80 275,65 295,65 Z" fill="url(#rose-gold)" />
+
+    <!-- Letter 'Q' with Minimal Tail -->
+    <path d="M410,40 C375,40 350,67 350,100 C350,133 375,160 410,160 C423,160 435,155 445,147 L460,162 L478,144 L463,129 C468,121 470,111 470,100 C470,67 445,40 410,40 Z M410,65 C430,65 445,80 445,100 C445,108 442,116 437,122 L410,95 L392,113 L421,141 C418,143 414,144 410,144 C390,144 375,129 375,100 C375,80 390,65 410,65 Z" fill="url(#rose-gold)" />
+
+    <!-- Sub-banner: "the change" -->
+    <!-- Horizontal Rose Gold block -->
+    <rect x="40" y="180" width="430" height="30" fill="url(#rose-gold)" rx="4" />
+    <!-- White Text inside the block -->
+    <text x="255" y="201" font-family="'Inter', 'Segoe UI', sans-serif" font-size="19" font-weight="700" fill="#FFFFFF" letter-spacing="12" text-anchor="middle">the change</text>
+  </g>
+</svg>

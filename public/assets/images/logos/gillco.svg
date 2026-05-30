@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 180" width="100%" height="100%">
+  <defs>
+    <!-- Gold Gradient for Star Symbol -->
+    <linearGradient id="star-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C59B27" />
+      <stop offset="50%" stop-color="#E5C158" />
+      <stop offset="100%" stop-color="#A67C1E" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background color (optional, helps make white/light theme rendering clean) -->
+  <rect width="100%" height="100%" fill="none" />
+
+  <!-- Gold Star Symbol above "CO" -->
+  <g transform="translate(365, 15)">
+    <!-- Star compass paths -->
+    <path d="M25,0 L32,18 L50,25 L32,32 L25,50 L18,32 L0,25 L18,18 Z" fill="url(#star-gold)" />
+    <!-- Fine inner lines for compass/star look -->
+    <line x1="25" y1="0" x2="25" y2="50" stroke="#FFFFFF" stroke-width="1.5" opacity="0.6" />
+    <line x1="0" y1="25" x2="50" y2="25" stroke="#FFFFFF" stroke-width="1.5" opacity="0.6" />
+  </g>
+
+  <!-- Typography -->
+  <!-- "GILLCO" in clean, high-contrast black/charcoal serif-style font (or white inside hero, black for general list) -->
+  <!-- Standard dark fill for directory readability -->
+  <text x="30" y="112" font-family="'Times New Roman', 'Didot', 'Georgia', serif" font-size="95" font-weight="700" fill="#1A202C" letter-spacing="2">GILLCO</text>
+
+  <!-- Tagline: "WE BUILD DREAMS" -->
+  <text x="210" y="145" font-family="'Inter', 'Segoe UI', sans-serif" font-size="16" font-weight="700" fill="#718096" letter-spacing="7">WE BUILD DREAMS</text>
+</svg>
