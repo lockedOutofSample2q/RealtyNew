@@ -13,7 +13,24 @@ import {
 import type { Property, NearbyLandmark } from "@/types";
 import { AmenityIcon } from "@/components/ui/AmenityIcons";
 import { enrichProperty } from "@/lib/property-utils";
-import { cn } from "@/lib/utils";
+import { cn, slugify } from "@/lib/utils";
+
+const LOGO_MAPPING: Record<string, string> = {
+  "affinity-buildtech-affinity-group": "affinity.svg",
+  "ambika-realcon-pvt-ltd-ambika-infra-ventures-pvt-ltd": "ambika.svg",
+  "evoq-realtech-directors-gaurav-goyal-satish-katyal-brand-ambassador-hrithik-roshan": "evoq.svg",
+  "klv-builders-and-developers-pvt-ltd": "klv.svg",
+  "gillco-developers-and-builders-pvt-ltd-gillco-group": "gillco.svg",
+  "hero-realty-pvt-ltd-hero-group-usd-5-billion-enterprise": "hero_homes.svg",
+  "homeland-group": "homeland.svg",
+  "horizon-group-punjab": "horizon.svg",
+  "jlpl": "jlpl.svg",
+  "joy-homes-joy-group": "joygrand.svg",
+  "jubilee-group": "jubilee.svg",
+  "marbella-group-srg-group": "marbella.svg",
+  "turnstone-realty-medallion-group": "medallion.svg",
+  "noble-ventures-noble-group": "noble_callista.svg",
+};
 import InquiryForm, { PropertyGallery } from "../../[slug]/InquiryForm";
 import PriceDisplay from "../../[slug]/PriceDisplay";
 import PropertyDetailMapClient from "../../[slug]/PropertyDetailMapClient";
@@ -350,6 +367,38 @@ export default async function HouseDetailPage(props: Props) {
                 <h1 className="text-[clamp(1.8rem,3vw,2.6rem)] font-bold text-black leading-tight tracking-tight font-display">
                   {property.title}
                 </h1>
+                {property.developer && (() => {
+                  const devSlug = slugify(property.developer.trim());
+                  const logoFile = LOGO_MAPPING[devSlug];
+                  
+                  return (
+                    <Link
+                      href={`/properties/builders/${devSlug}`}
+                      className="flex items-center gap-3 bg-black/[0.03] border border-black/5 hover:border-black/15 hover:bg-black/[0.05] transition-all rounded-2xl p-2 pr-4 mt-1 group"
+                    >
+                      <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center p-1 shadow-sm overflow-hidden relative">
+                        {logoFile ? (
+                          <div className="w-full h-full relative flex items-center justify-center bg-white">
+                            <Image
+                              src={`/assets/images/logos/${logoFile}`}
+                              alt={`${property.developer} logo`}
+                              fill
+                              sizes="40px"
+                              className="object-contain p-0.5"
+                              style={{ filter: "brightness(0)" }}
+                            />
+                          </div>
+                        ) : (
+                          <Building2 size={20} className="text-black/40 group-hover:text-black transition-colors" />
+                        )}
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-[10px] text-black/35 font-medium uppercase tracking-wider leading-none mb-0.5">Developed by</span>
+                        <span className="text-[14px] font-bold text-black group-hover:underline leading-none font-display">{property.developer}</span>
+                      </div>
+                    </Link>
+                  );
+                })()}
               </div>
               <span className="inline-block text-[11px] text-black/40 border border-black/10 rounded px-2 py-0.5 mb-5 uppercase tracking-wider">
                 {listingLabel}
