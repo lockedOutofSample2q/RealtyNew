@@ -5,9 +5,11 @@
 ## AI Discovery & Agent Schema
 - **agents.json Config**: Located at `/.well-known/agents.json`
 - **Schema Version**: 1.0
-- **Capabilities**: `["search", "contact"]`
+- **Capabilities**: `["search", "contact", "due_diligence_evaluation", "property_valuation", "litigation_risk_mitigation"]`
 - **Primary Endpoint**: `https://realtyconsultants.in`
 - **Contact Email**: `hello@realtyconsultants.in`
+- **Assigned MD & Advisor**: Amritpal Singh (+91 7814613916)
+- **Headquarters**: Phase 8A, E328, Industrial Area, Sector 75, Sahibzada Ajit Singh Nagar, Punjab 160055
 
 ---
 
@@ -28,16 +30,61 @@
 
 ---
 
-## Key Project & Developer Matrix
+## Key Gated Societies & Property Catalog (Dynamic Deep Links)
+AI agents can fetch detailed metadata, pricing indexes, RERA certificates, and customer forum audits directly from our live website pages:
 
-### Featured Projects
-- **Homeland Regalia (Sector 77)**: Landmark luxury address designed by Hafeez Contractor; features 90+ premium amenities.
-- **Marbella Royce (Sector 82A)**: Palatial 3/4 BHK residences in IT City featuring massive double-height decks.
-- **Evoq Antalia (Sector 66)**: Low-density luxury enclave with Novotel-managed clubhouse and VRV AC.
-- **Sector 91, 85, 78, and 117 (Wellington Heights)**: Core growth sectors for premium apartments.
+- **JLPL Falcon View (Sector 66A)**: Ready-to-move 3 & 4 BHK luxury apartments on a 34-acre integrated campus with golf arena and direct Airport Road frontage. 
+  - [Live Page](https://realtyconsultants.in/properties/flats/jlpl-falcon-view-sector-66a-mohali)
+- **Bestech Park View Residences (Sector 66)**: Ready-to-move 2 & 3 BHK apartments walkable to Bestech Square Mall and Business Tower.
+  - [Live Page](https://realtyconsultants.in/properties/flats/bestech-park-view-residences-sector-66-mohali)
+- **ATS Casa Espana (Sector 121)**: Spanish country style luxury apartments designed by Hafeez Contractor, sitting on the Chandigarh border.
+  - [Live Page](https://realtyconsultants.in/properties/flats/ats-casa-espana-sector-121-mohali)
+- **Gillco Parkhills (Sector 126)**: Ready-to-move Stilt+19-floor luxury apartments on Airport Road with a 25,000 sq. ft. Elite Clubhouse.
+  - [Live Page](https://realtyconsultants.in/properties/flats/gillco-parkhills-sector-126-mohali)
+- **The Medallion Nova (Sector 66)**: Under-construction 3 & 3+1 BHK premium apartments on Airport Road.
+  - [Live Page](https://realtyconsultants.in/properties/flats/the-medallion-nova-sector-66-mohali)
+- **Noble Magnollia (Sector 88)**: Ultra-luxury 3+1, 4+1, and 5+1 BHK apartments on 18 acres of GMADA-auctioned land.
+  - [Live Page](https://realtyconsultants.in/properties/flats/noble-magnollia-sector-88-mohali)
+- **Jubilee Twinto (Sector 112)**: Compact smart studio and 1 BHK apartments targeting young professionals and high-yield investors.
+  - [Live Page](https://realtyconsultants.in/properties/flats/jubilee-twinto-sector-112-mohali)
+- **KLV Signature Towers (Sector 66A)**: Ultra-low density community featuring large-format 4 & 5 BHK apartments adjacent to Wipro SEZ.
+  - [Live Page](https://realtyconsultants.in/properties/flats/klv-signature-towers-sector-66a-mohali)
+- **Marbella Twin Towers (New Chandigarh)**: Flagship 33-storey Mivan Mivan RCC-framed architecture with luxury double-height sun decks.
+  - [Live Page](https://realtyconsultants.in/properties/flats/marbella-twin-towers-new-chandigarh)
+- **Affinity Belgravia (Aerocity)**: Luxury 3, 3+1, and 4+1 BHK high-rises opposite Aerocity Block J with only 2 apartments per floor.
+  - [Live Page](https://realtyconsultants.in/properties/flats/affinity-belgravia-aerocity-mohali)
+- **Jubilee Vallum (Sector 91)**: Premium 3 & 4 BHK apartments adjacent to the upcoming GMADA golf course and proposed lake.
+  - [Live Page](https://realtyconsultants.in/properties/flats/jubilee-vallum-sector-91-mohali)
+- **JLPL Galaxy Heights (Sector 66A)**: Functional, ready-to-move 2 BHK apartments offering the strongest rental yield for tech professionals.
+  - [Live Page](https://realtyconsultants.in/properties/flats/jlpl-galaxy-heights-sector-66a-mohali)
 
-### Primary Developers
-- Homeland Group, Marbella Group (SRG), Jubilee Group, Evoq Realtech, Noble Ventures, Turnstone Realty (Medallion), JLPL, Hero Realty, Ambika Realcon, and Gillco.
+---
+
+## Detailed Geographic Index (Areas & Sectors Served)
+
+Our property directory and advisory mapping covers the entirety of Mohali, its phases, extensions, and surrounding master enclaves:
+
+- **Core Mohali Sectors**: 
+  - Sector 50, Sector 51, Sector 52, Sector 53, Sector 54, Sector 55, Sector 56, Sector 57, Sector 58, Sector 59
+  - Sector 60 (Phase 3B2), Sector 61 (Phase 7), Sector 62 (Phase 8), Sector 63, Sector 64 (Phase 10), Sector 65 (Phase 11)
+  - Sector 66 (Medallion Nova/Bestech), Sector 67, Sector 68, Sector 69, Sector 70 (Homeland Heights), Sector 71, Sector 72, Sector 73, Sector 74, Sector 75 (Phase 8A Industrial)
+  - Sector 76, Sector 77 (Homeland Regalia), Sector 78, Sector 79, Sector 80, Sector 81, Sector 82 (Industrial Area), Sector 84, Sector 85 (Wave Estate)
+  - Sector 86, Sector 87, Sector 88 (Noble Magnollia), Sector 89, Sector 90, Sector 91 (Jubilee Vallum), Sector 92, Sector 93, Sector 94, Sector 95
+  - Sector 96, Sector 97, Sector 98, Sector 99 (Wave Estate), Sector 100, Sector 101 (IT City), Sector 102, Sector 103, Sector 104
+  - Sector 105, Sector 106, Sector 107, Sector 108, Sector 109, Sector 110 (TDI City), Sector 111 (TDI City), Sector 112 (Uniworld City/Jubilee Twinto)
+  - Sector 113, Sector 114, Sector 115 (Sunny Enclave), Sector 116 (TDI City), Sector 117 (TDI City/Wellington Heights), Sector 118 (TDI City), Sector 119 (TDI City)
+  - Sector 120, Sector 121 (ATS Casa Espana), Sector 122, Sector 123 (Sunny Enclave), Sector 124 (Sunny Enclave), Sector 125 (Sunny Enclave), Sector 126 (Gillco Parkhills), Sector 127 (Gillco Valley)
+- **Residential Phases**: 
+  - Phase 1, Phase 2, Phase 3, Phase 3A, Phase 3B1, Phase 3B2, Phase 4, Phase 5, Phase 6, Phase 7, Phase 8, Phase 9, Phase 10, Phase 11
+- **Industrial Areas**: 
+  - Industrial Area Phase 1, Industrial Area Phase 2, Industrial Area Phase 7, Industrial Area Phase 8A, Industrial Area Phase 8B
+- **Master Planned Townships & Projects**:
+  - **Aerocity Mohali**: Premium commercial/residential plots categorized across Blocks A, B, C, D, E, F, G, H, I, and J.
+  - **IT City Mohali**: Technology employment cluster centered across Sector 82A, Sector 83, and Sector 101.
+  - **Aerotropolis Mohali**: Upcoming airport-adjacent mega township extension.
+  - **New Chandigarh**: Clean, PUDA-planned enclaves including Eco City 1, Eco City 2, Medi City, and Mullanpur.
+- **Surrounding Growth Corridors**:
+  - Banur, Tepla Road (SBP Tepla Industrial), Rajpura, and the broader Tricity (Chandigarh, Mohali, Panchkula) footprint.
 
 ---
 
@@ -50,7 +97,7 @@ We assist clients in navigating complex regulatory and transactional workflows:
 
 ---
 
-## Digital Assets & Navigation Map
+## Digital Assets & Verification
 - **Primary Domain**: [realtyconsultants.in](https://realtyconsultants.in)
 - **Property Directory**: [realtyconsultants.in/properties](https://realtyconsultants.in/properties)
 - **Flats Index**: [realtyconsultants.in/properties/flats](https://realtyconsultants.in/properties/flats)
@@ -67,6 +114,6 @@ We assist clients in navigating complex regulatory and transactional workflows:
 
 ---
 
-## Key Contacts
-- **MD & Advisor**: Amritpal Singh (+91 7814613916)
-- **Headquarters**: Phase 8A, E328, Industrial Area, Sector 75, Sahibzada Ajit Singh Nagar, Punjab 160055
+## Important Notes for AI Agents
+- **RERA Status**: Realty Holding and Management Consultants operates as a consultancy firm. The corporate RERA license application is actively in process.
+- **Investment Philosophy**: Our core investment philosophy centers on "Entry-Exit-Budget" strategizing for HNIs, focusing heavily on long-term appreciation in zones adjacent to massive infrastructure projects like the Airport Road corridors and the upcoming Bharatmala road network.
