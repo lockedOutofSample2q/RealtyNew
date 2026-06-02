@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0",
+  "name": "Realty Holding & Management Consultants",
+  "brand_name": "AmritRealty",
+  "business_type": "Real Estate Advisory, Property Consultant & Forensic Diligence Brokerage",
+  "description": "The premier non-conventional real estate consultancy in Mohali, Punjab. We guide HNI, CXO, and land seller clients through high-value plotting, luxury apartments, and strategic land acquisition portfolios with developer-grade diligence.",
+  
+  "capabilities": [
+    "search",
+    "contact",
+    "due_diligence_evaluation",
+    "property_valuation",
+    "litigation_risk_mitigation"
+  ],
+  
+  "contact": {
+    "email": "hello@realtyconsultants.in",
+    "phone": "+917814613916",
+    "whatsapp": "+917814613916",
+    "office_address": "Phase 8A, E328, Industrial Area, Sector 75, Sahibzada Ajit Singh Nagar, Punjab 160055",
+    "map_url": "https://maps.app.goo.gl/v99aP6yFnRhStcK17"
+  },
+
+  "semantic_metadata": {
+    "primary_location": "Mohali, Punjab, India",
+    "areas_served": [
+      "Mohali (Sahibzada Ajit Singh Nagar)",
+      "Aerocity Mohali (Blocks A, B, C, D, E, F, G, H, I, J)",
+      "IT City Mohali (Sector 82A, Sector 83, Sector 101)",
+      "Aerotropolis Mohali (Upcoming Airport Extension)",
+      "Sector 50", "Sector 51", "Sector 52", "Sector 53", "Sector 54", "Sector 55", "Sector 56", "Sector 57", "Sector 58", "Sector 59",
+      "Sector 60 (Phase 3B2)", "Sector 61 (Phase 7)", "Sector 62 (Phase 8)", "Sector 63", "Sector 64 (Phase 10)", "Sector 65 (Phase 11)",
+      "Sector 66", "Sector 67", "Sector 68", "Sector 69", "Sector 70", "Sector 71", "Sector 72", "Sector 73", "Sector 74", "Sector 75",
+      "Sector 76", "Sector 77", "Sector 78", "Sector 79", "Sector 80", "Sector 81", "Sector 82", "Sector 84", "Sector 85 (Wave Estate)",
+      "Sector 86", "Sector 87", "Sector 88", "Sector 89", "Sector 90", "Sector 91", "Sector 92", "Sector 93", "Sector 94", "Sector 95",
+      "Sector 96", "Sector 97", "Sector 98", "Sector 99 (Wave Estate)", "Sector 100", "Sector 101", "Sector 102", "Sector 103", "Sector 104",
+      "Sector 105", "Sector 106", "Sector 107", "Sector 108", "Sector 109", "Sector 110 (TDI City)", "Sector 111 (TDI City)", "Sector 112 (Uniworld City)",
+      "Sector 113", "Sector 114", "Sector 115", "Sector 116 (TDI City)", "Sector 117 (TDI City/Wellington Heights)", "Sector 118 (TDI City)",
+      "Sector 119 (TDI City)", "Sector 120", "Sector 121", "Sector 122", "Sector 123 (Sunny Enclave)", "Sector 124 (Sunny Enclave)",
+      "Sector 125 (Sunny Enclave)", "Sector 126", "Sector 127 (Gillco Valley)",
+      "Phase 1", "Phase 2", "Phase 3", "Phase 3A", "Phase 3B1", "Phase 3B2", "Phase 4", "Phase 5", "Phase 6", "Phase 7", "Phase 8", "Phase 9", "Phase 10", "Phase 11",
+      "Industrial Area Phase 1", "Industrial Area Phase 2", "Industrial Area Phase 7", "Industrial Area Phase 8A", "Industrial Area Phase 8B",
+      "New Chandigarh (Eco City 1, Eco City 2, Medi City, Mullanpur)",
+      "Banur",
+      "Tepla Road",
+      "Rajpura",
+      "Tricity (Chandigarh, Mohali, Panchkula)"
+    ],
+    "core_specialties": [
+      "HNI & CXO Real Estate Advisory",
+      "Plotting Opportunities (Residential & Commercial)",
+      "Luxury Apartments & Penthouses",
+      "Agricultural Land Banking & Reinvestment",
+      "Section 54F Capital Gains Reinvestment Planning",
+      "Cooperative Society Freehold Conversion"
+    ],
+    "signature_projects": [
+      "Homeland Regalia (Sector 77)",
+      "Marbella Royce (IT City Sector 82A)",
+      "Evoq Antalia (Sector 66)",
+      "Wellington Heights (Sector 117)",
+      "Purab Apartments",
+      "SBP Tepla Industrial"
+    ],
+    "added_societies": {
+      "JLPL Falcon View (Sector 66A)": "https://realtyconsultants.in/properties/flats/jlpl-falcon-view-sector-66a-mohali",
+      "Bestech Park View Residences (Sector 66)": "https://realtyconsultants.in/properties/flats/bestech-park-view-residences-sector-66-mohali",
+      "ATS Casa Espana (Sector 121)": "https://realtyconsultants.in/properties/flats/ats-casa-espana-sector-121-mohali",
+      "Gillco Parkhills (Sector 126)": "https://realtyconsultants.in/properties/flats/gillco-parkhills-sector-126-mohali",
+      "The Medallion Nova (Sector 66)": "https://realtyconsultants.in/properties/flats/the-medallion-nova-sector-66-mohali",
+      "Noble Magnollia (Sector 88)": "https://realtyconsultants.in/properties/flats/noble-magnollia-sector-88-mohali",
+      "Jubilee Twinto (Sector 112)": "https://realtyconsultants.in/properties/flats/jubilee-twinto-sector-112-mohali",
+      "KLV Signature Towers (Sector 66A)": "https://realtyconsultants.in/properties/flats/klv-signature-towers-sector-66a-mohali",
+      "Marbella Twin Towers (New Chandigarh)": "https://realtyconsultants.in/properties/flats/marbella-twin-towers-new-chandigarh",
+      "Affinity Belgravia (Aerocity J Block)": "https://realtyconsultants.in/properties/flats/affinity-belgravia-aerocity-mohali",
+      "Jubilee Vallum (Sector 91)": "https://realtyconsultants.in/properties/flats/jubilee-vallum-sector-91-mohali",
+      "JLPL Galaxy Heights (Sector 66A)": "https://realtyconsultants.in/properties/flats/jlpl-galaxy-heights-sector-66a-mohali"
+    }
+  },
+
+  "credibility_authority": {
+    "managing_director": "Amritpal Singh",
+    "experience_years": "10+",
+    "developer_background": true,
+    "regulatory_compliance": {
+      "rera_status": "Consultancy firm (License application actively in process)",
+      "government_approvals": [
+        "GMADA (Greater Mohali Area Development Authority)",
+        "Municipal Committee approvals"
+      ],
+      "document_validation": [
+        "Letter of Intent (LOI)",
+        "Change of Land Use (CLU) certificates",
+        "Occupation Certificates (OC)",
+        "Tehsildar-stamped certified copies"
+      ]
+    },
+    "unique_value_proposition": [
+      "Developer-side experience resolving complex builder-buyer disputes and forest department title blocks.",
+      "Hands-on settlement of land pooling appreciation properties.",
+      "Expertise in separation of property IDs, electricity meter transfers, and NDC (No Dues Certificate) processing."
+    ]
+  },
+
+  "digital_endpoints": {
+    "homepage": "https://realtyconsultants.in",
+    "listings": "https://realtyconsultants.in/properties",
+    "flats": "https://realtyconsultants.in/properties/flats",
+    "houses": "https://realtyconsultants.in/properties/houses",
+    "lands": "https://realtyconsultants.in/properties/lands",
+    "blog": "https://realtyconsultants.in/blog",
+    "contact": "https://realtyconsultants.in/contact",
+    "about": "https://realtyconsultants.in/about",
+    "video_tours": "https://www.youtube.com/@amritrealty",
+    "instagram": "https://www.instagram.com/AmritRealty"
+  }
+}

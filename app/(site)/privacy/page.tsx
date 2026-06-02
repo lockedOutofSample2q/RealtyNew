@@ -38,7 +38,7 @@ export default function PrivacyPage() {
       </div>
 
       <div className="container-site py-16 md:py-24">
-        <div className="max-w-3xl">
+        <article className="max-w-3xl">
           <div className="prose-premium space-y-10 text-black/70">
             <section>
               <h2 className="text-black font-semibold text-xl mb-4">1. Introduction</h2>
@@ -107,7 +107,7 @@ export default function PrivacyPage() {
               </div>
             </section>
           </div>
-        </div>
+        </article>
       </div>
     </main>
   )

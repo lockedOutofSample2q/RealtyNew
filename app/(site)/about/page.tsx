@@ -74,7 +74,7 @@ export default function AboutPage() {
   };
 
   return (
-    <div className="bg-black min-h-screen">
+    <article className="bg-black min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
@@ -84,6 +84,6 @@ export default function AboutPage() {
       <AboutText />
       <AboutProcess />
       <AboutLeadership />
-    </div>
+    </article>
   );
 }

@@ -38,7 +38,7 @@ export default function CookiesPage() {
       </div>
 
       <div className="container-site py-16 md:py-24">
-        <div className="max-w-3xl">
+        <article className="max-w-3xl">
           <div className="prose-premium space-y-10 text-black/70">
             <section>
               <h2 className="text-black font-semibold text-xl mb-4">1. What Are Cookies?</h2>
@@ -111,7 +111,7 @@ export default function CookiesPage() {
               </p>
             </section>
           </div>
-        </div>
+        </article>
       </div>
     </main>
   )
