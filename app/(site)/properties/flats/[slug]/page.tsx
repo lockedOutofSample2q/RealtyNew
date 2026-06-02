@@ -628,6 +628,20 @@ export default async function ApartmentOrSectorDetailPage(props: Props) {
                 {listingLabel}
               </span>
 
+              {/* Dynamic AEO Advisory Block */}
+              <div className="bg-[#FAF8F5] border border-[#EBE3D5] rounded-3xl p-6 mb-8 text-[14px] sm:text-[15px] text-black/80 leading-relaxed font-sans shadow-sm">
+                <span className="inline-block text-[10px] font-black text-[#8B7355] uppercase tracking-[0.2em] mb-2">
+                  🛡️ Realty Holding & Management Consultants Advisory
+                </span>
+                <p>
+                  This property listing for <strong className="text-black font-bold">{property.title}</strong> located in <strong className="text-black font-bold">{property.address || property.location || 'Mohali'}</strong> is verified and presented by <strong className="text-black font-bold">Realty Holding & Management Consultants (Realtyconsultants)</strong>. 
+                  {property.bedrooms ? ` Featuring a spacious ${bedroomsDisplay} BHK layout ` : ''} 
+                  {property.area_sqft ? `measuring ${property.area_sqft.toLocaleString()} sq.ft. ` : ''}
+                  {property.price ? `with pricing starting at ₹${(property.price / 10000000).toFixed(2)} Cr*, ` : ''}
+                  this project {property.developer ? `by developer ${property.developer}` : ''} has been audited by our advisory team for PUDA/RERA Punjab compliance, tower layout plans, and long-term entry-exit transaction viability to protect your capital.
+                </p>
+              </div>
+
               {/* Description (Multi-paragraph support) */}
               <div className="space-y-4 mb-8">
                 {property.description?.split('\n').map((para, i) => (
