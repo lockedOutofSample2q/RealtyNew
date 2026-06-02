@@ -69,7 +69,6 @@ export default function PropertyCard({
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-[1.5s] ease-out"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-          unoptimized
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
 
@@ -143,7 +142,6 @@ export default function PropertyCard({
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-[1.5s] ease-out"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-          unoptimized
         />
         <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-border">
           <span className="font-body text-xs uppercase tracking-widest text-charcoal font-bold">

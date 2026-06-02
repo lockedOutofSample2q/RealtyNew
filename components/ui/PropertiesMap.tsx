@@ -152,7 +152,7 @@ export default function PropertiesMap({
                 <div className="p-1 min-w-[180px]">
                   {p.images?.[0] && (
                     <div className="relative w-full h-24 mb-3 rounded-lg overflow-hidden">
-                      <img src={p.images[0]} alt={p.title} className="object-cover w-full h-full" />
+                      <img src={p.images[0]} alt={p.title} width={200} height={96} className="object-cover w-full h-full" />
                     </div>
                   )}
                   <h4 className="font-display font-bold text-sm mb-1 leading-tight">{p.title}</h4>

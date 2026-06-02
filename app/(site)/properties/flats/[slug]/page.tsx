@@ -198,11 +198,29 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const seoData = await getSectorSeo(slug);
   if (seoData) {
     const decodedSector = decodeSectorSlug(slug);
+    const titleStr = seoData.meta_title || `Flats in ${decodedSector} Mohali | Realty Consultants`;
+    const descStr = seoData.meta_description || `Explore luxury flats and apartments in ${decodedSector}, Mohali. Verified listings with price, floor plans, and amenities.`;
+    const canonicalUrl = `${siteConfig.url}/properties/flats/${slug}`;
+
     return {
-      title: seoData.meta_title || `Flats in ${decodedSector} Mohali | Realty Consultants`,
-      description: seoData.meta_description || `Explore luxury flats and apartments in ${decodedSector}, Mohali. Verified listings with price, floor plans, and amenities.`,
+      title: titleStr,
+      description: descStr,
+      openGraph: {
+        title: titleStr,
+        description: descStr,
+        url: canonicalUrl,
+        siteName: "Realty Holding & Management Consultants",
+        type: "website",
+        images: [{ url: `${siteConfig.url}/images/og-default.jpg` }],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: titleStr,
+        description: descStr,
+        images: [`${siteConfig.url}/images/og-default.jpg`],
+      },
       alternates: {
-        canonical: `${siteConfig.url}/properties/flats/${slug}`,
+        canonical: canonicalUrl,
       },
     };
   }

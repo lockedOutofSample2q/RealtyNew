@@ -85,6 +85,7 @@ export default function PropertiesClient({ properties, initialTab, initialFilter
       {seoData ? (
         <div className="sr-only">
           {seoData.h1_heading && <h1>{seoData.h1_heading}</h1>}
+          <h2>Verified Apartments &amp; Flats in Mohali &mdash; Realty Holding &amp; Management Consultants</h2>
           {seoData.intro_paragraph && <p>{seoData.intro_paragraph}</p>}
         </div>
       ) : tab === "flats" ? (
