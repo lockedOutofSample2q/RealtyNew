@@ -95,7 +95,7 @@ export const footerLinks = {
 export const heroContent = {
   headline: "Find Your Place\nin Mohali",
   subline:
-    "Mohali real estate Investments and Luxury assets, curated for those who know exactly what they want.",
+    "Realty Holding & Management Consultants is a premier real estate advisory firm in Mohali, Punjab. We guide HNI and CXO clients through verified plotting, luxury flats, and land reinvestments, leveraging 10+ years of developer-grade litigation experience and INR 84Cr+ in transaction history.",
   ctaPrimary: { label: "Explore Properties", href: "/properties" },
   ctaSecondary: { label: "Talk to an Advisor", href: "/contact" },
   // Background image (place in /public/images/hero.jpg or use Supabase URL)
