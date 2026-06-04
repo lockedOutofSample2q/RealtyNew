@@ -152,6 +152,7 @@ export default function MortgageCalculatorPage() {
 
   return (
     <>
+      <h1 className="sr-only">Home Loan & Mortgage EMI Calculator for Mohali Real Estate</h1>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(combinedSchema) }} />
       <CalculatorClient />
     </>

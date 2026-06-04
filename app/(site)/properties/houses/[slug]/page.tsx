@@ -272,6 +272,29 @@ export default async function HouseDetailPage(props: Props) {
     }
   };
 
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": property.title,
+    "description": property.meta_description || property.description,
+    "image": (property.images || []).map(img => getAbsoluteUrl(img)),
+    "offers": property.price_max ? {
+      "@type": "AggregateOffer",
+      "lowPrice": property.price,
+      "highPrice": property.price_max,
+      "priceCurrency": property.price_currency || "INR",
+      "availability": property.status === "available" ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+      "offerCount": 1,
+      "url": `${siteConfig.url}/properties/houses/${property.slug}`
+    } : {
+      "@type": "Offer",
+      "price": property.price,
+      "priceCurrency": property.price_currency || "INR",
+      "availability": property.status === "available" ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+      "url": `${siteConfig.url}/properties/houses/${property.slug}`
+    }
+  };
+
   const faqSchema = property.faqs && property.faqs.length > 0 ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -325,6 +348,10 @@ export default async function HouseDetailPage(props: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(propertySchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
       <meta name="thumbnail" content={property.images?.[0] || "/favicon.ico"} />
       <main className="bg-white min-h-screen pt-[var(--nav-height)]">

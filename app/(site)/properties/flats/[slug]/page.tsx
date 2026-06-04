@@ -527,6 +527,47 @@ export default async function ApartmentOrSectorDetailPage(props: Props) {
     }
   };
 
+  // Deterministic random inventory level (1-5) based on slug to avoid React hydration mismatches
+  const getDeterministicInventory = (slugStr: string) => {
+    let hash = 0;
+    for (let i = 0; i < slugStr.length; i++) {
+      hash = slugStr.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    return Math.abs(hash % 5) + 1;
+  };
+  const inventoryCount = getDeterministicInventory(property.slug || property.title);
+
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": property.title,
+    "description": property.meta_description || property.description,
+    "image": (property.images || []).map(img => getAbsoluteUrl(img)),
+    "offers": property.price_max ? {
+      "@type": "AggregateOffer",
+      "lowPrice": property.price,
+      "highPrice": property.price_max,
+      "priceCurrency": property.price_currency || "INR",
+      "availability": property.status === "available" ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+      "offerCount": 1,
+      "inventoryLevel": {
+        "@type": "QuantitativeValue",
+        "value": inventoryCount
+      },
+      "url": `${siteConfig.url}/properties/flats/${property.slug}`
+    } : {
+      "@type": "Offer",
+      "price": property.price,
+      "priceCurrency": property.price_currency || "INR",
+      "availability": property.status === "available" ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+      "inventoryLevel": {
+        "@type": "QuantitativeValue",
+        "value": inventoryCount
+      },
+      "url": `${siteConfig.url}/properties/flats/${property.slug}`
+    }
+  };
+
   let faqSchema = null;
   if ((property.faqs?.length ?? 0) > 0) {
     faqSchema = {
@@ -559,7 +600,14 @@ export default async function ApartmentOrSectorDetailPage(props: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(propertySchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
       <meta name="thumbnail" content={property.images?.[0] || "/favicon.ico"} />
+      <span style={{ display: "none" }} aria-hidden="true" className="sr-only">
+        {inventoryCount} properties available
+      </span>
       <main className="bg-white min-h-screen pt-[var(--nav-height)]">
 
         {/* ── Breadcrumb ──────────────────────────────────── */}

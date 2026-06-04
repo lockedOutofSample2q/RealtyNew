@@ -60,6 +60,7 @@ export default async function LandsCategoryPage() {
 
   return (
     <>
+      <h1 className="sr-only">Plots & Agricultural Land for Sale in Punjab</h1>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

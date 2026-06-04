@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true },
   },
   alternates: {
-    canonical: "./",
+    canonical: "/",
   },
 };
 

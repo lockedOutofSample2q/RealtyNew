@@ -93,7 +93,7 @@ export const footerLinks = {
 // ── Hero Section ─────────────────────────────────────────────
 // EDIT: Change the hero headline, subline, and background
 export const heroContent = {
-  headline: "Find Your Place\nin Mohali",
+  headline: "Find Your Home\nin Mohali",
   subline:
     "Mohali real estate Investments and Luxury assets, curated for those who know exactly what they want.",
   ctaPrimary: { label: "Explore Properties", href: "/properties" },
@@ -222,7 +222,7 @@ export const propertiesPage = {
     description: "Verified property listings in Mohali and Tricity: pre-launch, resale, and ready possession. Evaluated for RERA compliance, developer track record, and fair pricing.",
   },
   hero: {
-    headline: "Find Your Place\nin Mohali",
+    headline: "Find Your Home\nin Mohali",
     subline: "Investments and luxury assets, curated for those who know exactly what they want.",
     backgroundImage: "/assets/images/home/hero.webp",
   }

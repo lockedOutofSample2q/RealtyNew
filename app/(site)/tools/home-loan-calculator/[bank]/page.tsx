@@ -161,6 +161,7 @@ export default async function BankMortgageCalculatorPage({ params }: Props) {
 
   return (
     <>
+      <h1 className="sr-only">{data.title}</h1>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(combinedSchema) }} />
       <CalculatorClient {...props} />
     </>

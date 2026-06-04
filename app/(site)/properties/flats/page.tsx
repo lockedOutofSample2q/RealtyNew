@@ -60,6 +60,7 @@ export default async function FlatsCategoryPage() {
 
   return (
     <>
+      <h1 className="sr-only">Buy Luxury Flats & Apartments in Mohali</h1>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

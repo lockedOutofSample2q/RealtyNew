@@ -25,6 +25,9 @@ export async function generateMetadata({ params }: PostPageProps) {
   return {
     title: post.title,
     description: post.excerpt,
+    alternates: {
+      canonical: `${siteConfig.url}/blog/${post.slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
