@@ -255,110 +255,11 @@ export default function BuilderProfileClient({ builder, properties }: BuilderPro
           </p>
         </div>
 
-        {/* SECTION B — Builder At a Glance (Table) */}
-        <div className="bg-white border border-black/5 rounded-3xl p-8 mb-12">
-          <h2 className="font-display text-lg font-medium text-charcoal mb-6">
-            Builder At a Glance
-          </h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse text-xs font-body">
-              <tbody>
-                <tr className="border-b border-black/5">
-                  <td className="py-4 pr-4 font-bold text-black/45 w-1/3">Legal Entity Name</td>
-                  <td className="py-4 text-charcoal font-medium">{builder.name}</td>
-                </tr>
-                <tr className="border-b border-black/5">
-                  <td className="py-4 pr-4 font-bold text-black/45">Commonly Known As</td>
-                  <td className="py-4 text-charcoal font-medium">{builder.commonName}</td>
-                </tr>
-                <tr className="border-b border-black/5">
-                  <td className="py-4 pr-4 font-bold text-black/45">Founded</td>
-                  <td className="py-4 text-charcoal font-medium">{builder.founded}</td>
-                </tr>
-                <tr className="border-b border-black/5">
-                  <td className="py-4 pr-4 font-bold text-black/45">Headquarters</td>
-                  <td className="py-4 text-charcoal font-medium">{builder.headquarters}</td>
-                </tr>
-                <tr className="border-b border-black/5">
-                  <td className="py-4 pr-4 font-bold text-black/45">RERA Status</td>
-                  <td className="py-4 text-charcoal font-medium">
-                    <span className="text-emerald-600 font-semibold">✅ {builder.reraStatus}</span>
-                  </td>
-                </tr>
-                <tr className="border-b border-black/5">
-                  <td className="py-4 pr-4 font-bold text-black/45">RERA Registration</td>
-                  <td className="py-4 text-charcoal font-medium font-mono">{builder.reraReg}</td>
-                </tr>
-                <tr className="border-b border-black/5">
-                  <td className="py-4 pr-4 font-bold text-black/45">Active Projects in Mohali</td>
-                  <td className="py-4 text-charcoal font-medium">{builder.propertyCount}</td>
-                </tr>
-                <tr className="border-b border-black/5">
-                  <td className="py-4 pr-4 font-bold text-black/45">Sectors Active</td>
-                  <td className="py-4 text-charcoal font-medium">{builder.locations.join(", ")}</td>
-                </tr>
-                <tr className="border-b border-black/5">
-                  <td className="py-4 pr-4 font-bold text-black/45">Asset Types</td>
-                  <td className="py-4 text-charcoal font-medium">{builder.types.join(", ")}</td>
-                </tr>
-                <tr className="border-b border-black/5">
-                  <td className="py-4 pr-4 font-bold text-black/45">Price Range</td>
-                  <td className="py-4 text-charcoal font-medium">{builder.priceRange}</td>
-                </tr>
-                <tr className="border-b border-black/5">
-                  <td className="py-4 pr-4 font-bold text-black/45">Buyer Profile</td>
-                  <td className="py-4 text-charcoal font-medium">{builder.buyerProfile}</td>
-                </tr>
-                {builder.website && (
-                  <tr>
-                    <td className="py-4 pr-4 font-bold text-black/45">Official Website</td>
-                    <td className="py-4 text-charcoal font-medium">
-                      <a 
-                        href={builder.website.startsWith("http") ? builder.website : `https://${builder.website}`} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="hover:underline text-black/60 inline-flex items-center gap-1"
-                      >
-                        {builder.website.replace(/^https?:\/\/(www\.)?/, "")} <ExternalLink size={10} />
-                      </a>
-                    </td>
-                  </tr>
-                )}
-              </tbody>
-            </table>
-          </div>
-        </div>
-
         {/* Main Grid: Content Split */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
           {/* Main Content Column */}
           <div className="lg:col-span-2 space-y-8">
             
-            {/* SECTION C — Builder Background & Mohali Presence */}
-            <div className="bg-white border border-black/5 p-8 rounded-3xl space-y-6">
-              <h2 className="font-display text-2xl font-medium text-charcoal">
-                Builder Background & Mohali Presence
-              </h2>
-              <div className="space-y-4">
-                <div>
-                  <h3 className="font-display text-xs font-bold text-black/40 mb-2 uppercase tracking-wider">
-                    Who They Are
-                  </h3>
-                  <p className="font-body text-sm leading-relaxed text-black/60">
-                    {builder.background.c1}
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-display text-xs font-bold text-black/40 mb-2 uppercase tracking-wider">
-                    Their Mohali Footprint
-                  </h3>
-                  <p className="font-body text-sm leading-relaxed text-black/60">
-                    {builder.background.c2}
-                  </p>
-                </div>
-              </div>
-            </div>
-
             {/* SECTION D — Active Projects Listings (Enhanced with custom editorial notes) */}
             <div className="space-y-6">
               <div>
@@ -391,6 +292,105 @@ export default function BuilderProfileClient({ builder, properties }: BuilderPro
                   </p>
                 </div>
               )}
+            </div>
+
+            {/* SECTION B — Builder At a Glance (Compact Table) */}
+            <div className="bg-white border border-black/5 rounded-3xl p-6">
+              <h3 className="font-display text-xs font-bold text-black/45 uppercase tracking-wider mb-4">
+                Builder At a Glance
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse text-[11px] font-body">
+                  <tbody>
+                    <tr className="border-b border-black/5">
+                      <td className="py-2.5 pr-4 font-bold text-black/45 w-1/3">Legal Entity Name</td>
+                      <td className="py-2.5 text-charcoal font-medium">{builder.name}</td>
+                    </tr>
+                    <tr className="border-b border-black/5">
+                      <td className="py-2.5 pr-4 font-bold text-black/45">Commonly Known As</td>
+                      <td className="py-2.5 text-charcoal font-medium">{builder.commonName}</td>
+                    </tr>
+                    <tr className="border-b border-black/5">
+                      <td className="py-2.5 pr-4 font-bold text-black/45">Founded</td>
+                      <td className="py-2.5 text-charcoal font-medium">{builder.founded}</td>
+                    </tr>
+                    <tr className="border-b border-black/5">
+                      <td className="py-2.5 pr-4 font-bold text-black/45">Headquarters</td>
+                      <td className="py-2.5 text-charcoal font-medium">{builder.headquarters}</td>
+                    </tr>
+                    <tr className="border-b border-black/5">
+                      <td className="py-2.5 pr-4 font-bold text-black/45">RERA Status</td>
+                      <td className="py-2.5 text-charcoal font-medium">
+                        <span className="text-emerald-600 font-semibold">✅ {builder.reraStatus}</span>
+                      </td>
+                    </tr>
+                    <tr className="border-b border-black/5">
+                      <td className="py-2.5 pr-4 font-bold text-black/45">RERA Registration</td>
+                      <td className="py-2.5 text-charcoal font-medium font-mono">{builder.reraReg}</td>
+                    </tr>
+                    <tr className="border-b border-black/5">
+                      <td className="py-2.5 pr-4 font-bold text-black/45">Active Projects in Mohali</td>
+                      <td className="py-2.5 text-charcoal font-medium">{builder.propertyCount}</td>
+                    </tr>
+                    <tr className="border-b border-black/5">
+                      <td className="py-2.5 pr-4 font-bold text-black/45">Sectors Active</td>
+                      <td className="py-2.5 text-charcoal font-medium">{builder.locations.join(", ")}</td>
+                    </tr>
+                    <tr className="border-b border-black/5">
+                      <td className="py-2.5 pr-4 font-bold text-black/45">Asset Types</td>
+                      <td className="py-2.5 text-charcoal font-medium">{builder.types.join(", ")}</td>
+                    </tr>
+                    <tr className="border-b border-black/5">
+                      <td className="py-2.5 pr-4 font-bold text-black/45">Price Range</td>
+                      <td className="py-2.5 text-charcoal font-medium">{builder.priceRange}</td>
+                    </tr>
+                    <tr className="border-b border-black/5">
+                      <td className="py-2.5 pr-4 font-bold text-black/45">Buyer Profile</td>
+                      <td className="py-2.5 text-charcoal font-medium">{builder.buyerProfile}</td>
+                    </tr>
+                    {builder.website && (
+                      <tr>
+                        <td className="py-2.5 pr-4 font-bold text-black/45">Official Website</td>
+                        <td className="py-2.5 text-charcoal font-medium">
+                          <a 
+                            href={builder.website.startsWith("http") ? builder.website : `https://${builder.website}`} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="hover:underline text-black/60 inline-flex items-center gap-1"
+                          >
+                            {builder.website.replace(/^https?:\/\/(www\.)?/, "")} <ExternalLink size={10} />
+                          </a>
+                        </td>
+                      </tr>
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* SECTION C — Builder Background & Mohali Presence */}
+            <div className="bg-white border border-black/5 p-8 rounded-3xl space-y-6">
+              <h2 className="font-display text-2xl font-medium text-charcoal">
+                Builder Background & Mohali Presence
+              </h2>
+              <div className="space-y-4">
+                <div>
+                  <h3 className="font-display text-xs font-bold text-black/40 mb-2 uppercase tracking-wider">
+                    Who They Are
+                  </h3>
+                  <p className="font-body text-sm leading-relaxed text-black/60">
+                    {builder.background.c1}
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-display text-xs font-bold text-black/40 mb-2 uppercase tracking-wider">
+                    Their Mohali Footprint
+                  </h3>
+                  <p className="font-body text-sm leading-relaxed text-black/60">
+                    {builder.background.c2}
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* SECTION E — Our Advisory Breakdown */}
