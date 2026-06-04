@@ -1,0 +1,2012 @@
+{
+  "sectors": {
+    "67": "Sector 67 is one of Mohali's most established and secure residential zones. Flanked by commercial showrooms and premium schools, it is characterized by low-rise development and legacy cooperative housing societies. The sector is highly sought after for its mature infrastructure, clean parks, and peaceful living environment, making resale apartments here highly liquid.",
+    "68": "Sector 68 is a centrally located residential sector in Mohali, offering an optimal balance of accessibility and peaceful living. It borders the administrative hub of Mohali and is connected directly to Chandigarh via the sector division roads. The presence of several government employee cooperative societies makes it a reliable, high-trust neighborhood for families.",
+    "70": "Sector 70 is a premium, mature residential sector in Mohali. Known for its wide sector roads, abundant green parks, and immediate proximity to Chandigarh, it commands some of the highest residential land rates in the city. It features a mix of luxury independent houses, cooperative group housing societies, and premium commercial markets.",
+    "78": "Sector 78 lies in the central residential zone of Mohali, adjacent to the PCA Cricket Stadium and Sector 68. The sector benefits from excellent sports infrastructure, wide roads, and proximity to major markets. It serves as an attractive destination for families looking for ready-to-move-in apartments with direct connectivity to Chandigarh and Airport Road.",
+    "82": "Sector 82 is Mohali's primary industrial and commercial hub, containing the JLPL Industrial Park. It is a highly active commercial zone with offices, warehouses, and manufacturing units. The sector benefits from direct access to Airport Road, making it a critical asset for commercial property owners and investors seeking stable rental income.",
+    "83": "Sector 83 is a mixed-use industrial and commercial sector in Mohali, situated adjacent to Sector 82. It forms a key part of the industrial expansion corridor on Airport Road, hosting tech offices and logistics hubs. Proximity to the airport and transport nodes supports its high occupancy rates for commercial spaces.",
+    "88": "Sector 88 is one of Mohali's largest and most rapidly growing residential sectors. Conceived as a low-density residential hub, it features wide internal roads, expansive parks, and modern civic infrastructure. It hosts several landmark premium residential projects, catering to buyers who prioritize lifestyle amenities and modern security.",
+    "91": "Sector 91 is a mature residential sector in Mohali's western corridor. It offers a mix of private developer projects, independent villas, and cooperative societies. Flanked by green belts and localized commercial centers, it is highly popular among retired defense personnel, NRI families, and first-time premium home buyers.",
+    "112": "Sector 112 is an upcoming residential and commercial sector located along the Landran-Banur Road in Mohali. Positioned as a gateway to the outer highway networks, it offers highly competitive pricing compared to the central sectors. It is popular among buyers seeking large carpet areas and modern amenities at accessible price brackets.",
+    "116": "Sector 116 is a rapidly growing residential sector in Mohali's outer ring. Located along the main Landran-Kharar corridor, it features a mix of residential plots, low-rise floors, and gated communities. The sector is highly favored by first-time home buyers and investors looking for early-stage capital appreciation.",
+    "117": "Sector 117 is part of the TDI City master development in Mohali. Strategically located on the Kharar-Landran Road, it enjoys excellent connectivity to the NH-21 highway. The sector is a self-contained micro-township featuring residential towers, independent floors, shopping malls, and commercial spaces at accessible prices.",
+    "121": "Sector 121 is located on the immediate border of Mohali and Chandigarh, adjacent to the NH-21 highway. It functions as a strategic entrance to the Tricity. The sector is dominated by low-density premium group housing projects, offering Chandigarh proximity combined with Mohali's modern infrastructure.",
+    "126": "Sector 126 is an established residential and commercial hub in Mohali's northern corridor, bordering Kharar. Home to mega-townships like Gillco Valley, it features a highly active rental market due to nearby educational institutions and commercial hubs. It offers excellent connectivity to NH-21.",
+    "66A": "Sector 66A is part of Mohali's IT City zone, adjacent to the 1,900-acre JLPL Industrial Park. The sector benefits from direct access to NH-205, proximity to Chandigarh International Airport (~12 min), and is flanked by the Phase 8 IT cluster — home to Quark City, DLF IT Park, and Infosys campuses. Residential demand here is structurally supported by IT sector employment, making rental yields in 66A consistently stronger than most other Mohali sectors.",
+    "66B": "Sector 66B is a premium extension of IT City, Mohali. Positioned along the Airport Road, it represents one of the most high-potential growth corridors in the Tricity. It hosts luxury high-rise group housing societies and enjoys direct proximity to the international airport and upcoming commercial complexes. Real estate demand is driven by corporate HNIs and NRI investors.",
+    "82A": "Sector 82A is a prestigious micro-market within IT City, Mohali. Strategically located along the Airport Road, this sector is designed to accommodate premium commercial projects and high-density luxury residential towers. With its proximity to Chandigarh International Airport and major IT clusters, it is a prime target for high-yield commercial investments.",
+    "83A": "Sector 83A is an upscale commercial and residential micro-pocket near IT City on the Airport Road. It is home to landmark commercial structures and Mohali's tallest residential towers. The sector benefits from massive infrastructure investment and serves as a high-growth zone for luxury residential developments.",
+    "Aerocity": "Aerocity is Mohali's flagship commercial and residential development along the international airport corridor. Spanning several blocks, it features wide avenues, premium commercial showrooms, and upscale residential plots. It is considered one of the most prestigious addresses in Mohali with high capital growth potential."
+  },
+  "builders": {
+    "ats-infrastructure-limited": {
+      "legalName": "ATS Infrastructure Limited",
+      "commonName": "ATS",
+      "founded": "1998",
+      "headquarters": "Noida, Uttar Pradesh",
+      "reraStatus": "Verified",
+      "reraReg": "PBRERA-SAS80-PR0084 (ATS Casa Espana)",
+      "activeProjects": 1,
+      "sectorsActive": [
+        "121"
+      ],
+      "assetTypes": [
+        "Apartments"
+      ],
+      "priceRange": "₹1.65 crore – ₹3.20 crore",
+      "buyerProfile": "Premium to luxury buyers seeking spacious layouts",
+      "website": "atsgreens.com",
+      "advisoryVerdict": "ATS (ATS Infrastructure Limited) is renowned for low-density, high-quality residential campuses across North India. Their Mohali flagship, ATS Casa Espana in Sector 121, represents a premium entrance address with Spanish-influenced architecture and massive green expanses. Our advisory recommends ATS for buyers who prioritize structural longevity, layout size, and easy daily Chandigarh commutes. Caveat: Maintenance disputes and delayed handovers in some towers require buyer diligence; ensure current compliance checks with our desk before signing.",
+      "background": {
+        "c1": "Established in 1998 by Getamber Anand, ATS has delivered over 30 million square feet of residential space. Known for their signature Mediterranean facades, generous green spaces, and in-house facility management, they operate as a premium developer with a national presence.",
+        "c2": "In Mohali, ATS has focused on a single massive project: ATS Casa Espana in Sector 121. Positioned on the border of Chandigarh and Mohali, it features 121-acre master planning with only two apartments per lobby floor. This low-density layout provides a distinct level of privacy and green space that newer high-density projects cannot match, establishing it as a primary luxury landmark."
+      },
+      "editorialNotes": {
+        "ats-casa-espana-sector-121-mohali": "Spanish-themed luxury residences featuring low-density layout and massive green areas. Offers the best Chandigarh-Mohali border connectivity and premium construction."
+      },
+      "advisoryBreakdown": {
+        "rightFor": [
+          "Families seeking low-density apartments with maximum privacy (only 2 flats per floor)",
+          "Commuters who need quick, traffic-free access to Chandigarh",
+          "Buyers prioritizing massive carpet areas and high ceilings"
+        ],
+        "lookElsewhere": [
+          "Budget buyers with a ticket size below ₹1.5 crore",
+          "Investors looking for quick resale gains or high rental-to-price ratios"
+        ],
+        "ratings": {
+          "delivery": 7,
+          "quality": 9,
+          "appreciation": 8,
+          "friendliness": 7
+        }
+      },
+      "comparables": [
+        "jlpl",
+        "homeland-group",
+        "marbella-group-srg-group"
+      ],
+      "faqs": [
+        {
+          "q": "Is ATS RERA verified in Mohali?",
+          "a": "Yes. ATS Casa Espana is registered under Punjab RERA with registration number PBRERA-SAS80-PR0084."
+        },
+        {
+          "q": "What is the starting price for ATS flats in Mohali?",
+          "a": "ATS Casa Espana units start from ₹1.65 crore for 3BHK configurations, with 4BHK and penthouses commanding up to ₹3.20 crore."
+        },
+        {
+          "q": "In which sectors does ATS have projects in Mohali?",
+          "a": "ATS operates in Sector 121, Mohali, situated directly on the Chandigarh border off the NH-21 highway."
+        },
+        {
+          "q": "Is ATS good for investment in Mohali?",
+          "a": "Yes, for long-term capital preservation. The low-density nature of the project keeps demand high on the secondary market."
+        },
+        {
+          "q": "How do I book an ATS flat through Realty Consultants?",
+          "a": "You can request a verified unit inventory sheet through the Inquiry form on this page or call our desk directly for developer negotiations."
+        }
+      ]
+    },
+    "jubilee-group": {
+      "legalName": "Jubilee Infratech Private Limited",
+      "commonName": "Jubilee Group",
+      "founded": "2013",
+      "headquarters": "Mohali, Punjab",
+      "reraStatus": "Verified",
+      "reraReg": "PBRERA-SAS81-PM0152, PBRERA-SAS80-PR0693",
+      "activeProjects": 3,
+      "sectorsActive": [
+        "91",
+        "112",
+        "116"
+      ],
+      "assetTypes": [
+        "Apartments",
+        "Commercial Showrooms",
+        "Plots"
+      ],
+      "priceRange": "₹45 lakh – ₹1.85 crore",
+      "buyerProfile": "First-time buyers, mid-segment families, and commercial investors",
+      "website": "jubileegroup.in",
+      "advisoryVerdict": "Jubilee Group is Mohali's most consistent entry point for first-time apartment buyers and commercial space investors. With active projects spanning Sector 91, 112, and 116, Jubilee targets a functional, value-driven buyer profile. Our advisory team rates their delivery record as highly consistent. Caveat: Floor plan configurations vary significantly between projects, and pricing on outer-road developments is highly sensitive to infrastructure progress. Verify the specific block status before booking.",
+      "background": {
+        "c1": "Founded in 2013, Jubilee Group has established itself as a reliable regional developer in the Tricity. They have focused on delivering functional residential apartments and highly visible retail showrooms along Mohali's major sector division corridors.",
+        "c2": "Jubilee's footprint is spread strategically across emerging and established sectors. In Sector 91, their Jubilee Vallum project offers premium mid-segment living, while Jubilee Twinto in Sector 112 caters to compact, entry-level requirements. They are also known for commercial landmarks like Jubilee Square on Airport Road, demonstrating a balanced portfolio."
+      },
+      "editorialNotes": {
+        "jubilee-twinto-sector-112-mohali": "Compact, highly affordable 1BHK apartments ideal for working professionals or young couples near outer Chandigarh connectivity.",
+        "jubilee-vallum-sector-91-mohali": "Premium mid-segment 3 & 4 BHK apartments featuring modern layouts, high-quality finishes, and mature sector facilities.",
+        "jubilee-city-gardens": "A mixed-use gated township in Sector 116 offering residential plots and independent floors for custom build-outs."
+      },
+      "advisoryBreakdown": {
+        "rightFor": [
+          "First-time buyers looking for high-trust regional developers",
+          "Investors seeking stable rental yields from commercial showrooms",
+          "Buyers with a budget range between ₹45L and ₹1.2Cr"
+        ],
+        "lookElsewhere": [
+          "Buyers seeking ultra-luxury, low-density penthouses or golf-facing layouts",
+          "Buyers requiring immediate possession in uncompleted phases"
+        ],
+        "ratings": {
+          "delivery": 9,
+          "quality": 8,
+          "appreciation": 8,
+          "friendliness": 8
+        }
+      },
+      "comparables": [
+        "gillco-developers-and-builders-pvt-ltd-gillco-group",
+        "bestech-group-bestech-india-pvt-ltd",
+        "tdi"
+      ],
+      "faqs": [
+        {
+          "q": "Is Jubilee Group RERA verified in Mohali?",
+          "a": "Yes. All Jubilee Group projects, including Jubilee Vallum and Jubilee Twinto, are fully registered with Punjab RERA."
+        },
+        {
+          "q": "What is the starting price for Jubilee flats in Mohali?",
+          "a": "Jubilee flats start from ₹45 lakh for compact 1BHK units at Jubilee Twinto, scaling up to ₹1.85 crore for premium 4BHK units."
+        },
+        {
+          "q": "In which sectors does Jubilee Group operate?",
+          "a": "Jubilee has residential and commercial projects in Sectors 91, 112, 116, and on the Airport Road corridors."
+        },
+        {
+          "q": "Is Jubilee Group good for investment?",
+          "a": "Yes, especially their commercial showrooms and plots, which benefit from strategic locations along primary sector-division roads."
+        },
+        {
+          "q": "How do I buy a Jubilee Group property?",
+          "a": "Connect with our advisory desk to get verified secondary inventory lists and builder-direct pricing details."
+        }
+      ]
+    },
+    "tdi": {
+      "legalName": "TDI Infratech Limited",
+      "commonName": "TDI",
+      "founded": "1989",
+      "headquarters": "New Delhi",
+      "reraStatus": "Verified",
+      "reraReg": "PBRERA-SAS80-PR0099 (Wellington Heights)",
+      "activeProjects": 1,
+      "sectorsActive": [
+        "117"
+      ],
+      "assetTypes": [
+        "Apartments",
+        "Commercial",
+        "Plots"
+      ],
+      "priceRange": "₹60 lakh – ₹1.10 crore",
+      "buyerProfile": "Value-conscious buyers and high-yield commercial rental seekers",
+      "website": "tdiinfratech.com",
+      "advisoryVerdict": "TDI (TDI Infratech Ltd.) is one of the oldest master-developers in the outer Mohali-Kharar belt, responsible for the multi-acre TDI City. Their primary listing, Wellington Heights in Sector 117, offers highly competitive pricing for spacious layouts. Our advisory desk recommends TDI for budget buyers seeking ready-to-use infrastructure. Caveat: Maintenance quality and road infrastructure in TDI City have faced legacy challenges; verify block-specific civic statuses with us.",
+      "background": {
+        "c1": "Founded in 1989, TDI Infratech is a Delhi-based developer with massive integrated township footprints in Haryana and Punjab. They pioneered early-stage large-scale colonization in Mohali's outer corridors.",
+        "c2": "TDI's footprint is centered in TDI City, spanning Sector 117, 118, and 119. Wellington Heights is their flagship high-rise development here, providing affordable residential options adjacent to shopping malls and NH-21 connectivity, creating a highly self-contained ecosystem."
+      },
+      "editorialNotes": {
+        "wellington-heights": "Spacious, highly budget-friendly residential towers in Sector 117. Enjoy direct access to malls and retail clusters, making it ideal for nuclear families."
+      },
+      "advisoryBreakdown": {
+        "rightFor": [
+          "Budget-conscious families seeking large carpet areas under ₹90L",
+          "Investors looking for immediate rental yield from local professionals",
+          "Buyers wanting ready-to-move-in options with mature retail nearby"
+        ],
+        "lookElsewhere": [
+          "Buyers seeking premium luxury finishes and high-end club facilities",
+          "Buyers sensitive to localized municipality service delays"
+        ],
+        "ratings": {
+          "delivery": 7,
+          "quality": 7,
+          "appreciation": 7,
+          "friendliness": 7
+        }
+      },
+      "comparables": [
+        "gillco-developers-and-builders-pvt-ltd-gillco-group",
+        "jubilee-group"
+      ],
+      "faqs": [
+        {
+          "q": "Is TDI RERA verified in Mohali?",
+          "a": "Yes. TDI's active projects in Sector 117, including Wellington Heights, are registered under Punjab RERA."
+        },
+        {
+          "q": "What is the starting price for TDI properties in Mohali?",
+          "a": "Wellington Heights apartments start at ₹60 lakh for 2BHK and scale up to ₹1.10 crore for larger 3/4BHK formats."
+        },
+        {
+          "q": "In which sectors does TDI operate in Mohali?",
+          "a": "TDI's primary presence is in Sectors 117, 118, and 119, which form the TDI City township."
+        },
+        {
+          "q": "Is TDI a good investment option?",
+          "a": "It represents a solid utility investment for rental yield, but capital appreciation is slower compared to central IT City sectors."
+        },
+        {
+          "q": "How can I buy a TDI apartment?",
+          "a": "Contact our desk for a resale inventory audit, as many completed options offer excellent value over developer pricing."
+        }
+      ]
+    },
+    "homeland-group": {
+      "legalName": "Homeland Buildwell Private Limited",
+      "commonName": "Homeland Group",
+      "founded": "2007",
+      "headquarters": "Mohali, Punjab",
+      "reraStatus": "Verified",
+      "reraReg": "PBRERA-SAS80-PR0732 (Regalia)",
+      "activeProjects": 2,
+      "sectorsActive": [
+        "70",
+        "Airport Road"
+      ],
+      "assetTypes": [
+        "Luxury Apartments",
+        "Penthouses"
+      ],
+      "priceRange": "₹1.80 crore – ₹7.20 crore",
+      "buyerProfile": "Ultra-HNIs, luxury-oriented families, and NRI investors",
+      "website": "homelandgroup.org",
+      "advisoryVerdict": "Homeland Group is Mohali's definitive brand for lifestyle-led luxury high-rise apartments. Their legacy development, Homeland Heights in Sector 70, set the initial benchmark for luxury on the Airport Road. Their newer offering, Homeland Regalia, targets the top tier of the UHNW market. Our desk recommends Homeland for buyers seeking elite social status, premium security, and immediate liquidity. Caveat: Maintenance charges are among the highest in the city; calculate lifecycle costs before purchase.",
+      "background": {
+        "c1": "Established in 2007, Homeland Group has focused exclusively on the premium and luxury residential segment. They are known for introducing high-rise condominium culture to Mohali, collaborating with international design firms.",
+        "c2": "Homeland's presence is anchored at prestigious crossroads. Homeland Heights in Sector 70 commands high resale values, while Homeland Regalia represents a massive new-generation luxury tower development on the Airport Road corridor, serving the ultra-luxury demographic."
+      },
+      "editorialNotes": {
+        "homeland-regalia-mohali": "Ultra-luxury residential project on Airport Road with private lounges, sky clubs, and state-of-the-art automation. Designed for premium lifestyles.",
+        "homeland-heights-mohali": "An established premium address in Sector 70. Command excellent secondary market demand due to outstanding maintenance and central location."
+      },
+      "advisoryBreakdown": {
+        "rightFor": [
+          "Buyers seeking high-status social communities and elite security",
+          "Investors looking for highly liquid premium assets in central Mohali",
+          "Buyers requiring high-end club amenities and professional concierge services"
+        ],
+        "lookElsewhere": [
+          "First-time buyers with a budget below ₹1.5 crore",
+          "Buyers seeking low-maintenance independent floors or plots"
+        ],
+        "ratings": {
+          "delivery": 9,
+          "quality": 9,
+          "appreciation": 9,
+          "friendliness": 8
+        }
+      },
+      "comparables": [
+        "jlpl",
+        "marbella-group-srg-group",
+        "noble-ventures-noble-group"
+      ],
+      "faqs": [
+        {
+          "q": "Is Homeland Group RERA verified in Mohali?",
+          "a": "Yes. All active projects, including Homeland Regalia, are registered under Punjab RERA."
+        },
+        {
+          "q": "What is the starting price at Homeland Heights and Regalia?",
+          "a": "Resale units in Homeland Heights start from ₹1.80 crore. New bookings in Homeland Regalia start from ₹3.5 crore and scale up to ₹7.20 crore."
+        },
+        {
+          "q": "In which sectors does Homeland have projects?",
+          "a": "Homeland has projects in Sector 70 and on the prime Airport Road growth corridor."
+        },
+        {
+          "q": "Why are Homeland properties priced higher?",
+          "a": "Their pricing reflects premium locations, high construction specifications, and extensive luxury amenities like private sky decks."
+        },
+        {
+          "q": "How can I inspect a Homeland property?",
+          "a": "Inspections are managed via scheduled appointments. Reach out to our advisory desk to coordinate a walkthrough."
+        }
+      ]
+    },
+    "noble-ventures-noble-group": {
+      "legalName": "Noble Ventures Private Limited",
+      "commonName": "Noble Group",
+      "founded": "2012",
+      "headquarters": "Noida, Uttar Pradesh",
+      "reraStatus": "Verified",
+      "reraReg": "PBRERA-SAS80-PR0674 (Noble Callista)",
+      "activeProjects": 2,
+      "sectorsActive": [
+        "66B",
+        "88"
+      ],
+      "assetTypes": [
+        "Apartments",
+        "Luxury Condominiums"
+      ],
+      "priceRange": "₹1.40 crore – ₹4.80 crore",
+      "buyerProfile": "Upper-mid segment to luxury buyers seeking contemporary features",
+      "website": "nobleventures.in",
+      "advisoryVerdict": "Noble Ventures (Noble Group) has carved a strong niche in Mohali's luxury high-rise residential segment. Their flagship, Noble Callista in Sector 66B IT City, targets the premium buyer with large-format layouts. Our advisory team rates their architectural planning highly. Caveat: The pace of infrastructure development in the outer parts of Sector 66B will dictate appreciation timelines. Recommended for buyers with a 2-3 year horizon.",
+      "background": {
+        "c1": "Noble Ventures has established a track record of building premium residential projects, transitioning from regional NCR roots to prominent Mohali developments. They emphasize contemporary design and modern spatial layouts.",
+        "c2": "Noble's footprint includes Noble Magnollia in Sector 88 and the major Noble Callista project in Sector 66B, IT City. This positions them at the center of Mohali's modern expansion corridors, catering to the growing corporate workforce."
+      },
+      "editorialNotes": {
+        "noble-magnollia-sector-88-mohali": "Premium apartments in Sector 88 offering a balance of connectivity and modern residential amenities. Ideal for end-use families.",
+        "noble-callista": "Luxury residences in IT City Sector 66B featuring extensive open balconies, modern club facilities, and close proximity to major corporate offices."
+      },
+      "advisoryBreakdown": {
+        "rightFor": [
+          "Buyers looking for large-format apartments (3.5 to 5.5 BHK layouts)",
+          "Corporate executives wanting to live near the IT City hub",
+          "Investors seeking capital growth in high-priority zones"
+        ],
+        "lookElsewhere": [
+          "Buyers looking for compact 2BHK apartments or plots",
+          "Buyers needing immediate possession within a few months"
+        ],
+        "ratings": {
+          "delivery": 8,
+          "quality": 9,
+          "appreciation": 8,
+          "friendliness": 8
+        }
+      },
+      "comparables": [
+        "marbella-group-srg-group",
+        "ambika-realcon-pvt-ltd-ambika-infra-ventures-pvt-ltd",
+        "turnstone-realty-medallion-group"
+      ],
+      "faqs": [
+        {
+          "q": "Is Noble Ventures RERA verified?",
+          "a": "Yes. Noble Callista and Noble Magnollia are registered with Punjab RERA with active registration numbers."
+        },
+        {
+          "q": "What is the starting price for Noble Callista?",
+          "a": "Noble Callista starts at ₹1.65 crore for 3.5 BHK units and goes up to ₹4.80 crore for premium penthouses."
+        },
+        {
+          "q": "Which sectors are Noble Ventures active in?",
+          "a": "They have active developments in Sector 66B (IT City) and Sector 88, Mohali."
+        },
+        {
+          "q": "Is Noble Callista a good choice for end-users?",
+          "a": "Yes. The large layouts, double-height lobbies, and excellent ventilation make it a highly liveable luxury option."
+        },
+        {
+          "q": "How can I book a unit with Noble Ventures?",
+          "a": "Connect with our advisory desk for access to developer-direct bookings and exclusive payment plans."
+        }
+      ]
+    },
+    "klv-builders-and-developers-pvt-ltd": {
+      "legalName": "KLV Builders and Developers Private Limited",
+      "commonName": "KLV Builders",
+      "founded": "2009",
+      "headquarters": "Chandigarh",
+      "reraStatus": "Verified",
+      "reraReg": "PBRERA-SAS81-PR0122 (Signature Towers)",
+      "activeProjects": 1,
+      "sectorsActive": [
+        "66A"
+      ],
+      "assetTypes": [
+        "Apartments"
+      ],
+      "priceRange": "₹1.90 crore – ₹3.50 crore",
+      "buyerProfile": "Premium buyers wanting central location and high-rise living",
+      "website": "klvbuilders.com",
+      "advisoryVerdict": "KLV Builders operates as a focused local developer. Their signature project, KLV Signature Towers in Sector 66A, offers large-format premium apartments located in one of Mohali's most connected zones. Our advisory desk recommends KLV for buyers prioritizing location convenience over extensive green areas. Caveat: Open areas inside the campus are compact compared to larger developments; evaluate site plans carefully.",
+      "background": {
+        "c1": "KLV Builders is a Tricity-based developer known for delivering targeted commercial and residential developments. They focus on structural efficiency and prime micro-locations within Mohali.",
+        "c2": "Their presence is dominated by KLV Signature Towers in Sector 66A, placing them in the high-demand IT City cluster. The development serves buyers who want high-rise lifestyle amenities with direct access to Airport Road."
+      },
+      "editorialNotes": {
+        "klv-signature-towers-sector-66a-mohali": "Spacious premium apartments in Sector 66A. Offers exceptional airport connectivity and highly functional interior layouts."
+      },
+      "advisoryBreakdown": {
+        "rightFor": [
+          "Buyers prioritizing Sector 66A location and airport road access",
+          "Families looking for large 4BHK formats with modern layouts",
+          "Investors seeking solid rental demand from corporate tenants"
+        ],
+        "lookElsewhere": [
+          "Buyers seeking vast landscaped gardens and low-density layouts",
+          "Budget-conscious buyers under ₹1.5 crore"
+        ],
+        "ratings": {
+          "delivery": 8,
+          "quality": 8,
+          "appreciation": 8,
+          "friendliness": 7
+        }
+      },
+      "comparables": [
+        "jlpl",
+        "bestech-group-bestech-india-pvt-ltd",
+        "turnstone-realty-medallion-group"
+      ],
+      "faqs": [
+        {
+          "q": "Is KLV Signature Towers RERA verified?",
+          "a": "Yes. KLV Signature Towers is registered under Punjab RERA (PBRERA-SAS81-PR0122)."
+        },
+        {
+          "q": "What is the price range for KLV flats?",
+          "a": "Pricing ranges between ₹1.90 crore and ₹3.50 crore, depending on the floor level and layout configuration."
+        },
+        {
+          "q": "Where is the KLV project located?",
+          "a": "It is located in Sector 66A, Mohali, directly adjacent to the IT City zone and Airport Road."
+        },
+        {
+          "q": "What amenities does KLV Signature Towers offer?",
+          "a": "It includes a fully equipped club house, gymnasium, swimming pool, and 24-hour security protocols."
+        },
+        {
+          "q": "How can I buy a unit in KLV Signature Towers?",
+          "a": "Request our verified inventory sheet for resale and builder-direct opportunities in this project."
+        }
+      ]
+    },
+    "ambika-realcon-pvt-ltd-ambika-infra-ventures-pvt-ltd": {
+      "legalName": "Ambika Realcon Private Limited",
+      "commonName": "Ambika Realcon",
+      "founded": "2015",
+      "headquarters": "Mohali, Punjab",
+      "reraStatus": "Verified",
+      "reraReg": "PBRERA-SAS80-PR0399 (La Parisian)",
+      "activeProjects": 1,
+      "sectorsActive": [
+        "66B"
+      ],
+      "assetTypes": [
+        "Apartments",
+        "Luxury Floors"
+      ],
+      "priceRange": "₹90 lakh – ₹2.10 crore",
+      "buyerProfile": "Mid-to-high segment buyers seeking French-inspired design aesthetics",
+      "website": "ambikalaparisian.in",
+      "advisoryVerdict": "Ambika Realcon has gained recognition for introducing thematic architecture to Mohali. Their project, Ambika La Parisian in Sector 66B, offers Parisian-style apartment layouts with modern lifestyle integrations. Our desk recommends Ambika for buyers wanting unique design aesthetics near IT City. Caveat: Verify possession timelines for newer towers, as construction paces have shown variation across phases.",
+      "background": {
+        "c1": "Ambika Realcon focuses on creating themed residential ecosystems in the Tricity. They are known for utilizing European design influences, high-standard landscaping, and extensive recreational amenities.",
+        "c2": "Their Mohali footprint is centered in Sector 66B, IT City, placing La Parisian close to corporate headquarters and international connectivity. The project caters to modern professionals and NRI families seeking unique design schemes."
+      },
+      "editorialNotes": {
+        "ambika-la-parisian": "Parisian-themed premium residential community in Sector 66B. Features exceptional landscaping, vertical gardens, and modern layout configurations."
+      },
+      "advisoryBreakdown": {
+        "rightFor": [
+          "Buyers seeking European-themed layouts and vertical green concepts",
+          "Families wanting to be located near the IT City commercial nodes",
+          "Buyers with a budget range of ₹1 crore to ₹2 crore"
+        ],
+        "lookElsewhere": [
+          "Buyers seeking immediate key handovers (verify tower completion with us)",
+          "Ultra-luxury buyers wanting exclusive low-density layouts (only 2 flats per floor)"
+        ],
+        "ratings": {
+          "delivery": 7,
+          "quality": 8,
+          "appreciation": 8,
+          "friendliness": 8
+        }
+      },
+      "comparables": [
+        "noble-ventures-noble-group",
+        "turnstone-realty-medallion-group",
+        "evoq-realtech-directors-gaurav-goyal-satish-katyal-brand-ambassador-hrithik-roshan"
+      ],
+      "faqs": [
+        {
+          "q": "Is Ambika La Parisian RERA verified?",
+          "a": "Yes. Ambika La Parisian is registered with Punjab RERA under number PBRERA-SAS80-PR0399."
+        },
+        {
+          "q": "What is the price range for Ambika La Parisian?",
+          "a": "Prices range from ₹90 lakh for compact units to ₹2.10 crore for larger configurations and penthouses."
+        },
+        {
+          "q": "In which sectors does Ambika Realcon operate?",
+          "a": "Their primary active development is located in Sector 66B (IT City), Mohali."
+        },
+        {
+          "q": "What is unique about La Parisian?",
+          "a": "The project features French-influenced facades, wide green courts, and vertical gardens modeled after European apartments."
+        },
+        {
+          "q": "How can I purchase a flat in La Parisian?",
+          "a": "Connect with our advisory desk for developer payment plans and verified secondary resale options."
+        }
+      ]
+    },
+    "gmada-govt-of-punjab": {
+      "legalName": "Greater Mohali Area Development Authority",
+      "commonName": "GMADA",
+      "founded": "2006",
+      "headquarters": "Mohali, Punjab",
+      "reraStatus": "Verified",
+      "reraReg": "PBRERA-SAS80-PR0112 (Purab Premium)",
+      "activeProjects": 1,
+      "sectorsActive": [
+        "88"
+      ],
+      "assetTypes": [
+        "Apartments",
+        "Plots",
+        "Commercial Land"
+      ],
+      "priceRange": "₹65 lakh – ₹1.25 crore",
+      "buyerProfile": "Government employees, high-trust buyers, and long-term land investors",
+      "website": "gmada.gov.in",
+      "advisoryVerdict": "GMADA (Greater Mohali Area Development Authority) is the state planning body of Mohali, providing the highest legal security. Their residential project, Purab Premium Apartments in Sector 88, offers large-format apartments with unmatched legal safety. Our desk recommends GMADA for conservative buyers who prioritize clean titles and government-backed infrastructure. Caveat: Maintenance is managed by authority-appointed agencies and lacks private-luxury standards; expect basic utility management over luxury services.",
+      "background": {
+        "c1": "Created in 2006 under the Punjab Regional and Town Planning and Development Act, GMADA is the official government authority responsible for master planning, sector layout designs, and infrastructure acquisition in Mohali.",
+        "c2": "GMADA's residential footprint is highlighted by Purab Premium Apartments in Sector 88. Beyond this, GMADA is the primary source of freehold residential plots across Mohali sectors, making their allotments the ultimate benchmark for property safety and legal ownership."
+      },
+      "editorialNotes": {
+        "purab-premium-apartments-sector-88-mohali": "Government-constructed apartments in Sector 88 offering massive layouts and maximum legal safety. Features extensive outdoor sports complexes."
+      },
+      "advisoryBreakdown": {
+        "rightFor": [
+          "Conservative buyers who want 100% litigation-free titles",
+          "Buyers seeking large carpet areas and solid brick-and-mortar construction",
+          "Investors looking for stable resale value backed by government authority"
+        ],
+        "lookElsewhere": [
+          "Buyers looking for high-end luxury lifestyle amenities and private club services",
+          "Buyers who require immediate, highly responsive private maintenance desks"
+        ],
+        "ratings": {
+          "delivery": 9,
+          "quality": 7,
+          "appreciation": 8,
+          "friendliness": 6
+        }
+      },
+      "comparables": [
+        "united-co-operative-housing-board-society",
+        "mohali-employees-cooperative-house-building-society-ltd"
+      ],
+      "faqs": [
+        {
+          "q": "Are GMADA properties RERA registered?",
+          "a": "Yes. GMADA's residential projects, including Purab Premium Apartments, are registered under Punjab RERA."
+        },
+        {
+          "q": "What is the price of GMADA flats in Mohali?",
+          "a": "Purab Premium Apartments range from ₹65 lakh to ₹1.25 crore on the resale market, depending on tower location and flat type."
+        },
+        {
+          "q": "In which sectors does GMADA have projects?",
+          "a": "GMADA is the master planner for all sectors in Mohali, with residential apartments located in Sector 88 and freehold plots across multiple sectors."
+        },
+        {
+          "q": "Is buying from GMADA safer than private builders?",
+          "a": "Yes. Government backing eliminates title risks, project abandonment risks, and licensing disputes."
+        },
+        {
+          "q": "How do I purchase a GMADA property?",
+          "a": "GMADA sells through public auctions, allotment schemes, or direct transfers on the secondary resale market. Our desk manages the transfer paperwork."
+        }
+      ]
+    },
+    "horizon-group-punjab": {
+      "legalName": "Horizon Builders Private Limited",
+      "commonName": "Horizon Group",
+      "founded": "2010",
+      "headquarters": "Mohali, Punjab",
+      "reraStatus": "Verified",
+      "reraReg": "PBRERA-SAS80-PR0799 (Belmond)",
+      "activeProjects": 1,
+      "sectorsActive": [
+        "88"
+      ],
+      "assetTypes": [
+        "Apartments"
+      ],
+      "priceRange": "₹1.35 crore – ₹2.80 crore",
+      "buyerProfile": "Premium families seeking modern high-rise living",
+      "website": "horizongroupmohali.co.in",
+      "advisoryVerdict": "Horizon Group is a focused regional developer building modern high-rise apartments. Their major development, Horizon Belmond in Sector 88, targets premium buyers with smart architectural planning. Our advisory desk recommends Horizon for families wanting modern lifestyle amenities in an emerging sector. Caveat: Compare pricing with adjacent projects in Sector 88 to ensure you are entering at a competitive value-per-square-foot rate.",
+      "background": {
+        "c1": "Horizon Group operates with a focus on high-rise residential properties in the Tricity, emphasizing structural quality, modern layouts, and responsive customer relations.",
+        "c2": "Their presence is highlighted by Horizon Belmond in Sector 88, positioning them in Mohali's premier low-density residential zone. The project caters to buyers seeking modern club amenities and security systems."
+      },
+      "editorialNotes": {
+        "horizon-belmond-mohali": "Premium high-rise apartments in Sector 88 offering spacious 3+1 and 4+1 BHK formats with modern amenities and wide balconies."
+      },
+      "advisoryBreakdown": {
+        "rightFor": [
+          "Families seeking large-format apartments in Sector 88",
+          "Buyers looking for modern, well-managed lifestyle clubs and pools",
+          "Investors wanting to enter early in a high-priority residential sector"
+        ],
+        "lookElsewhere": [
+          "Buyers looking for ready-to-move-in apartments under ₹1 crore",
+          "Buyers seeking independent floors or freehold land plots"
+        ],
+        "ratings": {
+          "delivery": 8,
+          "quality": 8,
+          "appreciation": 8,
+          "friendliness": 8
+        }
+      },
+      "comparables": [
+        "hero-realty-pvt-ltd-hero-group-usd-5-billion-enterprise",
+        "noble-ventures-noble-group",
+        "joy-homes-joy-group"
+      ],
+      "faqs": [
+        {
+          "q": "Is Horizon Belmond RERA verified?",
+          "a": "Yes. Horizon Belmond is registered under Punjab RERA (PBRERA-SAS80-PR0799)."
+        },
+        {
+          "q": "What is the price range for Horizon Belmond?",
+          "a": "Prices range from ₹1.35 crore for 3BHK units up to ₹2.80 crore for premium 4BHK formats and penthouses."
+        },
+        {
+          "q": "Where is Horizon Group active in Mohali?",
+          "a": "Their primary residential project is Horizon Belmond, located in Sector 88, Mohali."
+        },
+        {
+          "q": "What is the construction status of Horizon Belmond?",
+          "a": "It is an active development. Connect with our desk for the latest tower-wise construction reports and timeline checks."
+        },
+        {
+          "q": "How can I book a flat in Horizon Belmond?",
+          "a": "Connect with our advisory team to get the latest developer inventory options and construction-linked payment structures."
+        }
+      ]
+    },
+    "mb-infrabuild": {
+      "legalName": "MB Infrabuild Private Limited",
+      "commonName": "MB Infrabuild",
+      "founded": "2011",
+      "headquarters": "Chandigarh",
+      "reraStatus": "Verified",
+      "reraReg": "PBRERA-SAS80-PR0044 (Beverly Golf)",
+      "activeProjects": 1,
+      "sectorsActive": [
+        "91"
+      ],
+      "assetTypes": [
+        "Apartments"
+      ],
+      "priceRange": "₹1.45 crore – ₹2.90 crore",
+      "buyerProfile": "Premium buyers wanting golf-facing views and ready infrastructure",
+      "website": "beverlygolfavenue.com",
+      "advisoryVerdict": "MB Infrabuild is the developer behind Beverly Golf Avenue, one of Mohali's most visually distinct premium residential projects. Located in Sector 91, it offers golf-range views and premium finishes. Our desk recommends MB Infrabuild for buyers prioritizing immediate ready possession and lifestyle aesthetics. Caveat: Internal maintenance charges are high; verify pending secondary transfer liabilities before signing resale deeds.",
+      "background": {
+        "c1": "MB Infrabuild focuses on delivering high-end niche residential projects in the Tricity, utilizing premium material finishes and high-specification layout designs.",
+        "c2": "Their Mohali footprint is anchored by Beverly Golf Avenue in Sector 91. The project overlooks the local golf range, offering premium, low-density views and established connectivity to Chandigarh and Landran Road."
+      },
+      "editorialNotes": {
+        "beverly-golf-avenue": "Luxury golf-view apartments in Sector 91. Ready to move in, featuring outstanding construction quality, wide windows, and premium club amenities."
+      },
+      "advisoryBreakdown": {
+        "rightFor": [
+          "Buyers seeking ready-to-move-in luxury apartments with golf course views",
+          "Families wanting mature sector infrastructure in Sector 91",
+          "Investors looking for premium rental demand from corporate executives"
+        ],
+        "lookElsewhere": [
+          "Buyers seeking under-construction projects with long payment plans",
+          "Budget-conscious buyers looking for options below ₹1.2 crore"
+        ],
+        "ratings": {
+          "delivery": 9,
+          "quality": 9,
+          "appreciation": 8,
+          "friendliness": 8
+        }
+      },
+      "comparables": [
+        "homeland-group",
+        "marbella-group-srg-group",
+        "ats-infrastructure-limited"
+      ],
+      "faqs": [
+        {
+          "q": "Is Beverly Golf Avenue RERA verified?",
+          "a": "Yes. Beverly Golf Avenue is fully registered with Punjab RERA under PBRERA-SAS80-PR0044."
+        },
+        {
+          "q": "What is the price range at Beverly Golf Avenue?",
+          "a": "Apartments range from ₹1.45 crore up to ₹2.90 crore, depending on the view, tower location, and configuration."
+        },
+        {
+          "q": "In which sectors does MB Infrabuild operate?",
+          "a": "Their primary development, Beverly Golf Avenue, is located in Sector 91, Mohali."
+        },
+        {
+          "q": "Are the apartments ready to move in?",
+          "a": "Yes, major phases are fully completed and occupied, making it an excellent ready-to-move-in option."
+        },
+        {
+          "q": "How can I purchase a unit at Beverly Golf Avenue?",
+          "a": "Connect with our advisory desk for access to verified secondary resale units and developer-held clearance inventory."
+        }
+      ]
+    },
+    "hero-realty-pvt-ltd-hero-group-usd-5-billion-enterprise": {
+      "legalName": "Hero Realty Private Limited",
+      "commonName": "Hero Realty",
+      "founded": "2006",
+      "headquarters": "New Delhi",
+      "reraStatus": "Verified",
+      "reraReg": "PBRERA-SAS80-PR0113 (Hero Homes)",
+      "activeProjects": 1,
+      "sectorsActive": [
+        "88"
+      ],
+      "assetTypes": [
+        "Apartments"
+      ],
+      "priceRange": "₹85 lakh – ₹1.95 crore",
+      "buyerProfile": "Corporate professionals, defense personnel, and mid-to-high segment families",
+      "website": "herohomes.in/project-mohali/overview.html",
+      "advisoryVerdict": "Hero Realty (part of the USD 5 Billion Hero Group) brings national-level brand credibility and corporate transparency to Mohali. Their development, Hero Homes in Sector 88, is a highly structured, well-planned residential campus. Our desk recommends Hero Homes for buyers prioritizing corporate-grade security, green design, and on-time delivery. Caveat: Standard unit configurations are compact compared to older Mohali developments; verify exact carpet areas before purchase.",
+      "background": {
+        "c1": "Established as the real estate arm of the Hero Group, Hero Realty focuses on delivering value-driven, smart, and sustainable housing campuses across major North Indian cities.",
+        "c2": "Their Mohali footprint is anchored by the 18.5-acre Hero Homes development in Sector 88. Positioned on the sector division road, it offers outstanding access to central Mohali, featuring high-rise towers, green courts, and smart home provisions."
+      },
+      "editorialNotes": {
+        "hero-homes": "Smart residential apartments in Sector 88. Highly popular for its high-specification club house, green energy integrations, and corporate management."
+      },
+      "advisoryBreakdown": {
+        "rightFor": [
+          "Buyers prioritizing national brand credibility and transparent pricing",
+          "Families looking for high-security gated campuses with outstanding kids' play zones",
+          "Buyers with a budget range between ₹85L and ₹1.8Cr"
+        ],
+        "lookElsewhere": [
+          "Buyers seeking massive legacy carpet areas and traditional brick construction formats",
+          "Buyers seeking low-rise independent floors or plots"
+        ],
+        "ratings": {
+          "delivery": 9,
+          "quality": 8,
+          "appreciation": 8,
+          "friendliness": 8
+        }
+      },
+      "comparables": [
+        "jubilee-group",
+        "bestech-group-bestech-india-pvt-ltd",
+        "horizon-group-punjab"
+      ],
+      "faqs": [
+        {
+          "q": "Is Hero Homes RERA verified in Mohali?",
+          "a": "Yes. Hero Homes is registered under Punjab RERA with registration number PBRERA-SAS80-PR0113."
+        },
+        {
+          "q": "What is the price of flats in Hero Homes Mohali?",
+          "a": "Pricing starts from ₹85 lakh for 2BHK configurations, with 3BHK and 4BHK units commanding up to ₹1.95 crore."
+        },
+        {
+          "q": "Where is the Hero Homes project located?",
+          "a": "It is located in Sector 88, Mohali, along one of the sector's main transit roads."
+        },
+        {
+          "q": "What is unique about Hero Homes?",
+          "a": "The project incorporates smart home integrations, eco-friendly energy conservation systems, and professional management systems."
+        },
+        {
+          "q": "How can I book an apartment at Hero Homes?",
+          "a": "Connect with our advisory desk to review available builder inventory and direct resale files."
+        }
+      ]
+    },
+    "evoq-realtech-directors-gaurav-goyal-satish-katyal-brand-ambassador-hrithik-roshan": {
+      "legalName": "Evoq Realtech Private Limited",
+      "commonName": "Evoq Realtech",
+      "founded": "2020",
+      "headquarters": "Mohali, Punjab",
+      "reraStatus": "Verified",
+      "reraReg": "PBRERA-SAS80-PR0822 (Antalia)",
+      "activeProjects": 1,
+      "sectorsActive": [
+        "66"
+      ],
+      "assetTypes": [
+        "Luxury Apartments"
+      ],
+      "priceRange": "₹1.60 crore – ₹3.10 crore",
+      "buyerProfile": "Luxury seekers, contemporary investors, and premium lifestyle buyers",
+      "website": "evoq-mohali.com",
+      "advisoryVerdict": "Evoq Realtech is a newer premium developer entering Mohali's luxury residential market. Their flagship development, Evoq Antalia in Sector 66, positions itself as an ultra-luxury condominium project. Our desk recommends Evoq for buyers wanting modern design layouts and premium location access. Caveat: As a newer developer entity, verify execution milestone schedules and financial security structures with us before booking.",
+      "background": {
+        "c1": "Evoq Realtech was founded by experienced regional promoters to focus on high-specification luxury residential developments, utilizing prominent brand partnerships and modern design schemes.",
+        "c2": "Their footprint is highlighted by Evoq Antalia in Sector 66, Mohali. This micro-location offers excellent access to Airport Road, IT clusters, and Chandigarh, catering to premium executives and business owners."
+      },
+      "editorialNotes": {
+        "evoq-antalia": "Ultra-luxury apartments in Sector 66. Features high ceilings, modern modular kitchens, and premium layout spaces near central connectivity hubs."
+      },
+      "advisoryBreakdown": {
+        "rightFor": [
+          "Buyers seeking high-specification modern internal fittings",
+          "Families wanting to be located near the central Airport Road corridors",
+          "Buyers seeking large 3/4/5 BHK apartment configurations"
+        ],
+        "lookElsewhere": [
+          "Conservative buyers prioritizing 20+ year legacy builder profiles",
+          "Budget-conscious buyers with a ticket size below ₹1.3 crore"
+        ],
+        "ratings": {
+          "delivery": 7,
+          "quality": 8,
+          "appreciation": 8,
+          "friendliness": 8
+        }
+      },
+      "comparables": [
+        "marbella-group-srg-group",
+        "noble-ventures-noble-group",
+        "ambika-realcon-pvt-ltd-ambika-infra-ventures-pvt-ltd"
+      ],
+      "faqs": [
+        {
+          "q": "Is Evoq Antalia RERA verified?",
+          "a": "Yes. Evoq Antalia is registered under Punjab RERA (PBRERA-SAS80-PR0822)."
+        },
+        {
+          "q": "What is the price of flats at Evoq Antalia?",
+          "a": "Apartments start at ₹1.60 crore for 3BHK layouts and scale up to ₹3.10 crore for larger penthouses."
+        },
+        {
+          "q": "Where is the Evoq project located in Mohali?",
+          "a": "Evoq Antalia is located in Sector 66, Mohali, offering easy access to Airport Road."
+        },
+        {
+          "q": "What is the current construction status?",
+          "a": "It is an active, under-construction project. Contact our desk for construction milestone updates."
+        },
+        {
+          "q": "How can I book a unit with Evoq?",
+          "a": "Connect with our advisory desk for direct booking assistance and verified project details."
+        }
+      ]
+    },
+    "united-co-operative-housing-board-society": {
+      "legalName": "United Cooperative House Building Society Limited",
+      "commonName": "United Cooperative Society",
+      "founded": "1988",
+      "headquarters": "Mohali, Punjab",
+      "reraStatus": "Compliant (Cooperative Exemption)",
+      "reraReg": "Punjab Cooperative Societies Act Registration",
+      "activeProjects": 1,
+      "sectorsActive": [
+        "68"
+      ],
+      "assetTypes": [
+        "Apartments"
+      ],
+      "priceRange": "₹75 lakh – ₹95 lakh",
+      "buyerProfile": "Defense retirees, middle-income families, and resale value seekers",
+      "website": null,
+      "advisoryVerdict": "United Cooperative Society represents a high-trust cooperative housing scheme in Mohali. Located in Sector 68, the society provides spacious apartments at highly competitive secondary market prices. Our desk recommends United for buyers seeking mature residential surroundings and low-maintenance community living. Caveat: Freehold registry does not apply directly in cooperative societies; transfer occurs via share certificate transfers. Verify documentation with our desk.",
+      "background": {
+        "c1": "United Cooperative House Building Society was established under the Punjab Cooperative Societies Act to allocate affordable housing to registered society members. Ownership is managed through society-backed share allocations.",
+        "c2": "Their development, United Cooperative Society in Sector 68, sits in a prime residential zone of Mohali, close to administrative offices and schools. It offers spacious 3BHK resale apartments with solid structural safety."
+      },
+      "editorialNotes": {
+        "united-cooperative-housing-board-sector-68-mohali": "Spacious, structurally sound 3BHK apartments in Sector 68. Highly liquid resale option in a peaceful residential sector."
+      },
+      "advisoryBreakdown": {
+        "rightFor": [
+          "Buyers seeking large 3BHK carpet areas under ₹95 lakh",
+          "Families prioritizing a mature, quiet residential neighborhood",
+          "Buyers wanting simple, low-cost maintenance structures"
+        ],
+        "lookElsewhere": [
+          "Buyers seeking high-end luxury specifications and modern club houses",
+          "Buyers insisting on direct individual land registry deeds (uses share certificate transfers)"
+        ],
+        "ratings": {
+          "delivery": 9,
+          "quality": 7,
+          "appreciation": 7,
+          "friendliness": 7
+        }
+      },
+      "comparables": [
+        "mohali-employees-cooperative-house-building-society-ltd",
+        "icl-ivory-castle-ltd"
+      ],
+      "faqs": [
+        {
+          "q": "Is United Cooperative Society RERA registered?",
+          "a": "No, legacy cooperative societies built before the RERA Act are exempt, with ownership regulated directly under the Punjab Cooperative Department."
+        },
+        {
+          "q": "What is the starting price at United Cooperative Society?",
+          "a": "Resale 3BHK units start at ₹75 lakh and go up to ₹95 lakh, depending on renovation status and floor level."
+        },
+        {
+          "q": "Where is the society located?",
+          "a": "It is located in Sector 68, Mohali, a centrally positioned residential sector."
+        },
+        {
+          "q": "How does ownership transfer work in a coop society?",
+          "a": "Ownership transfers through a Share Certificate Transfer managed by the society's management committee, not a standard registry deed."
+        },
+        {
+          "q": "How can I purchase a flat in United Cooperative?",
+          "a": "Connect with our advisory desk to review verified resale files and coordinate society clearance checks."
+        }
+      ]
+    },
+    "mohali-employees-cooperative-house-building-society-ltd": {
+      "legalName": "Mohali Employees Cooperative House Building Society Limited",
+      "commonName": "MECO Society",
+      "founded": "1992",
+      "headquarters": "Mohali, Punjab",
+      "reraStatus": "Compliant (Cooperative Exemption)",
+      "reraReg": "Punjab Cooperative Societies Act Registration",
+      "activeProjects": 1,
+      "sectorsActive": [
+        "68"
+      ],
+      "assetTypes": [
+        "Apartments"
+      ],
+      "priceRange": "₹70 lakh – ₹92 lakh",
+      "buyerProfile": "Government retirees, value-seeking families, and long-term residents",
+      "website": "mecohbs.in",
+      "advisoryVerdict": "MECO Society (Mohali Employees Cooperative House Building Society Ltd.) offers some of the most budget-friendly, spacious apartments in central Mohali. Situated in Sector 68, the society is highly regarded for its stable community environment. Our desk recommends MECO for buyers looking for value-per-square-foot in a mature sector. Caveat: Facilities are basic, and transfer works via share transfer rather than property registry. Ensure proper audit checks before committing.",
+      "background": {
+        "c1": "Formed in 1992 to provide housing for government employees in Mohali, MECO Society operates under the Punjab Cooperative Department guidelines, ensuring a stable, structured administrative framework.",
+        "c2": "Their Sector 68 residential development features 2 and 3 BHK apartment blocks, surrounded by parks and local markets, providing excellent accessibility to Chandigarh division borders."
+      },
+      "editorialNotes": {
+        "meco-sector-68-mohali": "Functional and spacious 2 & 3 BHK resale apartments in Sector 68. Highly accessible, peaceful, and popular for mid-budget buyers."
+      },
+      "advisoryBreakdown": {
+        "rightFor": [
+          "Families looking for spacious layouts under a ₹95 lakh budget",
+          "Buyers seeking a mature, quiet neighborhood with direct Chandigarh access",
+          "Buyers looking for low monthly maintenance outlays"
+        ],
+        "lookElsewhere": [
+          "Buyers looking for luxury glass towers and extensive modern club amenities",
+          "Buyers requiring individual property bank mortgage lines (coop financing is specialized)"
+        ],
+        "ratings": {
+          "delivery": 9,
+          "quality": 7,
+          "appreciation": 7,
+          "friendliness": 8
+        }
+      },
+      "comparables": [
+        "united-co-operative-housing-board-society",
+        "shri-guru-teg-bahadur-cooperative-house-building-society"
+      ],
+      "faqs": [
+        {
+          "q": "Is MECO Society RERA verified?",
+          "a": "Cooperative housing societies are governed under the Punjab Cooperative Societies Act and are exempt from RERA requirements."
+        },
+        {
+          "q": "What is the price of flats in MECO Society?",
+          "a": "Resale prices range between ₹70 lakh and ₹92 lakh, depending on the flat size and condition."
+        },
+        {
+          "q": "Where is MECO Society located?",
+          "a": "It is located in Sector 68, Mohali, a mature residential zone close to the municipal complex."
+        },
+        {
+          "q": "Is it possible to get a loan for a MECO flat?",
+          "a": "Yes, but financing is handled by specialized cooperative banks or selected private lenders. Contact our desk for support."
+        },
+        {
+          "q": "How do I buy a flat in MECO Society?",
+          "a": "Connect with our advisory desk to get verified resale listings and society membership verification services."
+        }
+      ]
+    },
+    "jal-vayu-cooperative-house-building-society": {
+      "legalName": "Jal Vayu Cooperative House Building Society Limited",
+      "commonName": "Jal Vayu Society",
+      "founded": "1994",
+      "headquarters": "Mohali, Punjab",
+      "reraStatus": "Compliant (Cooperative Exemption)",
+      "reraReg": "Punjab Cooperative Societies Act Registration",
+      "activeProjects": 1,
+      "sectorsActive": [
+        "67"
+      ],
+      "assetTypes": [
+        "Apartments"
+      ],
+      "priceRange": "₹80 lakh – ₹1.10 crore",
+      "buyerProfile": "Retires defense personnel, navy/airforce officers, and peaceful end-users",
+      "website": null,
+      "advisoryVerdict": "Jal Vayu Society (Jal Vayu Vihar in Sector 67) represents one of Mohali's highest-trust cooperative developments. Initially allocated to defense and air force personnel, the campus features a highly structured, secure, and green environment. Our advisory desk recommends Jal Vayu for families seeking a peaceful, mature neighborhood. Caveat: Transfer of ownership is processed via cooperative membership transfer rather than property registry deeds.",
+      "background": {
+        "c1": "Established in 1994 specifically to build housing for retired personnel of the Indian Armed Forces, the society maintains a highly disciplined management committee and robust maintenance practices.",
+        "c2": "Their development in Sector 67 features low-density, low-rise apartment blocks. Surrounded by mature trees, wide lanes, and high-security gates, it is one of Mohali's most tranquil residential environments."
+      },
+      "editorialNotes": {
+        "jal-vayu-vihar-sector-67-mohali": "Highly secure, green residential apartments in Sector 67. Exceptionally managed, popular for retired defense families."
+      },
+      "advisoryBreakdown": {
+        "rightFor": [
+          "Retirees and families seeking high security and a disciplined neighborhood",
+          "Buyers looking for spacious 2 & 3 BHK flats in Sector 67",
+          "Buyers prioritizing abundant green parks and clean outdoor spaces"
+        ],
+        "lookElsewhere": [
+          "Buyers seeking modern luxury high-rise specifications and centralized AC concepts",
+          "Buyers looking for early-stage investment flips"
+        ],
+        "ratings": {
+          "delivery": 9,
+          "quality": 8,
+          "appreciation": 7,
+          "friendliness": 8
+        }
+      },
+      "comparables": [
+        "sri-guru-har-rai-sahib-cooperative-house-building-society",
+        "united-co-operative-housing-board-society"
+      ],
+      "faqs": [
+        {
+          "q": "Is Jal Vayu Vihar RERA registered?",
+          "a": "No, it is a legacy cooperative development managed directly under the Punjab Cooperative Societies Act."
+        },
+        {
+          "q": "What is the starting price at Jal Vayu Vihar?",
+          "a": "Resale prices range between ₹80 lakh and ₹1.10 crore, reflecting the high demand for Sector 67 properties."
+        },
+        {
+          "q": "Where is Jal Vayu Vihar located?",
+          "a": "It is located in Sector 67, Mohali, a highly premium and central residential sector."
+        },
+        {
+          "q": "Can general public buy in Jal Vayu Vihar?",
+          "a": "Yes. Non-members can purchase resale flats on the secondary market through the society's standard transfer procedures."
+        },
+        {
+          "q": "How can I purchase a flat here?",
+          "a": "Connect with our advisory desk for access to verified resale properties and society verification checks."
+        }
+      ]
+    },
+    "marbella-group-srg-group": {
+      "legalName": "Marbella Grand Developers Private Limited",
+      "commonName": "Marbella Group",
+      "founded": "2016",
+      "headquarters": "Mohali, Punjab",
+      "reraStatus": "Verified",
+      "reraReg": "PBRERA-SAS80-PR0522 (Marbella Grand)",
+      "activeProjects": 3,
+      "sectorsActive": [
+        "82A",
+        "83A",
+        "New Chandigarh"
+      ],
+      "assetTypes": [
+        "Luxury Apartments",
+        "Penthouses"
+      ],
+      "priceRange": "₹1.95 crore – ₹9.19 crore",
+      "buyerProfile": "HNIs, luxury investors, corporate leaders, and elite NRIs",
+      "website": "srggroup.in",
+      "advisoryVerdict": "Marbella Group (SRG Group) has established itself as Mohali's premier brand for contemporary ultra-luxury high-rise condominiums. Their developments, such as Marbella Grand in IT City Sector 82A, command some of the highest luxury premiums in the city. Our desk recommends Marbella for buyers seeking high-end club services, modern glass-facade aesthetics, and strong capital appreciation. Caveat: Check specific possession dates for newer phases at Marbella Royce and Twin Towers with us.",
+      "background": {
+        "c1": "Marbella Group has redefined Mohali's luxury sky-line by delivering highly sophisticated, large-format residential condominiums. They emphasize premium construction materials and modern architectural design.",
+        "c2": "Their footprint is strategically placed along high-priority transit corridors. Marbella Grand in Sector 82A, IT City, serves as a landmark address, while Marbella Royce in Sector 83A represents some of Mohali's tallest luxury residential towers, targetting the premium demographic."
+      },
+      "editorialNotes": {
+        "marbella-twin-towers-new-chandigarh-mullanpur": "Ultra-luxury, grand residential apartments in New Chandigarh offering expansive layouts, high-end private clubs, and modern security systems.",
+        "marbella-royce": "Mohali's flagship luxury sky-condominium towers in Sector 83A. Features exceptional double-height lobbies, private clubs, and outstanding views.",
+        "marbella-grand": "The definitive luxury benchmark in IT City Sector 82A. Features premium high-rise layouts, tennis courts, sky lounges, and elite amenities."
+      },
+      "advisoryBreakdown": {
+        "rightFor": [
+          "Buyers seeking high-status contemporary luxury and premium amenities",
+          "NRI investors seeking highly liquid, high-demand premium residential assets",
+          "Buyers looking for double-height sky lobbies and extensive indoor clubs"
+        ],
+        "lookElsewhere": [
+          "Budget-conscious buyers under ₹1.5 crore",
+          "Buyers seeking low-maintenance low-rise independent floors"
+        ],
+        "ratings": {
+          "delivery": 8,
+          "quality": 9,
+          "appreciation": 9,
+          "friendliness": 7
+        }
+      },
+      "comparables": [
+        "homeland-group",
+        "jlpl",
+        "noble-ventures-noble-group"
+      ],
+      "faqs": [
+        {
+          "q": "Are Marbella Group projects RERA verified?",
+          "a": "Yes. All Marbella projects, including Marbella Grand and Marbella Royce, are fully registered with Punjab RERA."
+        },
+        {
+          "q": "What is the price of a flat in Marbella Grand?",
+          "a": "Prices start from ₹1.95 crore for 3+1 BHK units and scale up to ₹9.19 crore for ultra-luxury penthouses."
+        },
+        {
+          "q": "In which sectors does Marbella Group operate?",
+          "a": "They operate in IT City Sector 82A, Sector 83A, and have a major project in New Chandigarh."
+        },
+        {
+          "q": "What is the lifestyle like in Marbella Grand?",
+          "a": "The society features extensive premium clubs, indoor squash courts, sky-decks, and round-the-clock concierge desks."
+        },
+        {
+          "q": "How can I purchase a unit in Marbella projects?",
+          "a": "Connect with our advisory desk for builder-direct bookings, exclusive payment plans, and verified secondary resale listings."
+        }
+      ]
+    },
+    "icl-ivory-castle-ltd": {
+      "legalName": "Ivory Castle Limited",
+      "commonName": "ICL",
+      "founded": "1996",
+      "headquarters": "Chandigarh",
+      "reraStatus": "Verified",
+      "reraReg": "Legacy Project (Exempt)",
+      "activeProjects": 1,
+      "sectorsActive": [
+        "70"
+      ],
+      "assetTypes": [
+        "Apartments"
+      ],
+      "priceRange": "₹75 lakh – ₹98 lakh",
+      "buyerProfile": "Mid-segment families seeking central location and mature surroundings",
+      "website": null,
+      "advisoryVerdict": "ICL (Ivory Castle Ltd.) is the developer of Ivory Towers in Sector 70, one of Mohali's most established early-generation residential campuses. It offers large carpet areas and solid brick-and-mortar construction in a highly premium central sector. Our desk recommends ICL Ivory Towers for budget buyers wanting mature, central residential infrastructure. Caveat: The project is a legacy development and lacks modern club amenities; verify resale document clearances with our desk.",
+      "background": {
+        "c1": "Ivory Castle Ltd was one of the early private developers in Mohali, active during the late 1990s. They introduced structured high-rise group housing to the central sectors before the modern boom.",
+        "c2": "Their legacy presence is anchored by Ivory Towers in Sector 70, a premium residential sector bordering Chandigarh. The project remains highly popular on the secondary market due to its central location and robust construction."
+      },
+      "editorialNotes": {
+        "ivory-towers-sector-70-mohali": "Spacious, legacy residential apartments in Sector 70. Offers robust construction and exceptional access to central markets and schools."
+      },
+      "advisoryBreakdown": {
+        "rightFor": [
+          "Buyers seeking spacious legacy carpet areas under ₹1 crore",
+          "Families prioritizing central Sector 70 location and school access",
+          "Buyers looking for established, ready-to-move-in residential layouts"
+        ],
+        "lookElsewhere": [
+          "Buyers seeking modern luxury lifestyle clubs and glass facades",
+          "Buyers requiring new-construction payment flexibilities"
+        ],
+        "ratings": {
+          "delivery": 9,
+          "quality": 8,
+          "appreciation": 7,
+          "friendliness": 7
+        }
+      },
+      "comparables": [
+        "united-co-operative-housing-board-society",
+        "mundi-cooperative-house-building-society"
+      ],
+      "faqs": [
+        {
+          "q": "Is Ivory Towers RERA registered?",
+          "a": "As a legacy, fully completed development built before the RERA Act, Ivory Towers is exempt from active RERA registration."
+        },
+        {
+          "q": "What is the price of flats in Ivory Towers?",
+          "a": "Resale 3BHK units range from ₹75 lakh to ₹98 lakh, depending on the renovation status of the flat."
+        },
+        {
+          "q": "Where is the ICL project located?",
+          "a": "Ivory Towers is located in Sector 70, Mohali, a premium centrally located sector."
+        },
+        {
+          "q": "Are the apartments spacious?",
+          "a": "Yes. Legacy construction standards prioritize large carpet areas over cosmetic common spaces."
+        },
+        {
+          "q": "How can I purchase a flat in Ivory Towers?",
+          "a": "Connect with our advisory desk for verified secondary resale inventories and structural verification reports."
+        }
+      ]
+    },
+    "turnstone-realty-medallion-group": {
+      "legalName": "Turnstone Realty LLP",
+      "commonName": "Turnstone Realty (Medallion Group)",
+      "founded": "2018",
+      "headquarters": "Mohali, Punjab",
+      "reraStatus": "Verified",
+      "reraReg": "PBRERA-SAS80-PR0699 (The Medallion)",
+      "activeProjects": 2,
+      "sectorsActive": [
+        "66",
+        "82A"
+      ],
+      "assetTypes": [
+        "Apartments",
+        "Luxury Floors"
+      ],
+      "priceRange": "₹1.15 crore – ₹2.65 crore",
+      "buyerProfile": "Premium executives, IT professionals, and NRI investors",
+      "website": "themedallion.in",
+      "advisoryVerdict": "Turnstone Realty (Medallion Group) has established a strong presence along the Airport Road with contemporary residential projects. Their flagship, The Medallion in Sector 82A, offers modern, high-spec high-rise living near the IT City hub. Our advisory recommends Medallion for buyers seeking modern, well-ventilated layouts and high rental demand. Caveat: Direct access roads are highly active with commercial traffic; verify localized noise buffers on site with our desk.",
+      "background": {
+        "c1": "Turnstone Realty operates as a premium developer entity focusing on high-rise group housing in Mohali's growth sectors, combining modern interior styling with comprehensive facility management.",
+        "c2": "Their footprint is strategically placed near IT hubs, with projects like The Medallion in IT City Sector 82A and The Medallion Nova in Sector 66. This places them at the center of demand from high-earning tech professionals."
+      },
+      "editorialNotes": {
+        "the-medallion-sector-82-mohali": "Premium apartments in Sector 82A IT City. Features exceptional ventilation, high-end club facilities, and direct proximity to corporate hubs.",
+        "the-medallion-nova-sector-66-mohali": "Modern mid-to-high segment apartments in Sector 66. Offers sleek architectural design and excellent access to Airport Road."
+      },
+      "advisoryBreakdown": {
+        "rightFor": [
+          "Buyers seeking contemporary architecture and high-end security",
+          "IT professionals and corporate executives working in IT City",
+          "Investors looking for robust rental yields from premium tenants"
+        ],
+        "lookElsewhere": [
+          "Buyers seeking quiet, low-density green belts away from industrial zones",
+          "Budget-conscious buyers looking for options below ₹1 crore"
+        ],
+        "ratings": {
+          "delivery": 8,
+          "quality": 8,
+          "appreciation": 8,
+          "friendliness": 8
+        }
+      },
+      "comparables": [
+        "noble-ventures-noble-group",
+        "ambika-realcon-pvt-ltd-ambika-infra-ventures-pvt-ltd",
+        "klv-builders-and-developers-pvt-ltd"
+      ],
+      "faqs": [
+        {
+          "q": "Is The Medallion RERA verified?",
+          "a": "Yes. All Turnstone Realty projects in Mohali are registered under Punjab RERA with active numbers."
+        },
+        {
+          "q": "What is the price of a flat at The Medallion?",
+          "a": "Prices range from ₹1.15 crore for 3BHK layouts up to ₹2.65 crore for larger formats and premium heights."
+        },
+        {
+          "q": "In which sectors does Turnstone Realty operate?",
+          "a": "They have active projects in Sector 82A (IT City) and Sector 66, Mohali."
+        },
+        {
+          "q": "Are Medallion properties good for rental income?",
+          "a": "Yes. Proximity to Infosys and IT City parks ensures consistent premium rental demand."
+        },
+        {
+          "q": "How can I book a flat with Turnstone Realty?",
+          "a": "Connect with our advisory desk for direct developer booking options and verified resale files."
+        }
+      ]
+    },
+    "gillco-developers-and-builders-pvt-ltd-gillco-group": {
+      "legalName": "Gillco Developers and Builders Private Limited",
+      "commonName": "Gillco Group",
+      "founded": "2001",
+      "headquarters": "Mohali, Punjab",
+      "reraStatus": "Verified",
+      "reraReg": "PBRERA-SAS80-PR0077 (Parkhills)",
+      "activeProjects": 1,
+      "sectorsActive": [
+        "126"
+      ],
+      "assetTypes": [
+        "Apartments",
+        "Plots",
+        "Villas"
+      ],
+      "priceRange": "₹80 lakh – ₹1.75 crore",
+      "buyerProfile": "Mid-segment families, investors, and local business owners",
+      "website": "gillcogroup.com",
+      "advisoryVerdict": "Gillco Group is a legacy developer in Mohali's northern corridor, responsible for the multi-acre Gillco Valley township. Their flagship high-rise project, Gillco Parkhills in Sector 126, offers spacious apartments with excellent highway connectivity. Our desk recommends Gillco for buyers seeking established township facilities and active commercial surroundings. Caveat: Sector 126 experiences heavy traffic congestion during peak hours; evaluate daily commute routes before buying.",
+      "background": {
+        "c1": "Founded in 2001 by Ranjit Singh Gill, Gillco Group has delivered over 10 million square feet of residential and commercial space, establishing themselves as a primary master-developer in outer Mohali.",
+        "c2": "Their presence is highlighted by Gillco Valley in Sector 126, a massive integrated township. Gillco Parkhills is their premium high-rise residential offering here, located directly on the Kharar-Landran highway."
+      },
+      "editorialNotes": {
+        "gillco-parkhills-sector-126-mohali": "Spacious premium apartments in Sector 126. Highly popular for its connectivity to Kharar and Chandigarh, featuring robust design features."
+      },
+      "advisoryBreakdown": {
+        "rightFor": [
+          "Families seeking mature township facilities with local schools and retail",
+          "Buyers looking for spacious apartments with direct highway access",
+          "Investors looking for robust rental demand from students and local professionals"
+        ],
+        "lookElsewhere": [
+          "Buyers seeking quiet, low-density residential zones away from busy highways",
+          "Buyers seeking high-end luxury concierge services and glass towers"
+        ],
+        "ratings": {
+          "delivery": 8,
+          "quality": 8,
+          "appreciation": 8,
+          "friendliness": 8
+        }
+      },
+      "comparables": [
+        "jubilee-group",
+        "tdi",
+        "bestech-group-bestech-india-pvt-ltd"
+      ],
+      "faqs": [
+        {
+          "q": "Is Gillco Parkhills RERA verified?",
+          "a": "Yes. Gillco Parkhills is registered with Punjab RERA under registration number PBRERA-SAS80-PR0077."
+        },
+        {
+          "q": "What is the price of flats at Gillco Parkhills?",
+          "a": "Pricing ranges between ₹80 lakh for 2BHK units and ₹1.75 crore for premium 4BHK configurations."
+        },
+        {
+          "q": "Where are Gillco projects located in Mohali?",
+          "a": "Their primary master development is in Sector 126, Mohali (Gillco Valley)."
+        },
+        {
+          "q": "Is Gillco good for long-term residency?",
+          "a": "Yes. The presence of parks, schools, and shopping markets within the township makes it highly liveable."
+        },
+        {
+          "q": "How can I purchase a property in Gillco Valley?",
+          "a": "Connect with our advisory desk for access to verified resale inventories and developer-held stock."
+        }
+      ]
+    },
+    "shri-guru-teg-bahadur-cooperative-house-building-society": {
+      "legalName": "Shri Guru Teg Bahadur Cooperative House Building Society Limited",
+      "commonName": "Guru Teg Bahadur Society",
+      "founded": "1991",
+      "headquarters": "Mohali, Punjab",
+      "reraStatus": "Compliant (Cooperative Exemption)",
+      "reraReg": "Punjab Cooperative Societies Act Registration",
+      "activeProjects": 1,
+      "sectorsActive": [
+        "70"
+      ],
+      "assetTypes": [
+        "Apartments"
+      ],
+      "priceRange": "₹75 lakh – ₹95 lakh",
+      "buyerProfile": "Retirees, middle-income families, and value-oriented resale buyers",
+      "website": null,
+      "advisoryVerdict": "Shri Guru Teg Bahadur Cooperative Society offers legacy group housing in the central Sector 70, Mohali. The society provides large apartment layouts at competitive price points compared to private developments in the same sector. Our desk recommends this society for buyers seeking established infrastructure and litigation-free titles. Caveat: Transfer of ownership is via society share certificate transfer; check membership dues before purchase.",
+      "background": {
+        "c1": "Shri Guru Teg Bahadur Cooperative Society was formed under the Punjab Cooperative Societies Act to provide affordable, secure housing for its registered members.",
+        "c2": "Their development in Sector 70 features solid brick construction blocks surrounded by parks. Positioned in a mature residential zone, residents enjoy close proximity to major markets, hospitals, and schools."
+      },
+      "editorialNotes": {
+        "guru-teg-bahadur-society-sector-70-mohali": "Spacious legacy 3BHK apartments in Sector 70. Extremely stable neighborhood with outstanding market connectivity."
+      },
+      "advisoryBreakdown": {
+        "rightFor": [
+          "Buyers seeking spacious 3BHK carpet areas under ₹95 lakh",
+          "Families wanting to be located in the central Sector 70",
+          "Buyers looking for low monthly maintenance outgo"
+        ],
+        "lookElsewhere": [
+          "Buyers seeking modern luxury glass towers and extensive club facilities",
+          "Buyers requiring conventional individual property registry deeds"
+        ],
+        "ratings": {
+          "delivery": 9,
+          "quality": 7,
+          "appreciation": 7,
+          "friendliness": 7
+        }
+      },
+      "comparables": [
+        "mundi-cooperative-house-building-society",
+        "semi-conductor-laboratory-scl-employees-cooperative-house-building-society"
+      ],
+      "faqs": [
+        {
+          "q": "Is Guru Teg Bahadur Society RERA registered?",
+          "a": "Cooperative housing societies are exempt from RERA and are governed by the Punjab Cooperative Department."
+        },
+        {
+          "q": "What is the price of a flat in Guru Teg Bahadur Society?",
+          "a": "Resale 3BHK flats range between ₹75 lakh and ₹95 lakh, depending on the floor level and renovation status."
+        },
+        {
+          "q": "Where is the society located?",
+          "a": "It is located in Sector 70, Mohali, an established central residential sector."
+        },
+        {
+          "q": "How does ownership transfer work here?",
+          "a": "Ownership transfers via Share Certificate Transfer managed by the society's committee."
+        },
+        {
+          "q": "How can I purchase a flat in this society?",
+          "a": "Connect with our advisory desk to review verified resale files and verify society memberships."
+        }
+      ]
+    },
+    "mundi-cooperative-house-building-society": {
+      "legalName": "Mundi Cooperative House Building Society Limited",
+      "commonName": "Mundi Cooperative Complex",
+      "founded": "1990",
+      "headquarters": "Mohali, Punjab",
+      "reraStatus": "Compliant (Cooperative Exemption)",
+      "reraReg": "Punjab Cooperative Societies Act Registration",
+      "activeProjects": 1,
+      "sectorsActive": [
+        "70"
+      ],
+      "assetTypes": [
+        "Apartments"
+      ],
+      "priceRange": "₹78 lakh – ₹96 lakh",
+      "buyerProfile": "Retirees, middle-income families, and value-oriented resale buyers",
+      "website": null,
+      "advisoryVerdict": "Mundi Cooperative Complex represents one of Sector 70's most stable cooperative communities. Known for its spacious layouts, the society offers secure, low-maintenance housing at accessible prices. Our advisory desk recommends Mundi Complex for buyers seeking mature central residential infrastructure. Caveat: Ownership is managed via society membership transfers rather than registry deeds. Ensure document verification with us.",
+      "background": {
+        "c1": "Mundi Cooperative House Building Society was registered in the early 1990s under the Punjab Cooperative Act to allocate spacious, low-cost residential flats to its registered members.",
+        "c2": "Their development, Mundi Cooperative Complex in Sector 70, is a quiet residential pocket. Flanked by green parks and local shopping corridors, it offers excellent access to Chandigarh and division offices."
+      },
+      "editorialNotes": {
+        "mundi-cooperative-complex-sector-70-mohali": "Spacious, legacy 3BHK residential apartments in Sector 70. Offers robust construction, low maintenance, and excellent connectivity."
+      },
+      "advisoryBreakdown": {
+        "rightFor": [
+          "Families looking for large 3BHK layouts under a ₹1 crore budget",
+          "Buyers seeking a mature, centrally located residential sector",
+          "Buyers seeking low-cost, stable community management"
+        ],
+        "lookElsewhere": [
+          "Buyers looking for luxury high-rise specifications and centralized lifestyle clubs",
+          "Buyers requiring individual property registry documentation"
+        ],
+        "ratings": {
+          "delivery": 9,
+          "quality": 7,
+          "appreciation": 7,
+          "friendliness": 7
+        }
+      },
+      "comparables": [
+        "shri-guru-teg-bahadur-cooperative-house-building-society",
+        "semi-conductor-laboratory-scl-employees-cooperative-house-building-society"
+      ],
+      "faqs": [
+        {
+          "q": "Is Mundi Cooperative Complex RERA verified?",
+          "a": "Cooperative group housing societies built before RERA are governed directly by the Punjab Cooperative Department and are exempt."
+        },
+        {
+          "q": "What is the price of flats at Mundi Cooperative Complex?",
+          "a": "Resale prices range between ₹78 lakh and ₹96 lakh, depending on flat condition and floor."
+        },
+        {
+          "q": "Where is the Mundi complex located?",
+          "a": "It is located in Sector 70, Mohali, a premium centrally located sector."
+        },
+        {
+          "q": "How does the transfer process work?",
+          "a": "The transfer is done through a Share Certificate Transfer processed by the society's management committee."
+        },
+        {
+          "q": "How can I purchase a flat in Mundi Complex?",
+          "a": "Connect with our advisory desk to get verified resale listings and society document checks."
+        }
+      ]
+    },
+    "semi-conductor-laboratory-scl-employees-cooperative-house-building-society": {
+      "legalName": "Semi-Conductor Laboratory Employees Cooperative House Building Society Limited",
+      "commonName": "SCL Cooperative Society",
+      "founded": "1993",
+      "headquarters": "Mohali, Punjab",
+      "reraStatus": "Compliant (Cooperative Exemption)",
+      "reraReg": "Punjab Cooperative Societies Act Registration",
+      "activeProjects": 1,
+      "sectorsActive": [
+        "70"
+      ],
+      "assetTypes": [
+        "Apartments"
+      ],
+      "priceRange": "₹82 lakh – ₹1.05 crore",
+      "buyerProfile": "Retired scientists, engineers, IT professionals, and premium families",
+      "website": null,
+      "advisoryVerdict": "SCL Cooperative Society (Semi-Conductor Laboratory Employees Society) is one of Sector 70's most premium cooperative developments. Built for scientists and engineers of the SCL research facility, the society features a highly educated, quiet community and exceptionally clean lanes. Our desk recommends SCL Society for buyers seeking a peaceful, high-trust environment. Caveat: Freehold registry is exempt; transfer occurs via society share certificates. Audit documents with us.",
+      "background": {
+        "c1": "Established in 1993 for employees of the Semi-Conductor Laboratory (a premier space and technology research institute under the Govt of India), the society maintains high administration standards.",
+        "c2": "Their development in Sector 70 features well-spaced low-density blocks surrounded by green parks. The neighborhood is highly secure, quiet, and enjoys close proximity to prime commercial zones."
+      },
+      "editorialNotes": {
+        "scl-employees-cooperative-sector-70-mohali": "Spacious, highly secure 3BHK apartments in Sector 70. Known for its quiet, highly educated community and clean surroundings."
+      },
+      "advisoryBreakdown": {
+        "rightFor": [
+          "Buyers seeking a highly educated, quiet, and secure community",
+          "Families looking for spacious 3BHK layouts in central Sector 70",
+          "Buyers seeking clean, well-maintained parks and roads"
+        ],
+        "lookElsewhere": [
+          "Buyers seeking luxury high-rise condominium specs and sky clubs",
+          "Buyers looking for quick short-term investment properties"
+        ],
+        "ratings": {
+          "delivery": 9,
+          "quality": 8,
+          "appreciation": 8,
+          "friendliness": 8
+        }
+      },
+      "comparables": [
+        "shri-guru-teg-bahadur-cooperative-house-building-society",
+        "mundi-cooperative-house-building-society"
+      ],
+      "faqs": [
+        {
+          "q": "Is SCL Cooperative Society RERA registered?",
+          "a": "Cooperative housing societies are exempt from RERA and are regulated by the Punjab Cooperative Department."
+        },
+        {
+          "q": "What is the price of flats at SCL Cooperative Society?",
+          "a": "Resale prices range between ₹82 lakh and ₹1.05 crore, reflecting the society's premium quality and location."
+        },
+        {
+          "q": "Where is the society located?",
+          "a": "It is located in Sector 70, Mohali, a highly sought-after central residential sector."
+        },
+        {
+          "q": "Can general public buy in SCL Cooperative Society?",
+          "a": "Yes. Non-employees can purchase resale flats on the secondary market through standard society membership transfer steps."
+        },
+        {
+          "q": "How do I buy a flat in SCL Society?",
+          "a": "Connect with our advisory desk to get verified resale listings and society membership verification."
+        }
+      ]
+    },
+    "sri-guru-har-rai-sahib-cooperative-house-building-society": {
+      "legalName": "Sri Guru Har Rai Sahib Cooperative House Building Society Limited",
+      "commonName": "Guru Har Rai Sahib Society",
+      "founded": "1993",
+      "headquarters": "Mohali, Punjab",
+      "reraStatus": "Compliant (Cooperative Exemption)",
+      "reraReg": "Punjab Cooperative Societies Act Registration",
+      "activeProjects": 1,
+      "sectorsActive": [
+        "67"
+      ],
+      "assetTypes": [
+        "Apartments"
+      ],
+      "priceRange": "₹78 lakh – ₹98 lakh",
+      "buyerProfile": "Retirees, value-seeking families, and mature residential end-users",
+      "website": null,
+      "advisoryVerdict": "Sri Guru Har Rai Sahib Cooperative Society offers highly secure, spacious apartments in the prestigious Sector 67, Mohali. The development is characterized by peaceful surroundings and low-density layouts. Our desk recommends this society for buyers wanting to live in Sector 67 at a highly accessible price point. Caveat: Transfer of ownership is via society share certificate transfer; check all clearance records before purchase.",
+      "background": {
+        "c1": "Registered in 1993 under the Punjab Cooperative Act, the society was established to build low-density, affordable group housing for its registered members.",
+        "c2": "Their development in Sector 67 features low-rise blocks surrounded by green belts. Positioned in one of Mohali's premier sectors, it offers immediate proximity to commercial markets, parks, and major division roads."
+      },
+      "editorialNotes": {
+        "guru-har-rai-sahib-society-sector-67-mohali": "Spacious legacy 3BHK residential apartments in Sector 67. Exceptionally peaceful residential campus with direct market access."
+      },
+      "advisoryBreakdown": {
+        "rightFor": [
+          "Buyers seeking spacious 3BHK carpet areas under ₹1 crore",
+          "Families wanting a central Sector 67 address",
+          "Buyers looking for low-cost, stable community management"
+        ],
+        "lookElsewhere": [
+          "Buyers seeking modern luxury high-rise condominium amenities and sky lounges",
+          "Buyers requiring standard freehold property registry documentation"
+        ],
+        "ratings": {
+          "delivery": 9,
+          "quality": 7,
+          "appreciation": 7,
+          "friendliness": 8
+        }
+      },
+      "comparables": [
+        "jal-vayu-cooperative-house-building-society",
+        "united-co-operative-housing-board-society"
+      ],
+      "faqs": [
+        {
+          "q": "Is Guru Har Rai Sahib Society RERA registered?",
+          "a": "No. Cooperative housing societies built before RERA are exempt and governed by the Punjab Cooperative Department."
+        },
+        {
+          "q": "What is the price of a flat in Guru Har Rai Sahib Society?",
+          "a": "Resale 3BHK units range between ₹78 lakh and ₹98 lakh, depending on the unit's upkeep and floor level."
+        },
+        {
+          "q": "Where is the society located?",
+          "a": "It is located in Sector 67, Mohali, a centrally positioned premium residential sector."
+        },
+        {
+          "q": "How does ownership transfer work here?",
+          "a": "Ownership transfers via Share Certificate Transfer processed by the society's management committee."
+        },
+        {
+          "q": "How can I purchase a flat in this society?",
+          "a": "Connect with our advisory desk to get verified resale listings and society membership verification."
+        }
+      ]
+    },
+    "jlpl": {
+      "legalName": "Janta Land Promoters Private Limited",
+      "commonName": "JLPL",
+      "founded": "1995",
+      "headquarters": "Mohali, Punjab",
+      "reraStatus": "Verified",
+      "reraReg": "PBRERA-SAS81-PM0003 (Falcon View)",
+      "activeProjects": 3,
+      "sectorsActive": [
+        "66A",
+        "82",
+        "83"
+      ],
+      "assetTypes": [
+        "Apartments",
+        "Plots",
+        "Industrial",
+        "Commercial"
+      ],
+      "priceRange": "₹95 lakh – ₹9.19 crore",
+      "buyerProfile": "Mid-premium to ultra-luxury buyers, industrial and commercial investors",
+      "website": "jantahousing.com",
+      "advisoryVerdict": "JLPL (Janta Land Promoters Ltd.) is the closest thing Mohali has to a legacy developer. Operational since 1995 and transformed into a master developer by 2003, their footprint in Sector 66A is the benchmark against which all other Mohali developments are measured. The Falcon View towers — at ₹4.09 crore onwards — represent the top end of the city's luxury apartment market. Our desk recommends JLPL for buyers who prioritize location permanence and brand credibility over newer developer offers. Caveat: Falcon View's premium pricing reflects its status; buyers seeking value-per-sqft will find better returns elsewhere in our directory.",
+      "background": {
+        "c1": "Founded in 1995 by Kulwant Singh, Janta Land Promoters (JLPL) was the first private developer to be granted a license to develop a super-mega project in Punjab. From modest colonisation beginnings, they scaled into a master-developer status, responsible for entire sector layouts and industrial infrastructure across Mohali.",
+        "c2": "JLPL's Mohali presence is concentrated in IT City, Sector 66A — one of the city's most strategically located zones, sitting between the international airport, the IT park, and Phase 8 Industrial Area. Their Falcon View development, spread across 28.5 acres, is the largest private luxury residential campus in Mohali. Their affordable offering — Galaxy Heights — occupies the same sector at roughly one-fifth the price, making JLPL the only Mohali developer currently serving both the ₹95 lakh and ₹9 crore buyer from a single location."
+      },
+      "editorialNotes": {
+        "jlpl-sky-garden": "A well-conceived mid-budget residential offering in Sector 66A. While units are compact compared to Falcon View, it provides access to the same high-demand IT City infrastructure. Recommended for rental yields.",
+        "jlpl-falcon-view-sector-66a-mohali": "Mohali's definitive legacy luxury address. Falcon View's 28.5-acre campus includes a 5-star club, swimming pool, squash courts, and 24-hour concierge — the only development in the Tricity with this full amenity stack.",
+        "jlpl-galaxy-heights-sector-66a-mohali": "JLPL's most accessible offering — compact 2BHK apartments in the same prestigious Sector 66A location as Falcon View, at a fraction of the price. Ideal for first investment or rental yield play near the IT park."
+      },
+      "advisoryBreakdown": {
+        "rightFor": [
+          "End-use buyers wanting a legacy, highly recognized Mohali address",
+          "NRI investors seeking liquid, premium-tier assets",
+          "Buyers comfortable with ₹4Cr+ ticket sizes for Falcon View"
+        ],
+        "lookElsewhere": [
+          "First-time buyers with sub-₹1Cr budget (see Jubilee or ICL instead)",
+          "Buyers needing immediate possession within 12 months (check current status with our desk)"
+        ],
+        "ratings": {
+          "delivery": 8,
+          "quality": 9,
+          "appreciation": 8,
+          "friendliness": 7
+        }
+      },
+      "comparables": [
+        "marbella-group-srg-group",
+        "homeland-group",
+        "klv-builders-and-developers-pvt-ltd"
+      ],
+      "faqs": [
+        {
+          "q": "Is JLPL RERA verified in Mohali?",
+          "a": "Yes. All three JLPL projects listed by our desk — Falcon View, Sky Garden, and Galaxy Heights — are registered under Punjab RERA with valid project IDs."
+        },
+        {
+          "q": "What is the starting price for JLPL flats in Mohali?",
+          "a": "₹95 lakh for Galaxy Heights 2BHK compact units in Sector 66A. Falcon View 3BHK units start at ₹4.09 crore."
+        },
+        {
+          "q": "In which sectors does JLPL have projects in Mohali?",
+          "a": "Sector 66A (primary), with additional industrial-zone presence in Sectors 82 and 83."
+        },
+        {
+          "q": "Is JLPL a good investment in Mohali?",
+          "a": "JLPL Falcon View is the most credentialed luxury address in Mohali and holds its value well. Galaxy Heights offers better yield-per-rupee for investors."
+        },
+        {
+          "q": "How do I book a JLPL flat through Realty Consultants?",
+          "a": "Use the Portfolio Desk Inquiry form on this page or call +91 7814613916. We work directly with JLPL's sales team and can negotiate pricing and payment plans."
+        }
+      ]
+    },
+    "ananda-group": {
+      "legalName": "Ananda Infra Developers Private Limited",
+      "commonName": "Ananda Group",
+      "founded": "2018",
+      "headquarters": "Mohali, Punjab",
+      "reraStatus": "Verified",
+      "reraReg": "PBRERA-SAS80-PR0832 (Ananda Crown)",
+      "activeProjects": 1,
+      "sectorsActive": [
+        "78"
+      ],
+      "assetTypes": [
+        "Apartments"
+      ],
+      "priceRange": "₹1.15 crore – ₹1.95 crore",
+      "buyerProfile": "Upper-mid segment buyers seeking luxury amenities near sports hubs",
+      "website": "anandacrown.in",
+      "advisoryVerdict": "Ananda Group is a growing developer focused on delivering modern high-specification residences in Mohali. Their primary development, Ananda Crown in Sector 78, is designed to cater to modern families prioritizing layout functionality and sports complex proximity. Our advisory desk recommends Ananda for buyers seeking mid-to-high end specifications. Caveat: As a growing developer entity, compare their execution timeline milestones with surrounding private projects before booking.",
+      "background": {
+        "c1": "Ananda Group focuses on high-rise residential properties in Mohali's core expansion zones, emphasizing architectural detailing, modern interior fixtures, and client relations.",
+        "c2": "Their presence is highlighted by Ananda Crown in Sector 78. Positioned near Sector 68 and the cricket stadium, this project offers spacious 3BHK and 4BHK apartments with extensive green court views and modern security integrations."
+      },
+      "editorialNotes": {
+        "ananda-crown-mohali-3-4-BHK-flat-sector-78": "Premium luxury apartments in Sector 78. Features highly spacious 3BHK and 4BHK formats with modern layouts and proximity to sports arenas."
+      },
+      "advisoryBreakdown": {
+        "rightFor": [
+          "Buyers seeking spacious 3BHK/4BHK layouts in Sector 78",
+          "Families wanting proximity to schools and sports centers",
+          "Buyers seeking modern clubhouse facilities at a competitive rate"
+        ],
+        "lookElsewhere": [
+          "Buyers looking for entry-level apartments under ₹1 crore",
+          "Buyers seeking ready-to-move-in options (under construction phases)"
+        ],
+        "ratings": {
+          "delivery": 8,
+          "quality": 8,
+          "appreciation": 8,
+          "friendliness": 8
+        }
+      },
+      "comparables": [
+        "horizon-group-punjab",
+        "bestech-group-bestech-india-pvt-ltd",
+        "joy-homes-joy-group"
+      ],
+      "faqs": [
+        {
+          "q": "Is Ananda Crown RERA verified?",
+          "a": "Yes. Ananda Crown is registered under Punjab RERA (PBRERA-SAS80-PR0832)."
+        },
+        {
+          "q": "What is the price of a flat in Ananda Crown?",
+          "a": "Pricing ranges between ₹1.15 crore for 3BHK units and ₹1.95 crore for premium 4BHK configurations."
+        },
+        {
+          "q": "Where is the Ananda project located?",
+          "a": "Ananda Crown is located in Sector 78, Mohali, offering easy access to Sector 68 and Airport Road."
+        },
+        {
+          "q": "What amenities does Ananda Crown offer?",
+          "a": "It includes a luxury clubhouse, swimming pool, indoor sports court, and 24-hour security protocols."
+        },
+        {
+          "q": "How can I book a unit in Ananda Crown?",
+          "a": "Request our verified inventory sheet for active builder bookings and flexible payment plans."
+        }
+      ]
+    },
+    "bestech-group-bestech-india-pvt-ltd": {
+      "legalName": "Bestech India Private Limited",
+      "commonName": "Bestech Group",
+      "founded": "1990",
+      "headquarters": "Gurugram, Haryana",
+      "reraStatus": "Verified",
+      "reraReg": "PBRERA-SAS81-PR0113 (Park View Residences)",
+      "activeProjects": 1,
+      "sectorsActive": [
+        "66"
+      ],
+      "assetTypes": [
+        "Apartments",
+        "Commercial Offices",
+        "IT Parks"
+      ],
+      "priceRange": "₹1.10 crore – ₹2.10 crore",
+      "buyerProfile": "Corporate executives, premium families, and commercial real estate investors",
+      "website": "bestechgroup.com",
+      "advisoryVerdict": "Bestech Group is a highly credentialed national developer with a major presence in Gurugram and Mohali. Their residential development, Bestech Park View Residences in Sector 66, is highly regarded for its robust construction standards and central location. Our desk recommends Bestech for buyers seeking stable rental demand and corporate-grade maintenance. Caveat: The project is highly populated; check parking slot allocations and tower density levels before buying.",
+      "background": {
+        "c1": "Established in 1990 by Dharam Vir Gupta and Hari Singh, Bestech has delivered over 25 million square feet of space. They are known for high-standard design collaborations and building landmark IT complexes.",
+        "c2": "In Mohali, Bestech is a major presence, responsible for Bestech Business Towers in Sector 66. Bestech Park View Residences sits adjacent, creating a high-demand residential pocket for corporate employees and families."
+      },
+      "editorialNotes": {
+        "bestech-park-view-residences-sector-66-mohali": "Established premium residential campus in Sector 66. Outstanding maintenance quality, high rental yields, and immediate proximity to business towers."
+      },
+      "advisoryBreakdown": {
+        "rightFor": [
+          "Corporate professionals working in Sector 66 business towers",
+          "Families seeking ready-to-move-in, highly secure premium campuses",
+          "Investors looking for highly liquid resale files and high rental yields"
+        ],
+        "lookElsewhere": [
+          "Buyers seeking low-density, quiet green belts away from commercial centers",
+          "Budget-conscious buyers looking for properties under ₹1 crore"
+        ],
+        "ratings": {
+          "delivery": 9,
+          "quality": 9,
+          "appreciation": 8,
+          "friendliness": 8
+        }
+      },
+      "comparables": [
+        "jlpl",
+        "klv-builders-and-developers-pvt-ltd",
+        "turnstone-realty-medallion-group"
+      ],
+      "faqs": [
+        {
+          "q": "Is Bestech Park View RERA verified?",
+          "a": "Yes. Bestech Park View Residences is fully registered with Punjab RERA under number PBRERA-SAS81-PR0113."
+        },
+        {
+          "q": "What is the price of a flat at Bestech Park View Residences?",
+          "a": "Pricing ranges between ₹1.10 crore for 2BHK layouts and ₹2.10 crore for premium 4BHK units."
+        },
+        {
+          "q": "Where is the Bestech project located in Mohali?",
+          "a": "It is located in Sector 66, Mohali, adjacent to the Bestech Business Towers and Airport Road."
+        },
+        {
+          "q": "Is Bestech good for rental income?",
+          "a": "Yes. The adjacent business towers generate massive rental demand from senior executives and IT professionals."
+        },
+        {
+          "q": "How can I inspect Bestech Park View?",
+          "a": "Contact our desk to arrange scheduled walkthroughs of verified resale listings in this project."
+        }
+      ]
+    },
+    "joy-homes-joy-group": {
+      "legalName": "Joy Builders and Promoters Private Limited",
+      "commonName": "Joy Group",
+      "founded": "2012",
+      "headquarters": "Mohali, Punjab",
+      "reraStatus": "Verified",
+      "reraReg": "PBRERA-SAS80-PR0722 (Joy Grand)",
+      "activeProjects": 1,
+      "sectorsActive": [
+        "88"
+      ],
+      "assetTypes": [
+        "Apartments",
+        "Commercial Showrooms"
+      ],
+      "priceRange": "₹1.25 crore – ₹2.50 crore",
+      "buyerProfile": "Premium families and commercial investors seeking modern high-rise living",
+      "website": "joygrand.in/",
+      "advisoryVerdict": "Joy Group is a prominent regional developer known for high-rise residential and commercial projects. Their flagship, Joy Grand in Sector 88, offers spacious apartment layouts integrated with a localized commercial zone. Our desk recommends Joy Group for buyers prioritizing modern lifestyles and layout efficiency. Caveat: The proximity to the commercial complex means higher common-area activity; evaluate site density maps with us.",
+      "background": {
+        "c1": "Joy Group operates as a prominent regional developer focusing on high-rise mixed-use residential complexes, combining commercial hubs with premium group housing towers.",
+        "c2": "Their Mohali footprint is anchored by Joy Grand in Sector 88, placing them in one of the city's premier low-density residential sectors. The development features large-format 3BHK and 4BHK layouts with modern amenities."
+      },
+      "editorialNotes": {
+        "joy-grand": "Premium mixed-use high-rise apartments in Sector 88. Features spacious 3+1 and 4+1 BHK formats integrated with a localized lifestyle retail hub."
+      },
+      "advisoryBreakdown": {
+        "rightFor": [
+          "Buyers seeking modern mixed-use layout benefits (retail on campus)",
+          "Families looking for spacious apartments in Sector 88",
+          "Investors looking for capital appreciation along primary transit roads"
+        ],
+        "lookElsewhere": [
+          "Buyers seeking highly quiet, low-density green communities away from retail zones",
+          "Budget buyers looking for options below ₹1 crore"
+        ],
+        "ratings": {
+          "delivery": 8,
+          "quality": 8,
+          "appreciation": 8,
+          "friendliness": 7
+        }
+      },
+      "comparables": [
+        "horizon-group-punjab",
+        "hero-realty-pvt-ltd-hero-group-usd-5-billion-enterprise",
+        "noble-ventures-noble-group"
+      ],
+      "faqs": [
+        {
+          "q": "Is Joy Grand RERA verified?",
+          "a": "Yes. Joy Grand is registered under Punjab RERA (PBRERA-SAS80-PR0722)."
+        },
+        {
+          "q": "What is the price range at Joy Grand?",
+          "a": "Prices start from ₹1.25 crore and go up to ₹2.50 crore for premium high-rise layouts."
+        },
+        {
+          "q": "Where is the Joy Group project located?",
+          "a": "It is located in Sector 88, Mohali, a rapidly developing residential zone."
+        },
+        {
+          "q": "What amenities does Joy Grand feature?",
+          "a": "It includes a dedicated lifestyle clubhouse, swimming pool, sports courts, and on-site retail showrooms."
+        },
+        {
+          "q": "How can I book a unit at Joy Grand?",
+          "a": "Connect with our advisory desk for direct booking rates, payment plans, and verified secondary listings."
+        }
+      ]
+    },
+    "affinity-buildtech-affinity-group": {
+      "legalName": "Affinity Buildtech Private Limited",
+      "commonName": "Affinity Group",
+      "founded": "2015",
+      "headquarters": "Mohali, Punjab",
+      "reraStatus": "Verified",
+      "reraReg": "PBRERA-SAS79-PR0512 (Belgravia)",
+      "activeProjects": 1,
+      "sectorsActive": [
+        "Aerocity"
+      ],
+      "assetTypes": [
+        "Apartments",
+        "Villas"
+      ],
+      "priceRange": "₹1.10 crore – ₹2.30 crore",
+      "buyerProfile": "Premium families and NRI buyers wanting Aerocity connectivity",
+      "website": "affinitybuildtech.com",
+      "advisoryVerdict": "Affinity Group is a recognized developer building high-quality residential apartments along Mohali's airport corridor. Their primary project, Affinity Belgravia in Aerocity, offers spacious layouts with modern lifestyle integrations. Our desk recommends Affinity for buyers prioritizing Aerocity location advantages and highway connectivity. Caveat: Proximity to the airport means flight path noise buffers should be evaluated on site with our desk before booking.",
+      "background": {
+        "c1": "Affinity Buildtech focuses on developing premium residential properties in Mohali's high-value transit corridors, utilizing high-quality structural specifications and contemporary design features.",
+        "c2": "Their presence is anchored by Affinity Belgravia in Aerocity. The project caters to premium corporate professionals and NRI families seeking direct access to Airport Road, shopping complexes, and international terminals."
+      },
+      "editorialNotes": {
+        "affinity-belgravia-aerocity-mohali": "Premium high-rise apartments in Aerocity. Offers exceptional transit connectivity, modern clubhouse facilities, and spacious interior layouts."
+      },
+      "advisoryBreakdown": {
+        "rightFor": [
+          "Buyers seeking direct Aerocity connectivity and airport road access",
+          "Families looking for modern, well-secured residential campuses",
+          "Investors seeking capital growth in high-value transit corridors"
+        ],
+        "lookElsewhere": [
+          "Buyers sensitive to localized aircraft noise corridors",
+          "Budget-conscious buyers under ₹1 crore"
+        ],
+        "ratings": {
+          "delivery": 8,
+          "quality": 8,
+          "appreciation": 9,
+          "friendliness": 8
+        }
+      },
+      "comparables": [
+        "turnstone-realty-medallion-group",
+        "bestech-group-bestech-india-pvt-ltd",
+        "marbella-group-srg-group"
+      ],
+      "faqs": [
+        {
+          "q": "Is Affinity Belgravia RERA verified?",
+          "a": "Yes. Affinity Belgravia is registered under Punjab RERA (PBRERA-SAS79-PR0512)."
+        },
+        {
+          "q": "What is the starting price at Affinity Belgravia?",
+          "a": "Pricing ranges between ₹1.10 crore for 3BHK configurations and ₹2.30 crore for larger formats."
+        },
+        {
+          "q": "Where is the Affinity project located?",
+          "a": "It is located in Aerocity, Mohali, along the main Airport Road transit corridor."
+        },
+        {
+          "q": "What amenities does Affinity Belgravia offer?",
+          "a": "It includes a fully equipped fitness club, swimming pool, landscape lawns, and 24-hour security systems."
+        },
+        {
+          "q": "How can I book a unit with Affinity?",
+          "a": "Connect with our advisory desk for developer payment schemes and verified resale files."
+        }
+      ]
+    }
+  }
+}

@@ -14,6 +14,7 @@ interface PropertyCardProps {
   isHovered?: boolean;
   onHover?: (isHovering: boolean) => void;
   customHref?: string;
+  editorialNote?: string;
 }
 
 export default function PropertyCard({ 
@@ -22,7 +23,8 @@ export default function PropertyCard({
   variant = "standard",
   isHovered,
   onHover,
-  customHref
+  customHref,
+  editorialNote
 }: PropertyCardProps) {
   const { formatPrice } = useCurrency();
   const image = property.images?.[0] ?? "/assets/images/home/about.jpg";
@@ -196,6 +198,12 @@ export default function PropertyCard({
             </div>
           )}
         </div>
+
+        {editorialNote && (
+          <p className="font-body text-xs text-charcoal/70 mb-5 leading-relaxed bg-black/[0.02] p-4 rounded-xl border border-black/5 italic">
+            "{editorialNote}"
+          </p>
+        )}
 
         {/* Footer (Price & Button) */}
         <div className="flex items-center justify-between pt-6 border-t border-black/5">
