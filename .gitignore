@@ -35,3 +35,8 @@ next-env.d.ts
 .claude
 .env
 temp_push/
+scratch/
+RealtyNew_backup/
+login/
+check_images.js
+check_prices.js

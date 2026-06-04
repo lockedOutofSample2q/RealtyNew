@@ -1,8 +1,8 @@
 // middleware.ts
 // ============================================================
 // ROUTE PROTECTION
-// /admin/* routes require a valid Supabase session
-// Unauthenticated users → redirected to /admin/login
+// /admin-realty-8x2d9/* routes require a valid Supabase session
+// Unauthenticated users → redirected to /admin-realty-8x2d9/login
 // ============================================================
 
 import { NextRequest, NextResponse } from "next/server";
@@ -11,8 +11,8 @@ import { createServerClient, type CookieOptions } from "@supabase/ssr";
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Only protect /admin routes (except login)
-  if (!pathname.startsWith("/admin") || pathname === "/admin/login") {
+  // Only protect /admin-realty-8x2d9 routes (except login)
+  if (!pathname.startsWith("/admin-realty-8x2d9") || pathname === "/admin-realty-8x2d9/login") {
     return NextResponse.next();
   }
 
@@ -46,7 +46,7 @@ export async function middleware(request: NextRequest) {
   const { data: { session } } = await supabase.auth.getSession();
 
   if (!session) {
-    const loginUrl = new URL("/admin/login", request.url);
+    const loginUrl = new URL("/admin-realty-8x2d9/login", request.url);
     loginUrl.searchParams.set("redirect", pathname);
     return NextResponse.redirect(loginUrl);
   }
@@ -55,5 +55,6 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/admin/:path*"],
+  matcher: ["/admin-realty-8x2d9/:path*"],
 };
+

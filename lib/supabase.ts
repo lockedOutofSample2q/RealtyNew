@@ -16,12 +16,12 @@ import { createBrowserClient } from "@supabase/ssr";
 import { createClient as createServerClient } from "@supabase/supabase-js";
 import type { Database } from "@/types/supabase";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
-
 // ── Browser client (use in components) ───────────────────────
 export function createClient() {
-  if (!supabaseUrl || !supabaseAnonKey) {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
+
+  if (!url || !anonKey) {
     console.warn("Supabase credentials missing. Returning a dummy client for build/SSR.");
     // Return a dummy client or handle appropriately to avoid crashing during build
     return {
@@ -40,20 +40,38 @@ export function createClient() {
       }
     } as any;
   }
-  return createBrowserClient<Database>(supabaseUrl, supabaseAnonKey);
+  return createBrowserClient<Database>(url, anonKey);
 }
 
 // —— Service role client (use in API routes / server actions ONLY)
 export function createAdminClient() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
   const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
-  if (!supabaseUrl || !serviceKey) {
+  if (!url || !serviceKey) {
     console.warn("Supabase Admin credentials missing. Returning a dummy client for build/SSR.");
     return {
       from: () => ({
-        select: async () => ({ data: [] }),
-        insert: async () => ({ data: [] }),
-        update: async () => ({ data: [] }),
-        delete: async () => ({ data: [] }),
+        select: () => ({
+          eq: () => ({
+            maybeSingle: async () => ({ data: null, error: null }),
+            select: async () => ({ data: null, error: null }),
+            range: async () => ({ data: null, error: null }),
+            order: async () => ({ data: null, error: null }),
+            limit: async () => ({ data: null, error: null }),
+            in: async () => ({ data: null, error: null })
+          }),
+          select: async () => ({ data: null, error: null }),
+          order: async () => ({
+            range: async () => ({ data: null, error: null }),
+            order: async () => ({ data: null, error: null }),
+            limit: async () => ({ data: null, error: null }),
+          })
+        }),
+        insert: async () => ({ data: null, error: null }),
+        update: () => ({
+          eq: async () => ({ data: null, error: null })
+        }),
+        delete: async () => ({ data: null, error: null }),
       }),
       auth: {
         admin: {
@@ -63,7 +81,7 @@ export function createAdminClient() {
     } as any;
   }
   return createServerClient<Database>(
-    supabaseUrl,
+    url,
     serviceKey,
     { auth: { persistSession: false } }
   );
