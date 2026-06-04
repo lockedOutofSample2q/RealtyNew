@@ -96,7 +96,7 @@ export default function BuilderProfileClient({ builder, properties }: BuilderPro
     .toUpperCase() || builder.commonName.substring(0, 2).toUpperCase();
 
   return (
-    <div className="pt-4 min-h-screen bg-[#FDFDFD]">
+    <div className="pt-[var(--nav-height)] min-h-screen bg-[#FDFDFD]">
       {/* Breadcrumbs & Back Link */}
       <div className="container-site pb-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5 border-b border-black/[0.03] text-[10px] font-body text-black/45">
         <nav className="flex items-center gap-1.5">
