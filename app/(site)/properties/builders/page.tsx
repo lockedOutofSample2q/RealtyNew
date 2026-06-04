@@ -126,6 +126,35 @@ export default async function BuildersLandingPage() {
             "url": `${siteConfig.url}/properties/builders/${b.slug}`
           }))
         }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I check if a builder in Mohali is RERA-registered?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can verify any developer or real estate project on the official Punjab RERA portal (rera.punjab.gov.in) by searching for their registration number. Always confirm that the builder holds an active RERA license before signing a booking agreement."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between cooperative housing societies and corporate builders in Mohali?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Corporate developers (such as Jubilee, JLPL, and ATS) are private commercial enterprises that design, construct, and sell luxury properties directly. Cooperative housing societies are member-owned boards where land acquisition and development costs are shared among members, usually offering lower purchase prices but with less predictable delivery timelines and amenity management."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who are the leading real estate builders on Airport Road, Mohali?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Airport Road (PR7) is Mohali's premier growth corridor. Leading builders active here include Jubilee Group (Jubilee Walk, Jubilee Portico), JLPL (Falcon View, JLPL sectors), Homeland Group (Homeland Heights, Homeland Regalia), and Marbella Group (Marbella Grand, Marbella Royce)."
+            }
+          }
+        ]
       }
     ]
   };

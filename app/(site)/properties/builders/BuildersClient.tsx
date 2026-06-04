@@ -88,7 +88,7 @@ export default function BuildersClient({ builders }: BuildersClientProps) {
             </span>
           </div>
           <h1 className="text-5xl md:text-7xl font-display font-medium text-charcoal mb-6 leading-tight tracking-tight">
-            Leading Builders & Developers
+            Top Real Estate Builders & Developers in Mohali
           </h1>
           <p className="text-lg md:text-xl text-black/60 max-w-2xl leading-relaxed font-body">
             Access exhaustive, honestly-appraised portfolios of corporate construction groups and cooperative societies in Mohali. Cross-referenced for RERA credentials, construction quality, and delivery histories.
@@ -285,6 +285,124 @@ export default function BuildersClient({ builders }: BuildersClientProps) {
             </button>
           </div>
         )}
+      </div>
+
+      {/* Informational SEO and Guide Section */}
+      <div className="bg-white border-t border-black/5 py-20 mt-12">
+        <div className="container-site max-w-4xl">
+          
+          {/* Section 1: Introduction & Definition */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-display font-medium text-charcoal mb-6 leading-tight">
+              Verified Real Estate Builders & Developers in Mohali
+            </h2>
+            <p className="font-body text-base text-black/60 leading-relaxed mb-4">
+              <strong>Real estate builders in Mohali</strong> have transformed the Tricity skyline over the last decade, expanding luxury housing and commercial infrastructure across growth corridors like Airport Road (PR7), IT City, Sector 82, and New Sunny Enclave.
+            </p>
+            <p className="font-body text-base text-black/60 leading-relaxed">
+              At Realty Consultants, we compile exhaustive, independently verified portfolios of leading property groups and cooperative societies. This enables buyers and investors to evaluate developers based on RERA compliance, structural quality, financial solvency, and historical delivery timelines rather than marketing brochures.
+            </p>
+          </div>
+
+          {/* Section 2: How to Verify (Numbered Guide) */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-display font-medium text-charcoal mb-6 leading-tight">
+              How to Verify a Property Developer in Mohali
+            </h2>
+            <p className="font-body text-base text-black/60 leading-relaxed mb-6">
+              Before purchasing a commercial space or a luxury flat in Mohali, follow this essential verification checklist to safeguard your investment:
+            </p>
+            <ol className="space-y-4">
+              <li className="flex gap-4">
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-charcoal/5 font-display text-sm font-semibold text-charcoal shrink-0">1</span>
+                <div>
+                  <h4 className="font-display text-lg font-medium text-charcoal mb-1">Verify RERA Registration</h4>
+                  <p className="font-body text-sm text-black/60 leading-relaxed">Search the Punjab RERA database (rera.punjab.gov.in) using the developer or project registration number. Never book properties in pre-launch phases that do not have active RERA certification.</p>
+                </div>
+              </li>
+              <li className="flex gap-4">
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-charcoal/5 font-display text-sm font-semibold text-charcoal shrink-0">2</span>
+                <div>
+                  <h4 className="font-display text-lg font-medium text-charcoal mb-1">Check Past Delivery Records</h4>
+                  <p className="font-body text-sm text-black/60 leading-relaxed">Examine the builder's earlier developments. Check for litigation history, construction delays, and whether occupation certificates (OC) were handed over promptly.</p>
+                </div>
+              </li>
+              <li className="flex gap-4">
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-charcoal/5 font-display text-sm font-semibold text-charcoal shrink-0">3</span>
+                <div>
+                  <h4 className="font-display text-lg font-medium text-charcoal mb-1">Audit Financial Partnering</h4>
+                  <p className="font-body text-sm text-black/60 leading-relaxed">Projects approved for home loans by major national banks (SBI, HDFC, ICICI) undergo rigid legal and technical clearances, providing an additional layer of security.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          {/* Section 3: Comparison (Corporate vs Coop) */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-display font-medium text-charcoal mb-6 leading-tight">
+              Corporate Real Estate Developers vs. Cooperative Housing Societies
+            </h2>
+            <p className="font-body text-base text-black/60 leading-relaxed mb-6">
+              Mohali real estate features two main developer entities. Understanding their differences is key to choosing the right properties:
+            </p>
+            <div className="overflow-x-auto border border-black/5 rounded-2xl">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="bg-black/[0.02] border-b border-black/5">
+                    <th className="p-4 font-display text-sm font-semibold text-charcoal">Feature</th>
+                    <th className="p-4 font-display text-sm font-semibold text-charcoal">Corporate Builders (e.g., Jubilee, ATS)</th>
+                    <th className="p-4 font-display text-sm font-semibold text-charcoal">Cooperative Housing Societies</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-black/5 font-body text-sm text-black/60">
+                  <tr>
+                    <td className="p-4 font-semibold text-charcoal">Pricing Model</td>
+                    <td className="p-4">Higher base price, market-driven commercial margins.</td>
+                    <td className="p-4">Cost-to-cost construction sharing (often lower cost).</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-semibold text-charcoal">Timelines</td>
+                    <td className="p-4">Fixed construction-linked plans with delays subject to RERA penalty.</td>
+                    <td className="p-4">Variable schedules dependent on member funding and board efficiency.</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-semibold text-charcoal">Amenities</td>
+                    <td className="p-4">Premium clubs, professional maintenance, luxury landscapes.</td>
+                    <td className="p-4">Basic to mid-level amenities managed by member committees.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Section 4: FAQs */}
+          <div>
+            <h2 className="text-3xl font-display font-medium text-charcoal mb-8 leading-tight">
+              Frequently Asked Questions about Builders in Mohali
+            </h2>
+            <div className="space-y-6">
+              <div>
+                <h4 className="font-display text-lg font-medium text-charcoal mb-2">How do I check if a builder in Mohali is RERA-registered?</h4>
+                <p className="font-body text-sm text-black/60 leading-relaxed">
+                  You can verify any developer or real estate project on the official Punjab RERA portal (rera.punjab.gov.in) by searching for their registration number. Always confirm that the builder holds an active RERA license before signing a booking agreement.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-display text-lg font-medium text-charcoal mb-2">What is the difference between cooperative housing societies and corporate builders in Mohali?</h4>
+                <p className="font-body text-sm text-black/60 leading-relaxed">
+                  Corporate developers (such as Jubilee, JLPL, and ATS) are private commercial enterprises that design, construct, and sell luxury properties directly. Cooperative housing societies are member-owned boards where land acquisition and development costs are shared among members, usually offering lower purchase prices but with less predictable delivery timelines and amenity management.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-display text-lg font-medium text-charcoal mb-2">Who are the leading real estate builders on Airport Road, Mohali?</h4>
+                <p className="font-body text-sm text-black/60 leading-relaxed">
+                  Airport Road (PR7) is Mohali's premier growth corridor. Leading builders active here include Jubilee Group (Jubilee Walk, Jubilee Portico), JLPL (Falcon View, JLPL sectors), Homeland Group (Homeland Heights, Homeland Regalia), and Marbella Group (Marbella Grand, Marbella Royce).
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   );

@@ -83,6 +83,7 @@ export const footerLinks = {
     { label: "Sector Maps", href: "/properties" },
   ],
   legal: [
+    { label: "Builders", href: "/properties/builders" },
     { label: "FAQ", href: "/faq" },
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
