@@ -248,7 +248,7 @@ export default function BuilderProfileClient({ builder, properties }: BuilderPro
         {/* SECTION A — The Advisory Verdict */}
         <div className="bg-charcoal/[0.02] border border-charcoal/10 rounded-3xl p-8 mb-8 relative">
           <div className="absolute top-0 left-8 -translate-y-1/2 bg-charcoal text-white font-body text-[9px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
-            RHMC Advisory Verdict
+            Our Advisory Verdict
           </div>
           <p className="font-body text-sm text-charcoal/80 leading-relaxed italic">
             "{builder.advisoryVerdict}"
@@ -393,10 +393,10 @@ export default function BuilderProfileClient({ builder, properties }: BuilderPro
               )}
             </div>
 
-            {/* SECTION E — RHMC Advisory Breakdown */}
+            {/* SECTION E — Our Advisory Breakdown */}
             <div className="bg-white border border-black/5 p-8 rounded-3xl space-y-8">
               <h2 className="font-display text-2xl font-medium text-charcoal">
-                RHMC Advisory Breakdown
+                Our Advisory Breakdown
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -436,7 +436,7 @@ export default function BuilderProfileClient({ builder, properties }: BuilderPro
               {/* Ratings Section */}
               <div className="pt-6 border-t border-black/5 space-y-6">
                 <h3 className="font-display text-xs font-bold text-black/45 uppercase tracking-wider">
-                  RHMC Advisory Rating
+                  Our Advisory Rating
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-5">
                   {[
