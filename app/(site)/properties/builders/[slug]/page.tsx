@@ -85,7 +85,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 
   if (matchingProperties.length === 0) {
     return {
-      title: "Builder Portfolio Not Found | Realty Consultants",
+      title: "Builder Portfolio Not Found",
       description: "The requested builder portfolio could not be found.",
     };
   }
@@ -112,7 +112,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const priceRangeStr = minPrice === Infinity ? "pricing on request" : `${formatIndianCurrency(minPrice)} - ${formatIndianCurrency(maxPrice)}`;
   const sectorsStr = locations.size > 0 ? `Sectors ${Array.from(locations).join(", ")}` : "Mohali";
 
-  const title = `${commonName} Projects & Flats in Mohali | RERA Verified | Realty Consultants`;
+  const title = `${commonName} Projects & Flats in Mohali | RERA Verified`;
   const description = `Browse all ${matchingProperties.length} RERA-verified ${commonName} properties in Mohali. ${priceRangeStr}. ${sectorsStr}. Expert advisory by Realty Holding & Management Consultants — Mohali's trusted real estate desk.`;
 
   return {

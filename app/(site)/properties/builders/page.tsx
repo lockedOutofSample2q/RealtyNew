@@ -7,11 +7,24 @@ import { Property } from "@/types";
 import BuildersClient from "./BuildersClient";
 
 export const metadata: Metadata = {
-  title: "Top Real Estate Builders & Developers in Mohali | Realty Consultants",
-  description: "Browse verified portfolios, inventories, and track records of leading builders (ATS, Jubilee, JLPL, Marbella) and Cooperative Housing Societies in Mohali.",
-  alternates: {
-    canonical: `${siteConfig.url}/properties/builders`,
+  title: {
+    absolute: "Top Real Estate Builders in Mohali | RERA Verified Developers | Realty Holding & Management Consultants"
   },
+  description: "RERA-verified builders and cooperative housing societies in Mohali — from JLPL and Bestech to Jubilee and GMADA. Prices from ₹45L to ₹9.19Cr. Independently reviewed by Realty Holding & Management Consultants.",
+  alternates: {
+    canonical: "https://www.realtyconsultants.in/properties/builders",
+  },
+  openGraph: {
+    title: "Top Real Estate Builders in Mohali | RERA Verified Developers | Realty Holding and Management Consultants",
+    description: "28 RERA-verified builders and cooperative housing societies in Mohali — from JLPL and Bestech to Jubilee and GMADA. Prices from ₹45L to ₹9.19Cr. Independently reviewed by Realty Holding & Management Consultants.",
+    url: "https://www.realtyconsultants.in/properties/builders",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Top Real Estate Builders in Mohali | RERA Verified | Realty Holding and Management Consultants",
+    description: "28 RERA-verified builders in Mohali reviewed by our advisory desk — corporate developers and cooperative housing societies. Prices ₹45L–₹9.19Cr.",
+  }
 };
 
 export const revalidate = 3600; // Cache for 1 hour
@@ -108,50 +121,72 @@ export default async function BuildersLandingPage() {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": siteConfig.url },
-          { "@type": "ListItem", "position": 2, "name": "Properties", "item": `${siteConfig.url}/properties` },
-          { "@type": "ListItem", "position": 3, "name": "Builders", "item": `${siteConfig.url}/properties/builders` }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.realtyconsultants.in/" },
+          { "@type": "ListItem", "position": 2, "name": "Properties", "item": "https://www.realtyconsultants.in/properties" },
+          { "@type": "ListItem", "position": 3, "name": "Builders & Developers", "item": "https://www.realtyconsultants.in/properties/builders" }
         ]
       },
       {
-        "@type": "CollectionPage",
-        "name": "Builders & Developers in Mohali",
-        "description": "Verified directories and inventories of real estate builders and cooperative societies in Mohali and Tricity.",
-        "url": `${siteConfig.url}/properties/builders`,
-        "mainEntity": {
-          "@type": "ItemList",
-          "itemListElement": builders.map((b, i) => ({
-            "@type": "ListItem",
-            "position": i + 1,
-            "url": `${siteConfig.url}/properties/builders/${b.slug}`
-          }))
-        }
+        "@type": "ItemList",
+        "name": "Top Real Estate Builders and Developers in Mohali",
+        "description": "28 RERA-verified builders and cooperative housing societies in Mohali, Tricity — independently reviewed by Realty Holding & Management Consultants",
+        "numberOfItems": builders.length,
+        "itemListElement": builders.map((b, i) => ({
+          "@type": "ListItem",
+          "position": i + 1,
+          "name": b.name,
+          "url": `https://www.realtyconsultants.in/properties/builders/${b.slug}`
+        }))
       },
       {
         "@type": "FAQPage",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "How do I check if a builder in Mohali is RERA-registered?",
+            "name": "Which builders in Mohali have the most active listings?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "You can verify any developer or real estate project on the official Punjab RERA portal (rera.punjab.gov.in) by searching for their registration number. Always confirm that the builder holds an active RERA license before signing a booking agreement."
+              "text": "JLPL, Jubilee Group, and Marbella Group each have three active RERA-verified listings — the highest count of any developers in the Realty Consultants directory. JLPL operates in Sector 66A, Jubilee Group spans Sectors 91 and 112, and Marbella covers New Chandigarh (Mullanpur)."
             }
           },
           {
             "@type": "Question",
-            "name": "What is the difference between cooperative housing societies and corporate builders in Mohali?",
+            "name": "What is the lowest starting price for a flat from a RERA-verified builder in Mohali?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Corporate developers (such as Jubilee, JLPL, and ATS) are private commercial enterprises that design, construct, and sell luxury properties directly. Cooperative housing societies are member-owned boards where land acquisition and development costs are shared among members, usually offering lower purchase prices but with less predictable delivery timelines and amenity management."
+              "text": "Jubilee Group offers the lowest entry price among listed corporate builders at ₹45 lakh for their Sector 91 project. Among cooperative societies, Mundi Cooperative and Shri Guru Teg Bahadur Society start at ₹55 lakh in Sector 70."
             }
           },
           {
             "@type": "Question",
-            "name": "Who are the leading real estate builders on Airport Road, Mohali?",
+            "name": "What is GMADA and is it the same as a private builder?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Airport Road (PR7) is Mohali's premier growth corridor. Leading builders active here include Jubilee Group (Jubilee Walk, Jubilee Portico), JLPL (Falcon View, JLPL sectors), Homeland Group (Homeland Heights, Homeland Regalia), and Marbella Group (Marbella Grand, Marbella Royce)."
+              "text": "GMADA (Greater Mohali Area Development Authority) is the Punjab Government's statutory development body. It plans sectors, develops infrastructure, and allots residential and commercial plots. It is not a private builder and does not construct apartments. GMADA properties typically offer the strongest land-title security of any category."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between a cooperative housing society and a RERA-verified builder in Mohali?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A cooperative housing society is registered under the Punjab Cooperative Societies Act. Ownership is structured as a society membership — the land title vests in the society collectively. A RERA-verified builder delivers a registered sale deed directly to the buyer. Cooperative societies in Mohali typically carry lower price points but require buyers to understand the membership and transfer process."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I check if a builder is RERA registered in Mohali?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Visit hrera.org.in — Punjab's official RERA portal — and search by project name or promoter. All corporate builders listed by Realty Consultants are RERA registered. Cooperative housing societies operate under the Punjab Cooperative Societies Act and are not required to register under RERA."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which sectors in Mohali have the most builder activity?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sector 66A, Sector 88, Sector 112, Sector 121, and Sector 126 have the highest concentration of active RERA listings. New Chandigarh (Mullanpur) is the fastest-growing premium zone, anchored by Marbella Group's three active projects."
             }
           }
         ]

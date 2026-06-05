@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const url = `https://www.realtyconsultants.in/tools/mortgage-calculator/${city}`;
 
   return {
-    title: `${data.title} | Realty Consultants`,
+    title: data.title,
     description: data.desc,
     alternates: {
       canonical: url,

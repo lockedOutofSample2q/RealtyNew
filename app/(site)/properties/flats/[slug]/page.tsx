@@ -203,7 +203,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     const canonicalUrl = `${siteConfig.url}/properties/flats/${slug}`;
 
     return {
-      title: titleStr,
+      title: { absolute: titleStr },
       description: descStr,
       openGraph: {
         title: titleStr,

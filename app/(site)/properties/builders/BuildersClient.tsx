@@ -23,7 +23,6 @@ const LOGO_MAPPING: Record<string, string> = {
   "noble-ventures-noble-group": "noble_callista.svg",
 };
 
-
 interface Builder {
   name: string;
   website: string | null;
@@ -64,7 +63,6 @@ export default function BuildersClient({ builders }: BuildersClientProps) {
         return a.name.localeCompare(b.name);
       }
       if (sortBy === "price-asc") {
-        // Put builders with no price at the end
         const priceA = a.minPrice || Infinity;
         const priceB = b.minPrice || Infinity;
         return priceA - priceB;
@@ -75,10 +73,114 @@ export default function BuildersClient({ builders }: BuildersClientProps) {
       return 0;
     });
 
+  const corporateBuilders = filteredBuilders.filter((b) => !b.isCoop);
+  const coopBuilders = filteredBuilders.filter((b) => b.isCoop);
+
+  const showCorporate = activeTab === "all" || activeTab === "corporate";
+  const showCoop = activeTab === "all" || activeTab === "coop";
+
+  const renderBuilderCard = (b: Builder) => {
+    const initials = b.name
+      .split(" ")
+      .filter(word => !["LLP", "Ltd", "Pvt", "and", "Group", "LLP/", "Pvt."].includes(word))
+      .slice(0, 2)
+      .map((w) => w[0])
+      .join("")
+      .toUpperCase();
+
+    const logoFile = LOGO_MAPPING[b.slug];
+
+    return (
+      <div
+        key={b.slug}
+        className="group relative flex flex-col justify-between bg-white border border-black/5 hover:border-black/15 p-8 rounded-3xl hover:shadow-lg transition-all duration-500 h-full"
+      >
+        <div>
+          {/* Header */}
+          <div className="flex justify-between items-start gap-4 mb-6">
+            <div className="w-16 h-16 rounded-2xl bg-charcoal/5 border border-charcoal/10 flex items-center justify-center font-display text-2xl font-semibold text-charcoal shrink-0 group-hover:bg-charcoal group-hover:text-white transition-all duration-500 shadow-sm overflow-hidden relative">
+              {logoFile ? (
+                <div className="w-full h-full p-2 relative flex items-center justify-center bg-white group-hover:bg-white transition-colors duration-500">
+                  <Image
+                    src={`/assets/images/logos/${logoFile}`}
+                    alt={`${b.name} logo`}
+                    fill
+                    sizes="64px"
+                    className="object-contain p-1 transition-all duration-500"
+                    style={{ filter: "brightness(0)" }}
+                  />
+                </div>
+              ) : (
+                initials || b.name.substring(0, 2).toUpperCase()
+              )}
+            </div>
+            
+            <div className="flex flex-col items-end gap-1.5">
+              {b.isCoop ? (
+                <span className="px-2.5 py-1 rounded-full bg-blue-50 text-blue-600 font-body text-[10px] font-bold uppercase tracking-wider border border-blue-100">
+                  Coop Board
+                </span>
+              ) : (
+                <span className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-600 font-body text-[10px] font-bold uppercase tracking-wider border border-emerald-100">
+                  <CheckCircle size={10} />
+                  RERA Verified
+                </span>
+              )}
+              <span className="text-xs text-black/40 font-body">
+                {b.properties.length} {b.properties.length === 1 ? "listing" : "listings"}
+              </span>
+            </div>
+          </div>
+
+          {/* Developer Name */}
+          <h3 className="font-display text-2xl font-medium text-charcoal leading-tight mb-3 line-clamp-2">
+            {b.name}
+          </h3>
+
+          {/* Sectors list */}
+          <div className="flex items-center gap-1.5 text-xs text-black/50 mb-6 flex-wrap">
+            <Navigation size={12} className="shrink-0 opacity-60" />
+            {b.locations.length > 0 ? (
+              <span className="font-body line-clamp-1">
+                {b.locations.slice(0, 3).join(", ")}
+                {b.locations.length > 3 && ` +${b.locations.length - 3} more`}
+              </span>
+            ) : (
+              <span className="font-body italic">Various Sectors</span>
+            )}
+          </div>
+        </div>
+
+        {/* Pricing and Action Link */}
+        <div className="pt-6 border-t border-black/5 flex items-center justify-between mt-auto">
+          <div>
+            <span className="block font-body text-[10px] uppercase tracking-widest text-black/40 font-bold mb-0.5">
+              Starting Price
+            </span>
+            <span className="font-display text-lg font-semibold text-charcoal">
+              {b.minPrice > 0 ? (
+                <>{formatPrice(b.minPrice)}</>
+              ) : (
+                <span className="text-xs text-black/35 italic font-normal">Price on request</span>
+              )}
+            </span>
+          </div>
+
+          <Link
+            href={`/properties/builders/${b.slug}`}
+            className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-black/10 text-charcoal hover:bg-charcoal hover:text-white hover:border-charcoal transition-all duration-300"
+          >
+            <ArrowRight size={18} className="group-hover:-rotate-45 transition-transform duration-300" />
+          </Link>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="pt-[var(--nav-height)] min-h-screen bg-[#FDFDFD]">
       {/* Hero Header */}
-      <div className="bg-white py-20 border-b border-black/5 relative overflow-hidden">
+      <div className="bg-white pt-20 pb-16 border-b border-black/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-tr from-black/[0.02] via-transparent to-transparent pointer-events-none" />
         <div className="container-site relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/[0.03] border border-black/5 mb-6">
@@ -87,12 +189,23 @@ export default function BuildersClient({ builders }: BuildersClientProps) {
               Verified Directories & Portfolios
             </span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-display font-medium text-charcoal mb-6 leading-tight tracking-tight">
-            Top Real Estate Builders & Developers in Mohali
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-medium text-charcoal mb-8 leading-tight tracking-tight">
+            Top RERA-Verified Builders & Developers in Mohali
           </h1>
-          <p className="text-lg md:text-xl text-black/60 max-w-2xl leading-relaxed font-body">
-            Access exhaustive, honestly-appraised portfolios of corporate construction groups and cooperative societies in Mohali. Cross-referenced for RERA credentials, construction quality, and delivery histories.
-          </p>
+          <div className="font-body text-base text-black/60 max-w-4xl leading-relaxed space-y-4">
+            <p>
+              Mohali's real estate market has 28 active builders and cooperative housing societies across 12 sectors — ranging from ₹45 lakh entry-level flats in Sector 91 to ₹9.19 crore penthouses in IT City. This directory covers all of them.
+            </p>
+            <p>
+              Every developer listed here has been independently reviewed by the Realty Holding & Management Consultants advisory desk. We verify RERA registration status, cross-check construction milestones, and assess each builder's delivery track record before they appear on this page. <strong className="text-charcoal font-semibold">No builder has paid to be listed. No ranking is sponsored.</strong>
+            </p>
+            <p>
+              The directory is divided into two categories: <strong className="text-charcoal font-semibold">21 corporate builders</strong> operating under Punjab RERA, and <strong className="text-charcoal font-semibold">7 cooperative housing societies</strong> registered under the Punjab Cooperative Societies Act. Both categories offer legitimate, legally sound ownership structures — but they work differently, and the right choice depends entirely on your situation.
+            </p>
+            <p>
+              If you're comparing developers, use the filters below. If you're unsure where to start, our desk recommends beginning with your budget bracket and working backwards to the developer — not the other way around.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -109,7 +222,7 @@ export default function BuildersClient({ builders }: BuildersClientProps) {
                   : "text-black/40 hover:text-charcoal"
               }`}
             >
-              All Portfolios ({builders.length})
+              All ({builders.length})
             </button>
             <button
               onClick={() => setActiveTab("corporate")}
@@ -167,112 +280,59 @@ export default function BuildersClient({ builders }: BuildersClientProps) {
           </div>
         </div>
 
-        {/* Results Grid */}
-        {filteredBuilders.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {filteredBuilders.map((b) => {
-              // Generate dynamic initials for the logo
-              const initials = b.name
-                .split(" ")
-                .filter(word => !["LLP", "Ltd", "Pvt", "and", "Group", "LLP/", "Pvt."].includes(word))
-                .slice(0, 2)
-                .map((w) => w[0])
-                .join("")
-                .toUpperCase();
-
-              const logoFile = LOGO_MAPPING[b.slug];
-
-              return (
-                <div
-                  key={b.slug}
-                  className="group relative flex flex-col justify-between bg-white border border-black/5 hover:border-black/15 p-8 rounded-3xl hover:shadow-lg transition-all duration-500 h-full"
-                >
-                  <div>
-                    {/* Header */}
-                    <div className="flex justify-between items-start gap-4 mb-6">
-                      <div className="w-16 h-16 rounded-2xl bg-charcoal/5 border border-charcoal/10 flex items-center justify-center font-display text-2xl font-semibold text-charcoal shrink-0 group-hover:bg-charcoal group-hover:text-white transition-all duration-500 shadow-sm overflow-hidden relative">
-                        {logoFile ? (
-                          <div className="w-full h-full p-2 relative flex items-center justify-center bg-white group-hover:bg-white transition-colors duration-500">
-                            <Image
-                              src={`/assets/images/logos/${logoFile}`}
-                              alt={`${b.name} logo`}
-                              fill
-                              sizes="64px"
-                              className="object-contain p-1 transition-all duration-500"
-                              style={{ filter: "brightness(0)" }}
-                            />
-                          </div>
-                        ) : (
-                          initials || b.name.substring(0, 2).toUpperCase()
-                        )}
-                      </div>
-                      
-                      <div className="flex flex-col items-end gap-1.5">
-                        {b.isCoop ? (
-                          <span className="px-2.5 py-1 rounded-full bg-blue-50 text-blue-600 font-body text-[10px] font-bold uppercase tracking-wider border border-blue-100">
-                            Coop Board
-                          </span>
-                        ) : (
-                          <span className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-600 font-body text-[10px] font-bold uppercase tracking-wider border border-emerald-100">
-                            <CheckCircle size={10} />
-                            RERA Verified
-                          </span>
-                        )}
-                        <span className="text-xs text-black/40 font-body">
-                          {b.properties.length} {b.properties.length === 1 ? "listing" : "listings"}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Developer Name */}
-                    <h3 className="font-display text-2xl font-medium text-charcoal leading-tight mb-3 line-clamp-2">
-                      {b.name}
-                    </h3>
-
-                    {/* Sectors list */}
-                    <div className="flex items-center gap-1.5 text-xs text-black/50 mb-6 flex-wrap">
-                      <Navigation size={12} className="shrink-0 opacity-60" />
-                      {b.locations.length > 0 ? (
-                        <span className="font-body line-clamp-1">
-                          {b.locations.slice(0, 3).join(", ")}
-                          {b.locations.length > 3 && ` +${b.locations.length - 3} more`}
-                        </span>
-                      ) : (
-                        <span className="font-body italic">Various Sectors</span>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Pricing and Action Link */}
-                  <div className="pt-6 border-t border-black/5 flex items-center justify-between mt-auto">
-                    <div>
-                      <span className="block font-body text-[10px] uppercase tracking-widest text-black/40 font-bold mb-0.5">
-                        Starting Price
-                      </span>
-                      <span className="font-display text-lg font-semibold text-charcoal">
-                        {b.minPrice > 0 ? (
-                          <>
-                            {formatPrice(b.minPrice)}
-                          </>
-                        ) : (
-                          <span className="text-xs text-black/35 italic font-normal">Price on request</span>
-                        )}
-                      </span>
-                    </div>
-
-                    <Link
-                      href={`/properties/builders/${b.slug}`}
-                      className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-black/10 text-charcoal hover:bg-charcoal hover:text-white hover:border-charcoal transition-all duration-300"
-                    >
-                      <ArrowRight size={18} className="group-hover:-rotate-45 transition-transform duration-300" />
-                    </Link>
-                  </div>
-                </div>
-              );
-            })}
+        {/* Corporate Builders Section */}
+        {showCorporate && (
+          <div className="mb-16">
+            <h2 className="text-3xl font-display font-medium text-charcoal mb-4 leading-tight">
+              Corporate Builders in Mohali — RERA Verified Portfolios
+            </h2>
+            <p className="font-body text-base text-black/60 leading-relaxed mb-8 max-w-4xl">
+              Mohali's corporate builder market spans the full spectrum — from government-backed GMADA to legacy private developers like JLPL and Bestech, and newer entrants like Evoq Realtech. Sectors 66A, 82, 88, 112, 121, and 126 hold the highest concentration of active inventory. Prices across this segment start at ₹69.93 lakh (ICL Ivory Castle, Sector 70) and reach ₹9.19 crore for JLPL Falcon View penthouses in IT City.
+            </p>
+            {corporateBuilders.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                {corporateBuilders.map((b) => renderBuilderCard(b))}
+              </div>
+            ) : (
+              <p className="text-black/40 text-sm font-body italic py-4">
+                No corporate builders match your search query.
+              </p>
+            )}
           </div>
-        ) : (
-          <div className="py-24 text-center bg-white border border-black/5 rounded-3xl p-8">
+        )}
+
+        {/* Cooperative Housing Societies Section */}
+        {showCoop && (
+          <div className="mb-16">
+            <h2 className="text-3xl font-display font-medium text-charcoal mb-4 leading-tight">
+              Cooperative Housing Societies in Mohali — Sectors 67, 68 & 70
+            </h2>
+            <div className="font-body text-base text-black/60 leading-relaxed mb-8 max-w-4xl space-y-4">
+              <p>
+                Mohali has seven registered cooperative housing societies concentrated in Sectors 67, 68, and 70 — an ownership structure that most property portals underexplain and most buyers misunderstand. In a cooperative society, you hold a share in the registered society and receive a formal allotment — the land title vests in the society collectively, not in your name individually. This is different from a builder flat, where you hold a registered sale deed directly.
+              </p>
+              <p>
+                The tradeoff: cooperative society units carry <strong className="text-charcoal font-semibold">significantly lower entry prices</strong> (₹55 lakh to ₹85 lakh) compared to equivalent corporate builder inventory in adjacent sectors. Societies like Jal Vayu (Sector 67), Mundi Society (Sector 70), and the SCL Employees Society (Sector 70) have mature, well-maintained common areas and long-established RWAs. For buyers comfortable with the cooperative ownership structure, these represent some of Mohali's most defensible value-per-square-foot purchases.
+              </p>
+              <p>
+                If you're evaluating a cooperative society and unsure about the legal structure, our desk handles these transactions regularly and can walk you through the process.
+              </p>
+            </div>
+            {coopBuilders.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                {coopBuilders.map((b) => renderBuilderCard(b))}
+              </div>
+            ) : (
+              <p className="text-black/40 text-sm font-body italic py-4">
+                No cooperative housing societies match your search query.
+              </p>
+            )}
+          </div>
+        )}
+
+        {/* Empty State */}
+        {filteredBuilders.length === 0 && (
+          <div className="py-24 text-center bg-white border border-black/5 rounded-3xl p-8 mb-12">
             <Building2 className="mx-auto text-black/20 mb-4" size={48} />
             <p className="text-black/40 text-sm font-body">
               No developer portfolios match your current search terms.
@@ -288,115 +348,106 @@ export default function BuildersClient({ builders }: BuildersClientProps) {
       </div>
 
       {/* Informational SEO and Guide Section */}
-      <div className="bg-white border-t border-black/5 py-20 mt-12">
+      <div className="bg-white border-t border-black/5 py-24">
         <div className="container-site max-w-4xl">
           
-          {/* Section 1: Introduction & Definition */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-display font-medium text-charcoal mb-6 leading-tight">
-              Verified Real Estate Builders & Developers in Mohali
+          {/* Verification Section */}
+          <div className="mb-24">
+            <h2 className="text-3xl sm:text-4xl font-display font-medium text-charcoal mb-6 leading-tight">
+              How Realty Consultants Verifies Every Builder
             </h2>
-            <p className="font-body text-base text-black/60 leading-relaxed mb-4">
-              <strong>Real estate builders in Mohali</strong> have transformed the Tricity skyline over the last decade, expanding luxury housing and commercial infrastructure across growth corridors like Airport Road (PR7), IT City, Sector 82, and New Sunny Enclave.
+            <p className="font-body text-base text-black/60 leading-relaxed mb-8">
+              Every developer in this directory has cleared a four-point verification by our advisory team:
             </p>
-            <p className="font-body text-base text-black/60 leading-relaxed">
-              At Realty Consultants, we compile exhaustive, independently verified portfolios of leading property groups and cooperative societies. This enables buyers and investors to evaluate developers based on RERA compliance, structural quality, financial solvency, and historical delivery timelines rather than marketing brochures.
-            </p>
-          </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="p-6 rounded-2xl bg-black/[0.01] border border-black/[0.04]">
+                <h4 className="font-display text-lg font-medium text-charcoal mb-2">1. RERA Registration Check</h4>
+                <p className="font-body text-sm text-black/60 leading-relaxed">
+                  We cross-reference each project against the Punjab RERA portal (hrera.org.in) to confirm active registration, promoter details, and project-level compliance status. You can verify any listing independently using the RERA IDs on each builder's project page.
+                </p>
+              </div>
 
-          {/* Section 2: How to Verify (Numbered Guide) */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-display font-medium text-charcoal mb-6 leading-tight">
-              How to Verify a Property Developer in Mohali
-            </h2>
-            <p className="font-body text-base text-black/60 leading-relaxed mb-6">
-              Before purchasing a commercial space or a luxury flat in Mohali, follow this essential verification checklist to safeguard your investment:
-            </p>
-            <ol className="space-y-4">
-              <li className="flex gap-4">
-                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-charcoal/5 font-display text-sm font-semibold text-charcoal shrink-0">1</span>
-                <div>
-                  <h4 className="font-display text-lg font-medium text-charcoal mb-1">Verify RERA Registration</h4>
-                  <p className="font-body text-sm text-black/60 leading-relaxed">Search the Punjab RERA database (rera.punjab.gov.in) using the developer or project registration number. Never book properties in pre-launch phases that do not have active RERA certification.</p>
-                </div>
-              </li>
-              <li className="flex gap-4">
-                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-charcoal/5 font-display text-sm font-semibold text-charcoal shrink-0">2</span>
-                <div>
-                  <h4 className="font-display text-lg font-medium text-charcoal mb-1">Check Past Delivery Records</h4>
-                  <p className="font-body text-sm text-black/60 leading-relaxed">Examine the builder's earlier developments. Check for litigation history, construction delays, and whether occupation certificates (OC) were handed over promptly.</p>
-                </div>
-              </li>
-              <li className="flex gap-4">
-                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-charcoal/5 font-display text-sm font-semibold text-charcoal shrink-0">3</span>
-                <div>
-                  <h4 className="font-display text-lg font-medium text-charcoal mb-1">Audit Financial Partnering</h4>
-                  <p className="font-body text-sm text-black/60 leading-relaxed">Projects approved for home loans by major national banks (SBI, HDFC, ICICI) undergo rigid legal and technical clearances, providing an additional layer of security.</p>
-                </div>
-              </li>
-            </ol>
-          </div>
+              <div className="p-6 rounded-2xl bg-black/[0.01] border border-black/[0.04]">
+                <h4 className="font-display text-lg font-medium text-charcoal mb-2">2. Construction Milestone Review</h4>
+                <p className="font-body text-sm text-black/60 leading-relaxed">
+                  For under-construction projects, we track promised vs. actual possession timelines based on RERA filings and direct builder communication. A builder with a pattern of delayed delivery is flagged in our advisory notes — and may not appear in this directory at all.
+                </p>
+              </div>
 
-          {/* Section 3: Comparison (Corporate vs Coop) */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-display font-medium text-charcoal mb-6 leading-tight">
-              Corporate Real Estate Developers vs. Cooperative Housing Societies
-            </h2>
-            <p className="font-body text-base text-black/60 leading-relaxed mb-6">
-              Mohali real estate features two main developer entities. Understanding their differences is key to choosing the right properties:
-            </p>
-            <div className="overflow-x-auto border border-black/5 rounded-2xl">
-              <table className="w-full text-left border-collapse">
-                <thead>
-                  <tr className="bg-black/[0.02] border-b border-black/5">
-                    <th className="p-4 font-display text-sm font-semibold text-charcoal">Feature</th>
-                    <th className="p-4 font-display text-sm font-semibold text-charcoal">Corporate Builders (e.g., Jubilee, ATS)</th>
-                    <th className="p-4 font-display text-sm font-semibold text-charcoal">Cooperative Housing Societies</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-black/5 font-body text-sm text-black/60">
-                  <tr>
-                    <td className="p-4 font-semibold text-charcoal">Pricing Model</td>
-                    <td className="p-4">Higher base price, market-driven commercial margins.</td>
-                    <td className="p-4">Cost-to-cost construction sharing (often lower cost).</td>
-                  </tr>
-                  <tr>
-                    <td className="p-4 font-semibold text-charcoal">Timelines</td>
-                    <td className="p-4">Fixed construction-linked plans with delays subject to RERA penalty.</td>
-                    <td className="p-4">Variable schedules dependent on member funding and board efficiency.</td>
-                  </tr>
-                  <tr>
-                    <td className="p-4 font-semibold text-charcoal">Amenities</td>
-                    <td className="p-4">Premium clubs, professional maintenance, luxury landscapes.</td>
-                    <td className="p-4">Basic to mid-level amenities managed by member committees.</td>
-                  </tr>
-                </tbody>
-              </table>
+              <div className="p-6 rounded-2xl bg-black/[0.01] border border-black/[0.04]">
+                <h4 className="font-display text-lg font-medium text-charcoal mb-2">3. Legal Clearance Audit</h4>
+                <p className="font-body text-sm text-black/60 leading-relaxed">
+                  We confirm that each listed project holds valid CLU (Change of Land Use), building plan approvals, and environmental clearances as applicable under Punjab and GMADA regulations.
+                </p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-black/[0.01] border border-black/[0.04]">
+                <h4 className="font-display text-lg font-medium text-charcoal mb-2">4. Pricing Integrity</h4>
+                <p className="font-body text-sm text-black/60 leading-relaxed">
+                  We verify that listed prices reflect current market reality — not stale brochure rates. Starting prices are updated each quarter based on active floor plan availability and direct builder confirmation.
+                </p>
+              </div>
             </div>
+
+            <p className="font-body text-base text-black/60 leading-relaxed mt-8">
+              This process exists because we advise clients who are investing ₹50 lakh to ₹9 crore. Our reputation depends on the accuracy of what we tell them — which means it depends on the accuracy of what's in this directory.
+            </p>
           </div>
 
-          {/* Section 4: FAQs */}
+          {/* FAQ Section */}
           <div>
-            <h2 className="text-3xl font-display font-medium text-charcoal mb-8 leading-tight">
-              Frequently Asked Questions about Builders in Mohali
+            <h2 className="text-3xl sm:text-4xl font-display font-medium text-charcoal mb-12 leading-tight">
+              Frequently Asked Questions — Builders & Developers in Mohali
             </h2>
+            
             <div className="space-y-6">
-              <div>
-                <h4 className="font-display text-lg font-medium text-charcoal mb-2">How do I check if a builder in Mohali is RERA-registered?</h4>
+              <div className="border-b border-black/5 pb-6">
+                <h4 className="font-display text-lg font-medium text-charcoal mb-2">Which builders in Mohali have the most active listings?</h4>
                 <p className="font-body text-sm text-black/60 leading-relaxed">
-                  You can verify any developer or real estate project on the official Punjab RERA portal (rera.punjab.gov.in) by searching for their registration number. Always confirm that the builder holds an active RERA license before signing a booking agreement.
+                  JLPL, Jubilee Group, and Marbella Group each have three active RERA-verified listings in our directory — the highest count of any developers currently. JLPL operates in Sector 66A, Jubilee Group spans Sectors 91 and 112, and Marbella covers New Chandigarh (Mullanpur).
                 </p>
               </div>
-              <div>
-                <h4 className="font-display text-lg font-medium text-charcoal mb-2">What is the difference between cooperative housing societies and corporate builders in Mohali?</h4>
+
+              <div className="border-b border-black/5 pb-6">
+                <h4 className="font-display text-lg font-medium text-charcoal mb-2">What is the lowest starting price for a flat from a RERA-verified builder in Mohali?</h4>
                 <p className="font-body text-sm text-black/60 leading-relaxed">
-                  Corporate developers (such as Jubilee, JLPL, and ATS) are private commercial enterprises that design, construct, and sell luxury properties directly. Cooperative housing societies are member-owned boards where land acquisition and development costs are shared among members, usually offering lower purchase prices but with less predictable delivery timelines and amenity management.
+                  Jubilee Group offers the lowest entry price among our listed corporate builders at ₹45 lakh for their Sector 91 project. Among cooperative societies, Mundi Cooperative House Building Society and Shri Guru Teg Bahadur Society both start at ₹55 lakh in Sector 70.
                 </p>
               </div>
-              <div>
-                <h4 className="font-display text-lg font-medium text-charcoal mb-2">Who are the leading real estate builders on Airport Road, Mohali?</h4>
+
+              <div className="border-b border-black/5 pb-6">
+                <h4 className="font-display text-lg font-medium text-charcoal mb-2">What is GMADA and is it the same as a private builder?</h4>
                 <p className="font-body text-sm text-black/60 leading-relaxed">
-                  Airport Road (PR7) is Mohali's premier growth corridor. Leading builders active here include Jubilee Group (Jubilee Walk, Jubilee Portico), JLPL (Falcon View, JLPL sectors), Homeland Group (Homeland Heights, Homeland Regalia), and Marbella Group (Marbella Grand, Marbella Royce).
+                  GMADA (Greater Mohali Area Development Authority) is the Punjab Government's statutory development body — it plans sectors, develops infrastructure, and allots residential and commercial plots. It is not a private builder and does not construct apartments. GMADA properties typically offer the strongest land-title security of any category in this directory.
+                </p>
+              </div>
+
+              <div className="border-b border-black/5 pb-6">
+                <h4 className="font-display text-lg font-medium text-charcoal mb-2">What is the difference between a cooperative housing society and a RERA-verified builder?</h4>
+                <p className="font-body text-sm text-black/60 leading-relaxed">
+                  A cooperative housing society is registered under the Punjab Cooperative Societies Act. Ownership is structured as a society membership with allotment rights — the land title vests in the society, not individually. A RERA-verified builder delivers a registered sale deed directly to the buyer. Both are legal. Cooperative societies in Mohali typically carry lower price points but require the buyer to understand the membership and transfer process.
+                </p>
+              </div>
+
+              <div className="border-b border-black/5 pb-6">
+                <h4 className="font-display text-lg font-medium text-charcoal mb-2">How do I check if a builder is RERA registered in Mohali?</h4>
+                <p className="font-body text-sm text-black/60 leading-relaxed">
+                  Visit hrera.org.in — Punjab's official RERA portal — and search by project name or promoter name. All corporate builders listed on this page are RERA registered. Cooperative housing societies are not required to register under RERA as they operate under a separate regulatory framework.
+                </p>
+              </div>
+
+              <div className="border-b border-black/5 pb-6">
+                <h4 className="font-display text-lg font-medium text-charcoal mb-2">Can NRIs buy property from any builder listed here?</h4>
+                <p className="font-body text-sm text-black/60 leading-relaxed">
+                  Yes. All RERA-verified corporate builders in this directory sell to NRI buyers under standard FEMA guidelines. Cooperative societies may have membership eligibility restrictions that vary by society — confirm with our desk before proceeding.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-display text-lg font-medium text-charcoal mb-2">Which sectors in Mohali have the most builder activity?</h4>
+                <p className="font-body text-sm text-black/60 leading-relaxed">
+                  Sector 66A (JLPL, KLV Builders), Sector 88 (Noble Ventures), Sector 112 (Jubilee Group), Sector 121 (ATS Infrastructure), and Sector 126 (Gillco Group) have the highest concentration of active RERA listings. New Chandigarh (Mullanpur) is the fastest-growing premium zone, anchored by Marbella Group's three active projects.
                 </p>
               </div>
             </div>

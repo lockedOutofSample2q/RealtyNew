@@ -2,7 +2,7 @@ import { siteConfig } from '@/config/site'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: `Privacy Policy | ${siteConfig.name}`,
+  title: "Privacy Policy",
   description: `How we handle and protect your personal data at ${siteConfig.name}.`,
 }
 

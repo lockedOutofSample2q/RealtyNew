@@ -56,7 +56,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const url = `https://www.realtyconsultants.in/tools/home-loan-calculator/${bank}`;
 
   return {
-    title: `${data.title} | Realty Consultants`,
+    title: data.title,
     description: data.desc,
     alternates: {
       canonical: url,

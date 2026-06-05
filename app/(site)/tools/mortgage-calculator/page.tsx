@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import CalculatorClient from "./CalculatorClient";
 
 export const metadata: Metadata = {
-  title: "Home Loan & Plot EMI Calculator (2026 Rates) | Mohali & Tricity | Realty Consultants",
+  title: "Home Loan & Plot EMI Calculator (2026 Rates) | Mohali & Tricity",
   description: "Free EMI calculator for Mohali & Tricity home loans and plot loans. Get your monthly instalment, hidden costs (stamp duty, GST), and see what properties match your budget right now.",
   alternates: {
     canonical: "https://www.realtyconsultants.in/tools/mortgage-calculator",

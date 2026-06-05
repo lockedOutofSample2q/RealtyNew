@@ -7,10 +7,10 @@ import Image from "next/image";
 const PAGE_URL = `${siteConfig.url}/guides/property-documents`;
 
 export const metadata: Metadata = {
-  title: "Free Property Document Checklist | Realty Consultants Mohali",
+  title: "Free Property Document Checklist | Mohali",
   description: "Download our exclusive checklist of 15+ legal and financial documents you must verify before purchasing real estate in Mohali.",
   openGraph: {
-    title: "Free Property Document Checklist | Realty Consultants Mohali",
+    title: "Free Property Document Checklist | Mohali",
     description: "Download our exclusive checklist of 15+ legal and financial documents you must verify before purchasing real estate in Mohali.",
     url: PAGE_URL,
     type: "website",

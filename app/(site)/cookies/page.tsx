@@ -2,7 +2,7 @@ import { siteConfig } from '@/config/site'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: `Cookie Policy | ${siteConfig.name}`,
+  title: "Cookie Policy",
   description: `How we use cookies to improve your experience on ${siteConfig.name}.`,
 }
 
