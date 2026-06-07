@@ -7,17 +7,12 @@ import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 
 export default function ThankYouPage() {
-  // Trigger file download automatically on page mount
+  // Trigger opening of Google Drive PDF link on mount
   useEffect(() => {
     try {
-      const link = document.createElement("a");
-      link.href = "/documents/property-document-checklist.pdf";
-      link.setAttribute("download", "property-document-checklist.pdf");
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      window.open("https://drive.google.com/file/d/10exG0Uc41YeqbXPTsMZrZN7Kq6oNlfg8/view", "_blank");
     } catch (err) {
-      console.error("Auto download failed:", err);
+      console.error("Auto open failed:", err);
     }
   }, []);
 
@@ -30,17 +25,16 @@ export default function ThankYouPage() {
           </svg>
         </div>
         
-        <h1 className="font-display text-4xl md:text-5xl text-charcoal font-medium mb-6">Your Download Has Started!</h1>
+        <h1 className="font-display text-4xl md:text-5xl text-charcoal font-medium mb-6">Your Checklist is Ready!</h1>
         
         <p className="font-body text-lg text-muted mb-10 leading-relaxed">
-          The Essential Property Document Checklist is downloading to your device automatically. 
-          If your download didn't start, please click the button below to retrieve your file directly.
+          Please click the button below to view and download the Essential Property Document Checklist directly on Google Drive.
         </p>
 
         <div className="mb-10">
           <Button asChild variant="primary" size="lg" className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white rounded-full">
-            <a href="/documents/property-document-checklist.pdf" download="property-document-checklist.pdf">
-              Download Manually
+            <a href="https://drive.google.com/file/d/10exG0Uc41YeqbXPTsMZrZN7Kq6oNlfg8/view" target="_blank" rel="noopener noreferrer">
+              View Checklist PDF
             </a>
           </Button>
         </div>

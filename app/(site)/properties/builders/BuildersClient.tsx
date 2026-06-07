@@ -40,7 +40,7 @@ interface BuildersClientProps {
 
 export default function BuildersClient({ builders }: BuildersClientProps) {
   const [searchTerm, setSearchTerm] = useState("");
-  const [activeTab, setActiveTab] = useState<"all" | "corporate" | "coop">("all");
+  const [activeTab, setActiveTab] = useState<"commercial" | "coop">("commercial");
   const [sortBy, setSortBy] = useState<"name" | "price-asc" | "price-desc">("name");
   const { formatPrice } = useCurrency();
 
@@ -50,7 +50,7 @@ export default function BuildersClient({ builders }: BuildersClientProps) {
       const matchesSearch = b.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                             b.locations.some(loc => loc.toLowerCase().includes(searchTerm.toLowerCase()));
       
-      if (activeTab === "corporate") {
+      if (activeTab === "commercial") {
         return matchesSearch && !b.isCoop;
       }
       if (activeTab === "coop") {
@@ -72,12 +72,6 @@ export default function BuildersClient({ builders }: BuildersClientProps) {
       }
       return 0;
     });
-
-  const corporateBuilders = filteredBuilders.filter((b) => !b.isCoop);
-  const coopBuilders = filteredBuilders.filter((b) => b.isCoop);
-
-  const showCorporate = activeTab === "all" || activeTab === "corporate";
-  const showCoop = activeTab === "all" || activeTab === "coop";
 
   const renderBuilderCard = (b: Builder) => {
     const initials = b.name
@@ -200,7 +194,7 @@ export default function BuildersClient({ builders }: BuildersClientProps) {
               Every developer listed here has been independently reviewed by the Realty Holding & Management Consultants advisory desk. We verify RERA registration status, cross-check construction milestones, and assess each builder's delivery track record before they appear on this page. <strong className="text-charcoal font-semibold">No builder has paid to be listed. No ranking is sponsored.</strong>
             </p>
             <p>
-              The directory is divided into two categories: <strong className="text-charcoal font-semibold">21 corporate builders</strong> operating under Punjab RERA, and <strong className="text-charcoal font-semibold">7 cooperative housing societies</strong> registered under the Punjab Cooperative Societies Act. Both categories offer legitimate, legally sound ownership structures — but they work differently, and the right choice depends entirely on your situation.
+              The directory is divided into two categories: <strong className="text-charcoal font-semibold">21 commercial builders</strong> operating under Punjab RERA, and <strong className="text-charcoal font-semibold">7 cooperative housing societies</strong> registered under the Punjab Cooperative Societies Act. Both categories offer legitimate, legally sound ownership structures — but they work differently, and the right choice depends entirely on your situation.
             </p>
             <p>
               If you're comparing developers, use the filters below. If you're unsure where to start, our desk recommends beginning with your budget bracket and working backwards to the developer — not the other way around.
@@ -215,25 +209,15 @@ export default function BuildersClient({ builders }: BuildersClientProps) {
           {/* Tabs */}
           <div className="flex p-1 bg-black/[0.02] rounded-2xl border border-black/[0.03] self-start lg:self-auto shrink-0">
             <button
-              onClick={() => setActiveTab("all")}
+              onClick={() => setActiveTab("commercial")}
               className={`flex items-center gap-2 px-6 py-3 rounded-xl font-body text-xs font-bold uppercase tracking-widest transition-all ${
-                activeTab === "all"
-                  ? "bg-white text-charcoal shadow-sm"
-                  : "text-black/40 hover:text-charcoal"
-              }`}
-            >
-              All ({builders.length})
-            </button>
-            <button
-              onClick={() => setActiveTab("corporate")}
-              className={`flex items-center gap-2 px-6 py-3 rounded-xl font-body text-xs font-bold uppercase tracking-widest transition-all ${
-                activeTab === "corporate"
+                activeTab === "commercial"
                   ? "bg-white text-charcoal shadow-sm"
                   : "text-black/40 hover:text-charcoal"
               }`}
             >
               <Building2 size={14} />
-              Corporate Builders
+              Commercial Builders ({builders.filter(b => !b.isCoop).length})
             </button>
             <button
               onClick={() => setActiveTab("coop")}
@@ -244,7 +228,7 @@ export default function BuildersClient({ builders }: BuildersClientProps) {
               }`}
             >
               <Users size={14} />
-              Coop Societies
+              Coop Housing Societies ({builders.filter(b => b.isCoop).length})
             </button>
           </div>
 
@@ -280,55 +264,43 @@ export default function BuildersClient({ builders }: BuildersClientProps) {
           </div>
         </div>
 
-        {/* Corporate Builders Section */}
-        {showCorporate && (
-          <div className="mb-16">
-            <h2 className="text-3xl font-display font-medium text-charcoal mb-4 leading-tight">
-              Corporate Builders in Mohali — RERA Verified Portfolios
-            </h2>
-            <p className="font-body text-base text-black/60 leading-relaxed mb-8 max-w-4xl">
-              Mohali's corporate builder market spans the full spectrum — from government-backed GMADA to legacy private developers like JLPL and Bestech, and newer entrants like Evoq Realtech. Sectors 66A, 82, 88, 112, 121, and 126 hold the highest concentration of active inventory. Prices across this segment start at ₹69.93 lakh (ICL Ivory Castle, Sector 70) and reach ₹9.19 crore for JLPL Falcon View penthouses in IT City.
-            </p>
-            {corporateBuilders.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                {corporateBuilders.map((b) => renderBuilderCard(b))}
-              </div>
-            ) : (
-              <p className="text-black/40 text-sm font-body italic py-4">
-                No corporate builders match your search query.
+        {/* Active Tab Content */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-display font-medium text-charcoal mb-4 leading-tight">
+            {activeTab === "commercial" 
+              ? "Commercial Builders in Mohali — RERA Verified Portfolios" 
+              : "Cooperative Housing Societies in Mohali — Sectors 67, 68 & 70"}
+          </h2>
+          <div className="font-body text-base text-black/60 leading-relaxed mb-8 max-w-4xl space-y-4">
+            {activeTab === "commercial" ? (
+              <p>
+                Mohali's commercial builder market spans the full spectrum — from government-backed GMADA to legacy private developers like JLPL and Bestech, and newer entrants like Evoq Realtech. Sectors 66A, 82, 88, 112, 121, and 126 hold the highest concentration of active inventory. Prices across this segment start at ₹69.93 lakh (ICL Ivory Castle, Sector 70) and reach ₹9.19 crore for JLPL Falcon View penthouses in IT City.
               </p>
+            ) : (
+              <>
+                <p>
+                  Mohali has seven registered cooperative housing societies concentrated in Sectors 67, 68, and 70 — an ownership structure that most property portals underexplain and most buyers misunderstand. In a cooperative society, you hold a share in the registered society and receive a formal allotment — the land title vests in the society collectively, not in your name individually. This is different from a builder flat, where you hold a registered sale deed directly.
+                </p>
+                <p>
+                  The tradeoff: cooperative society units carry <strong className="text-charcoal font-semibold">significantly lower entry prices</strong> (₹55 lakh to ₹85 lakh) compared to equivalent corporate builder inventory in adjacent sectors. Societies like Jal Vayu (Sector 67), Mundi Society (Sector 70), and the SCL Employees Society (Sector 70) have mature, well-maintained common areas and long-established RWAs. For buyers comfortable with the cooperative ownership structure, these represent some of Mohali's most defensible value-per-square-foot purchases.
+                </p>
+                <p>
+                  If you're evaluating a cooperative society and unsure about the legal structure, our desk handles these transactions regularly and can walk you through the process.
+                </p>
+              </>
             )}
           </div>
-        )}
 
-        {/* Cooperative Housing Societies Section */}
-        {showCoop && (
-          <div className="mb-16">
-            <h2 className="text-3xl font-display font-medium text-charcoal mb-4 leading-tight">
-              Cooperative Housing Societies in Mohali — Sectors 67, 68 & 70
-            </h2>
-            <div className="font-body text-base text-black/60 leading-relaxed mb-8 max-w-4xl space-y-4">
-              <p>
-                Mohali has seven registered cooperative housing societies concentrated in Sectors 67, 68, and 70 — an ownership structure that most property portals underexplain and most buyers misunderstand. In a cooperative society, you hold a share in the registered society and receive a formal allotment — the land title vests in the society collectively, not in your name individually. This is different from a builder flat, where you hold a registered sale deed directly.
-              </p>
-              <p>
-                The tradeoff: cooperative society units carry <strong className="text-charcoal font-semibold">significantly lower entry prices</strong> (₹55 lakh to ₹85 lakh) compared to equivalent corporate builder inventory in adjacent sectors. Societies like Jal Vayu (Sector 67), Mundi Society (Sector 70), and the SCL Employees Society (Sector 70) have mature, well-maintained common areas and long-established RWAs. For buyers comfortable with the cooperative ownership structure, these represent some of Mohali's most defensible value-per-square-foot purchases.
-              </p>
-              <p>
-                If you're evaluating a cooperative society and unsure about the legal structure, our desk handles these transactions regularly and can walk you through the process.
-              </p>
+          {filteredBuilders.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+              {filteredBuilders.map((b) => renderBuilderCard(b))}
             </div>
-            {coopBuilders.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                {coopBuilders.map((b) => renderBuilderCard(b))}
-              </div>
-            ) : (
-              <p className="text-black/40 text-sm font-body italic py-4">
-                No cooperative housing societies match your search query.
-              </p>
-            )}
-          </div>
-        )}
+          ) : (
+            <p className="text-black/40 text-sm font-body italic py-4">
+              No developers match your search query.
+            </p>
+          )}
+        </div>
 
         {/* Empty State */}
         {filteredBuilders.length === 0 && (
@@ -338,7 +310,7 @@ export default function BuildersClient({ builders }: BuildersClientProps) {
               No developer portfolios match your current search terms.
             </p>
             <button
-              onClick={() => { setSearchTerm(""); setActiveTab("all"); }}
+              onClick={() => { setSearchTerm(""); setActiveTab("commercial"); }}
               className="mt-3 text-sm text-black underline font-body hover:text-black/75"
             >
               Reset filters

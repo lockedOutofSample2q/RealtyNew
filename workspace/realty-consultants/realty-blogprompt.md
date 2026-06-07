@@ -291,3 +291,4 @@ Save all 100 blog files to a `/blogs/` directory.
 After completing all 100, generate a `blog-index.md` file listing all 100 blogs with their ID, slug, title, category, ICP, and word count.
 
 Total target: ~180,000 words across 100 blogs.
+

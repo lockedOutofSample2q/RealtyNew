@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "app/(funnel)/guides/property-documents/page.tsx": {
-    "mtime": 1779798210.1994143,
-    "ast_hash": "b817c5cacd6f9c59af02b45fa1b7f812",
+    "mtime": 1780624636.724058,
+    "ast_hash": "2ed18b4fae9b14bbf486bd668961de8e",
     "semantic_hash": ""
   },
   "app/(funnel)/guides/property-documents/thank-you/page.tsx": {
@@ -85,8 +85,8 @@
     "semantic_hash": ""
   },
   "app/(site)/cookies/page.tsx": {
-    "mtime": 1780379522.960196,
-    "ast_hash": "b9f28468dc37e7068ab6f9898f17d51c",
+    "mtime": 1780624657.1858053,
+    "ast_hash": "fae16ed28979de769ba83f489e3915e1",
     "semantic_hash": ""
   },
   "app/(site)/faq/page.tsx": {
@@ -105,8 +105,8 @@
     "semantic_hash": ""
   },
   "app/(site)/list-your-property/page.tsx": {
-    "mtime": 1779201358.297097,
-    "ast_hash": "7860d58a744f1f55b0802a78916a0d9f",
+    "mtime": 1780624661.2947736,
+    "ast_hash": "dbd19f036249f0907b316759313d1a44",
     "semantic_hash": ""
   },
   "app/(site)/page.tsx": {
@@ -115,8 +115,8 @@
     "semantic_hash": ""
   },
   "app/(site)/privacy/page.tsx": {
-    "mtime": 1780379504.4728525,
-    "ast_hash": "098c6bf378e4b9f831839016baf8a346",
+    "mtime": 1780624667.835623,
+    "ast_hash": "e304eeb9b8ca33148e3c799cef0ba410",
     "semantic_hash": ""
   },
   "app/(site)/properties/PropertiesClient.tsx": {
@@ -155,8 +155,8 @@
     "semantic_hash": ""
   },
   "app/(site)/properties/builders/BuildersClient.tsx": {
-    "mtime": 1780128136.1836252,
-    "ast_hash": "5a05093a05ab4a90f82804dead80dc20",
+    "mtime": 1780624836.670084,
+    "ast_hash": "d191cc304917c10705dc7c9558db964c",
     "semantic_hash": ""
   },
   "app/(site)/properties/builders/[slug]/BuilderProfileClient.tsx": {
@@ -165,18 +165,18 @@
     "semantic_hash": ""
   },
   "app/(site)/properties/builders/[slug]/page.tsx": {
-    "mtime": 1780574984.981151,
-    "ast_hash": "a310356de425d3a903e0ed78823644a1",
+    "mtime": 1780624597.17771,
+    "ast_hash": "8613d2469af19f5408342b6641fe7341",
     "semantic_hash": ""
   },
   "app/(site)/properties/builders/page.tsx": {
-    "mtime": 1779436558.4859579,
-    "ast_hash": "44d293961fa5e7af5c162de75183ebaf",
+    "mtime": 1780810259.32638,
+    "ast_hash": "a2ad0d6ded7f6b8907dda6bb2408946f",
     "semantic_hash": ""
   },
   "app/(site)/properties/flats/[slug]/page.tsx": {
-    "mtime": 1780543813.248935,
-    "ast_hash": "57f01e069713b640225bc29e7e8be5d3",
+    "mtime": 1780810256.579048,
+    "ast_hash": "654b5efae1397e74b766cc39d418432c",
     "semantic_hash": ""
   },
   "app/(site)/properties/flats/page.tsx": {
@@ -205,13 +205,13 @@
     "semantic_hash": ""
   },
   "app/(site)/terms/page.tsx": {
-    "mtime": 1780379512.4609382,
-    "ast_hash": "76744b15d31b1089c1fd1265e34246e2",
+    "mtime": 1780624675.6319406,
+    "ast_hash": "a0c3c6565ecbf97174adbc2ae7154832",
     "semantic_hash": ""
   },
   "app/(site)/tools/home-loan-calculator/[bank]/page.tsx": {
-    "mtime": 1780560777.4528239,
-    "ast_hash": "9ef47dfbc3ba05bab40def8942bbafb2",
+    "mtime": 1780624644.2335317,
+    "ast_hash": "7789de94e99e56fecf36592c71e215d8",
     "semantic_hash": ""
   },
   "app/(site)/tools/loan-eligibility/layout.tsx": {
@@ -230,18 +230,18 @@
     "semantic_hash": ""
   },
   "app/(site)/tools/mortgage-calculator/[city]/page.tsx": {
-    "mtime": 1780560777.4677966,
-    "ast_hash": "1ddc4492e822a5044ed2da7200cfcbb7",
+    "mtime": 1780624648.7006888,
+    "ast_hash": "292181faa94d59a176562f4b724c67aa",
     "semantic_hash": ""
   },
   "app/(site)/tools/mortgage-calculator/page.tsx": {
-    "mtime": 1780560358.4430053,
-    "ast_hash": "3a776ea398ddf4d0b3df93620b0af0f5",
+    "mtime": 1780624653.8180342,
+    "ast_hash": "7a7a5feaa655351add245c97bf6160b1",
     "semantic_hash": ""
   },
   "app/(site)/tools/page.tsx": {
-    "mtime": 1779201358.348557,
-    "ast_hash": "b022c2f107554e54d60df80995eaf43e",
+    "mtime": 1780810261.2573838,
+    "ast_hash": "24edefc91c2d0d464a051b0f34a851d1",
     "semantic_hash": ""
   },
   "app/(site)/tools/price-trend/page.tsx": {
@@ -670,8 +670,8 @@
     "semantic_hash": ""
   },
   "config/site.ts": {
-    "mtime": 1780559121.4310896,
-    "ast_hash": "7296c508c12a5e38258847edca2845cb",
+    "mtime": 1780810254.306308,
+    "ast_hash": "1ffffe84473455714d2dc14bba7a0b36",
     "semantic_hash": ""
   },
   "contentlayer.config.ts": {
@@ -855,13 +855,13 @@
     "semantic_hash": ""
   },
   "scripts/fix_ananda_crown_seo.js": {
-    "mtime": 1779201363.1476028,
-    "ast_hash": "917cac0aa54a7a5676fa43aab6603fb0",
+    "mtime": 1780810309.4645023,
+    "ast_hash": "2a2fca7a94c20ed76b1b3c6becd61070",
     "semantic_hash": ""
   },
   "scripts/fix_ananda_crown_seo.ts": {
-    "mtime": 1779201363.149627,
-    "ast_hash": "9c4ab9ee87f01763958ab8c716e65dde",
+    "mtime": 1780810305.9119527,
+    "ast_hash": "e7188ecc6d8a1524974e2c89ed633d18",
     "semantic_hash": ""
   },
   "scripts/fix_layout.ps1": {
@@ -975,8 +975,8 @@
     "semantic_hash": ""
   },
   "scripts/update_all_coordinates.js": {
-    "mtime": 1779532575.6720235,
-    "ast_hash": "b3edf0533f9aae36f3b90db56c96099a",
+    "mtime": 1780595817.5200474,
+    "ast_hash": "b3a15e80c8c3b2f485af2007ddfa4703",
     "semantic_hash": ""
   },
   "scripts/update_ambika_images.ts": {
@@ -1120,8 +1120,8 @@
     "semantic_hash": ""
   },
   "supabase/insert_dynamic_seo.sql": {
-    "mtime": 1779201363.21916,
-    "ast_hash": "161f2802c95ff2c34f00534b6a7b8596",
+    "mtime": 1780810269.9836783,
+    "ast_hash": "217a85d8b23a41b115524873b16172bd",
     "semantic_hash": ""
   },
   "supabase/lead_magnets.sql": {

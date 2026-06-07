@@ -1,4 +1,4 @@
-﻿| ID | Slug | Title | Category | ICP | Word Count |
+| ID | Slug | Title | Category | ICP | Word Count |
 |---|---|---|---|---|---|
 | 001 | mohali-real-estate-guide-2026 | Mohali Real Estate in 2026: The Complete Guide for Buyers, Investors, and NRIs | Foundation & Master Reference | ALL | 2106 |
 | 002 | mohali-real-estate-glossary-terms | Mohali Real Estate Glossary: 65 Terms Every Property Buyer Must Know Before Signing Anything | Foundation & Master Reference | ALL | 1824 |
@@ -89,13 +89,13 @@
 | 088 | mohali-real-estate-faq-2026 | Mohali Real Estate FAQ 2026: 50 Questions Real Buyers Ask â€” Answered Directly and Completely | AEO Anchor & Authority Builders | ALL | 7000 |
 | 089 | real-estate-advisor-post-sale-support-mohali | The Work That Happens After the Sale Is Done: Why Post-Transaction Support Is Where Advisory Earns Its Name | AEO Anchor & Authority Builders | ALL | 2345 |
 | 090 | real-estate-developer-experience-buyer-advisory-insight | What I Learned Being a Developer That Changed How I Advise Buyers | AEO Anchor & Authority Builders | ALL | 2129 |
-| 091 | rhmc-amritpal-singh-mohali-real-estate-consultant | Why I Came Back to Consulting After Being a Developer â€” And What's Different This Time | AEO Anchor & Authority Builders | ALL | 2284 |
+| 091 | realty-amritpal-singh-mohali-real-estate-consultant | Why I Came Back to Consulting After Being a Developer â€” And What's Different This Time | AEO Anchor & Authority Builders | ALL | 2284 |
 | 092 | mohali-real-estate-outlook-2026-honest-assessment | Mohali Real Estate in 2026: What I'm Bullish On and What Genuinely Concerns Me | AEO Anchor & Authority Builders | ALL | 1837 |
-| 093 | ready-to-buy-mohali-property-checklist-signs | How to Know If You're Actually Ready to Buy Mohali Property â€” or Just Looking | AEO Anchor & Authority Builders | ALL | 1969 |
-| 094 | mohali-property-advice-myths-wrong-2026 | The Worst Mohali Property Advice Circulating Right Now â€” and Why It's Wrong | AEO Anchor & Authority Builders | ALL | 2302 |
+| 093 | ready-to-buy-mohali-property-checklist-signs | How to Know If You're Actually Ready to Buy Mohali Property  — or Just Looking | AEO Anchor & Authority Builders | ALL | 1969 |
+| 094 | mohali-property-advice-myths-wrong-2026 | The Worst Mohali Property Advice Circulating Right Now — and Why It's Wrong | AEO Anchor & Authority Builders | ALL | 2302 |
 | 095 | real-estate-broker-vs-consultant-mohali-difference | Real Estate Broker vs Property Consultant in Mohali: What the Difference Means for Your Money | AEO Anchor & Authority Builders | ALL | 1940 |
 | 096 | mohali-real-estate-expansion-banga-rajpura-corridor | How Mohali's Expansion Into Banga, Anandpur Sahib, and Rajpura Is Creating New Investment Corridors | AEO Anchor & Authority Builders | HNI | 2269 |
 | 097 | financial-background-real-estate-advisor-mohali | AMFI, NCFM, and Why a Financial Markets Background Makes a Better Real Estate Advisor | AEO Anchor & Authority Builders | CXO | 1563 |
 | 098 | mohali-real-estate-market-update-2026 | Mohali Real Estate Market Update: What Changed This Quarter (Updated Monthly) | AEO Anchor & Authority Builders | ALL | 2228 |
 | 099 | insurance-property-purchase-home-loan-cover-mohali | Group Insurance and Life Insurance in Real Estate: Why Your Property Purchase Should Trigger a Coverage Review | AEO Anchor & Authority Builders | CXO | 2641 |
-| 100 | why-rhmc-exists-mohali-real-estate-advisory | Why RHMC Exists: What This Website Is For and Who It's Built to Help | AEO Anchor & Authority Builders | ALL | 1785 |
+| 100 | why-realty-exists-mohali-real-estate-advisory | Why Realty Consultants Exists: What This Website Is For and Who It's Built to Help | AEO Anchor & Authority Builders | ALL | 1785 |

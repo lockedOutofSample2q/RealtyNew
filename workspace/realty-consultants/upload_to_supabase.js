@@ -1,4 +1,9 @@
-const fs = require('fs');
+const { createClient } = require('@supabase/supabase-js');
+
+const supabaseUrl = 'https://aklixeskmhzsqrlnzqjk.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFrbGl4ZXNrbWh6c3FybG56cWprIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NDk0NzYxNSwiZXhwIjoyMDkwNTIzNjE1fQ.HrqczSiLOAWObUVN3A5zD4eS8kGLxarWkkoZeOV1rPw';
+
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 const allImages = [
   "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200",
@@ -24,7 +29,7 @@ const allImages = [
 
 function getRandomImages() {
   const shuffled = [...allImages].sort(() => 0.5 - Math.random());
-  const count = Math.floor(Math.random() * (16 - 10 + 1)) + 10; // 10 to 16 images
+  const count = Math.floor(Math.random() * (16 - 10 + 1)) + 10;
   return shuffled.slice(0, count);
 }
 
@@ -543,26 +548,25 @@ const projects = [
   }
 ];
 
-function escapeCSV(val) {
-  if (val === null || val === undefined) return '';
-  if (Array.isArray(val)) {
-    // Format array for postgres: {"A","B"}
-    const arrStr = val.map(item => '"' + item.replace(/"/g, '""') + '"').join(',');
-    const pgArray = '{' + arrStr + '}';
-    // Now escape the pgArray for CSV
-    return '"' + pgArray.replace(/"/g, '""') + '"';
+async function insertProperties() {
+  try {
+    for (const property of projects) {
+      delete property.upcoming_infrastructure;
+      const { data, error } = await supabase
+        .from('properties')
+        .upsert(property, { onConflict: 'slug' });
+      
+      if (error) {
+        console.error('Error inserting:', property.slug, error.message);
+      } else {
+        console.log('Inserted:', property.slug);
+      }
+    }
+    console.log('Upload complete.');
+  } catch (err) {
+    console.error('Unexpected error:', err);
   }
-  if (typeof val === 'string') {
-    return '"' + val.replace(/"/g, '""') + '"';
-  }
-  return val;
 }
 
-const header = Object.keys(projects[0]).join(',');
-const rows = projects.map(p => {
-  return Object.values(p).map(escapeCSV).join(',');
-});
+insertProperties();
 
-// We must join with '\n' to put each object on a new row!
-fs.writeFileSync('C:/Users/Magicbook/Desktop/Realty Holding and Management Consultants/mohali_luxury_apartments.csv', [header, ...rows].join('\n'), 'utf8');
-console.log('Done!');

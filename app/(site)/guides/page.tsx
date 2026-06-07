@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BookOpen, FileText, ShieldCheck, Map } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Real Estate Guides Mohali",
@@ -14,6 +15,7 @@ const guides = [
     description: "A complete checklist of documents you must verify before buying any property in Punjab.",
     href: "/guides/property-documents",
     icon: FileText,
+    image: "/assets/images/guides/checklist-mockup.webp",
   },
   {
     title: "Understanding RERA Punjab",
@@ -102,9 +104,18 @@ export default function GuidesPage() {
               className="group block"
             >
               <div className="aspect-[16/9] rounded-[32px] bg-black/5 overflow-hidden mb-8 relative">
-                 <div className="absolute inset-0 flex items-center justify-center text-black/10 group-hover:text-black/20 transition-colors">
+                {guide.image ? (
+                  <Image
+                    src={guide.image}
+                    alt={guide.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center text-black/10 group-hover:text-black/20 transition-colors">
                     <guide.icon size={120} strokeWidth={1} />
-                 </div>
+                  </div>
+                )}
               </div>
               <h2 className="text-3xl font-display font-medium mb-4 group-hover:underline">{guide.title}</h2>
               <p className="text-lg text-black/60 leading-relaxed max-w-md">

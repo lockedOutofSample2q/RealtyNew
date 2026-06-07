@@ -8,21 +8,21 @@ import BuildersClient from "./BuildersClient";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Top Real Estate Builders in Mohali | RERA Verified Developers | Realty Holding & Management Consultants"
+    absolute: "Top Real Estate Builders in Mohali | RERA Verified Developers | Realty Consultants"
   },
   description: "RERA-verified builders and cooperative housing societies in Mohali — from JLPL and Bestech to Jubilee and GMADA. Prices from ₹45L to ₹9.19Cr. Independently reviewed by Realty Holding & Management Consultants.",
   alternates: {
     canonical: "https://www.realtyconsultants.in/properties/builders",
   },
   openGraph: {
-    title: "Top Real Estate Builders in Mohali | RERA Verified Developers | Realty Holding and Management Consultants",
+    title: "Top Real Estate Builders in Mohali | RERA Verified Developers | Realty Consultants",
     description: "28 RERA-verified builders and cooperative housing societies in Mohali — from JLPL and Bestech to Jubilee and GMADA. Prices from ₹45L to ₹9.19Cr. Independently reviewed by Realty Holding & Management Consultants.",
     url: "https://www.realtyconsultants.in/properties/builders",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Top Real Estate Builders in Mohali | RERA Verified | Realty Holding and Management Consultants",
+    title: "Top Real Estate Builders in Mohali | RERA Verified | Realty Consultants",
     description: "28 RERA-verified builders in Mohali reviewed by our advisory desk — corporate developers and cooperative housing societies. Prices ₹45L–₹9.19Cr.",
   }
 };

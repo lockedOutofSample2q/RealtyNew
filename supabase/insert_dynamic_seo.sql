@@ -93,7 +93,7 @@ INSERT INTO public.sector_seo (sector_slug, city, meta_title, meta_description, 
 SELECT DISTINCT 
     LOWER(REPLACE(community, ' ', '-')) as sector_slug,
     'Mohali' as city,
-    'Premium Flats for Sale in ' || community || ' | Realty Consultants' as meta_title,
+    'Premium Flats for Sale in ' || community || ' | RHMC' as meta_title,
     'Explore verified luxury flats and apartments for sale in ' || community || '. View detailed floor plans, pricing, and amenities with Realty Holding & Management Consultants.' as meta_description,
     'Luxury Flats for Sale in ' || community as h1_heading,
     'Discover the finest residential properties in ' || community || '. Whether you are looking for ready-to-move apartments or premium pre-launch flats, our consultants evaluate every property for RERA compliance, builder track record, and fair pricing to ensure a secure investment.' as intro_paragraph

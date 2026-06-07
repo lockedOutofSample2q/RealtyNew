@@ -210,15 +210,17 @@ export default function LeadMagnetClient() {
               className="w-full sm:w-2/3 bg-charcoal text-white hover:bg-charcoal/90 rounded-full h-16 font-mono tracking-widest uppercase text-sm font-bold" 
               disabled={status === "loading"}
             >
-              {status === "loading" ? "Processing..." : "Get Checklist Instantly →"}
+              {status === "loading" ? "Processing..." : "Send Me the Checklist →"}
             </Button>
           </div>
         </form>
       )}
 
-      <p className="text-[10px] text-charcoal/40 text-center mt-8 uppercase tracking-widest opacity-60">
-        By checking out, you agree to our premium security policies.
-      </p>
+      <div className="mt-8 pt-6 border-t border-charcoal/10 text-center">
+        <p className="text-xs text-charcoal/60 font-body leading-relaxed max-w-sm mx-auto">
+          Curated by Amritpal Singh · 180+ transactions closed · 10+ years in Mohali real estate · No spam. One PDF, delivered on WhatsApp instantly.
+        </p>
+      </div>
     </div>
   );
 }
