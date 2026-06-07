@@ -143,7 +143,7 @@ export default function PropertyDocumentsPage() {
   };
 
   return (
-    <main className="bg-[#FAF9F5] text-charcoal min-h-screen pt-24 pb-16">
+    <main className="bg-white text-charcoal min-h-screen pt-24 pb-16">
       {/* Schema Markups */}
       <script
         type="application/ld+json"
