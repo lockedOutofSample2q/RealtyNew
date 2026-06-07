@@ -6,9 +6,10 @@ interface Props {
   price: number;
   price_max?: number;
   listingLabel: string;
+  noBorder?: boolean;
 }
 
-export default function PriceDisplay({ price, price_max, listingLabel }: Props) {
+export default function PriceDisplay({ price, price_max, listingLabel, noBorder }: Props) {
   const { formatPrice } = useCurrency();
   
   let display = "Price on Request";
@@ -21,7 +22,7 @@ export default function PriceDisplay({ price, price_max, listingLabel }: Props) 
   }
 
   return (
-    <div className="p-5 border-b border-black/8">
+    <div className={`p-5 ${noBorder ? "" : "border-b border-black/8"}`}>
       <p className="text-[20px] font-bold text-black mb-0.5">{display}</p>
       <p className="text-[11px] text-black/40 mb-1">{listingLabel}</p>
       {price === 0 && (

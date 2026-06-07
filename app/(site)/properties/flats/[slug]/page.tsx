@@ -38,6 +38,7 @@ import PropertyPriceInline from "../../[slug]/PropertyPriceInline";
 import PropertyDetailMapClient from "../../[slug]/PropertyDetailMapClient";
 import PropertyCard from "@/components/ui/PropertyCard";
 import PropertiesClient from "../../PropertiesClient";
+import buildersData from "@/config/builders-data.json";
 import { Suspense, cache } from "react";
 
 interface Props { params: Promise<{ slug: string }> }
@@ -956,32 +957,137 @@ export default async function ApartmentOrSectorDetailPage(props: Props) {
             </div>
 
             {/* ── RIGHT SIDEBAR ────────────────────────────── */}
-            <aside className="lg:sticky lg:top-[max(2rem,calc(50vh-380px))] transition-all">
-              <div className="border border-black/10 rounded-2xl overflow-hidden bg-white shadow-sm">
-                <PriceDisplay price={price} price_max={property.price_max} listingLabel={listingLabel} />
+            <aside className="lg:sticky lg:top-[max(2rem,calc(50vh-380px))] transition-all space-y-4">
+              
+              {/* Card 1: Price Card */}
+              <div className="bg-white border border-black/10 rounded-2xl overflow-hidden shadow-sm">
+                <PriceDisplay price={price} price_max={property.price_max} listingLabel={listingLabel} noBorder />
+              </div>
+
+              {/* Card 2: Request Information */}
+              <div className="bg-white border border-black/10 rounded-2xl p-6 shadow-sm">
+                <p className="text-sm font-bold text-black mb-4 font-display">Request Information</p>
+                <InquiryForm 
+                  propertyId={property.id} 
+                  propertyTitle={property.title} 
+                  entityType="apartment"
+                />
+              </div>
+
+              {/* Card 3: Contact Agent */}
+              <div className="bg-white border border-black/10 rounded-2xl p-6 shadow-sm">
+                <div className="flex items-center justify-between mb-4">
+                  <p className="text-sm font-bold text-black font-display">Contact Agent</p>
+                  <span className="text-[9px] uppercase tracking-widest text-black/40 bg-black/[0.04] px-2 py-0.5 rounded font-semibold font-body">
+                    REALTY CONSULTANTS
+                  </span>
+                </div>
                 
-                <div className="p-6 border-b border-black/5">
-                  <p className="text-sm font-bold text-black mb-4 font-display">Inquire About This Property</p>
-                  <InquiryForm 
-                    propertyId={property.id} 
-                    propertyTitle={property.title} 
-                    entityType="apartment"
-                  />
+                <div className="flex items-start gap-4 mb-4">
+                  <Link 
+                    href="/about" 
+                    className="relative w-14 h-14 rounded-full overflow-hidden bg-black/5 shrink-0 border border-black/5 group hover:ring-2 ring-black/5 transition-all"
+                  >
+                    <Image 
+                      src="/assets/images/leadership/amritpal.jpg" 
+                      alt="Amritpal Singh" 
+                      fill 
+                      className="object-cover" 
+                    />
+                  </Link>
+                  <div className="min-w-0">
+                    <Link href="/about" className="block group">
+                      <p className="text-[15px] font-bold text-black leading-tight mb-0.5 group-hover:underline font-display">
+                        Amritpal Singh
+                      </p>
+                      <p className="text-[12px] text-black/40 font-medium">MD</p>
+                    </Link>
+                  </div>
                 </div>
 
-                <div className="p-6">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-black/35 mb-4">Assigned Advisor</p>
-                  <Link href="/about" className="flex items-center gap-4 group">
-                    <div className="w-12 h-12 rounded-full overflow-hidden bg-black/5 relative ring-0 group-hover:ring-2 ring-black/5 transition-all">
-                      <Image src="/assets/images/leadership/amritpal.jpg" alt="Amritpal Singh" fill className="object-cover" />
-                    </div>
-                    <div>
-                      <p className="text-sm font-bold text-black group-hover:underline font-display">Amritpal Singh</p>
-                      <p className="text-[11px] text-black/40">MD</p>
-                    </div>
-                  </Link>
+                <div className="space-y-2">
+                  <a 
+                    href={`mailto:${siteConfig.contact.email}`} 
+                    className="w-full bg-black/[0.03] text-black/75 hover:text-black font-body text-[13px] px-3.5 py-2.5 rounded-xl block truncate transition-colors"
+                  >
+                    {siteConfig.contact.email}
+                  </a>
+                  <a 
+                    href={`tel:${siteConfig.contact.phone.replace(/\s+/g, '')}`} 
+                    className="w-full bg-black/[0.03] text-black/75 hover:text-black font-body text-[13px] px-3.5 py-2.5 rounded-xl block truncate transition-colors"
+                  >
+                    {siteConfig.contact.phone}
+                  </a>
+                </div>
+
+                <div className="mt-4">
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-black/35 mb-2">Languages</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {["English", "Punjabi", "Hindi"].map((lang) => (
+                      <span 
+                        key={lang} 
+                        className="text-[11px] bg-black/[0.04] px-2.5 py-1 rounded-md text-black/60 font-semibold"
+                      >
+                        {lang}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
+
+              {/* Card 4: Developer Card */}
+              {property.developer && (() => {
+                const devSlug = slugify(property.developer.trim());
+                const builderInfo = devSlug ? (buildersData.builders as any)[devSlug] : null;
+                const logoFile = LOGO_MAPPING[devSlug];
+                
+                const devName = builderInfo?.commonName || property.developer;
+                const devDesc = builderInfo?.background?.c1 || "";
+                const devWebsite = property.developer_website || builderInfo?.website;
+
+                return (
+                  <div className="bg-white border border-black/10 rounded-2xl p-6 shadow-sm">
+                    <p className="text-sm font-bold text-black mb-4 font-display">Developer</p>
+                    
+                    <div className="w-full bg-black/[0.02] border border-black/5 rounded-2xl px-4 py-6 mb-4 flex items-center justify-center min-h-[90px] shadow-sm select-none">
+                      {logoFile ? (
+                        <div className="w-full h-10 relative flex items-center justify-center">
+                          <Image
+                            src={`/assets/images/logos/${logoFile}`}
+                            alt={`${devName} logo`}
+                            fill
+                            sizes="150px"
+                            className="object-contain"
+                            style={{ filter: "brightness(0)" }}
+                          />
+                        </div>
+                      ) : (
+                        <span className="text-[15px] font-bold text-black/70 uppercase tracking-widest leading-none font-display">
+                          {devName}
+                        </span>
+                      )}
+                    </div>
+
+                    <p className="text-sm font-bold text-black mb-1 font-display">{devName}</p>
+                    {devDesc && (
+                      <p className="text-xs text-black/60 leading-relaxed mb-4">
+                        {devDesc}
+                      </p>
+                    )}
+                    {devWebsite && (
+                      <a
+                        href={devWebsite.startsWith("http") ? devWebsite : `https://${devWebsite}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-[12px] font-bold text-black/60 hover:text-black transition-colors border-t border-black/5 pt-3 w-full"
+                      >
+                        Visit Website <ExternalLink size={12} />
+                      </a>
+                    )}
+                  </div>
+                );
+              })()}
+
             </aside>
           </div>
 
