@@ -16,6 +16,8 @@ export default function FunnelLayout({
               <img 
                 src="/assets/logo-light-theme.svg" 
                 alt={siteConfig.name} 
+                width={1756}
+                height={925}
                 className="h-full w-full object-contain object-left" 
               />
             </div>

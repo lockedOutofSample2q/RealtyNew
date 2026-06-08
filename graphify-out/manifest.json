@@ -30,13 +30,13 @@
     "semantic_hash": ""
   },
   "app/(funnel)/layout.tsx": {
-    "mtime": 1779797483.1631172,
-    "ast_hash": "8eed549203583a8bdcd77e9a783b173a",
+    "mtime": 1780905043.4188397,
+    "ast_hash": "67110e02ff4ff7fe5ff3f18a7aaae908",
     "semantic_hash": ""
   },
   "app/(site)/[slug]/PropertyGallery.tsx": {
-    "mtime": 1779384606.6006517,
-    "ast_hash": "d6ae1aae24a8089bb756050cea978c6d",
+    "mtime": 1780905067.015476,
+    "ast_hash": "34d0b26ec1d3553a12646e21530c65b0",
     "semantic_hash": ""
   },
   "app/(site)/[slug]/ShareButton.tsx": {
@@ -125,8 +125,8 @@
     "semantic_hash": ""
   },
   "app/(site)/properties/[slug]/InquiryForm.tsx": {
-    "mtime": 1779201358.307205,
-    "ast_hash": "44200cfd60768e74dda36516a7938d40",
+    "mtime": 1780905072.9263227,
+    "ast_hash": "9e991177031cdfd40ade332790290573",
     "semantic_hash": ""
   },
   "app/(site)/properties/[slug]/PriceDisplay.tsx": {
@@ -405,8 +405,8 @@
     "semantic_hash": ""
   },
   "app/layout.tsx": {
-    "mtime": 1780902648.0466337,
-    "ast_hash": "f71a99291560ffb719184564ad290df3",
+    "mtime": 1780913286.0073137,
+    "ast_hash": "11fb2ce55f29d5a860a380f3403d0eab",
     "semantic_hash": ""
   },
   "app/not-found.tsx": {
@@ -450,8 +450,8 @@
     "semantic_hash": ""
   },
   "components/layout/Footer.tsx": {
-    "mtime": 1779201358.4012542,
-    "ast_hash": "52df529461600f397f3b77275dc16bf4",
+    "mtime": 1780905038.290885,
+    "ast_hash": "d3c2cc4c284247eaf2916859c000ae9d",
     "semantic_hash": ""
   },
   "components/layout/FooterMapWrapper.tsx": {
@@ -465,8 +465,8 @@
     "semantic_hash": ""
   },
   "components/layout/Navbar.tsx": {
-    "mtime": 1779452526.011237,
-    "ast_hash": "a6bd014ac479750ad14c5d241144469d",
+    "mtime": 1780905033.1423075,
+    "ast_hash": "aeda470b2197c49b0e5b20194bb59267",
     "semantic_hash": ""
   },
   "components/properties/MobileSearchModal.tsx": {
@@ -570,8 +570,8 @@
     "semantic_hash": ""
   },
   "components/sections/HeroSection.tsx": {
-    "mtime": 1779201358.4415016,
-    "ast_hash": "8333a6ba049cb32c61af27cdb632fdb1",
+    "mtime": 1780905055.5329201,
+    "ast_hash": "3362efc0ba8f5c457f554c366e37a68d",
     "semantic_hash": ""
   },
   "components/sections/PropertiesCarousel.tsx": {
@@ -745,8 +745,8 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1779453639.839245,
-    "ast_hash": "f9d38a6004b775f40e95ecf81f8d30ae",
+    "mtime": 1780905078.7183888,
+    "ast_hash": "783ca06648ef6ae416b3d4052caecb6c",
     "semantic_hash": ""
   },
   "postcss.config.js": {
@@ -800,8 +800,8 @@
     "semantic_hash": ""
   },
   "scripts/compress_images.js": {
-    "mtime": 1779201363.1289077,
-    "ast_hash": "a5b04cd7bd3c49d4b41d3ea93af1ead3",
+    "mtime": 1780905094.2875295,
+    "ast_hash": "3bb8f14c4227b1eadc5e7e0e7adcdb4f",
     "semantic_hash": ""
   },
   "scripts/compress_pdfs.js": {
@@ -810,8 +810,8 @@
     "semantic_hash": ""
   },
   "scripts/compress_webp.js": {
-    "mtime": 1779201363.132533,
-    "ast_hash": "df4607b41b2011ca2d2d4afff8a6d31f",
+    "mtime": 1780905097.5803802,
+    "ast_hash": "811fa84bbc7b3a7fcaf4fe25b6eb56d7",
     "semantic_hash": ""
   },
   "scripts/count-all-tables.js": {
@@ -1434,11 +1434,6 @@
     "ast_hash": "dcd5c2dd74dc14e077508468649ea0f8",
     "semantic_hash": ""
   },
-  "REALTY_PROJECT_REPORT.md": {
-    "mtime": 1779201358.225465,
-    "ast_hash": "aab63f6c01aa87775f14dc4de8eef0ca",
-    "semantic_hash": ""
-  },
   "RealtyNew/content/blog-index.md": {
     "mtime": 1780859284.374845,
     "ast_hash": "4149410940a0b0c763ab700cc67d4791",
@@ -1457,11 +1452,6 @@
   "RealtyNew/content/blog/dubai-rental-yields-by-community-2026.mdx": {
     "mtime": 1779201358.2378073,
     "ast_hash": "12a28f83d7e4a492c01b6c1a5d566e25",
-    "semantic_hash": ""
-  },
-  "SEO_PERFORMANCE_AUDIT.md": {
-    "mtime": 1779201358.242138,
-    "ast_hash": "e07ffb10893fa8dfdfbadefec5e6360e",
     "semantic_hash": ""
   },
   "ai-copywriting-guide.txt": {
@@ -2050,8 +2040,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/about/ceo.webp": {
-    "mtime": 1779201359.348117,
-    "ast_hash": "e5bb1469bfef4ee2a6788df862df01fb",
+    "mtime": 1780905170.2459798,
+    "ast_hash": "50d5bdf315e55c342f701ab13fc643cf",
     "semantic_hash": ""
   },
   "public/assets/images/about/hero-1.webp": {
@@ -2075,13 +2065,13 @@
     "semantic_hash": ""
   },
   "public/assets/images/apartments/homeland-heights/Homeland heights Mohali - realty holding and management consultants 1.webp": {
-    "mtime": 1779201359.3531976,
-    "ast_hash": "4ddb781e3289616af7adae1556eda7f2",
+    "mtime": 1780905173.7728465,
+    "ast_hash": "6ce4d2b817ac1625b922e664f5c22aad",
     "semantic_hash": ""
   },
   "public/assets/images/apartments/homeland-heights/Homeland heights Mohali - realty holding and management consultants 2.webp": {
-    "mtime": 1779201359.3582308,
-    "ast_hash": "0110e32c9f243894976ce65706adbc30",
+    "mtime": 1780905175.6666825,
+    "ast_hash": "1051c236a648dbe2d4932bf24fb5408b",
     "semantic_hash": ""
   },
   "public/assets/images/apartments/homeland-heights/Homeland heights Mohali - realty holding and management consultants 3.webp": {
@@ -2090,8 +2080,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/apartments/homeland-heights/Homeland heights Mohali - realty holding and management consultants 4.webp": {
-    "mtime": 1779201359.3644702,
-    "ast_hash": "fced5128dbf61c86f15147b2a67ad3d9",
+    "mtime": 1780905178.4198678,
+    "ast_hash": "f4864e15357f3dd96d3f314e7f6d138a",
     "semantic_hash": ""
   },
   "public/assets/images/apartments/homeland-heights/Homeland heights Mohali - realty holding and management consultants 5.webp": {
@@ -2115,18 +2105,18 @@
     "semantic_hash": ""
   },
   "public/assets/images/apartments/homeland-heights/Homeland heights Mohali - realty holding and management consultants 9.webp": {
-    "mtime": 1779201359.3836434,
-    "ast_hash": "b32f6f8eb94a2519ca4bc79b3204c26b",
+    "mtime": 1780905180.6120973,
+    "ast_hash": "7d49751ad537593a60fa97c398ffd714",
     "semantic_hash": ""
   },
   "public/assets/images/backgrounds/agriculture.jpg": {
-    "mtime": 1777309662.986002,
-    "ast_hash": "79f964018f36649f740029594ef3ffb9",
+    "mtime": 1780905104.2123528,
+    "ast_hash": "ba6ff94c59cb0a6353905d01e8673a6f",
     "semantic_hash": ""
   },
   "public/assets/images/backgrounds/commercial.jpg": {
-    "mtime": 1777309662.992733,
-    "ast_hash": "b17bcf6733e326a23de74338e539d19c",
+    "mtime": 1780905106.6729774,
+    "ast_hash": "ee84de670f5da718148d9a60e62323e2",
     "semantic_hash": ""
   },
   "public/assets/images/backgrounds/finance.jpg": {
@@ -2140,8 +2130,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/backgrounds/legal.jpg": {
-    "mtime": 1777309663.0022504,
-    "ast_hash": "a6b86bbca9caaf79e208062e55e63617",
+    "mtime": 1780905107.9349425,
+    "ast_hash": "8db711c7d8b2950357173224038210ae",
     "semantic_hash": ""
   },
   "public/assets/images/backgrounds/residential.jpg": {
@@ -2280,8 +2270,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/blog/airport-road-mohali.webp": {
-    "mtime": 1780543484.393,
-    "ast_hash": "a0c8c6ee6d9ab1e607cb7d466b72fc7c",
+    "mtime": 1780905183.825268,
+    "ast_hash": "20facc5f8aca7900e518b493320909e0",
     "semantic_hash": ""
   },
   "public/assets/images/blog/appreciation-zones-mohali.jpg": {
@@ -2340,8 +2330,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/blog/family_living_room.png": {
-    "mtime": 1780551788.2249808,
-    "ast_hash": "84a413c5af74e962670430df0c1d8c6e",
+    "mtime": 1780905110.994673,
+    "ast_hash": "653903c7bd295c1ac428a5bbb1e8ff37",
     "semantic_hash": ""
   },
   "public/assets/images/blog/far-increase-mohali-2026-floor-area-ratio.jpg": {
@@ -2405,8 +2395,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/blog/holographic-2026-mohali-master-plan-realty-holding-management-consultants.webp": {
-    "mtime": 1779201359.3971028,
-    "ast_hash": "e2643750a753425cfe0049ba3c230a25",
+    "mtime": 1780905186.4404247,
+    "ast_hash": "cbb6fcf4188bee2b3e6fbc2881ce5d40",
     "semantic_hash": ""
   },
   "public/assets/images/blog/home-loan-mohali-property-2026-best-rate.jpg": {
@@ -2415,8 +2405,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/blog/independent_kothi_floors.png": {
-    "mtime": 1780551753.5702674,
-    "ast_hash": "081193d6ab5f0ec76f9bb4b3d3c63124",
+    "mtime": 1780905114.4358246,
+    "ast_hash": "0326f3d424891f6a96f1c3b11666ed3b",
     "semantic_hash": ""
   },
   "public/assets/images/blog/infographic-fd-vs-real-estate-mohali.jpg": {
@@ -2455,13 +2445,13 @@
     "semantic_hash": ""
   },
   "public/assets/images/blog/modern-commercial-showroom-mohali-aerocity-realty-holding-management-consultants.webp": {
-    "mtime": 1779201359.4037526,
-    "ast_hash": "d933381093d5b343eb5536b48353cc85",
+    "mtime": 1780905189.477127,
+    "ast_hash": "918042d196871af10a8d3b2f96afa28e",
     "semantic_hash": ""
   },
   "public/assets/images/blog/mohali-bypass-land-value-increase-2026-realty-holding-management-consultants.webp": {
-    "mtime": 1779201359.4082954,
-    "ast_hash": "20b4e55b698fd2f137bb8a136d3b104d",
+    "mtime": 1780905191.8595088,
+    "ast_hash": "41b2767a04d366c50c4fa7429a65f374",
     "semantic_hash": ""
   },
   "public/assets/images/blog/mohali-commercial-vs-residential-investment-2026.jpg": {
@@ -2475,8 +2465,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/blog/mohali-construction-site.webp": {
-    "mtime": 1780543485.979,
-    "ast_hash": "12d148fe1296e0afd082497117ae7abb",
+    "mtime": 1780905194.065202,
+    "ast_hash": "27a83ab7b81dbb7454961846de575c8f",
     "semantic_hash": ""
   },
   "public/assets/images/blog/mohali-developer-delivery-track-record-check.jpg": {
@@ -2490,8 +2480,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/blog/mohali-developer-project-due-diligence-checklist.webp": {
-    "mtime": 1780543486.679,
-    "ast_hash": "541e67893c72a9c5189fad3b9eff1701",
+    "mtime": 1780905195.9098337,
+    "ast_hash": "457e2297e15d96b101f8de3d592ca108",
     "semantic_hash": ""
   },
   "public/assets/images/blog/mohali-gmada-sector.jpg": {
@@ -2565,8 +2555,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/blog/mohali-real-estate-documents.webp": {
-    "mtime": 1780562738.0339592,
-    "ast_hash": "84ec467f10564d032b1af366e9b77016",
+    "mtime": 1780905199.926579,
+    "ast_hash": "43f262dbdf7c3a8821d331ed81a11438",
     "semantic_hash": ""
   },
   "public/assets/images/blog/mohali-real-estate-expansion-banga-rajpura-corridor.jpg": {
@@ -2595,8 +2585,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/blog/mohali-real-estate-investment-analysis-2026.webp": {
-    "mtime": 1780543487.695,
-    "ast_hash": "2c97eeff97b7a7b308970d406de04c20",
+    "mtime": 1780905201.968884,
+    "ast_hash": "5ed0221896e77a818ba81644ee538338",
     "semantic_hash": ""
   },
   "public/assets/images/blog/mohali-real-estate-market-update-2026.jpg": {
@@ -2690,8 +2680,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/blog/planning-expansion-mohali.webp": {
-    "mtime": 1780543488.226,
-    "ast_hash": "7d3d527c135253ddcd24d0a5fd2407d0",
+    "mtime": 1780905205.81899,
+    "ast_hash": "9d31f14e733c54e186527f5763a100f7",
     "semantic_hash": ""
   },
   "public/assets/images/blog/plot-vs-flat-mohali-land-seller-reinvestment.jpg": {
@@ -2735,8 +2725,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/blog/property-registry-process-tehsildar-office-mohali.webp": {
-    "mtime": 1780543489.878,
-    "ast_hash": "e4b15933a4874412e52c7f3277812f91",
+    "mtime": 1780905208.2813313,
+    "ast_hash": "b83a4864430b73b2b6d70acdd9178f9c",
     "semantic_hash": ""
   },
   "public/assets/images/blog/property-tax-dispute-multi-floor-building-mohali.jpg": {
@@ -2810,8 +2800,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/blog/rera-sign-mohali.webp": {
-    "mtime": 1780543490.638,
-    "ast_hash": "00ec8bdf2a19082dff9072a3311c3c28",
+    "mtime": 1780905210.5062456,
+    "ast_hash": "765077730a67300eeab49a9d783036b6",
     "semantic_hash": ""
   },
   "public/assets/images/blog/rhmc-amritpal-singh-mohali-real-estate-consultant.jpg": {
@@ -2870,8 +2860,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/blog/sunny-enclave-connectivity.webp": {
-    "mtime": 1780543491.276,
-    "ast_hash": "2c69f50a15c038063adfb3c29b46c1f8",
+    "mtime": 1780905213.0967238,
+    "ast_hash": "e995a22c8d276d8380f54115c1218079",
     "semantic_hash": ""
   },
   "public/assets/images/blog/sunny-enclave-mohali.jpg": {
@@ -2880,8 +2870,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/blog/super_area_split.png": {
-    "mtime": 1780551706.5217168,
-    "ast_hash": "eff90d261b8af08110f96b01ba1b6fbf",
+    "mtime": 1780905117.7420352,
+    "ast_hash": "d7c2bc5fc1b39209ea6f5743e7fec00b",
     "semantic_hash": ""
   },
   "public/assets/images/blog/test.jpg": {
@@ -2925,8 +2915,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/home/about.jpg": {
-    "mtime": 1774976106.919422,
-    "ast_hash": "53a77a9caf8c53fa0f6dfc8806fd8b0b",
+    "mtime": 1780905119.2669637,
+    "ast_hash": "7709cba5e4773f0e68a687a906c6973c",
     "semantic_hash": ""
   },
   "public/assets/images/home/evoq.webp": {
@@ -2935,8 +2925,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/home/hero-bg.webp": {
-    "mtime": 1780543492.525,
-    "ast_hash": "fa5997c23a8c54634e35d4f3258eda55",
+    "mtime": 1780905216.9854524,
+    "ast_hash": "a132b38dc02c0d559fe9464cab262324",
     "semantic_hash": ""
   },
   "public/assets/images/home/hero.webp": {
@@ -2945,8 +2935,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/home/land-and-plot-investments-punjab.webp": {
-    "mtime": 1779201359.4663851,
-    "ast_hash": "4eec7bb88d4bc0e8cdcc849fae20f5b6",
+    "mtime": 1780905219.8852847,
+    "ast_hash": "a280f8d12f51cc0831738ddd086155d6",
     "semantic_hash": ""
   },
   "public/assets/images/home/nri-property-consultant-india.webp": {
@@ -2955,13 +2945,13 @@
     "semantic_hash": ""
   },
   "public/assets/images/home/real-estate-advisory-mohali.webp": {
-    "mtime": 1779201359.478361,
-    "ast_hash": "fb2e1c279e187271b0859e3f34bdc790",
+    "mtime": 1780905223.471922,
+    "ast_hash": "31b319d2da020831867883d41ddccb7c",
     "semantic_hash": ""
   },
   "public/assets/images/home/regalia.webp": {
-    "mtime": 1780543493.588,
-    "ast_hash": "8652d88faeb5638dafc747833f547700",
+    "mtime": 1780905225.7087464,
+    "ast_hash": "6aea8f8cfbcaf3aaf514806a85b1fb56",
     "semantic_hash": ""
   },
   "public/assets/images/home/services.jpg": {
@@ -3045,8 +3035,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/leadership/amritpal.jpg": {
-    "mtime": 1779201359.607639,
-    "ast_hash": "18b2b4d21ebe2b4b21fa9739a9dd106b",
+    "mtime": 1780905120.7229342,
+    "ast_hash": "1151c926a283e797fdc944175363b308",
     "semantic_hash": ""
   },
   "public/assets/images/leadership/amritpal.webp": {
@@ -3215,8 +3205,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/logos/marbella.png": {
-    "mtime": 1779201359.6494348,
-    "ast_hash": "ef1a7dfa41b9150a6a643fc8117842ac",
+    "mtime": 1780905121.7418509,
+    "ast_hash": "3c521ff7829802c9cabdccca2932e629",
     "semantic_hash": ""
   },
   "public/assets/images/logos/marbella.svg": {
@@ -3305,13 +3295,13 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/affinity-belgravia-aerocity-mohali/realty-holding-and-management-consultants-affinity-belgravia-aerocity-mohali-property-dealer-in-mohali-02.webp": {
-    "mtime": 1779378830.101,
-    "ast_hash": "e2f616a41a42922ea0a01b772ebc547f",
+    "mtime": 1780905228.2071462,
+    "ast_hash": "1269686c7f06d057c23f06d2d688f437",
     "semantic_hash": ""
   },
   "public/assets/images/properties/affinity-belgravia-aerocity-mohali/realty-holding-and-management-consultants-affinity-belgravia-aerocity-mohali-property-dealer-in-mohali-03.webp": {
-    "mtime": 1779378830.348,
-    "ast_hash": "aac5b54c147414599429e324d5edb20a",
+    "mtime": 1780905230.7884438,
+    "ast_hash": "db9bb5eca3c3ad64073917d33ebd73e4",
     "semantic_hash": ""
   },
   "public/assets/images/properties/affinity-belgravia-aerocity-mohali/realty-holding-and-management-consultants-affinity-belgravia-aerocity-mohali-property-dealer-in-mohali-04.webp": {
@@ -3320,8 +3310,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/affinity-belgravia-aerocity-mohali/realty-holding-and-management-consultants-affinity-belgravia-aerocity-mohali-property-dealer-in-mohali-05.webp": {
-    "mtime": 1779378830.69,
-    "ast_hash": "2335133327af1cdbac7267f44ebe04e7",
+    "mtime": 1780905233.497678,
+    "ast_hash": "c0252c512cca1b25e05a2e08688ed400",
     "semantic_hash": ""
   },
   "public/assets/images/properties/affinity-belgravia-aerocity-mohali/realty-holding-and-management-consultants-affinity-belgravia-aerocity-mohali-property-dealer-in-mohali-06.webp": {
@@ -3330,8 +3320,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/ambika-la-parisian/realty-holding-and-management-consultants-ambika-la-parisian-mohali-sector-66b-01.webp": {
-    "mtime": 1780563886.57,
-    "ast_hash": "3cff55fca31e601f2dc2587efd2a38a7",
+    "mtime": 1780905237.9314613,
+    "ast_hash": "e42d7a181a5fd662aceb5b084f494432",
     "semantic_hash": ""
   },
   "public/assets/images/properties/ambika-la-parisian/realty-holding-and-management-consultants-ambika-la-parisian-mohali-sector-66b-02.webp": {
@@ -3350,13 +3340,13 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/ambika-la-parisian/realty-holding-and-management-consultants-ambika-la-parisian-mohali-sector-66b-05.webp": {
-    "mtime": 1780563887.43,
-    "ast_hash": "0e286efed8da5b19ea317d257db59533",
+    "mtime": 1780905239.886924,
+    "ast_hash": "a5c62bcf1660c215a6996b5d2b744a55",
     "semantic_hash": ""
   },
   "public/assets/images/properties/ambika-la-parisian/realty-holding-and-management-consultants-ambika-la-parisian-mohali-sector-66b-06.webp": {
-    "mtime": 1779201359.7229,
-    "ast_hash": "65470cbbad60a8a0171236c5771ca8ab",
+    "mtime": 1780905243.4057915,
+    "ast_hash": "418bb13b20cc3cab5b5a6043c295e849",
     "semantic_hash": ""
   },
   "public/assets/images/properties/ambika-la-parisian/realty-holding-and-management-consultants-ambika-la-parisian-mohali-sector-66b-07.webp": {
@@ -3370,98 +3360,98 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/ambika-la-parisian/realty-holding-and-management-consultants-ambika-la-parisian-mohali-sector-66b-09.webp": {
-    "mtime": 1780543509.966,
-    "ast_hash": "cfea1295fafe21ed8b461e235603615f",
+    "mtime": 1780905245.8558357,
+    "ast_hash": "a13ebccd5084b557377eab7b472daa5d",
     "semantic_hash": ""
   },
   "public/assets/images/properties/ambika-la-parisian/realty-holding-and-management-consultants-ambika-la-parisian-mohali-sector-66b-10.webp": {
-    "mtime": 1780543510.717,
-    "ast_hash": "db2b4284a346134edaed7d97665df92c",
+    "mtime": 1780905249.3270342,
+    "ast_hash": "caaceacd6c642da8bbcadb607e86edde",
     "semantic_hash": ""
   },
   "public/assets/images/properties/ambika-la-parisian/realty-holding-and-management-consultants-ambika-la-parisian-mohali-sector-66b-11.webp": {
-    "mtime": 1780563888.222,
-    "ast_hash": "c2246ac19bb2f4fe1425cd6b2faeefbe",
+    "mtime": 1780905252.8908877,
+    "ast_hash": "8889af80b0620c3e33865c077ab26f83",
     "semantic_hash": ""
   },
   "public/assets/images/properties/ambika-la-parisian/realty-holding-and-management-consultants-ambika-la-parisian-mohali-sector-66b-12.webp": {
-    "mtime": 1779201359.7850041,
-    "ast_hash": "27d6fa377517174a538acee17bdc970c",
+    "mtime": 1780905256.022739,
+    "ast_hash": "75c42cec53391019988101dbb940d53d",
     "semantic_hash": ""
   },
   "public/assets/images/properties/ambika-la-parisian/realty-holding-and-management-consultants-ambika-la-parisian-mohali-sector-66b-13.webp": {
-    "mtime": 1779201359.7880392,
-    "ast_hash": "ee3114540f6dca501bbb49a25493b309",
+    "mtime": 1780905258.286036,
+    "ast_hash": "54c2c6ac2fdd4bdb272ec2134453eaa5",
     "semantic_hash": ""
   },
   "public/assets/images/properties/ats-casa-espana-sector-121-mohali/realty-holding-and-management-consultants-ats-casa-espana-sector-121-mohali-property-dealer-in-mohali-01.jpg": {
-    "mtime": 1779370629.236,
-    "ast_hash": "11b6abcc2d09ba2104416bf70c3e11f2",
+    "mtime": 1780905124.8140862,
+    "ast_hash": "773a0d159871d0352dda6261052d34f0",
     "semantic_hash": ""
   },
   "public/assets/images/properties/ats-casa-espana-sector-121-mohali/realty-holding-and-management-consultants-ats-casa-espana-sector-121-mohali-property-dealer-in-mohali-02.jpg": {
-    "mtime": 1779370629.586,
-    "ast_hash": "e6c28a29dd8b75fb3b56cd28b81a3c60",
+    "mtime": 1780905128.7237003,
+    "ast_hash": "b9a446e92327c314bc8e7785894578d1",
     "semantic_hash": ""
   },
   "public/assets/images/properties/ats-casa-espana-sector-121-mohali/realty-holding-and-management-consultants-ats-casa-espana-sector-121-mohali-property-dealer-in-mohali-03.jpg": {
-    "mtime": 1779370629.914,
-    "ast_hash": "5849d33e7342d47603b39340c86cc446",
+    "mtime": 1780905131.9027126,
+    "ast_hash": "4454eb05f650810f12d0be02522b0afc",
     "semantic_hash": ""
   },
   "public/assets/images/properties/ats-casa-espana-sector-121-mohali/realty-holding-and-management-consultants-ats-casa-espana-sector-121-mohali-property-dealer-in-mohali-04.webp": {
-    "mtime": 1780543546.894,
-    "ast_hash": "fde4c80b3c2f3bbcb9167a5cf333c394",
+    "mtime": 1780905262.6290648,
+    "ast_hash": "dfbad709a3c33cabed177cd03f6e9927",
     "semantic_hash": ""
   },
   "public/assets/images/properties/ats-casa-espana-sector-121-mohali/realty-holding-and-management-consultants-ats-casa-espana-sector-121-mohali-property-dealer-in-mohali-05.webp": {
-    "mtime": 1780543547.751,
-    "ast_hash": "2097dd920fb419300c433f4141539a55",
+    "mtime": 1780905267.0018106,
+    "ast_hash": "dde86ade7e6112101515cc31014a5f1d",
     "semantic_hash": ""
   },
   "public/assets/images/properties/ats-casa-espana-sector-121-mohali/realty-holding-and-management-consultants-ats-casa-espana-sector-121-mohali-property-dealer-in-mohali-06.webp": {
-    "mtime": 1780543549.07,
-    "ast_hash": "a66276e4977f649a384718a6bd2e0324",
+    "mtime": 1780905272.8179636,
+    "ast_hash": "78d572d6f6de90808e9c61dc17370ff6",
     "semantic_hash": ""
   },
   "public/assets/images/properties/ats-casa-espana-sector-121-mohali/realty-holding-and-management-consultants-ats-casa-espana-sector-121-mohali-property-dealer-in-mohali-07.webp": {
-    "mtime": 1780543550.487,
-    "ast_hash": "98dfe5a1775f18883524f7aaf8900bb7",
+    "mtime": 1780905278.6926289,
+    "ast_hash": "e1fb072f494a705b76438232e4314676",
     "semantic_hash": ""
   },
   "public/assets/images/properties/ats-casa-espana-sector-121-mohali/realty-holding-and-management-consultants-ats-casa-espana-sector-121-mohali-property-dealer-in-mohali-08.webp": {
-    "mtime": 1780543516.861,
-    "ast_hash": "a80c99477eeb2264c304c9adbb8835fb",
+    "mtime": 1780905281.3085804,
+    "ast_hash": "19aa41ce1b5cf82a9e2d4eb8d6eac0df",
     "semantic_hash": ""
   },
   "public/assets/images/properties/ats-casa-espana-sector-121-mohali/realty-holding-and-management-consultants-ats-casa-espana-sector-121-mohali-property-dealer-in-mohali-09.webp": {
-    "mtime": 1780543551.889,
-    "ast_hash": "625ce5b2f093724208290c262a89e273",
+    "mtime": 1780905285.278061,
+    "ast_hash": "4f6b7042a322e0b89154dc1593414d4d",
     "semantic_hash": ""
   },
   "public/assets/images/properties/ats-casa-espana-sector-121-mohali/realty-holding-and-management-consultants-ats-casa-espana-sector-121-mohali-property-dealer-in-mohali-10.webp": {
-    "mtime": 1780543552.939,
-    "ast_hash": "e28afce27b4090e767534a5f0a0f8ec1",
+    "mtime": 1780905294.2438076,
+    "ast_hash": "c8803edb7729bc3942b41466ad4bfe98",
     "semantic_hash": ""
   },
   "public/assets/images/properties/ats-casa-espana-sector-121-mohali/realty-holding-and-management-consultants-ats-casa-espana-sector-121-mohali-property-dealer-in-mohali-11.webp": {
-    "mtime": 1780543554.316,
-    "ast_hash": "7d5c0267c342515f811a62353115628f",
+    "mtime": 1780905298.6896505,
+    "ast_hash": "6f1ba8152315f13973ab831e128e01df",
     "semantic_hash": ""
   },
   "public/assets/images/properties/ats-casa-espana-sector-121-mohali/realty-holding-and-management-consultants-ats-casa-espana-sector-121-mohali-property-dealer-in-mohali-12.webp": {
-    "mtime": 1780543521.447,
-    "ast_hash": "c44a00978d493b1e4d2fb33be59d573e",
+    "mtime": 1780905300.9748025,
+    "ast_hash": "250adfd5c019c32817a26d5d63a6a11a",
     "semantic_hash": ""
   },
   "public/assets/images/properties/ats-casa-espana-sector-121-mohali/realty-holding-and-management-consultants-ats-casa-espana-sector-121-mohali-property-dealer-in-mohali-13.webp": {
-    "mtime": 1780543521.963,
-    "ast_hash": "2ba69dbc20b9f52f0d1980f44f8558d3",
+    "mtime": 1780905302.3708482,
+    "ast_hash": "ec1a32a848ee033d4dfbd98d6176caaa",
     "semantic_hash": ""
   },
   "public/assets/images/properties/ats-casa-espana-sector-121-mohali/realty-holding-and-management-consultants-ats-casa-espana-sector-121-mohali-property-dealer-in-mohali-14.webp": {
-    "mtime": 1780543522.434,
-    "ast_hash": "c44a00978d493b1e4d2fb33be59d573e",
+    "mtime": 1780905303.588353,
+    "ast_hash": "250adfd5c019c32817a26d5d63a6a11a",
     "semantic_hash": ""
   },
   "public/assets/images/properties/bestech-park-view-residences-sector-66-mohali/realty-holding-and-management-consultants-bestech-park-view-residences-sector-66-mohali-property-dealer-in-mohali-01.webp": {
@@ -3470,8 +3460,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/bestech-park-view-residences-sector-66-mohali/realty-holding-and-management-consultants-bestech-park-view-residences-sector-66-mohali-property-dealer-in-mohali-02.webp": {
-    "mtime": 1780563919.505,
-    "ast_hash": "2027a2ba99dfe31e37ac71ab7e5c339b",
+    "mtime": 1780905304.8518188,
+    "ast_hash": "5d3d5b54af17276a0408cfaf3fd5dd7f",
     "semantic_hash": ""
   },
   "public/assets/images/properties/bestech-park-view-residences-sector-66-mohali/realty-holding-and-management-consultants-bestech-park-view-residences-sector-66-mohali-property-dealer-in-mohali-03.webp": {
@@ -3520,8 +3510,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/bestech-park-view-residences-sector-66-mohali/realty-holding-and-management-consultants-bestech-park-view-residences-sector-66-mohali-property-dealer-in-mohali-12.webp": {
-    "mtime": 1780543522.899,
-    "ast_hash": "6edb39b8c0b6d077321721c4c0064f3a",
+    "mtime": 1780905306.7628286,
+    "ast_hash": "37698b6c99b78841ee182373acc14e7c",
     "semantic_hash": ""
   },
   "public/assets/images/properties/bestech-park-view-residences-sector-66-mohali/realty-holding-and-management-consultants-bestech-park-view-residences-sector-66-mohali-property-dealer-in-mohali-13.webp": {
@@ -3550,13 +3540,13 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/bestech-park-view-residences-sector-66-mohali/realty-holding-and-management-consultants-bestech-park-view-residences-sector-66-mohali-property-dealer-in-mohali-18.webp": {
-    "mtime": 1780563923.601,
-    "ast_hash": "7ca00cb7c49bd2525d3cddd5ac558240",
+    "mtime": 1780905309.1984677,
+    "ast_hash": "fb687cb165133579280ac239e123ffcd",
     "semantic_hash": ""
   },
   "public/assets/images/properties/bestech-park-view-residences-sector-66-mohali/realty-holding-and-management-consultants-bestech-park-view-residences-sector-66-mohali-property-dealer-in-mohali-19.webp": {
-    "mtime": 1780563923.996,
-    "ast_hash": "99eab3bf363d74d86b8b9a89ba2f6e8c",
+    "mtime": 1780905311.349028,
+    "ast_hash": "609ec73dd06430f57e1fab70402caa65",
     "semantic_hash": ""
   },
   "public/assets/images/properties/bestech-park-view-residences-sector-66-mohali/realty-holding-and-management-consultants-bestech-park-view-residences-sector-66-mohali-property-dealer-in-mohali-20.webp": {
@@ -3565,8 +3555,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/bestech-park-view-residences-sector-66-mohali/realty-holding-and-management-consultants-bestech-park-view-residences-sector-66-mohali-property-dealer-in-mohali-21.webp": {
-    "mtime": 1780563924.465,
-    "ast_hash": "0b8f456aeda5bd6cc2db73e099685a85",
+    "mtime": 1780905313.2454824,
+    "ast_hash": "19b18f1b8103102fd133a5a824d7a26c",
     "semantic_hash": ""
   },
   "public/assets/images/properties/bestech-park-view-residences-sector-66-mohali/realty-holding-and-management-consultants-bestech-park-view-residences-sector-66-mohali-property-dealer-in-mohali-22.webp": {
@@ -3575,18 +3565,18 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/gillco-parkhills-sector-126-mohali/realty-holding-and-management-consultants-gillco-parkhills-sector-126-mohali-property-dealer-in-mohali-01.webp": {
-    "mtime": 1780543523.625,
-    "ast_hash": "690efacdd194af82f6e4d75e45688373",
+    "mtime": 1780905315.4872453,
+    "ast_hash": "34eb1e135d6270c19fd8ee9bcb17724d",
     "semantic_hash": ""
   },
   "public/assets/images/properties/gillco-parkhills-sector-126-mohali/realty-holding-and-management-consultants-gillco-parkhills-sector-126-mohali-property-dealer-in-mohali-02.webp": {
-    "mtime": 1779380646.999,
-    "ast_hash": "f7e5e5fff97785f95bd35199bc6e014d",
+    "mtime": 1780905318.378142,
+    "ast_hash": "22393656c3d5ff4a7c52749aacaf0392",
     "semantic_hash": ""
   },
   "public/assets/images/properties/gillco-parkhills-sector-126-mohali/realty-holding-and-management-consultants-gillco-parkhills-sector-126-mohali-property-dealer-in-mohali-03.webp": {
-    "mtime": 1779380647.389,
-    "ast_hash": "482f41d651ecd70f193f94e09d20a31b",
+    "mtime": 1780905320.5011826,
+    "ast_hash": "1e4a3d41c9490e10d8d27400a1c7c4a8",
     "semantic_hash": ""
   },
   "public/assets/images/properties/gillco-parkhills-sector-126-mohali/realty-holding-and-management-consultants-gillco-parkhills-sector-126-mohali-property-dealer-in-mohali-04.webp": {
@@ -3595,48 +3585,48 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/gillco-parkhills-sector-126-mohali/realty-holding-and-management-consultants-gillco-parkhills-sector-126-mohali-property-dealer-in-mohali-05.webp": {
-    "mtime": 1779380647.761,
-    "ast_hash": "4cdbaf80f34206021436c5437b364f9e",
+    "mtime": 1780905322.93349,
+    "ast_hash": "e3d1e64e3e3ddb43e4614a90616bc274",
     "semantic_hash": ""
   },
   "public/assets/images/properties/gillco-parkhills-sector-126-mohali/realty-holding-and-management-consultants-gillco-parkhills-sector-126-mohali-property-dealer-in-mohali-06.webp": {
-    "mtime": 1780543524.283,
-    "ast_hash": "a060c42ebe931d46e7c9a911acb0fd0a",
+    "mtime": 1780905325.1479504,
+    "ast_hash": "52163dbf05fd6002345ebe94e01a0f62",
     "semantic_hash": ""
   },
   "public/assets/images/properties/gillco-parkhills-sector-126-mohali/realty-holding-and-management-consultants-gillco-parkhills-sector-126-mohali-property-dealer-in-mohali-07.webp": {
-    "mtime": 1780543524.876,
-    "ast_hash": "eedb1fc9c354c31aba9e1f6df230a75e",
+    "mtime": 1780905327.426062,
+    "ast_hash": "147187333bdb5b7a7fe9ecdb86bc80b7",
     "semantic_hash": ""
   },
   "public/assets/images/properties/gillco-parkhills-sector-126-mohali/realty-holding-and-management-consultants-gillco-parkhills-sector-126-mohali-property-dealer-in-mohali-08.webp": {
-    "mtime": 1780543525.638,
-    "ast_hash": "2994d51c8886270f65846ff5a43379d4",
+    "mtime": 1780905330.299143,
+    "ast_hash": "a85a2f20943903f41fb9f5e55db486e5",
     "semantic_hash": ""
   },
   "public/assets/images/properties/gillco-parkhills-sector-126-mohali/realty-holding-and-management-consultants-gillco-parkhills-sector-126-mohali-property-dealer-in-mohali-09.webp": {
-    "mtime": 1780543555.685,
-    "ast_hash": "8e7603029041580e643c5f15b1b1ad01",
+    "mtime": 1780905332.9739697,
+    "ast_hash": "b38dc4c25a76b504e6c5506207e13e1f",
     "semantic_hash": ""
   },
   "public/assets/images/properties/gillco-parkhills-sector-126-mohali/realty-holding-and-management-consultants-gillco-parkhills-sector-126-mohali-property-dealer-in-mohali-10.webp": {
-    "mtime": 1779380649.883,
-    "ast_hash": "3480d476dbe569160822746a7aa9b2ae",
+    "mtime": 1780905337.0006864,
+    "ast_hash": "e8be61c8b7799efafdd385a662328ffd",
     "semantic_hash": ""
   },
   "public/assets/images/properties/gillco-parkhills-sector-126-mohali/realty-holding-and-management-consultants-gillco-parkhills-sector-126-mohali-property-dealer-in-mohali-11.webp": {
-    "mtime": 1780543527.055,
-    "ast_hash": "3e1309c27df44c05d4552e06db0853b5",
+    "mtime": 1780905339.2203653,
+    "ast_hash": "3b14a0b3eb6da227fff6e2f225f61eb6",
     "semantic_hash": ""
   },
   "public/assets/images/properties/gillco-parkhills-sector-126-mohali/realty-holding-and-management-consultants-gillco-parkhills-sector-126-mohali-property-dealer-in-mohali-12.webp": {
-    "mtime": 1780543527.691,
-    "ast_hash": "752e755bafdab0c4683d37d633b0c967",
+    "mtime": 1780905341.828433,
+    "ast_hash": "1b69753589cea7267b86ba015ab449d2",
     "semantic_hash": ""
   },
   "public/assets/images/properties/gillco-parkhills-sector-126-mohali/realty-holding-and-management-consultants-gillco-parkhills-sector-126-mohali-property-dealer-in-mohali-13.webp": {
-    "mtime": 1779380651.092,
-    "ast_hash": "569bfb6455c671353e8222342c4d0aa9",
+    "mtime": 1780905344.240087,
+    "ast_hash": "cfb19ce3069a6379b64ecd675503fee2",
     "semantic_hash": ""
   },
   "public/assets/images/properties/gillco-parkhills-sector-126-mohali/realty-holding-and-management-consultants-gillco-parkhills-sector-126-mohali-property-dealer-in-mohali-14.webp": {
@@ -3670,8 +3660,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/gillco-parkhills-sector-126-mohali/realty-holding-and-management-consultants-gillco-parkhills-sector-126-mohali-property-dealer-in-mohali-20.webp": {
-    "mtime": 1779380651.86,
-    "ast_hash": "ed5908ff539188655318937fd4ee8134",
+    "mtime": 1780905347.5356462,
+    "ast_hash": "9bb3f661967362118412c80ff3e0ef39",
     "semantic_hash": ""
   },
   "public/assets/images/properties/gillco-parkhills-sector-126-mohali/realty-holding-and-management-consultants-gillco-parkhills-sector-126-mohali-property-dealer-in-mohali-21.webp": {
@@ -3685,8 +3675,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/guru-teg-bahadur-society-sector-70-mohali/realty-holding-and-management-consultants-guru-teg-bahadur-society-sector-70-mohali-property-dealer-in-mohali-01.webp": {
-    "mtime": 1780543528.338,
-    "ast_hash": "cc4794a7ae3a29acb2df932f74f440d3",
+    "mtime": 1780905350.4969087,
+    "ast_hash": "1cb7a8739233e51257e94dbf6b3acbea",
     "semantic_hash": ""
   },
   "public/assets/images/properties/ivory-towers-by-icl-sector-70-mohali/realty-holding-and-management-consultants-ivory-towers-by-icl-sector-70-mohali-property-dealer-in-mohali-01.webp": {
@@ -3705,18 +3695,18 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/jal-vayu-vihar-sector-67-mohali/realty-holding-and-management-consultants-jal-vayu-vihar-sector-67-mohali-property-dealer-in-mohali-02.png": {
-    "mtime": 1779370652.43,
-    "ast_hash": "0e04629bc7aadefc13330d3318dc8af3",
+    "mtime": 1780905133.849086,
+    "ast_hash": "8a328adfdd62701c294cb63fce2f449c",
     "semantic_hash": ""
   },
   "public/assets/images/properties/jlpl-falcon-view-sector-66a-mohali/realty-holding-and-management-consultants-jlpl-falcon-view-sector-66a-mohali-property-dealer-in-mohali-01.webp": {
-    "mtime": 1779367625.2472012,
-    "ast_hash": "38a0f7a5b44416fd9c80c6c1cd62d1d3",
+    "mtime": 1780905353.6797001,
+    "ast_hash": "1412ec50e1e00cc66eb1a7e4d28eed1b",
     "semantic_hash": ""
   },
   "public/assets/images/properties/jlpl-falcon-view-sector-66a-mohali/realty-holding-and-management-consultants-jlpl-falcon-view-sector-66a-mohali-property-dealer-in-mohali-02.webp": {
-    "mtime": 1780563916.075,
-    "ast_hash": "b19a38a8bf25133c69623adb3315d29e",
+    "mtime": 1780905356.6099353,
+    "ast_hash": "69a7cc1dcb31c0b35fcd1ce78488fadb",
     "semantic_hash": ""
   },
   "public/assets/images/properties/jlpl-falcon-view-sector-66a-mohali/realty-holding-and-management-consultants-jlpl-falcon-view-sector-66a-mohali-property-dealer-in-mohali-03.webp": {
@@ -3725,28 +3715,28 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/jlpl-falcon-view-sector-66a-mohali/realty-holding-and-management-consultants-jlpl-falcon-view-sector-66a-mohali-property-dealer-in-mohali-04.webp": {
-    "mtime": 1780563916.555,
-    "ast_hash": "afc26e7b6b7104d9979acd8d3dd04fb3",
+    "mtime": 1780905360.1658394,
+    "ast_hash": "1e5c4a9446dbbf7d05f7246cf965ea24",
     "semantic_hash": ""
   },
   "public/assets/images/properties/jlpl-falcon-view-sector-66a-mohali/realty-holding-and-management-consultants-jlpl-falcon-view-sector-66a-mohali-property-dealer-in-mohali-05.webp": {
-    "mtime": 1780543529.427,
-    "ast_hash": "f62f6f16df7def4d199199b1863cd8be",
+    "mtime": 1780905362.060961,
+    "ast_hash": "9385e7ff7d588400325a9514074336cc",
     "semantic_hash": ""
   },
   "public/assets/images/properties/jlpl-falcon-view-sector-66a-mohali/realty-holding-and-management-consultants-jlpl-falcon-view-sector-66a-mohali-property-dealer-in-mohali-06.webp": {
-    "mtime": 1780563917.133,
-    "ast_hash": "981f2cc088e9a03679acca61c6f50c6c",
+    "mtime": 1780905366.4094074,
+    "ast_hash": "41a386e6ff3e705c267461b5f9c0b296",
     "semantic_hash": ""
   },
   "public/assets/images/properties/jlpl-falcon-view-sector-66a-mohali/realty-holding-and-management-consultants-jlpl-falcon-view-sector-66a-mohali-property-dealer-in-mohali-07.webp": {
-    "mtime": 1780563917.67,
-    "ast_hash": "7773b462549e04795316efa0be2214b6",
+    "mtime": 1780905369.4042542,
+    "ast_hash": "cccab3ac6596713703adc83013f3554f",
     "semantic_hash": ""
   },
   "public/assets/images/properties/jlpl-falcon-view-sector-66a-mohali/realty-holding-and-management-consultants-jlpl-falcon-view-sector-66a-mohali-property-dealer-in-mohali-08.webp": {
-    "mtime": 1780543530.005,
-    "ast_hash": "d2fdadcf0b01416df376a4c92dc7cc32",
+    "mtime": 1780905371.59717,
+    "ast_hash": "ab9ab7d26b9509f093115cad7ce654e3",
     "semantic_hash": ""
   },
   "public/assets/images/properties/jlpl-falcon-view-sector-66a-mohali/realty-holding-and-management-consultants-jlpl-falcon-view-sector-66a-mohali-property-dealer-in-mohali-09.webp": {
@@ -3785,18 +3775,18 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/jlpl-falcon-view-sector-66a-mohali/realty-holding-and-management-consultants-jlpl-falcon-view-sector-66a-mohali-property-dealer-in-mohali-16.webp": {
-    "mtime": 1780563918.218,
-    "ast_hash": "c7cd68e08ffb0c1402f7e54d4c516cd9",
+    "mtime": 1780905374.9908254,
+    "ast_hash": "1c10065abae54e785b63019fa4d4d84e",
     "semantic_hash": ""
   },
   "public/assets/images/properties/jlpl-falcon-view-sector-66a-mohali/realty-holding-and-management-consultants-jlpl-falcon-view-sector-66a-mohali-property-dealer-in-mohali-17.webp": {
-    "mtime": 1780563918.764,
-    "ast_hash": "1128821b5da71145ddc5f8f75c28c681",
+    "mtime": 1780905379.2352192,
+    "ast_hash": "0c7305f2d9260d1597eed86408546d66",
     "semantic_hash": ""
   },
   "public/assets/images/properties/jlpl-falcon-view-sector-66a-mohali/realty-holding-and-management-consultants-jlpl-falcon-view-sector-66a-mohali-property-dealer-in-mohali-18.webp": {
-    "mtime": 1780543556.903,
-    "ast_hash": "e803c615b11ac5c52869a78289d7bcc8",
+    "mtime": 1780905381.2106087,
+    "ast_hash": "0ed5209ab5d486f212fd060f453b7d6c",
     "semantic_hash": ""
   },
   "public/assets/images/properties/jlpl-galaxy-heights-sector-66a-mohali/realty-holding-and-management-consultants-jlpl-galaxy-heights-sector-66a-mohali-property-dealer-in-mohali-01.webp": {
@@ -3815,13 +3805,13 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/jlpl-galaxy-heights-sector-66a-mohali/realty-holding-and-management-consultants-jlpl-galaxy-heights-sector-66a-mohali-property-dealer-in-mohali-04.webp": {
-    "mtime": 1779378831.963,
-    "ast_hash": "5e7e500d5bccee0ce73141ac7bb7d29f",
+    "mtime": 1780905384.00157,
+    "ast_hash": "d97009ecd30f5604d19bd372f3c789b2",
     "semantic_hash": ""
   },
   "public/assets/images/properties/jlpl-galaxy-heights-sector-66a-mohali/realty-holding-and-management-consultants-jlpl-galaxy-heights-sector-66a-mohali-property-dealer-in-mohali-05.webp": {
-    "mtime": 1779378832.214,
-    "ast_hash": "ba04be69b68defcd3e0097aaaa18f7b3",
+    "mtime": 1780905386.1628158,
+    "ast_hash": "fc82221904ef8fa1f2410b8763566990",
     "semantic_hash": ""
   },
   "public/assets/images/properties/jlpl-galaxy-heights-sector-66a-mohali/realty-holding-and-management-consultants-jlpl-galaxy-heights-sector-66a-mohali-property-dealer-in-mohali-06.webp": {
@@ -3845,33 +3835,33 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/jubilee-city-gardens/realty-holding-and-management-consultants-jubilee-city-gardens-mohali-sector-116-01.webp": {
-    "mtime": 1780543557.422,
-    "ast_hash": "bfdf4102de2dff399bdbb8e9f0dcb7ab",
+    "mtime": 1780905389.4896307,
+    "ast_hash": "55035b6d7a94c5dbecddfbef896e3117",
     "semantic_hash": ""
   },
   "public/assets/images/properties/jubilee-city-gardens/realty-holding-and-management-consultants-jubilee-city-gardens-mohali-sector-116-02.webp": {
-    "mtime": 1780543558.159,
-    "ast_hash": "6079ac3ef4e311eb2d831c9f938b64e4",
+    "mtime": 1780905393.2074106,
+    "ast_hash": "799f226d332b5df34b91023ca9b58359",
     "semantic_hash": ""
   },
   "public/assets/images/properties/jubilee-city-gardens/realty-holding-and-management-consultants-jubilee-city-gardens-mohali-sector-116-03.webp": {
-    "mtime": 1780543559.783,
-    "ast_hash": "e1d7af7e29a951b03c41e1ae93068955",
+    "mtime": 1780905395.8120754,
+    "ast_hash": "d161a5af3ed4b48990086e3640f6e82e",
     "semantic_hash": ""
   },
   "public/assets/images/properties/jubilee-city-gardens/realty-holding-and-management-consultants-jubilee-city-gardens-mohali-sector-116-04.webp": {
-    "mtime": 1780543560.317,
-    "ast_hash": "2764086b16d8c22e7ac6ca61d8157055",
+    "mtime": 1780905397.8691053,
+    "ast_hash": "6110b9e44c5b3de82c8146b737dc0e67",
     "semantic_hash": ""
   },
   "public/assets/images/properties/jubilee-city-gardens/realty-holding-and-management-consultants-jubilee-city-gardens-mohali-sector-116-05.webp": {
-    "mtime": 1780543561.041,
-    "ast_hash": "ceec6c6306a5b248bc94fd463287c34f",
+    "mtime": 1780905399.8423872,
+    "ast_hash": "aa9af71da7770a1512630cfea226e7c6",
     "semantic_hash": ""
   },
   "public/assets/images/properties/jubilee-city-gardens/realty-holding-and-management-consultants-jubilee-city-gardens-mohali-sector-116-06.webp": {
-    "mtime": 1780543561.597,
-    "ast_hash": "4031e7cf448d6b3c2cb2b8a62998b685",
+    "mtime": 1780905402.3899848,
+    "ast_hash": "f3dbb92f7c2bd2145ff784c22198e938",
     "semantic_hash": ""
   },
   "public/assets/images/properties/jubilee-city-gardens/realty-holding-and-management-consultants-jubilee-city-gardens-mohali-sector-116-07.webp": {
@@ -3880,53 +3870,53 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/jubilee-city-gardens/realty-holding-and-management-consultants-jubilee-city-gardens-mohali-sector-116-08.webp": {
-    "mtime": 1780543562.855,
-    "ast_hash": "3eb89679b205af050fcf6f75ce43cb93",
+    "mtime": 1780905404.473656,
+    "ast_hash": "92a0685c4a9ae53c753eca96fd718fc7",
     "semantic_hash": ""
   },
   "public/assets/images/properties/jubilee-city-gardens/realty-holding-and-management-consultants-jubilee-city-gardens-mohali-sector-116-09.webp": {
-    "mtime": 1780543563.55,
-    "ast_hash": "3433e69413c76b89ab804ce226e4bbbe",
+    "mtime": 1780905406.4406617,
+    "ast_hash": "6b051eaa57ca50c368e74d3de4466f9d",
     "semantic_hash": ""
   },
   "public/assets/images/properties/jubilee-city-gardens/realty-holding-and-management-consultants-jubilee-city-gardens-mohali-sector-116-10.webp": {
-    "mtime": 1780543564.227,
-    "ast_hash": "8cf7687657bc0ed291578c32de83eaf0",
+    "mtime": 1780905408.2326813,
+    "ast_hash": "0089a4bd7f077d59a34bdaa574681799",
     "semantic_hash": ""
   },
   "public/assets/images/properties/jubilee-city-gardens/realty-holding-and-management-consultants-jubilee-city-gardens-mohali-sector-116-11.webp": {
-    "mtime": 1780563871.28,
-    "ast_hash": "84d9f972cd26125d9b66ccd29adf8ea5",
+    "mtime": 1780905411.3278089,
+    "ast_hash": "1e9e2d5b83d320806b3698c1d87487ff",
     "semantic_hash": ""
   },
   "public/assets/images/properties/jubilee-city-gardens/realty-holding-and-management-consultants-jubilee-city-gardens-mohali-sector-116-12.webp": {
-    "mtime": 1780543564.886,
-    "ast_hash": "c0ff9e640874ec8620443188d3ff03ec",
+    "mtime": 1780905413.486496,
+    "ast_hash": "57373e233f2d89fe783e4f32b5093358",
     "semantic_hash": ""
   },
   "public/assets/images/properties/jubilee-city-gardens/realty-holding-and-management-consultants-jubilee-city-gardens-mohali-sector-116-13.webp": {
-    "mtime": 1780543565.686,
-    "ast_hash": "c5eb571c4359b06b6912d11672d1e034",
+    "mtime": 1780905415.4978335,
+    "ast_hash": "b8284dafb5c6b00f0f2ac3d4a64123d6",
     "semantic_hash": ""
   },
   "public/assets/images/properties/jubilee-city-gardens/realty-holding-and-management-consultants-jubilee-city-gardens-mohali-sector-116-14.webp": {
-    "mtime": 1780563871.768,
-    "ast_hash": "ec4731a351fdacb2366ff91e6f5dd8e3",
+    "mtime": 1780905418.3648922,
+    "ast_hash": "62816fc1ec936f64e720885f55cc6533",
     "semantic_hash": ""
   },
   "public/assets/images/properties/jubilee-twinto-sector-112-mohali/realty-holding-and-management-consultants-jubilee-twinto-sector-112-mohali-property-dealer-in-mohali-01.webp": {
-    "mtime": 1780563860.411,
-    "ast_hash": "d773e694b4a9f9d6a3b487ca2f6b5e55",
+    "mtime": 1780905421.9981077,
+    "ast_hash": "008a83161d4b43a017a3a85ff0bd7922",
     "semantic_hash": ""
   },
   "public/assets/images/properties/jubilee-twinto-sector-112-mohali/realty-holding-and-management-consultants-jubilee-twinto-sector-112-mohali-property-dealer-in-mohali-02.webp": {
-    "mtime": 1780543566.4,
-    "ast_hash": "066242d5d0573fcfac9266083839e543",
+    "mtime": 1780905425.7540238,
+    "ast_hash": "d2a197af061866d9e144f3349a60ecad",
     "semantic_hash": ""
   },
   "public/assets/images/properties/jubilee-twinto-sector-112-mohali/realty-holding-and-management-consultants-jubilee-twinto-sector-112-mohali-property-dealer-in-mohali-03.webp": {
-    "mtime": 1780543567.405,
-    "ast_hash": "b858bbf1a9af6a804e8907dbf4c99116",
+    "mtime": 1780905429.0145848,
+    "ast_hash": "dad5dba5b83332c2b617644068184716",
     "semantic_hash": ""
   },
   "public/assets/images/properties/jubilee-vallum-sector-91-mohali/realty-holding-and-management-consultants-jubilee-vallum-sector-91-mohali-property-dealer-in-mohali-01.webp": {
@@ -3960,8 +3950,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/klv-signature-towers-sector-66a-mohali/realty-holding-and-management-consultants-klv-signature-towers-sector-66a-mohali-property-dealer-in-mohali-02.webp": {
-    "mtime": 1780563885.548,
-    "ast_hash": "fcdc53142fe7abf63c1b12b9f17ac07b",
+    "mtime": 1780905432.433033,
+    "ast_hash": "a5de0c57dde0a151b95d709d86b241f4",
     "semantic_hash": ""
   },
   "public/assets/images/properties/klv-signature-towers-sector-66a-mohali/realty-holding-and-management-consultants-klv-signature-towers-sector-66a-mohali-property-dealer-in-mohali-03.webp": {
@@ -4010,8 +4000,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/marbella-twin-towers-new-chandigarh-mullanpur/realty-holding-and-management-consultants-marbella-twin-towers-new-chandigarh-mullanpur-property-dealer-in-mohali-02.webp": {
-    "mtime": 1779378827.476,
-    "ast_hash": "dc583b78be0230bd6731c11787d9b5cb",
+    "mtime": 1780905434.388172,
+    "ast_hash": "486a141449204966cf66c66802cfcbc9",
     "semantic_hash": ""
   },
   "public/assets/images/properties/marbella-twin-towers-new-chandigarh-mullanpur/realty-holding-and-management-consultants-marbella-twin-towers-new-chandigarh-mullanpur-property-dealer-in-mohali-03.webp": {
@@ -4030,8 +4020,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/marbella-twin-towers-new-chandigarh-mullanpur/realty-holding-and-management-consultants-marbella-twin-towers-new-chandigarh-mullanpur-property-dealer-in-mohali-06.webp": {
-    "mtime": 1779378827.859,
-    "ast_hash": "efb0d6d68d42857fdfcb0463e8f6d1c8",
+    "mtime": 1780905436.8166256,
+    "ast_hash": "53b3b6918c6b8b860a8d2e69169581b5",
     "semantic_hash": ""
   },
   "public/assets/images/properties/marbella-twin-towers-new-chandigarh-mullanpur/realty-holding-and-management-consultants-marbella-twin-towers-new-chandigarh-mullanpur-property-dealer-in-mohali-07.webp": {
@@ -4040,8 +4030,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/marbella-twin-towers-new-chandigarh-mullanpur/realty-holding-and-management-consultants-marbella-twin-towers-new-chandigarh-mullanpur-property-dealer-in-mohali-08.webp": {
-    "mtime": 1779378828.139,
-    "ast_hash": "dc583b78be0230bd6731c11787d9b5cb",
+    "mtime": 1780905438.1539667,
+    "ast_hash": "486a141449204966cf66c66802cfcbc9",
     "semantic_hash": ""
   },
   "public/assets/images/properties/marbella-twin-towers-new-chandigarh-mullanpur/realty-holding-and-management-consultants-marbella-twin-towers-new-chandigarh-mullanpur-property-dealer-in-mohali-09.webp": {
@@ -4060,18 +4050,18 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/mundi-cooperative-complex-sector-70-mohali/realty-holding-and-management-consultants-mundi-cooperative-complex-sector-70-mohali-property-dealer-in-mohali-01.webp": {
-    "mtime": 1780543568.247,
-    "ast_hash": "1f7072b7e0bfa531f2af495b3d609da3",
+    "mtime": 1780905441.010664,
+    "ast_hash": "2e200ffef2543aef8e725843a8f45df7",
     "semantic_hash": ""
   },
   "public/assets/images/properties/mundi-cooperative-complex-sector-70-mohali/realty-holding-and-management-consultants-mundi-cooperative-complex-sector-70-mohali-property-dealer-in-mohali-02.webp": {
-    "mtime": 1780543569.023,
-    "ast_hash": "23d5e9257bfce7d1eb6764200ff4901d",
+    "mtime": 1780905443.1979077,
+    "ast_hash": "a49b3abb346368db65001c972b32cfb1",
     "semantic_hash": ""
   },
   "public/assets/images/properties/noble-magnollia-sector-88-mohali/realty-holding-and-management-consultants-noble-magnollia-sector-88-mohali-property-dealer-in-mohali-01.webp": {
-    "mtime": 1780563872.329,
-    "ast_hash": "942bc8548e7f5e80c1740f0afb65e5ed",
+    "mtime": 1780905445.8925145,
+    "ast_hash": "5e60704cbf353193b092c938d423ca44",
     "semantic_hash": ""
   },
   "public/assets/images/properties/noble-magnollia-sector-88-mohali/realty-holding-and-management-consultants-noble-magnollia-sector-88-mohali-property-dealer-in-mohali-02.webp": {
@@ -4085,8 +4075,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/noble-magnollia-sector-88-mohali/realty-holding-and-management-consultants-noble-magnollia-sector-88-mohali-property-dealer-in-mohali-04.webp": {
-    "mtime": 1780543569.843,
-    "ast_hash": "3b42072accd44679a0c38dbc92b8f1dd",
+    "mtime": 1780905449.0391223,
+    "ast_hash": "d2c95b93c61e3bcedac0cc6ebe824601",
     "semantic_hash": ""
   },
   "public/assets/images/properties/noble-magnollia-sector-88-mohali/realty-holding-and-management-consultants-noble-magnollia-sector-88-mohali-property-dealer-in-mohali-05.webp": {
@@ -4095,8 +4085,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/noble-magnollia-sector-88-mohali/realty-holding-and-management-consultants-noble-magnollia-sector-88-mohali-property-dealer-in-mohali-06.webp": {
-    "mtime": 1780563872.794,
-    "ast_hash": "beaa3881c009631e433972415db0b17b",
+    "mtime": 1780905451.2880106,
+    "ast_hash": "1f8c6a198b24ae11b2e933b76c4d6c94",
     "semantic_hash": ""
   },
   "public/assets/images/properties/noble-magnollia-sector-88-mohali/realty-holding-and-management-consultants-noble-magnollia-sector-88-mohali-property-dealer-in-mohali-07.webp": {
@@ -4105,8 +4095,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/noble-magnollia-sector-88-mohali/realty-holding-and-management-consultants-noble-magnollia-sector-88-mohali-property-dealer-in-mohali-08.webp": {
-    "mtime": 1780563872.978,
-    "ast_hash": "c20d3ce490a74730120375cacc77cdb4",
+    "mtime": 1780905453.0028336,
+    "ast_hash": "4ffe078a40d858710b539d2bdccb4e0c",
     "semantic_hash": ""
   },
   "public/assets/images/properties/noble-magnollia-sector-88-mohali/realty-holding-and-management-consultants-noble-magnollia-sector-88-mohali-property-dealer-in-mohali-09.webp": {
@@ -4120,8 +4110,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/noble-magnollia-sector-88-mohali/realty-holding-and-management-consultants-noble-magnollia-sector-88-mohali-property-dealer-in-mohali-11.webp": {
-    "mtime": 1780563873.372,
-    "ast_hash": "2b42c2b2dedd167fe6a74d58b867da2c",
+    "mtime": 1780905457.1392157,
+    "ast_hash": "69b65701e099495f26c6197a98a116fc",
     "semantic_hash": ""
   },
   "public/assets/images/properties/noble-magnollia-sector-88-mohali/realty-holding-and-management-consultants-noble-magnollia-sector-88-mohali-property-dealer-in-mohali-12.webp": {
@@ -4140,8 +4130,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/noble-magnollia-sector-88-mohali/realty-holding-and-management-consultants-noble-magnollia-sector-88-mohali-property-dealer-in-mohali-15.webp": {
-    "mtime": 1780563873.969,
-    "ast_hash": "04c7c21d0803b4850873a32f3cc49b9a",
+    "mtime": 1780905459.1298287,
+    "ast_hash": "365160bf586efcc4055bd8690b0e47a0",
     "semantic_hash": ""
   },
   "public/assets/images/properties/noble-magnollia-sector-88-mohali/realty-holding-and-management-consultants-noble-magnollia-sector-88-mohali-property-dealer-in-mohali-16.webp": {
@@ -4165,8 +4155,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/noble-magnollia-sector-88-mohali/realty-holding-and-management-consultants-noble-magnollia-sector-88-mohali-property-dealer-in-mohali-20.webp": {
-    "mtime": 1780543570.479,
-    "ast_hash": "315370d14c64aa8ef8171b1c203fddff",
+    "mtime": 1780905462.1862152,
+    "ast_hash": "cfc8e663dce2ce823c50b6c2bdd1f76e",
     "semantic_hash": ""
   },
   "public/assets/images/properties/noble-magnollia-sector-88-mohali/realty-holding-and-management-consultants-noble-magnollia-sector-88-mohali-property-dealer-in-mohali-21.webp": {
@@ -4200,8 +4190,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/noble-magnollia-sector-88-mohali/realty-holding-and-management-consultants-noble-magnollia-sector-88-mohali-property-dealer-in-mohali-27.webp": {
-    "mtime": 1780563874.658,
-    "ast_hash": "787bf22bcdcf4f936721c7a13ff32417",
+    "mtime": 1780905465.1537352,
+    "ast_hash": "d0eff70aa34f9e7a810d474e632af85c",
     "semantic_hash": ""
   },
   "public/assets/images/properties/noble-magnollia-sector-88-mohali/realty-holding-and-management-consultants-noble-magnollia-sector-88-mohali-property-dealer-in-mohali-28.webp": {
@@ -4225,33 +4215,33 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/noble-magnollia-sector-88-mohali/realty-holding-and-management-consultants-noble-magnollia-sector-88-mohali-property-dealer-in-mohali-32.webp": {
-    "mtime": 1780563875.35,
-    "ast_hash": "870335eb2f72d390af615e1b1e1ad988",
+    "mtime": 1780905467.2190144,
+    "ast_hash": "6fb936ddd248f8f176eb76b5ad01210b",
     "semantic_hash": ""
   },
   "public/assets/images/properties/scl-employees-cooperative-sector-70-mohali/realty-holding-and-management-consultants-scl-employees-cooperative-sector-70-mohali-property-dealer-in-mohali-01.webp": {
-    "mtime": 1780543571.155,
-    "ast_hash": "c543ebec7675523119e91882b8600a49",
+    "mtime": 1780905469.9187784,
+    "ast_hash": "d6755cc12260131c592a7cf42a7a11cd",
     "semantic_hash": ""
   },
   "public/assets/images/properties/scl-employees-cooperative-sector-70-mohali/realty-holding-and-management-consultants-scl-employees-cooperative-sector-70-mohali-property-dealer-in-mohali-02.webp": {
-    "mtime": 1780543571.993,
-    "ast_hash": "97bc9c6f4be9250d067f304821a6a5c4",
+    "mtime": 1780905473.1820767,
+    "ast_hash": "9b5a3f3aaee6142ab2fac705126bb565",
     "semantic_hash": ""
   },
   "public/assets/images/properties/shri-guru-teg-bahadur-cooperative-housing-complex-sector-70-mohali/realty-holding-and-management-consultants-shri-guru-teg-bahadur-cooperative-housing-complex-sector-70-mohali-property-dealer-in-mohali-01.webp": {
-    "mtime": 1780543572.767,
-    "ast_hash": "27fd87c5cf53c161123cf71bd8c29558",
+    "mtime": 1780905475.8311844,
+    "ast_hash": "f1d835c56d533bd618cf4d08f6fc0b68",
     "semantic_hash": ""
   },
   "public/assets/images/properties/sri-guru-har-rai-sahib-cooperative-housing-complex-sector-67-mohali/realty-holding-and-management-consultants-sri-guru-har-rai-sahib-cooperative-housing-complex-sector-67-mohali-property-dealer-in-mohali-01.png": {
-    "mtime": 1779366805.6658351,
-    "ast_hash": "adbb05264159a819ff0154edbae826af",
+    "mtime": 1780905135.3658986,
+    "ast_hash": "9bfc49c475bdf57b4def367e191f28d2",
     "semantic_hash": ""
   },
   "public/assets/images/properties/the-medallion-nova-sector-66-mohali/realty-holding-and-management-consultants-the-medallion-nova-sector-66-mohali-property-dealer-in-mohali-01.webp": {
-    "mtime": 1780563931.401,
-    "ast_hash": "46404799c4e3805bef0f7ec3095d701e",
+    "mtime": 1780905477.9806337,
+    "ast_hash": "fea6206370e790049c8856183e08af4c",
     "semantic_hash": ""
   },
   "public/assets/images/properties/the-medallion-nova-sector-66-mohali/realty-holding-and-management-consultants-the-medallion-nova-sector-66-mohali-property-dealer-in-mohali-02.webp": {
@@ -4265,8 +4255,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/the-medallion-nova-sector-66-mohali/realty-holding-and-management-consultants-the-medallion-nova-sector-66-mohali-property-dealer-in-mohali-04.webp": {
-    "mtime": 1780563931.844,
-    "ast_hash": "903a9db39246f184b502c6a83dc1e47a",
+    "mtime": 1780905480.0446618,
+    "ast_hash": "54ea0bb230a92008611587a2aa214f79",
     "semantic_hash": ""
   },
   "public/assets/images/properties/the-medallion-nova-sector-66-mohali/realty-holding-and-management-consultants-the-medallion-nova-sector-66-mohali-property-dealer-in-mohali-05.webp": {
@@ -4290,13 +4280,13 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/the-medallion-nova-sector-66-mohali/realty-holding-and-management-consultants-the-medallion-nova-sector-66-mohali-property-dealer-in-mohali-09.webp": {
-    "mtime": 1779367832.0013595,
-    "ast_hash": "37691aee121cc58dff9a561d80bcdc62",
+    "mtime": 1780905482.7790196,
+    "ast_hash": "3eeffde4167d241de9c688b643ce92e0",
     "semantic_hash": ""
   },
   "public/assets/images/properties/the-medallion-nova-sector-66-mohali/realty-holding-and-management-consultants-the-medallion-nova-sector-66-mohali-property-dealer-in-mohali-10.webp": {
-    "mtime": 1779367831.3242483,
-    "ast_hash": "a297dbc6436eaafe35d60f1e76496022",
+    "mtime": 1780905486.5563197,
+    "ast_hash": "c000360d0c4b170e5b69642a5a060c6d",
     "semantic_hash": ""
   },
   "public/assets/images/properties/the-medallion-nova-sector-66-mohali/realty-holding-and-management-consultants-the-medallion-nova-sector-66-mohali-property-dealer-in-mohali-11.webp": {
@@ -4315,13 +4305,13 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/the-medallion-nova-sector-66-mohali/realty-holding-and-management-consultants-the-medallion-nova-sector-66-mohali-property-dealer-in-mohali-14.webp": {
-    "mtime": 1780563932.672,
-    "ast_hash": "196a758db6263f3e25c0ed66bac16594",
+    "mtime": 1780905489.7028482,
+    "ast_hash": "1fc66144ad92b159f2ae54cfde1afd3d",
     "semantic_hash": ""
   },
   "public/assets/images/properties/the-medallion-nova-sector-66-mohali/realty-holding-and-management-consultants-the-medallion-nova-sector-66-mohali-property-dealer-in-mohali-15.webp": {
-    "mtime": 1779367833.303436,
-    "ast_hash": "c4c5066f57e4ba5c965b2b8e7a5f7777",
+    "mtime": 1780905493.2173376,
+    "ast_hash": "8a2d6ce085372ea335b1821f9bbb4ca9",
     "semantic_hash": ""
   },
   "public/assets/images/properties/the-medallion-nova-sector-66-mohali/realty-holding-and-management-consultants-the-medallion-nova-sector-66-mohali-property-dealer-in-mohali-16.webp": {
@@ -4330,8 +4320,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/the-medallion-nova-sector-66-mohali/realty-holding-and-management-consultants-the-medallion-nova-sector-66-mohali-property-dealer-in-mohali-17.webp": {
-    "mtime": 1780563933.127,
-    "ast_hash": "da65a68d79e48ed5968a8d9906725e6b",
+    "mtime": 1780905496.8432736,
+    "ast_hash": "ca99d2f9d9c8a7613802605552f37253",
     "semantic_hash": ""
   },
   "public/assets/images/properties/the-medallion-nova-sector-66-mohali/realty-holding-and-management-consultants-the-medallion-nova-sector-66-mohali-property-dealer-in-mohali-18.webp": {
@@ -4370,8 +4360,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/the-medallion-sector-82-mohali/realty-holding-and-management-consultants-the-medallion-sector-82-mohali-property-dealer-in-mohali-01.jpg": {
-    "mtime": 1779367265.6789217,
-    "ast_hash": "201132e2a6666d262e357496a799bb44",
+    "mtime": 1780905138.4713671,
+    "ast_hash": "bdfd6d87b0924294d1d47e711a07c981",
     "semantic_hash": ""
   },
   "public/assets/images/properties/the-medallion-sector-82-mohali/realty-holding-and-management-consultants-the-medallion-sector-82-mohali-property-dealer-in-mohali-02.jpg": {
@@ -4380,18 +4370,18 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/the-medallion-sector-82-mohali/realty-holding-and-management-consultants-the-medallion-sector-82-mohali-property-dealer-in-mohali-03.jpg": {
-    "mtime": 1779367265.1688683,
-    "ast_hash": "7356a919c6d079a31484abb25087d332",
+    "mtime": 1780905141.3888135,
+    "ast_hash": "06bddf4b5d9ecd7d7afe20de364e7d64",
     "semantic_hash": ""
   },
   "public/assets/images/properties/the-medallion-sector-82-mohali/realty-holding-and-management-consultants-the-medallion-sector-82-mohali-property-dealer-in-mohali-04.jpg": {
-    "mtime": 1779367265.003163,
-    "ast_hash": "c6aef8df9a475367204317bc0ddf67a0",
+    "mtime": 1780905144.5324283,
+    "ast_hash": "bda0f73c54446178bf2395ae08c34b7a",
     "semantic_hash": ""
   },
   "public/assets/images/properties/the-medallion-sector-82-mohali/realty-holding-and-management-consultants-the-medallion-sector-82-mohali-property-dealer-in-mohali-05.jpg": {
-    "mtime": 1779367264.8430314,
-    "ast_hash": "b15ada6b21f62630cf74fb8d38a3985d",
+    "mtime": 1780905147.3060942,
+    "ast_hash": "8d290a1439deb626fc44db5fb1935f00",
     "semantic_hash": ""
   },
   "public/assets/images/properties/the-medallion-sector-82-mohali/realty-holding-and-management-consultants-the-medallion-sector-82-mohali-property-dealer-in-mohali-06.webp": {
@@ -4400,53 +4390,53 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/the-medallion-sector-82-mohali/realty-holding-and-management-consultants-the-medallion-sector-82-mohali-property-dealer-in-mohali-07.webp": {
-    "mtime": 1780563902.802,
-    "ast_hash": "d19beabd69dc54d25f04a961e2cb59cc",
+    "mtime": 1780905500.9000137,
+    "ast_hash": "a01776876959ba503946f5ff06cdb32e",
     "semantic_hash": ""
   },
   "public/assets/images/properties/the-medallion-sector-82-mohali/realty-holding-and-management-consultants-the-medallion-sector-82-mohali-property-dealer-in-mohali-08.webp": {
-    "mtime": 1780563903.16,
-    "ast_hash": "43ba1f7e1565ffa8094b4e3b18de61f0",
+    "mtime": 1780905504.5718422,
+    "ast_hash": "7a83a6e443ee30980b67e631a3396daf",
     "semantic_hash": ""
   },
   "public/assets/images/properties/the-medallion-sector-82-mohali/realty-holding-and-management-consultants-the-medallion-sector-82-mohali-property-dealer-in-mohali-09.webp": {
-    "mtime": 1780563903.483,
-    "ast_hash": "b03b307c24abc48643863c96d64b1597",
+    "mtime": 1780905507.7501411,
+    "ast_hash": "6f428512b41bded28e9e10ea677f177d",
     "semantic_hash": ""
   },
   "public/assets/images/properties/the-medallion-sector-82-mohali/realty-holding-and-management-consultants-the-medallion-sector-82-mohali-property-dealer-in-mohali-10.webp": {
-    "mtime": 1780563903.813,
-    "ast_hash": "cb176677b412fb69a025cf93bd707b7b",
+    "mtime": 1780905511.8650777,
+    "ast_hash": "498d01beb5598e12a5101a9a367e69d4",
     "semantic_hash": ""
   },
   "public/assets/images/properties/the-medallion-sector-82-mohali/realty-holding-and-management-consultants-the-medallion-sector-82-mohali-property-dealer-in-mohali-11.webp": {
-    "mtime": 1780563904.121,
-    "ast_hash": "5d00c0d79eabe21e57cde1be0682770a",
+    "mtime": 1780905514.4278822,
+    "ast_hash": "7c07d313c5105e738ccb3b5f9ad30a81",
     "semantic_hash": ""
   },
   "public/assets/images/properties/the-medallion-sector-82-mohali/realty-holding-and-management-consultants-the-medallion-sector-82-mohali-property-dealer-in-mohali-12.webp": {
-    "mtime": 1780563904.416,
-    "ast_hash": "d2d51c93240849ca7804bb69a37d8250",
+    "mtime": 1780905518.3722343,
+    "ast_hash": "f2a88bbbf3c65efb905ea4c4e5257dfa",
     "semantic_hash": ""
   },
   "public/assets/images/properties/the-medallion-sector-82-mohali/realty-holding-and-management-consultants-the-medallion-sector-82-mohali-property-dealer-in-mohali-13.webp": {
-    "mtime": 1780563904.752,
-    "ast_hash": "f145f10b551a20dc04cb5036359362e9",
+    "mtime": 1780905522.0131485,
+    "ast_hash": "fe4378bdf3e0871b4aef7656577294d6",
     "semantic_hash": ""
   },
   "public/assets/images/properties/the-medallion-sector-82-mohali/realty-holding-and-management-consultants-the-medallion-sector-82-mohali-property-dealer-in-mohali-14.webp": {
-    "mtime": 1780563905.136,
-    "ast_hash": "54b3c6c5f60a72fc5e0404313d22887f",
+    "mtime": 1780905524.7717884,
+    "ast_hash": "ff3529937d5377366c8e38a08765ebf7",
     "semantic_hash": ""
   },
   "public/assets/images/properties/the-medallion-sector-82-mohali/realty-holding-and-management-consultants-the-medallion-sector-82-mohali-property-dealer-in-mohali-15.webp": {
-    "mtime": 1780563905.45,
-    "ast_hash": "cfeeb97279f728ab1f0c3f59fa1a3fff",
+    "mtime": 1780905526.4600956,
+    "ast_hash": "de0bdffdd6d0ccaddd1cc00743d3eb82",
     "semantic_hash": ""
   },
   "public/assets/images/properties/the-medallion-sector-82-mohali/realty-holding-and-management-consultants-the-medallion-sector-82-mohali-property-dealer-in-mohali-16.webp": {
-    "mtime": 1779367268.6275198,
-    "ast_hash": "af759f776ac8fe44b5653bde48c6e952",
+    "mtime": 1780905530.1084611,
+    "ast_hash": "c9deccbe838f11a69407642271e83a96",
     "semantic_hash": ""
   },
   "public/assets/images/properties/the-medallion-sector-82-mohali/realty-holding-and-management-consultants-the-medallion-sector-82-mohali-property-dealer-in-mohali-17.webp": {
@@ -4500,8 +4490,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/properties/united-cooperative-society-sector-68-mohali/realty-holding-and-management-consultants-united-cooperative-society-sector-68-mohali-property-dealer-in-mohali-01.png": {
-    "mtime": 1779370674.548,
-    "ast_hash": "a692ce419a3231887da77c0fc5630a83",
+    "mtime": 1780905149.9526598,
+    "ast_hash": "18561898f989d10ad27ec1f5b723b7d9",
     "semantic_hash": ""
   },
   "public/assets/images/source/ind_infra_1.jpg": {
@@ -4530,8 +4520,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/source/ind_legal_2.jpg": {
-    "mtime": 1777309663.619302,
-    "ast_hash": "d957fd4d580fec4ff46c8eb1b52a9c4b",
+    "mtime": 1780905153.508254,
+    "ast_hash": "d41c2a39270d0b31811819113cc91524",
     "semantic_hash": ""
   },
   "public/assets/images/source/ind_legal_clean.webp": {
@@ -4550,8 +4540,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/source/ind_lux_final.webp": {
-    "mtime": 1780543577.792,
-    "ast_hash": "b14786726c01a8661c1e753df0d2dd4a",
+    "mtime": 1780905541.295252,
+    "ast_hash": "d26bb9a8613bf1606b09baa624b9cb70",
     "semantic_hash": ""
   },
   "public/assets/images/source/ind_office_clean.jpg": {
@@ -4560,8 +4550,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/source/ind_work_1.jpg": {
-    "mtime": 1777309663.6480558,
-    "ast_hash": "4f63bd8ab2d26ea998d6df403acdfc41",
+    "mtime": 1780905154.8848608,
+    "ast_hash": "20b8bf6adf7d061ffb293a57af9bf652",
     "semantic_hash": ""
   },
   "public/assets/images/source/ind_work_final.jpg": {
@@ -4570,8 +4560,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/source/india_modern_skyline.webp": {
-    "mtime": 1780543575.781,
-    "ast_hash": "e39c26960549a20fc55ba8dc5313bb55",
+    "mtime": 1780905538.2150195,
+    "ast_hash": "37ad53721508488c01be1e8365d1657f",
     "semantic_hash": ""
   },
   "public/assets/images/source/india_office_clean.webp": {
@@ -4585,13 +4575,13 @@
     "semantic_hash": ""
   },
   "public/assets/images/source/indian_lux_premium.webp": {
-    "mtime": 1780543574.295,
-    "ast_hash": "b14786726c01a8661c1e753df0d2dd4a",
+    "mtime": 1780905535.3059444,
+    "ast_hash": "d26bb9a8613bf1606b09baa624b9cb70",
     "semantic_hash": ""
   },
   "public/assets/images/source/indian_office_premium.jpg": {
-    "mtime": 1777309663.6748292,
-    "ast_hash": "4f63bd8ab2d26ea998d6df403acdfc41",
+    "mtime": 1780905151.533707,
+    "ast_hash": "20b8bf6adf7d061ffb293a57af9bf652",
     "semantic_hash": ""
   },
   "public/assets/images/source/logo_rera.png": {
@@ -4615,8 +4605,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/source/mohali_infra_premium.jpg": {
-    "mtime": 1777309663.6862967,
-    "ast_hash": "a8b9cda207c263952cea18bec7fd8c7a",
+    "mtime": 1780905157.7932627,
+    "ast_hash": "f29a14ea92f4202fbab18cb2a71b9737",
     "semantic_hash": ""
   },
   "public/assets/images/source/mohali_infra_wide.jpg": {
@@ -4630,8 +4620,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/source/mohali_lux_2.jpg": {
-    "mtime": 1777309663.6947238,
-    "ast_hash": "ff730fbd8ded9d39b6bbab8a84d98f09",
+    "mtime": 1780905161.1040783,
+    "ast_hash": "282ce997568c380640a8067da7357fce",
     "semantic_hash": ""
   },
   "public/assets/images/source/mohali_marbella.jpg": {
@@ -4675,13 +4665,13 @@
     "semantic_hash": ""
   },
   "public/assets/images/source/punjab_land_2.webp": {
-    "mtime": 1780543579.183,
-    "ast_hash": "f811a380099fdfc5817f0a7f928b4de1",
+    "mtime": 1780905544.1929212,
+    "ast_hash": "9011910a92e21f4e80bcfacac9ed9606",
     "semantic_hash": ""
   },
   "public/assets/images/source/punjab_land_3.webp": {
-    "mtime": 1780543579.84,
-    "ast_hash": "7b06272cd8ad422d716945081e436710",
+    "mtime": 1780905546.8237028,
+    "ast_hash": "82a7f51e1a104b81fd2b3fe1fb0ad4ef",
     "semantic_hash": ""
   },
   "public/assets/images/source/punjab_land_final.jpg": {
@@ -4695,8 +4685,8 @@
     "semantic_hash": ""
   },
   "public/assets/images/source/punjab_land_premium.jpg": {
-    "mtime": 1777309663.7291305,
-    "ast_hash": "79f964018f36649f740029594ef3ffb9",
+    "mtime": 1780905162.654853,
+    "ast_hash": "ba6ff94c59cb0a6353905d01e8673a6f",
     "semantic_hash": ""
   },
   "public/assets/images/source/seal_pb.png": {

@@ -1,16 +1,16 @@
 # Graph Report - monter  (2026-06-08)
 
 ## Corpus Check
-- 318 files · ~6,670,369 words
+- 316 files · ~6,408,342 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2961 nodes · 3425 edges · 415 communities (342 shown, 73 thin omitted)
+- 2969 nodes · 3435 edges · 413 communities (341 shown, 72 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 43 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `3690941e`
+- Built from commit: `7d0bca8d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -250,7 +250,6 @@
 - [[_COMMUNITY_Community 370|Community 370]]
 - [[_COMMUNITY_Community 371|Community 371]]
 - [[_COMMUNITY_Community 372|Community 372]]
-- [[_COMMUNITY_Community 373|Community 373]]
 - [[_COMMUNITY_Community 374|Community 374]]
 - [[_COMMUNITY_Community 375|Community 375]]
 - [[_COMMUNITY_Community 376|Community 376]]
@@ -268,7 +267,6 @@
 - [[_COMMUNITY_Community 391|Community 391]]
 - [[_COMMUNITY_Community 392|Community 392]]
 - [[_COMMUNITY_Community 401|Community 401]]
-- [[_COMMUNITY_Community 412|Community 412]]
 - [[_COMMUNITY_Community 413|Community 413]]
 - [[_COMMUNITY_Community 414|Community 414]]
 
@@ -299,7 +297,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (415 total, 73 thin omitted)
+## Communities (413 total, 72 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.05
@@ -326,12 +324,12 @@ Cohesion: 0.23
 Nodes (6): BuilderProfilePage(), BuildersLandingPage(), decodeSectorSlug(), generateMetadata(), generateStaticParams(), getAllProperties()
 
 ### Community 10 - "Community 10"
-Cohesion: 0.13
-Nodes (25): usePropertyFilters(), MobileSearchModal(), MobileSearchModalProps, PropertiesClient(), PropertiesMapContainer, Props, PropertiesHero(), PropertiesHeroProps (+17 more)
+Cohesion: 0.16
+Nodes (19): MobileSearchModalProps, PropertiesHeroProps, PropertiesMap, PropertiesMapContainerProps, PropertySearchBarProps, BEDROOMS, CITIES, DEFAULT_PROPERTY_FILTERS (+11 more)
 
 ### Community 12 - "Community 12"
-Cohesion: 0.08
-Nodes (24): ContactModalProps, LandCardProps, LandsGridProps, PropertiesGrid(), PropertiesGridProps, PLACEHOLDERS, Props, BlogCategory (+16 more)
+Cohesion: 0.07
+Nodes (32): usePropertyFilters(), ContactModalProps, LandCardProps, LandsGridProps, MobileSearchModal(), PropertiesClient(), PropertiesMapContainer, Props (+24 more)
 
 ### Community 13 - "Community 13"
 Cohesion: 0.05
@@ -339,7 +337,7 @@ Nodes (38): 10. BIBLIOGRAPHY, 1.1 Proposed System, 1.2 Components of Realty, 1. 
 
 ### Community 14 - "Community 14"
 Cohesion: 0.08
-Nodes (15): NAV, cn(), formatDate(), HeroSectionProps, LOGOS, AnalyticsData, IndexingCounts, IndexingUrl (+7 more)
+Nodes (14): NAV, cn(), formatDate(), slugify(), AnalyticsData, IndexingCounts, IndexingUrl, PaginationData (+6 more)
 
 ### Community 15 - "Community 15"
 Cohesion: 0.08
@@ -354,8 +352,8 @@ Cohesion: 0.07
 Nodes (27): ANTI-PATTERNS TO ELIMINATE, Avoid: Destroys Credibility, Blog Posts (1,200-4,000 words), FORMAT-SPECIFIC RULES, Instagram and Facebook Ads (Full copy), Instagram and Facebook Reels (Hooks, 6-12 words), LinkedIn Posts (Amritpal Singh personal profile and Realty Holding and Management Consultants company page, both), Pre-Contact Videos (7 trust videos) (+19 more)
 
 ### Community 18 - "Community 18"
-Cohesion: 0.17
-Nodes (11): generateMetadata(), generateStaticParams(), getProperty, getRelatedProperties, LOGO_MAPPING, Props, HouseDetailPage(), PropertyDetailMap (+3 more)
+Cohesion: 0.10
+Nodes (23): generateMetadata(), generateStaticParams(), getProperty, getRelatedProperties, LOGO_MAPPING, Props, generateMetadata(), generateStaticParams() (+15 more)
 
 ### Community 19 - "Community 19"
 Cohesion: 0.07
@@ -374,8 +372,8 @@ Cohesion: 0.83
 Nodes (3): createLinkAnnotation(), main(), watermarkPdf()
 
 ### Community 24 - "Community 24"
-Cohesion: 0.21
-Nodes (9): AgentFormModal(), AgentsAdmin(), ApartmentsAdmin(), HousesAdmin(), LandsAdmin(), LeadsAdmin(), STATUS_COLORS, STATUS_OPTIONS (+1 more)
+Cohesion: 0.14
+Nodes (15): AgentFormModal(), AgentsAdmin(), ApartmentsAdmin(), NotFound(), HousesAdmin(), EditApartmentPage(), EditHousePage(), EditLandsPage() (+7 more)
 
 ### Community 25 - "Community 25"
 Cohesion: 0.16
@@ -390,8 +388,8 @@ Cohesion: 0.40
 Nodes (3): handleNext(), handlePrev(), handleKeyDown()
 
 ### Community 29 - "Community 29"
-Cohesion: 0.09
-Nodes (7): metadata, siteConfig, metadata, metadata, metadata, PHILOSOPHY, metadata
+Cohesion: 0.10
+Nodes (7): siteConfig, metadata, metadata, metadata, metadata, metadata, tools
 
 ### Community 30 - "Community 30"
 Cohesion: 0.60
@@ -463,11 +461,11 @@ Nodes (13): footerLinks, FooterMapWrapper, Button, ButtonProps, cn(), Card, Card
 
 ### Community 53 - "Community 53"
 Cohesion: 0.05
-Nodes (59): lookElsewhere, ratings, rightFor, advisoryBreakdown, activeProjects, advisoryBreakdown, advisoryVerdict, assetTypes (+51 more)
+Nodes (59): lookElsewhere, ratings, rightFor, activeProjects, advisoryBreakdown, advisoryVerdict, assetTypes, buyerProfile (+51 more)
 
 ### Community 54 - "Community 54"
-Cohesion: 0.12
-Nodes (23): generateMetadata(), generateStaticParams(), Props, BuildersLandingPage(), getAllProperties(), metadata, propertiesPage, FlatsCategoryPage() (+15 more)
+Cohesion: 0.16
+Nodes (16): BuildersLandingPage(), getAllProperties(), metadata, propertiesPage, FlatsCategoryPage(), getFlats(), metadata, getHouses() (+8 more)
 
 ### Community 85 - "Community 85"
 Cohesion: 0.10
@@ -478,8 +476,8 @@ Cohesion: 0.10
 Nodes (20): AEO STRUCTURE — MANDATORY, BLOG-SPECIFIC NOTES, Body:, Close:, CTA RULES, EEAT SIGNALS — EMBED IN EVERY BLOG, EXECUTION INSTRUCTIONS, INTERNAL LINKING RULES (+12 more)
 
 ### Community 87 - "Community 87"
-Cohesion: 0.13
-Nodes (7): metadata, aboutCarouselItems, aboutSnippet, faqs, heroContent, services, metadata
+Cohesion: 0.12
+Nodes (8): metadata, aboutCarouselItems, aboutSnippet, faqs, heroContent, services, metadata, PHILOSOPHY
 
 ### Community 88 - "Community 88"
 Cohesion: 0.09
@@ -503,7 +501,7 @@ Nodes (20): AEO STRUCTURE — MANDATORY, BLOG-SPECIFIC NOTES, Body:, Close:, CTA
 
 ### Community 114 - "Community 114"
 Cohesion: 0.16
-Nodes (15): sitemap(), POST(), schema, DashboardPage(), getRecentLeads(), getStats(), POST(), BLACKLISTED_SLUGS (+7 more)
+Nodes (13): sitemap(), POST(), schema, DashboardPage(), getRecentLeads(), getStats(), POST(), BLACKLISTED_SLUGS (+5 more)
 
 ### Community 138 - "Community 138"
 Cohesion: 0.11
@@ -562,12 +560,12 @@ Cohesion: 0.16
 Nodes (10): navItems, Currency, CurrencyProvider(), HeaderContext, HeaderContextType, HeaderProvider(), useHeader(), HeaderTransparency() (+2 more)
 
 ### Community 152 - "Community 152"
-Cohesion: 0.21
-Nodes (12): generateMetadata(), generateStaticParams(), getProperty, getRelatedProperties, LOGO_MAPPING, Props, ApartmentOrSectorDetailPage(), BLACKLISTED_SLUGS (+4 more)
+Cohesion: 0.11
+Nodes (18): gmada-govt-of-punjab, purab-premium-apartments-sector-88-mohali, activeProjects, advisoryVerdict, assetTypes, buyerProfile, commonName, comparables (+10 more)
 
 ### Community 153 - "Community 153"
-Cohesion: 0.11
-Nodes (18): horizon-group-punjab, horizon-belmond-mohali, activeProjects, advisoryVerdict, assetTypes, buyerProfile, commonName, comparables (+10 more)
+Cohesion: 0.52
+Nodes (6): generateMetadata(), generateStaticParams(), Props, BuilderProfilePage(), formatIndianCurrency(), getAllProperties()
 
 ### Community 154 - "Community 154"
 Cohesion: 0.11
@@ -674,8 +672,8 @@ Cohesion: 0.13
 Nodes (14): 1. Executive Summary, 2. Performance Audit Findings, 3. Technical SEO & Architecture Audit, 4. Schema Markup & AEO (Answer Engine Optimization), 5. Prioritized Action Plan, Comprehensive Performance & SEO Audit Report, 🟢 Issue 1: Global Identity Schema, 🟢 Issue 1: Site Architecture & URL Routing (+6 more)
 
 ### Community 261 - "Community 261"
-Cohesion: 0.22
-Nodes (3): arrayToLines(), defaultForm(), LandForm()
+Cohesion: 0.15
+Nodes (5): Props, UploadItem, arrayToLines(), defaultForm(), LandForm()
 
 ### Community 262 - "Community 262"
 Cohesion: 0.15
@@ -732,10 +730,6 @@ Nodes (3): MdxContentProps, PostPage(), PostPageProps
 ### Community 275 - "Community 275"
 Cohesion: 0.25
 Nodes (7): ICP 1: THE HNI BUSINESS OWNER, ICP 2: THE CORPORATE CXO, ICP 3: THE LAND SELLER, ICP 4: THE NRI INVESTOR, LEAD QUALIFICATION: BANT+T FRAMEWORK, Realty Holding and Management Consultants ICP Profiles: Complete Reference, VIDEO DELIVERY MATRIX
-
-### Community 276 - "Community 276"
-Cohesion: 0.25
-Nodes (4): NotFound(), EditApartmentPage(), EditHousePage(), EditLandsPage()
 
 ### Community 277 - "Community 277"
 Cohesion: 0.43
@@ -882,12 +876,12 @@ Cohesion: 0.29
 Nodes (5): config, { createClient }, env, fs, supabase
 
 ### Community 313 - "Community 313"
-Cohesion: 0.38
-Nodes (6): compressImages(), exec, fs, path, sharp, util
+Cohesion: 0.24
+Nodes (10): compressImages(), dotenv, envPath, exec, fs, https, path, sharp (+2 more)
 
 ### Community 314 - "Community 314"
-Cohesion: 0.38
-Nodes (6): compressWebP(), exec, fs, path, sharp, util
+Cohesion: 0.24
+Nodes (10): compressWebP(), dotenv, envPath, exec, fs, https, path, sharp (+2 more)
 
 ### Community 315 - "Community 315"
 Cohesion: 0.29
@@ -1034,24 +1028,24 @@ Cohesion: 0.40
 Nodes (4): blogDir, files, fs, path
 
 ## Knowledge Gaps
-- **1464 isolated node(s):** `BeforeTool`, `metadata`, `Props`, `Props`, `metadata` (+1459 more)
+- **1470 isolated node(s):** `BeforeTool`, `metadata`, `Props`, `Props`, `metadata` (+1465 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **73 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **72 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `builders` connect `Community 267` to `Community 198`, `Community 139`, `Community 140`, `Community 142`, `Community 143`, `Community 147`, `Community 53`, `Community 150`, `Community 149`, `Community 153`, `Community 154`, `Community 155`, `Community 156`, `Community 157`, `Community 158`?**
+- **Why does `builders` connect `Community 267` to `Community 198`, `Community 139`, `Community 140`, `Community 142`, `Community 143`, `Community 147`, `Community 53`, `Community 150`, `Community 149`, `Community 152`, `Community 154`, `Community 155`, `Community 156`, `Community 157`, `Community 158`?**
   _High betweenness centrality (0.049) - this node is a cross-community bridge._
-- **Why does `createAdminClient()` connect `Community 114` to `Community 271`, `Community 18`, `Community 339`, `Community 338`, `Community 277`, `Community 54`, `Community 152`, `Community 26`?**
+- **Why does `Property` connect `Community 12` to `Community 263`, `Community 10`, `Community 15`, `Community 271`, `Community 18`, `Community 339`, `Community 338`, `Community 114`, `Community 54`, `Community 307`, `Community 153`?**
   _High betweenness centrality (0.011) - this node is a cross-community bridge._
-- **Why does `Property` connect `Community 12` to `Community 263`, `Community 10`, `Community 15`, `Community 271`, `Community 18`, `Community 339`, `Community 338`, `Community 114`, `Community 54`, `Community 307`, `Community 152`?**
-  _High betweenness centrality (0.010) - this node is a cross-community bridge._
+- **Why does `createAdminClient()` connect `Community 114` to `Community 271`, `Community 18`, `Community 339`, `Community 338`, `Community 277`, `Community 54`, `Community 24`, `Community 153`, `Community 26`?**
+  _High betweenness centrality (0.009) - this node is a cross-community bridge._
 - **Are the 4 inferred relationships involving `createAdminClient()` (e.g. with `generateStaticParams()` and `generateStaticParams()`) actually correct?**
   _`createAdminClient()` has 4 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 5 inferred relationships involving `createClient()` (e.g. with `HousesAdmin()` and `EditApartmentPage()`) actually correct?**
   _`createClient()` has 5 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `BeforeTool`, `metadata`, `Props` to the rest of the system?**
-  _1464 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _1470 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.046511627906976744 - nodes in this community are weakly interconnected._

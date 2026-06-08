@@ -252,7 +252,7 @@
       "source_file": "app/(site)/appointments/BookingClient.tsx",
       "source_location": "L1",
       "id": "appointments_bookingclient",
-      "community": 87,
+      "community": 276,
       "norm_label": "bookingclient.tsx"
     },
     {
@@ -261,7 +261,7 @@
       "source_file": "app/(site)/appointments/BookingClient.tsx",
       "source_location": "L8",
       "id": "appointments_bookingclient_bookingclient",
-      "community": 87,
+      "community": 276,
       "norm_label": "bookingclient()"
     },
     {
@@ -270,7 +270,7 @@
       "source_file": "app/(site)/appointments/page.tsx",
       "source_location": "L1",
       "id": "appointments_page",
-      "community": 87,
+      "community": 276,
       "norm_label": "page.tsx"
     },
     {
@@ -279,7 +279,7 @@
       "source_file": "app/(site)/appointments/page.tsx",
       "source_location": "L5",
       "id": "appointments_page_metadata",
-      "community": 87,
+      "community": 276,
       "norm_label": "metadata"
     },
     {
@@ -288,7 +288,7 @@
       "source_file": "app/(site)/appointments/page.tsx",
       "source_location": "L13",
       "id": "appointments_page_bookingpage",
-      "community": 87,
+      "community": 276,
       "norm_label": "bookingpage()"
     },
     {
@@ -342,7 +342,7 @@
       "source_file": "app/(site)/blog/page.tsx",
       "source_location": "L1",
       "id": "blog_page",
-      "community": 29,
+      "community": 87,
       "norm_label": "page.tsx"
     },
     {
@@ -351,7 +351,7 @@
       "source_file": "app/(site)/blog/page.tsx",
       "source_location": "L8",
       "id": "blog_page_metadata",
-      "community": 29,
+      "community": 87,
       "norm_label": "metadata"
     },
     {
@@ -360,7 +360,7 @@
       "source_file": "app/(site)/blog/page.tsx",
       "source_location": "L16",
       "id": "blog_page_blogpage",
-      "community": 29,
+      "community": 87,
       "norm_label": "blogpage()"
     },
     {
@@ -666,7 +666,7 @@
       "source_file": "app/(site)/properties/PropertiesClient.tsx",
       "source_location": "L1",
       "id": "properties_propertiesclient",
-      "community": 10,
+      "community": 12,
       "norm_label": "propertiesclient.tsx"
     },
     {
@@ -675,7 +675,7 @@
       "source_file": "app/(site)/properties/PropertiesClient.tsx",
       "source_location": "L13",
       "id": "properties_propertiesclient_propertiesmapcontainer",
-      "community": 10,
+      "community": 12,
       "norm_label": "propertiesmapcontainer"
     },
     {
@@ -684,7 +684,7 @@
       "source_file": "app/(site)/properties/PropertiesClient.tsx",
       "source_location": "L20",
       "id": "properties_propertiesclient_props",
-      "community": 10,
+      "community": 12,
       "norm_label": "props"
     },
     {
@@ -693,7 +693,7 @@
       "source_file": "app/(site)/properties/PropertiesClient.tsx",
       "source_location": "L27",
       "id": "properties_propertiesclient_propertiesclient",
-      "community": 10,
+      "community": 12,
       "norm_label": "propertiesclient()"
     },
     {
@@ -745,7 +745,7 @@
       "label": "MediaThumbnail()",
       "file_type": "code",
       "source_file": "app/(site)/properties/[slug]/InquiryForm.tsx",
-      "source_location": "L199",
+      "source_location": "L200",
       "id": "slug_inquiryform_mediathumbnail",
       "community": 268,
       "norm_label": "mediathumbnail()"
@@ -754,7 +754,7 @@
       "label": "VideoPlayer()",
       "file_type": "code",
       "source_file": "app/(site)/properties/[slug]/InquiryForm.tsx",
-      "source_location": "L226",
+      "source_location": "L228",
       "id": "slug_inquiryform_videoplayer",
       "community": 268,
       "norm_label": "videoplayer()"
@@ -763,7 +763,7 @@
       "label": "getYouTubeId()",
       "file_type": "code",
       "source_file": "app/(site)/properties/[slug]/InquiryForm.tsx",
-      "source_location": "L235",
+      "source_location": "L237",
       "id": "slug_inquiryform_getyoutubeid",
       "community": 268,
       "norm_label": "getyoutubeid()"
@@ -772,7 +772,7 @@
       "label": "getVimeoId()",
       "file_type": "code",
       "source_file": "app/(site)/properties/[slug]/InquiryForm.tsx",
-      "source_location": "L241",
+      "source_location": "L243",
       "id": "slug_inquiryform_getvimeoid",
       "community": 268,
       "norm_label": "getvimeoid()"
@@ -781,7 +781,7 @@
       "label": "COUNTRY_CODES",
       "file_type": "code",
       "source_file": "app/(site)/properties/[slug]/InquiryForm.tsx",
-      "source_location": "L248",
+      "source_location": "L250",
       "id": "slug_inquiryform_country_codes",
       "community": 268,
       "norm_label": "country_codes"
@@ -790,7 +790,7 @@
       "label": "InquiryForm()",
       "file_type": "code",
       "source_file": "app/(site)/properties/[slug]/InquiryForm.tsx",
-      "source_location": "L260",
+      "source_location": "L262",
       "id": "slug_inquiryform_inquiryform",
       "community": 268,
       "norm_label": "inquiryform()"
@@ -1071,7 +1071,7 @@
       "source_file": "app/(site)/properties/builders/[slug]/page.tsx",
       "source_location": "L1",
       "id": "app_site_properties_builders_slug_page_tsx_slug_page",
-      "community": 54,
+      "community": 153,
       "norm_label": "page.tsx"
     },
     {
@@ -1080,7 +1080,7 @@
       "source_file": "app/(site)/properties/builders/[slug]/page.tsx",
       "source_location": "L13",
       "id": "app_site_properties_builders_slug_page_tsx_slug_page_props",
-      "community": 54,
+      "community": 153,
       "norm_label": "props"
     },
     {
@@ -1089,7 +1089,7 @@
       "source_file": "app/(site)/properties/builders/[slug]/page.tsx",
       "source_location": "L18",
       "id": "slug_page_formatindiancurrency",
-      "community": 54,
+      "community": 153,
       "norm_label": "formatindiancurrency()"
     },
     {
@@ -1098,7 +1098,7 @@
       "source_file": "app/(site)/properties/builders/[slug]/page.tsx",
       "source_location": "L31",
       "id": "slug_page_getallproperties",
-      "community": 54,
+      "community": 153,
       "norm_label": "getallproperties()"
     },
     {
@@ -1107,7 +1107,7 @@
       "source_file": "app/(site)/properties/builders/[slug]/page.tsx",
       "source_location": "L59",
       "id": "app_site_properties_builders_slug_page_tsx_slug_page_generatestaticparams",
-      "community": 54,
+      "community": 153,
       "norm_label": "generatestaticparams()"
     },
     {
@@ -1116,7 +1116,7 @@
       "source_file": "app/(site)/properties/builders/[slug]/page.tsx",
       "source_location": "L76",
       "id": "app_site_properties_builders_slug_page_tsx_slug_page_generatemetadata",
-      "community": 54,
+      "community": 153,
       "norm_label": "generatemetadata()"
     },
     {
@@ -1125,7 +1125,7 @@
       "source_file": "app/(site)/properties/builders/[slug]/page.tsx",
       "source_location": "L133",
       "id": "slug_page_builderprofilepage",
-      "community": 54,
+      "community": 153,
       "norm_label": "builderprofilepage()"
     },
     {
@@ -1170,7 +1170,7 @@
       "source_file": "app/(site)/properties/flats/[slug]/page.tsx",
       "source_location": "L1",
       "id": "app_site_properties_flats_slug_page_tsx_slug_page",
-      "community": 152,
+      "community": 18,
       "norm_label": "page.tsx"
     },
     {
@@ -1179,7 +1179,7 @@
       "source_file": "app/(site)/properties/flats/[slug]/page.tsx",
       "source_location": "L19",
       "id": "app_site_properties_flats_slug_page_tsx_slug_page_logo_mapping",
-      "community": 152,
+      "community": 18,
       "norm_label": "logo_mapping"
     },
     {
@@ -1188,7 +1188,7 @@
       "source_file": "app/(site)/properties/flats/[slug]/page.tsx",
       "source_location": "L45",
       "id": "app_site_properties_flats_slug_page_tsx_slug_page_props",
-      "community": 152,
+      "community": 18,
       "norm_label": "props"
     },
     {
@@ -1197,7 +1197,7 @@
       "source_file": "app/(site)/properties/flats/[slug]/page.tsx",
       "source_location": "L48",
       "id": "slug_page_getsectorseo",
-      "community": 152,
+      "community": 18,
       "norm_label": "getsectorseo"
     },
     {
@@ -1206,7 +1206,7 @@
       "source_file": "app/(site)/properties/flats/[slug]/page.tsx",
       "source_location": "L63",
       "id": "app_site_properties_flats_slug_page_tsx_slug_page_getproperty",
-      "community": 152,
+      "community": 18,
       "norm_label": "getproperty"
     },
     {
@@ -1215,7 +1215,7 @@
       "source_file": "app/(site)/properties/flats/[slug]/page.tsx",
       "source_location": "L83",
       "id": "app_site_properties_flats_slug_page_tsx_slug_page_getrelatedproperties",
-      "community": 152,
+      "community": 18,
       "norm_label": "getrelatedproperties"
     },
     {
@@ -1224,7 +1224,7 @@
       "source_file": "app/(site)/properties/flats/[slug]/page.tsx",
       "source_location": "L133",
       "id": "slug_page_getallflats",
-      "community": 152,
+      "community": 18,
       "norm_label": "getallflats"
     },
     {
@@ -1233,7 +1233,7 @@
       "source_file": "app/(site)/properties/flats/[slug]/page.tsx",
       "source_location": "L150",
       "id": "slug_page_blacklisted_slugs",
-      "community": 152,
+      "community": 18,
       "norm_label": "blacklisted_slugs"
     },
     {
@@ -1242,7 +1242,7 @@
       "source_file": "app/(site)/properties/flats/[slug]/page.tsx",
       "source_location": "L157",
       "id": "slug_page_decodesectorslug",
-      "community": 152,
+      "community": 18,
       "norm_label": "decodesectorslug()"
     },
     {
@@ -1251,7 +1251,7 @@
       "source_file": "app/(site)/properties/flats/[slug]/page.tsx",
       "source_location": "L164",
       "id": "app_site_properties_flats_slug_page_tsx_slug_page_generatestaticparams",
-      "community": 152,
+      "community": 18,
       "norm_label": "generatestaticparams()"
     },
     {
@@ -1260,7 +1260,7 @@
       "source_file": "app/(site)/properties/flats/[slug]/page.tsx",
       "source_location": "L191",
       "id": "app_site_properties_flats_slug_page_tsx_slug_page_generatemetadata",
-      "community": 152,
+      "community": 18,
       "norm_label": "generatemetadata()"
     },
     {
@@ -1269,7 +1269,7 @@
       "source_file": "app/(site)/properties/flats/[slug]/page.tsx",
       "source_location": "L273",
       "id": "slug_page_apartmentorsectordetailpage",
-      "community": 152,
+      "community": 18,
       "norm_label": "apartmentorsectordetailpage()"
     },
     {
@@ -1728,7 +1728,7 @@
       "source_file": "app/(site)/tools/page.tsx",
       "source_location": "L1",
       "id": "tools_page",
-      "community": 412,
+      "community": 29,
       "norm_label": "page.tsx"
     },
     {
@@ -1737,7 +1737,7 @@
       "source_file": "app/(site)/tools/page.tsx",
       "source_location": "L6",
       "id": "tools_page_metadata",
-      "community": 412,
+      "community": 29,
       "norm_label": "metadata"
     },
     {
@@ -1746,7 +1746,7 @@
       "source_file": "app/(site)/tools/page.tsx",
       "source_location": "L11",
       "id": "tools_page_tools",
-      "community": 412,
+      "community": 29,
       "norm_label": "tools"
     },
     {
@@ -1755,7 +1755,7 @@
       "source_file": "app/(site)/tools/page.tsx",
       "source_location": "L38",
       "id": "tools_page_toolspage",
-      "community": 412,
+      "community": 29,
       "norm_label": "toolspage()"
     },
     {
@@ -1836,7 +1836,7 @@
       "source_file": "app/admin-realty-8x2d9/apartments/[id]/page.tsx",
       "source_location": "L1",
       "id": "app_admin_realty_8x2d9_apartments_id_page_tsx_id_page",
-      "community": 276,
+      "community": 24,
       "norm_label": "page.tsx"
     },
     {
@@ -1845,7 +1845,7 @@
       "source_file": "app/admin-realty-8x2d9/apartments/[id]/page.tsx",
       "source_location": "L6",
       "id": "id_page_editapartmentpage",
-      "community": 276,
+      "community": 24,
       "norm_label": "editapartmentpage()"
     },
     {
@@ -2088,7 +2088,7 @@
       "source_file": "app/admin-realty-8x2d9/houses/[id]/page.tsx",
       "source_location": "L1",
       "id": "app_admin_realty_8x2d9_houses_id_page_tsx_id_page",
-      "community": 276,
+      "community": 24,
       "norm_label": "page.tsx"
     },
     {
@@ -2097,7 +2097,7 @@
       "source_file": "app/admin-realty-8x2d9/houses/[id]/page.tsx",
       "source_location": "L6",
       "id": "id_page_edithousepage",
-      "community": 276,
+      "community": 24,
       "norm_label": "edithousepage()"
     },
     {
@@ -2223,7 +2223,7 @@
       "source_file": "app/admin-realty-8x2d9/lands/[id]/page.tsx",
       "source_location": "L1",
       "id": "app_admin_realty_8x2d9_lands_id_page_tsx_id_page",
-      "community": 276,
+      "community": 24,
       "norm_label": "page.tsx"
     },
     {
@@ -2232,7 +2232,7 @@
       "source_file": "app/admin-realty-8x2d9/lands/[id]/page.tsx",
       "source_location": "L6",
       "id": "id_page_editlandspage",
-      "community": 276,
+      "community": 24,
       "norm_label": "editlandspage()"
     },
     {
@@ -2781,7 +2781,7 @@
       "source_file": "app/not-found.tsx",
       "source_location": "L1",
       "id": "app_not_found",
-      "community": 276,
+      "community": 24,
       "norm_label": "not-found.tsx"
     },
     {
@@ -2790,7 +2790,7 @@
       "source_file": "app/not-found.tsx",
       "source_location": "L4",
       "id": "app_not_found_notfound",
-      "community": 276,
+      "community": 24,
       "norm_label": "notfound()"
     },
     {
@@ -2835,7 +2835,7 @@
       "source_file": "components/admin/ImageUploader.tsx",
       "source_location": "L1",
       "id": "admin_imageuploader",
-      "community": 373,
+      "community": 261,
       "norm_label": "imageuploader.tsx"
     },
     {
@@ -2844,7 +2844,7 @@
       "source_file": "components/admin/ImageUploader.tsx",
       "source_location": "L14",
       "id": "admin_imageuploader_props",
-      "community": 373,
+      "community": 261,
       "norm_label": "props"
     },
     {
@@ -2853,7 +2853,7 @@
       "source_file": "components/admin/ImageUploader.tsx",
       "source_location": "L20",
       "id": "admin_imageuploader_uploaditem",
-      "community": 373,
+      "community": 261,
       "norm_label": "uploaditem"
     },
     {
@@ -2862,7 +2862,7 @@
       "source_file": "components/admin/ImageUploader.tsx",
       "source_location": "L31",
       "id": "admin_imageuploader_imageuploader",
-      "community": 373,
+      "community": 261,
       "norm_label": "imageuploader()"
     },
     {
@@ -3096,7 +3096,7 @@
       "source_file": "components/properties/MobileSearchModal.tsx",
       "source_location": "L31",
       "id": "properties_mobilesearchmodal_mobilesearchmodal",
-      "community": 10,
+      "community": 12,
       "norm_label": "mobilesearchmodal()"
     },
     {
@@ -3150,7 +3150,7 @@
       "source_file": "components/properties/PropertiesHero.tsx",
       "source_location": "L18",
       "id": "properties_propertieshero_propertieshero",
-      "community": 10,
+      "community": 12,
       "norm_label": "propertieshero()"
     },
     {
@@ -3195,7 +3195,7 @@
       "source_file": "components/properties/PropertiesResultsBar.tsx",
       "source_location": "L1",
       "id": "properties_propertiesresultsbar",
-      "community": 10,
+      "community": 12,
       "norm_label": "propertiesresultsbar.tsx"
     },
     {
@@ -3204,7 +3204,7 @@
       "source_file": "components/properties/PropertiesResultsBar.tsx",
       "source_location": "L3",
       "id": "properties_propertiesresultsbar_propertiesresultsbarprops",
-      "community": 10,
+      "community": 12,
       "norm_label": "propertiesresultsbarprops"
     },
     {
@@ -3213,7 +3213,7 @@
       "source_file": "components/properties/PropertiesResultsBar.tsx",
       "source_location": "L7",
       "id": "properties_propertiesresultsbar_propertiesresultsbar",
-      "community": 10,
+      "community": 12,
       "norm_label": "propertiesresultsbar()"
     },
     {
@@ -3456,7 +3456,7 @@
       "source_file": "components/sections/AboutPhilosophy.tsx",
       "source_location": "L1",
       "id": "sections_aboutphilosophy",
-      "community": 29,
+      "community": 87,
       "norm_label": "aboutphilosophy.tsx"
     },
     {
@@ -3465,7 +3465,7 @@
       "source_file": "components/sections/AboutPhilosophy.tsx",
       "source_location": "L7",
       "id": "sections_aboutphilosophy_philosophy",
-      "community": 29,
+      "community": 87,
       "norm_label": "philosophy"
     },
     {
@@ -3474,7 +3474,7 @@
       "source_file": "components/sections/AboutPhilosophy.tsx",
       "source_location": "L14",
       "id": "sections_aboutphilosophy_aboutphilosophy",
-      "community": 29,
+      "community": 87,
       "norm_label": "aboutphilosophy()"
     },
     {
@@ -3681,7 +3681,7 @@
       "source_file": "components/sections/HeroSection.tsx",
       "source_location": "L1",
       "id": "sections_herosection",
-      "community": 14,
+      "community": 10,
       "norm_label": "herosection.tsx"
     },
     {
@@ -3690,7 +3690,7 @@
       "source_file": "components/sections/HeroSection.tsx",
       "source_location": "L23",
       "id": "sections_herosection_logos",
-      "community": 14,
+      "community": 10,
       "norm_label": "logos"
     },
     {
@@ -3699,7 +3699,7 @@
       "source_file": "components/sections/HeroSection.tsx",
       "source_location": "L42",
       "id": "sections_herosection_herosectionprops",
-      "community": 14,
+      "community": 10,
       "norm_label": "herosectionprops"
     },
     {
@@ -3708,7 +3708,7 @@
       "source_file": "components/sections/HeroSection.tsx",
       "source_location": "L46",
       "id": "sections_herosection_herosection",
-      "community": 14,
+      "community": 10,
       "norm_label": "herosection()"
     },
     {
@@ -3978,7 +3978,7 @@
       "source_file": "components/ui/DescriptionContainer.tsx",
       "source_location": "L1",
       "id": "ui_descriptioncontainer",
-      "community": 152,
+      "community": 18,
       "norm_label": "descriptioncontainer.tsx"
     },
     {
@@ -3987,7 +3987,7 @@
       "source_file": "components/ui/DescriptionContainer.tsx",
       "source_location": "L5",
       "id": "ui_descriptioncontainer_descriptioncontainerprops",
-      "community": 152,
+      "community": 18,
       "norm_label": "descriptioncontainerprops"
     },
     {
@@ -3996,7 +3996,7 @@
       "source_file": "components/ui/DescriptionContainer.tsx",
       "source_location": "L9",
       "id": "ui_descriptioncontainer_descriptioncontainer",
-      "community": 152,
+      "community": 18,
       "norm_label": "descriptioncontainer()"
     },
     {
@@ -4527,7 +4527,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L23",
       "id": "config_builders_data_builders_ats_infrastructure_limited",
-      "community": 53,
+      "community": 147,
       "norm_label": "ats-infrastructure-limited"
     },
     {
@@ -4536,7 +4536,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L24",
       "id": "config_builders_data_ats_infrastructure_limited_legalname",
-      "community": 53,
+      "community": 147,
       "norm_label": "legalname"
     },
     {
@@ -4545,7 +4545,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L25",
       "id": "config_builders_data_ats_infrastructure_limited_commonname",
-      "community": 53,
+      "community": 147,
       "norm_label": "commonname"
     },
     {
@@ -4554,7 +4554,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L26",
       "id": "config_builders_data_ats_infrastructure_limited_founded",
-      "community": 53,
+      "community": 147,
       "norm_label": "founded"
     },
     {
@@ -4563,7 +4563,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L27",
       "id": "config_builders_data_ats_infrastructure_limited_headquarters",
-      "community": 53,
+      "community": 147,
       "norm_label": "headquarters"
     },
     {
@@ -4572,7 +4572,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L28",
       "id": "config_builders_data_ats_infrastructure_limited_rerastatus",
-      "community": 53,
+      "community": 147,
       "norm_label": "rerastatus"
     },
     {
@@ -4581,7 +4581,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L29",
       "id": "config_builders_data_ats_infrastructure_limited_rerareg",
-      "community": 53,
+      "community": 147,
       "norm_label": "rerareg"
     },
     {
@@ -4590,7 +4590,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L30",
       "id": "config_builders_data_ats_infrastructure_limited_activeprojects",
-      "community": 53,
+      "community": 147,
       "norm_label": "activeprojects"
     },
     {
@@ -4599,7 +4599,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L31",
       "id": "config_builders_data_ats_infrastructure_limited_sectorsactive",
-      "community": 53,
+      "community": 147,
       "norm_label": "sectorsactive"
     },
     {
@@ -4608,7 +4608,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L34",
       "id": "config_builders_data_ats_infrastructure_limited_assettypes",
-      "community": 53,
+      "community": 147,
       "norm_label": "assettypes"
     },
     {
@@ -4617,7 +4617,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L37",
       "id": "config_builders_data_ats_infrastructure_limited_pricerange",
-      "community": 53,
+      "community": 147,
       "norm_label": "pricerange"
     },
     {
@@ -4626,7 +4626,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L38",
       "id": "config_builders_data_ats_infrastructure_limited_buyerprofile",
-      "community": 53,
+      "community": 147,
       "norm_label": "buyerprofile"
     },
     {
@@ -4635,7 +4635,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L39",
       "id": "config_builders_data_ats_infrastructure_limited_website",
-      "community": 53,
+      "community": 147,
       "norm_label": "website"
     },
     {
@@ -4644,7 +4644,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L40",
       "id": "config_builders_data_ats_infrastructure_limited_advisoryverdict",
-      "community": 53,
+      "community": 147,
       "norm_label": "advisoryverdict"
     },
     {
@@ -4680,7 +4680,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L45",
       "id": "config_builders_data_ats_infrastructure_limited_editorialnotes",
-      "community": 53,
+      "community": 147,
       "norm_label": "editorialnotes"
     },
     {
@@ -4689,7 +4689,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L46",
       "id": "config_builders_data_editorialnotes_ats_casa_espana_sector_121_mohali",
-      "community": 53,
+      "community": 147,
       "norm_label": "ats-casa-espana-sector-121-mohali"
     },
     {
@@ -4770,7 +4770,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L65",
       "id": "config_builders_data_ats_infrastructure_limited_comparables",
-      "community": 53,
+      "community": 147,
       "norm_label": "comparables"
     },
     {
@@ -4779,7 +4779,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L70",
       "id": "config_builders_data_ats_infrastructure_limited_faqs",
-      "community": 53,
+      "community": 147,
       "norm_label": "faqs"
     },
     {
@@ -5724,7 +5724,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L456",
       "id": "config_builders_data_builders_ambika_realcon_pvt_ltd_ambika_infra_ventures_pvt_ltd",
-      "community": 147,
+      "community": 53,
       "norm_label": "ambika-realcon-pvt-ltd-ambika-infra-ventures-pvt-ltd"
     },
     {
@@ -5733,7 +5733,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L457",
       "id": "config_builders_data_ambika_realcon_pvt_ltd_ambika_infra_ventures_pvt_ltd_legalname",
-      "community": 147,
+      "community": 53,
       "norm_label": "legalname"
     },
     {
@@ -5742,7 +5742,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L458",
       "id": "config_builders_data_ambika_realcon_pvt_ltd_ambika_infra_ventures_pvt_ltd_commonname",
-      "community": 147,
+      "community": 53,
       "norm_label": "commonname"
     },
     {
@@ -5751,7 +5751,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L459",
       "id": "config_builders_data_ambika_realcon_pvt_ltd_ambika_infra_ventures_pvt_ltd_founded",
-      "community": 147,
+      "community": 53,
       "norm_label": "founded"
     },
     {
@@ -5760,7 +5760,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L460",
       "id": "config_builders_data_ambika_realcon_pvt_ltd_ambika_infra_ventures_pvt_ltd_headquarters",
-      "community": 147,
+      "community": 53,
       "norm_label": "headquarters"
     },
     {
@@ -5769,7 +5769,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L461",
       "id": "config_builders_data_ambika_realcon_pvt_ltd_ambika_infra_ventures_pvt_ltd_rerastatus",
-      "community": 147,
+      "community": 53,
       "norm_label": "rerastatus"
     },
     {
@@ -5778,7 +5778,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L462",
       "id": "config_builders_data_ambika_realcon_pvt_ltd_ambika_infra_ventures_pvt_ltd_rerareg",
-      "community": 147,
+      "community": 53,
       "norm_label": "rerareg"
     },
     {
@@ -5787,7 +5787,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L463",
       "id": "config_builders_data_ambika_realcon_pvt_ltd_ambika_infra_ventures_pvt_ltd_activeprojects",
-      "community": 147,
+      "community": 53,
       "norm_label": "activeprojects"
     },
     {
@@ -5796,7 +5796,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L464",
       "id": "config_builders_data_ambika_realcon_pvt_ltd_ambika_infra_ventures_pvt_ltd_sectorsactive",
-      "community": 147,
+      "community": 53,
       "norm_label": "sectorsactive"
     },
     {
@@ -5805,7 +5805,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L467",
       "id": "config_builders_data_ambika_realcon_pvt_ltd_ambika_infra_ventures_pvt_ltd_assettypes",
-      "community": 147,
+      "community": 53,
       "norm_label": "assettypes"
     },
     {
@@ -5814,7 +5814,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L471",
       "id": "config_builders_data_ambika_realcon_pvt_ltd_ambika_infra_ventures_pvt_ltd_pricerange",
-      "community": 147,
+      "community": 53,
       "norm_label": "pricerange"
     },
     {
@@ -5823,7 +5823,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L472",
       "id": "config_builders_data_ambika_realcon_pvt_ltd_ambika_infra_ventures_pvt_ltd_buyerprofile",
-      "community": 147,
+      "community": 53,
       "norm_label": "buyerprofile"
     },
     {
@@ -5832,7 +5832,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L473",
       "id": "config_builders_data_ambika_realcon_pvt_ltd_ambika_infra_ventures_pvt_ltd_website",
-      "community": 147,
+      "community": 53,
       "norm_label": "website"
     },
     {
@@ -5841,7 +5841,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L474",
       "id": "config_builders_data_ambika_realcon_pvt_ltd_ambika_infra_ventures_pvt_ltd_advisoryverdict",
-      "community": 147,
+      "community": 53,
       "norm_label": "advisoryverdict"
     },
     {
@@ -5859,7 +5859,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L479",
       "id": "config_builders_data_ambika_realcon_pvt_ltd_ambika_infra_ventures_pvt_ltd_editorialnotes",
-      "community": 147,
+      "community": 53,
       "norm_label": "editorialnotes"
     },
     {
@@ -5868,7 +5868,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L480",
       "id": "config_builders_data_editorialnotes_ambika_la_parisian",
-      "community": 147,
+      "community": 53,
       "norm_label": "ambika-la-parisian"
     },
     {
@@ -5886,7 +5886,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L499",
       "id": "config_builders_data_ambika_realcon_pvt_ltd_ambika_infra_ventures_pvt_ltd_comparables",
-      "community": 147,
+      "community": 53,
       "norm_label": "comparables"
     },
     {
@@ -5895,7 +5895,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L504",
       "id": "config_builders_data_ambika_realcon_pvt_ltd_ambika_infra_ventures_pvt_ltd_faqs",
-      "community": 147,
+      "community": 53,
       "norm_label": "faqs"
     },
     {
@@ -5904,7 +5904,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L527",
       "id": "config_builders_data_builders_gmada_govt_of_punjab",
-      "community": 53,
+      "community": 152,
       "norm_label": "gmada-govt-of-punjab"
     },
     {
@@ -5913,7 +5913,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L528",
       "id": "config_builders_data_gmada_govt_of_punjab_legalname",
-      "community": 53,
+      "community": 152,
       "norm_label": "legalname"
     },
     {
@@ -5922,7 +5922,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L529",
       "id": "config_builders_data_gmada_govt_of_punjab_commonname",
-      "community": 53,
+      "community": 152,
       "norm_label": "commonname"
     },
     {
@@ -5931,7 +5931,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L530",
       "id": "config_builders_data_gmada_govt_of_punjab_founded",
-      "community": 53,
+      "community": 152,
       "norm_label": "founded"
     },
     {
@@ -5940,7 +5940,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L531",
       "id": "config_builders_data_gmada_govt_of_punjab_headquarters",
-      "community": 53,
+      "community": 152,
       "norm_label": "headquarters"
     },
     {
@@ -5949,7 +5949,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L532",
       "id": "config_builders_data_gmada_govt_of_punjab_rerastatus",
-      "community": 53,
+      "community": 152,
       "norm_label": "rerastatus"
     },
     {
@@ -5958,7 +5958,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L533",
       "id": "config_builders_data_gmada_govt_of_punjab_rerareg",
-      "community": 53,
+      "community": 152,
       "norm_label": "rerareg"
     },
     {
@@ -5967,7 +5967,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L534",
       "id": "config_builders_data_gmada_govt_of_punjab_activeprojects",
-      "community": 53,
+      "community": 152,
       "norm_label": "activeprojects"
     },
     {
@@ -5976,7 +5976,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L535",
       "id": "config_builders_data_gmada_govt_of_punjab_sectorsactive",
-      "community": 53,
+      "community": 152,
       "norm_label": "sectorsactive"
     },
     {
@@ -5985,7 +5985,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L538",
       "id": "config_builders_data_gmada_govt_of_punjab_assettypes",
-      "community": 53,
+      "community": 152,
       "norm_label": "assettypes"
     },
     {
@@ -5994,7 +5994,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L543",
       "id": "config_builders_data_gmada_govt_of_punjab_pricerange",
-      "community": 53,
+      "community": 152,
       "norm_label": "pricerange"
     },
     {
@@ -6003,7 +6003,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L544",
       "id": "config_builders_data_gmada_govt_of_punjab_buyerprofile",
-      "community": 53,
+      "community": 152,
       "norm_label": "buyerprofile"
     },
     {
@@ -6012,7 +6012,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L545",
       "id": "config_builders_data_gmada_govt_of_punjab_website",
-      "community": 53,
+      "community": 152,
       "norm_label": "website"
     },
     {
@@ -6021,7 +6021,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L546",
       "id": "config_builders_data_gmada_govt_of_punjab_advisoryverdict",
-      "community": 53,
+      "community": 152,
       "norm_label": "advisoryverdict"
     },
     {
@@ -6039,7 +6039,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L551",
       "id": "config_builders_data_gmada_govt_of_punjab_editorialnotes",
-      "community": 53,
+      "community": 152,
       "norm_label": "editorialnotes"
     },
     {
@@ -6048,7 +6048,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L552",
       "id": "config_builders_data_editorialnotes_purab_premium_apartments_sector_88_mohali",
-      "community": 53,
+      "community": 152,
       "norm_label": "purab-premium-apartments-sector-88-mohali"
     },
     {
@@ -6066,7 +6066,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L571",
       "id": "config_builders_data_gmada_govt_of_punjab_comparables",
-      "community": 53,
+      "community": 152,
       "norm_label": "comparables"
     },
     {
@@ -6075,7 +6075,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L575",
       "id": "config_builders_data_gmada_govt_of_punjab_faqs",
-      "community": 53,
+      "community": 152,
       "norm_label": "faqs"
     },
     {
@@ -6084,7 +6084,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L598",
       "id": "config_builders_data_builders_horizon_group_punjab",
-      "community": 153,
+      "community": 53,
       "norm_label": "horizon-group-punjab"
     },
     {
@@ -6093,7 +6093,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L599",
       "id": "config_builders_data_horizon_group_punjab_legalname",
-      "community": 153,
+      "community": 53,
       "norm_label": "legalname"
     },
     {
@@ -6102,7 +6102,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L600",
       "id": "config_builders_data_horizon_group_punjab_commonname",
-      "community": 153,
+      "community": 53,
       "norm_label": "commonname"
     },
     {
@@ -6111,7 +6111,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L601",
       "id": "config_builders_data_horizon_group_punjab_founded",
-      "community": 153,
+      "community": 53,
       "norm_label": "founded"
     },
     {
@@ -6120,7 +6120,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L602",
       "id": "config_builders_data_horizon_group_punjab_headquarters",
-      "community": 153,
+      "community": 53,
       "norm_label": "headquarters"
     },
     {
@@ -6129,7 +6129,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L603",
       "id": "config_builders_data_horizon_group_punjab_rerastatus",
-      "community": 153,
+      "community": 53,
       "norm_label": "rerastatus"
     },
     {
@@ -6138,7 +6138,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L604",
       "id": "config_builders_data_horizon_group_punjab_rerareg",
-      "community": 153,
+      "community": 53,
       "norm_label": "rerareg"
     },
     {
@@ -6147,7 +6147,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L605",
       "id": "config_builders_data_horizon_group_punjab_activeprojects",
-      "community": 153,
+      "community": 53,
       "norm_label": "activeprojects"
     },
     {
@@ -6156,7 +6156,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L606",
       "id": "config_builders_data_horizon_group_punjab_sectorsactive",
-      "community": 153,
+      "community": 53,
       "norm_label": "sectorsactive"
     },
     {
@@ -6165,7 +6165,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L609",
       "id": "config_builders_data_horizon_group_punjab_assettypes",
-      "community": 153,
+      "community": 53,
       "norm_label": "assettypes"
     },
     {
@@ -6174,7 +6174,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L612",
       "id": "config_builders_data_horizon_group_punjab_pricerange",
-      "community": 153,
+      "community": 53,
       "norm_label": "pricerange"
     },
     {
@@ -6183,7 +6183,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L613",
       "id": "config_builders_data_horizon_group_punjab_buyerprofile",
-      "community": 153,
+      "community": 53,
       "norm_label": "buyerprofile"
     },
     {
@@ -6192,7 +6192,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L614",
       "id": "config_builders_data_horizon_group_punjab_website",
-      "community": 153,
+      "community": 53,
       "norm_label": "website"
     },
     {
@@ -6201,7 +6201,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L615",
       "id": "config_builders_data_horizon_group_punjab_advisoryverdict",
-      "community": 153,
+      "community": 53,
       "norm_label": "advisoryverdict"
     },
     {
@@ -6219,7 +6219,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L620",
       "id": "config_builders_data_horizon_group_punjab_editorialnotes",
-      "community": 153,
+      "community": 53,
       "norm_label": "editorialnotes"
     },
     {
@@ -6228,7 +6228,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L621",
       "id": "config_builders_data_editorialnotes_horizon_belmond_mohali",
-      "community": 153,
+      "community": 53,
       "norm_label": "horizon-belmond-mohali"
     },
     {
@@ -6246,7 +6246,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L640",
       "id": "config_builders_data_horizon_group_punjab_comparables",
-      "community": 153,
+      "community": 53,
       "norm_label": "comparables"
     },
     {
@@ -6255,7 +6255,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L645",
       "id": "config_builders_data_horizon_group_punjab_faqs",
-      "community": 153,
+      "community": 53,
       "norm_label": "faqs"
     },
     {
@@ -8037,7 +8037,7 @@
       "source_file": "hooks/usePropertyFilters.ts",
       "source_location": "L23",
       "id": "hooks_usepropertyfilters_usepropertyfilters",
-      "community": 10,
+      "community": 12,
       "norm_label": "usepropertyfilters()"
     },
     {
@@ -8181,7 +8181,7 @@
       "source_file": "lib/supabase.ts",
       "source_location": "L1",
       "id": "lib_supabase",
-      "community": 114,
+      "community": 24,
       "norm_label": "supabase.ts"
     },
     {
@@ -8244,7 +8244,7 @@
       "source_file": "lib/utils.ts",
       "source_location": "L21",
       "id": "lib_utils_slugify",
-      "community": 54,
+      "community": 14,
       "norm_label": "slugify()"
     },
     {
@@ -8422,7 +8422,7 @@
       "label": "overrides",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L21",
+      "source_location": "L23",
       "id": "package_overrides",
       "community": 250,
       "norm_label": "overrides"
@@ -8431,7 +8431,7 @@
       "label": "@effect-ts/system",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L22",
+      "source_location": "L24",
       "id": "package_overrides_effect_ts_system",
       "community": 250,
       "norm_label": "@effect-ts/system"
@@ -8440,7 +8440,7 @@
       "label": "@effect-ts/core",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L23",
+      "source_location": "L25",
       "id": "package_overrides_effect_ts_core",
       "community": 250,
       "norm_label": "@effect-ts/core"
@@ -8449,7 +8449,7 @@
       "label": "dependencies",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L25",
+      "source_location": "L27",
       "id": "package_dependencies",
       "community": 7,
       "norm_label": "dependencies"
@@ -8458,7 +8458,7 @@
       "label": "@emotion/is-prop-valid",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L26",
+      "source_location": "L28",
       "id": "package_dependencies_emotion_is_prop_valid",
       "community": 7,
       "norm_label": "@emotion/is-prop-valid"
@@ -8467,7 +8467,7 @@
       "label": "@hookform/resolvers",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L27",
+      "source_location": "L29",
       "id": "package_dependencies_hookform_resolvers",
       "community": 7,
       "norm_label": "@hookform/resolvers"
@@ -8476,7 +8476,7 @@
       "label": "@mdx-js/mdx",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L28",
+      "source_location": "L30",
       "id": "package_dependencies_mdx_js_mdx",
       "community": 7,
       "norm_label": "@mdx-js/mdx"
@@ -8485,7 +8485,7 @@
       "label": "@radix-ui/react-accordion",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L29",
+      "source_location": "L31",
       "id": "package_dependencies_radix_ui_react_accordion",
       "community": 7,
       "norm_label": "@radix-ui/react-accordion"
@@ -8494,7 +8494,7 @@
       "label": "@radix-ui/react-dialog",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L30",
+      "source_location": "L32",
       "id": "package_dependencies_radix_ui_react_dialog",
       "community": 7,
       "norm_label": "@radix-ui/react-dialog"
@@ -8503,7 +8503,7 @@
       "label": "@radix-ui/react-select",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L31",
+      "source_location": "L33",
       "id": "package_dependencies_radix_ui_react_select",
       "community": 7,
       "norm_label": "@radix-ui/react-select"
@@ -8512,7 +8512,7 @@
       "label": "@radix-ui/react-slot",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L32",
+      "source_location": "L34",
       "id": "package_dependencies_radix_ui_react_slot",
       "community": 7,
       "norm_label": "@radix-ui/react-slot"
@@ -8521,7 +8521,7 @@
       "label": "@radix-ui/react-tabs",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L33",
+      "source_location": "L35",
       "id": "package_dependencies_radix_ui_react_tabs",
       "community": 7,
       "norm_label": "@radix-ui/react-tabs"
@@ -8530,7 +8530,7 @@
       "label": "@radix-ui/react-toast",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L34",
+      "source_location": "L36",
       "id": "package_dependencies_radix_ui_react_toast",
       "community": 7,
       "norm_label": "@radix-ui/react-toast"
@@ -8539,7 +8539,7 @@
       "label": "@supabase/ssr",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L35",
+      "source_location": "L37",
       "id": "package_dependencies_supabase_ssr",
       "community": 7,
       "norm_label": "@supabase/ssr"
@@ -8548,7 +8548,7 @@
       "label": "@supabase/supabase-js",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L36",
+      "source_location": "L38",
       "id": "package_dependencies_supabase_supabase_js",
       "community": 7,
       "norm_label": "@supabase/supabase-js"
@@ -8557,7 +8557,7 @@
       "label": "@types/leaflet",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L37",
+      "source_location": "L39",
       "id": "package_dependencies_types_leaflet",
       "community": 7,
       "norm_label": "@types/leaflet"
@@ -8566,7 +8566,7 @@
       "label": "clsx",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L38",
+      "source_location": "L40",
       "id": "package_dependencies_clsx",
       "community": 7,
       "norm_label": "clsx"
@@ -8575,7 +8575,7 @@
       "label": "contentlayer",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L39",
+      "source_location": "L41",
       "id": "package_dependencies_contentlayer",
       "community": 7,
       "norm_label": "contentlayer"
@@ -8584,7 +8584,7 @@
       "label": "date-fns",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L40",
+      "source_location": "L42",
       "id": "package_dependencies_date_fns",
       "community": 7,
       "norm_label": "date-fns"
@@ -8593,7 +8593,7 @@
       "label": "embla-carousel-react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L41",
+      "source_location": "L43",
       "id": "package_dependencies_embla_carousel_react",
       "community": 7,
       "norm_label": "embla-carousel-react"
@@ -8602,7 +8602,7 @@
       "label": "framer-motion",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L42",
+      "source_location": "L44",
       "id": "package_dependencies_framer_motion",
       "community": 7,
       "norm_label": "framer-motion"
@@ -8611,7 +8611,7 @@
       "label": "graphify",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L43",
+      "source_location": "L45",
       "id": "package_dependencies_graphify",
       "community": 7,
       "norm_label": "graphify"
@@ -8620,7 +8620,7 @@
       "label": "gray-matter",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L44",
+      "source_location": "L46",
       "id": "package_dependencies_gray_matter",
       "community": 7,
       "norm_label": "gray-matter"
@@ -8629,7 +8629,7 @@
       "label": "leaflet",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L45",
+      "source_location": "L47",
       "id": "package_dependencies_leaflet",
       "community": 7,
       "norm_label": "leaflet"
@@ -8638,7 +8638,7 @@
       "label": "lucide-react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L46",
+      "source_location": "L48",
       "id": "package_dependencies_lucide_react",
       "community": 7,
       "norm_label": "lucide-react"
@@ -8647,7 +8647,7 @@
       "label": "mdast-util-gfm-table",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L47",
+      "source_location": "L49",
       "id": "package_dependencies_mdast_util_gfm_table",
       "community": 7,
       "norm_label": "mdast-util-gfm-table"
@@ -8656,7 +8656,7 @@
       "label": "next",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L48",
+      "source_location": "L50",
       "id": "package_dependencies_next",
       "community": 7,
       "norm_label": "next"
@@ -8665,7 +8665,7 @@
       "label": "next-contentlayer",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L49",
+      "source_location": "L51",
       "id": "package_dependencies_next_contentlayer",
       "community": 7,
       "norm_label": "next-contentlayer"
@@ -8674,7 +8674,7 @@
       "label": "next-mdx-remote",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L50",
+      "source_location": "L52",
       "id": "package_dependencies_next_mdx_remote",
       "community": 7,
       "norm_label": "next-mdx-remote"
@@ -8683,7 +8683,7 @@
       "label": "next-themes",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L51",
+      "source_location": "L53",
       "id": "package_dependencies_next_themes",
       "community": 7,
       "norm_label": "next-themes"
@@ -8692,7 +8692,7 @@
       "label": "pdf-lib",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L52",
+      "source_location": "L54",
       "id": "package_dependencies_pdf_lib",
       "community": 7,
       "norm_label": "pdf-lib"
@@ -8701,7 +8701,7 @@
       "label": "react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L53",
+      "source_location": "L55",
       "id": "package_dependencies_react",
       "community": 7,
       "norm_label": "react"
@@ -8710,7 +8710,7 @@
       "label": "react-calendly",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L54",
+      "source_location": "L56",
       "id": "package_dependencies_react_calendly",
       "community": 7,
       "norm_label": "react-calendly"
@@ -8719,7 +8719,7 @@
       "label": "react-dom",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L55",
+      "source_location": "L57",
       "id": "package_dependencies_react_dom",
       "community": 7,
       "norm_label": "react-dom"
@@ -8728,7 +8728,7 @@
       "label": "react-hook-form",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L56",
+      "source_location": "L58",
       "id": "package_dependencies_react_hook_form",
       "community": 7,
       "norm_label": "react-hook-form"
@@ -8737,7 +8737,7 @@
       "label": "react-leaflet",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L57",
+      "source_location": "L59",
       "id": "package_dependencies_react_leaflet",
       "community": 7,
       "norm_label": "react-leaflet"
@@ -8746,7 +8746,7 @@
       "label": "reading-time",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L58",
+      "source_location": "L60",
       "id": "package_dependencies_reading_time",
       "community": 7,
       "norm_label": "reading-time"
@@ -8755,7 +8755,7 @@
       "label": "rehype-highlight",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L59",
+      "source_location": "L61",
       "id": "package_dependencies_rehype_highlight",
       "community": 7,
       "norm_label": "rehype-highlight"
@@ -8764,7 +8764,7 @@
       "label": "rehype-slug",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L60",
+      "source_location": "L62",
       "id": "package_dependencies_rehype_slug",
       "community": 7,
       "norm_label": "rehype-slug"
@@ -8773,7 +8773,7 @@
       "label": "remark-gfm",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L61",
+      "source_location": "L63",
       "id": "package_dependencies_remark_gfm",
       "community": 7,
       "norm_label": "remark-gfm"
@@ -8782,7 +8782,7 @@
       "label": "sharp",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L62",
+      "source_location": "L64",
       "id": "package_dependencies_sharp",
       "community": 7,
       "norm_label": "sharp"
@@ -8791,7 +8791,7 @@
       "label": "sonner",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L63",
+      "source_location": "L65",
       "id": "package_dependencies_sonner",
       "community": 7,
       "norm_label": "sonner"
@@ -8800,7 +8800,7 @@
       "label": "tailwind-merge",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L64",
+      "source_location": "L66",
       "id": "package_dependencies_tailwind_merge",
       "community": 7,
       "norm_label": "tailwind-merge"
@@ -8809,7 +8809,7 @@
       "label": "zod",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L65",
+      "source_location": "L67",
       "id": "package_dependencies_zod",
       "community": 7,
       "norm_label": "zod"
@@ -8818,7 +8818,7 @@
       "label": "devDependencies",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L67",
+      "source_location": "L69",
       "id": "package_devdependencies",
       "community": 238,
       "norm_label": "devdependencies"
@@ -8827,7 +8827,7 @@
       "label": "@tailwindcss/typography",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L68",
+      "source_location": "L70",
       "id": "package_devdependencies_tailwindcss_typography",
       "community": 238,
       "norm_label": "@tailwindcss/typography"
@@ -8836,7 +8836,7 @@
       "label": "@types/node",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L69",
+      "source_location": "L71",
       "id": "package_devdependencies_types_node",
       "community": 238,
       "norm_label": "@types/node"
@@ -8845,7 +8845,7 @@
       "label": "@types/react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L70",
+      "source_location": "L72",
       "id": "package_devdependencies_types_react",
       "community": 238,
       "norm_label": "@types/react"
@@ -8854,7 +8854,7 @@
       "label": "@types/react-dom",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L71",
+      "source_location": "L73",
       "id": "package_devdependencies_types_react_dom",
       "community": 238,
       "norm_label": "@types/react-dom"
@@ -8863,7 +8863,7 @@
       "label": "autoprefixer",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L72",
+      "source_location": "L74",
       "id": "package_devdependencies_autoprefixer",
       "community": 238,
       "norm_label": "autoprefixer"
@@ -8872,7 +8872,7 @@
       "label": "dotenv",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L73",
+      "source_location": "L75",
       "id": "package_devdependencies_dotenv",
       "community": 238,
       "norm_label": "dotenv"
@@ -8881,7 +8881,7 @@
       "label": "eslint",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L74",
+      "source_location": "L76",
       "id": "package_devdependencies_eslint",
       "community": 238,
       "norm_label": "eslint"
@@ -8890,7 +8890,7 @@
       "label": "eslint-config-next",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L75",
+      "source_location": "L77",
       "id": "package_devdependencies_eslint_config_next",
       "community": 238,
       "norm_label": "eslint-config-next"
@@ -8899,7 +8899,7 @@
       "label": "ghostscript-node",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L76",
+      "source_location": "L78",
       "id": "package_devdependencies_ghostscript_node",
       "community": 238,
       "norm_label": "ghostscript-node"
@@ -8908,7 +8908,7 @@
       "label": "imagemin",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L77",
+      "source_location": "L79",
       "id": "package_devdependencies_imagemin",
       "community": 238,
       "norm_label": "imagemin"
@@ -8917,7 +8917,7 @@
       "label": "imagemin-jpegtran",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L78",
+      "source_location": "L80",
       "id": "package_devdependencies_imagemin_jpegtran",
       "community": 238,
       "norm_label": "imagemin-jpegtran"
@@ -8926,7 +8926,7 @@
       "label": "imagemin-webp",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L79",
+      "source_location": "L81",
       "id": "package_devdependencies_imagemin_webp",
       "community": 238,
       "norm_label": "imagemin-webp"
@@ -8935,7 +8935,7 @@
       "label": "playwright",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L80",
+      "source_location": "L82",
       "id": "package_devdependencies_playwright",
       "community": 238,
       "norm_label": "playwright"
@@ -8944,7 +8944,7 @@
       "label": "postcss",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L81",
+      "source_location": "L83",
       "id": "package_devdependencies_postcss",
       "community": 238,
       "norm_label": "postcss"
@@ -8953,7 +8953,7 @@
       "label": "tailwindcss",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L82",
+      "source_location": "L84",
       "id": "package_devdependencies_tailwindcss",
       "community": 238,
       "norm_label": "tailwindcss"
@@ -8962,7 +8962,7 @@
       "label": "typescript",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L83",
+      "source_location": "L85",
       "id": "package_devdependencies_typescript",
       "community": 238,
       "norm_label": "typescript"
@@ -10156,13 +10156,13 @@
       "norm_label": "path"
     },
     {
-      "label": "sharp",
+      "label": "https",
       "file_type": "code",
       "source_file": "scripts/compress_images.js",
       "source_location": "L3",
-      "id": "scripts_compress_images_sharp",
+      "id": "scripts_compress_images_https",
       "community": 313,
-      "norm_label": "sharp"
+      "norm_label": "https"
     },
     {
       "label": "util",
@@ -10183,10 +10183,37 @@
       "norm_label": "exec"
     },
     {
+      "label": "dotenv",
+      "file_type": "code",
+      "source_file": "scripts/compress_images.js",
+      "source_location": "L6",
+      "id": "scripts_compress_images_dotenv",
+      "community": 313,
+      "norm_label": "dotenv"
+    },
+    {
+      "label": "envPath",
+      "file_type": "code",
+      "source_file": "scripts/compress_images.js",
+      "source_location": "L9",
+      "id": "scripts_compress_images_envpath",
+      "community": 313,
+      "norm_label": "envpath"
+    },
+    {
+      "label": "tinypngCompress()",
+      "file_type": "code",
+      "source_file": "scripts/compress_images.js",
+      "source_location": "L21",
+      "id": "scripts_compress_images_tinypngcompress",
+      "community": 313,
+      "norm_label": "tinypngcompress()"
+    },
+    {
       "label": "compressImages()",
       "file_type": "code",
       "source_file": "scripts/compress_images.js",
-      "source_location": "L7",
+      "source_location": "L78",
       "id": "scripts_compress_images_compressimages",
       "community": 313,
       "norm_label": "compressimages()"
@@ -10273,19 +10300,19 @@
       "norm_label": "path"
     },
     {
-      "label": "sharp",
+      "label": "https",
       "file_type": "code",
       "source_file": "scripts/compress_webp.js",
       "source_location": "L3",
-      "id": "scripts_compress_webp_sharp",
+      "id": "scripts_compress_webp_https",
       "community": 314,
-      "norm_label": "sharp"
+      "norm_label": "https"
     },
     {
       "label": "util",
       "file_type": "code",
       "source_file": "scripts/compress_webp.js",
-      "source_location": "L5",
+      "source_location": "L4",
       "id": "scripts_compress_webp_util",
       "community": 314,
       "norm_label": "util"
@@ -10294,16 +10321,43 @@
       "label": "exec",
       "file_type": "code",
       "source_file": "scripts/compress_webp.js",
-      "source_location": "L6",
+      "source_location": "L5",
       "id": "scripts_compress_webp_exec",
       "community": 314,
       "norm_label": "exec"
     },
     {
+      "label": "dotenv",
+      "file_type": "code",
+      "source_file": "scripts/compress_webp.js",
+      "source_location": "L6",
+      "id": "scripts_compress_webp_dotenv",
+      "community": 314,
+      "norm_label": "dotenv"
+    },
+    {
+      "label": "envPath",
+      "file_type": "code",
+      "source_file": "scripts/compress_webp.js",
+      "source_location": "L9",
+      "id": "scripts_compress_webp_envpath",
+      "community": 314,
+      "norm_label": "envpath"
+    },
+    {
+      "label": "tinypngCompress()",
+      "file_type": "code",
+      "source_file": "scripts/compress_webp.js",
+      "source_location": "L21",
+      "id": "scripts_compress_webp_tinypngcompress",
+      "community": 314,
+      "norm_label": "tinypngcompress()"
+    },
+    {
       "label": "compressWebP()",
       "file_type": "code",
       "source_file": "scripts/compress_webp.js",
-      "source_location": "L8",
+      "source_location": "L78",
       "id": "scripts_compress_webp_compresswebp",
       "community": 314,
       "norm_label": "compresswebp()"
@@ -12681,7 +12735,7 @@
       "source_file": "types/supabase.ts",
       "source_location": "L1",
       "id": "types_supabase",
-      "community": 114,
+      "community": 24,
       "norm_label": "supabase.ts"
     },
     {
@@ -12690,7 +12744,7 @@
       "source_file": "types/supabase.ts",
       "source_location": "L8",
       "id": "types_supabase_json",
-      "community": 114,
+      "community": 24,
       "norm_label": "json"
     },
     {
@@ -12699,7 +12753,7 @@
       "source_file": "types/supabase.ts",
       "source_location": "L16",
       "id": "types_supabase_database",
-      "community": 114,
+      "community": 24,
       "norm_label": "database"
     },
     {
@@ -17419,357 +17473,6 @@
       "norm_label": "tech stack"
     },
     {
-      "label": "REALTY_PROJECT_REPORT.md",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L1",
-      "id": "realty_project_report",
-      "community": 13,
-      "norm_label": "realty_project_report.md"
-    },
-    {
-      "label": "GURU NANAK DEV UNIVERSITY, AMRITSAR",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L1",
-      "id": "realty_project_report_guru_nanak_dev_university_amritsar",
-      "community": 13,
-      "norm_label": "guru nanak dev university, amritsar"
-    },
-    {
-      "label": "Six Months Industrial Training Report",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L2",
-      "id": "realty_project_report_six_months_industrial_training_report",
-      "community": 13,
-      "norm_label": "six months industrial training report"
-    },
-    {
-      "label": "ON",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L3",
-      "id": "realty_project_report_on",
-      "community": 13,
-      "norm_label": "on"
-    },
-    {
-      "label": "Realty - REAL ESTATE DISCOVERY & INVESTMENT PLATFORM",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L4",
-      "id": "realty_project_report_realty_real_estate_discovery_investment_platform",
-      "community": 13,
-      "norm_label": "realty - real estate discovery & investment platform"
-    },
-    {
-      "label": "BACHELOR OF TECHNOLOGY",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L7",
-      "id": "realty_project_report_bachelor_of_technology",
-      "community": 13,
-      "norm_label": "bachelor of technology"
-    },
-    {
-      "label": "Computer Science & Engineering",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L9",
-      "id": "realty_project_report_computer_science_engineering",
-      "community": 13,
-      "norm_label": "computer science & engineering"
-    },
-    {
-      "label": "DECLARATION",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L22",
-      "id": "realty_project_report_declaration",
-      "community": 13,
-      "norm_label": "declaration"
-    },
-    {
-      "label": "ACKNOWLEDGEMENTS",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L34",
-      "id": "realty_project_report_acknowledgements",
-      "community": 13,
-      "norm_label": "acknowledgements"
-    },
-    {
-      "label": "INDEX",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L49",
-      "id": "realty_project_report_index",
-      "community": 13,
-      "norm_label": "index"
-    },
-    {
-      "label": "1. INTRODUCTION TO THE PROJECT",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L64",
-      "id": "realty_project_report_1_introduction_to_the_project",
-      "community": 13,
-      "norm_label": "1. introduction to the project"
-    },
-    {
-      "label": "1.1 Proposed System",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L68",
-      "id": "realty_project_report_1_1_proposed_system",
-      "community": 13,
-      "norm_label": "1.1 proposed system"
-    },
-    {
-      "label": "1.2 Components of Realty",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L75",
-      "id": "realty_project_report_1_2_components_of_realty",
-      "community": 13,
-      "norm_label": "1.2 components of realty"
-    },
-    {
-      "label": "2. MINIMUM H/W AND S/W REQUIREMENTS",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L83",
-      "id": "realty_project_report_2_minimum_h_w_and_s_w_requirements",
-      "community": 13,
-      "norm_label": "2. minimum h/w and s/w requirements"
-    },
-    {
-      "label": "Hardware Requirements",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L85",
-      "id": "realty_project_report_hardware_requirements",
-      "community": 13,
-      "norm_label": "hardware requirements"
-    },
-    {
-      "label": "Software Requirements",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L94",
-      "id": "realty_project_report_software_requirements",
-      "community": 13,
-      "norm_label": "software requirements"
-    },
-    {
-      "label": "3. INTRODUCTION TO TOOLS",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L103",
-      "id": "realty_project_report_3_introduction_to_tools",
-      "community": 13,
-      "norm_label": "3. introduction to tools"
-    },
-    {
-      "label": "3.1 Next.js 15 & React 19",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L105",
-      "id": "realty_project_report_3_1_next_js_15_react_19",
-      "community": 13,
-      "norm_label": "3.1 next.js 15 & react 19"
-    },
-    {
-      "label": "3.2 Supabase (PostgreSQL)",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L108",
-      "id": "realty_project_report_3_2_supabase_postgresql",
-      "community": 13,
-      "norm_label": "3.2 supabase (postgresql)"
-    },
-    {
-      "label": "3.3 Tailwind CSS",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L114",
-      "id": "realty_project_report_3_3_tailwind_css",
-      "community": 13,
-      "norm_label": "3.3 tailwind css"
-    },
-    {
-      "label": "3.4 Contentlayer & MDX",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L117",
-      "id": "realty_project_report_3_4_contentlayer_mdx",
-      "community": 13,
-      "norm_label": "3.4 contentlayer & mdx"
-    },
-    {
-      "label": "4. FEASIBILITY STUDY",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L122",
-      "id": "realty_project_report_4_feasibility_study",
-      "community": 13,
-      "norm_label": "4. feasibility study"
-    },
-    {
-      "label": "4.1 Technical Feasibility",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L124",
-      "id": "realty_project_report_4_1_technical_feasibility",
-      "community": 13,
-      "norm_label": "4.1 technical feasibility"
-    },
-    {
-      "label": "4.2 Economic Feasibility",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L127",
-      "id": "realty_project_report_4_2_economic_feasibility",
-      "community": 13,
-      "norm_label": "4.2 economic feasibility"
-    },
-    {
-      "label": "4.3 Operational Feasibility",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L130",
-      "id": "realty_project_report_4_3_operational_feasibility",
-      "community": 13,
-      "norm_label": "4.3 operational feasibility"
-    },
-    {
-      "label": "5. DATABASE DESIGN & DATA TABLES",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L135",
-      "id": "realty_project_report_5_database_design_data_tables",
-      "community": 13,
-      "norm_label": "5. database design & data tables"
-    },
-    {
-      "label": "5.1 Properties Table",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L139",
-      "id": "realty_project_report_5_1_properties_table",
-      "community": 13,
-      "norm_label": "5.1 properties table"
-    },
-    {
-      "label": "5.2 Leads Table",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L149",
-      "id": "realty_project_report_5_2_leads_table",
-      "community": 13,
-      "norm_label": "5.2 leads table"
-    },
-    {
-      "label": "6. SYSTEM ARCHITECTURE & DFD",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L159",
-      "id": "realty_project_report_6_system_architecture_dfd",
-      "community": 13,
-      "norm_label": "6. system architecture & dfd"
-    },
-    {
-      "label": "6.1 Architecture Overview",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L161",
-      "id": "realty_project_report_6_1_architecture_overview",
-      "community": 13,
-      "norm_label": "6.1 architecture overview"
-    },
-    {
-      "label": "6.2 Data Flow Diagram (Level 0)",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L180",
-      "id": "realty_project_report_6_2_data_flow_diagram_level_0",
-      "community": 13,
-      "norm_label": "6.2 data flow diagram (level 0)"
-    },
-    {
-      "label": "6.3 Technology Stack Distribution",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L201",
-      "id": "realty_project_report_6_3_technology_stack_distribution",
-      "community": 13,
-      "norm_label": "6.3 technology stack distribution"
-    },
-    {
-      "label": "7. TESTING & QUALITY ASSURANCE",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L215",
-      "id": "realty_project_report_7_testing_quality_assurance",
-      "community": 13,
-      "norm_label": "7. testing & quality assurance"
-    },
-    {
-      "label": "7.1 Unit & E2E Testing",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L217",
-      "id": "realty_project_report_7_1_unit_e2e_testing",
-      "community": 13,
-      "norm_label": "7.1 unit & e2e testing"
-    },
-    {
-      "label": "7.2 Data Quality Audit",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L220",
-      "id": "realty_project_report_7_2_data_quality_audit",
-      "community": 13,
-      "norm_label": "7.2 data quality audit"
-    },
-    {
-      "label": "8. SNAPSHOTS OF FRONT END",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L225",
-      "id": "realty_project_report_8_snapshots_of_front_end",
-      "community": 13,
-      "norm_label": "8. snapshots of front end"
-    },
-    {
-      "label": "9. CONCLUSION & FUTURE SCOPE",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L235",
-      "id": "realty_project_report_9_conclusion_future_scope",
-      "community": 13,
-      "norm_label": "9. conclusion & future scope"
-    },
-    {
-      "label": "Future Scope",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L239",
-      "id": "realty_project_report_future_scope",
-      "community": 13,
-      "norm_label": "future scope"
-    },
-    {
-      "label": "10. BIBLIOGRAPHY",
-      "file_type": "document",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L246",
-      "id": "realty_project_report_10_bibliography",
-      "community": 13,
-      "norm_label": "10. bibliography"
-    },
-    {
       "label": "blog-index.md",
       "file_type": "document",
       "source_file": "RealtyNew/content/blog-index.md",
@@ -18137,141 +17840,6 @@
       "id": "content_realty_claude_code_prompt_output",
       "community": 85,
       "norm_label": "output"
-    },
-    {
-      "label": "SEO_PERFORMANCE_AUDIT.md",
-      "file_type": "document",
-      "source_file": "SEO_PERFORMANCE_AUDIT.md",
-      "source_location": "L1",
-      "id": "seo_performance_audit",
-      "community": 260,
-      "norm_label": "seo_performance_audit.md"
-    },
-    {
-      "label": "Comprehensive Performance & SEO Audit Report",
-      "file_type": "document",
-      "source_file": "SEO_PERFORMANCE_AUDIT.md",
-      "source_location": "L1",
-      "id": "seo_performance_audit_comprehensive_performance_seo_audit_report",
-      "community": 260,
-      "norm_label": "comprehensive performance & seo audit report"
-    },
-    {
-      "label": "1. Executive Summary",
-      "file_type": "document",
-      "source_file": "SEO_PERFORMANCE_AUDIT.md",
-      "source_location": "L9",
-      "id": "seo_performance_audit_1_executive_summary",
-      "community": 260,
-      "norm_label": "1. executive summary"
-    },
-    {
-      "label": "2. Performance Audit Findings",
-      "file_type": "document",
-      "source_file": "SEO_PERFORMANCE_AUDIT.md",
-      "source_location": "L20",
-      "id": "seo_performance_audit_2_performance_audit_findings",
-      "community": 260,
-      "norm_label": "2. performance audit findings"
-    },
-    {
-      "label": "\ud83d\udd34 Issue 1: Unoptimized Large Assets (Critical)",
-      "file_type": "document",
-      "source_file": "SEO_PERFORMANCE_AUDIT.md",
-      "source_location": "L22",
-      "id": "seo_performance_audit_issue_1_unoptimized_large_assets_critical",
-      "community": 260,
-      "norm_label": "\ud83d\udd34 issue 1: unoptimized large assets (critical)"
-    },
-    {
-      "label": "\ud83d\udfe1 Issue 2: Heavy Client-Side Dependencies (Medium)",
-      "file_type": "document",
-      "source_file": "SEO_PERFORMANCE_AUDIT.md",
-      "source_location": "L34",
-      "id": "seo_performance_audit_issue_2_heavy_client_side_dependencies_medium",
-      "community": 260,
-      "norm_label": "\ud83d\udfe1 issue 2: heavy client-side dependencies (medium)"
-    },
-    {
-      "label": "\ud83d\udfe2 Quick Win: Caching and ISR",
-      "file_type": "document",
-      "source_file": "SEO_PERFORMANCE_AUDIT.md",
-      "source_location": "L41",
-      "id": "seo_performance_audit_quick_win_caching_and_isr",
-      "community": 260,
-      "norm_label": "\ud83d\udfe2 quick win: caching and isr"
-    },
-    {
-      "label": "3. Technical SEO & Architecture Audit",
-      "file_type": "document",
-      "source_file": "SEO_PERFORMANCE_AUDIT.md",
-      "source_location": "L48",
-      "id": "seo_performance_audit_3_technical_seo_architecture_audit",
-      "community": 260,
-      "norm_label": "3. technical seo & architecture audit"
-    },
-    {
-      "label": "\ud83d\udfe2 Issue 1: Site Architecture & URL Routing",
-      "file_type": "document",
-      "source_file": "SEO_PERFORMANCE_AUDIT.md",
-      "source_location": "L50",
-      "id": "seo_performance_audit_issue_1_site_architecture_url_routing",
-      "community": 260,
-      "norm_label": "\ud83d\udfe2 issue 1: site architecture & url routing"
-    },
-    {
-      "label": "\ud83d\udfe1 Issue 2: Internal Linking Equity (Medium)",
-      "file_type": "document",
-      "source_file": "SEO_PERFORMANCE_AUDIT.md",
-      "source_location": "L55",
-      "id": "seo_performance_audit_issue_2_internal_linking_equity_medium",
-      "community": 260,
-      "norm_label": "\ud83d\udfe1 issue 2: internal linking equity (medium)"
-    },
-    {
-      "label": "4. Schema Markup & AEO (Answer Engine Optimization)",
-      "file_type": "document",
-      "source_file": "SEO_PERFORMANCE_AUDIT.md",
-      "source_location": "L62",
-      "id": "seo_performance_audit_4_schema_markup_aeo_answer_engine_optimization",
-      "community": 260,
-      "norm_label": "4. schema markup & aeo (answer engine optimization)"
-    },
-    {
-      "label": "\ud83d\udfe2 Issue 1: Global Identity Schema",
-      "file_type": "document",
-      "source_file": "SEO_PERFORMANCE_AUDIT.md",
-      "source_location": "L64",
-      "id": "seo_performance_audit_issue_1_global_identity_schema",
-      "community": 260,
-      "norm_label": "\ud83d\udfe2 issue 1: global identity schema"
-    },
-    {
-      "label": "\ud83d\udfe1 Issue 2: Missing BreadcrumbList Schema (Low/Medium)",
-      "file_type": "document",
-      "source_file": "SEO_PERFORMANCE_AUDIT.md",
-      "source_location": "L69",
-      "id": "seo_performance_audit_issue_2_missing_breadcrumblist_schema_low_medium",
-      "community": 260,
-      "norm_label": "\ud83d\udfe1 issue 2: missing breadcrumblist schema (low/medium)"
-    },
-    {
-      "label": "\ud83d\udfe1 Issue 3: Missing FAQ Schema (Low)",
-      "file_type": "document",
-      "source_file": "SEO_PERFORMANCE_AUDIT.md",
-      "source_location": "L74",
-      "id": "seo_performance_audit_issue_3_missing_faq_schema_low",
-      "community": 260,
-      "norm_label": "\ud83d\udfe1 issue 3: missing faq schema (low)"
-    },
-    {
-      "label": "5. Prioritized Action Plan",
-      "file_type": "document",
-      "source_file": "SEO_PERFORMANCE_AUDIT.md",
-      "source_location": "L81",
-      "id": "seo_performance_audit_5_prioritized_action_plan",
-      "community": 260,
-      "norm_label": "5. prioritized action plan"
     },
     {
       "label": "ToBeDone.md",
@@ -21629,6 +21197,510 @@
       "id": "references_voice_anti_patterns_to_eliminate",
       "community": 17,
       "norm_label": "anti-patterns to eliminate"
+    },
+    {
+      "label": "sharp",
+      "file_type": "code",
+      "source_file": "scripts/compress_images.js",
+      "source_location": "L3",
+      "community": 313,
+      "norm_label": "sharp",
+      "id": "scripts_compress_images_sharp"
+    },
+    {
+      "label": "sharp",
+      "file_type": "code",
+      "source_file": "scripts/compress_webp.js",
+      "source_location": "L3",
+      "community": 314,
+      "norm_label": "sharp",
+      "id": "scripts_compress_webp_sharp"
+    },
+    {
+      "label": "REALTY_PROJECT_REPORT.md",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L1",
+      "community": 13,
+      "norm_label": "realty_project_report.md",
+      "id": "realty_project_report"
+    },
+    {
+      "label": "GURU NANAK DEV UNIVERSITY, AMRITSAR",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L1",
+      "community": 13,
+      "norm_label": "guru nanak dev university, amritsar",
+      "id": "realty_project_report_guru_nanak_dev_university_amritsar"
+    },
+    {
+      "label": "Six Months Industrial Training Report",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L2",
+      "community": 13,
+      "norm_label": "six months industrial training report",
+      "id": "realty_project_report_six_months_industrial_training_report"
+    },
+    {
+      "label": "ON",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L3",
+      "community": 13,
+      "norm_label": "on",
+      "id": "realty_project_report_on"
+    },
+    {
+      "label": "Realty - REAL ESTATE DISCOVERY & INVESTMENT PLATFORM",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L4",
+      "community": 13,
+      "norm_label": "realty - real estate discovery & investment platform",
+      "id": "realty_project_report_realty_real_estate_discovery_investment_platform"
+    },
+    {
+      "label": "BACHELOR OF TECHNOLOGY",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L7",
+      "community": 13,
+      "norm_label": "bachelor of technology",
+      "id": "realty_project_report_bachelor_of_technology"
+    },
+    {
+      "label": "Computer Science & Engineering",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L9",
+      "community": 13,
+      "norm_label": "computer science & engineering",
+      "id": "realty_project_report_computer_science_engineering"
+    },
+    {
+      "label": "DECLARATION",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L22",
+      "community": 13,
+      "norm_label": "declaration",
+      "id": "realty_project_report_declaration"
+    },
+    {
+      "label": "ACKNOWLEDGEMENTS",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L34",
+      "community": 13,
+      "norm_label": "acknowledgements",
+      "id": "realty_project_report_acknowledgements"
+    },
+    {
+      "label": "INDEX",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L49",
+      "community": 13,
+      "norm_label": "index",
+      "id": "realty_project_report_index"
+    },
+    {
+      "label": "1. INTRODUCTION TO THE PROJECT",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L64",
+      "community": 13,
+      "norm_label": "1. introduction to the project",
+      "id": "realty_project_report_1_introduction_to_the_project"
+    },
+    {
+      "label": "1.1 Proposed System",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L68",
+      "community": 13,
+      "norm_label": "1.1 proposed system",
+      "id": "realty_project_report_1_1_proposed_system"
+    },
+    {
+      "label": "1.2 Components of Realty",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L75",
+      "community": 13,
+      "norm_label": "1.2 components of realty",
+      "id": "realty_project_report_1_2_components_of_realty"
+    },
+    {
+      "label": "2. MINIMUM H/W AND S/W REQUIREMENTS",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L83",
+      "community": 13,
+      "norm_label": "2. minimum h/w and s/w requirements",
+      "id": "realty_project_report_2_minimum_h_w_and_s_w_requirements"
+    },
+    {
+      "label": "Hardware Requirements",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L85",
+      "community": 13,
+      "norm_label": "hardware requirements",
+      "id": "realty_project_report_hardware_requirements"
+    },
+    {
+      "label": "Software Requirements",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L94",
+      "community": 13,
+      "norm_label": "software requirements",
+      "id": "realty_project_report_software_requirements"
+    },
+    {
+      "label": "3. INTRODUCTION TO TOOLS",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L103",
+      "community": 13,
+      "norm_label": "3. introduction to tools",
+      "id": "realty_project_report_3_introduction_to_tools"
+    },
+    {
+      "label": "3.1 Next.js 15 & React 19",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L105",
+      "community": 13,
+      "norm_label": "3.1 next.js 15 & react 19",
+      "id": "realty_project_report_3_1_next_js_15_react_19"
+    },
+    {
+      "label": "3.2 Supabase (PostgreSQL)",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L108",
+      "community": 13,
+      "norm_label": "3.2 supabase (postgresql)",
+      "id": "realty_project_report_3_2_supabase_postgresql"
+    },
+    {
+      "label": "3.3 Tailwind CSS",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L114",
+      "community": 13,
+      "norm_label": "3.3 tailwind css",
+      "id": "realty_project_report_3_3_tailwind_css"
+    },
+    {
+      "label": "3.4 Contentlayer & MDX",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L117",
+      "community": 13,
+      "norm_label": "3.4 contentlayer & mdx",
+      "id": "realty_project_report_3_4_contentlayer_mdx"
+    },
+    {
+      "label": "4. FEASIBILITY STUDY",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L122",
+      "community": 13,
+      "norm_label": "4. feasibility study",
+      "id": "realty_project_report_4_feasibility_study"
+    },
+    {
+      "label": "4.1 Technical Feasibility",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L124",
+      "community": 13,
+      "norm_label": "4.1 technical feasibility",
+      "id": "realty_project_report_4_1_technical_feasibility"
+    },
+    {
+      "label": "4.2 Economic Feasibility",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L127",
+      "community": 13,
+      "norm_label": "4.2 economic feasibility",
+      "id": "realty_project_report_4_2_economic_feasibility"
+    },
+    {
+      "label": "4.3 Operational Feasibility",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L130",
+      "community": 13,
+      "norm_label": "4.3 operational feasibility",
+      "id": "realty_project_report_4_3_operational_feasibility"
+    },
+    {
+      "label": "5. DATABASE DESIGN & DATA TABLES",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L135",
+      "community": 13,
+      "norm_label": "5. database design & data tables",
+      "id": "realty_project_report_5_database_design_data_tables"
+    },
+    {
+      "label": "5.1 Properties Table",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L139",
+      "community": 13,
+      "norm_label": "5.1 properties table",
+      "id": "realty_project_report_5_1_properties_table"
+    },
+    {
+      "label": "5.2 Leads Table",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L149",
+      "community": 13,
+      "norm_label": "5.2 leads table",
+      "id": "realty_project_report_5_2_leads_table"
+    },
+    {
+      "label": "6. SYSTEM ARCHITECTURE & DFD",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L159",
+      "community": 13,
+      "norm_label": "6. system architecture & dfd",
+      "id": "realty_project_report_6_system_architecture_dfd"
+    },
+    {
+      "label": "6.1 Architecture Overview",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L161",
+      "community": 13,
+      "norm_label": "6.1 architecture overview",
+      "id": "realty_project_report_6_1_architecture_overview"
+    },
+    {
+      "label": "6.2 Data Flow Diagram (Level 0)",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L180",
+      "community": 13,
+      "norm_label": "6.2 data flow diagram (level 0)",
+      "id": "realty_project_report_6_2_data_flow_diagram_level_0"
+    },
+    {
+      "label": "6.3 Technology Stack Distribution",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L201",
+      "community": 13,
+      "norm_label": "6.3 technology stack distribution",
+      "id": "realty_project_report_6_3_technology_stack_distribution"
+    },
+    {
+      "label": "7. TESTING & QUALITY ASSURANCE",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L215",
+      "community": 13,
+      "norm_label": "7. testing & quality assurance",
+      "id": "realty_project_report_7_testing_quality_assurance"
+    },
+    {
+      "label": "7.1 Unit & E2E Testing",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L217",
+      "community": 13,
+      "norm_label": "7.1 unit & e2e testing",
+      "id": "realty_project_report_7_1_unit_e2e_testing"
+    },
+    {
+      "label": "7.2 Data Quality Audit",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L220",
+      "community": 13,
+      "norm_label": "7.2 data quality audit",
+      "id": "realty_project_report_7_2_data_quality_audit"
+    },
+    {
+      "label": "8. SNAPSHOTS OF FRONT END",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L225",
+      "community": 13,
+      "norm_label": "8. snapshots of front end",
+      "id": "realty_project_report_8_snapshots_of_front_end"
+    },
+    {
+      "label": "9. CONCLUSION & FUTURE SCOPE",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L235",
+      "community": 13,
+      "norm_label": "9. conclusion & future scope",
+      "id": "realty_project_report_9_conclusion_future_scope"
+    },
+    {
+      "label": "Future Scope",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L239",
+      "community": 13,
+      "norm_label": "future scope",
+      "id": "realty_project_report_future_scope"
+    },
+    {
+      "label": "10. BIBLIOGRAPHY",
+      "file_type": "document",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L246",
+      "community": 13,
+      "norm_label": "10. bibliography",
+      "id": "realty_project_report_10_bibliography"
+    },
+    {
+      "label": "SEO_PERFORMANCE_AUDIT.md",
+      "file_type": "document",
+      "source_file": "SEO_PERFORMANCE_AUDIT.md",
+      "source_location": "L1",
+      "community": 260,
+      "norm_label": "seo_performance_audit.md",
+      "id": "seo_performance_audit"
+    },
+    {
+      "label": "Comprehensive Performance & SEO Audit Report",
+      "file_type": "document",
+      "source_file": "SEO_PERFORMANCE_AUDIT.md",
+      "source_location": "L1",
+      "community": 260,
+      "norm_label": "comprehensive performance & seo audit report",
+      "id": "seo_performance_audit_comprehensive_performance_seo_audit_report"
+    },
+    {
+      "label": "1. Executive Summary",
+      "file_type": "document",
+      "source_file": "SEO_PERFORMANCE_AUDIT.md",
+      "source_location": "L9",
+      "community": 260,
+      "norm_label": "1. executive summary",
+      "id": "seo_performance_audit_1_executive_summary"
+    },
+    {
+      "label": "2. Performance Audit Findings",
+      "file_type": "document",
+      "source_file": "SEO_PERFORMANCE_AUDIT.md",
+      "source_location": "L20",
+      "community": 260,
+      "norm_label": "2. performance audit findings",
+      "id": "seo_performance_audit_2_performance_audit_findings"
+    },
+    {
+      "label": "\ud83d\udd34 Issue 1: Unoptimized Large Assets (Critical)",
+      "file_type": "document",
+      "source_file": "SEO_PERFORMANCE_AUDIT.md",
+      "source_location": "L22",
+      "community": 260,
+      "norm_label": "\ud83d\udd34 issue 1: unoptimized large assets (critical)",
+      "id": "seo_performance_audit_issue_1_unoptimized_large_assets_critical"
+    },
+    {
+      "label": "\ud83d\udfe1 Issue 2: Heavy Client-Side Dependencies (Medium)",
+      "file_type": "document",
+      "source_file": "SEO_PERFORMANCE_AUDIT.md",
+      "source_location": "L34",
+      "community": 260,
+      "norm_label": "\ud83d\udfe1 issue 2: heavy client-side dependencies (medium)",
+      "id": "seo_performance_audit_issue_2_heavy_client_side_dependencies_medium"
+    },
+    {
+      "label": "\ud83d\udfe2 Quick Win: Caching and ISR",
+      "file_type": "document",
+      "source_file": "SEO_PERFORMANCE_AUDIT.md",
+      "source_location": "L41",
+      "community": 260,
+      "norm_label": "\ud83d\udfe2 quick win: caching and isr",
+      "id": "seo_performance_audit_quick_win_caching_and_isr"
+    },
+    {
+      "label": "3. Technical SEO & Architecture Audit",
+      "file_type": "document",
+      "source_file": "SEO_PERFORMANCE_AUDIT.md",
+      "source_location": "L48",
+      "community": 260,
+      "norm_label": "3. technical seo & architecture audit",
+      "id": "seo_performance_audit_3_technical_seo_architecture_audit"
+    },
+    {
+      "label": "\ud83d\udfe2 Issue 1: Site Architecture & URL Routing",
+      "file_type": "document",
+      "source_file": "SEO_PERFORMANCE_AUDIT.md",
+      "source_location": "L50",
+      "community": 260,
+      "norm_label": "\ud83d\udfe2 issue 1: site architecture & url routing",
+      "id": "seo_performance_audit_issue_1_site_architecture_url_routing"
+    },
+    {
+      "label": "\ud83d\udfe1 Issue 2: Internal Linking Equity (Medium)",
+      "file_type": "document",
+      "source_file": "SEO_PERFORMANCE_AUDIT.md",
+      "source_location": "L55",
+      "community": 260,
+      "norm_label": "\ud83d\udfe1 issue 2: internal linking equity (medium)",
+      "id": "seo_performance_audit_issue_2_internal_linking_equity_medium"
+    },
+    {
+      "label": "4. Schema Markup & AEO (Answer Engine Optimization)",
+      "file_type": "document",
+      "source_file": "SEO_PERFORMANCE_AUDIT.md",
+      "source_location": "L62",
+      "community": 260,
+      "norm_label": "4. schema markup & aeo (answer engine optimization)",
+      "id": "seo_performance_audit_4_schema_markup_aeo_answer_engine_optimization"
+    },
+    {
+      "label": "\ud83d\udfe2 Issue 1: Global Identity Schema",
+      "file_type": "document",
+      "source_file": "SEO_PERFORMANCE_AUDIT.md",
+      "source_location": "L64",
+      "community": 260,
+      "norm_label": "\ud83d\udfe2 issue 1: global identity schema",
+      "id": "seo_performance_audit_issue_1_global_identity_schema"
+    },
+    {
+      "label": "\ud83d\udfe1 Issue 2: Missing BreadcrumbList Schema (Low/Medium)",
+      "file_type": "document",
+      "source_file": "SEO_PERFORMANCE_AUDIT.md",
+      "source_location": "L69",
+      "community": 260,
+      "norm_label": "\ud83d\udfe1 issue 2: missing breadcrumblist schema (low/medium)",
+      "id": "seo_performance_audit_issue_2_missing_breadcrumblist_schema_low_medium"
+    },
+    {
+      "label": "\ud83d\udfe1 Issue 3: Missing FAQ Schema (Low)",
+      "file_type": "document",
+      "source_file": "SEO_PERFORMANCE_AUDIT.md",
+      "source_location": "L74",
+      "community": 260,
+      "norm_label": "\ud83d\udfe1 issue 3: missing faq schema (low)",
+      "id": "seo_performance_audit_issue_3_missing_faq_schema_low"
+    },
+    {
+      "label": "5. Prioritized Action Plan",
+      "file_type": "document",
+      "source_file": "SEO_PERFORMANCE_AUDIT.md",
+      "source_location": "L81",
+      "community": 260,
+      "norm_label": "5. prioritized action plan",
+      "id": "seo_performance_audit_5_prioritized_action_plan"
     },
     {
       "label": "PIN",
@@ -27869,9 +27941,9 @@
       "source_file": "app/(site)/page.tsx",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "site_page",
-      "target": "site_page_metadata",
-      "confidence_score": 1.0
+      "target": "site_page_metadata"
     },
     {
       "relation": "contains",
@@ -29854,9 +29926,9 @@
       "source_file": "app/(site)/properties/flats/[slug]/page.tsx",
       "source_location": "L43",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_site_properties_flats_slug_page_tsx_slug_page",
-      "target": "ui_descriptioncontainer",
-      "confidence_score": 1.0
+      "target": "ui_descriptioncontainer"
     },
     {
       "relation": "imports_from",
@@ -36019,9 +36091,9 @@
       "source_file": "components/ui/DescriptionContainer.tsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_descriptioncontainer",
-      "target": "ui_descriptioncontainer_descriptioncontainer",
-      "confidence_score": 1.0
+      "target": "ui_descriptioncontainer_descriptioncontainer"
     },
     {
       "relation": "contains",
@@ -36029,9 +36101,9 @@
       "source_file": "components/ui/DescriptionContainer.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_descriptioncontainer",
-      "target": "ui_descriptioncontainer_descriptioncontainerprops",
-      "confidence_score": 1.0
+      "target": "ui_descriptioncontainer_descriptioncontainerprops"
     },
     {
       "relation": "imports_from",
@@ -44004,6 +44076,26 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/compress_images.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "scripts_compress_images",
+      "target": "scripts_compress_images_dotenv",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compress_images.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "scripts_compress_images",
+      "target": "scripts_compress_images_envpath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compress_images.js",
       "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -44019,6 +44111,16 @@
       "confidence_score": 1.0,
       "source": "scripts_compress_images",
       "target": "scripts_compress_images_fs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compress_images.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "scripts_compress_images",
+      "target": "scripts_compress_images_https",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -44044,6 +44146,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/compress_images.js",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "scripts_compress_images",
+      "target": "scripts_compress_images_tinypngcompress",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compress_images.js",
       "source_location": "L4",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -44055,22 +44167,33 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "scripts/compress_images.js",
-      "source_location": "L25",
+      "source_location": "L13",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "scripts_compress_images_compressimages",
-      "target": "scripts_compress_images_sharp"
+      "target": "scripts_compress_images_exec"
     },
     {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "scripts/compress_images.js",
-      "source_location": "L13",
+      "source_location": "L96",
+      "weight": 1.0,
+      "source": "scripts_compress_images_compressimages",
+      "target": "scripts_compress_images_tinypngcompress",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compress_images.js",
+      "source_location": "L25",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "scripts_compress_images_compressimages",
-      "target": "scripts_compress_images_exec"
+      "target": "scripts_compress_images_sharp"
     },
     {
       "relation": "contains",
@@ -44149,6 +44272,26 @@
       "source_file": "scripts/compress_webp.js",
       "source_location": "L6",
       "weight": 1.0,
+      "source": "scripts_compress_webp",
+      "target": "scripts_compress_webp_dotenv",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compress_webp.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "scripts_compress_webp",
+      "target": "scripts_compress_webp_envpath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compress_webp.js",
+      "source_location": "L6",
+      "weight": 1.0,
       "confidence_score": 1.0,
       "source": "scripts_compress_webp",
       "target": "scripts_compress_webp_exec"
@@ -44162,6 +44305,16 @@
       "confidence_score": 1.0,
       "source": "scripts_compress_webp",
       "target": "scripts_compress_webp_fs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compress_webp.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "scripts_compress_webp",
+      "target": "scripts_compress_webp_https",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -44187,6 +44340,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/compress_webp.js",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "scripts_compress_webp",
+      "target": "scripts_compress_webp_tinypngcompress",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compress_webp.js",
       "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -44198,22 +44361,33 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "scripts/compress_webp.js",
-      "source_location": "L34",
+      "source_location": "L14",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "scripts_compress_webp_compresswebp",
-      "target": "scripts_compress_webp_sharp"
+      "target": "scripts_compress_webp_exec"
     },
     {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "scripts/compress_webp.js",
-      "source_location": "L14",
+      "source_location": "L97",
+      "weight": 1.0,
+      "source": "scripts_compress_webp_compresswebp",
+      "target": "scripts_compress_webp_tinypngcompress",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compress_webp.js",
+      "source_location": "L34",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "scripts_compress_webp_compresswebp",
-      "target": "scripts_compress_webp_exec"
+      "target": "scripts_compress_webp_sharp"
     },
     {
       "relation": "contains",
@@ -52447,386 +52621,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report",
-      "target": "realty_project_report_guru_nanak_dev_university_amritsar"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report",
-      "target": "realty_project_report_realty_real_estate_discovery_investment_platform"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_guru_nanak_dev_university_amritsar",
-      "target": "realty_project_report_on"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_guru_nanak_dev_university_amritsar",
-      "target": "realty_project_report_six_months_industrial_training_report"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L246",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
-      "target": "realty_project_report_10_bibliography"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L64",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
-      "target": "realty_project_report_1_introduction_to_the_project"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L83",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
-      "target": "realty_project_report_2_minimum_h_w_and_s_w_requirements"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L103",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
-      "target": "realty_project_report_3_introduction_to_tools"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L122",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
-      "target": "realty_project_report_4_feasibility_study"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L135",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
-      "target": "realty_project_report_5_database_design_data_tables"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L159",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
-      "target": "realty_project_report_6_system_architecture_dfd"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L215",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
-      "target": "realty_project_report_7_testing_quality_assurance"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L225",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
-      "target": "realty_project_report_8_snapshots_of_front_end"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L235",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
-      "target": "realty_project_report_9_conclusion_future_scope"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
-      "target": "realty_project_report_acknowledgements"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
-      "target": "realty_project_report_bachelor_of_technology"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
-      "target": "realty_project_report_computer_science_engineering"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
-      "target": "realty_project_report_declaration"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L49",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
-      "target": "realty_project_report_index"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L68",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_1_introduction_to_the_project",
-      "target": "realty_project_report_1_1_proposed_system"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L75",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_1_introduction_to_the_project",
-      "target": "realty_project_report_1_2_components_of_realty"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L85",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_2_minimum_h_w_and_s_w_requirements",
-      "target": "realty_project_report_hardware_requirements"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L94",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_2_minimum_h_w_and_s_w_requirements",
-      "target": "realty_project_report_software_requirements"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L105",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_3_introduction_to_tools",
-      "target": "realty_project_report_3_1_next_js_15_react_19"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L108",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_3_introduction_to_tools",
-      "target": "realty_project_report_3_2_supabase_postgresql"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L114",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_3_introduction_to_tools",
-      "target": "realty_project_report_3_3_tailwind_css"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L117",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_3_introduction_to_tools",
-      "target": "realty_project_report_3_4_contentlayer_mdx"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L124",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_4_feasibility_study",
-      "target": "realty_project_report_4_1_technical_feasibility"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L127",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_4_feasibility_study",
-      "target": "realty_project_report_4_2_economic_feasibility"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L130",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_4_feasibility_study",
-      "target": "realty_project_report_4_3_operational_feasibility"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L139",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_5_database_design_data_tables",
-      "target": "realty_project_report_5_1_properties_table"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L149",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_5_database_design_data_tables",
-      "target": "realty_project_report_5_2_leads_table"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L161",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_6_system_architecture_dfd",
-      "target": "realty_project_report_6_1_architecture_overview"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L180",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_6_system_architecture_dfd",
-      "target": "realty_project_report_6_2_data_flow_diagram_level_0"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L201",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_6_system_architecture_dfd",
-      "target": "realty_project_report_6_3_technology_stack_distribution"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L217",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_7_testing_quality_assurance",
-      "target": "realty_project_report_7_1_unit_e2e_testing"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L220",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_7_testing_quality_assurance",
-      "target": "realty_project_report_7_2_data_quality_audit"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "REALTY_PROJECT_REPORT.md",
-      "source_location": "L239",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "realty_project_report_9_conclusion_future_scope",
-      "target": "realty_project_report_future_scope"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "RealtyNew/content/blog/buying-property-in-dubai-as-a-foreigner-2026-guide.mdx",
       "source_location": "L20",
       "weight": 1.0,
@@ -53187,152 +52981,12 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "SEO_PERFORMANCE_AUDIT.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seo_performance_audit",
-      "target": "seo_performance_audit_comprehensive_performance_seo_audit_report"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "SEO_PERFORMANCE_AUDIT.md",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seo_performance_audit_comprehensive_performance_seo_audit_report",
-      "target": "seo_performance_audit_1_executive_summary"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "SEO_PERFORMANCE_AUDIT.md",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seo_performance_audit_comprehensive_performance_seo_audit_report",
-      "target": "seo_performance_audit_2_performance_audit_findings"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "SEO_PERFORMANCE_AUDIT.md",
-      "source_location": "L48",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seo_performance_audit_comprehensive_performance_seo_audit_report",
-      "target": "seo_performance_audit_3_technical_seo_architecture_audit"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "SEO_PERFORMANCE_AUDIT.md",
-      "source_location": "L62",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seo_performance_audit_comprehensive_performance_seo_audit_report",
-      "target": "seo_performance_audit_4_schema_markup_aeo_answer_engine_optimization"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "SEO_PERFORMANCE_AUDIT.md",
-      "source_location": "L81",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seo_performance_audit_comprehensive_performance_seo_audit_report",
-      "target": "seo_performance_audit_5_prioritized_action_plan"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "SEO_PERFORMANCE_AUDIT.md",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seo_performance_audit_2_performance_audit_findings",
-      "target": "seo_performance_audit_issue_1_unoptimized_large_assets_critical"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "SEO_PERFORMANCE_AUDIT.md",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seo_performance_audit_2_performance_audit_findings",
-      "target": "seo_performance_audit_issue_2_heavy_client_side_dependencies_medium"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "SEO_PERFORMANCE_AUDIT.md",
-      "source_location": "L41",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seo_performance_audit_2_performance_audit_findings",
-      "target": "seo_performance_audit_quick_win_caching_and_isr"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "SEO_PERFORMANCE_AUDIT.md",
-      "source_location": "L50",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seo_performance_audit_3_technical_seo_architecture_audit",
-      "target": "seo_performance_audit_issue_1_site_architecture_url_routing"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "SEO_PERFORMANCE_AUDIT.md",
-      "source_location": "L55",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seo_performance_audit_3_technical_seo_architecture_audit",
-      "target": "seo_performance_audit_issue_2_internal_linking_equity_medium"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "SEO_PERFORMANCE_AUDIT.md",
-      "source_location": "L64",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seo_performance_audit_4_schema_markup_aeo_answer_engine_optimization",
-      "target": "seo_performance_audit_issue_1_global_identity_schema"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "SEO_PERFORMANCE_AUDIT.md",
-      "source_location": "L69",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seo_performance_audit_4_schema_markup_aeo_answer_engine_optimization",
-      "target": "seo_performance_audit_issue_2_missing_breadcrumblist_schema_low_medium"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "SEO_PERFORMANCE_AUDIT.md",
-      "source_location": "L74",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seo_performance_audit_4_schema_markup_aeo_answer_engine_optimization",
-      "target": "seo_performance_audit_issue_3_missing_faq_schema_low"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "ToBeDone.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tobedone",
-      "target": "tobedone_to_be_done_ahrefs_site_audit_low_severity_items",
-      "confidence_score": 1.0
+      "target": "tobedone_to_be_done_ahrefs_site_audit_low_severity_items"
     },
     {
       "relation": "contains",
@@ -53340,9 +52994,9 @@
       "source_file": "ToBeDone.md",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tobedone_to_be_done_ahrefs_site_audit_low_severity_items",
-      "target": "tobedone_content_metadata_tweaks",
-      "confidence_score": 1.0
+      "target": "tobedone_content_metadata_tweaks"
     },
     {
       "relation": "contains",
@@ -53350,9 +53004,9 @@
       "source_file": "ToBeDone.md",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tobedone_to_be_done_ahrefs_site_audit_low_severity_items",
-      "target": "tobedone_general_notices_audits",
-      "confidence_score": 1.0
+      "target": "tobedone_general_notices_audits"
     },
     {
       "relation": "contains",
@@ -53360,9 +53014,9 @@
       "source_file": "ToBeDone.md",
       "source_location": "L50",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tobedone_to_be_done_ahrefs_site_audit_low_severity_items",
-      "target": "tobedone_resolved_in_this_sprint",
-      "confidence_score": 1.0
+      "target": "tobedone_resolved_in_this_sprint"
     },
     {
       "relation": "contains",
@@ -53370,9 +53024,9 @@
       "source_file": "ToBeDone.md",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tobedone_general_notices_audits",
-      "target": "tobedone_1_structured_data_optimization",
-      "confidence_score": 1.0
+      "target": "tobedone_1_structured_data_optimization"
     },
     {
       "relation": "contains",
@@ -53380,9 +53034,9 @@
       "source_file": "ToBeDone.md",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tobedone_general_notices_audits",
-      "target": "tobedone_2_internal_linking_crawl_equity",
-      "confidence_score": 1.0
+      "target": "tobedone_2_internal_linking_crawl_equity"
     },
     {
       "relation": "contains",
@@ -53390,9 +53044,9 @@
       "source_file": "ToBeDone.md",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tobedone_general_notices_audits",
-      "target": "tobedone_3_external_technical_audits",
-      "confidence_score": 1.0
+      "target": "tobedone_3_external_technical_audits"
     },
     {
       "relation": "contains",
@@ -54660,9 +54314,9 @@
       "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
       "source_location": "L275",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide",
-      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_3_bhk_apartments_in_mohali_2026_price_benchmarks_and_the_under_construction_opportunity",
-      "confidence_score": 1.0
+      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_3_bhk_apartments_in_mohali_2026_price_benchmarks_and_the_under_construction_opportunity"
     },
     {
       "relation": "contains",
@@ -54670,9 +54324,9 @@
       "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
       "source_location": "L79",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide",
-      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_chandigarh_collector_rates_2026_what_changed_and_why_it_matters",
-      "confidence_score": 1.0
+      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_chandigarh_collector_rates_2026_what_changed_and_why_it_matters"
     },
     {
       "relation": "contains",
@@ -54680,9 +54334,9 @@
       "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
       "source_location": "L428",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide",
-      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_frequently_asked_questions",
-      "confidence_score": 1.0
+      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_frequently_asked_questions"
     },
     {
       "relation": "contains",
@@ -54690,9 +54344,9 @@
       "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
       "source_location": "L212",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide",
-      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_gmada_plot_scheme_2026_what_is_active_what_is_coming",
-      "confidence_score": 1.0
+      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_gmada_plot_scheme_2026_what_is_active_what_is_coming"
     },
     {
       "relation": "contains",
@@ -54700,9 +54354,9 @@
       "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
       "source_location": "L146",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide",
-      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_property_rates_in_mohali_2026_sector_by_sector_data",
-      "confidence_score": 1.0
+      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_property_rates_in_mohali_2026_sector_by_sector_data"
     },
     {
       "relation": "contains",
@@ -54720,9 +54374,9 @@
       "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
       "source_location": "L122",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide",
-      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_the_chandigarh_registry_structure_floors_shares_and_what_banks_will_finance",
-      "confidence_score": 1.0
+      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_the_chandigarh_registry_structure_floors_shares_and_what_banks_will_finance"
     },
     {
       "relation": "contains",
@@ -54730,9 +54384,9 @@
       "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
       "source_location": "L331",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide",
-      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_the_commercial_property_problem_loan_mechanics_and_the_cash_component",
-      "confidence_score": 1.0
+      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_the_commercial_property_problem_loan_mechanics_and_the_cash_component"
     },
     {
       "relation": "contains",
@@ -54740,9 +54394,9 @@
       "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
       "source_location": "L408",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide",
-      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_the_decision_timing_problem_one_observation_from_a_decade_of_transactions",
-      "confidence_score": 1.0
+      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_the_decision_timing_problem_one_observation_from_a_decade_of_transactions"
     },
     {
       "relation": "contains",
@@ -56973,6 +56627,526 @@
       "confidence_score": 1.0,
       "source": "references_voice_format_specific_rules",
       "target": "references_voice_youtube_scripts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report",
+      "target": "realty_project_report_guru_nanak_dev_university_amritsar"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report",
+      "target": "realty_project_report_realty_real_estate_discovery_investment_platform"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_guru_nanak_dev_university_amritsar",
+      "target": "realty_project_report_on"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_guru_nanak_dev_university_amritsar",
+      "target": "realty_project_report_six_months_industrial_training_report"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L246",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
+      "target": "realty_project_report_10_bibliography"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L64",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
+      "target": "realty_project_report_1_introduction_to_the_project"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L83",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
+      "target": "realty_project_report_2_minimum_h_w_and_s_w_requirements"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L103",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
+      "target": "realty_project_report_3_introduction_to_tools"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L122",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
+      "target": "realty_project_report_4_feasibility_study"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L135",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
+      "target": "realty_project_report_5_database_design_data_tables"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L159",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
+      "target": "realty_project_report_6_system_architecture_dfd"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L215",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
+      "target": "realty_project_report_7_testing_quality_assurance"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L225",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
+      "target": "realty_project_report_8_snapshots_of_front_end"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L235",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
+      "target": "realty_project_report_9_conclusion_future_scope"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
+      "target": "realty_project_report_acknowledgements"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
+      "target": "realty_project_report_bachelor_of_technology"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
+      "target": "realty_project_report_computer_science_engineering"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
+      "target": "realty_project_report_declaration"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_realty_real_estate_discovery_investment_platform",
+      "target": "realty_project_report_index"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L68",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_1_introduction_to_the_project",
+      "target": "realty_project_report_1_1_proposed_system"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L75",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_1_introduction_to_the_project",
+      "target": "realty_project_report_1_2_components_of_realty"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L85",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_2_minimum_h_w_and_s_w_requirements",
+      "target": "realty_project_report_hardware_requirements"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L94",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_2_minimum_h_w_and_s_w_requirements",
+      "target": "realty_project_report_software_requirements"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L105",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_3_introduction_to_tools",
+      "target": "realty_project_report_3_1_next_js_15_react_19"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L108",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_3_introduction_to_tools",
+      "target": "realty_project_report_3_2_supabase_postgresql"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L114",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_3_introduction_to_tools",
+      "target": "realty_project_report_3_3_tailwind_css"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L117",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_3_introduction_to_tools",
+      "target": "realty_project_report_3_4_contentlayer_mdx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L124",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_4_feasibility_study",
+      "target": "realty_project_report_4_1_technical_feasibility"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L127",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_4_feasibility_study",
+      "target": "realty_project_report_4_2_economic_feasibility"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L130",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_4_feasibility_study",
+      "target": "realty_project_report_4_3_operational_feasibility"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L139",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_5_database_design_data_tables",
+      "target": "realty_project_report_5_1_properties_table"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L149",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_5_database_design_data_tables",
+      "target": "realty_project_report_5_2_leads_table"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L161",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_6_system_architecture_dfd",
+      "target": "realty_project_report_6_1_architecture_overview"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L180",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_6_system_architecture_dfd",
+      "target": "realty_project_report_6_2_data_flow_diagram_level_0"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L201",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_6_system_architecture_dfd",
+      "target": "realty_project_report_6_3_technology_stack_distribution"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L217",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_7_testing_quality_assurance",
+      "target": "realty_project_report_7_1_unit_e2e_testing"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L220",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_7_testing_quality_assurance",
+      "target": "realty_project_report_7_2_data_quality_audit"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "REALTY_PROJECT_REPORT.md",
+      "source_location": "L239",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "realty_project_report_9_conclusion_future_scope",
+      "target": "realty_project_report_future_scope"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SEO_PERFORMANCE_AUDIT.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seo_performance_audit",
+      "target": "seo_performance_audit_comprehensive_performance_seo_audit_report"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SEO_PERFORMANCE_AUDIT.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seo_performance_audit_comprehensive_performance_seo_audit_report",
+      "target": "seo_performance_audit_1_executive_summary"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SEO_PERFORMANCE_AUDIT.md",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seo_performance_audit_comprehensive_performance_seo_audit_report",
+      "target": "seo_performance_audit_2_performance_audit_findings"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SEO_PERFORMANCE_AUDIT.md",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seo_performance_audit_comprehensive_performance_seo_audit_report",
+      "target": "seo_performance_audit_3_technical_seo_architecture_audit"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SEO_PERFORMANCE_AUDIT.md",
+      "source_location": "L62",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seo_performance_audit_comprehensive_performance_seo_audit_report",
+      "target": "seo_performance_audit_4_schema_markup_aeo_answer_engine_optimization"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SEO_PERFORMANCE_AUDIT.md",
+      "source_location": "L81",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seo_performance_audit_comprehensive_performance_seo_audit_report",
+      "target": "seo_performance_audit_5_prioritized_action_plan"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SEO_PERFORMANCE_AUDIT.md",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seo_performance_audit_2_performance_audit_findings",
+      "target": "seo_performance_audit_issue_1_unoptimized_large_assets_critical"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SEO_PERFORMANCE_AUDIT.md",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seo_performance_audit_2_performance_audit_findings",
+      "target": "seo_performance_audit_issue_2_heavy_client_side_dependencies_medium"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SEO_PERFORMANCE_AUDIT.md",
+      "source_location": "L41",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seo_performance_audit_2_performance_audit_findings",
+      "target": "seo_performance_audit_quick_win_caching_and_isr"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SEO_PERFORMANCE_AUDIT.md",
+      "source_location": "L50",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seo_performance_audit_3_technical_seo_architecture_audit",
+      "target": "seo_performance_audit_issue_1_site_architecture_url_routing"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SEO_PERFORMANCE_AUDIT.md",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seo_performance_audit_3_technical_seo_architecture_audit",
+      "target": "seo_performance_audit_issue_2_internal_linking_equity_medium"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SEO_PERFORMANCE_AUDIT.md",
+      "source_location": "L64",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seo_performance_audit_4_schema_markup_aeo_answer_engine_optimization",
+      "target": "seo_performance_audit_issue_1_global_identity_schema"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SEO_PERFORMANCE_AUDIT.md",
+      "source_location": "L69",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seo_performance_audit_4_schema_markup_aeo_answer_engine_optimization",
+      "target": "seo_performance_audit_issue_2_missing_breadcrumblist_schema_low_medium"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SEO_PERFORMANCE_AUDIT.md",
+      "source_location": "L74",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seo_performance_audit_4_schema_markup_aeo_answer_engine_optimization",
+      "target": "seo_performance_audit_issue_3_missing_faq_schema_low"
     },
     {
       "relation": "contains",
@@ -61666,5 +61840,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "3690941e857b75f58fd75006993f731e1ef2b658"
+  "built_at_commit": "7d0bca8db3748e47c4316eb6656ecd2ee0fd0511"
 }

@@ -46,6 +46,7 @@ export default function PropertyGallery({ images, title, imageCount }: Props) {
         <button
           onClick={() => open(0)}
           className="relative flex-1 overflow-hidden rounded-l-2xl bg-black/5 cursor-zoom-in"
+          aria-label={`Open photo gallery for ${title}`}
         >
           <Image
             src={images[0] ?? "/assets/images/home/about.jpg"}
@@ -67,6 +68,7 @@ export default function PropertyGallery({ images, title, imageCount }: Props) {
                 ${i === 2 ? "rounded-tr-2xl" : ""}
                 ${i === 4 ? "rounded-br-2xl" : ""}
               `}
+              aria-label={`View photo ${i + 1} of ${title}`}
             >
               {images[i] ? (
                 <Image
@@ -104,6 +106,7 @@ export default function PropertyGallery({ images, title, imageCount }: Props) {
           <button
             onClick={close}
             className="absolute top-5 right-5 text-white/70 hover:text-white transition-colors z-10"
+            aria-label="Close photo gallery"
           >
             <X size={28} strokeWidth={1.5} />
           </button>
@@ -117,6 +120,7 @@ export default function PropertyGallery({ images, title, imageCount }: Props) {
           <button
             onClick={(e) => { e.stopPropagation(); prev(); }}
             className="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors z-10 p-2"
+            aria-label="Previous photo"
           >
             <ChevronLeft size={36} strokeWidth={1.5} />
           </button>
@@ -141,6 +145,7 @@ export default function PropertyGallery({ images, title, imageCount }: Props) {
           <button
             onClick={(e) => { e.stopPropagation(); next(); }}
             className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors z-10 p-2"
+            aria-label="Next photo"
           >
             <ChevronRight size={36} strokeWidth={1.5} />
           </button>
@@ -155,6 +160,7 @@ export default function PropertyGallery({ images, title, imageCount }: Props) {
                   className={`relative w-14 h-14 shrink-0 rounded-lg overflow-hidden border-2 transition-all ${
                     i === lightboxIndex ? "border-white opacity-100" : "border-transparent opacity-50 hover:opacity-80"
                   }`}
+                  aria-label={`Go to photo ${i + 1} of ${title}`}
                 >
                   <Image src={src} alt={`Thumbnail ${i + 1} of ${title} property interior and exterior`} fill className="object-cover" unoptimized />
                 </button>

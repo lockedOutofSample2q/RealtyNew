@@ -107,6 +107,7 @@ export default function HeroSection({ sectorOptions }: HeroSectionProps = {}) {
             alt="Luxury Real Estate in Mohali"
             fill
             priority
+            fetchPriority="high"
             className="object-cover object-[center_top]"
             sizes="100vw"
             quality={75}

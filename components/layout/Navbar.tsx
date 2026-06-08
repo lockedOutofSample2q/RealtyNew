@@ -107,6 +107,8 @@ export default function Navbar() {
               <img 
                 src="/assets/logo-light-theme.svg" 
                 alt={siteConfig.name} 
+                width={1756}
+                height={925}
                 className={cn(
                   "absolute inset-0 h-full w-full object-contain object-left transition-opacity duration-300",
                   showLightLogo ? "opacity-100" : "opacity-0"
@@ -115,6 +117,8 @@ export default function Navbar() {
               <img 
                 src="/assets/logo-dark-theme.svg" 
                 alt={siteConfig.name} 
+                width={1756}
+                height={925}
                 className={cn(
                   "absolute inset-0 h-full w-full object-contain object-left transition-opacity duration-300",
                   !showLightLogo ? "opacity-100" : "opacity-0"

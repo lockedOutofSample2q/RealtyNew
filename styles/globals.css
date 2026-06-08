@@ -144,3 +144,10 @@ a {
   background-color: #333 !important;
 }
 
+/* ── INPUT PLACEHOLDER CONTRAST FIX ───────────────────────── */
+input::placeholder, textarea::placeholder {
+  color: #767676 !important;
+  opacity: 1 !important;
+}
+
+

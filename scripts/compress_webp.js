@@ -1,12 +1,82 @@
 const fs = require('fs');
 const path = require('path');
-const sharp = require('sharp');
-sharp.cache(false);
+const https = require('https');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
+const dotenv = require('dotenv');
+
+// Load environment variables from .env.local
+const envPath = path.join(__dirname, '..', '.env.local');
+if (fs.existsSync(envPath)) {
+  dotenv.config({ path: envPath });
+}
+
+const apiKey = process.env.TINYPNG_API_KEY;
+
+if (!apiKey) {
+  console.error('Error: TINYPNG_API_KEY is not defined in .env.local');
+  process.exit(1);
+}
+
+function tinypngCompress(filePath, apiKey) {
+  return new Promise((resolve, reject) => {
+    const fileBuffer = fs.readFileSync(filePath);
+    const auth = 'Basic ' + Buffer.from('api:' + apiKey).toString('base64');
+
+    const options = {
+      hostname: 'api.tinify.com',
+      path: '/shrink',
+      method: 'POST',
+      headers: {
+        'Authorization': auth,
+        'Content-Type': 'application/octet-stream',
+        'Content-Length': fileBuffer.length
+      }
+    };
+
+    const req = https.request(options, (res) => {
+      let data = '';
+      res.on('data', (chunk) => { data += chunk; });
+      res.on('end', () => {
+        if (res.statusCode !== 201) {
+          reject(new Error(`TinyPNG returned status ${res.statusCode}: ${data}`));
+          return;
+        }
+
+        try {
+          const result = JSON.parse(data);
+          const downloadUrl = result.output.url;
+          
+          https.get(downloadUrl, (downloadRes) => {
+            if (downloadRes.statusCode !== 200) {
+              reject(new Error(`Failed to download from TinyPNG: ${downloadRes.statusCode}`));
+              return;
+            }
+            const chunks = [];
+            downloadRes.on('data', (chunk) => { chunks.push(chunk); });
+            downloadRes.on('end', () => {
+              const compressedBuffer = Buffer.concat(chunks);
+              fs.writeFileSync(filePath, compressedBuffer);
+              resolve({
+                originalSize: result.input.size,
+                compressedSize: result.output.size,
+              });
+            });
+          }).on('error', reject);
+        } catch (err) {
+          reject(err);
+        }
+      });
+    });
+
+    req.on('error', reject);
+    req.write(fileBuffer);
+    req.end();
+  });
+}
 
 async function compressWebP() {
-  const imgDir = path.join('C:\\Users\\Magicbook\\Desktop\\monter\\public\\assets\\images');
+  const imgDir = path.join(__dirname, '..', 'public', 'assets', 'images');
   console.log('Scanning for WebP images in:', imgDir);
   
   try {
@@ -19,35 +89,17 @@ async function compressWebP() {
     for (const file of fileList) {
       if (file.endsWith('.tmp.webp')) continue;
       const stat = fs.statSync(file);
-      // Only process files larger than 100KB
+      // Process WebP files larger than 100KB
       if (stat.size > 100 * 1024) {
-        const sizeMB = (stat.size / 1024).toFixed(1);
-        console.log(`Optimizing ${path.basename(file)} (${sizeMB} KB)...`);
+        console.log(`Compressing ${path.basename(file)} (${(stat.size / 1024).toFixed(1)} KB) using TinyPNG API...`);
         
-        const tempFile = file + '.tmp.webp';
-        
-        // Determine max width
-        const isHero = file.toLowerCase().includes('hero');
-        const maxWidth = isHero ? 1600 : 1200;
-        
-        // Use sharp to compress
-        await sharp(file)
-          .resize({ width: maxWidth, withoutEnlargement: true })
-          .webp({ quality: 75, effort: 6 }) // 75% quality, max compression effort
-          .toFile(tempFile);
-          
-        const newStat = fs.statSync(tempFile);
-        
-        if (newStat.size < stat.size) {
-          const savedKB = ((stat.size - newStat.size) / 1024).toFixed(1);
-          totalSaved += (stat.size - newStat.size);
-          
-          fs.unlinkSync(file);
-          fs.renameSync(tempFile, file);
-          console.log(`--> Saved ${savedKB} KB (New Size: ${(newStat.size / 1024).toFixed(1)} KB)`);
-        } else {
-          console.log(`--> Already optimal, keeping original.`);
-          fs.unlinkSync(tempFile);
+        try {
+          const result = await tinypngCompress(file, apiKey);
+          const saved = result.originalSize - result.compressedSize;
+          totalSaved += saved;
+          console.log(`--> Saved ${(saved / 1024).toFixed(1)} KB (New Size: ${(result.compressedSize / 1024).toFixed(1)} KB)`);
+        } catch (err) {
+          console.error(`--> Error compressing ${path.basename(file)}:`, err.message);
         }
       }
     }

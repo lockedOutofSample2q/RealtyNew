@@ -139,10 +139,10 @@ export function PropertyGallery({ images, videos = [], title, imageCountOverride
                <div className="text-[13px] font-medium text-white/90">{title}</div>
             </div>
 
-            <button onClick={() => setIndex(null)} className="absolute top-6 right-6 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors z-[110]"><X size={24} /></button>
+            <button onClick={() => setIndex(null)} className="absolute top-6 right-6 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors z-[110]" aria-label="Close media gallery"><X size={24} /></button>
 
-            <button onClick={(e) => { e.stopPropagation(); handlePrev(); }} className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 p-4 rounded-full text-white/40 hover:text-white transition-colors z-[110]"><ChevronLeft size={44} strokeWidth={1.5} /></button>
-            <button onClick={(e) => { e.stopPropagation(); handleNext(); }} className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 p-4 rounded-full text-white/40 hover:text-white transition-colors z-[110]"><ChevronRight size={44} strokeWidth={1.5} /></button>
+            <button onClick={(e) => { e.stopPropagation(); handlePrev(); }} className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 p-4 rounded-full text-white/40 hover:text-white transition-colors z-[110]" aria-label="Previous media item"><ChevronLeft size={44} strokeWidth={1.5} /></button>
+            <button onClick={(e) => { e.stopPropagation(); handleNext(); }} className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 p-4 rounded-full text-white/40 hover:text-white transition-colors z-[110]" aria-label="Next media item"><ChevronRight size={44} strokeWidth={1.5} /></button>
 
             <div className="relative w-full h-full flex flex-col items-center justify-center" onClick={() => setIndex(null)}>
               <div className="relative max-w-6xl w-full flex-1 flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
@@ -178,6 +178,7 @@ export function PropertyGallery({ images, videos = [], title, imageCountOverride
                       "relative w-16 h-12 md:w-20 md:h-14 rounded-lg overflow-hidden border-2 transition-all shrink-0",
                       index === i ? "border-white scale-110 z-10" : "border-transparent opacity-40 hover:opacity-100"
                     )}
+                    aria-label={`Go to media item ${i + 1}`}
                   >
                     <MediaThumbnail item={item} title={`${title} thumb ${i}`} />
                     {item.type === "video" && (
@@ -219,6 +220,7 @@ function MediaThumbnail({ item, title, className, priority }: { item: MediaItem;
       quality={80}
       sizes="(max-width: 768px) 100vw, 800px"
       priority={priority}
+      fetchPriority={priority ? "high" : undefined}
     />
   );
 }
