@@ -25,9 +25,10 @@ const config: Config = {
         accent: "var(--accent)",
         card: "var(--card)",
         gold: "#C9A84C",
+        goldDark: "#9F7F2D",
       },
       fontFamily: {
-        display: ["var(--font-body)", "sans-serif"],
+        display: ["var(--font-display)", "serif"],
         body: ["var(--font-body)", "sans-serif"],
         mono: ["var(--font-mono)", "monospace"],
         serif: ["var(--font-display)", "serif"],

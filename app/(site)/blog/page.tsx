@@ -77,14 +77,14 @@ export default function BlogPage() {
                 </Link>
                 <div className="flex flex-col flex-grow">
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-gold bg-gold/10 px-2.5 py-1 rounded-full">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-goldDark bg-goldDark/10 px-2.5 py-1 rounded-full">
                       {post.category}
                     </span>
                     <time dateTime={post.date} className="text-xs text-muted font-body">
                       {format(parseISO(post.date), "MMMM dd, yyyy")}
                     </time>
                   </div>
-                  <Link href={post.url} className="group-hover:text-gold transition-colors">
+                  <Link href={post.url} className="group-hover:text-goldDark transition-colors">
                     <h2 className="font-display text-2xl font-medium mb-4 leading-tight">
                       {post.title}
                     </h2>

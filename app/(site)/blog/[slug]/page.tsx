@@ -144,7 +144,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
           <header className="mb-16">
             <div className="flex items-center gap-4 mb-8">
-              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-gold border border-gold/20 px-4 py-1.5 rounded-full bg-gold/5">
+              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-goldDark border border-goldDark/20 px-4 py-1.5 rounded-full bg-goldDark/5">
                 {post.category}
               </span>
               <div className="flex items-center gap-2 text-muted text-[11px] font-medium uppercase tracking-widest">
