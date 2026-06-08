@@ -50,8 +50,8 @@
     "semantic_hash": ""
   },
   "app/(site)/about/page.tsx": {
-    "mtime": 1780560435.0367682,
-    "ast_hash": "9633bca3c841ae0f63253fdf56a77eac",
+    "mtime": 1780891217.7182312,
+    "ast_hash": "9736913596477d7981a56e6555c4238b",
     "semantic_hash": ""
   },
   "app/(site)/appointments/BookingClient.tsx": {
@@ -60,8 +60,8 @@
     "semantic_hash": ""
   },
   "app/(site)/appointments/page.tsx": {
-    "mtime": 1779454010.3756516,
-    "ast_hash": "c47999098d70ea263bc7ec514ee7ef5f",
+    "mtime": 1780891015.5447314,
+    "ast_hash": "6d770f2437c2e6a9d62ae75dec8b3e9b",
     "semantic_hash": ""
   },
   "app/(site)/blog/[slug]/page.tsx": {
@@ -70,8 +70,8 @@
     "semantic_hash": ""
   },
   "app/(site)/blog/page.tsx": {
-    "mtime": 1779525061.5710647,
-    "ast_hash": "7708c78cece0433b28c32bc0ffe5ece1",
+    "mtime": 1780890992.095697,
+    "ast_hash": "5acae8319d4941465233f8585ac46b03",
     "semantic_hash": ""
   },
   "app/(site)/contact/ContactClient.tsx": {
@@ -85,13 +85,13 @@
     "semantic_hash": ""
   },
   "app/(site)/cookies/page.tsx": {
-    "mtime": 1780624657.1858053,
-    "ast_hash": "fae16ed28979de769ba83f489e3915e1",
+    "mtime": 1780891008.8035183,
+    "ast_hash": "ca99d4a779ad73fa24278200c4bd3737",
     "semantic_hash": ""
   },
   "app/(site)/faq/page.tsx": {
-    "mtime": 1779525097.1317523,
-    "ast_hash": "110516fc65e9d8569f9650722be731a9",
+    "mtime": 1780891013.5032718,
+    "ast_hash": "8907462fa1324610b3d2d39b6433c03e",
     "semantic_hash": ""
   },
   "app/(site)/guides/page.tsx": {
@@ -105,23 +105,23 @@
     "semantic_hash": ""
   },
   "app/(site)/list-your-property/page.tsx": {
-    "mtime": 1780624661.2947736,
-    "ast_hash": "dbd19f036249f0907b316759313d1a44",
+    "mtime": 1780891020.6029413,
+    "ast_hash": "04ce45ed2fdf6adf50016ff1e836f49a",
     "semantic_hash": ""
   },
   "app/(site)/page.tsx": {
-    "mtime": 1779201358.300918,
-    "ast_hash": "b89881826e35cf3aaf3d6a4b1d2f4106",
+    "mtime": 1780890987.1292639,
+    "ast_hash": "2543bcd4208d2847a79027e300c7d7e1",
     "semantic_hash": ""
   },
   "app/(site)/privacy/page.tsx": {
-    "mtime": 1780624667.835623,
-    "ast_hash": "e304eeb9b8ca33148e3c799cef0ba410",
+    "mtime": 1780890997.8697066,
+    "ast_hash": "d6937cd133316b92a690699c7e07ef19",
     "semantic_hash": ""
   },
   "app/(site)/properties/PropertiesClient.tsx": {
-    "mtime": 1780388661.4968643,
-    "ast_hash": "c2ee9f491db7fd45bdd88b4c67893d3c",
+    "mtime": 1780891240.8789856,
+    "ast_hash": "ad7a53184bb2d6d13d583b2b4ede3d47",
     "semantic_hash": ""
   },
   "app/(site)/properties/[slug]/InquiryForm.tsx": {
@@ -135,8 +135,8 @@
     "semantic_hash": ""
   },
   "app/(site)/properties/[slug]/PropertyDetailMap.tsx": {
-    "mtime": 1779201358.3109,
-    "ast_hash": "933f2e55c0af14dd7066dd775eef90da",
+    "mtime": 1780891062.98165,
+    "ast_hash": "f00bcd9ac933bbaecaca8de2438c5a29",
     "semantic_hash": ""
   },
   "app/(site)/properties/[slug]/PropertyDetailMapClient.tsx": {
@@ -155,8 +155,8 @@
     "semantic_hash": ""
   },
   "app/(site)/properties/builders/BuildersClient.tsx": {
-    "mtime": 1780859698.778978,
-    "ast_hash": "f54b5150b8306e9a0ffe65b12eb669bc",
+    "mtime": 1780891047.6865604,
+    "ast_hash": "84d715ab02c1c6f9afe0affbed0d1b27",
     "semantic_hash": ""
   },
   "app/(site)/properties/builders/[slug]/BuilderProfileClient.tsx": {
@@ -165,8 +165,8 @@
     "semantic_hash": ""
   },
   "app/(site)/properties/builders/[slug]/page.tsx": {
-    "mtime": 1780624597.17771,
-    "ast_hash": "8613d2469af19f5408342b6641fe7341",
+    "mtime": 1780891220.3720112,
+    "ast_hash": "b7b107c0897f182c6f08ab2724721545",
     "semantic_hash": ""
   },
   "app/(site)/properties/builders/page.tsx": {
@@ -175,13 +175,13 @@
     "semantic_hash": ""
   },
   "app/(site)/properties/flats/[slug]/page.tsx": {
-    "mtime": 1780861362.6475918,
-    "ast_hash": "cb03077e2a0574eb83afa1e58df36a86",
+    "mtime": 1780893944.7806554,
+    "ast_hash": "ed5c715c1a1e0841ee932e3b819f62e9",
     "semantic_hash": ""
   },
   "app/(site)/properties/flats/page.tsx": {
-    "mtime": 1780560358.430072,
-    "ast_hash": "1317704829da829297290b0ed47400a2",
+    "mtime": 1780891244.6360433,
+    "ast_hash": "5135078a1dc791f7ddf0dd4d6c93cb74",
     "semantic_hash": ""
   },
   "app/(site)/properties/houses/[slug]/page.tsx": {
@@ -205,8 +205,8 @@
     "semantic_hash": ""
   },
   "app/(site)/terms/page.tsx": {
-    "mtime": 1780624675.6319406,
-    "ast_hash": "a0c3c6565ecbf97174adbc2ae7154832",
+    "mtime": 1780891003.0117128,
+    "ast_hash": "5ef2f2eb05e5a0669ea9e769bb1e675f",
     "semantic_hash": ""
   },
   "app/(site)/tools/home-loan-calculator/[bank]/page.tsx": {
@@ -215,8 +215,8 @@
     "semantic_hash": ""
   },
   "app/(site)/tools/loan-eligibility/layout.tsx": {
-    "mtime": 1779201358.3364186,
-    "ast_hash": "4c61acd096feb3fa6f30b1427f769a68",
+    "mtime": 1780891023.3050332,
+    "ast_hash": "1f0aad35ea467c483f073e86d32280db",
     "semantic_hash": ""
   },
   "app/(site)/tools/loan-eligibility/page.tsx": {
@@ -245,8 +245,8 @@
     "semantic_hash": ""
   },
   "app/(site)/tools/price-trend/page.tsx": {
-    "mtime": 1779201358.3532143,
-    "ast_hash": "89d34620e68b4567a12527b9e7a0761d",
+    "mtime": 1780891025.5229926,
+    "ast_hash": "511b13199087fc846a7d393ff3d18d48",
     "semantic_hash": ""
   },
   "app/admin-realty-8x2d9/agents/page.tsx": {
@@ -405,8 +405,8 @@
     "semantic_hash": ""
   },
   "app/layout.tsx": {
-    "mtime": 1780559019.9487636,
-    "ast_hash": "5d53fa8d5d40491d4e64a07e5e230ab0",
+    "mtime": 1780890981.6017537,
+    "ast_hash": "79b92b719d7af01ca8ac3337caa108c2",
     "semantic_hash": ""
   },
   "app/not-found.tsx": {
@@ -420,8 +420,8 @@
     "semantic_hash": ""
   },
   "app/sitemap.ts": {
-    "mtime": 1780566256.808636,
-    "ast_hash": "6c9334386e5ec9423b9698959ce67717",
+    "mtime": 1780891031.113245,
+    "ast_hash": "65f927162abb663e6c3968b37be07f35",
     "semantic_hash": ""
   },
   "components/admin/ImageUploader.tsx": {
@@ -605,8 +605,8 @@
     "semantic_hash": ""
   },
   "components/ui/ContactMap.tsx": {
-    "mtime": 1779529497.0839286,
-    "ast_hash": "ba839cf5dbf5023e307b53059abe423a",
+    "mtime": 1780891051.7064335,
+    "ast_hash": "880179b509fde08a2c2a6fc3f9c412b2",
     "semantic_hash": ""
   },
   "components/ui/CustomSelect.tsx": {
@@ -640,8 +640,8 @@
     "semantic_hash": ""
   },
   "components/ui/PropertiesMap.tsx": {
-    "mtime": 1780388703.3263302,
-    "ast_hash": "9e75c1c282dd4abf917a41a344539ea3",
+    "mtime": 1780891054.3547447,
+    "ast_hash": "e0b2c7c527c0f1c177839311bd68d253",
     "semantic_hash": ""
   },
   "components/ui/PropertyCard.tsx": {
@@ -660,8 +660,8 @@
     "semantic_hash": ""
   },
   "config/builders-data.json": {
-    "mtime": 1780573140.5463414,
-    "ast_hash": "3948f26376d1fafad5b69721ffeca3e7",
+    "mtime": 1780896017.9004817,
+    "ast_hash": "513c5ba2fe3491807d3a60be64d5aaea",
     "semantic_hash": ""
   },
   "config/contact.ts": {
@@ -740,8 +740,8 @@
     "semantic_hash": ""
   },
   "next.config.js": {
-    "mtime": 1779455322.7779546,
-    "ast_hash": "673ab1e473b162e38fd3e7ddf1450937",
+    "mtime": 1780896026.174751,
+    "ast_hash": "8e003490fe2ec0722d1f809b56f5c701",
     "semantic_hash": ""
   },
   "package.json": {
@@ -970,8 +970,8 @@
     "semantic_hash": ""
   },
   "scripts/update_all_coordinates.js": {
-    "mtime": 1780595817.5200474,
-    "ast_hash": "b3a15e80c8c3b2f485af2007ddfa4703",
+    "mtime": 1780896020.7517312,
+    "ast_hash": "3cdf9c087fe1339908bcc39ed1fc5d00",
     "semantic_hash": ""
   },
   "scripts/update_ambika_images.ts": {
@@ -1490,8 +1490,8 @@
     "semantic_hash": ""
   },
   "content/blog/mohali-5-step-investment-framework-2026.mdx": {
-    "mtime": 1780564739.91337,
-    "ast_hash": "535e26897769c33e5c690c35fdcdd7d0",
+    "mtime": 1780891209.7776165,
+    "ast_hash": "8e042fb371f6aa3face44ad49874c05d",
     "semantic_hash": ""
   },
   "content/blog/mohali-flat-buying-traps-super-area-cooperative-society-floor-ownership.mdx": {
@@ -1505,13 +1505,13 @@
     "semantic_hash": ""
   },
   "content/blog/prelaunch-property-mohali-risk-reward.mdx": {
-    "mtime": 1780564734.1169386,
-    "ast_hash": "015e27d330fb035a84e4b2b640359ba5",
+    "mtime": 1780891212.0389454,
+    "ast_hash": "4b3f7c94edfc361ea57111931d760819",
     "semantic_hash": ""
   },
   "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx": {
-    "mtime": 1780388688.7480743,
-    "ast_hash": "5b9fca22af1413d7193c8306a08f4486",
+    "mtime": 1780891214.3758285,
+    "ast_hash": "f0c73c3a523e0032b55ad9a12c063da7",
     "semantic_hash": ""
   },
   "current-sitemap.md": {
@@ -8027,6 +8027,16 @@
   "workspace/realty-consultants/realty-skill-extracted/rhmc-complete-skill/references/voice.md": {
     "mtime": 1777309665.890911,
     "ast_hash": "42560cfe1a15be88c1402f5244696265",
+    "semantic_hash": ""
+  },
+  "components/ui/DescriptionContainer.tsx": {
+    "mtime": 1780893936.4015534,
+    "ast_hash": "fccadaf678d1ce1dd08916e73a7de28b",
+    "semantic_hash": ""
+  },
+  "ToBeDone.md": {
+    "mtime": 1780891270.0580864,
+    "ast_hash": "d918809a4f43d26e666a247a8041b81e",
     "semantic_hash": ""
   }
 }

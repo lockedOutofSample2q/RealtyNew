@@ -109,6 +109,11 @@ const nextConfig = {
         destination: "/properties/beverly-golf-avenue",
         permanent: true,
       },
+      {
+        source: "/properties/flats/scl-employees-cooperative-sector-70-mohali",
+        destination: "/properties/flats/scl-society-sector-70-mohali",
+        permanent: true,
+      },
     ];
   },
 };

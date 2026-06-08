@@ -34,7 +34,7 @@ const coordinates = [
   { slug: "guru-teg-bahadur-society-sector-70-mohali", lat: 30.6969791, lng: 76.7174429 },
   { slug: "mundi-cooperative-complex-sector-70-mohali", lat: 30.6969436, lng: 76.7153696 },
   { slug: "marbella-royce", lat: 30.6333783, lng: 76.7264209 },
-  { slug: "scl-employees-cooperative-sector-70-mohali", lat: 30.6937129, lng: 76.7102269 },
+  { slug: "scl-society-sector-70-mohali", lat: 30.6937129, lng: 76.7102269 },
   { slug: "guru-har-rai-sahib-society-sector-67-mohali", lat: 30.679, lng: 76.724 },
   { slug: "jlpl-sky-garden", lat: 30.665833, lng: 76.736944 },
   { slug: "ananda-crown-mohali-3-4-BHK-flat-sector-78", lat: 30.684444, lng: 76.702222 },

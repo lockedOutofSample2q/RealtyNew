@@ -252,7 +252,7 @@
       "source_file": "app/(site)/appointments/BookingClient.tsx",
       "source_location": "L1",
       "id": "appointments_bookingclient",
-      "community": 308,
+      "community": 87,
       "norm_label": "bookingclient.tsx"
     },
     {
@@ -261,7 +261,7 @@
       "source_file": "app/(site)/appointments/BookingClient.tsx",
       "source_location": "L8",
       "id": "appointments_bookingclient_bookingclient",
-      "community": 308,
+      "community": 87,
       "norm_label": "bookingclient()"
     },
     {
@@ -270,7 +270,7 @@
       "source_file": "app/(site)/appointments/page.tsx",
       "source_location": "L1",
       "id": "appointments_page",
-      "community": 308,
+      "community": 87,
       "norm_label": "page.tsx"
     },
     {
@@ -279,16 +279,16 @@
       "source_file": "app/(site)/appointments/page.tsx",
       "source_location": "L5",
       "id": "appointments_page_metadata",
-      "community": 308,
+      "community": 87,
       "norm_label": "metadata"
     },
     {
       "label": "BookingPage()",
       "file_type": "code",
       "source_file": "app/(site)/appointments/page.tsx",
-      "source_location": "L10",
+      "source_location": "L13",
       "id": "appointments_page_bookingpage",
-      "community": 308,
+      "community": 87,
       "norm_label": "bookingpage()"
     },
     {
@@ -342,7 +342,7 @@
       "source_file": "app/(site)/blog/page.tsx",
       "source_location": "L1",
       "id": "blog_page",
-      "community": 87,
+      "community": 29,
       "norm_label": "page.tsx"
     },
     {
@@ -351,16 +351,16 @@
       "source_file": "app/(site)/blog/page.tsx",
       "source_location": "L8",
       "id": "blog_page_metadata",
-      "community": 87,
+      "community": 29,
       "norm_label": "metadata"
     },
     {
       "label": "BlogPage()",
       "file_type": "code",
       "source_file": "app/(site)/blog/page.tsx",
-      "source_location": "L13",
+      "source_location": "L16",
       "id": "blog_page_blogpage",
-      "community": 87,
+      "community": 29,
       "norm_label": "blogpage()"
     },
     {
@@ -439,7 +439,7 @@
       "label": "CookiesPage()",
       "file_type": "code",
       "source_file": "app/(site)/cookies/page.tsx",
-      "source_location": "L9",
+      "source_location": "L12",
       "id": "cookies_page_cookiespage",
       "community": 29,
       "norm_label": "cookiespage()"
@@ -466,7 +466,7 @@
       "label": "FaqPage()",
       "file_type": "code",
       "source_file": "app/(site)/faq/page.tsx",
-      "source_location": "L10",
+      "source_location": "L13",
       "id": "faq_page_faqpage",
       "community": 87,
       "norm_label": "faqpage()"
@@ -513,7 +513,7 @@
       "source_file": "app/(site)/layout.tsx",
       "source_location": "L1",
       "id": "site_layout",
-      "community": 15,
+      "community": 151,
       "norm_label": "layout.tsx"
     },
     {
@@ -522,7 +522,7 @@
       "source_file": "app/(site)/layout.tsx",
       "source_location": "L13",
       "id": "site_layout_sitelayout",
-      "community": 15,
+      "community": 151,
       "norm_label": "sitelayout()"
     },
     {
@@ -547,7 +547,7 @@
       "label": "ListYourPropertyPage()",
       "file_type": "code",
       "source_file": "app/(site)/list-your-property/page.tsx",
-      "source_location": "L11",
+      "source_location": "L14",
       "id": "list_your_property_page_listyourpropertypage",
       "community": 29,
       "norm_label": "listyourpropertypage()"
@@ -607,10 +607,19 @@
       "norm_label": "blogteasersection"
     },
     {
+      "label": "metadata",
+      "file_type": "code",
+      "source_file": "app/(site)/page.tsx",
+      "source_location": "L27",
+      "id": "site_page_metadata",
+      "community": 271,
+      "norm_label": "metadata"
+    },
+    {
       "label": "getHomeData()",
       "file_type": "code",
       "source_file": "app/(site)/page.tsx",
-      "source_location": "L30",
+      "source_location": "L37",
       "id": "site_page_gethomedata",
       "community": 271,
       "norm_label": "gethomedata()"
@@ -619,7 +628,7 @@
       "label": "HomePage()",
       "file_type": "code",
       "source_file": "app/(site)/page.tsx",
-      "source_location": "L103",
+      "source_location": "L110",
       "id": "site_page_homepage",
       "community": 271,
       "norm_label": "homepage()"
@@ -646,7 +655,7 @@
       "label": "PrivacyPage()",
       "file_type": "code",
       "source_file": "app/(site)/privacy/page.tsx",
-      "source_location": "L9",
+      "source_location": "L12",
       "id": "privacy_page_privacypage",
       "community": 29,
       "norm_label": "privacypage()"
@@ -657,7 +666,7 @@
       "source_file": "app/(site)/properties/PropertiesClient.tsx",
       "source_location": "L1",
       "id": "properties_propertiesclient",
-      "community": 149,
+      "community": 10,
       "norm_label": "propertiesclient.tsx"
     },
     {
@@ -666,7 +675,7 @@
       "source_file": "app/(site)/properties/PropertiesClient.tsx",
       "source_location": "L13",
       "id": "properties_propertiesclient_propertiesmapcontainer",
-      "community": 149,
+      "community": 10,
       "norm_label": "propertiesmapcontainer"
     },
     {
@@ -675,7 +684,7 @@
       "source_file": "app/(site)/properties/PropertiesClient.tsx",
       "source_location": "L20",
       "id": "properties_propertiesclient_props",
-      "community": 149,
+      "community": 10,
       "norm_label": "props"
     },
     {
@@ -684,7 +693,7 @@
       "source_file": "app/(site)/properties/PropertiesClient.tsx",
       "source_location": "L27",
       "id": "properties_propertiesclient_propertiesclient",
-      "community": 149,
+      "community": 10,
       "norm_label": "propertiesclient()"
     },
     {
@@ -823,19 +832,10 @@
       "norm_label": "propertydetailmap.tsx"
     },
     {
-      "label": "PIN",
-      "file_type": "code",
-      "source_file": "app/(site)/properties/[slug]/PropertyDetailMap.tsx",
-      "source_location": "L9",
-      "id": "slug_propertydetailmap_pin",
-      "community": 14,
-      "norm_label": "pin"
-    },
-    {
       "label": "PropertyDetailMap()",
       "file_type": "code",
       "source_file": "app/(site)/properties/[slug]/PropertyDetailMap.tsx",
-      "source_location": "L19",
+      "source_location": "L9",
       "id": "slug_propertydetailmap_propertydetailmap",
       "community": 14,
       "norm_label": "propertydetailmap()"
@@ -1170,7 +1170,7 @@
       "source_file": "app/(site)/properties/flats/[slug]/page.tsx",
       "source_location": "L1",
       "id": "app_site_properties_flats_slug_page_tsx_slug_page",
-      "community": 18,
+      "community": 152,
       "norm_label": "page.tsx"
     },
     {
@@ -1179,97 +1179,97 @@
       "source_file": "app/(site)/properties/flats/[slug]/page.tsx",
       "source_location": "L19",
       "id": "app_site_properties_flats_slug_page_tsx_slug_page_logo_mapping",
-      "community": 18,
+      "community": 152,
       "norm_label": "logo_mapping"
     },
     {
       "label": "Props",
       "file_type": "code",
       "source_file": "app/(site)/properties/flats/[slug]/page.tsx",
-      "source_location": "L44",
+      "source_location": "L45",
       "id": "app_site_properties_flats_slug_page_tsx_slug_page_props",
-      "community": 18,
+      "community": 152,
       "norm_label": "props"
     },
     {
       "label": "getSectorSeo",
       "file_type": "code",
       "source_file": "app/(site)/properties/flats/[slug]/page.tsx",
-      "source_location": "L47",
+      "source_location": "L48",
       "id": "slug_page_getsectorseo",
-      "community": 18,
+      "community": 152,
       "norm_label": "getsectorseo"
     },
     {
       "label": "getProperty",
       "file_type": "code",
       "source_file": "app/(site)/properties/flats/[slug]/page.tsx",
-      "source_location": "L62",
+      "source_location": "L63",
       "id": "app_site_properties_flats_slug_page_tsx_slug_page_getproperty",
-      "community": 18,
+      "community": 152,
       "norm_label": "getproperty"
     },
     {
       "label": "getRelatedProperties",
       "file_type": "code",
       "source_file": "app/(site)/properties/flats/[slug]/page.tsx",
-      "source_location": "L82",
+      "source_location": "L83",
       "id": "app_site_properties_flats_slug_page_tsx_slug_page_getrelatedproperties",
-      "community": 18,
+      "community": 152,
       "norm_label": "getrelatedproperties"
     },
     {
       "label": "getAllFlats",
       "file_type": "code",
       "source_file": "app/(site)/properties/flats/[slug]/page.tsx",
-      "source_location": "L132",
+      "source_location": "L133",
       "id": "slug_page_getallflats",
-      "community": 18,
+      "community": 152,
       "norm_label": "getallflats"
     },
     {
       "label": "BLACKLISTED_SLUGS",
       "file_type": "code",
       "source_file": "app/(site)/properties/flats/[slug]/page.tsx",
-      "source_location": "L149",
+      "source_location": "L150",
       "id": "slug_page_blacklisted_slugs",
-      "community": 18,
+      "community": 152,
       "norm_label": "blacklisted_slugs"
     },
     {
       "label": "decodeSectorSlug()",
       "file_type": "code",
       "source_file": "app/(site)/properties/flats/[slug]/page.tsx",
-      "source_location": "L156",
+      "source_location": "L157",
       "id": "slug_page_decodesectorslug",
-      "community": 18,
+      "community": 152,
       "norm_label": "decodesectorslug()"
     },
     {
       "label": "generateStaticParams()",
       "file_type": "code",
       "source_file": "app/(site)/properties/flats/[slug]/page.tsx",
-      "source_location": "L163",
+      "source_location": "L164",
       "id": "app_site_properties_flats_slug_page_tsx_slug_page_generatestaticparams",
-      "community": 18,
+      "community": 152,
       "norm_label": "generatestaticparams()"
     },
     {
       "label": "generateMetadata()",
       "file_type": "code",
       "source_file": "app/(site)/properties/flats/[slug]/page.tsx",
-      "source_location": "L190",
+      "source_location": "L191",
       "id": "app_site_properties_flats_slug_page_tsx_slug_page_generatemetadata",
-      "community": 18,
+      "community": 152,
       "norm_label": "generatemetadata()"
     },
     {
       "label": "ApartmentOrSectorDetailPage()",
       "file_type": "code",
       "source_file": "app/(site)/properties/flats/[slug]/page.tsx",
-      "source_location": "L272",
+      "source_location": "L273",
       "id": "slug_page_apartmentorsectordetailpage",
-      "community": 18,
+      "community": 152,
       "norm_label": "apartmentorsectordetailpage()"
     },
     {
@@ -1492,7 +1492,7 @@
       "label": "TermsPage()",
       "file_type": "code",
       "source_file": "app/(site)/terms/page.tsx",
-      "source_location": "L9",
+      "source_location": "L12",
       "id": "terms_page_termspage",
       "community": 29,
       "norm_label": "termspage()"
@@ -1573,7 +1573,7 @@
       "label": "LoanEligibilityLayout()",
       "file_type": "code",
       "source_file": "app/(site)/tools/loan-eligibility/layout.tsx",
-      "source_location": "L9",
+      "source_location": "L12",
       "id": "loan_eligibility_layout_loaneligibilitylayout",
       "community": 371,
       "norm_label": "loaneligibilitylayout()"
@@ -1728,7 +1728,7 @@
       "source_file": "app/(site)/tools/page.tsx",
       "source_location": "L1",
       "id": "tools_page",
-      "community": 29,
+      "community": 412,
       "norm_label": "page.tsx"
     },
     {
@@ -1737,7 +1737,7 @@
       "source_file": "app/(site)/tools/page.tsx",
       "source_location": "L6",
       "id": "tools_page_metadata",
-      "community": 29,
+      "community": 412,
       "norm_label": "metadata"
     },
     {
@@ -1746,7 +1746,7 @@
       "source_file": "app/(site)/tools/page.tsx",
       "source_location": "L11",
       "id": "tools_page_tools",
-      "community": 29,
+      "community": 412,
       "norm_label": "tools"
     },
     {
@@ -1755,7 +1755,7 @@
       "source_file": "app/(site)/tools/page.tsx",
       "source_location": "L38",
       "id": "tools_page_toolspage",
-      "community": 29,
+      "community": 412,
       "norm_label": "toolspage()"
     },
     {
@@ -1780,7 +1780,7 @@
       "label": "stats",
       "file_type": "code",
       "source_file": "app/(site)/tools/price-trend/page.tsx",
-      "source_location": "L10",
+      "source_location": "L13",
       "id": "price_trend_page_stats",
       "community": 353,
       "norm_label": "stats"
@@ -1789,7 +1789,7 @@
       "label": "sectors",
       "file_type": "code",
       "source_file": "app/(site)/tools/price-trend/page.tsx",
-      "source_location": "L16",
+      "source_location": "L19",
       "id": "price_trend_page_sectors",
       "community": 353,
       "norm_label": "sectors"
@@ -1798,7 +1798,7 @@
       "label": "PriceTrendPage()",
       "file_type": "code",
       "source_file": "app/(site)/tools/price-trend/page.tsx",
-      "source_location": "L23",
+      "source_location": "L26",
       "id": "price_trend_page_pricetrendpage",
       "community": 353,
       "norm_label": "pricetrendpage()"
@@ -1836,7 +1836,7 @@
       "source_file": "app/admin-realty-8x2d9/apartments/[id]/page.tsx",
       "source_location": "L1",
       "id": "app_admin_realty_8x2d9_apartments_id_page_tsx_id_page",
-      "community": 24,
+      "community": 276,
       "norm_label": "page.tsx"
     },
     {
@@ -1845,7 +1845,7 @@
       "source_file": "app/admin-realty-8x2d9/apartments/[id]/page.tsx",
       "source_location": "L6",
       "id": "id_page_editapartmentpage",
-      "community": 24,
+      "community": 276,
       "norm_label": "editapartmentpage()"
     },
     {
@@ -2088,7 +2088,7 @@
       "source_file": "app/admin-realty-8x2d9/houses/[id]/page.tsx",
       "source_location": "L1",
       "id": "app_admin_realty_8x2d9_houses_id_page_tsx_id_page",
-      "community": 24,
+      "community": 276,
       "norm_label": "page.tsx"
     },
     {
@@ -2097,7 +2097,7 @@
       "source_file": "app/admin-realty-8x2d9/houses/[id]/page.tsx",
       "source_location": "L6",
       "id": "id_page_edithousepage",
-      "community": 24,
+      "community": 276,
       "norm_label": "edithousepage()"
     },
     {
@@ -2223,7 +2223,7 @@
       "source_file": "app/admin-realty-8x2d9/lands/[id]/page.tsx",
       "source_location": "L1",
       "id": "app_admin_realty_8x2d9_lands_id_page_tsx_id_page",
-      "community": 24,
+      "community": 276,
       "norm_label": "page.tsx"
     },
     {
@@ -2232,7 +2232,7 @@
       "source_file": "app/admin-realty-8x2d9/lands/[id]/page.tsx",
       "source_location": "L6",
       "id": "id_page_editlandspage",
-      "community": 24,
+      "community": 276,
       "norm_label": "editlandspage()"
     },
     {
@@ -2376,7 +2376,7 @@
       "source_file": "app/admin-realty-8x2d9/leads/page.tsx",
       "source_location": "L1",
       "id": "leads_page",
-      "community": 412,
+      "community": 24,
       "norm_label": "page.tsx"
     },
     {
@@ -2385,7 +2385,7 @@
       "source_file": "app/admin-realty-8x2d9/leads/page.tsx",
       "source_location": "L10",
       "id": "leads_page_status_options",
-      "community": 412,
+      "community": 24,
       "norm_label": "status_options"
     },
     {
@@ -2394,7 +2394,7 @@
       "source_file": "app/admin-realty-8x2d9/leads/page.tsx",
       "source_location": "L11",
       "id": "leads_page_status_colors",
-      "community": 412,
+      "community": 24,
       "norm_label": "status_colors"
     },
     {
@@ -2403,7 +2403,7 @@
       "source_file": "app/admin-realty-8x2d9/leads/page.tsx",
       "source_location": "L18",
       "id": "leads_page_leadsadmin",
-      "community": 412,
+      "community": 24,
       "norm_label": "leadsadmin()"
     },
     {
@@ -2412,7 +2412,7 @@
       "source_file": "app/admin-realty-8x2d9/seo-indexing/page.tsx",
       "source_location": "L1",
       "id": "seo_indexing_page",
-      "community": 276,
+      "community": 14,
       "norm_label": "page.tsx"
     },
     {
@@ -2421,7 +2421,7 @@
       "source_file": "app/admin-realty-8x2d9/seo-indexing/page.tsx",
       "source_location": "L31",
       "id": "seo_indexing_page_indexingcounts",
-      "community": 276,
+      "community": 14,
       "norm_label": "indexingcounts"
     },
     {
@@ -2430,7 +2430,7 @@
       "source_file": "app/admin-realty-8x2d9/seo-indexing/page.tsx",
       "source_location": "L40",
       "id": "seo_indexing_page_indexingurl",
-      "community": 276,
+      "community": 14,
       "norm_label": "indexingurl"
     },
     {
@@ -2439,7 +2439,7 @@
       "source_file": "app/admin-realty-8x2d9/seo-indexing/page.tsx",
       "source_location": "L56",
       "id": "seo_indexing_page_paginationdata",
-      "community": 276,
+      "community": 14,
       "norm_label": "paginationdata"
     },
     {
@@ -2448,7 +2448,7 @@
       "source_file": "app/admin-realty-8x2d9/seo-indexing/page.tsx",
       "source_location": "L63",
       "id": "seo_indexing_page_quickwinopportunity",
-      "community": 276,
+      "community": 14,
       "norm_label": "quickwinopportunity"
     },
     {
@@ -2457,7 +2457,7 @@
       "source_file": "app/admin-realty-8x2d9/seo-indexing/page.tsx",
       "source_location": "L72",
       "id": "seo_indexing_page_analyticsdata",
-      "community": 276,
+      "community": 14,
       "norm_label": "analyticsdata"
     },
     {
@@ -2466,7 +2466,7 @@
       "source_file": "app/admin-realty-8x2d9/seo-indexing/page.tsx",
       "source_location": "L86",
       "id": "seo_indexing_page_indexingconsolepage",
-      "community": 276,
+      "community": 14,
       "norm_label": "indexingconsolepage()"
     },
     {
@@ -2770,7 +2770,7 @@
       "label": "RootLayout()",
       "file_type": "code",
       "source_file": "app/layout.tsx",
-      "source_location": "L58",
+      "source_location": "L55",
       "id": "app_layout_rootlayout",
       "community": 303,
       "norm_label": "rootlayout()"
@@ -2781,7 +2781,7 @@
       "source_file": "app/not-found.tsx",
       "source_location": "L1",
       "id": "app_not_found",
-      "community": 18,
+      "community": 276,
       "norm_label": "not-found.tsx"
     },
     {
@@ -2790,7 +2790,7 @@
       "source_file": "app/not-found.tsx",
       "source_location": "L4",
       "id": "app_not_found_notfound",
-      "community": 18,
+      "community": 276,
       "norm_label": "notfound()"
     },
     {
@@ -3033,7 +3033,7 @@
       "source_file": "components/layout/HeaderTransparency.tsx",
       "source_location": "L1",
       "id": "layout_headertransparency",
-      "community": 15,
+      "community": 151,
       "norm_label": "headertransparency.tsx"
     },
     {
@@ -3042,7 +3042,7 @@
       "source_file": "components/layout/HeaderTransparency.tsx",
       "source_location": "L5",
       "id": "layout_headertransparency_headertransparency",
-      "community": 15,
+      "community": 151,
       "norm_label": "headertransparency()"
     },
     {
@@ -3051,7 +3051,7 @@
       "source_file": "components/layout/Navbar.tsx",
       "source_location": "L1",
       "id": "layout_navbar",
-      "community": 15,
+      "community": 151,
       "norm_label": "navbar.tsx"
     },
     {
@@ -3060,7 +3060,7 @@
       "source_file": "components/layout/Navbar.tsx",
       "source_location": "L14",
       "id": "layout_navbar_currencies",
-      "community": 15,
+      "community": 151,
       "norm_label": "currencies"
     },
     {
@@ -3069,7 +3069,7 @@
       "source_file": "components/layout/Navbar.tsx",
       "source_location": "L16",
       "id": "layout_navbar_navbar",
-      "community": 15,
+      "community": 151,
       "norm_label": "navbar()"
     },
     {
@@ -3087,7 +3087,7 @@
       "source_file": "components/properties/MobileSearchModal.tsx",
       "source_location": "L19",
       "id": "properties_mobilesearchmodal_mobilesearchmodalprops",
-      "community": 152,
+      "community": 10,
       "norm_label": "mobilesearchmodalprops"
     },
     {
@@ -3096,7 +3096,7 @@
       "source_file": "components/properties/MobileSearchModal.tsx",
       "source_location": "L31",
       "id": "properties_mobilesearchmodal_mobilesearchmodal",
-      "community": 149,
+      "community": 10,
       "norm_label": "mobilesearchmodal()"
     },
     {
@@ -3132,7 +3132,7 @@
       "source_file": "components/properties/PropertiesHero.tsx",
       "source_location": "L1",
       "id": "properties_propertieshero",
-      "community": 152,
+      "community": 10,
       "norm_label": "propertieshero.tsx"
     },
     {
@@ -3141,7 +3141,7 @@
       "source_file": "components/properties/PropertiesHero.tsx",
       "source_location": "L8",
       "id": "properties_propertieshero_propertiesheroprops",
-      "community": 152,
+      "community": 10,
       "norm_label": "propertiesheroprops"
     },
     {
@@ -3150,7 +3150,7 @@
       "source_file": "components/properties/PropertiesHero.tsx",
       "source_location": "L18",
       "id": "properties_propertieshero_propertieshero",
-      "community": 149,
+      "community": 10,
       "norm_label": "propertieshero()"
     },
     {
@@ -3159,7 +3159,7 @@
       "source_file": "components/properties/PropertiesMapContainer.tsx",
       "source_location": "L1",
       "id": "properties_propertiesmapcontainer",
-      "community": 152,
+      "community": 10,
       "norm_label": "propertiesmapcontainer.tsx"
     },
     {
@@ -3168,7 +3168,7 @@
       "source_file": "components/properties/PropertiesMapContainer.tsx",
       "source_location": "L5",
       "id": "properties_propertiesmapcontainer_propertiesmap",
-      "community": 152,
+      "community": 10,
       "norm_label": "propertiesmap"
     },
     {
@@ -3177,7 +3177,7 @@
       "source_file": "components/properties/PropertiesMapContainer.tsx",
       "source_location": "L16",
       "id": "properties_propertiesmapcontainer_propertiesmapcontainerprops",
-      "community": 152,
+      "community": 10,
       "norm_label": "propertiesmapcontainerprops"
     },
     {
@@ -3186,7 +3186,7 @@
       "source_file": "components/properties/PropertiesMapContainer.tsx",
       "source_location": "L25",
       "id": "properties_propertiesmapcontainer_propertiesmapcontainer",
-      "community": 152,
+      "community": 10,
       "norm_label": "propertiesmapcontainer()"
     },
     {
@@ -3195,7 +3195,7 @@
       "source_file": "components/properties/PropertiesResultsBar.tsx",
       "source_location": "L1",
       "id": "properties_propertiesresultsbar",
-      "community": 149,
+      "community": 10,
       "norm_label": "propertiesresultsbar.tsx"
     },
     {
@@ -3204,7 +3204,7 @@
       "source_file": "components/properties/PropertiesResultsBar.tsx",
       "source_location": "L3",
       "id": "properties_propertiesresultsbar_propertiesresultsbarprops",
-      "community": 149,
+      "community": 10,
       "norm_label": "propertiesresultsbarprops"
     },
     {
@@ -3213,7 +3213,7 @@
       "source_file": "components/properties/PropertiesResultsBar.tsx",
       "source_location": "L7",
       "id": "properties_propertiesresultsbar_propertiesresultsbar",
-      "community": 149,
+      "community": 10,
       "norm_label": "propertiesresultsbar()"
     },
     {
@@ -3222,7 +3222,7 @@
       "source_file": "components/properties/RelatedProperties.tsx",
       "source_location": "L1",
       "id": "properties_relatedproperties",
-      "community": 12,
+      "community": 54,
       "norm_label": "relatedproperties.tsx"
     },
     {
@@ -3231,7 +3231,7 @@
       "source_file": "components/properties/RelatedProperties.tsx",
       "source_location": "L6",
       "id": "properties_relatedproperties_relatedpropertiesprops",
-      "community": 12,
+      "community": 54,
       "norm_label": "relatedpropertiesprops"
     },
     {
@@ -3240,7 +3240,7 @@
       "source_file": "components/properties/RelatedProperties.tsx",
       "source_location": "L11",
       "id": "properties_relatedproperties_relatedproperties",
-      "community": 12,
+      "community": 54,
       "norm_label": "relatedproperties()"
     },
     {
@@ -3258,7 +3258,7 @@
       "source_file": "components/search/PropertySearchBar.tsx",
       "source_location": "L23",
       "id": "search_propertysearchbar_propertysearchbarprops",
-      "community": 152,
+      "community": 10,
       "norm_label": "propertysearchbarprops"
     },
     {
@@ -3366,7 +3366,7 @@
       "source_file": "components/search/propertySearchOptions.ts",
       "source_location": "L33",
       "id": "search_propertysearchoptions_searchtab",
-      "community": 152,
+      "community": 10,
       "norm_label": "searchtab"
     },
     {
@@ -3375,7 +3375,7 @@
       "source_file": "components/search/propertySearchOptions.ts",
       "source_location": "L35",
       "id": "search_propertysearchoptions_propertysearchfilters",
-      "community": 152,
+      "community": 10,
       "norm_label": "propertysearchfilters"
     },
     {
@@ -3456,7 +3456,7 @@
       "source_file": "components/sections/AboutPhilosophy.tsx",
       "source_location": "L1",
       "id": "sections_aboutphilosophy",
-      "community": 87,
+      "community": 29,
       "norm_label": "aboutphilosophy.tsx"
     },
     {
@@ -3465,7 +3465,7 @@
       "source_file": "components/sections/AboutPhilosophy.tsx",
       "source_location": "L7",
       "id": "sections_aboutphilosophy_philosophy",
-      "community": 87,
+      "community": 29,
       "norm_label": "philosophy"
     },
     {
@@ -3474,7 +3474,7 @@
       "source_file": "components/sections/AboutPhilosophy.tsx",
       "source_location": "L14",
       "id": "sections_aboutphilosophy_aboutphilosophy",
-      "community": 87,
+      "community": 29,
       "norm_label": "aboutphilosophy()"
     },
     {
@@ -3681,7 +3681,7 @@
       "source_file": "components/sections/HeroSection.tsx",
       "source_location": "L1",
       "id": "sections_herosection",
-      "community": 10,
+      "community": 14,
       "norm_label": "herosection.tsx"
     },
     {
@@ -3690,7 +3690,7 @@
       "source_file": "components/sections/HeroSection.tsx",
       "source_location": "L23",
       "id": "sections_herosection_logos",
-      "community": 10,
+      "community": 14,
       "norm_label": "logos"
     },
     {
@@ -3699,7 +3699,7 @@
       "source_file": "components/sections/HeroSection.tsx",
       "source_location": "L42",
       "id": "sections_herosection_herosectionprops",
-      "community": 10,
+      "community": 14,
       "norm_label": "herosectionprops"
     },
     {
@@ -3708,7 +3708,7 @@
       "source_file": "components/sections/HeroSection.tsx",
       "source_location": "L46",
       "id": "sections_herosection_herosection",
-      "community": 10,
+      "community": 14,
       "norm_label": "herosection()"
     },
     {
@@ -3937,19 +3937,10 @@
       "norm_label": "position"
     },
     {
-      "label": "CustomIcon",
-      "file_type": "code",
-      "source_file": "components/ui/ContactMap.tsx",
-      "source_location": "L11",
-      "id": "ui_contactmap_customicon",
-      "community": 365,
-      "norm_label": "customicon"
-    },
-    {
       "label": "ContactMap()",
       "file_type": "code",
       "source_file": "components/ui/ContactMap.tsx",
-      "source_location": "L18",
+      "source_location": "L11",
       "id": "ui_contactmap_contactmap",
       "community": 365,
       "norm_label": "contactmap()"
@@ -3980,6 +3971,33 @@
       "id": "ui_customselect_customselect",
       "community": 14,
       "norm_label": "customselect()"
+    },
+    {
+      "label": "DescriptionContainer.tsx",
+      "file_type": "code",
+      "source_file": "components/ui/DescriptionContainer.tsx",
+      "source_location": "L1",
+      "id": "ui_descriptioncontainer",
+      "community": 152,
+      "norm_label": "descriptioncontainer.tsx"
+    },
+    {
+      "label": "DescriptionContainerProps",
+      "file_type": "code",
+      "source_file": "components/ui/DescriptionContainer.tsx",
+      "source_location": "L5",
+      "id": "ui_descriptioncontainer_descriptioncontainerprops",
+      "community": 152,
+      "norm_label": "descriptioncontainerprops"
+    },
+    {
+      "label": "DescriptionContainer()",
+      "file_type": "code",
+      "source_file": "components/ui/DescriptionContainer.tsx",
+      "source_location": "L9",
+      "id": "ui_descriptioncontainer_descriptioncontainer",
+      "community": 152,
+      "norm_label": "descriptioncontainer()"
     },
     {
       "label": "FormSelect.tsx",
@@ -4126,19 +4144,10 @@
       "norm_label": "propertiesmap.tsx"
     },
     {
-      "label": "icon",
-      "file_type": "code",
-      "source_file": "components/ui/PropertiesMap.tsx",
-      "source_location": "L12",
-      "id": "ui_propertiesmap_icon",
-      "community": 15,
-      "norm_label": "icon"
-    },
-    {
       "label": "COMMUNITY_COORDS",
       "file_type": "code",
       "source_file": "components/ui/PropertiesMap.tsx",
-      "source_location": "L21",
+      "source_location": "L14",
       "id": "ui_propertiesmap_community_coords",
       "community": 15,
       "norm_label": "community_coords"
@@ -4147,7 +4156,7 @@
       "label": "DEFAULT_CENTER",
       "file_type": "code",
       "source_file": "components/ui/PropertiesMap.tsx",
-      "source_location": "L34",
+      "source_location": "L27",
       "id": "ui_propertiesmap_default_center",
       "community": 15,
       "norm_label": "default_center"
@@ -4156,7 +4165,7 @@
       "label": "MapResizer()",
       "file_type": "code",
       "source_file": "components/ui/PropertiesMap.tsx",
-      "source_location": "L36",
+      "source_location": "L29",
       "id": "ui_propertiesmap_mapresizer",
       "community": 15,
       "norm_label": "mapresizer()"
@@ -4165,7 +4174,7 @@
       "label": "PropertiesMap()",
       "file_type": "code",
       "source_file": "components/ui/PropertiesMap.tsx",
-      "source_location": "L48",
+      "source_location": "L41",
       "id": "ui_propertiesmap_propertiesmap",
       "community": 15,
       "norm_label": "propertiesmap()"
@@ -5895,7 +5904,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L527",
       "id": "config_builders_data_builders_gmada_govt_of_punjab",
-      "community": 151,
+      "community": 53,
       "norm_label": "gmada-govt-of-punjab"
     },
     {
@@ -5904,7 +5913,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L528",
       "id": "config_builders_data_gmada_govt_of_punjab_legalname",
-      "community": 151,
+      "community": 53,
       "norm_label": "legalname"
     },
     {
@@ -5913,7 +5922,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L529",
       "id": "config_builders_data_gmada_govt_of_punjab_commonname",
-      "community": 151,
+      "community": 53,
       "norm_label": "commonname"
     },
     {
@@ -5922,7 +5931,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L530",
       "id": "config_builders_data_gmada_govt_of_punjab_founded",
-      "community": 151,
+      "community": 53,
       "norm_label": "founded"
     },
     {
@@ -5931,7 +5940,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L531",
       "id": "config_builders_data_gmada_govt_of_punjab_headquarters",
-      "community": 151,
+      "community": 53,
       "norm_label": "headquarters"
     },
     {
@@ -5940,7 +5949,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L532",
       "id": "config_builders_data_gmada_govt_of_punjab_rerastatus",
-      "community": 151,
+      "community": 53,
       "norm_label": "rerastatus"
     },
     {
@@ -5949,7 +5958,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L533",
       "id": "config_builders_data_gmada_govt_of_punjab_rerareg",
-      "community": 151,
+      "community": 53,
       "norm_label": "rerareg"
     },
     {
@@ -5958,7 +5967,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L534",
       "id": "config_builders_data_gmada_govt_of_punjab_activeprojects",
-      "community": 151,
+      "community": 53,
       "norm_label": "activeprojects"
     },
     {
@@ -5967,7 +5976,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L535",
       "id": "config_builders_data_gmada_govt_of_punjab_sectorsactive",
-      "community": 151,
+      "community": 53,
       "norm_label": "sectorsactive"
     },
     {
@@ -5976,7 +5985,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L538",
       "id": "config_builders_data_gmada_govt_of_punjab_assettypes",
-      "community": 151,
+      "community": 53,
       "norm_label": "assettypes"
     },
     {
@@ -5985,7 +5994,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L543",
       "id": "config_builders_data_gmada_govt_of_punjab_pricerange",
-      "community": 151,
+      "community": 53,
       "norm_label": "pricerange"
     },
     {
@@ -5994,7 +6003,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L544",
       "id": "config_builders_data_gmada_govt_of_punjab_buyerprofile",
-      "community": 151,
+      "community": 53,
       "norm_label": "buyerprofile"
     },
     {
@@ -6003,7 +6012,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L545",
       "id": "config_builders_data_gmada_govt_of_punjab_website",
-      "community": 151,
+      "community": 53,
       "norm_label": "website"
     },
     {
@@ -6012,7 +6021,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L546",
       "id": "config_builders_data_gmada_govt_of_punjab_advisoryverdict",
-      "community": 151,
+      "community": 53,
       "norm_label": "advisoryverdict"
     },
     {
@@ -6030,7 +6039,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L551",
       "id": "config_builders_data_gmada_govt_of_punjab_editorialnotes",
-      "community": 151,
+      "community": 53,
       "norm_label": "editorialnotes"
     },
     {
@@ -6039,7 +6048,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L552",
       "id": "config_builders_data_editorialnotes_purab_premium_apartments_sector_88_mohali",
-      "community": 151,
+      "community": 53,
       "norm_label": "purab-premium-apartments-sector-88-mohali"
     },
     {
@@ -6057,7 +6066,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L571",
       "id": "config_builders_data_gmada_govt_of_punjab_comparables",
-      "community": 151,
+      "community": 53,
       "norm_label": "comparables"
     },
     {
@@ -6066,7 +6075,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L575",
       "id": "config_builders_data_gmada_govt_of_punjab_faqs",
-      "community": 151,
+      "community": 53,
       "norm_label": "faqs"
     },
     {
@@ -6435,7 +6444,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L738",
       "id": "config_builders_data_builders_hero_realty_pvt_ltd_hero_group_usd_5_billion_enterprise",
-      "community": 53,
+      "community": 149,
       "norm_label": "hero-realty-pvt-ltd-hero-group-usd-5-billion-enterprise"
     },
     {
@@ -6444,7 +6453,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L739",
       "id": "config_builders_data_hero_realty_pvt_ltd_hero_group_usd_5_billion_enterprise_legalname",
-      "community": 53,
+      "community": 149,
       "norm_label": "legalname"
     },
     {
@@ -6453,7 +6462,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L740",
       "id": "config_builders_data_hero_realty_pvt_ltd_hero_group_usd_5_billion_enterprise_commonname",
-      "community": 53,
+      "community": 149,
       "norm_label": "commonname"
     },
     {
@@ -6462,7 +6471,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L741",
       "id": "config_builders_data_hero_realty_pvt_ltd_hero_group_usd_5_billion_enterprise_founded",
-      "community": 53,
+      "community": 149,
       "norm_label": "founded"
     },
     {
@@ -6471,7 +6480,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L742",
       "id": "config_builders_data_hero_realty_pvt_ltd_hero_group_usd_5_billion_enterprise_headquarters",
-      "community": 53,
+      "community": 149,
       "norm_label": "headquarters"
     },
     {
@@ -6480,7 +6489,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L743",
       "id": "config_builders_data_hero_realty_pvt_ltd_hero_group_usd_5_billion_enterprise_rerastatus",
-      "community": 53,
+      "community": 149,
       "norm_label": "rerastatus"
     },
     {
@@ -6489,7 +6498,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L744",
       "id": "config_builders_data_hero_realty_pvt_ltd_hero_group_usd_5_billion_enterprise_rerareg",
-      "community": 53,
+      "community": 149,
       "norm_label": "rerareg"
     },
     {
@@ -6498,7 +6507,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L745",
       "id": "config_builders_data_hero_realty_pvt_ltd_hero_group_usd_5_billion_enterprise_activeprojects",
-      "community": 53,
+      "community": 149,
       "norm_label": "activeprojects"
     },
     {
@@ -6507,7 +6516,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L746",
       "id": "config_builders_data_hero_realty_pvt_ltd_hero_group_usd_5_billion_enterprise_sectorsactive",
-      "community": 53,
+      "community": 149,
       "norm_label": "sectorsactive"
     },
     {
@@ -6516,7 +6525,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L749",
       "id": "config_builders_data_hero_realty_pvt_ltd_hero_group_usd_5_billion_enterprise_assettypes",
-      "community": 53,
+      "community": 149,
       "norm_label": "assettypes"
     },
     {
@@ -6525,7 +6534,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L752",
       "id": "config_builders_data_hero_realty_pvt_ltd_hero_group_usd_5_billion_enterprise_pricerange",
-      "community": 53,
+      "community": 149,
       "norm_label": "pricerange"
     },
     {
@@ -6534,7 +6543,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L753",
       "id": "config_builders_data_hero_realty_pvt_ltd_hero_group_usd_5_billion_enterprise_buyerprofile",
-      "community": 53,
+      "community": 149,
       "norm_label": "buyerprofile"
     },
     {
@@ -6543,7 +6552,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L754",
       "id": "config_builders_data_hero_realty_pvt_ltd_hero_group_usd_5_billion_enterprise_website",
-      "community": 53,
+      "community": 149,
       "norm_label": "website"
     },
     {
@@ -6552,7 +6561,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L755",
       "id": "config_builders_data_hero_realty_pvt_ltd_hero_group_usd_5_billion_enterprise_advisoryverdict",
-      "community": 53,
+      "community": 149,
       "norm_label": "advisoryverdict"
     },
     {
@@ -6570,7 +6579,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L760",
       "id": "config_builders_data_hero_realty_pvt_ltd_hero_group_usd_5_billion_enterprise_editorialnotes",
-      "community": 53,
+      "community": 149,
       "norm_label": "editorialnotes"
     },
     {
@@ -6579,7 +6588,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L761",
       "id": "config_builders_data_editorialnotes_hero_homes",
-      "community": 53,
+      "community": 149,
       "norm_label": "hero-homes"
     },
     {
@@ -6597,7 +6606,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L780",
       "id": "config_builders_data_hero_realty_pvt_ltd_hero_group_usd_5_billion_enterprise_comparables",
-      "community": 53,
+      "community": 149,
       "norm_label": "comparables"
     },
     {
@@ -6606,7 +6615,7 @@
       "source_file": "config/builders-data.json",
       "source_location": "L785",
       "id": "config_builders_data_hero_realty_pvt_ltd_hero_group_usd_5_billion_enterprise_faqs",
-      "community": 53,
+      "community": 149,
       "norm_label": "faqs"
     },
     {
@@ -7695,7 +7704,7 @@
       "source_file": "config/site.ts",
       "source_location": "L41",
       "id": "config_site_navitems",
-      "community": 15,
+      "community": 151,
       "norm_label": "navitems"
     },
     {
@@ -7821,7 +7830,7 @@
       "source_file": "context/CurrencyContext.tsx",
       "source_location": "L5",
       "id": "context_currencycontext_currency",
-      "community": 15,
+      "community": 151,
       "norm_label": "currency"
     },
     {
@@ -7866,7 +7875,7 @@
       "source_file": "context/CurrencyContext.tsx",
       "source_location": "L36",
       "id": "context_currencycontext_currencyprovider",
-      "community": 15,
+      "community": 151,
       "norm_label": "currencyprovider()"
     },
     {
@@ -7884,7 +7893,7 @@
       "source_file": "context/HeaderContext.tsx",
       "source_location": "L1",
       "id": "context_headercontext",
-      "community": 15,
+      "community": 151,
       "norm_label": "headercontext.tsx"
     },
     {
@@ -7893,7 +7902,7 @@
       "source_file": "context/HeaderContext.tsx",
       "source_location": "L4",
       "id": "context_headercontext_headercontexttype",
-      "community": 15,
+      "community": 151,
       "norm_label": "headercontexttype"
     },
     {
@@ -7902,7 +7911,7 @@
       "source_file": "context/HeaderContext.tsx",
       "source_location": "L9",
       "id": "context_headercontext_headercontext",
-      "community": 15,
+      "community": 151,
       "norm_label": "headercontext"
     },
     {
@@ -7911,7 +7920,7 @@
       "source_file": "context/HeaderContext.tsx",
       "source_location": "L14",
       "id": "context_headercontext_headerprovider",
-      "community": 15,
+      "community": 151,
       "norm_label": "headerprovider()"
     },
     {
@@ -7920,7 +7929,7 @@
       "source_file": "context/HeaderContext.tsx",
       "source_location": "L23",
       "id": "context_headercontext_useheader",
-      "community": 15,
+      "community": 151,
       "norm_label": "useheader()"
     },
     {
@@ -8001,7 +8010,7 @@
       "source_file": "hooks/usePropertyFilters.ts",
       "source_location": "L1",
       "id": "hooks_usepropertyfilters",
-      "community": 149,
+      "community": 10,
       "norm_label": "usepropertyfilters.ts"
     },
     {
@@ -8010,7 +8019,7 @@
       "source_file": "hooks/usePropertyFilters.ts",
       "source_location": "L11",
       "id": "hooks_usepropertyfilters_parsemaxprice",
-      "community": 149,
+      "community": 10,
       "norm_label": "parsemaxprice()"
     },
     {
@@ -8019,7 +8028,7 @@
       "source_file": "hooks/usePropertyFilters.ts",
       "source_location": "L19",
       "id": "hooks_usepropertyfilters_normalize",
-      "community": 149,
+      "community": 10,
       "norm_label": "normalize()"
     },
     {
@@ -8028,7 +8037,7 @@
       "source_file": "hooks/usePropertyFilters.ts",
       "source_location": "L23",
       "id": "hooks_usepropertyfilters_usepropertyfilters",
-      "community": 149,
+      "community": 10,
       "norm_label": "usepropertyfilters()"
     },
     {
@@ -8226,7 +8235,7 @@
       "source_file": "lib/utils.ts",
       "source_location": "L13",
       "id": "lib_utils_formatdate",
-      "community": 26,
+      "community": 14,
       "norm_label": "formatdate()"
     },
     {
@@ -12600,7 +12609,7 @@
       "source_file": "types/index.ts",
       "source_location": "L22",
       "id": "types_index_agent",
-      "community": 24,
+      "community": 263,
       "norm_label": "agent"
     },
     {
@@ -14832,7 +14841,7 @@
       "source_file": "workspace/patches/design-fixes-20260407004215/backup/list-property/page.tsx",
       "source_location": "L1",
       "id": "list_property_page",
-      "community": 15,
+      "community": 151,
       "norm_label": "page.tsx"
     },
     {
@@ -14841,7 +14850,7 @@
       "source_file": "workspace/patches/design-fixes-20260407004215/backup/list-property/page.tsx",
       "source_location": "L3",
       "id": "list_property_page_page",
-      "community": 15,
+      "community": 151,
       "norm_label": "page()"
     },
     {
@@ -18265,6 +18274,78 @@
       "norm_label": "5. prioritized action plan"
     },
     {
+      "label": "ToBeDone.md",
+      "file_type": "document",
+      "source_file": "ToBeDone.md",
+      "source_location": "L1",
+      "id": "tobedone",
+      "community": 308,
+      "norm_label": "tobedone.md"
+    },
+    {
+      "label": "To Be Done: Ahrefs Site Audit Low-Severity Items",
+      "file_type": "document",
+      "source_file": "ToBeDone.md",
+      "source_location": "L1",
+      "id": "tobedone_to_be_done_ahrefs_site_audit_low_severity_items",
+      "community": 308,
+      "norm_label": "to be done: ahrefs site audit low-severity items"
+    },
+    {
+      "label": "\ud83d\udccb General Notices & Audits",
+      "file_type": "document",
+      "source_file": "ToBeDone.md",
+      "source_location": "L7",
+      "id": "tobedone_general_notices_audits",
+      "community": 308,
+      "norm_label": "\ud83d\udccb general notices & audits"
+    },
+    {
+      "label": "1. Structured Data Optimization",
+      "file_type": "document",
+      "source_file": "ToBeDone.md",
+      "source_location": "L9",
+      "id": "tobedone_1_structured_data_optimization",
+      "community": 308,
+      "norm_label": "1. structured data optimization"
+    },
+    {
+      "label": "2. Internal Linking & Crawl Equity",
+      "file_type": "document",
+      "source_file": "ToBeDone.md",
+      "source_location": "L17",
+      "id": "tobedone_2_internal_linking_crawl_equity",
+      "community": 308,
+      "norm_label": "2. internal linking & crawl equity"
+    },
+    {
+      "label": "3. External & Technical Audits",
+      "file_type": "document",
+      "source_file": "ToBeDone.md",
+      "source_location": "L25",
+      "id": "tobedone_3_external_technical_audits",
+      "community": 308,
+      "norm_label": "3. external & technical audits"
+    },
+    {
+      "label": "\ud83d\udcc8 Content & Metadata Tweaks",
+      "file_type": "document",
+      "source_file": "ToBeDone.md",
+      "source_location": "L38",
+      "id": "tobedone_content_metadata_tweaks",
+      "community": 308,
+      "norm_label": "\ud83d\udcc8 content & metadata tweaks"
+    },
+    {
+      "label": "\u2705 Resolved in This Sprint",
+      "file_type": "document",
+      "source_file": "ToBeDone.md",
+      "source_location": "L50",
+      "id": "tobedone_resolved_in_this_sprint",
+      "community": 308,
+      "norm_label": "\u2705 resolved in this sprint"
+    },
+    {
       "label": "cities_sectors.md",
       "file_type": "document",
       "source_file": "cities_sectors.md",
@@ -19471,19 +19552,10 @@
       "norm_label": "property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx"
     },
     {
-      "label": "Property Rates in Mohali & Chandigarh 2026: A Ground-Level Market Intelligence Report",
-      "file_type": "document",
-      "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
-      "source_location": "L69",
-      "id": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_property_rates_in_mohali_chandigarh_2026_a_ground_level_market_intelligence_report",
-      "community": 249,
-      "norm_label": "property rates in mohali & chandigarh 2026: a ground-level market intelligence report"
-    },
-    {
       "label": "Chandigarh Collector Rates 2026: What Changed, and Why It Matters",
       "file_type": "document",
       "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
-      "source_location": "L85",
+      "source_location": "L79",
       "id": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_chandigarh_collector_rates_2026_what_changed_and_why_it_matters",
       "community": 249,
       "norm_label": "chandigarh collector rates 2026: what changed, and why it matters"
@@ -19492,7 +19564,7 @@
       "label": "The Chandigarh Registry Structure: Floors, Shares, and What Banks Will Finance",
       "file_type": "document",
       "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
-      "source_location": "L128",
+      "source_location": "L122",
       "id": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_the_chandigarh_registry_structure_floors_shares_and_what_banks_will_finance",
       "community": 249,
       "norm_label": "the chandigarh registry structure: floors, shares, and what banks will finance"
@@ -19501,7 +19573,7 @@
       "label": "Property Rates in Mohali 2026: Sector-by-Sector Data",
       "file_type": "document",
       "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
-      "source_location": "L152",
+      "source_location": "L146",
       "id": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_property_rates_in_mohali_2026_sector_by_sector_data",
       "community": 249,
       "norm_label": "property rates in mohali 2026: sector-by-sector data"
@@ -19510,7 +19582,7 @@
       "label": "Chandigarh-Adjacent Sectors (43, 44, 45, 46)",
       "file_type": "document",
       "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
-      "source_location": "L156",
+      "source_location": "L150",
       "id": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_chandigarh_adjacent_sectors_43_44_45_46",
       "community": 249,
       "norm_label": "chandigarh-adjacent sectors (43, 44, 45, 46)"
@@ -19519,7 +19591,7 @@
       "label": "Mid-Mohali: Sectors 65, 68, 75, 78, 80, 88",
       "file_type": "document",
       "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
-      "source_location": "L188",
+      "source_location": "L182",
       "id": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_mid_mohali_sectors_65_68_75_78_80_88",
       "community": 249,
       "norm_label": "mid-mohali: sectors 65, 68, 75, 78, 80, 88"
@@ -19528,7 +19600,7 @@
       "label": "GMADA Plot Scheme 2026: What Is Active, What Is Coming",
       "file_type": "document",
       "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
-      "source_location": "L218",
+      "source_location": "L212",
       "id": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_gmada_plot_scheme_2026_what_is_active_what_is_coming",
       "community": 249,
       "norm_label": "gmada plot scheme 2026: what is active, what is coming"
@@ -19537,7 +19609,7 @@
       "label": "Aerocity \u2014 Ongoing Resale Market",
       "file_type": "document",
       "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
-      "source_location": "L222",
+      "source_location": "L216",
       "id": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_aerocity_ongoing_resale_market",
       "community": 249,
       "norm_label": "aerocity \u2014 ongoing resale market"
@@ -19546,7 +19618,7 @@
       "label": "Eco City 2 Extension \u2014 Most Anticipated GMADA Scheme of 2026",
       "file_type": "document",
       "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
-      "source_location": "L263",
+      "source_location": "L257",
       "id": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_eco_city_2_extension_most_anticipated_gmada_scheme_of_2026",
       "community": 249,
       "norm_label": "eco city 2 extension \u2014 most anticipated gmada scheme of 2026"
@@ -19555,7 +19627,7 @@
       "label": "Eco City 3 Landpooling",
       "file_type": "document",
       "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
-      "source_location": "L275",
+      "source_location": "L269",
       "id": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_eco_city_3_landpooling",
       "community": 249,
       "norm_label": "eco city 3 landpooling"
@@ -19564,7 +19636,7 @@
       "label": "3 BHK Apartments in Mohali 2026: Price Benchmarks and the Under-Construction Opportunity",
       "file_type": "document",
       "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
-      "source_location": "L281",
+      "source_location": "L275",
       "id": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_3_bhk_apartments_in_mohali_2026_price_benchmarks_and_the_under_construction_opportunity",
       "community": 249,
       "norm_label": "3 bhk apartments in mohali 2026: price benchmarks and the under-construction opportunity"
@@ -19573,7 +19645,7 @@
       "label": "The Commercial Property Problem: Loan Mechanics and the Cash Component",
       "file_type": "document",
       "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
-      "source_location": "L337",
+      "source_location": "L331",
       "id": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_the_commercial_property_problem_loan_mechanics_and_the_cash_component",
       "community": 249,
       "norm_label": "the commercial property problem: loan mechanics and the cash component"
@@ -19582,7 +19654,7 @@
       "label": "The Capital Stack on a \u20b91 Crore Booth (Explained)",
       "file_type": "document",
       "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
-      "source_location": "L343",
+      "source_location": "L337",
       "id": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_the_capital_stack_on_a_1_crore_booth_explained",
       "community": 249,
       "norm_label": "the capital stack on a \u20b91 crore booth (explained)"
@@ -19591,7 +19663,7 @@
       "label": "The Decision Timing Problem: One Observation From a Decade of Transactions",
       "file_type": "document",
       "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
-      "source_location": "L414",
+      "source_location": "L408",
       "id": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_the_decision_timing_problem_one_observation_from_a_decade_of_transactions",
       "community": 249,
       "norm_label": "the decision timing problem: one observation from a decade of transactions"
@@ -19600,7 +19672,7 @@
       "label": "Frequently Asked Questions",
       "file_type": "document",
       "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
-      "source_location": "L434",
+      "source_location": "L428",
       "id": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_frequently_asked_questions",
       "community": 249,
       "norm_label": "frequently asked questions"
@@ -21557,6 +21629,42 @@
       "id": "references_voice_anti_patterns_to_eliminate",
       "community": 17,
       "norm_label": "anti-patterns to eliminate"
+    },
+    {
+      "label": "PIN",
+      "file_type": "code",
+      "source_file": "app/(site)/properties/[slug]/PropertyDetailMap.tsx",
+      "source_location": "L9",
+      "community": 14,
+      "norm_label": "pin",
+      "id": "slug_propertydetailmap_pin"
+    },
+    {
+      "label": "CustomIcon",
+      "file_type": "code",
+      "source_file": "components/ui/ContactMap.tsx",
+      "source_location": "L11",
+      "community": 365,
+      "norm_label": "customicon",
+      "id": "ui_contactmap_customicon"
+    },
+    {
+      "label": "icon",
+      "file_type": "code",
+      "source_file": "components/ui/PropertiesMap.tsx",
+      "source_location": "L12",
+      "community": 15,
+      "norm_label": "icon",
+      "id": "ui_propertiesmap_icon"
+    },
+    {
+      "label": "Property Rates in Mohali & Chandigarh 2026: A Ground-Level Market Intelligence Report",
+      "file_type": "document",
+      "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
+      "source_location": "L69",
+      "community": 249,
+      "norm_label": "property rates in mohali & chandigarh 2026: a ground-level market intelligence report",
+      "id": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_property_rates_in_mohali_chandigarh_2026_a_ground_level_market_intelligence_report"
     },
     {
       "label": "rhmc-claude-code-prompt.md",
@@ -26637,9 +26745,9 @@
       "source_file": "app/(funnel)/guides/property-documents/page.tsx",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "property_documents_page",
-      "target": "property_documents_page_formskeleton",
-      "confidence_score": 1.0
+      "target": "property_documents_page_formskeleton"
     },
     {
       "relation": "contains",
@@ -27754,6 +27862,16 @@
       "confidence_score": 1.0,
       "source": "site_page",
       "target": "site_page_homepage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(site)/page.tsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "site_page",
+      "target": "site_page_metadata",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -29521,9 +29639,9 @@
       "source_file": "app/(site)/properties/flats/[slug]/page.tsx",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_site_properties_flats_slug_page_tsx_slug_page",
-      "target": "config_builders_data",
-      "confidence_score": 1.0
+      "target": "config_builders_data"
     },
     {
       "relation": "imports_from",
@@ -29728,6 +29846,17 @@
       "confidence_score": 1.0,
       "source": "app_site_properties_flats_slug_page_tsx_slug_page",
       "target": "ui_amenityicons_amenityicon"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(site)/properties/flats/[slug]/page.tsx",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "app_site_properties_flats_slug_page_tsx_slug_page",
+      "target": "ui_descriptioncontainer",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -30090,9 +30219,9 @@
       "source_file": "app/(site)/properties/houses/[slug]/page.tsx",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_site_properties_houses_slug_page_tsx_slug_page",
-      "target": "config_builders_data",
-      "confidence_score": 1.0
+      "target": "config_builders_data"
     },
     {
       "relation": "imports_from",
@@ -35883,6 +36012,26 @@
       "confidence_score": 1.0,
       "source": "ui_customselect",
       "target": "ui_customselect_customselectprops"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/ui/DescriptionContainer.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "ui_descriptioncontainer",
+      "target": "ui_descriptioncontainer_descriptioncontainer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/ui/DescriptionContainer.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "ui_descriptioncontainer",
+      "target": "ui_descriptioncontainer_descriptioncontainerprops",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -43167,9 +43316,9 @@
       "source_file": "realty-blogs-data.json",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_blogs_data",
-      "target": "realty_blogs_data_author_bio_long",
-      "confidence_score": 1.0
+      "target": "realty_blogs_data_author_bio_long"
     },
     {
       "relation": "contains",
@@ -43177,9 +43326,9 @@
       "source_file": "realty-blogs-data.json",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_blogs_data",
-      "target": "realty_blogs_data_author_bio_short",
-      "confidence_score": 1.0
+      "target": "realty_blogs_data_author_bio_short"
     },
     {
       "relation": "contains",
@@ -43187,9 +43336,9 @@
       "source_file": "realty-blogs-data.json",
       "source_location": "L45",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_blogs_data",
-      "target": "realty_blogs_data_blogs",
-      "confidence_score": 1.0
+      "target": "realty_blogs_data_blogs"
     },
     {
       "relation": "contains",
@@ -43197,9 +43346,9 @@
       "source_file": "realty-blogs-data.json",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_blogs_data",
-      "target": "realty_blogs_data_cta_templates",
-      "confidence_score": 1.0
+      "target": "realty_blogs_data_cta_templates"
     },
     {
       "relation": "contains",
@@ -43207,9 +43356,9 @@
       "source_file": "realty-blogs-data.json",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_blogs_data",
-      "target": "realty_blogs_data_icp_profiles",
-      "confidence_score": 1.0
+      "target": "realty_blogs_data_icp_profiles"
     },
     {
       "relation": "contains",
@@ -43217,9 +43366,9 @@
       "source_file": "realty-blogs-data.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_blogs_data",
-      "target": "realty_blogs_data_meta",
-      "confidence_score": 1.0
+      "target": "realty_blogs_data_meta"
     },
     {
       "relation": "contains",
@@ -43227,9 +43376,9 @@
       "source_file": "realty-blogs-data.json",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_blogs_data",
-      "target": "realty_blogs_data_voice_principles",
-      "confidence_score": 1.0
+      "target": "realty_blogs_data_voice_principles"
     },
     {
       "relation": "contains",
@@ -43237,9 +43386,9 @@
       "source_file": "realty-blogs-data.json",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_blogs_data_meta",
-      "target": "realty_blogs_data_meta_author_name",
-      "confidence_score": 1.0
+      "target": "realty_blogs_data_meta_author_name"
     },
     {
       "relation": "contains",
@@ -43247,9 +43396,9 @@
       "source_file": "realty-blogs-data.json",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_blogs_data_meta",
-      "target": "realty_blogs_data_meta_author_url",
-      "confidence_score": 1.0
+      "target": "realty_blogs_data_meta_author_url"
     },
     {
       "relation": "contains",
@@ -43257,9 +43406,9 @@
       "source_file": "realty-blogs-data.json",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_blogs_data_meta",
-      "target": "realty_blogs_data_meta_base_url",
-      "confidence_score": 1.0
+      "target": "realty_blogs_data_meta_base_url"
     },
     {
       "relation": "contains",
@@ -43267,9 +43416,9 @@
       "source_file": "realty-blogs-data.json",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_blogs_data_meta",
-      "target": "realty_blogs_data_meta_blog_base",
-      "confidence_score": 1.0
+      "target": "realty_blogs_data_meta_blog_base"
     },
     {
       "relation": "contains",
@@ -43277,9 +43426,9 @@
       "source_file": "realty-blogs-data.json",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_blogs_data_meta",
-      "target": "realty_blogs_data_meta_language",
-      "confidence_score": 1.0
+      "target": "realty_blogs_data_meta_language"
     },
     {
       "relation": "contains",
@@ -43287,9 +43436,9 @@
       "source_file": "realty-blogs-data.json",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_blogs_data_meta",
-      "target": "realty_blogs_data_meta_location",
-      "confidence_score": 1.0
+      "target": "realty_blogs_data_meta_location"
     },
     {
       "relation": "contains",
@@ -43297,9 +43446,9 @@
       "source_file": "realty-blogs-data.json",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_blogs_data_meta",
-      "target": "realty_blogs_data_meta_note",
-      "confidence_score": 1.0
+      "target": "realty_blogs_data_meta_note"
     },
     {
       "relation": "contains",
@@ -43307,9 +43456,9 @@
       "source_file": "realty-blogs-data.json",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_blogs_data_meta",
-      "target": "realty_blogs_data_meta_short_name",
-      "confidence_score": 1.0
+      "target": "realty_blogs_data_meta_short_name"
     },
     {
       "relation": "contains",
@@ -43317,9 +43466,9 @@
       "source_file": "realty-blogs-data.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_blogs_data_meta",
-      "target": "realty_blogs_data_meta_site_name",
-      "confidence_score": 1.0
+      "target": "realty_blogs_data_meta_site_name"
     },
     {
       "relation": "contains",
@@ -43327,9 +43476,9 @@
       "source_file": "realty-blogs-data.json",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_blogs_data_cta_templates",
-      "target": "realty_blogs_data_cta_templates_a",
-      "confidence_score": 1.0
+      "target": "realty_blogs_data_cta_templates_a"
     },
     {
       "relation": "contains",
@@ -43337,9 +43486,9 @@
       "source_file": "realty-blogs-data.json",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_blogs_data_cta_templates",
-      "target": "realty_blogs_data_cta_templates_b",
-      "confidence_score": 1.0
+      "target": "realty_blogs_data_cta_templates_b"
     },
     {
       "relation": "contains",
@@ -43347,9 +43496,9 @@
       "source_file": "realty-blogs-data.json",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_blogs_data_cta_templates",
-      "target": "realty_blogs_data_cta_templates_c",
-      "confidence_score": 1.0
+      "target": "realty_blogs_data_cta_templates_c"
     },
     {
       "relation": "contains",
@@ -43357,9 +43506,9 @@
       "source_file": "realty-blogs-data.json",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_blogs_data_cta_templates",
-      "target": "realty_blogs_data_cta_templates_d",
-      "confidence_score": 1.0
+      "target": "realty_blogs_data_cta_templates_d"
     },
     {
       "relation": "contains",
@@ -43367,9 +43516,9 @@
       "source_file": "realty-blogs-data.json",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_blogs_data_cta_templates",
-      "target": "realty_blogs_data_cta_templates_e",
-      "confidence_score": 1.0
+      "target": "realty_blogs_data_cta_templates_e"
     },
     {
       "relation": "contains",
@@ -43377,9 +43526,9 @@
       "source_file": "realty-blogs-data.json",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_blogs_data_icp_profiles",
-      "target": "realty_blogs_data_icp_profiles_all",
-      "confidence_score": 1.0
+      "target": "realty_blogs_data_icp_profiles_all"
     },
     {
       "relation": "contains",
@@ -43387,9 +43536,9 @@
       "source_file": "realty-blogs-data.json",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_blogs_data_icp_profiles",
-      "target": "realty_blogs_data_icp_profiles_cxo",
-      "confidence_score": 1.0
+      "target": "realty_blogs_data_icp_profiles_cxo"
     },
     {
       "relation": "contains",
@@ -43397,9 +43546,9 @@
       "source_file": "realty-blogs-data.json",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_blogs_data_icp_profiles",
-      "target": "realty_blogs_data_icp_profiles_hni",
-      "confidence_score": 1.0
+      "target": "realty_blogs_data_icp_profiles_hni"
     },
     {
       "relation": "contains",
@@ -43407,9 +43556,9 @@
       "source_file": "realty-blogs-data.json",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_blogs_data_icp_profiles",
-      "target": "realty_blogs_data_icp_profiles_landseller",
-      "confidence_score": 1.0
+      "target": "realty_blogs_data_icp_profiles_landseller"
     },
     {
       "relation": "contains",
@@ -43417,9 +43566,9 @@
       "source_file": "realty-blogs-data.json",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_blogs_data_icp_profiles",
-      "target": "realty_blogs_data_icp_profiles_nri",
-      "confidence_score": 1.0
+      "target": "realty_blogs_data_icp_profiles_nri"
     },
     {
       "relation": "contains",
@@ -46404,9 +46553,9 @@
       "source_file": "update_realty_blogs.js",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "update_realty_blogs",
-      "target": "update_realty_blogs_blogdir",
-      "confidence_score": 1.0
+      "target": "update_realty_blogs_blogdir"
     },
     {
       "relation": "contains",
@@ -46414,9 +46563,9 @@
       "source_file": "update_realty_blogs.js",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "update_realty_blogs",
-      "target": "update_realty_blogs_files",
-      "confidence_score": 1.0
+      "target": "update_realty_blogs_files"
     },
     {
       "relation": "contains",
@@ -46424,9 +46573,9 @@
       "source_file": "update_realty_blogs.js",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "update_realty_blogs",
-      "target": "update_realty_blogs_fs",
-      "confidence_score": 1.0
+      "target": "update_realty_blogs_fs"
     },
     {
       "relation": "contains",
@@ -46434,9 +46583,9 @@
       "source_file": "update_realty_blogs.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "update_realty_blogs",
-      "target": "update_realty_blogs_path",
-      "confidence_score": 1.0
+      "target": "update_realty_blogs_path"
     },
     {
       "relation": "contains",
@@ -49038,9 +49187,9 @@
       "source_file": "workspace/realty-consultants/generate_csv.js",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_generate_csv",
-      "target": "realty_consultants_generate_csv_allimages",
-      "confidence_score": 1.0
+      "target": "realty_consultants_generate_csv_allimages"
     },
     {
       "relation": "contains",
@@ -49048,9 +49197,9 @@
       "source_file": "workspace/realty-consultants/generate_csv.js",
       "source_location": "L546",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_generate_csv",
-      "target": "realty_consultants_generate_csv_escapecsv",
-      "confidence_score": 1.0
+      "target": "realty_consultants_generate_csv_escapecsv"
     },
     {
       "relation": "contains",
@@ -49058,9 +49207,9 @@
       "source_file": "workspace/realty-consultants/generate_csv.js",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_generate_csv",
-      "target": "realty_consultants_generate_csv_fs",
-      "confidence_score": 1.0
+      "target": "realty_consultants_generate_csv_fs"
     },
     {
       "relation": "contains",
@@ -49068,9 +49217,9 @@
       "source_file": "workspace/realty-consultants/generate_csv.js",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_generate_csv",
-      "target": "realty_consultants_generate_csv_getrandomimages",
-      "confidence_score": 1.0
+      "target": "realty_consultants_generate_csv_getrandomimages"
     },
     {
       "relation": "contains",
@@ -49078,9 +49227,9 @@
       "source_file": "workspace/realty-consultants/generate_csv.js",
       "source_location": "L561",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_generate_csv",
-      "target": "realty_consultants_generate_csv_header",
-      "confidence_score": 1.0
+      "target": "realty_consultants_generate_csv_header"
     },
     {
       "relation": "contains",
@@ -49088,9 +49237,9 @@
       "source_file": "workspace/realty-consultants/generate_csv.js",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_generate_csv",
-      "target": "realty_consultants_generate_csv_projects",
-      "confidence_score": 1.0
+      "target": "realty_consultants_generate_csv_projects"
     },
     {
       "relation": "contains",
@@ -49098,9 +49247,9 @@
       "source_file": "workspace/realty-consultants/generate_csv.js",
       "source_location": "L562",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_generate_csv",
-      "target": "realty_consultants_generate_csv_rows",
-      "confidence_score": 1.0
+      "target": "realty_consultants_generate_csv_rows"
     },
     {
       "relation": "contains",
@@ -49108,9 +49257,9 @@
       "source_file": "workspace/realty-consultants/package.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_package",
-      "target": "realty_consultants_package_dependencies",
-      "confidence_score": 1.0
+      "target": "realty_consultants_package_dependencies"
     },
     {
       "relation": "contains",
@@ -49118,9 +49267,9 @@
       "source_file": "workspace/realty-consultants/package.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_package_dependencies",
-      "target": "realty_consultants_package_dependencies_supabase_supabase_js",
-      "confidence_score": 1.0
+      "target": "realty_consultants_package_dependencies_supabase_supabase_js"
     },
     {
       "relation": "contains",
@@ -49128,9 +49277,9 @@
       "source_file": "workspace/realty-consultants/realty-blogs-data.json",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogs_data",
-      "target": "realty_consultants_realty_blogs_data_author_bio_long",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogs_data_author_bio_long"
     },
     {
       "relation": "contains",
@@ -49138,9 +49287,9 @@
       "source_file": "workspace/realty-consultants/realty-blogs-data.json",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogs_data",
-      "target": "realty_consultants_realty_blogs_data_author_bio_short",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogs_data_author_bio_short"
     },
     {
       "relation": "contains",
@@ -49148,9 +49297,9 @@
       "source_file": "workspace/realty-consultants/realty-blogs-data.json",
       "source_location": "L45",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogs_data",
-      "target": "realty_consultants_realty_blogs_data_blogs",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogs_data_blogs"
     },
     {
       "relation": "contains",
@@ -49158,9 +49307,9 @@
       "source_file": "workspace/realty-consultants/realty-blogs-data.json",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogs_data",
-      "target": "realty_consultants_realty_blogs_data_cta_templates",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogs_data_cta_templates"
     },
     {
       "relation": "contains",
@@ -49168,9 +49317,9 @@
       "source_file": "workspace/realty-consultants/realty-blogs-data.json",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogs_data",
-      "target": "realty_consultants_realty_blogs_data_icp_profiles",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogs_data_icp_profiles"
     },
     {
       "relation": "contains",
@@ -49178,9 +49327,9 @@
       "source_file": "workspace/realty-consultants/realty-blogs-data.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogs_data",
-      "target": "realty_consultants_realty_blogs_data_meta",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogs_data_meta"
     },
     {
       "relation": "contains",
@@ -49188,9 +49337,9 @@
       "source_file": "workspace/realty-consultants/realty-blogs-data.json",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogs_data",
-      "target": "realty_consultants_realty_blogs_data_voice_principles",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogs_data_voice_principles"
     },
     {
       "relation": "contains",
@@ -49198,9 +49347,9 @@
       "source_file": "workspace/realty-consultants/realty-blogs-data.json",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogs_data_meta",
-      "target": "realty_consultants_realty_blogs_data_meta_author_name",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogs_data_meta_author_name"
     },
     {
       "relation": "contains",
@@ -49208,9 +49357,9 @@
       "source_file": "workspace/realty-consultants/realty-blogs-data.json",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogs_data_meta",
-      "target": "realty_consultants_realty_blogs_data_meta_author_url",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogs_data_meta_author_url"
     },
     {
       "relation": "contains",
@@ -49218,9 +49367,9 @@
       "source_file": "workspace/realty-consultants/realty-blogs-data.json",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogs_data_meta",
-      "target": "realty_consultants_realty_blogs_data_meta_base_url",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogs_data_meta_base_url"
     },
     {
       "relation": "contains",
@@ -49228,9 +49377,9 @@
       "source_file": "workspace/realty-consultants/realty-blogs-data.json",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogs_data_meta",
-      "target": "realty_consultants_realty_blogs_data_meta_blog_base",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogs_data_meta_blog_base"
     },
     {
       "relation": "contains",
@@ -49238,9 +49387,9 @@
       "source_file": "workspace/realty-consultants/realty-blogs-data.json",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogs_data_meta",
-      "target": "realty_consultants_realty_blogs_data_meta_language",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogs_data_meta_language"
     },
     {
       "relation": "contains",
@@ -49248,9 +49397,9 @@
       "source_file": "workspace/realty-consultants/realty-blogs-data.json",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogs_data_meta",
-      "target": "realty_consultants_realty_blogs_data_meta_location",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogs_data_meta_location"
     },
     {
       "relation": "contains",
@@ -49258,9 +49407,9 @@
       "source_file": "workspace/realty-consultants/realty-blogs-data.json",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogs_data_meta",
-      "target": "realty_consultants_realty_blogs_data_meta_note",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogs_data_meta_note"
     },
     {
       "relation": "contains",
@@ -49268,9 +49417,9 @@
       "source_file": "workspace/realty-consultants/realty-blogs-data.json",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogs_data_meta",
-      "target": "realty_consultants_realty_blogs_data_meta_short_name",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogs_data_meta_short_name"
     },
     {
       "relation": "contains",
@@ -49278,9 +49427,9 @@
       "source_file": "workspace/realty-consultants/realty-blogs-data.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogs_data_meta",
-      "target": "realty_consultants_realty_blogs_data_meta_site_name",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogs_data_meta_site_name"
     },
     {
       "relation": "contains",
@@ -49288,9 +49437,9 @@
       "source_file": "workspace/realty-consultants/realty-blogs-data.json",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogs_data_cta_templates",
-      "target": "realty_consultants_realty_blogs_data_cta_templates_a",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogs_data_cta_templates_a"
     },
     {
       "relation": "contains",
@@ -49298,9 +49447,9 @@
       "source_file": "workspace/realty-consultants/realty-blogs-data.json",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogs_data_cta_templates",
-      "target": "realty_consultants_realty_blogs_data_cta_templates_b",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogs_data_cta_templates_b"
     },
     {
       "relation": "contains",
@@ -49308,9 +49457,9 @@
       "source_file": "workspace/realty-consultants/realty-blogs-data.json",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogs_data_cta_templates",
-      "target": "realty_consultants_realty_blogs_data_cta_templates_c",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogs_data_cta_templates_c"
     },
     {
       "relation": "contains",
@@ -49318,9 +49467,9 @@
       "source_file": "workspace/realty-consultants/realty-blogs-data.json",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogs_data_cta_templates",
-      "target": "realty_consultants_realty_blogs_data_cta_templates_d",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogs_data_cta_templates_d"
     },
     {
       "relation": "contains",
@@ -49328,9 +49477,9 @@
       "source_file": "workspace/realty-consultants/realty-blogs-data.json",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogs_data_cta_templates",
-      "target": "realty_consultants_realty_blogs_data_cta_templates_e",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogs_data_cta_templates_e"
     },
     {
       "relation": "contains",
@@ -49338,9 +49487,9 @@
       "source_file": "workspace/realty-consultants/realty-blogs-data.json",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogs_data_icp_profiles",
-      "target": "realty_consultants_realty_blogs_data_icp_profiles_all",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogs_data_icp_profiles_all"
     },
     {
       "relation": "contains",
@@ -49348,9 +49497,9 @@
       "source_file": "workspace/realty-consultants/realty-blogs-data.json",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogs_data_icp_profiles",
-      "target": "realty_consultants_realty_blogs_data_icp_profiles_cxo",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogs_data_icp_profiles_cxo"
     },
     {
       "relation": "contains",
@@ -49358,9 +49507,9 @@
       "source_file": "workspace/realty-consultants/realty-blogs-data.json",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogs_data_icp_profiles",
-      "target": "realty_consultants_realty_blogs_data_icp_profiles_hni",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogs_data_icp_profiles_hni"
     },
     {
       "relation": "contains",
@@ -49368,9 +49517,9 @@
       "source_file": "workspace/realty-consultants/realty-blogs-data.json",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogs_data_icp_profiles",
-      "target": "realty_consultants_realty_blogs_data_icp_profiles_landseller",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogs_data_icp_profiles_landseller"
     },
     {
       "relation": "contains",
@@ -49378,9 +49527,9 @@
       "source_file": "workspace/realty-consultants/realty-blogs-data.json",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogs_data_icp_profiles",
-      "target": "realty_consultants_realty_blogs_data_icp_profiles_nri",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogs_data_icp_profiles_nri"
     },
     {
       "relation": "contains",
@@ -49388,9 +49537,9 @@
       "source_file": "workspace/realty-consultants/upload_to_supabase.js",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_upload_to_supabase",
-      "target": "realty_consultants_upload_to_supabase_allimages",
-      "confidence_score": 1.0
+      "target": "realty_consultants_upload_to_supabase_allimages"
     },
     {
       "relation": "contains",
@@ -49398,9 +49547,9 @@
       "source_file": "workspace/realty-consultants/upload_to_supabase.js",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_upload_to_supabase",
-      "target": "realty_consultants_upload_to_supabase_createclient",
-      "confidence_score": 1.0
+      "target": "realty_consultants_upload_to_supabase_createclient"
     },
     {
       "relation": "contains",
@@ -49408,9 +49557,9 @@
       "source_file": "workspace/realty-consultants/upload_to_supabase.js",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_upload_to_supabase",
-      "target": "realty_consultants_upload_to_supabase_getrandomimages",
-      "confidence_score": 1.0
+      "target": "realty_consultants_upload_to_supabase_getrandomimages"
     },
     {
       "relation": "contains",
@@ -49418,9 +49567,9 @@
       "source_file": "workspace/realty-consultants/upload_to_supabase.js",
       "source_location": "L551",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_upload_to_supabase",
-      "target": "realty_consultants_upload_to_supabase_insertproperties",
-      "confidence_score": 1.0
+      "target": "realty_consultants_upload_to_supabase_insertproperties"
     },
     {
       "relation": "contains",
@@ -49428,9 +49577,9 @@
       "source_file": "workspace/realty-consultants/upload_to_supabase.js",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_upload_to_supabase",
-      "target": "realty_consultants_upload_to_supabase_projects",
-      "confidence_score": 1.0
+      "target": "realty_consultants_upload_to_supabase_projects"
     },
     {
       "relation": "contains",
@@ -49438,9 +49587,9 @@
       "source_file": "workspace/realty-consultants/upload_to_supabase.js",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_upload_to_supabase",
-      "target": "realty_consultants_upload_to_supabase_supabase",
-      "confidence_score": 1.0
+      "target": "realty_consultants_upload_to_supabase_supabase"
     },
     {
       "relation": "contains",
@@ -52841,9 +52990,9 @@
       "source_file": "RealtyNew/content/realty-claude-code-prompt.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "content_realty_claude_code_prompt",
-      "target": "content_realty_claude_code_prompt_realty_consultants_blog_writer_claude_code_system_prompt",
-      "confidence_score": 1.0
+      "target": "content_realty_claude_code_prompt_realty_consultants_blog_writer_claude_code_system_prompt"
     },
     {
       "relation": "contains",
@@ -52851,9 +53000,9 @@
       "source_file": "RealtyNew/content/realty-claude-code-prompt.md",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "content_realty_claude_code_prompt",
-      "target": "content_realty_claude_code_prompt_realty_holding_management_consultants_sector_82a_mohali",
-      "confidence_score": 1.0
+      "target": "content_realty_claude_code_prompt_realty_holding_management_consultants_sector_82a_mohali"
     },
     {
       "relation": "contains",
@@ -52861,9 +53010,9 @@
       "source_file": "RealtyNew/content/realty-claude-code-prompt.md",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "content_realty_claude_code_prompt",
-      "target": "content_realty_claude_code_prompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "confidence_score": 1.0
+      "target": "content_realty_claude_code_prompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file"
     },
     {
       "relation": "contains",
@@ -52871,9 +53020,9 @@
       "source_file": "RealtyNew/content/realty-claude-code-prompt.md",
       "source_location": "L87",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "content_realty_claude_code_prompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "target": "content_realty_claude_code_prompt_aeo_structure_mandatory",
-      "confidence_score": 1.0
+      "target": "content_realty_claude_code_prompt_aeo_structure_mandatory"
     },
     {
       "relation": "contains",
@@ -52881,9 +53030,9 @@
       "source_file": "RealtyNew/content/realty-claude-code-prompt.md",
       "source_location": "L140",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "content_realty_claude_code_prompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "target": "content_realty_claude_code_prompt_blog_specific_notes",
-      "confidence_score": 1.0
+      "target": "content_realty_claude_code_prompt_blog_specific_notes"
     },
     {
       "relation": "contains",
@@ -52891,9 +53040,9 @@
       "source_file": "RealtyNew/content/realty-claude-code-prompt.md",
       "source_location": "L126",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "content_realty_claude_code_prompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "target": "content_realty_claude_code_prompt_cta_rules",
-      "confidence_score": 1.0
+      "target": "content_realty_claude_code_prompt_cta_rules"
     },
     {
       "relation": "contains",
@@ -52901,9 +53050,9 @@
       "source_file": "RealtyNew/content/realty-claude-code-prompt.md",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "content_realty_claude_code_prompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "target": "content_realty_claude_code_prompt_eeat_signals_embed_in_every_blog",
-      "confidence_score": 1.0
+      "target": "content_realty_claude_code_prompt_eeat_signals_embed_in_every_blog"
     },
     {
       "relation": "contains",
@@ -52911,9 +53060,9 @@
       "source_file": "RealtyNew/content/realty-claude-code-prompt.md",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "content_realty_claude_code_prompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "target": "content_realty_claude_code_prompt_execution_instructions",
-      "confidence_score": 1.0
+      "target": "content_realty_claude_code_prompt_execution_instructions"
     },
     {
       "relation": "contains",
@@ -52921,9 +53070,9 @@
       "source_file": "RealtyNew/content/realty-claude-code-prompt.md",
       "source_location": "L110",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "content_realty_claude_code_prompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "target": "content_realty_claude_code_prompt_internal_linking_rules",
-      "confidence_score": 1.0
+      "target": "content_realty_claude_code_prompt_internal_linking_rules"
     },
     {
       "relation": "contains",
@@ -52931,9 +53080,9 @@
       "source_file": "RealtyNew/content/realty-claude-code-prompt.md",
       "source_location": "L157",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "content_realty_claude_code_prompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "target": "content_realty_claude_code_prompt_markdown_output_format",
-      "confidence_score": 1.0
+      "target": "content_realty_claude_code_prompt_markdown_output_format"
     },
     {
       "relation": "contains",
@@ -52941,9 +53090,9 @@
       "source_file": "RealtyNew/content/realty-claude-code-prompt.md",
       "source_location": "L288",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "content_realty_claude_code_prompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "target": "content_realty_claude_code_prompt_output",
-      "confidence_score": 1.0
+      "target": "content_realty_claude_code_prompt_output"
     },
     {
       "relation": "contains",
@@ -52951,9 +53100,9 @@
       "source_file": "RealtyNew/content/realty-claude-code-prompt.md",
       "source_location": "L203",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "content_realty_claude_code_prompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "target": "content_realty_claude_code_prompt_quality_checks_before_saving",
-      "confidence_score": 1.0
+      "target": "content_realty_claude_code_prompt_quality_checks_before_saving"
     },
     {
       "relation": "contains",
@@ -52961,9 +53110,9 @@
       "source_file": "RealtyNew/content/realty-claude-code-prompt.md",
       "source_location": "L222",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "content_realty_claude_code_prompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "target": "content_realty_claude_code_prompt_schema_markup_instructions",
-      "confidence_score": 1.0
+      "target": "content_realty_claude_code_prompt_schema_markup_instructions"
     },
     {
       "relation": "contains",
@@ -52971,9 +53120,9 @@
       "source_file": "RealtyNew/content/realty-claude-code-prompt.md",
       "source_location": "L257",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "content_realty_claude_code_prompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "target": "content_realty_claude_code_prompt_special_instructions_for_key_blogs",
-      "confidence_score": 1.0
+      "target": "content_realty_claude_code_prompt_special_instructions_for_key_blogs"
     },
     {
       "relation": "contains",
@@ -52981,9 +53130,9 @@
       "source_file": "RealtyNew/content/realty-claude-code-prompt.md",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "content_realty_claude_code_prompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "target": "content_realty_claude_code_prompt_voice_read_this_carefully",
-      "confidence_score": 1.0
+      "target": "content_realty_claude_code_prompt_voice_read_this_carefully"
     },
     {
       "relation": "contains",
@@ -52991,9 +53140,9 @@
       "source_file": "RealtyNew/content/realty-claude-code-prompt.md",
       "source_location": "L276",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "content_realty_claude_code_prompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "target": "content_realty_claude_code_prompt_what_not_to_write",
-      "confidence_score": 1.0
+      "target": "content_realty_claude_code_prompt_what_not_to_write"
     },
     {
       "relation": "contains",
@@ -53001,9 +53150,9 @@
       "source_file": "RealtyNew/content/realty-claude-code-prompt.md",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "content_realty_claude_code_prompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "target": "content_realty_claude_code_prompt_your_role",
-      "confidence_score": 1.0
+      "target": "content_realty_claude_code_prompt_your_role"
     },
     {
       "relation": "contains",
@@ -53011,9 +53160,9 @@
       "source_file": "RealtyNew/content/realty-claude-code-prompt.md",
       "source_location": "L96",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "content_realty_claude_code_prompt_aeo_structure_mandatory",
-      "target": "content_realty_claude_code_prompt_body",
-      "confidence_score": 1.0
+      "target": "content_realty_claude_code_prompt_body"
     },
     {
       "relation": "contains",
@@ -53021,9 +53170,9 @@
       "source_file": "RealtyNew/content/realty-claude-code-prompt.md",
       "source_location": "L103",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "content_realty_claude_code_prompt_aeo_structure_mandatory",
-      "target": "content_realty_claude_code_prompt_close",
-      "confidence_score": 1.0
+      "target": "content_realty_claude_code_prompt_close"
     },
     {
       "relation": "contains",
@@ -53031,9 +53180,9 @@
       "source_file": "RealtyNew/content/realty-claude-code-prompt.md",
       "source_location": "L91",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "content_realty_claude_code_prompt_aeo_structure_mandatory",
-      "target": "content_realty_claude_code_prompt_opening_first_150_words_aeo_critical",
-      "confidence_score": 1.0
+      "target": "content_realty_claude_code_prompt_opening_first_150_words_aeo_critical"
     },
     {
       "relation": "contains",
@@ -53174,6 +53323,76 @@
       "confidence_score": 1.0,
       "source": "seo_performance_audit_4_schema_markup_aeo_answer_engine_optimization",
       "target": "seo_performance_audit_issue_3_missing_faq_schema_low"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ToBeDone.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "tobedone",
+      "target": "tobedone_to_be_done_ahrefs_site_audit_low_severity_items",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ToBeDone.md",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "tobedone_to_be_done_ahrefs_site_audit_low_severity_items",
+      "target": "tobedone_content_metadata_tweaks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ToBeDone.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "tobedone_to_be_done_ahrefs_site_audit_low_severity_items",
+      "target": "tobedone_general_notices_audits",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ToBeDone.md",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "tobedone_to_be_done_ahrefs_site_audit_low_severity_items",
+      "target": "tobedone_resolved_in_this_sprint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ToBeDone.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "tobedone_general_notices_audits",
+      "target": "tobedone_1_structured_data_optimization",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ToBeDone.md",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "tobedone_general_notices_audits",
+      "target": "tobedone_2_internal_linking_crawl_equity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ToBeDone.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "tobedone_general_notices_audits",
+      "target": "tobedone_3_external_technical_audits",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -54439,6 +54658,56 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
+      "source_location": "L275",
+      "weight": 1.0,
+      "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide",
+      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_3_bhk_apartments_in_mohali_2026_price_benchmarks_and_the_under_construction_opportunity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide",
+      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_chandigarh_collector_rates_2026_what_changed_and_why_it_matters",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
+      "source_location": "L428",
+      "weight": 1.0,
+      "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide",
+      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_frequently_asked_questions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
+      "source_location": "L212",
+      "weight": 1.0,
+      "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide",
+      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_gmada_plot_scheme_2026_what_is_active_what_is_coming",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
+      "source_location": "L146",
+      "weight": 1.0,
+      "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide",
+      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_property_rates_in_mohali_2026_sector_by_sector_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
       "source_location": "L69",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -54449,11 +54718,31 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
-      "source_location": "L281",
+      "source_location": "L122",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_property_rates_in_mohali_chandigarh_2026_a_ground_level_market_intelligence_report",
-      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_3_bhk_apartments_in_mohali_2026_price_benchmarks_and_the_under_construction_opportunity"
+      "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide",
+      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_the_chandigarh_registry_structure_floors_shares_and_what_banks_will_finance",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
+      "source_location": "L331",
+      "weight": 1.0,
+      "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide",
+      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_the_commercial_property_problem_loan_mechanics_and_the_cash_component",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
+      "source_location": "L408",
+      "weight": 1.0,
+      "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide",
+      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_the_decision_timing_problem_one_observation_from_a_decade_of_transactions",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -54469,61 +54758,11 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
-      "source_location": "L434",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_property_rates_in_mohali_chandigarh_2026_a_ground_level_market_intelligence_report",
-      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_frequently_asked_questions"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
-      "source_location": "L218",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_property_rates_in_mohali_chandigarh_2026_a_ground_level_market_intelligence_report",
-      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_gmada_plot_scheme_2026_what_is_active_what_is_coming"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
-      "source_location": "L152",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_property_rates_in_mohali_chandigarh_2026_a_ground_level_market_intelligence_report",
-      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_property_rates_in_mohali_2026_sector_by_sector_data"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
       "source_location": "L128",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_property_rates_in_mohali_chandigarh_2026_a_ground_level_market_intelligence_report",
       "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_the_chandigarh_registry_structure_floors_shares_and_what_banks_will_finance"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
-      "source_location": "L337",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_property_rates_in_mohali_chandigarh_2026_a_ground_level_market_intelligence_report",
-      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_the_commercial_property_problem_loan_mechanics_and_the_cash_component"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
-      "source_location": "L414",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_property_rates_in_mohali_chandigarh_2026_a_ground_level_market_intelligence_report",
-      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_the_decision_timing_problem_one_observation_from_a_decade_of_transactions"
     },
     {
       "relation": "contains",
@@ -54544,6 +54783,16 @@
       "confidence_score": 1.0,
       "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_property_rates_in_mohali_2026_sector_by_sector_data",
       "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_mid_mohali_sectors_65_68_75_78_80_88"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
+      "source_location": "L152",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_property_rates_in_mohali_chandigarh_2026_a_ground_level_market_intelligence_report",
+      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_property_rates_in_mohali_2026_sector_by_sector_data"
     },
     {
       "relation": "contains",
@@ -54579,11 +54828,61 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
+      "source_location": "L218",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_property_rates_in_mohali_chandigarh_2026_a_ground_level_market_intelligence_report",
+      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_gmada_plot_scheme_2026_what_is_active_what_is_coming"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
+      "source_location": "L281",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_property_rates_in_mohali_chandigarh_2026_a_ground_level_market_intelligence_report",
+      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_3_bhk_apartments_in_mohali_2026_price_benchmarks_and_the_under_construction_opportunity"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
+      "source_location": "L337",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_property_rates_in_mohali_chandigarh_2026_a_ground_level_market_intelligence_report",
+      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_the_commercial_property_problem_loan_mechanics_and_the_cash_component"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
       "source_location": "L343",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_the_commercial_property_problem_loan_mechanics_and_the_cash_component",
       "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_the_capital_stack_on_a_1_crore_booth_explained"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
+      "source_location": "L414",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_property_rates_in_mohali_chandigarh_2026_a_ground_level_market_intelligence_report",
+      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_the_decision_timing_problem_one_observation_from_a_decade_of_transactions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "content/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide.mdx",
+      "source_location": "L434",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_property_rates_in_mohali_chandigarh_2026_a_ground_level_market_intelligence_report",
+      "target": "blog_property_rates_mohali_2026_gmada_chandigarh_aerocity_guide_frequently_asked_questions"
     },
     {
       "relation": "contains",
@@ -55411,9 +55710,9 @@
       "source_file": "workspace/realty-consultants/realty-blogprompt.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogprompt",
-      "target": "realty_consultants_realty_blogprompt_realty_holding_and_management_consultants_blog_writer_claude_code_system_prompt",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogprompt_realty_holding_and_management_consultants_blog_writer_claude_code_system_prompt"
     },
     {
       "relation": "contains",
@@ -55421,9 +55720,9 @@
       "source_file": "workspace/realty-consultants/realty-blogprompt.md",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogprompt",
-      "target": "realty_consultants_realty_blogprompt_realty_holding_management_consultants_sector_82a_mohali",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogprompt_realty_holding_management_consultants_sector_82a_mohali"
     },
     {
       "relation": "contains",
@@ -55431,9 +55730,9 @@
       "source_file": "workspace/realty-consultants/realty-blogprompt.md",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogprompt",
-      "target": "realty_consultants_realty_blogprompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogprompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file"
     },
     {
       "relation": "contains",
@@ -55441,9 +55740,9 @@
       "source_file": "workspace/realty-consultants/realty-blogprompt.md",
       "source_location": "L87",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogprompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "target": "realty_consultants_realty_blogprompt_aeo_structure_mandatory",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogprompt_aeo_structure_mandatory"
     },
     {
       "relation": "contains",
@@ -55451,9 +55750,9 @@
       "source_file": "workspace/realty-consultants/realty-blogprompt.md",
       "source_location": "L140",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogprompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "target": "realty_consultants_realty_blogprompt_blog_specific_notes",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogprompt_blog_specific_notes"
     },
     {
       "relation": "contains",
@@ -55461,9 +55760,9 @@
       "source_file": "workspace/realty-consultants/realty-blogprompt.md",
       "source_location": "L126",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogprompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "target": "realty_consultants_realty_blogprompt_cta_rules",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogprompt_cta_rules"
     },
     {
       "relation": "contains",
@@ -55471,9 +55770,9 @@
       "source_file": "workspace/realty-consultants/realty-blogprompt.md",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogprompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "target": "realty_consultants_realty_blogprompt_eeat_signals_embed_in_every_blog",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogprompt_eeat_signals_embed_in_every_blog"
     },
     {
       "relation": "contains",
@@ -55481,9 +55780,9 @@
       "source_file": "workspace/realty-consultants/realty-blogprompt.md",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogprompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "target": "realty_consultants_realty_blogprompt_execution_instructions",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogprompt_execution_instructions"
     },
     {
       "relation": "contains",
@@ -55491,9 +55790,9 @@
       "source_file": "workspace/realty-consultants/realty-blogprompt.md",
       "source_location": "L110",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogprompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "target": "realty_consultants_realty_blogprompt_internal_linking_rules",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogprompt_internal_linking_rules"
     },
     {
       "relation": "contains",
@@ -55501,9 +55800,9 @@
       "source_file": "workspace/realty-consultants/realty-blogprompt.md",
       "source_location": "L157",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogprompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "target": "realty_consultants_realty_blogprompt_markdown_output_format",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogprompt_markdown_output_format"
     },
     {
       "relation": "contains",
@@ -55511,9 +55810,9 @@
       "source_file": "workspace/realty-consultants/realty-blogprompt.md",
       "source_location": "L288",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogprompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "target": "realty_consultants_realty_blogprompt_output",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogprompt_output"
     },
     {
       "relation": "contains",
@@ -55521,9 +55820,9 @@
       "source_file": "workspace/realty-consultants/realty-blogprompt.md",
       "source_location": "L203",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogprompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "target": "realty_consultants_realty_blogprompt_quality_checks_before_saving",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogprompt_quality_checks_before_saving"
     },
     {
       "relation": "contains",
@@ -55531,9 +55830,9 @@
       "source_file": "workspace/realty-consultants/realty-blogprompt.md",
       "source_location": "L222",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogprompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "target": "realty_consultants_realty_blogprompt_schema_markup_instructions",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogprompt_schema_markup_instructions"
     },
     {
       "relation": "contains",
@@ -55541,9 +55840,9 @@
       "source_file": "workspace/realty-consultants/realty-blogprompt.md",
       "source_location": "L257",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogprompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "target": "realty_consultants_realty_blogprompt_special_instructions_for_key_blogs",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogprompt_special_instructions_for_key_blogs"
     },
     {
       "relation": "contains",
@@ -55551,9 +55850,9 @@
       "source_file": "workspace/realty-consultants/realty-blogprompt.md",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogprompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "target": "realty_consultants_realty_blogprompt_voice_read_this_carefully",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogprompt_voice_read_this_carefully"
     },
     {
       "relation": "contains",
@@ -55561,9 +55860,9 @@
       "source_file": "workspace/realty-consultants/realty-blogprompt.md",
       "source_location": "L276",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogprompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "target": "realty_consultants_realty_blogprompt_what_not_to_write",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogprompt_what_not_to_write"
     },
     {
       "relation": "contains",
@@ -55571,9 +55870,9 @@
       "source_file": "workspace/realty-consultants/realty-blogprompt.md",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogprompt_use_this_prompt_to_write_all_100_blogs_from_the_json_data_file",
-      "target": "realty_consultants_realty_blogprompt_your_role",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogprompt_your_role"
     },
     {
       "relation": "contains",
@@ -55581,9 +55880,9 @@
       "source_file": "workspace/realty-consultants/realty-blogprompt.md",
       "source_location": "L96",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogprompt_aeo_structure_mandatory",
-      "target": "realty_consultants_realty_blogprompt_body",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogprompt_body"
     },
     {
       "relation": "contains",
@@ -55591,9 +55890,9 @@
       "source_file": "workspace/realty-consultants/realty-blogprompt.md",
       "source_location": "L103",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogprompt_aeo_structure_mandatory",
-      "target": "realty_consultants_realty_blogprompt_close",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogprompt_close"
     },
     {
       "relation": "contains",
@@ -55601,9 +55900,9 @@
       "source_file": "workspace/realty-consultants/realty-blogprompt.md",
       "source_location": "L91",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "realty_consultants_realty_blogprompt_aeo_structure_mandatory",
-      "target": "realty_consultants_realty_blogprompt_opening_first_150_words_aeo_critical",
-      "confidence_score": 1.0
+      "target": "realty_consultants_realty_blogprompt_opening_first_150_words_aeo_critical"
     },
     {
       "relation": "contains",
@@ -61367,5 +61666,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "fbc49c7a3a6658bdd8484791a68c12509350e571"
+  "built_at_commit": "3690941e857b75f58fd75006993f731e1ef2b658"
 }
