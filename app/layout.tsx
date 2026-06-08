@@ -143,6 +143,12 @@ export default function RootLayout({
           src="https://www.googletagmanager.com/gtag/js?id=G-ZWNKTZ1M1S"
           strategy="afterInteractive"
         />
+        {/* Ahrefs Analytics */}
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="Qm6W5Qeb+IdgA8tRuYFgHQ"
+          strategy="afterInteractive"
+        />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];

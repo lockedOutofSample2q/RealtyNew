@@ -405,8 +405,8 @@
     "semantic_hash": ""
   },
   "app/layout.tsx": {
-    "mtime": 1780890981.6017537,
-    "ast_hash": "79b92b719d7af01ca8ac3337caa108c2",
+    "mtime": 1780902648.0466337,
+    "ast_hash": "f71a99291560ffb719184564ad290df3",
     "semantic_hash": ""
   },
   "app/not-found.tsx": {
@@ -740,8 +740,8 @@
     "semantic_hash": ""
   },
   "next.config.js": {
-    "mtime": 1780896026.174751,
-    "ast_hash": "8e003490fe2ec0722d1f809b56f5c701",
+    "mtime": 1780902641.3344662,
+    "ast_hash": "8479fef529d60546048219373b6634a4",
     "semantic_hash": ""
   },
   "package.json": {

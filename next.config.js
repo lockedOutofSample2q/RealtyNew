@@ -47,11 +47,11 @@ const nextConfig = {
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://*.google-analytics.com https://assets.calendly.com",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://*.google-analytics.com https://assets.calendly.com https://analytics.ahrefs.com",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com",
               "img-src 'self' blob: data: https://*.google.com https://www.googletagmanager.com https://www.google-analytics.com https://server.arcgisonline.com https://*.supabase.co https://images.unsplash.com https://*.tile.openstreetmap.org https://*.basemaps.cartocdn.com https://unpkg.com https://assets.calendly.com",
               "font-src 'self' https://fonts.gstatic.com",
-              "connect-src 'self' https://*.supabase.co https://*.google-analytics.com https://stats.g.doubleclick.net https://calendly.com",
+              "connect-src 'self' https://*.supabase.co https://*.google-analytics.com https://stats.g.doubleclick.net https://calendly.com https://analytics.ahrefs.com",
               "frame-src https://calendly.com",
               "frame-ancestors 'none'",
             ].join("; "),
