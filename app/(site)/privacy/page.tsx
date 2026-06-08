@@ -4,6 +4,9 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: `How we handle and protect your personal data at ${siteConfig.name}.`,
+  alternates: {
+    canonical: `${siteConfig.url}/privacy`,
+  },
 }
 
 export default function PrivacyPage() {

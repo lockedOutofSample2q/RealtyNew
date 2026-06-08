@@ -18,7 +18,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 1. Static Pages with Strategic Priorities
   const routes = [
     { path: "", priority: 1.0 },                 // Home Base
-    { path: "/properties", priority: 0.9 },      // Money Hub
     { path: "/properties/flats", priority: 0.9 }, 
     { path: "/properties/houses", priority: 0.9 },
     { path: "/properties/lands", priority: 0.9 },

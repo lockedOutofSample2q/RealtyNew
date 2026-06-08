@@ -8,13 +8,6 @@ import { useCurrency } from "@/context/CurrencyContext";
 import type { Property } from "@/types";
 import { cn } from "@/lib/utils";
 
-// Fix Leaflet marker icons
-const icon = L.icon({
-  iconUrl: "/assets/marker-icon.png",
-  shadowUrl: "/assets/marker-shadow.png",
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-});
 
 // ── COMMUNITY COORDINATES ──────────────────────────────────
 // Community-level coordinates for Mohali and Tricity areas

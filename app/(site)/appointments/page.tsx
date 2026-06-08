@@ -5,6 +5,9 @@ import { siteConfig } from "@/config/site";
 export const metadata: Metadata = {
   title: "Book a Consultation | Amritpal Singh Advisory",
   description: "Book a free 15-minute property consultation with Amritpal Singh. A direct answer on any property decision. No sales pitch. No pressure.",
+  alternates: {
+    canonical: `${siteConfig.url}/appointments`,
+  },
 };
 
 export default function BookingPage() {

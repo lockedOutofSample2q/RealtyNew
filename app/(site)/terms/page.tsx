@@ -4,6 +4,9 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: "Terms & Conditions",
   description: `Terms and conditions for using the services and website of ${siteConfig.name}.`,
+  alternates: {
+    canonical: `${siteConfig.url}/terms`,
+  },
 }
 
 export default function TermsPage() {

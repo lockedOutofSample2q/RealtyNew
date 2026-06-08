@@ -4,6 +4,9 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: "Cookie Policy",
   description: `How we use cookies to improve your experience on ${siteConfig.name}.`,
+  alternates: {
+    canonical: `${siteConfig.url}/cookies`,
+  },
 }
 
 export default function CookiesPage() {

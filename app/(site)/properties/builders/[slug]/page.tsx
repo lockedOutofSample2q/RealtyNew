@@ -364,7 +364,7 @@ export default async function BuilderProfilePage(props: Props) {
 
   return (
     <>
-      <h1 className="sr-only">Properties by {legalName} in Mohali</h1>
+      <p className="sr-only">Properties by {legalName} in Mohali</p>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

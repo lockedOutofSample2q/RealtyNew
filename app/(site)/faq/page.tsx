@@ -5,6 +5,9 @@ import { ChevronDown } from "lucide-react";
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
   description: "Find answers to common questions about real estate investment, property buying process, and transparency in Mohali.",
+  alternates: {
+    canonical: "https://www.realtyconsultants.in/faq",
+  },
 };
 
 export default function FaqPage() {

@@ -6,6 +6,9 @@ import { siteConfig } from '@/config/site';
 export const metadata: Metadata = {
   title: "List Your Property",
   description: "List your Mohali property with an advisor who brings pre-qualified HNI, CXO, and NRI buyers, not portal browsers. Professional valuation and honest marketing.",
+  alternates: {
+    canonical: `${siteConfig.url}/list-your-property`,
+  },
 };
 
 export default function ListYourPropertyPage() {

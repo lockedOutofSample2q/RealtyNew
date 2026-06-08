@@ -15,18 +15,18 @@
     "semantic_hash": ""
   },
   "app/(funnel)/guides/property-documents/LeadMagnetClient.tsx": {
-    "mtime": 1779797367.9837124,
-    "ast_hash": "e3458d75379871c518dddc5aeca3ae77",
+    "mtime": 1780859691.1087506,
+    "ast_hash": "322f8a120e47a67a7388a9f41e32239a",
     "semantic_hash": ""
   },
   "app/(funnel)/guides/property-documents/page.tsx": {
-    "mtime": 1780624636.724058,
-    "ast_hash": "2ed18b4fae9b14bbf486bd668961de8e",
+    "mtime": 1780860211.7240682,
+    "ast_hash": "570c70ba2006e79029c9b56ccf6d5140",
     "semantic_hash": ""
   },
   "app/(funnel)/guides/property-documents/thank-you/page.tsx": {
-    "mtime": 1779797826.2539022,
-    "ast_hash": "d4813d403586dcd88775d6d0a38c7c3a",
+    "mtime": 1780860363.9910016,
+    "ast_hash": "fe26eaef729e99b4bf840a840b44b680",
     "semantic_hash": ""
   },
   "app/(funnel)/layout.tsx": {
@@ -95,8 +95,8 @@
     "semantic_hash": ""
   },
   "app/(site)/guides/page.tsx": {
-    "mtime": 1779525107.9224794,
-    "ast_hash": "49256e96d29aee13ead30dbb0ffd4a9b",
+    "mtime": 1780859263.5771825,
+    "ast_hash": "76dd7490174bef7eb289656b5d7b1921",
     "semantic_hash": ""
   },
   "app/(site)/layout.tsx": {
@@ -130,8 +130,8 @@
     "semantic_hash": ""
   },
   "app/(site)/properties/[slug]/PriceDisplay.tsx": {
-    "mtime": 1777309661.8951776,
-    "ast_hash": "dbdb9c6890bc5741cb290429c081d99e",
+    "mtime": 1780861354.85271,
+    "ast_hash": "16d9536c7ccd78027073e137ab5e4aa0",
     "semantic_hash": ""
   },
   "app/(site)/properties/[slug]/PropertyDetailMap.tsx": {
@@ -155,8 +155,8 @@
     "semantic_hash": ""
   },
   "app/(site)/properties/builders/BuildersClient.tsx": {
-    "mtime": 1780624836.670084,
-    "ast_hash": "d191cc304917c10705dc7c9558db964c",
+    "mtime": 1780859698.778978,
+    "ast_hash": "f54b5150b8306e9a0ffe65b12eb669bc",
     "semantic_hash": ""
   },
   "app/(site)/properties/builders/[slug]/BuilderProfileClient.tsx": {
@@ -170,13 +170,13 @@
     "semantic_hash": ""
   },
   "app/(site)/properties/builders/page.tsx": {
-    "mtime": 1780810259.32638,
-    "ast_hash": "a2ad0d6ded7f6b8907dda6bb2408946f",
+    "mtime": 1780859245.7848475,
+    "ast_hash": "b66547babc451dd743ac75b9ece99667",
     "semantic_hash": ""
   },
   "app/(site)/properties/flats/[slug]/page.tsx": {
-    "mtime": 1780810256.579048,
-    "ast_hash": "654b5efae1397e74b766cc39d418432c",
+    "mtime": 1780861362.6475918,
+    "ast_hash": "cb03077e2a0574eb83afa1e58df36a86",
     "semantic_hash": ""
   },
   "app/(site)/properties/flats/page.tsx": {
@@ -185,8 +185,8 @@
     "semantic_hash": ""
   },
   "app/(site)/properties/houses/[slug]/page.tsx": {
-    "mtime": 1780543634.8540442,
-    "ast_hash": "21198eb7c884e02fdb360e51b4948660",
+    "mtime": 1780861377.8204367,
+    "ast_hash": "b50ad93346787ca961a8155e23230f70",
     "semantic_hash": ""
   },
   "app/(site)/properties/houses/page.tsx": {
@@ -240,8 +240,8 @@
     "semantic_hash": ""
   },
   "app/(site)/tools/page.tsx": {
-    "mtime": 1780810261.2573838,
-    "ast_hash": "24edefc91c2d0d464a051b0f34a851d1",
+    "mtime": 1780859258.6977239,
+    "ast_hash": "ae3fa6a82a0b52b6ce7ed400d9391d95",
     "semantic_hash": ""
   },
   "app/(site)/tools/price-trend/page.tsx": {
@@ -670,8 +670,8 @@
     "semantic_hash": ""
   },
   "config/site.ts": {
-    "mtime": 1780810254.306308,
-    "ast_hash": "1ffffe84473455714d2dc14bba7a0b36",
+    "mtime": 1780859240.6247475,
+    "ast_hash": "8627daba0f1d7ec1479723baf16d7def",
     "semantic_hash": ""
   },
   "contentlayer.config.ts": {
@@ -757,11 +757,6 @@
   "public/.well-known/agents.json": {
     "mtime": 1780383188.0618567,
     "ast_hash": "6242aff758ba91e3e3ef8e17c142aa3a",
-    "semantic_hash": ""
-  },
-  "rhmc-blogs-data.json": {
-    "mtime": 1779201363.075426,
-    "ast_hash": "56660c2513cd98d3d53afc481a50c040",
     "semantic_hash": ""
   },
   "scripts/add_image_to_1_kanal.ts": {
@@ -1179,31 +1174,6 @@
     "ast_hash": "535648eb564db6b7e938d6892c5f1738",
     "semantic_hash": ""
   },
-  "update_rhmc_blogs.js": {
-    "mtime": 1779201363.2363715,
-    "ast_hash": "44bd2bcc0e5d91c5972f80064acfd8b6",
-    "semantic_hash": ""
-  },
-  "workspace/RHMC/generate_csv.js": {
-    "mtime": 1777309665.864703,
-    "ast_hash": "c05fe145f81210a5c9fc4fab32ba9ee4",
-    "semantic_hash": ""
-  },
-  "workspace/RHMC/package.json": {
-    "mtime": 1777309665.8708687,
-    "ast_hash": "9ead0c1588ae0b8e3174aa317b778ea0",
-    "semantic_hash": ""
-  },
-  "workspace/RHMC/rhmc-blogs-data.json": {
-    "mtime": 1777309665.8749938,
-    "ast_hash": "095a6378670dc36a04dfafd8c709e201",
-    "semantic_hash": ""
-  },
-  "workspace/RHMC/upload_to_supabase.js": {
-    "mtime": 1777309665.8921072,
-    "ast_hash": "1537ec5a11ea93735594d8ee08c3732e",
-    "semantic_hash": ""
-  },
   "workspace/acquire_elite_visuals.js": {
     "mtime": 1777309665.8937526,
     "ast_hash": "bf7328315d78b8e759c4d2022ac6af30",
@@ -1470,8 +1440,8 @@
     "semantic_hash": ""
   },
   "RealtyNew/content/blog-index.md": {
-    "mtime": 1779201358.2303803,
-    "ast_hash": "176bfc4557c904ccd38e9f1d35e1e272",
+    "mtime": 1780859284.374845,
+    "ast_hash": "4149410940a0b0c763ab700cc67d4791",
     "semantic_hash": ""
   },
   "RealtyNew/content/blog/buying-property-in-dubai-as-a-foreigner-2026-guide.mdx": {
@@ -1487,11 +1457,6 @@
   "RealtyNew/content/blog/dubai-rental-yields-by-community-2026.mdx": {
     "mtime": 1779201358.2378073,
     "ast_hash": "12a28f83d7e4a492c01b6c1a5d566e25",
-    "semantic_hash": ""
-  },
-  "RealtyNew/content/rhmc-claude-code-prompt.md": {
-    "mtime": 1779201358.242138,
-    "ast_hash": "95a21190df20af18e47d8d7b9f6d05bd",
     "semantic_hash": ""
   },
   "SEO_PERFORMANCE_AUDIT.md": {
@@ -1657,36 +1622,6 @@
   "website-copy.md": {
     "mtime": 1779201363.2413814,
     "ast_hash": "9387edd1f76b2d1b2eb7dba96b4e294a",
-    "semantic_hash": ""
-  },
-  "workspace/RHMC/rhmc-blogprompt.md": {
-    "mtime": 1777309665.8726695,
-    "ast_hash": "5353a71989b747648be3481da78d35a5",
-    "semantic_hash": ""
-  },
-  "workspace/RHMC/rhmc-skill-extracted/rhmc-complete-skill/SKILL.md": {
-    "mtime": 1779201363.2444136,
-    "ast_hash": "408b5282cafc1a040c0d70d40a7fdf46",
-    "semantic_hash": ""
-  },
-  "workspace/RHMC/rhmc-skill-extracted/rhmc-complete-skill/references/icps.md": {
-    "mtime": 1777309665.886089,
-    "ast_hash": "6ded01329d24d7deb8972f0c892d2f49",
-    "semantic_hash": ""
-  },
-  "workspace/RHMC/rhmc-skill-extracted/rhmc-complete-skill/references/market.md": {
-    "mtime": 1777309665.8875992,
-    "ast_hash": "96f86b48e48926d8e78bd01487cd40ed",
-    "semantic_hash": ""
-  },
-  "workspace/RHMC/rhmc-skill-extracted/rhmc-complete-skill/references/operations.md": {
-    "mtime": 1777309665.889228,
-    "ast_hash": "4f11e7e360852bcca45e0b1f0c0b29b1",
-    "semantic_hash": ""
-  },
-  "workspace/RHMC/rhmc-skill-extracted/rhmc-complete-skill/references/voice.md": {
-    "mtime": 1777309665.890911,
-    "ast_hash": "42560cfe1a15be88c1402f5244696265",
     "semantic_hash": ""
   },
   "workspace/reports/qa-artifacts/milestones-design.txt": {
@@ -8027,6 +7962,71 @@
   "workspace/screenshots/s5.png": {
     "mtime": 1777309666.0070596,
     "ast_hash": "6679680ccf1f8d9e29482d3bcedffc36",
+    "semantic_hash": ""
+  },
+  "realty-blogs-data.json": {
+    "mtime": 1780859305.5352337,
+    "ast_hash": "1e49eac18174d6196214170f919e087b",
+    "semantic_hash": ""
+  },
+  "update_realty_blogs.js": {
+    "mtime": 1780859298.4552102,
+    "ast_hash": "2fa8fe2970390cfd19cf6aa587ded6f0",
+    "semantic_hash": ""
+  },
+  "workspace/realty-consultants/generate_csv.js": {
+    "mtime": 1780859293.7969775,
+    "ast_hash": "19e5ac50c8ef466377e53221d196954b",
+    "semantic_hash": ""
+  },
+  "workspace/realty-consultants/package.json": {
+    "mtime": 1780859293.8156567,
+    "ast_hash": "6096539d1141e9fe4423c4b626e37a61",
+    "semantic_hash": ""
+  },
+  "workspace/realty-consultants/realty-blogs-data.json": {
+    "mtime": 1780859293.8291385,
+    "ast_hash": "c3c4095888307cbc66ca378ce9539ca5",
+    "semantic_hash": ""
+  },
+  "workspace/realty-consultants/upload_to_supabase.js": {
+    "mtime": 1780859293.8608718,
+    "ast_hash": "e2d4c5cef4c71a5419c58d894a46459d",
+    "semantic_hash": ""
+  },
+  "RealtyNew/content/realty-claude-code-prompt.md": {
+    "mtime": 1780859290.4978437,
+    "ast_hash": "5aea254414d22af07672c2d781c4d0fe",
+    "semantic_hash": ""
+  },
+  "workspace/realty-consultants/realty-blogprompt.md": {
+    "mtime": 1780859293.820219,
+    "ast_hash": "05a5ac801f447d0ef49534708d4b4bd8",
+    "semantic_hash": ""
+  },
+  "workspace/realty-consultants/realty-skill-extracted/rhmc-complete-skill/SKILL.md": {
+    "mtime": 1779201363.2444136,
+    "ast_hash": "408b5282cafc1a040c0d70d40a7fdf46",
+    "semantic_hash": ""
+  },
+  "workspace/realty-consultants/realty-skill-extracted/rhmc-complete-skill/references/icps.md": {
+    "mtime": 1777309665.886089,
+    "ast_hash": "6ded01329d24d7deb8972f0c892d2f49",
+    "semantic_hash": ""
+  },
+  "workspace/realty-consultants/realty-skill-extracted/rhmc-complete-skill/references/market.md": {
+    "mtime": 1777309665.8875992,
+    "ast_hash": "96f86b48e48926d8e78bd01487cd40ed",
+    "semantic_hash": ""
+  },
+  "workspace/realty-consultants/realty-skill-extracted/rhmc-complete-skill/references/operations.md": {
+    "mtime": 1777309665.889228,
+    "ast_hash": "4f11e7e360852bcca45e0b1f0c0b29b1",
+    "semantic_hash": ""
+  },
+  "workspace/realty-consultants/realty-skill-extracted/rhmc-complete-skill/references/voice.md": {
+    "mtime": 1777309665.890911,
+    "ast_hash": "42560cfe1a15be88c1402f5244696265",
     "semantic_hash": ""
   }
 }

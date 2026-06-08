@@ -40,6 +40,7 @@ import PropertyCard from "@/components/ui/PropertyCard";
 import PropertiesClient from "../../PropertiesClient";
 import buildersData from "@/config/builders-data.json";
 import { Suspense, cache } from "react";
+import DescriptionContainer from "@/components/ui/DescriptionContainer";
 
 interface Props { params: Promise<{ slug: string }> }
 
@@ -341,8 +342,14 @@ export default async function ApartmentOrSectorDetailPage(props: Props) {
       ],
     };
 
+    const h1HeadingText = seoData?.h1_heading || `Flats in ${decodedSector}`;
     return (
       <>
+        <div className="sr-only">
+          <h1>{h1HeadingText}</h1>
+          <h2>Verified Apartments &amp; Flats in {decodedSector} Mohali &mdash; Realty Holding &amp; Management Consultants</h2>
+          {seoData?.intro_paragraph && <p>{seoData.intro_paragraph}</p>}
+        </div>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
@@ -352,10 +359,6 @@ export default async function ApartmentOrSectorDetailPage(props: Props) {
             properties={properties} 
             initialTab="flats" 
             initialFilters={{ sector: [decodedSector] }}
-            seoData={{
-              h1_heading: seoData?.h1_heading || `Flats in ${decodedSector}`,
-              intro_paragraph: seoData?.intro_paragraph || undefined
-            }}
           />
         </Suspense>
       </>
@@ -709,16 +712,8 @@ export default async function ApartmentOrSectorDetailPage(props: Props) {
                 </p>
               </div>
 
-              {/* Description (Multi-paragraph support) */}
-              <div className="space-y-4 mb-8">
-                {property.description?.split('\n').map((para, i) => (
-                  para.trim() && (
-                    <p key={i} className="text-[15px] text-black/60 leading-relaxed">
-                      {para.trim()}
-                    </p>
-                  )
-                ))}
-              </div>
+              {/* Description (Multi-paragraph support with Read More) */}
+              <DescriptionContainer description={property.description || ""} />
 
               {/* Stats (Cleaned) */}
               <div className="flex items-center gap-5 sm:gap-14 flex-wrap py-6 mb-8 border-y border-black/5">

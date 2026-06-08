@@ -6,16 +6,6 @@ import "leaflet/dist/leaflet.css";
 
 import { cn } from "@/lib/utils";
 
-const PIN = L.icon({
-  iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
-  iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41],
-});
-
 export default function PropertyDetailMap({
   lat,
   lng,
@@ -26,13 +16,24 @@ export default function PropertyDetailMap({
   title: string;
 }) {
   const [isMounted, setIsMounted] = useState(false);
+  const [pinIcon, setPinIcon] = useState<L.Icon | null>(null);
 
   useEffect(() => {
-    L.Marker.prototype.options.icon = PIN;
+    const iconInstance = L.icon({
+      iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
+      iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
+      shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41],
+    });
+    L.Marker.prototype.options.icon = iconInstance;
+    setPinIcon(iconInstance);
     setIsMounted(true);
   }, []);
 
-  if (!isMounted) return <div className="w-full h-full bg-slate-50" />;
+  if (!isMounted || !pinIcon) return <div className="w-full h-full bg-slate-50" />;
   return (
     <div className="w-full h-full relative">
       <MapContainer
@@ -46,7 +47,7 @@ export default function PropertyDetailMap({
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
           url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
         />
-        <Marker position={[lat, lng]} icon={PIN}>
+        <Marker position={[lat, lng]} icon={pinIcon}>
           <Popup>
             <div className="p-1">
               <p className="font-bold mb-1">{title}</p>

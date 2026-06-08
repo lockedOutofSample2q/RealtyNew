@@ -8,13 +8,6 @@ import "leaflet/dist/leaflet.css";
 // E328 Industrial area phase 8A, Mohali
 const position: [number, number] = [30.697381977888533, 76.69025000982366];
 
-const CustomIcon = L.divIcon({
-  className: "bg-transparent border-none",
-  html: `<div style="width:24px;height:24px;background-color:black;border-radius:50%;border:4px solid white;box-shadow:0 4px 12px rgba(0,0,0,0.3);"></div>`,
-  iconSize: [24, 24],
-  iconAnchor: [12, 12],
-});
-
 export default function ContactMap() {
   const [isMounted, setIsMounted] = useState(false);
 
@@ -24,6 +17,13 @@ export default function ContactMap() {
   }, []);
 
   if (!isMounted) return <div className="w-full h-full bg-slate-50" />;
+
+  const CustomIcon = L.divIcon({
+    className: "bg-transparent border-none",
+    html: `<div style="width:24px;height:24px;background-color:black;border-radius:50%;border:4px solid white;box-shadow:0 4px 12px rgba(0,0,0,0.3);"></div>`,
+    iconSize: [24, 24],
+    iconAnchor: [12, 12],
+  });
 
   return (
     <div className="w-full h-full relative group">

@@ -75,7 +75,7 @@ export default function AboutPage() {
 
   return (
     <article className="bg-black min-h-screen">
-      <h1 className="sr-only">About Realty Holding & Management Consultants in Mohali</h1>
+      <p className="sr-only">About Realty Holding & Management Consultants in Mohali</p>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}

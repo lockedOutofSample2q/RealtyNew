@@ -8,6 +8,9 @@ import { siteConfig } from "@/config/site";
 export const metadata: Metadata = {
   title: "Real Estate Blog & Market Insights",
   description: "The go-to blog for everything related to real estate in Mohali, strategic property guides, and off-market trends by Realty Holding & Management Consultants.",
+  alternates: {
+    canonical: `${siteConfig.url}/blog`,
+  },
 };
 
 export default function BlogPage() {

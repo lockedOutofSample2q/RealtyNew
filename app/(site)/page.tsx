@@ -22,6 +22,13 @@ import type { SearchTab } from "@/components/search/propertySearchOptions";
 import { enrichProperty } from "@/lib/property-utils";
 import { allPosts } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
 
 // Fetch fresh properties at build time (ISR every 60s)
 // Enable hourly caching (ISR every 1 hour)

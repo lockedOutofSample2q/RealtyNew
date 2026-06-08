@@ -60,7 +60,31 @@ export default async function FlatsCategoryPage() {
 
   return (
     <>
-      <h1 className="sr-only">Buy Luxury Flats & Apartments in Mohali</h1>
+      <div className="sr-only">
+        <h1>Buy Luxury Flats & Apartments in Mohali</h1>
+        <p>
+          Buy flat in Mohali with verified listings from Realty Consultants.
+          Explore 2 BHK, 3 BHK, and 4 BHK flats for sale in Mohali across
+          top sectors including Sector 82A, 66B, 78, and the GMADA IT City
+          corridor. All properties evaluated for RERA compliance, builder
+          track record, and fair pricing. Whether you are looking for a
+          pre-launch flat in Mohali, a resale apartment, or ready possession,
+          our consultants guide you through every step.
+        </p>
+        <p>
+          Buy flat in Mohali with Realty Consultants — Mohali's trusted real 
+          estate advisory for luxury and investment-grade properties. Whether 
+          you want to buy a 2 BHK, 3 BHK, or 4 BHK flat in Mohali, we offer 
+          verified listings across Sector 66, 70, 77, 82A, 83A, 88, and 117. 
+          Every flat for sale in Mohali on our platform is evaluated for RERA 
+          compliance, builder track record, and fair market pricing. Browse 
+          pre-launch flats in Mohali, resale apartments, and ready possession 
+          units — all in one place. Looking to buy property in Mohali or the 
+          wider Tricity region of Chandigarh, Panchkula, and Mohali? Our 
+          consultants offer end-to-end guidance from site visits to 
+          registration. Explore the best flats in Mohali today.
+        </p>
+      </div>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

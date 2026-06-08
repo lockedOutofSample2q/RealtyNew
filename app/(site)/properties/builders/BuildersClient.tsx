@@ -44,36 +44,37 @@ export default function BuildersClient({ builders }: BuildersClientProps) {
   const [sortBy, setSortBy] = useState<"name" | "price-asc" | "price-desc">("name");
   const { formatPrice } = useCurrency();
 
-  // Filter and Sort builders
-  const filteredBuilders = builders
-    .filter((b) => {
-      const matchesSearch = b.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                            b.locations.some(loc => loc.toLowerCase().includes(searchTerm.toLowerCase()));
-      
-      if (activeTab === "commercial") {
-        return matchesSearch && !b.isCoop;
-      }
-      if (activeTab === "coop") {
-        return matchesSearch && b.isCoop;
-      }
-      return matchesSearch;
-    })
-    .sort((a, b) => {
-      if (sortBy === "name") {
-        return a.name.localeCompare(b.name);
-      }
-      if (sortBy === "price-asc") {
-        const priceA = a.minPrice || Infinity;
-        const priceB = b.minPrice || Infinity;
-        return priceA - priceB;
-      }
-      if (sortBy === "price-desc") {
-        return b.minPrice - a.minPrice;
-      }
-      return 0;
-    });
+  // Sort all builders
+  const sortedBuilders = [...builders].sort((a, b) => {
+    if (sortBy === "name") {
+      return a.name.localeCompare(b.name);
+    }
+    if (sortBy === "price-asc") {
+      const priceA = a.minPrice || Infinity;
+      const priceB = b.minPrice || Infinity;
+      return priceA - priceB;
+    }
+    if (sortBy === "price-desc") {
+      return b.minPrice - a.minPrice;
+    }
+    return 0;
+  });
 
-  const renderBuilderCard = (b: Builder) => {
+  const checkIsVisible = (b: Builder) => {
+    const matchesSearch = b.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                          b.locations.some(loc => loc.toLowerCase().includes(searchTerm.toLowerCase()));
+    if (activeTab === "commercial") {
+      return matchesSearch && !b.isCoop;
+    }
+    if (activeTab === "coop") {
+      return matchesSearch && b.isCoop;
+    }
+    return matchesSearch;
+  };
+
+  const visibleCount = builders.filter(checkIsVisible).length;
+
+  const renderBuilderCard = (b: Builder, isVisible: boolean) => {
     const initials = b.name
       .split(" ")
       .filter(word => !["LLP", "Ltd", "Pvt", "and", "Group", "LLP/", "Pvt."].includes(word))
@@ -87,6 +88,7 @@ export default function BuildersClient({ builders }: BuildersClientProps) {
     return (
       <div
         key={b.slug}
+        style={{ display: isVisible ? "flex" : "none" }}
         className="group relative flex flex-col justify-between bg-white border border-black/5 hover:border-black/15 p-8 rounded-3xl hover:shadow-lg transition-all duration-500 h-full"
       >
         <div>
@@ -291,9 +293,9 @@ export default function BuildersClient({ builders }: BuildersClientProps) {
             )}
           </div>
 
-          {filteredBuilders.length > 0 ? (
+          {visibleCount > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-              {filteredBuilders.map((b) => renderBuilderCard(b))}
+              {sortedBuilders.map((b) => renderBuilderCard(b, checkIsVisible(b)))}
             </div>
           ) : (
             <p className="text-black/40 text-sm font-body italic py-4">
@@ -303,7 +305,7 @@ export default function BuildersClient({ builders }: BuildersClientProps) {
         </div>
 
         {/* Empty State */}
-        {filteredBuilders.length === 0 && (
+        {visibleCount === 0 && (
           <div className="py-24 text-center bg-white border border-black/5 rounded-3xl p-8 mb-12">
             <Building2 className="mx-auto text-black/20 mb-4" size={48} />
             <p className="text-black/40 text-sm font-body">

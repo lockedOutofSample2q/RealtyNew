@@ -5,6 +5,9 @@ import { siteConfig } from "@/config/site";
 export const metadata: Metadata = {
   title: "Mohali Real Estate Price Trends | Realty Holding & Management Consultants",
   description: "Analyze real estate price trends in Mohali. Sector-wise analysis, historical growth data, and market demand insights.",
+  alternates: {
+    canonical: `${siteConfig.url}/tools/price-trend`,
+  },
 };
 
 const stats = [
