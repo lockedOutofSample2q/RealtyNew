@@ -27,7 +27,7 @@ const config: Config = {
         gold: "#C9A84C",
       },
       fontFamily: {
-        display: ["var(--font-display)", "serif"],
+        display: ["var(--font-body)", "sans-serif"],
         body: ["var(--font-body)", "sans-serif"],
         mono: ["var(--font-mono)", "monospace"],
         serif: ["var(--font-display)", "serif"],
