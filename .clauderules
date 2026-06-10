@@ -1,0 +1,11 @@
+# Realty Holding Platform - Codebase Rules & Design Constraints
+
+To prevent regression bugs and protect the original design system, future agents MUST adhere to these rules:
+
+## 1. Typography & Font Configurations
+- **Heading/Display Font**: The display font (`font-display` class in Tailwind CSS) is intentionally mapped to the body font (`var(--font-body)` / DM Sans) to maintain clean, modern sans-serif headings on the website. Do NOT map it to `var(--font-display)` (Cormorant Garamond) or change headings to serif.
+- **Body Font**: Always use `var(--font-body)` (DM Sans) for body copy.
+- **CSS variable circularity**: Do not define self-referential custom variables like `--font-display: var(--font-display, ...)` on `:root`. Use standard fallbacks.
+
+## 2. Dependencies
+- **Graphify**: Do not install the `graphify` package or recreate the `graphify-out/` folder, as it has been permanently uninstalled and removed from this project.
