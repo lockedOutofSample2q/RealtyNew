@@ -80,6 +80,7 @@ export default function AboutSection() {
                 alt={currentItem.title}
                 fill
                 className="object-cover"
+                priority
                 sizes="(max-width: 768px) 100vw, 80vw"
               />
             </motion.div>

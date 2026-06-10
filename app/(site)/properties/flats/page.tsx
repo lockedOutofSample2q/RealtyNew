@@ -61,7 +61,7 @@ export default async function FlatsCategoryPage() {
   return (
     <>
       <div className="sr-only">
-        <h2>Buy Luxury Flats & Apartments in Mohali</h2>
+        <h1>Buy Luxury Flats & Apartments in Mohali</h1>
         <p>
           Buy flat in Mohali with verified listings from Realty Consultants.
           Explore 2 BHK, 3 BHK, and 4 BHK flats for sale in Mohali across

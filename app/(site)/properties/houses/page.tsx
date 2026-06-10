@@ -60,7 +60,7 @@ export default async function HousesCategoryPage() {
 
   return (
     <>
-      <h2 className="sr-only">Villas & Independent Houses in Mohali</h2>
+      <h1 className="sr-only">Villas & Independent Houses in Mohali</h1>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

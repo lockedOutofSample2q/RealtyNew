@@ -157,6 +157,7 @@ export default function ServicesSection() {
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
+                    priority
                   />
                 </motion.div>
               </AnimatePresence>

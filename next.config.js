@@ -52,7 +52,7 @@ const nextConfig = {
               "img-src 'self' blob: data: https://*.google.com https://www.googletagmanager.com https://www.google-analytics.com https://server.arcgisonline.com https://*.supabase.co https://images.unsplash.com https://*.tile.openstreetmap.org https://*.basemaps.cartocdn.com https://unpkg.com https://assets.calendly.com",
               "font-src 'self' https://fonts.gstatic.com",
               "connect-src 'self' https://*.supabase.co https://*.google-analytics.com https://stats.g.doubleclick.net https://calendly.com https://analytics.ahrefs.com",
-              "frame-src https://calendly.com",
+              "frame-src https://calendly.com https://www.googletagmanager.com",
               "frame-ancestors 'none'",
             ].join("; "),
           },

@@ -25,7 +25,6 @@ const config: Config = {
         accent: "var(--accent)",
         card: "var(--card)",
         gold: "#C9A84C",
-        goldDark: "#9F7F2D",
       },
       fontFamily: {
         display: ["var(--font-display)", "serif"],
