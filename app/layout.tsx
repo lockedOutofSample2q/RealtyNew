@@ -97,7 +97,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     "streetAddress": "Phase 8A, E328, Industrial Area, Sector 75",
                     "addressLocality": "Sahibzada Ajit Singh Nagar",
                     "addressRegion": "Punjab",
-                    "postalCode": "160071",
+                    "postalCode": "160055",
                     "addressCountry": "IN"
                   },
                   "geo": {
