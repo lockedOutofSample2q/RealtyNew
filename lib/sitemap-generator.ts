@@ -43,7 +43,6 @@ export async function generateSitemapUrls(): Promise<string[]> {
     "/blog",
     "/tools/price-trend",
     "/faq",
-    "/guides/property-documents",
     "/about",
     "/contact",
     "/appointments",

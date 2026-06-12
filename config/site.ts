@@ -60,7 +60,6 @@ export const navItems: NavItem[] = [
       { label: "Sector Maps", href: "/properties" },
     ]
   },
-  { label: "Guides", href: "/guides" },
 
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },

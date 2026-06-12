@@ -25,7 +25,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: "/blog", priority: 0.8 },            // High-Value Hub
     { path: "/tools/price-trend", priority: 0.7 }, // Trust & Tools
     { path: "/faq", priority: 0.7 },             // Trust & Tools
-    { path: "/guides/property-documents", priority: 0.7 }, // Trust & Tools
     { path: "/about", priority: 0.5 },           // Admin
     { path: "/contact", priority: 0.5 },         // Admin
     { path: "/appointments", priority: 0.5 },         // Admin
