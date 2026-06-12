@@ -8,21 +8,21 @@ import BuildersClient from "./BuildersClient";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Top Real Estate Builders in Mohali | RERA Verified Developers | Realty Consultants"
+    absolute: "Top Real Estate Builders in Mohali | RERA Verified Developers | Realty Holding and Management Consultants"
   },
   description: "RERA-verified builders and cooperative housing societies in Mohali — from JLPL and Bestech to Jubilee and GMADA. Prices from ₹45L to ₹9.19Cr. Independently reviewed by Realty Holding & Management Consultants.",
   alternates: {
     canonical: "https://www.realtyconsultants.in/properties/builders",
   },
   openGraph: {
-    title: "Top Real Estate Builders in Mohali | RERA Verified Developers | Realty Consultants",
+    title: "Top Real Estate Builders in Mohali | RERA Verified Developers | Realty Holding and Management Consultants",
     description: "28 RERA-verified builders and cooperative housing societies in Mohali — from JLPL and Bestech to Jubilee and GMADA. Prices from ₹45L to ₹9.19Cr. Independently reviewed by Realty Holding & Management Consultants.",
     url: "https://www.realtyconsultants.in/properties/builders",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Top Real Estate Builders in Mohali | RERA Verified | Realty Consultants",
+    title: "Top Real Estate Builders in Mohali | RERA Verified | Realty Holding and Management Consultants",
     description: "28 RERA-verified builders in Mohali reviewed by our advisory desk — corporate developers and cooperative housing societies. Prices ₹45L–₹9.19Cr.",
   }
 };
@@ -146,7 +146,7 @@ export default async function BuildersLandingPage() {
             "name": "Which builders in Mohali have the most active listings?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "JLPL, Jubilee Group, and Marbella Group each have three active RERA-verified listings — the highest count of any developers in the Realty Consultants directory. JLPL operates in Sector 66A, Jubilee Group spans Sectors 91 and 112, and Marbella covers New Chandigarh (Mullanpur)."
+              "text": "JLPL, Jubilee Group, and Marbella Group each have three active RERA-verified listings — the highest count of any developers in the Realty Holding and Management Consultants directory. JLPL operates in Sector 66A, Jubilee Group spans Sectors 91 and 112, and Marbella covers New Chandigarh (Mullanpur)."
             }
           },
           {
@@ -178,7 +178,7 @@ export default async function BuildersLandingPage() {
             "name": "How do I check if a builder is RERA registered in Mohali?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Visit hrera.org.in — Punjab's official RERA portal — and search by project name or promoter. All corporate builders listed by Realty Consultants are RERA registered. Cooperative housing societies operate under the Punjab Cooperative Societies Act and are not required to register under RERA."
+              "text": "Visit hrera.org.in — Punjab's official RERA portal — and search by project name or promoter. All corporate builders listed by Realty Holding and Management Consultants are RERA registered. Cooperative housing societies operate under the Punjab Cooperative Societies Act and are not required to register under RERA."
             }
           },
           {

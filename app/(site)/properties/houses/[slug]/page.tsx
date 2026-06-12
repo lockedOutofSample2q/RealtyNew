@@ -594,7 +594,7 @@ export default async function HouseDetailPage(props: Props) {
                 <div className="flex items-center justify-between mb-4">
                   <p className="text-sm font-bold text-black font-display">Contact Agent</p>
                   <span className="text-[9px] uppercase tracking-widest text-black/40 bg-black/[0.04] px-2 py-0.5 rounded font-semibold font-body">
-                    REALTY CONSULTANTS
+                    Realty Holding and Management Consultants
                   </span>
                 </div>
                 

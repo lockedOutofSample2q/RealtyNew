@@ -200,7 +200,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const seoData = await getSectorSeo(slug);
   if (seoData) {
     const decodedSector = decodeSectorSlug(slug);
-    const titleStr = seoData.meta_title || `Flats in ${decodedSector} Mohali | Realty Consultants`;
+    const titleStr = seoData.meta_title || `Flats in ${decodedSector} Mohali | Realty Holding and Management Consultants`;
     const descStr = seoData.meta_description || `Explore luxury flats and apartments in ${decodedSector}, Mohali. Verified listings with price, floor plans, and amenities.`;
     const canonicalUrl = `${siteConfig.url}/properties/flats/${slug}`;
 
@@ -297,7 +297,7 @@ export default async function ApartmentOrSectorDetailPage(props: Props) {
         {
           "@type": "CollectionPage",
           "@id": `${siteConfig.url}/properties/flats/${slug}`,
-          name: seoData?.meta_title || `Flats in ${decodedSector} Mohali | Realty Consultants`,
+          name: seoData?.meta_title || `Flats in ${decodedSector} Mohali | Realty Holding and Management Consultants`,
           description: seoData?.meta_description || `Explore luxury flats and apartments in ${decodedSector}, Mohali. Verified listings with price, floor plans, and amenities.`,
           url: `${siteConfig.url}/properties/flats/${slug}`,
           isPartOf: {
@@ -974,7 +974,7 @@ export default async function ApartmentOrSectorDetailPage(props: Props) {
                 <div className="flex items-center justify-between mb-4">
                   <p className="text-sm font-bold text-black font-display">Contact Agent</p>
                   <span className="text-[9px] uppercase tracking-widest text-black/40 bg-black/[0.04] px-2 py-0.5 rounded font-semibold font-body">
-                    REALTY CONSULTANTS
+                    Realty Holding and Management Consultants
                   </span>
                 </div>
                 

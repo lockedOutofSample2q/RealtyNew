@@ -4,7 +4,7 @@ import { Calculator, TrendingUp, UserCheck, Map } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Free Real Estate Tools | Realty Consultants",
+  title: "Free Real Estate Tools | Realty Holding and Management Consultants",
   description: "Suite of free tools for real estate buyers in Mohali: EMI calculator, price trends, and loan eligibility checker.",
 };
 
@@ -43,7 +43,7 @@ export default function ToolsPage() {
         "@type": "CollectionPage",
         "@id": `${siteConfig.url}/tools#webpage`,
         "url": `${siteConfig.url}/tools`,
-        "name": "Free Real Estate Tools | Realty Consultants",
+        "name": "Free Real Estate Tools | Realty Holding and Management Consultants",
         "description": "Suite of free tools for real estate buyers in Mohali: EMI calculator, price trends, and loan eligibility checker.",
         "isPartOf": {
           "@id": `${siteConfig.url}/#website`

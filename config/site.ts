@@ -185,8 +185,8 @@ export const faqs = [
 
 // ── SEO Defaults ─────────────────────────────────────────────
 export const seoDefaults = {
-  titleTemplate: "%s | Realty Consultants",
-  defaultTitle: "Buy Flats & Land in Mohali | Realty Consultants",
+  titleTemplate: "%s | Realty Holding and Management Consultants",
+  defaultTitle: "Buy Flats & Land in Mohali | Realty Holding and Management Consultants",
   description: "Realty Holding & Management Consultants: Your trusted advisory for luxury flats, premium houses, and verified land investments in Mohali & Tricity.",
   openGraph: {
     type: "website",

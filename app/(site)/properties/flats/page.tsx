@@ -63,7 +63,7 @@ export default async function FlatsCategoryPage() {
       <div className="sr-only">
         <h1>Buy Luxury Flats & Apartments in Mohali</h1>
         <p>
-          Buy flat in Mohali with verified listings from Realty Consultants.
+          Buy flat in Mohali with verified listings from Realty Holding and Management Consultants.
           Explore 2 BHK, 3 BHK, and 4 BHK flats for sale in Mohali across
           top sectors including Sector 82A, 66B, 78, and the GMADA IT City
           corridor. All properties evaluated for RERA compliance, builder
@@ -72,7 +72,7 @@ export default async function FlatsCategoryPage() {
           our consultants guide you through every step.
         </p>
         <p>
-          Buy flat in Mohali with Realty Consultants — Mohali's trusted real 
+          Buy flat in Mohali with Realty Holding and Management Consultants — Mohali's trusted real 
           estate advisory for luxury and investment-grade properties. Whether 
           you want to buy a 2 BHK, 3 BHK, or 4 BHK flat in Mohali, we offer 
           verified listings across Sector 66, 70, 77, 82A, 83A, 88, and 117. 

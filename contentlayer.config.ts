@@ -59,6 +59,10 @@ export const Post = defineDocumentType(() => ({
     icp: { type: "string" },
     author_url: { type: "string" },
     schema: { type: "string" },
+    wordCount: { type: "number" },
+    metaTitle: { type: "string" },
+    metaDescription: { type: "string" },
+
 
 
     coverImage: {

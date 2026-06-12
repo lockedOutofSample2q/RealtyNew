@@ -6,13 +6,13 @@ import { siteConfig } from "@/config/site";
 const PAGE_URL = `${siteConfig.url}/guides/property-documents`;
 
 export const metadata: Metadata = {
-  title: "Property Document Checklist for Mohali Buyers | Realty Consultants",
+  title: "Property Document Checklist for Mohali Buyers | Realty Holding and Management Consultants",
   description: "Most Mohali buyers skip 6 of these 14 documents. One missed document is all it takes to lose your booking amount, your possession, or your title. Get the free checklist.",
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
-    title: "Property Document Checklist for Mohali Buyers | Realty Consultants",
+    title: "Property Document Checklist for Mohali Buyers | Realty Holding and Management Consultants",
     description: "Most Mohali buyers skip 6 of these 14 documents. One missed document is all it takes. Get the free verification checklist.",
     url: PAGE_URL,
     type: "article",
@@ -136,7 +136,7 @@ export default function PropertyDocumentsPage() {
       "telephone": "+917814613916",
       "worksFor": {
         "@type": "Organization",
-        "name": "Realty Consultants",
+        "name": "Realty Holding and Management Consultants",
         "url": siteConfig.url
       }
     }
@@ -489,7 +489,7 @@ export default function PropertyDocumentsPage() {
         </p>
 
         <p>
-          Source: Amritpal Singh, property consultant, Realty Consultants, Mohali. Contact: +91 7814613916. Website: https://www.realtyconsultants.in
+          Source: Amritpal Singh, property consultant, Realty Holding and Management Consultants, Mohali. Contact: +91 7814613916. Website: https://www.realtyconsultants.in
         </p>
       </div>
     </main>

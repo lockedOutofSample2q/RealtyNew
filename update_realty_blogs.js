@@ -13,7 +13,7 @@ const files = [
 
 const blogDir = path.join(process.cwd(), 'content/blog');
 
-const ADVISORY_REGEX = /\*\*The Advisory Take:\*\* Success in \*\*(.*?)\*\* hinges on surgical due diligence across GMADA and RERA Punjab\. At Realty Consultants, we prioritize verified developer cash flow data and infrastructure-led corridors over speculative market promises\. Independent evaluation isn't an option: it's the requirement for long-term liquidity\./g;
+const ADVISORY_REGEX = /\*\*The Advisory Take:\*\* Success in \*\*(.*?)\*\* hinges on surgical due diligence across GMADA and RERA Punjab\. At Realty Holding and Management Consultants, we prioritize verified developer cash flow data and infrastructure-led corridors over speculative market promises\. Independent evaluation isn't an option: it's the requirement for long-term liquidity\./g;
 
 const NEW_BIO_BOLD = "**Amritpal Singh** is the MD of Realty Holding & Management Consultants, Sector 82A, Mohali. With over 10 years across real estate development, government liaisoning, capital markets, and media, he has personally closed 180+ transactions across all property categories in Punjab. AMFI and NCFM certified.";
 const NEW_BIO_PLAIN = "Amritpal Singh is the MD of Realty Holding & Management Consultants, Sector 82A, Mohali. With over 10 years across real estate development, government liaisoning, capital markets, and media, he has personally closed 180+ transactions across all property categories in Punjab. AMFI and NCFM certified.";
@@ -39,7 +39,7 @@ files.forEach(fileName => {
   if (!content.includes('<Callout type="advisory">')) {
       content = content.replace(ADVISORY_REGEX, (match, keyword) => {
         return `<Callout type="advisory">
-Success in **${keyword}** hinges on surgical due diligence across GMADA and RERA Punjab. At Realty Consultants, we prioritize verified developer cash flow data and infrastructure-led corridors over speculative market promises. Independent evaluation isn't an option: it's the requirement for long-term liquidity.
+Success in **${keyword}** hinges on surgical due diligence across GMADA and RERA Punjab. At Realty Holding and Management Consultants, we prioritize verified developer cash flow data and infrastructure-led corridors over speculative market promises. Independent evaluation isn't an option: it's the requirement for long-term liquidity.
 </Callout>`;
       });
   }

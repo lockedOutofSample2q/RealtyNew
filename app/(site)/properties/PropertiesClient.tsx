@@ -69,7 +69,7 @@ export default function PropertiesClient({ properties, initialTab, initialFilter
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": "Flats for Sale in Mohali",
-    "description": "Browse verified flats for sale in Mohali. Pre-launch, resale and ready possession listings by Realty Consultants.",
+    "description": "Browse verified flats for sale in Mohali. Pre-launch, resale and ready possession listings by Realty Holding and Management Consultants.",
     "url": "https://www.realtyconsultants.in/properties/",
     "itemListElement": filtered.map((p, index) => ({
       "@type": "ListItem",

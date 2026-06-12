@@ -328,7 +328,7 @@ export default function BuildersClient({ builders }: BuildersClientProps) {
           {/* Verification Section */}
           <div className="mb-24">
             <h2 className="text-3xl sm:text-4xl font-display font-medium text-charcoal mb-6 leading-tight">
-              How Realty Consultants Verifies Every Builder
+              How Realty Holding and Management Consultants Verifies Every Builder
             </h2>
             <p className="font-body text-base text-black/60 leading-relaxed mb-8">
               Every developer in this directory has cleared a four-point verification by our advisory team:
