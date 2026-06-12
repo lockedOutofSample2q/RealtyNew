@@ -18,19 +18,22 @@ export async function generateMetadata({ params }: PostPageProps) {
   const post = allPosts.find((post) => post.slug === slug);
   if (!post) return {};
 
+  const titleText = post.metaTitle || post.title;
+  const descText = post.metaDescription || post.excerpt;
+
   const imageUrl = post.coverImage
     ? (post.coverImage.startsWith("http") ? post.coverImage : `${siteConfig.url}${post.coverImage.startsWith("/") ? post.coverImage : `/${post.coverImage}`}`)
     : undefined;
 
   return {
-    title: post.title,
-    description: post.excerpt,
+    title: titleText,
+    description: descText,
     alternates: {
       canonical: `${siteConfig.url}/blog/${post.slug}`,
     },
     openGraph: {
-      title: post.title,
-      description: post.excerpt,
+      title: titleText,
+      description: descText,
       type: "article",
       url: `${siteConfig.url}/blog/${post.slug}`,
       images: imageUrl ? [
@@ -44,8 +47,8 @@ export async function generateMetadata({ params }: PostPageProps) {
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
-      description: post.excerpt,
+      title: titleText,
+      description: descText,
       images: imageUrl ? [imageUrl] : [],
     },
   };
@@ -77,12 +80,19 @@ export default async function PostPage({ params }: PostPageProps) {
         "description": post.excerpt,
         "datePublished": post.date,
         "dateModified": post.date, // Using same date as modified if not available
-        "author": {
-          "@type": "Person",
-          "@id": post.author_url || `${siteConfig.url}/#person`,
-          "name": post.author,
-          "url": post.author_url || siteConfig.url
-        },
+        "author": (post.author === "Realty Holding and Management Consultants" || post.author === "Realty Holding & Management Consultants")
+          ? {
+              "@type": "Organization",
+              "@id": `${siteConfig.url}/#organization`,
+              "name": "Realty Holding & Management Consultants",
+              "url": siteConfig.url
+            }
+          : {
+              "@type": "Person",
+              "@id": post.author_url || `${siteConfig.url}/#person`,
+              "name": post.author,
+              "url": post.author_url || siteConfig.url
+            },
         "publisher": {
           "@type": "Organization",
           "@id": `${siteConfig.url}/#organization`,
@@ -92,7 +102,7 @@ export default async function PostPage({ params }: PostPageProps) {
             "url": `${siteConfig.url}/icon.png`
           }
         },
-        "image": post.coverImage.startsWith('http') ? post.coverImage : `${siteConfig.url}${post.coverImage}`
+        "image": post.coverImage.startsWith('http') ? post.coverImage : `${siteConfig.url}${post.coverImage.startsWith('/') ? post.coverImage : `/${post.coverImage}`}`
       },
       {
         "@type": "BreadcrumbList",
