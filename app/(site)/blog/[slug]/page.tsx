@@ -80,7 +80,7 @@ export default async function PostPage({ params }: PostPageProps) {
         "description": post.excerpt,
         "datePublished": post.date,
         "dateModified": post.date, // Using same date as modified if not available
-        "author": (post.author === "Realty Holding and Management Consultants" || post.author === "Realty Holding & Management Consultants")
+        "author": (post.author === "Realty Holding and Management Consultants" || post.author === "Realty Holding & Management Consultants" || post.author.includes("Realty Holding"))
           ? {
               "@type": "Organization",
               "@id": `${siteConfig.url}/#organization`,
