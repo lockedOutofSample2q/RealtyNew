@@ -91,8 +91,8 @@ async function getHomeData() {
     };
 
     // Filter out properties that have no images or empty image arrays
-    const validLatest = (latest ?? []).filter(p => p.images && p.images.length > 0).slice(0, 6);
-    const validRentals = (rentals ?? []).filter(p => p.images && p.images.length > 0).slice(0, 6);
+    const validLatest = (latest ?? []).filter((p: any) => p.images && p.images.length > 0).slice(0, 6);
+    const validRentals = (rentals ?? []).filter((p: any) => p.images && p.images.length > 0).slice(0, 6);
 
     return {
       featured: (featured ? enrichProperty(featured as Property) : null),
