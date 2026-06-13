@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { services } from "@/config/site";
+import { services, siteConfig } from "@/config/site";
 
 export default function ServicesSection() {
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -15,8 +15,32 @@ export default function ServicesSection() {
   // Fallback to a default if somehow undefined
   const currentImage = services[displayIndex]?.image || "/assets/images/home/services.jpg";
 
+  const servicesSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": services.map((service, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Service",
+        "name": service.title,
+        "description": service.description,
+        "provider": {
+          "@type": "RealEstateAgent",
+          "name": siteConfig.name,
+          "telephone": siteConfig.contact.phone,
+          "url": siteConfig.url
+        }
+      }
+    }))
+  };
+
   return (
     <section className="bg-[#0A0A0A] text-white pt-32 pb-32">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
+      />
       <div className="container-site">
         {/* Top Split Section */}
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start mb-32">
