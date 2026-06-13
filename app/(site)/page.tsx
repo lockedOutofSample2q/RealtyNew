@@ -51,13 +51,13 @@ async function getHomeData() {
           .select("*")
           .or('featured_sections.cs.{"home_latest"},listing_type.eq.sale')
           .order("created_at", { ascending: false })
-          .limit(6),
+          .limit(15),
         supabase
           .from("properties")
           .select("*")
           .or('featured_sections.cs.{"home_lands"},listing_type.eq.lands')
           .order("created_at", { ascending: false })
-          .limit(6),
+          .limit(15),
         supabase
           .from("properties")
           .select("community, location, entity_type")
@@ -90,10 +90,14 @@ async function getHomeData() {
       lands: ["All", ...Array.from(sectorsByTab.lands).sort()],
     };
 
+    // Filter out properties that have no images or empty image arrays
+    const validLatest = (latest ?? []).filter(p => p.images && p.images.length > 0).slice(0, 6);
+    const validRentals = (rentals ?? []).filter(p => p.images && p.images.length > 0).slice(0, 6);
+
     return {
       featured: (featured ? enrichProperty(featured as Property) : null),
-      latest: (latest ?? []).map(enrichProperty) as Property[],
-      rentals: (rentals ?? []).map(enrichProperty) as Property[],
+      latest: validLatest.map(enrichProperty) as Property[],
+      rentals: validRentals.map(enrichProperty) as Property[],
       availableSectors,
     };
   } catch {
