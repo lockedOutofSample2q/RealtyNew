@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import Image from "next/image";
 import { MapPin, ArrowRight } from "lucide-react";
 import type { Property } from "@/types";
@@ -13,7 +14,8 @@ interface LandCardProps {
 }
 
 export default function LandCard({ property, onClick, isHovered, onHover, className }: LandCardProps) {
-  const image = property.images?.[0] || "/assets/images/home/hero-bg.webp"; 
+  const [imgError, setImgError] = React.useState(false);
+  const image = imgError ? "/assets/images/home/hero-bg.webp" : (property.images?.[0] || "/assets/images/home/hero-bg.webp"); 
 
   return (
     <div 
@@ -32,6 +34,7 @@ export default function LandCard({ property, onClick, isHovered, onHover, classN
         fill
         className="object-cover group-hover:scale-110 transition-transform duration-[2s] ease-out opacity-80"
         sizes="(max-width: 768px) 100vw, 400px"
+        onError={() => setImgError(true)}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
       

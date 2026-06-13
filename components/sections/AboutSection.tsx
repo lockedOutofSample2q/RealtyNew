@@ -66,23 +66,7 @@ export default function AboutSection() {
           transition={{ duration: 0.8 }}
           className="w-full max-w-4xl mx-auto mb-20 rounded-2xl overflow-hidden shadow-2xl aspect-video bg-black/5 relative group"
         >
-          <a href="https://www.youtube.com/watch?v=id_kJBXwfWE&t=164s" target="_blank" rel="noopener noreferrer" className="block w-full h-full relative cursor-pointer">
-            <Image 
-              src="https://img.youtube.com/vi/id_kJBXwfWE/maxresdefault.jpg"
-              alt="Realty Holding and Management Consultants Video"
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-700"
-              unoptimized
-            />
-            {/* Play Button Overlay */}
-            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-              <div className="w-16 h-16 md:w-20 md:h-20 bg-black/80 backdrop-blur-md rounded-full flex items-center justify-center pl-1 group-hover:scale-110 transition-transform">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8 5V19L19 12L8 5Z" fill="white"/>
-                </svg>
-              </div>
-            </div>
-          </a>
+          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/id_kJBXwfWE?si=T75UhajNy73-hHZt" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </motion.div>
 
         {/* Premium Showcase Image Block (Carousel) */}

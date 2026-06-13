@@ -224,6 +224,15 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* -- Legal / YMYL Disclaimer ------------------------ */}
+      <div className="border-t border-white/10 bg-black/10">
+        <div className="container-site py-8">
+          <p className="font-body text-[11px] text-white/40 leading-relaxed text-center max-w-5xl mx-auto">
+            <strong>Disclaimer:</strong> The information provided on this website is for general informational purposes only and does not constitute financial, legal, or investment advice. Real estate investments involve substantial risk, including the potential loss of principal. Past performance is not indicative of future results. We strongly recommend consulting with a certified financial advisor or legal professional before making any investment or purchasing decisions. Realty Holding & Management Consultants assumes no liability for any losses or damages arising directly or indirectly from the use of this information.
+          </p>
+        </div>
+      </div>
+
       {/* -- Bottom Bar ------------------------------------- */}
       <div className="border-t border-white/10">
         <div className="container-site py-6 flex flex-col sm:flex-row items-center justify-between gap-4 flex-wrap">
