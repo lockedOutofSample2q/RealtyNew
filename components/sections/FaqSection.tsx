@@ -79,7 +79,7 @@ export default function FaqSection() {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <p className="px-16 md:px-20 pb-8 font-body text-[15px] text-gray-500 leading-relaxed max-w-2xl">
+                    <p className="px-16 md:px-20 pb-8 font-body text-[15px] text-gray-500 leading-relaxed w-full">
                       {faq.answer}
                     </p>
                   </motion.div>

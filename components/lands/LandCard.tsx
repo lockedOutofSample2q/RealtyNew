@@ -13,7 +13,7 @@ interface LandCardProps {
 }
 
 export default function LandCard({ property, onClick, isHovered, onHover, className }: LandCardProps) {
-  const image = property.images?.[0] || "/assets/images/home/hero-bg.jpg"; 
+  const image = property.images?.[0] || "/assets/images/home/hero-bg.webp"; 
 
   return (
     <div 

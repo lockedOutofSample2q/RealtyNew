@@ -69,7 +69,7 @@ export default function AboutSection() {
           <iframe 
             width="100%" 
             height="100%" 
-            src="https://www.youtube.com/embed/id_kJBXwfWE?start=164" 
+            src="https://www.youtube-nocookie.com/embed/id_kJBXwfWE?start=164" 
             title="Realty Holding and Management Consultants Video" 
             frameBorder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
