@@ -63,18 +63,18 @@
       "SBP Tepla Industrial"
     ],
     "added_societies": {
-      "JLPL Falcon View (Sector 66A)": "https://realtyconsultants.in/properties/flats/jlpl-falcon-view-sector-66a-mohali",
-      "Bestech Park View Residences (Sector 66)": "https://realtyconsultants.in/properties/flats/bestech-park-view-residences-sector-66-mohali",
-      "ATS Casa Espana (Sector 121)": "https://realtyconsultants.in/properties/flats/ats-casa-espana-sector-121-mohali",
-      "Gillco Parkhills (Sector 126)": "https://realtyconsultants.in/properties/flats/gillco-parkhills-sector-126-mohali",
-      "The Medallion Nova (Sector 66)": "https://realtyconsultants.in/properties/flats/the-medallion-nova-sector-66-mohali",
-      "Noble Magnollia (Sector 88)": "https://realtyconsultants.in/properties/flats/noble-magnollia-sector-88-mohali",
-      "Jubilee Twinto (Sector 112)": "https://realtyconsultants.in/properties/flats/jubilee-twinto-sector-112-mohali",
-      "KLV Signature Towers (Sector 66A)": "https://realtyconsultants.in/properties/flats/klv-signature-towers-sector-66a-mohali",
-      "Marbella Twin Towers (New Chandigarh)": "https://realtyconsultants.in/properties/flats/marbella-twin-towers-new-chandigarh",
-      "Affinity Belgravia (Aerocity J Block)": "https://realtyconsultants.in/properties/flats/affinity-belgravia-aerocity-mohali",
-      "Jubilee Vallum (Sector 91)": "https://realtyconsultants.in/properties/flats/jubilee-vallum-sector-91-mohali",
-      "JLPL Galaxy Heights (Sector 66A)": "https://realtyconsultants.in/properties/flats/jlpl-galaxy-heights-sector-66a-mohali"
+      "JLPL Falcon View (Sector 66A)": "https://www.realtyconsultants.in/properties/flats/jlpl-falcon-view-sector-66a-mohali",
+      "Bestech Park View Residences (Sector 66)": "https://www.realtyconsultants.in/properties/flats/bestech-park-view-residences-sector-66-mohali",
+      "ATS Casa Espana (Sector 121)": "https://www.realtyconsultants.in/properties/flats/ats-casa-espana-sector-121-mohali",
+      "Gillco Parkhills (Sector 126)": "https://www.realtyconsultants.in/properties/flats/gillco-parkhills-sector-126-mohali",
+      "The Medallion Nova (Sector 66)": "https://www.realtyconsultants.in/properties/flats/the-medallion-nova-sector-66-mohali",
+      "Noble Magnollia (Sector 88)": "https://www.realtyconsultants.in/properties/flats/noble-magnollia-sector-88-mohali",
+      "Jubilee Twinto (Sector 112)": "https://www.realtyconsultants.in/properties/flats/jubilee-twinto-sector-112-mohali",
+      "KLV Signature Towers (Sector 66A)": "https://www.realtyconsultants.in/properties/flats/klv-signature-towers-sector-66a-mohali",
+      "Marbella Twin Towers (New Chandigarh)": "https://www.realtyconsultants.in/properties/flats/marbella-twin-towers-new-chandigarh",
+      "Affinity Belgravia (Aerocity J Block)": "https://www.realtyconsultants.in/properties/flats/affinity-belgravia-aerocity-mohali",
+      "Jubilee Vallum (Sector 91)": "https://www.realtyconsultants.in/properties/flats/jubilee-vallum-sector-91-mohali",
+      "JLPL Galaxy Heights (Sector 66A)": "https://www.realtyconsultants.in/properties/flats/jlpl-galaxy-heights-sector-66a-mohali"
     }
   },
 
@@ -103,14 +103,14 @@
   },
 
   "digital_endpoints": {
-    "homepage": "https://realtyconsultants.in",
-    "listings": "https://realtyconsultants.in/properties",
-    "flats": "https://realtyconsultants.in/properties/flats",
-    "houses": "https://realtyconsultants.in/properties/houses",
-    "lands": "https://realtyconsultants.in/properties/lands",
-    "blog": "https://realtyconsultants.in/blog",
-    "contact": "https://realtyconsultants.in/contact",
-    "about": "https://realtyconsultants.in/about",
+    "homepage": "https://www.realtyconsultants.in",
+    "listings": "https://www.realtyconsultants.in/properties",
+    "flats": "https://www.realtyconsultants.in/properties/flats",
+    "houses": "https://www.realtyconsultants.in/properties/houses",
+    "lands": "https://www.realtyconsultants.in/properties/lands",
+    "blog": "https://www.realtyconsultants.in/blog",
+    "contact": "https://www.realtyconsultants.in/contact",
+    "about": "https://www.realtyconsultants.in/about",
     "video_tours": "https://www.youtube.com/@amritrealty",
     "instagram": "https://www.instagram.com/AmritRealty"
   }

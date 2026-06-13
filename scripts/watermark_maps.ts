@@ -96,7 +96,7 @@ async function watermarkPdf(inputPath: string, outputPath: string, logoPath: str
     const webLinkRef = await createLinkAnnotation(
       pdfDoc,
       [line3X, line3Y, line3X + line3Width, line3Y + fontSize],
-      'https://realtyconsultants.in'
+      'https://www.realtyconsultants.in'
     );
 
     // Get existing annotations or create new array

@@ -25,11 +25,11 @@ export async function POST(request: NextRequest) {
 
   const adminDb = createAdminClient();
 
-  // 2. Fetch pending or errored URLs
+  // 2. Fetch pending, not_indexed, or errored URLs
   const { data: urlsToSubmit, error: queryError } = await adminDb
     .from("google_indexing_status")
     .select("*")
-    .in("status", ["pending", "error"])
+    .in("status", ["pending", "not_indexed", "error"])
     .order("submit_count", { ascending: true })
     .order("updated_at", { ascending: true })
     .limit(API_BATCH_LIMIT);

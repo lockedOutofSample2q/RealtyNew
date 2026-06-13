@@ -74,6 +74,7 @@ export const footerLinks = {
     { label: "Houses", href: "/properties/houses" },
     { label: "Lands", href: "/properties/lands" },
     { label: "Market Blog", href: "/blog" },
+    { label: "Site Directory", href: "/directory" },
   ],
   tools: [
     { label: "Mortgage Calculator", href: "/tools/mortgage-calculator" },

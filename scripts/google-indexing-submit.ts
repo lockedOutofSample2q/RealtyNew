@@ -37,11 +37,11 @@ async function main() {
     process.exit(1);
   }
 
-  // 2. Fetch pending URLs (prioritize pending over error, sort by oldest/least submitted)
+  // 2. Fetch pending, not_indexed, or errored URLs (prioritize by oldest/least submitted)
   const { data: urlsToSubmit, error: queryError } = await supabase
     .from("google_indexing_status")
     .select("*")
-    .in("status", ["pending", "error"])
+    .in("status", ["pending", "not_indexed", "error"])
     .order("submit_count", { ascending: true })
     .order("updated_at", { ascending: true })
     .limit(BATCH_LIMIT);

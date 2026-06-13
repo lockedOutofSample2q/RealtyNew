@@ -216,6 +216,9 @@ export default function IndexingConsolePage() {
     }
   };
 
+  const submitEligibleCount = counts.pending + counts.notIndexed + counts.error;
+  const inspectEligibleCount = counts.pending + counts.submitted + counts.notIndexed + counts.error;
+
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -242,19 +245,19 @@ export default function IndexingConsolePage() {
           </button>
           <button
             onClick={handleRunSubmissions}
-            disabled={loading || counts.pending === 0}
+            disabled={loading || submitEligibleCount === 0}
             className="flex items-center gap-2 px-3 py-2 bg-[var(--gold)] hover:bg-[var(--gold-light)] text-[#0A0A0A] font-body text-xs transition-colors font-medium disabled:opacity-50"
           >
             <ArrowUpRight size={14} />
-            Submit Batch ({counts.pending > 30 ? 30 : counts.pending} Pending)
+            Submit Batch ({submitEligibleCount > 30 ? 30 : submitEligibleCount} Pending/Not Indexed)
           </button>
           <button
             onClick={handleRunInspections}
-            disabled={loading || counts.submitted === 0}
+            disabled={loading || inspectEligibleCount === 0}
             className="flex items-center gap-2 px-3 py-2 bg-blue-500 hover:bg-blue-400 text-white font-body text-xs transition-colors font-medium disabled:opacity-50 border border-blue-600"
           >
             <RefreshCw size={14} />
-            Run Inspection
+            Run Inspection ({inspectEligibleCount > 15 ? 15 : inspectEligibleCount} Queue)
           </button>
         </div>
       </div>

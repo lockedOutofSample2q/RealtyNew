@@ -45,12 +45,11 @@ async function main() {
   }
   console.log(`Using GSC Site Property URL: "${siteUrl}"`);
 
-  // 3. Fetch URLs that need inspection
-  // Priority: Submitted but not yet inspected, followed by oldest inspected
+  // 3. Fetch URLs that need inspection (pending, submitted, not_indexed, error)
   const { data: urlsToInspect, error: queryError } = await supabase
     .from("google_indexing_status")
     .select("*")
-    .eq("status", "submitted")
+    .in("status", ["pending", "submitted", "not_indexed", "error"])
     .order("last_inspected_at", { ascending: true, nullsFirst: true })
     .limit(BATCH_LIMIT);
 
@@ -60,7 +59,7 @@ async function main() {
   }
 
   if (!urlsToInspect || urlsToInspect.length === 0) {
-    console.log("No URLs with status 'submitted' found needing inspection.");
+    console.log("No URLs found needing inspection.");
     console.log("========================================");
     return;
   }
