@@ -35,7 +35,7 @@ export default function AboutSection() {
       <div className="container-site flex flex-col items-center">
 
         {/* About Intro */}
-        <div ref={textContainerRef} className="text-center max-w-5xl mx-auto mb-20 px-4">
+        <div ref={textContainerRef} className="text-center max-w-5xl mx-auto mb-16 px-4">
           <motion.span 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -57,6 +57,25 @@ export default function AboutSection() {
             {aboutSnippet.body}
           </motion.p>
         </div>
+
+        {/* Video Embed */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="w-full max-w-4xl mx-auto mb-20 rounded-2xl overflow-hidden shadow-2xl aspect-video bg-black/5"
+        >
+          <iframe 
+            width="100%" 
+            height="100%" 
+            src="https://www.youtube.com/embed/id_kJBXwfWE?start=164" 
+            title="Realty Holding and Management Consultants Video" 
+            frameBorder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowFullScreen
+          />
+        </motion.div>
 
         {/* Premium Showcase Image Block (Carousel) */}
         <motion.div

@@ -16,7 +16,7 @@ const ContactSection = dynamic(() => import("@/components/sections/ContactSectio
 const TestimonialsSection = dynamic(() => import("@/components/sections/TestimonialsSection"));
 const BlogTeaserSection = dynamic(() => import("@/components/sections/BlogTeaserSection"));
 import { createAdminClient } from "@/lib/supabase";
-import { homeCarousels } from "@/config/site";
+import { homeCarousels, faqs } from "@/config/site";
 import type { Property } from "@/types";
 import type { SearchTab } from "@/components/search/propertySearchOptions";
 import { enrichProperty } from "@/lib/property-utils";
@@ -121,8 +121,25 @@ export default async function HomePage() {
       image: post.coverImage,
     }));
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer,
+      },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <HeroSection sectorOptions={availableSectors} />
       <AboutSection />
       <PropertiesCarousel

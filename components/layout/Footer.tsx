@@ -4,6 +4,7 @@ import { Instagram, Facebook, Linkedin, Youtube, Mail, Phone, MapPin } from "luc
 import { siteConfig, footerLinks } from "@/config/site";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
+import Image from "next/image";
 import dynamic from "next/dynamic";
 
 const FooterMapWrapper = dynamic(() => import("./FooterMapWrapper"), {
@@ -57,7 +58,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-6">
               <div className="relative h-28 sm:h-36 w-auto">
-                <img src="/assets/logo-dark-theme.svg" alt={siteConfig.name} width={1756} height={925} className="h-full w-auto object-contain" />
+                <Image src="/assets/logo-dark-theme.svg" alt={siteConfig.name} width={1756} height={925} className="h-full w-auto object-contain" />
               </div>
             </Link>
             <p className="font-body text-sm text-white/50 leading-relaxed mb-6 max-w-[220px]">

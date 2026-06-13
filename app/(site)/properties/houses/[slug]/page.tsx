@@ -8,7 +8,8 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import {
-  ChevronLeft, ChevronRight, Share2, MapPin, Building2, ArrowRight, FileText, Download, ExternalLink
+  ChevronLeft, ChevronRight, Share2, MapPin, Building2, ArrowRight, FileText, Download, ExternalLink,
+  Calendar, Clock
 } from "lucide-react";
 import type { Property, NearbyLandmark } from "@/types";
 import { AmenityIcon } from "@/components/ui/AmenityIcons";
@@ -166,6 +167,8 @@ export default async function HouseDetailPage(props: Props) {
     "description": property.meta_description || property.description,
     "url": `${siteConfig.url}/properties/houses/${property.slug}`,
     "image": (property.images || []).map(img => getAbsoluteUrl(img)),
+    ...(property.created_at ? { "datePublished": new Date(property.created_at).toISOString() } : {}),
+    ...(property.updated_at ? { "dateModified": new Date(property.updated_at).toISOString() } : {}),
     "offers": property.price_max ? {
       "@type": "AggregateOffer",
       "lowPrice": property.price,
@@ -428,9 +431,27 @@ export default async function HouseDetailPage(props: Props) {
                   );
                 })()}
               </div>
-              <span className="inline-block text-[11px] text-black/40 border border-black/10 rounded px-2 py-0.5 mb-5 uppercase tracking-wider">
-                {listingLabel}
-              </span>
+              <div className="flex flex-wrap items-center gap-3 mb-5">
+                <span className="inline-block text-[11px] text-black/40 border border-black/10 rounded px-2 py-0.5 uppercase tracking-wider">
+                  {listingLabel}
+                </span>
+                {property.created_at && (
+                  <span className="inline-flex items-center gap-1.5 text-[11px] text-black/40">
+                    <Calendar size={11} className="text-black/30" />
+                    <time dateTime={new Date(property.created_at).toISOString()}>
+                      Published {new Date(property.created_at).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
+                    </time>
+                  </span>
+                )}
+                {property.updated_at && property.updated_at !== property.created_at && (
+                  <span className="inline-flex items-center gap-1.5 text-[11px] text-black/40">
+                    <Clock size={11} className="text-black/30" />
+                    <time dateTime={new Date(property.updated_at).toISOString()}>
+                      Updated {new Date(property.updated_at).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
+                    </time>
+                  </span>
+                )}
+              </div>
 
               {/* Description */}
               <div className="space-y-4 mb-8">

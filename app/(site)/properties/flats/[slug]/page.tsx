@@ -9,7 +9,8 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import {
   ChevronLeft, ChevronRight, Share2, MapPin, Check,
-  Building2, ExternalLink, Images, ArrowRight, FileText, Download
+  Building2, ExternalLink, Images, ArrowRight, FileText, Download,
+  Calendar, Clock
 } from "lucide-react";
 import type { Property, NearbyLandmark } from "@/types";
 import { AmenityIcon } from "@/components/ui/AmenityIcons";
@@ -424,6 +425,8 @@ export default async function ApartmentOrSectorDetailPage(props: Props) {
     "description": property.meta_description || property.description,
     "url": `${siteConfig.url}/properties/flats/${property.slug}`,
     "image": (property.images || []).map(img => getAbsoluteUrl(img)),
+    ...(property.created_at ? { "datePublished": new Date(property.created_at).toISOString() } : {}),
+    ...(property.updated_at ? { "dateModified": new Date(property.updated_at).toISOString() } : {}),
     "offers": property.price_max ? {
       "@type": "AggregateOffer",
       "lowPrice": property.price,
@@ -694,9 +697,27 @@ export default async function ApartmentOrSectorDetailPage(props: Props) {
                   );
                 })()}
               </div>
-              <span className="inline-block text-[11px] text-black/40 border border-black/10 rounded px-2 py-0.5 mb-5">
-                {listingLabel}
-              </span>
+              <div className="flex flex-wrap items-center gap-3 mb-5">
+                <span className="inline-block text-[11px] text-black/40 border border-black/10 rounded px-2 py-0.5">
+                  {listingLabel}
+                </span>
+                {property.created_at && (
+                  <span className="inline-flex items-center gap-1.5 text-[11px] text-black/40">
+                    <Calendar size={11} className="text-black/30" />
+                    <time dateTime={new Date(property.created_at).toISOString()}>
+                      Published {new Date(property.created_at).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
+                    </time>
+                  </span>
+                )}
+                {property.updated_at && property.updated_at !== property.created_at && (
+                  <span className="inline-flex items-center gap-1.5 text-[11px] text-black/40">
+                    <Clock size={11} className="text-black/30" />
+                    <time dateTime={new Date(property.updated_at).toISOString()}>
+                      Updated {new Date(property.updated_at).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
+                    </time>
+                  </span>
+                )}
+              </div>
 
               {/* Dynamic AEO Advisory Block */}
               <div className="bg-[#FAF8F5] border border-[#EBE3D5] rounded-3xl p-6 mb-8 text-[14px] sm:text-[15px] text-black/80 leading-relaxed font-sans shadow-sm">

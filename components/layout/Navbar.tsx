@@ -8,6 +8,7 @@ import { X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig, navItems, footerLinks } from "@/config/site";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import { useCurrency, type Currency } from "@/context/CurrencyContext";
 import { useHeader } from "@/context/HeaderContext";
 
@@ -104,21 +105,23 @@ export default function Navbar() {
           {/* -- Logo --------------------------------------- */}
           <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 group z-50">
             <div className="relative h-[10vw] sm:h-[6vw] aspect-[1756/925]">
-              <img 
+              <Image 
                 src="/assets/logo-light-theme.svg" 
                 alt={siteConfig.name} 
                 width={1756}
                 height={925}
+                priority
                 className={cn(
                   "absolute inset-0 h-full w-full object-contain object-left transition-opacity duration-300",
                   showLightLogo ? "opacity-100" : "opacity-0"
                 )} 
               />
-              <img 
+              <Image 
                 src="/assets/logo-dark-theme.svg" 
                 alt={siteConfig.name} 
                 width={1756}
                 height={925}
+                priority
                 className={cn(
                   "absolute inset-0 h-full w-full object-contain object-left transition-opacity duration-300",
                   !showLightLogo ? "opacity-100" : "opacity-0"

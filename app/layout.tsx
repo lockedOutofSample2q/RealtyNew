@@ -52,24 +52,43 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
+
+async function fetchRating() {
+  const apiKey = process.env.GOOGLE_MAPS_API_KEY;
+  const placeId = process.env.GOOGLE_PLACE_ID; // Operator needs to set this in Vercel
+  
+  const fallback = { ratingValue: 4.9, reviewCount: 125 }; // User's requested defaults
+  if (!apiKey || !placeId) return fallback;
+
+  try {
+    const res = await fetch(
+      `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=rating,user_ratings_total&key=${apiKey}`,
+      { next: { revalidate: 604800 } } // 1 week cache
+    );
+    const data = await res.json();
+    if (data?.result?.rating && data?.result?.user_ratings_total) {
+      return {
+        ratingValue: data.result.rating,
+        reviewCount: data.result.user_ratings_total
+      };
+    }
+  } catch (error) {
+    console.error("Failed to fetch Google reviews:", error);
+  }
+  return fallback;
+}
+
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const ratingData = await fetchRating();
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Google Tag Manager */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5Z6V8R4V');`,
-          }}
-        />
         <link rel="preconnect" href="https://*.supabase.co" />
         <link rel="dns-prefetch" href="https://*.supabase.co" />
         <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
@@ -105,6 +124,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     "latitude": "30.697381977888533", 
                     "longitude": "76.69025000982366"
                   },
+                  "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": ratingData.ratingValue.toString(),
+                    "reviewCount": ratingData.reviewCount.toString(),
+                    "bestRating": "5",
+                    "worstRating": "1"
+                  },
                   "areaServed": [
                     "Mohali", "Banur", "Tepla Road", "Aerocity", "Aerotropolis", "New Chandigarh", "IT City"
                   ],
@@ -120,6 +146,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   }
                 },
                 {
+                  "@type": "Service",
+                  "@id": "https://www.realtyconsultants.in/#service",
+                  "name": "Luxury Real Estate Consulting in Mohali",
+                  "provider": { "@id": "https://www.realtyconsultants.in/#organization" },
+                  "areaServed": {
+                    "@type": "City",
+                    "name": "Mohali"
+                  },
+                  "description": "Premium real estate consulting, NRI property advisory, and land investment services in Mohali, Punjab."
+                },
+                {
                   "@type": "Person",
                   "@id": "https://www.realtyconsultants.in/#person",
                   "name": "Amritpal Singh",
@@ -128,7 +165,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   "sameAs": [
                     "https://www.linkedin.com/in/amritpal-singh-29b14795/",
                     "https://www.instagram.com/amritrealty"
-                  ]
+                  ],
+                  "description": "Amritpal Singh is the Founder and Principal Consultant at Realty Holding & Management Consultants. With over a decade of hands-on experience navigating the Punjab real estate market, he has successfully facilitated over INR 84 Crores in secure, high-yield property transactions. Specializing in NRI advisory, land acquisition reinvestments, and luxury residential assets in Mohali, Amritpal is known for his data-driven, radically transparent approach to real estate consulting."
                 },
                 {
                   "@type": "WebSite",
@@ -154,35 +192,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         />
       </head>
       <body className={`${cormorant.variable} ${dmSans.variable} ${dmMono.variable} overflow-x-hidden font-body`}>
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-5Z6V8R4V"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
-        {/* Google Analytics */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-ZWNKTZ1M1S"
-          strategy="afterInteractive"
-        />
         {/* Ahrefs Analytics */}
         <Script
           src="https://analytics.ahrefs.com/analytics.js"
           data-key="Qm6W5Qeb+IdgA8tRuYFgHQ"
           strategy="afterInteractive"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-ZWNKTZ1M1S');
-          `}
-        </Script>
         {children}
         <Toaster
           position="bottom-right"
@@ -195,6 +210,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
       </body>
+      <GoogleAnalytics gaId="G-ZWNKTZ1M1S" />
+      <GoogleTagManager gtmId="GTM-5Z6V8R4V" />
     </html>
   );
 }
