@@ -100,7 +100,7 @@ async function main() {
           "Authorization": `Bearer ${token}`
         },
         body: JSON.stringify({
-          inspectionUrl: item.url,
+          inspectionUrl: item.url.startsWith('http') ? item.url : new URL(item.url, siteUrl).toString(),
           siteUrl: siteUrl
         })
       });
