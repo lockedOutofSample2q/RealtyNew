@@ -95,6 +95,7 @@ export default function IndexingConsolePage() {
   const [search, setSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState("");
   const [verdictFilter, setVerdictFilter] = useState("");
+  const [selectedIds, setSelectedIds] = useState<string[]>([]);
 
   // Analytics Tab States
   const [analytics, setAnalytics] = useState<AnalyticsData | null>(null);
@@ -261,6 +262,30 @@ export default function IndexingConsolePage() {
     } finally {
       setLoading(false);
       fetchUrlData(1);
+    }
+  };
+
+  const handleBulkAction = async (actionType: "URL_UPDATED" | "URL_DELETED") => {
+    if (selectedIds.length === 0) return;
+    setLoading(true);
+    setActionMessage({ type: "info", text: `Sending ${selectedIds.length} URLs for ${actionType === "URL_UPDATED" ? "Indexing" : "Removal"}...` });
+    
+    try {
+      const res = await fetch("/api/admin-realty-8x2d9/indexing/action", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ids: selectedIds, actionType })
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Failed to process selection.");
+      
+      setActionMessage({ type: "success", text: `Processed ${selectedIds.length} URLs successfully. Success: ${data.successCount}, Failed: ${data.failCount}.` });
+      setSelectedIds([]);
+      fetchUrlData(pagination.page);
+    } catch (err) {
+      setActionMessage({ type: "error", text: err instanceof Error ? err.message : "Action failed." });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -442,6 +467,24 @@ export default function IndexingConsolePage() {
             >
               Apply Filter
             </button>
+            {selectedIds.length > 0 && (
+              <>
+                <button
+                  onClick={() => handleBulkAction("URL_UPDATED")}
+                  disabled={loading}
+                  className="py-2 px-4 bg-[var(--gold)] text-[#0A0A0A] font-body text-sm hover:bg-[var(--gold-light)] font-medium"
+                >
+                  Index Selected ({selectedIds.length})
+                </button>
+                <button
+                  onClick={() => handleBulkAction("URL_DELETED")}
+                  disabled={loading}
+                  className="py-2 px-4 bg-red-500/10 text-red-400 font-body text-sm hover:bg-red-500/20 border border-red-500/20"
+                >
+                  Remove Selected ({selectedIds.length})
+                </button>
+              </>
+            )}
           </div>
 
           {/* URLs Inventory Table */}
@@ -450,6 +493,17 @@ export default function IndexingConsolePage() {
               <table className="w-full">
                 <thead>
                   <tr className="border-b border-white/5 bg-[#1a1a1a]">
+                    <th className="px-4 py-3 w-8">
+                      <input
+                        type="checkbox"
+                        checked={selectedIds.length === urls.length && urls.length > 0}
+                        onChange={(e) => {
+                          if (e.target.checked) setSelectedIds(urls.map(u => u.id));
+                          else setSelectedIds([]);
+                        }}
+                        className="rounded-sm border-white/20 bg-transparent cursor-pointer"
+                      />
+                    </th>
                     <th className="px-4 py-3 text-left font-body text-xs text-white/35 uppercase tracking-wide">Tracked URL</th>
                     <th className="px-4 py-3 text-left font-body text-xs text-white/35 uppercase tracking-wide">Sync Status</th>
                     <th className="px-4 py-3 text-left font-body text-xs text-white/35 uppercase tracking-wide">GSC Verdict</th>
@@ -461,19 +515,30 @@ export default function IndexingConsolePage() {
                 <tbody className="divide-y divide-white/5">
                   {loading && urls.length === 0 ? (
                     <tr>
-                      <td colSpan={6} className="px-4 py-10 text-center text-white/30 font-body text-sm">
+                      <td colSpan={7} className="px-4 py-10 text-center text-white/30 font-body text-sm">
                         <Loader2 className="animate-spin inline-block mr-2" size={16} /> Loading URL indexing inventory...
                       </td>
                     </tr>
                   ) : urls.length === 0 ? (
                     <tr>
-                      <td colSpan={6} className="px-4 py-10 text-center text-white/30 font-body text-sm">
+                      <td colSpan={7} className="px-4 py-10 text-center text-white/30 font-body text-sm">
                         No tracked URLs matching the specified filters. Try running Sitemap Sync.
                       </td>
                     </tr>
                   ) : (
                     urls.map((item) => (
                       <tr key={item.id} className="hover:bg-white/[0.01] transition-colors">
+                        <td className="px-4 py-3">
+                          <input
+                            type="checkbox"
+                            checked={selectedIds.includes(item.id)}
+                            onChange={(e) => {
+                              if (e.target.checked) setSelectedIds(prev => [...prev, item.id]);
+                              else setSelectedIds(prev => prev.filter(id => id !== item.id));
+                            }}
+                            className="rounded-sm border-white/20 bg-transparent cursor-pointer"
+                          />
+                        </td>
                         {/* URL path and domain */}
                         <td className="px-4 py-3 font-body text-sm text-white max-w-md truncate">
                           <a
