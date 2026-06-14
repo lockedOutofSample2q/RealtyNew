@@ -179,40 +179,88 @@ export default function IndexingConsolePage() {
   // Handle submission batch action
   const handleRunSubmissions = async () => {
     setLoading(true);
-    setActionMessage({ type: "info", text: "Authenticating and sending batch requests to Indexing API..." });
+    let totalSubmitted = 0;
+    let totalSuccesses = 0;
+    let totalFailures = 0;
+
+    setActionMessage({ type: "info", text: "Starting mass submission queue..." });
+
     try {
-      const res = await fetch("/api/admin-realty-8x2d9/indexing/submit", { method: "POST" });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Failed to run submission batch.");
+      let remaining = true;
+      while (remaining) {
+        const res = await fetch("/api/admin-realty-8x2d9/indexing/submit", { method: "POST" });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || "Failed to run submission batch.");
+
+        totalSubmitted += data.submitted;
+        totalSuccesses += data.successes;
+        totalFailures += data.failures;
+
+        setActionMessage({
+          type: "info",
+          text: `Processing queue... Submitted ${totalSubmitted} URLs so far...`,
+        });
+
+        await fetchUrlData(1);
+
+        if (data.submitted === 0 || data.submitted < 30) {
+          remaining = false;
+        }
+      }
+
       setActionMessage({
         type: "success",
-        text: `Submitted ${data.submitted} URLs. Successes: ${data.successes}, Failures: ${data.failures}.`,
+        text: `Completed! Submitted ${totalSubmitted} URLs total. Successes: ${totalSuccesses}, Failures: ${totalFailures}.`,
       });
-      fetchUrlData(1);
     } catch (err) {
       setActionMessage({ type: "error", text: err instanceof Error ? err.message : "Submission aborted." });
     } finally {
       setLoading(false);
+      fetchUrlData(1);
     }
   };
 
   // Handle URL Inspection batch action
   const handleRunInspections = async () => {
     setLoading(true);
-    setActionMessage({ type: "info", text: "Querying Google Search Console URL Inspection API..." });
+    let totalInspected = 0;
+    let totalIndexed = 0;
+    let totalNotIndexed = 0;
+
+    setActionMessage({ type: "info", text: "Starting mass inspection queue..." });
+
     try {
-      const res = await fetch("/api/admin-realty-8x2d9/indexing/inspect", { method: "POST" });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Failed to run inspection batch.");
+      let remaining = true;
+      while (remaining) {
+        const res = await fetch("/api/admin-realty-8x2d9/indexing/inspect", { method: "POST" });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || "Failed to run inspection batch.");
+
+        totalInspected += data.inspected;
+        totalIndexed += data.indexed;
+        totalNotIndexed += data.notIndexed;
+
+        setActionMessage({
+          type: "info",
+          text: `Processing queue... Inspected ${totalInspected} URLs so far...`,
+        });
+
+        await fetchUrlData(1);
+
+        if (data.inspected === 0 || data.inspected < 15) {
+          remaining = false;
+        }
+      }
+
       setActionMessage({
         type: "success",
-        text: `Inspected ${data.inspected} URLs. Marked Indexed: ${data.indexed}, Not Indexed: ${data.notIndexed}.`,
+        text: `Completed! Inspected ${totalInspected} URLs total. Marked Indexed: ${totalIndexed}, Not Indexed: ${totalNotIndexed}.`,
       });
-      fetchUrlData(1);
     } catch (err) {
       setActionMessage({ type: "error", text: err instanceof Error ? err.message : "Inspection aborted." });
     } finally {
       setLoading(false);
+      fetchUrlData(1);
     }
   };
 
@@ -249,7 +297,7 @@ export default function IndexingConsolePage() {
             className="flex items-center gap-2 px-3 py-2 bg-[var(--gold)] hover:bg-[var(--gold-light)] text-[#0A0A0A] font-body text-xs transition-colors font-medium disabled:opacity-50"
           >
             <ArrowUpRight size={14} />
-            Submit Batch ({submitEligibleCount > 30 ? 30 : submitEligibleCount} Pending/Not Indexed)
+            Submit All ({submitEligibleCount} Queue)
           </button>
           <button
             onClick={handleRunInspections}
@@ -257,7 +305,7 @@ export default function IndexingConsolePage() {
             className="flex items-center gap-2 px-3 py-2 bg-blue-500 hover:bg-blue-400 text-white font-body text-xs transition-colors font-medium disabled:opacity-50 border border-blue-600"
           >
             <RefreshCw size={14} />
-            Run Inspection ({inspectEligibleCount > 15 ? 15 : inspectEligibleCount} Queue)
+            Inspect All ({inspectEligibleCount} Queue)
           </button>
         </div>
       </div>
