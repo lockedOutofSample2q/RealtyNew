@@ -73,6 +73,7 @@ export async function POST(request: NextRequest) {
 
   for (const item of urlsToInspect) {
     try {
+      const baseUrl = siteUrl.startsWith('sc-domain:') ? `https://${siteUrl.replace('sc-domain:', '')}` : siteUrl;
       const response = await fetch(INSPECTION_ENDPOINT, {
         method: "POST",
         headers: {
@@ -80,7 +81,7 @@ export async function POST(request: NextRequest) {
           "Authorization": `Bearer ${token}`
         },
         body: JSON.stringify({
-          inspectionUrl: item.url.startsWith('http') ? item.url : new URL(item.url, siteUrl).toString(),
+          inspectionUrl: item.url.startsWith('http') ? item.url : new URL(item.url, baseUrl).toString(),
           siteUrl: siteUrl
         })
       });
