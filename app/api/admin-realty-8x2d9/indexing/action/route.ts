@@ -20,11 +20,31 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "No URLs selected." }, { status: 400 });
   }
 
-  if (actionType !== "URL_UPDATED" && actionType !== "URL_DELETED") {
+  if (actionType !== "URL_UPDATED" && actionType !== "URL_DELETED" && actionType !== "DELETE_FROM_DB") {
     return NextResponse.json({ error: "Invalid action type." }, { status: 400 });
   }
 
   const adminDb = createAdminClient();
+
+  // If the action is just to delete from our local dashboard tracking database:
+  if (actionType === "DELETE_FROM_DB") {
+    const { error: deleteError } = await adminDb
+      .from("google_indexing_status")
+      .delete()
+      .in("id", ids);
+
+    if (deleteError) {
+      return NextResponse.json({ error: "Failed to delete from database." }, { status: 500 });
+    }
+
+    return NextResponse.json({
+      success: true,
+      message: `Deleted ${ids.length} URLs from the dashboard.`,
+      successCount: ids.length,
+      failCount: 0,
+      results: []
+    });
+  }
 
   // Fetch the actual URLs from the DB based on the provided IDs
   const { data: urlsData, error: queryError } = await adminDb

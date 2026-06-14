@@ -477,11 +477,11 @@ export default function IndexingConsolePage() {
                   Index Selected ({selectedIds.length})
                 </button>
                 <button
-                  onClick={() => handleBulkAction("URL_DELETED")}
+                  onClick={() => handleBulkAction("DELETE_FROM_DB")}
                   disabled={loading}
                   className="py-2 px-4 bg-red-500/10 text-red-400 font-body text-sm hover:bg-red-500/20 border border-red-500/20"
                 >
-                  Remove Selected ({selectedIds.length})
+                  Delete Selected ({selectedIds.length})
                 </button>
               </>
             )}
