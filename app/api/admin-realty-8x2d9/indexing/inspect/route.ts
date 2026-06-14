@@ -88,7 +88,7 @@ export async function POST(request: NextRequest) {
 
       if (!response.ok) {
         const errText = await response.text();
-        throw new Error(`Google API ${response.status}: ${errText}`);
+        throw new Error(`Google API ${response.status}: ${errText} (Using siteUrl: ${siteUrl})`);
       }
 
       const resData = await response.json();
