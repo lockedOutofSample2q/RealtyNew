@@ -44,6 +44,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const router = useRouter();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
+  // Bypass layout for the login page
+  if (pathname === "/admin-realty-8x2d9/login") {
+    return <>{children}</>;
+  }
+
   async function handleLogout() {
     const supabase = createClient();
     await supabase.auth.signOut();
