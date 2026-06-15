@@ -731,46 +731,6 @@ export default async function ApartmentOrSectorDetailPage(props: Props) {
                 </p>
               </div>
 
-              {/* AEO Quick Facts Table */}
-              <div className="mb-8 border border-black/10 rounded-2xl overflow-hidden bg-white">
-                <div className="bg-black/5 px-6 py-3 border-b border-black/10">
-                  <h3 className="text-[13px] font-bold text-black uppercase tracking-wider">Quick Facts</h3>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-black/5">
-                  <div className="flex flex-col">
-                    <div className="px-6 py-3 border-b border-black/5 flex justify-between">
-                      <span className="text-[13px] text-black/50">Project</span>
-                      <span className="text-[13px] font-medium text-black text-right">{property.title}</span>
-                    </div>
-                    <div className="px-6 py-3 border-b border-black/5 flex justify-between">
-                      <span className="text-[13px] text-black/50">Location</span>
-                      <span className="text-[13px] font-medium text-black text-right truncate max-w-[150px]" title={property.address || property.location || 'Mohali'}>{property.address || property.location || 'Mohali'}</span>
-                    </div>
-                    <div className="px-6 py-3 border-b border-black/5 sm:border-b-0 flex justify-between">
-                      <span className="text-[13px] text-black/50">Size</span>
-                      <span className="text-[13px] font-medium text-black text-right">
-                        {property.area_sqft ? `${property.area_sqft.toLocaleString()}${property.area_sqft_max && property.area_sqft_max !== property.area_sqft ? ` - ${property.area_sqft_max.toLocaleString()}` : ''} sqft` : 'N/A'}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="flex flex-col">
-                    <div className="px-6 py-3 border-b border-black/5 flex justify-between">
-                      <span className="text-[13px] text-black/50">Price</span>
-                      <span className="text-[13px] font-medium text-black text-right">
-                        {property.price ? `₹${(property.price / 10000000).toFixed(2)}${property.price_max ? ` - ${(property.price_max / 10000000).toFixed(2)}` : ''} Cr` : 'On Request'}
-                      </span>
-                    </div>
-                    <div className="px-6 py-3 border-b border-black/5 flex justify-between">
-                      <span className="text-[13px] text-black/50">Status</span>
-                      <span className="text-[13px] font-medium text-black text-right capitalize">{property.status?.replace('_', ' ') || 'Available'}</span>
-                    </div>
-                    <div className="px-6 py-3 flex justify-between">
-                      <span className="text-[13px] text-black/50">Developer</span>
-                      <span className="text-[13px] font-medium text-black text-right truncate max-w-[150px]" title={property.developer || 'N/A'}>{property.developer || 'N/A'}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
               {/* Description (Multi-paragraph support with Read More) */}
               <DescriptionContainer description={property.description || ""} />
