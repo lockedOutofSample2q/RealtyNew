@@ -75,6 +75,16 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/properties/flats/hero-homes",
+        destination: "/properties/flats/hero-homes-mohali-sector-88",
+        permanent: true,
+      },
+      {
+        source: "/properties/hero-homes",
+        destination: "/properties/flats/hero-homes-mohali-sector-88",
+        permanent: true,
+      },
+      {
         source: "/mortgage-calculator",
         destination: "/tools/mortgage-calculator",
         permanent: true,

@@ -66,7 +66,7 @@ export function PropertyGallery({ images, videos = [], title, imageCountOverride
             <>
               <MediaThumbnail 
                 item={mediaItems[0]} 
-                title={title} 
+                title={`${title} - Exterior View`} 
                 className="transition-transform duration-700 group-hover:scale-105" 
                 priority 
               />
@@ -98,7 +98,7 @@ export function PropertyGallery({ images, videos = [], title, imageCountOverride
             >
               {mediaItems[i] ? (
                 <>
-                  <MediaThumbnail item={mediaItems[i]} title={`${title} ${i}`} className="transition-transform duration-700 group-hover:scale-110" />
+                  <MediaThumbnail item={mediaItems[i]} title={i === 1 ? `${title} - Interior View` : i === 2 ? `${title} - Amenities` : i === 3 ? `${title} - Location Map` : i === 4 ? `${title} - Floor Plan` : `${title} - Gallery Image ${i}`} className="transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
                   {mediaItems[i].type === "video" && (
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -180,7 +180,7 @@ export function PropertyGallery({ images, videos = [], title, imageCountOverride
                     )}
                     aria-label={`Go to media item ${i + 1}`}
                   >
-                    <MediaThumbnail item={item} title={`${title} thumb ${i}`} />
+                    <MediaThumbnail item={item} title={i === 0 ? `${title} - Exterior View` : i === 1 ? `${title} - Interior View` : i === 2 ? `${title} - Amenities` : i === 3 ? `${title} - Location Map` : i === 4 ? `${title} - Floor Plan` : `${title} - Gallery Image ${i}`} />
                     {item.type === "video" && (
                       <div className="absolute inset-0 flex items-center justify-center bg-black/20">
                         <Play size={12} fill="white" className="text-white" />
@@ -214,7 +214,7 @@ function MediaThumbnail({ item, title, className, priority }: { item: MediaItem;
   return (
     <Image 
       src={src} 
-      alt={`${title} - Property Gallery Image | Realty Holding & Management Consultants`} 
+      alt={title} 
       fill 
       className={cn("object-cover", className)} 
       quality={80}
