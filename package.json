@@ -51,6 +51,7 @@
     "next-contentlayer": "^0.3.0",
     "next-mdx-remote": "^6.0.0",
     "next-themes": "^0.3.0",
+    "otpauth": "^9.5.1",
     "pdf-lib": "^1.17.1",
     "react": "^19.2.5",
     "react-calendly": "^4.4.0",

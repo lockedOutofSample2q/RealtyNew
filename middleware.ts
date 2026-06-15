@@ -7,9 +7,47 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import { createServerClient, type CookieOptions } from "@supabase/ssr";
+import * as OTPAuth from "otpauth";
 
 export async function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
+  const { pathname, searchParams } = request.nextUrl;
+
+  // Protect the login page with a rotating TOTP key
+  if (pathname === "/admin-realty-8x2d9/login") {
+    const totpSecret = process.env.ADMIN_TOTP_SECRET;
+    
+    // If TOTP is configured, enforce it
+    if (totpSecret) {
+      const key = searchParams.get("key");
+      
+      if (!key) {
+        // Obscure the login page completely if no key is provided
+        return NextResponse.redirect(new URL("/", request.url));
+      }
+
+      try {
+        let totp = new OTPAuth.TOTP({
+          issuer: "RealtyConsultants",
+          label: "Admin",
+          algorithm: "SHA1",
+          digits: 6,
+          period: 30,
+          secret: OTPAuth.Secret.fromBase32(totpSecret.replace(/\s+/g, '')),
+        });
+
+        // Allow a window of 1 (30 seconds before or after) to account for slight clock skew
+        const delta = totp.validate({ token: key, window: 1 });
+        
+        if (delta === null) {
+          // Invalid TOTP token -> redirect to home
+          return NextResponse.redirect(new URL("/", request.url));
+        }
+      } catch (err) {
+        console.error("TOTP validation error:", err);
+        return NextResponse.redirect(new URL("/", request.url));
+      }
+    }
+  }
 
   // Only protect /admin-realty-8x2d9 routes (except login)
   if (!pathname.startsWith("/admin-realty-8x2d9") || pathname === "/admin-realty-8x2d9/login") {
