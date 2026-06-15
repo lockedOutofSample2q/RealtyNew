@@ -6,7 +6,7 @@
 // Sidebar navigation for all admin sections
 // ============================================================
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -43,16 +43,48 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const pathname = usePathname();
   const router = useRouter();
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [loadingSession, setLoadingSession] = useState(true);
 
-  // Bypass layout for the login page
-  if (pathname === "/admin-realty-8x2d9/login") {
-    return <>{children}</>;
-  }
+  const isLoginPage = pathname === "/admin-realty-8x2d9/login";
+
+  useEffect(() => {
+    async function checkSession() {
+      if (isLoginPage) return;
+      
+      const supabase = createClient();
+      const { data: { session } } = await supabase.auth.getSession();
+      
+      if (!session) {
+        router.push("/admin-realty-8x2d9/login");
+      } else {
+        setLoadingSession(false);
+      }
+    }
+    
+    checkSession();
+  }, [isLoginPage, router]);
 
   async function handleLogout() {
     const supabase = createClient();
     await supabase.auth.signOut();
     router.push("/admin-realty-8x2d9/login");
+  }
+
+  // Bypass layout for the login page
+  if (isLoginPage) {
+    return <>{children}</>;
+  }
+
+  if (loadingSession) {
+    return (
+      <div className="min-h-screen bg-[#0A0A0A] flex flex-col items-center justify-center">
+        <div className="flex">
+          <span className="font-display text-3xl text-white lowercase">real</span>
+          <span className="font-display text-3xl text-[var(--gold)] lowercase">ty</span>
+        </div>
+        <p className="font-body text-white/40 text-sm mt-4 tracking-widest uppercase">Verifying authorization...</p>
+      </div>
+    );
   }
 
   const SidebarContent = () => (

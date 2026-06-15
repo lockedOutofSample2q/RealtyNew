@@ -57,6 +57,6 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/admin-realty-8x2d9/:path*"],
+  matcher: ["/admin-realty-8x2d9", "/admin-realty-8x2d9/:path*"],
 };
 

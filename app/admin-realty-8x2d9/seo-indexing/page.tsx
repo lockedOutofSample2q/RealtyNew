@@ -265,7 +265,7 @@ export default function IndexingConsolePage() {
     }
   };
 
-  const handleBulkAction = async (actionType: "URL_UPDATED" | "URL_DELETED") => {
+  const handleBulkAction = async (actionType: "URL_UPDATED" | "URL_DELETED" | "DELETE_FROM_DB") => {
     if (selectedIds.length === 0) return;
     setLoading(true);
     setActionMessage({ type: "info", text: `Sending ${selectedIds.length} URLs for ${actionType === "URL_UPDATED" ? "Indexing" : "Removal"}...` });
