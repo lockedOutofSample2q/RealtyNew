@@ -100,7 +100,8 @@ a {
 ::-webkit-scrollbar-thumb { background: #a0a0a0; border-radius: 2px; }
 ::-webkit-scrollbar-thumb:hover { background: #666; }
 
-::selection { background: #ffffff; color: #000000; text-shadow: none; }
+::selection { background: #000000; color: #ffffff; text-shadow: none; }
+[class*="bg-charcoal"] ::selection, [class*="bg-black"] ::selection { background: #ffffff; color: #000000; text-shadow: none; }
 
 .prose-premium { color: #3a3a3a; line-height: 1.85; font-size: 16.5px; }
 
