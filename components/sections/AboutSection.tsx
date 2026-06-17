@@ -66,7 +66,7 @@ export default function AboutSection() {
           transition={{ duration: 0.8 }}
           className="w-full max-w-4xl mx-auto mb-20 rounded-2xl overflow-hidden shadow-2xl aspect-video bg-black/5 relative group"
         >
-          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/id_kJBXwfWE?si=T75UhajNy73-hHZt" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/PWaIjOLL_S4?si=dj2UMjOR-r6n7w3n" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </motion.div>
 
         {/* Premium Showcase Image Block (Carousel) */}
