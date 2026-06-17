@@ -5,7 +5,7 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 
-export default function AboutSection() {
+export default function AboutSection({ videoUrl, isVideoEnabled }: { videoUrl?: string, isVideoEnabled?: boolean }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const textContainerRef = useRef<HTMLDivElement>(null);
 
@@ -59,15 +59,17 @@ export default function AboutSection() {
         </div>
 
         {/* Video Embed */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="w-full max-w-4xl mx-auto mb-20 rounded-2xl overflow-hidden shadow-2xl aspect-video bg-black/5 relative group"
-        >
-          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/PWaIjOLL_S4?si=dj2UMjOR-r6n7w3n" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-        </motion.div>
+        {isVideoEnabled !== false && (
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="w-full max-w-4xl mx-auto mb-20 rounded-2xl overflow-hidden shadow-2xl aspect-video bg-black/5 relative group"
+          >
+            <iframe width="100%" height="100%" src={videoUrl || "https://www.youtube.com/embed/PWaIjOLL_S4?si=dj2UMjOR-r6n7w3n"} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+          </motion.div>
+        )}
 
         {/* Premium Showcase Image Block (Carousel) */}
         <motion.div

@@ -38,7 +38,7 @@ async function getHomeData() {
   try {
     const supabase = createAdminClient();
 
-    const [{ data: featured }, { data: latest }, { data: rentals }, { data: locData }] =
+    const [{ data: featured }, { data: latest }, { data: rentals }, { data: locData }, { data: siteSettings }] =
       await Promise.all([
         supabase
           .from("properties")
@@ -62,6 +62,11 @@ async function getHomeData() {
           .from("properties")
           .select("community, location, entity_type")
           .eq("status", "available"),
+        supabase
+          .from("site_settings")
+          .select("homepage_video_url, homepage_video_enabled")
+          .limit(1)
+          .maybeSingle(),
       ]);
 
     const sectorsByTab: Record<SearchTab, Set<string>> = {
@@ -99,6 +104,7 @@ async function getHomeData() {
       latest: validLatest.map(enrichProperty) as Property[],
       rentals: validRentals.map(enrichProperty) as Property[],
       availableSectors,
+      siteSettings,
     };
   } catch {
     // Return empty data if DB not connected (dev mode)
@@ -106,13 +112,14 @@ async function getHomeData() {
       featured: null, 
       latest: [], 
       rentals: [], 
-      availableSectors: { flats: ["All"], houses: ["All"], lands: ["All"] } 
+      availableSectors: { flats: ["All"], houses: ["All"], lands: ["All"] },
+      siteSettings: null
     };
   }
 }
 
 export default async function HomePage() {
-  const { featured, latest, rentals, availableSectors } = await getHomeData();
+  const { featured, latest, rentals, availableSectors, siteSettings } = await getHomeData();
 
   const latestPosts = allPosts
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
@@ -145,7 +152,10 @@ export default async function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <HeroSection sectorOptions={availableSectors} />
-      <AboutSection />
+      <AboutSection 
+        videoUrl={siteSettings?.homepage_video_url ?? "https://www.youtube.com/embed/PWaIjOLL_S4?si=dj2UMjOR-r6n7w3n"} 
+        isVideoEnabled={siteSettings?.homepage_video_enabled ?? true} 
+      />
       <PropertiesCarousel
         title={homeCarousels.properties.title}
         subtitle={homeCarousels.properties.subtitle}

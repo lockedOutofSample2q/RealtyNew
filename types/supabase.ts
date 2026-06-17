@@ -132,6 +132,31 @@ export interface Database {
           email?: string;
         };
       };
+
+      // ── Site Settings ──────────────────────────────────
+      site_settings: {
+        Row: {
+          id: string;
+          homepage_video_url: string;
+          homepage_video_enabled: boolean;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          homepage_video_url: string;
+          homepage_video_enabled?: boolean;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          homepage_video_url?: string;
+          homepage_video_enabled?: boolean;
+          created_at?: string;
+          updated_at?: string;
+        };
+      };
     };
     Views: {};
     Functions: {};
