@@ -117,7 +117,7 @@ export default function LeadPopup({ type, propertyTitle, propertyId }: LeadPopup
   const inputClass = "w-full border border-black/10 rounded-xl px-3 py-2.5 text-[13px] text-black placeholder:text-black/30 focus:outline-none focus:border-black/30 bg-[#f9f9f9] transition-colors";
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm animate-in fade-in duration-300">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm animate-in fade-in duration-300">
       <div className="bg-white rounded-3xl p-6 md:p-8 w-full max-w-md shadow-2xl relative animate-in zoom-in-95 duration-300">
         <button 
           onClick={handleClose}
