@@ -744,7 +744,7 @@ export default async function ApartmentOrSectorDetailPage(props: Props) {
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-[11px] text-black/60 bg-yellow-50 border border-yellow-200 px-2 py-0.5 rounded hover:bg-yellow-100 transition-colors"
-                    title="according to 99acres the ratings are this , like if that makes a difference"
+                    title="As per 99Acres"
                   >
                     <span className="text-yellow-500">★</span>
                     <span className="font-bold">{property.rating_value}</span>
