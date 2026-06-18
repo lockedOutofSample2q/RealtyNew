@@ -166,10 +166,10 @@ export default async function HouseDetailPage(props: Props) {
     "name": property.title,
     "description": property.meta_description || property.description,
     "url": `${siteConfig.url}/properties/houses/${property.slug}`,
-    "image": (property.images || []).map(img => getAbsoluteUrl(img)),
+    "image": property.images?.[0] ? getAbsoluteUrl(property.images[0]) : undefined,
     ...(property.created_at ? { "datePublished": new Date(property.created_at).toISOString() } : {}),
     ...(property.updated_at ? { "dateModified": new Date(property.updated_at).toISOString() } : {}),
-    "offers": property.price_max ? {
+    "offers": property.price_max && property.price_max > property.price ? {
       "@type": "AggregateOffer",
       "lowPrice": property.price,
       "highPrice": property.price_max,
@@ -199,7 +199,7 @@ export default async function HouseDetailPage(props: Props) {
       "name": property.title,
       "description": property.meta_description || property.description,
       "url": `${siteConfig.url}/properties/houses/${property.slug}`,
-      "image": (property.images || []).map(img => getAbsoluteUrl(img)),
+      "image": property.images?.[0] ? getAbsoluteUrl(property.images[0]) : undefined,
       "address": {
         "@type": "PostalAddress",
         "streetAddress": property.address,
@@ -281,8 +281,15 @@ export default async function HouseDetailPage(props: Props) {
     "@type": "Product",
     "name": property.title,
     "description": property.meta_description || property.description,
-    "image": (property.images || []).map(img => getAbsoluteUrl(img)),
-    "offers": property.price_max ? {
+    "image": property.images?.[0] ? getAbsoluteUrl(property.images[0]) : undefined,
+    ...(property.rating_value && property.review_count ? {
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": property.rating_value,
+        "reviewCount": property.review_count
+      }
+    } : {}),
+    "offers": property.price_max && property.price_max > property.price ? {
       "@type": "AggregateOffer",
       "lowPrice": property.price,
       "highPrice": property.price_max,
@@ -337,6 +344,17 @@ export default async function HouseDetailPage(props: Props) {
     ]
   };
 
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": property.title,
+    "description": property.meta_description || property.description,
+    "primaryImageOfPage": property.images?.[0] ? {
+      "@type": "ImageObject",
+      "url": getAbsoluteUrl(property.images[0])
+    } : undefined
+  };
+
   return (
     <>
       {faqSchema && (
@@ -345,6 +363,10 @@ export default async function HouseDetailPage(props: Props) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
@@ -450,6 +472,19 @@ export default async function HouseDetailPage(props: Props) {
                       Updated {new Date(property.updated_at).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
                     </time>
                   </span>
+                )}
+                {property.rating_value && property.review_count && (
+                  <a 
+                    href={property.rating_source_url || "#"} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-[11px] text-black/60 bg-yellow-50 border border-yellow-200 px-2 py-0.5 rounded hover:bg-yellow-100 transition-colors"
+                    title="according to 99acres the ratings are this , like if that makes a difference"
+                  >
+                    <span className="text-yellow-500">★</span>
+                    <span className="font-bold">{property.rating_value}</span>
+                    <span className="text-black/40">({property.review_count} Reviews)</span>
+                  </a>
                 )}
               </div>
 

@@ -123,6 +123,11 @@ export interface Property {
   faqs?: Array<{ question: string; answer: string }>;
   alternate_names?: string[];
 
+  // Ratings (e.g. from 99acres or Google)
+  rating_source_url?: string;
+  rating_value?: number;
+  review_count?: number;
+
   created_at: string;
   updated_at: string;
 }
