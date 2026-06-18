@@ -37,7 +37,8 @@ import InquiryForm, { PropertyGallery } from "../../[slug]/InquiryForm";
 import PriceDisplay from "../../[slug]/PriceDisplay";
 import PropertyPriceInline from "../../[slug]/PropertyPriceInline";
 import PropertyDetailMapClient from "../../[slug]/PropertyDetailMapClient";
-import PropertyCard from "@/components/ui/PropertyCard";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import LeadPopup from "@/components/ui/LeadPopup";
 import PropertiesClient from "../../PropertiesClient";
 import buildersData from "@/config/builders-data.json";
 import { Suspense, cache } from "react";
@@ -1154,6 +1155,7 @@ export default async function ApartmentOrSectorDetailPage(props: Props) {
           )}
         </article>
       </main>
+      <LeadPopup type="property" propertyTitle={property.title} propertyId={property.id} />
     </>
   );
 }
