@@ -5,6 +5,16 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 
+function getYouTubeEmbedUrl(url: string) {
+  if (!url) return "https://www.youtube.com/embed/PWaIjOLL_S4?si=dj2UMjOR-r6n7w3n";
+  if (url.includes("embed/")) return url;
+  const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^&?]+)/);
+  if (match && match[1]) {
+    return `https://www.youtube.com/embed/${match[1]}`;
+  }
+  return url;
+}
+
 export default function AboutSection({ videoUrl, isVideoEnabled }: { videoUrl?: string, isVideoEnabled?: boolean }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const textContainerRef = useRef<HTMLDivElement>(null);
@@ -67,7 +77,7 @@ export default function AboutSection({ videoUrl, isVideoEnabled }: { videoUrl?: 
             transition={{ duration: 0.8 }}
             className="w-full max-w-4xl mx-auto mb-20 rounded-2xl overflow-hidden shadow-2xl aspect-video bg-black/5 relative group"
           >
-            <iframe width="100%" height="100%" src={videoUrl || "https://www.youtube.com/embed/PWaIjOLL_S4?si=dj2UMjOR-r6n7w3n"} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+            <iframe width="100%" height="100%" src={getYouTubeEmbedUrl(videoUrl || "")} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
           </motion.div>
         )}
 
