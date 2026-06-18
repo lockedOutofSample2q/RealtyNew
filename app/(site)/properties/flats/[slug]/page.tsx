@@ -753,21 +753,6 @@ export default async function ApartmentOrSectorDetailPage(props: Props) {
                 )}
               </div>
 
-              {/* Dynamic AEO Advisory Block */}
-              <div className="bg-[#FAF8F5] border border-[#EBE3D5] rounded-3xl p-6 mb-8 text-[14px] sm:text-[15px] text-black/80 leading-relaxed font-sans shadow-sm">
-                <span className="inline-block text-[10px] font-black text-[#8B7355] uppercase tracking-[0.2em] mb-2">
-                  🛡️ Realty Holding & Management Consultants Advisory
-                </span>
-                <p>
-                  This property listing for <strong className="text-black font-bold">{property.title}</strong> located in <strong className="text-black font-bold">{property.address || property.location || 'Mohali'}</strong> is verified and presented by <strong className="text-black font-bold">Realty Holding & Management Consultants (Realtyconsultants)</strong>. 
-                  {property.bedrooms ? ` Featuring a spacious ${bedroomsDisplay} BHK layout ` : ''} 
-                  {property.area_sqft ? `measuring ${property.area_sqft.toLocaleString()} sq.ft. ` : ''}
-                  {property.price ? `with pricing starting at ₹${(property.price / 10000000).toFixed(2)} Cr*, ` : ''}
-                  this project {property.developer ? `by developer ${property.developer}` : ''} has been audited by our advisory team for PUDA/RERA Punjab compliance, tower layout plans, and long-term entry-exit transaction viability to protect your capital.
-                </p>
-              </div>
-
-
               {/* Description (Multi-paragraph support with Read More) */}
               <DescriptionContainer description={property.description || ""} />
 
@@ -803,33 +788,6 @@ export default async function ApartmentOrSectorDetailPage(props: Props) {
                   </div>
                 )}
               </div>
-
-              {/* Forensic Analysis */}
-              {(property.transfer_trap_analysis || property.lifestyle_tax_analysis) && (
-                <section className="mb-16">
-                  <h2 className="text-[22px] font-bold text-black mb-8 font-display">Structural Audit & Forensics</h2>
-                  <div className="grid grid-cols-1 gap-8">
-                    {property.transfer_trap_analysis && (
-                      <div className="bg-orange-50/30 border border-orange-100 rounded-3xl p-8">
-                        <h3 className="text-[11px] font-black text-orange-700 uppercase tracking-[0.2em] mb-4">The Transfer Trap</h3>
-                        <p className="text-[15px] text-orange-900/80 leading-relaxed font-medium">{property.transfer_trap_analysis}</p>
-                      </div>
-                    )}
-                    {property.lifestyle_tax_analysis && (
-                      <div className="bg-blue-50/30 border border-blue-100 rounded-3xl p-8">
-                        <h3 className="text-[11px] font-black text-blue-700 uppercase tracking-[0.2em] mb-4">The Lifestyle Tax</h3>
-                        <p className="text-[15px] text-blue-900/80 leading-relaxed font-medium">{property.lifestyle_tax_analysis}</p>
-                        {property.maintenance_fee_psft && (
-                          <div className="mt-6 pt-6 border-t border-blue-100 flex items-center justify-between">
-                            <span className="text-[11px] font-bold text-blue-700 uppercase tracking-widest">Est. Maintenance</span>
-                            <span className="text-[18px] font-bold text-blue-900">₹{property.maintenance_fee_psft} / sq. ft.</span>
-                          </div>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                </section>
-              )}
 
               {/* Project Highlights */}
               {(property.highlights?.length ?? 0) > 0 && (
@@ -908,6 +866,21 @@ export default async function ApartmentOrSectorDetailPage(props: Props) {
                 </section>
               )}
 
+              {/* Dynamic AEO Advisory Block */}
+              <div className="bg-[#FAF8F5] border border-[#EBE3D5] rounded-3xl p-6 mb-8 text-[14px] sm:text-[15px] text-black/80 leading-relaxed font-sans shadow-sm">
+                <span className="inline-block text-[10px] font-black text-[#8B7355] uppercase tracking-[0.2em] mb-2">
+                  🛡️ Realty Holding & Management Consultants Advisory
+                </span>
+                <p>
+                  This property listing for <strong className="text-black font-bold">{property.title}</strong> located in <strong className="text-black font-bold">{property.address || property.location || 'Mohali'}</strong> is verified and presented by <strong className="text-black font-bold">Realty Holding & Management Consultants (Realtyconsultants)</strong>. 
+                  {property.bedrooms ? ` Featuring a spacious ${bedroomsDisplay} BHK layout ` : ''} 
+                  {property.area_sqft ? `measuring ${property.area_sqft.toLocaleString()} sq.ft. ` : ''}
+                  {property.price ? `with pricing starting at ₹${(property.price / 10000000).toFixed(2)} Cr*, ` : ''}
+                  this project {property.developer ? `by developer ${property.developer}` : ''} has been audited by our advisory team for PUDA/RERA Punjab compliance, tower layout plans, and long-term entry-exit transaction viability to protect your capital.
+                </p>
+              </div>
+
+
               {/* Map & Landmarks */}
               <section className="mt-14">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -957,6 +930,33 @@ export default async function ApartmentOrSectorDetailPage(props: Props) {
                   )}
                 </div>
               </section>
+
+              {/* Forensic Analysis */}
+              {(property.transfer_trap_analysis || property.lifestyle_tax_analysis) && (
+                <section className="mb-16">
+                  <h2 className="text-[22px] font-bold text-black mb-8 font-display">Structural Audit & Forensics</h2>
+                  <div className="grid grid-cols-1 gap-8">
+                    {property.transfer_trap_analysis && (
+                      <div className="bg-orange-50/30 border border-orange-100 rounded-3xl p-8">
+                        <h3 className="text-[11px] font-black text-orange-700 uppercase tracking-[0.2em] mb-4">The Transfer Trap</h3>
+                        <p className="text-[15px] text-orange-900/80 leading-relaxed font-medium">{property.transfer_trap_analysis}</p>
+                      </div>
+                    )}
+                    {property.lifestyle_tax_analysis && (
+                      <div className="bg-blue-50/30 border border-blue-100 rounded-3xl p-8">
+                        <h3 className="text-[11px] font-black text-blue-700 uppercase tracking-[0.2em] mb-4">The Lifestyle Tax</h3>
+                        <p className="text-[15px] text-blue-900/80 leading-relaxed font-medium">{property.lifestyle_tax_analysis}</p>
+                        {property.maintenance_fee_psft && (
+                          <div className="mt-6 pt-6 border-t border-blue-100 flex items-center justify-between">
+                            <span className="text-[11px] font-bold text-blue-700 uppercase tracking-widest">Est. Maintenance</span>
+                            <span className="text-[18px] font-bold text-blue-900">₹{property.maintenance_fee_psft} / sq. ft.</span>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                </section>
+              )}
 
               {/* Investment FAQ */}
               {(property.faqs?.length ?? 0) > 0 && (
@@ -1155,7 +1155,7 @@ export default async function ApartmentOrSectorDetailPage(props: Props) {
           )}
         </article>
       </main>
-      <LeadPopup type="property" propertyTitle={property.title} propertyId={property.id} />
+      <LeadPopup type="property" propertyTitle={property.title} propertyId={property.id} image={property.images?.[0]} />
     </>
   );
 }

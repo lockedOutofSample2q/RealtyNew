@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const COUNTRY_CODES = [
   { code: "+91",  label: "🇮🇳 +91" },
@@ -20,9 +21,10 @@ export interface LeadPopupProps {
   type: "blog" | "property";
   propertyTitle?: string;
   propertyId?: string;
+  image?: string;
 }
 
-export default function LeadPopup({ type, propertyTitle, propertyId }: LeadPopupProps) {
+export default function LeadPopup({ type, propertyTitle, propertyId, image }: LeadPopupProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [countryCode, setCountryCode] = useState("+91");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -126,6 +128,12 @@ export default function LeadPopup({ type, propertyTitle, propertyId }: LeadPopup
           <X size={20} />
         </button>
 
+        {type === "property" && image && (
+          <div className="w-full h-40 mb-6 rounded-2xl overflow-hidden relative border border-black/5">
+            <Image src={image} alt={propertyTitle || "Property"} fill className="object-cover" />
+          </div>
+        )}
+
         <div className="mb-6">
           {type === "blog" ? (
             <>
@@ -157,9 +165,8 @@ export default function LeadPopup({ type, propertyTitle, propertyId }: LeadPopup
             <p className="text-[13px] text-black/50">We will get back to you shortly.</p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-3">
+        <form onSubmit={handleSubmit} className="space-y-3">
             <input type="text" name="name" placeholder="Full name" required className={inputClass} />
-            <input type="email" name="email" placeholder="Email address" required className={inputClass} />
             <div className="flex gap-2">
               <select
                 value={countryCode}

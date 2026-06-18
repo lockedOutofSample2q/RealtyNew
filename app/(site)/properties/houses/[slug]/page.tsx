@@ -530,27 +530,6 @@ export default async function HouseDetailPage(props: Props) {
                 )}
               </div>
 
-              {/* Forensics */}
-              {(property.transfer_trap_analysis || property.lifestyle_tax_analysis) && (
-                <section className="mb-16">
-                  <h2 className="text-[22px] font-bold text-black mb-8 font-display">Structural Audit & Forensics</h2>
-                  <div className="grid grid-cols-1 gap-8">
-                    {property.transfer_trap_analysis && (
-                      <div className="bg-orange-50/30 border border-orange-100 rounded-3xl p-8">
-                        <h3 className="text-[11px] font-black text-orange-700 uppercase tracking-[0.2em] mb-4">The Transfer Trap</h3>
-                        <p className="text-[15px] text-orange-900/80 leading-relaxed font-medium">{property.transfer_trap_analysis}</p>
-                      </div>
-                    )}
-                    {property.lifestyle_tax_analysis && (
-                      <div className="bg-blue-50/30 border border-blue-100 rounded-3xl p-8">
-                        <h3 className="text-[11px] font-black text-blue-700 uppercase tracking-[0.2em] mb-4">The Lifestyle Tax</h3>
-                        <p className="text-[15px] text-blue-900/80 leading-relaxed font-medium">{property.lifestyle_tax_analysis}</p>
-                      </div>
-                    )}
-                  </div>
-                </section>
-              )}
-
               {/* Key Highlights */}
               {(property.highlights?.length ?? 0) > 0 && (
                 <section className="mb-16">
@@ -577,6 +556,27 @@ export default async function HouseDetailPage(props: Props) {
                         <span className="text-[14px] text-black/70">{a}</span>
                       </div>
                     ))}
+                  </div>
+                </section>
+              )}
+
+              {/* Forensics */}
+              {(property.transfer_trap_analysis || property.lifestyle_tax_analysis) && (
+                <section className="mb-16">
+                  <h2 className="text-[22px] font-bold text-black mb-8 font-display">Structural Audit & Forensics</h2>
+                  <div className="grid grid-cols-1 gap-8">
+                    {property.transfer_trap_analysis && (
+                      <div className="bg-orange-50/30 border border-orange-100 rounded-3xl p-8">
+                        <h3 className="text-[11px] font-black text-orange-700 uppercase tracking-[0.2em] mb-4">The Transfer Trap</h3>
+                        <p className="text-[15px] text-orange-900/80 leading-relaxed font-medium">{property.transfer_trap_analysis}</p>
+                      </div>
+                    )}
+                    {property.lifestyle_tax_analysis && (
+                      <div className="bg-blue-50/30 border border-blue-100 rounded-3xl p-8">
+                        <h3 className="text-[11px] font-black text-blue-700 uppercase tracking-[0.2em] mb-4">The Lifestyle Tax</h3>
+                        <p className="text-[15px] text-blue-900/80 leading-relaxed font-medium">{property.lifestyle_tax_analysis}</p>
+                      </div>
+                    )}
                   </div>
                 </section>
               )}
@@ -776,7 +776,7 @@ export default async function HouseDetailPage(props: Props) {
           )}
         </article>
       </main>
-      <LeadPopup type="property" propertyTitle={property.title} propertyId={property.id} />
+      <LeadPopup type="property" propertyTitle={property.title} propertyId={property.id} image={property.images?.[0]} />
     </>
   );
 }
