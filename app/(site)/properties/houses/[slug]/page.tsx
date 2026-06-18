@@ -36,7 +36,6 @@ import InquiryForm, { PropertyGallery } from "../../[slug]/InquiryForm";
 import PriceDisplay from "../../[slug]/PriceDisplay";
 import PropertyDetailMapClient from "../../[slug]/PropertyDetailMapClient";
 import PropertyCard from "@/components/ui/PropertyCard";
-import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import LeadPopup from "@/components/ui/LeadPopup";
 import buildersData from "@/config/builders-data.json";
 
