@@ -63,7 +63,7 @@ export default function FaqSection() {
                 className="w-full flex items-center justify-between py-6 text-left hover:bg-gray-50/50 transition-colors group px-2 rounded-xl"
               >
                 <div className="flex gap-6 md:gap-10 items-center font-display text-black md:text-xl font-medium pr-8">
-                  <span className="text-gray-300 font-body text-sm font-bold tracking-widest">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="text-gray-500 font-body text-sm font-bold tracking-widest">{String(i + 1).padStart(2, '0')}</span>
                   {faq.question}
                 </div>
                 <div className="w-9 h-9 rounded-full border border-gray-200 text-gray-500 flex items-center justify-center shrink-0 group-hover:border-black group-hover:text-black transition-colors">
@@ -79,7 +79,7 @@ export default function FaqSection() {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <p className="px-16 md:px-20 pb-8 font-body text-[15px] text-gray-500 leading-relaxed w-full">
+                    <p className="px-16 md:px-20 pb-8 font-body text-[15px] text-gray-600 leading-relaxed w-full">
                       {faq.answer}
                     </p>
                   </motion.div>

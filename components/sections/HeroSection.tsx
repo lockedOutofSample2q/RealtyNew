@@ -150,7 +150,6 @@ export default function HeroSection({ sectorOptions }: HeroSectionProps = {}) {
           {/* Mobile Search Button */}
           <button
             onClick={() => setIsSearchModalOpen(true)}
-            aria-label="Open search filters"
             className="md:hidden w-full max-w-[400px] bg-white text-black py-4 px-6 rounded-2xl flex items-center gap-3 shadow-xl font-body font-medium transition-transform active:scale-95"
           >
             <Search size={20} className="text-black/50" />

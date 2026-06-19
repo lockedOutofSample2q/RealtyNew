@@ -38,7 +38,7 @@ export default function Footer() {
               name="email"
               placeholder="Enter your email address"
               required
-              className="flex-1 bg-transparent border-white/20 text-white placeholder:text-white/40 focus-visible:border-white h-12"
+              className="flex-1 bg-transparent border-white/20 text-white placeholder:text-white/60 focus-visible:border-white h-12"
             />
             <Button
               type="submit"
@@ -61,7 +61,7 @@ export default function Footer() {
                 <Image src="/assets/logo-dark-theme.svg" alt={siteConfig.name} width={1756} height={925} className="h-full w-auto object-contain" />
               </div>
             </Link>
-            <p className="font-body text-sm text-white/50 leading-relaxed mb-6 max-w-[220px]">
+            <p className="font-body text-sm text-white/70 leading-relaxed mb-6 max-w-[220px]">
               {siteConfig.description}
             </p>
 
@@ -74,7 +74,7 @@ export default function Footer() {
                     target="_blank" 
                     rel="noopener noreferrer" 
                     aria-label="Follow us on Instagram"
-                    className="text-white/40 hover:text-white transition-colors"
+                    className="text-white/60 hover:text-white transition-colors"
                   >
                     <Instagram size={20} />
                   </a>
@@ -85,7 +85,7 @@ export default function Footer() {
                     target="_blank" 
                     rel="noopener noreferrer" 
                     aria-label="Follow us on Facebook"
-                    className="text-white/40 hover:text-white transition-colors"
+                    className="text-white/60 hover:text-white transition-colors"
                   >
                     <Facebook size={20} />
                   </a>
@@ -96,7 +96,7 @@ export default function Footer() {
                     target="_blank" 
                     rel="noopener noreferrer" 
                     aria-label="Follow us on LinkedIn"
-                    className="text-white/40 hover:text-white transition-colors"
+                    className="text-white/60 hover:text-white transition-colors"
                   >
                     <Linkedin size={20} />
                   </a>
@@ -107,7 +107,7 @@ export default function Footer() {
                     target="_blank" 
                     rel="noopener noreferrer" 
                     aria-label="Subscribe to our YouTube channel"
-                    className="text-white/40 hover:text-white transition-colors"
+                    className="text-white/60 hover:text-white transition-colors"
                   >
                     <Youtube size={20} />
                   </a>
@@ -126,7 +126,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="font-body text-sm text-white/50 hover:text-white transition-colors"
+                    className="font-body text-sm text-white/70 hover:text-white transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -145,7 +145,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="font-body text-sm text-white/50 hover:text-white transition-colors"
+                    className="font-body text-sm text-white/70 hover:text-white transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -164,7 +164,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="font-body text-sm text-white/50 hover:text-white transition-colors"
+                    className="font-body text-sm text-white/70 hover:text-white transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -188,7 +188,7 @@ export default function Footer() {
               <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mb-4 text-white/60">
                  <Phone size={18} />
               </div>
-              <a href={`tel:${siteConfig.contact.phone}`} className="font-body text-sm text-white/50 hover:text-white transition-colors">
+              <a href={`tel:${siteConfig.contact.phone}`} className="font-body text-sm text-white/70 hover:text-white transition-colors">
                 {siteConfig.contact.phone}
               </a>
             </div>
@@ -197,7 +197,7 @@ export default function Footer() {
               <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mb-4 text-white/60">
                  <Mail size={18} />
               </div>
-              <a href={`mailto:${siteConfig.contact.email}`} className="font-body text-sm text-white/50 hover:text-white transition-colors">
+              <a href={`mailto:${siteConfig.contact.email}`} className="font-body text-sm text-white/70 hover:text-white transition-colors">
                 {siteConfig.contact.email}
               </a>
             </div>
@@ -206,7 +206,7 @@ export default function Footer() {
               <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mb-4 text-white/60">
                  <MapPin size={18} />
               </div>
-              <p className="font-body text-sm text-white/50 leading-relaxed mb-4">
+              <p className="font-body text-sm text-white/70 leading-relaxed mb-4">
                 {siteConfig.contact.address}
               </p>
               <Button 
@@ -234,7 +234,7 @@ export default function Footer() {
               </span>
             </Link>
           </div>
-          <span className="font-body text-xs text-white/40">© {year} {siteConfig.name}. All rights reserved.</span>
+          <span className="font-body text-xs text-white/60">© {year} {siteConfig.name}. All rights reserved.</span>
         </div>
       </div>
     </footer>

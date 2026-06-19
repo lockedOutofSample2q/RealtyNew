@@ -132,12 +132,13 @@ export default function PropertiesMap({
           });
 
           return (
-            <Marker 
-              key={p.id} 
-              position={position} 
-              icon={customIcon}
-              alt="Property Location"
-              eventHandlers={{
+              <Marker 
+                key={p.id} 
+                position={position} 
+                icon={customIcon}
+                alt="Property Location"
+                title="Property Location"
+                eventHandlers={{
                 mouseover: () => onHover?.(p.id),
                 mouseout: () => onHover?.(null),
               }}
