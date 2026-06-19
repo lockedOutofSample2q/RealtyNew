@@ -551,13 +551,6 @@ export default async function ApartmentOrSectorDetailPage(props: Props) {
     "name": property.title,
     "description": property.meta_description || property.description,
     "image": property.images?.[0] ? getAbsoluteUrl(property.images[0]) : undefined,
-    ...(property.rating_value && property.review_count ? {
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": property.rating_value,
-        "reviewCount": property.review_count
-      }
-    } : {}),
     "offers": property.price_max && property.price_max > property.price ? {
       "@type": "AggregateOffer",
       "lowPrice": property.price,
