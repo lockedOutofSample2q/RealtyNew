@@ -98,6 +98,19 @@ export default async function RootLayout({
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <script
+          type="speculationrules"
+          dangerouslySetInnerHTML={{
+            __html: `
+              {
+                "prerender": [{
+                  "where": { "href_matches": "/*" },
+                  "eagerness": "moderate"
+                }]
+              }
+            `,
+          }}
+        />
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
@@ -225,7 +238,7 @@ export default async function RootLayout({
         <Script
           src="https://analytics.ahrefs.com/analytics.js"
           data-key="Qm6W5Qeb+IdgA8tRuYFgHQ"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         {children}
         <Toaster
