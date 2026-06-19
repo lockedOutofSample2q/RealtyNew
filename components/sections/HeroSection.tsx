@@ -304,6 +304,7 @@ export default function HeroSection({ sectorOptions }: HeroSectionProps = {}) {
                 src={`/assets/images/logos/${logo.file}`}
                 alt={`${logo.name} logo`}
                 fill
+                sizes="200px"
                 className={cn(
                   "object-contain",
                   logo.mono && "brightness-0 invert",

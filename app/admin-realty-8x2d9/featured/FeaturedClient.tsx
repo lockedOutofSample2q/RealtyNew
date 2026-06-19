@@ -164,7 +164,7 @@ export default function FeaturedClient() {
               Selecting for: {SECTIONS.find((s) => s.id === activeSection)?.name}
             </h2>
             <div className="relative w-64">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
               <input
                 type="text"
                 placeholder="Search properties..."
@@ -192,7 +192,7 @@ export default function FeaturedClient() {
                     {p.images?.[0] ? (
                       <Image src={p.images[0]} alt={p.title} fill className="object-cover" />
                     ) : (
-                      <Building2 className="w-6 h-6 text-gray-400 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+                      <Building2 className="w-6 h-6 text-gray-500 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
                     )}
                   </div>
                   <div className="flex-1 min-w-0">

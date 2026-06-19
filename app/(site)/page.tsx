@@ -6,10 +6,10 @@
 // ============================================================
 
 import HeroSection from "@/components/sections/HeroSection";
-import AboutSection from "@/components/sections/AboutSection";
-import PropertiesCarousel from "@/components/sections/PropertiesCarousel";
 import dynamic from "next/dynamic";
 
+const AboutSection = dynamic(() => import("@/components/sections/AboutSection"));
+const PropertiesCarousel = dynamic(() => import("@/components/sections/PropertiesCarousel"));
 const ServicesSection = dynamic(() => import("@/components/sections/ServicesSection"));
 const FaqSection = dynamic(() => import("@/components/sections/FaqSection"));
 const ContactSection = dynamic(() => import("@/components/sections/ContactSection"));

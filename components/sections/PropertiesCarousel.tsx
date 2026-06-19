@@ -213,7 +213,7 @@ export default function PropertiesCarousel({
               Explore a wide range of properties tailored to your lifestyle and budget. From luxurious flats to family homes.
             </p>
             <div className="mt-8">
-              <span className="block font-body text-[13px] font-bold text-gray-400 mb-3 tracking-wide">View all 1,200+</span>
+              <span className="block font-body text-[13px] font-bold text-gray-500 mb-3 tracking-wide">View all 1,200+</span>
               <div className="flex items-center gap-4">
                 <Link
                   href={href}
@@ -225,12 +225,14 @@ export default function PropertiesCarousel({
                 <div className="flex gap-2 ml-auto">
                    <button
                     onClick={() => scroll("left")}
+                    aria-label="Previous properties"
                     className="w-11 h-11 border border-gray-200 rounded-full text-black hover:bg-white hover:shadow-sm transition-all flex items-center justify-center bg-gray-50"
                   >
                     <ChevronLeft size={20} className="text-gray-500" />
                   </button>
                   <button
                     onClick={() => scroll("right")}
+                    aria-label="Next properties"
                     className="w-11 h-11 border border-gray-200 rounded-full text-black hover:bg-white hover:shadow-sm transition-all flex items-center justify-center bg-gray-50"
                   >
                     <ChevronRight size={20} className="text-gray-500" />

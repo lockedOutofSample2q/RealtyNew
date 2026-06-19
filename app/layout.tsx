@@ -190,6 +190,35 @@ export default async function RootLayout({
             })
           }}
         />
+        <script
+          type="application/mcp+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              tools: [
+                {
+                  name: "search_properties",
+                  description: "Search for real estate properties based on criteria.",
+                  inputSchema: {
+                    type: "object",
+                    properties: {
+                      query: { type: "string", description: "Search query (e.g., Mohali, 3BHK, luxury)" }
+                    },
+                    required: ["query"]
+                  }
+                },
+                {
+                  name: "contact_agent",
+                  description: "Get contact details for the real estate agent.",
+                  inputSchema: {
+                    type: "object",
+                    properties: {},
+                    required: []
+                  }
+                }
+              ]
+            })
+          }}
+        />
       </head>
       <body className={`${cormorant.variable} ${dmSans.variable} ${dmMono.variable} overflow-x-hidden font-body`}>
         {/* Ahrefs Analytics */}

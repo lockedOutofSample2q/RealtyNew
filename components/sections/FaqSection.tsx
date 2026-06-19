@@ -66,7 +66,7 @@ export default function FaqSection() {
                   <span className="text-gray-300 font-body text-sm font-bold tracking-widest">{String(i + 1).padStart(2, '0')}</span>
                   {faq.question}
                 </div>
-                <div className="w-9 h-9 rounded-full border border-gray-200 text-gray-400 flex items-center justify-center shrink-0 group-hover:border-black group-hover:text-black transition-colors">
+                <div className="w-9 h-9 rounded-full border border-gray-200 text-gray-500 flex items-center justify-center shrink-0 group-hover:border-black group-hover:text-black transition-colors">
                   {open === i ? <Minus size={16} /> : <Plus size={16} />}
                 </div>
               </button>

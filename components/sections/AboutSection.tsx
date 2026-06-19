@@ -27,7 +27,7 @@ export default function AboutSection({ videoUrl, isVideoEnabled }: { videoUrl?: 
   const textColor = useTransform(
     scrollYProgress,
     [0, 1],
-    ["rgba(156, 163, 175, 1)", "rgba(17, 24, 39, 1)"] // Tailwind gray-400 to gray-900 (black-ish)
+    ["rgba(107, 114, 128, 1)", "rgba(17, 24, 39, 1)"] // Tailwind gray-500 to gray-900 (black-ish)
   );
 
   const handleNext = () => {
@@ -103,8 +103,8 @@ export default function AboutSection({ videoUrl, isVideoEnabled }: { videoUrl?: 
                 alt={currentItem.title}
                 fill
                 className="object-cover"
-                priority
                 sizes="(max-width: 768px) 100vw, 80vw"
+                loading="lazy"
               />
             </motion.div>
           </AnimatePresence>

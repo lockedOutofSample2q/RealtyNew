@@ -55,7 +55,7 @@ export default function ContactSection() {
   }
 
   const inputClass =
-    "w-full bg-transparent border-b border-gray-200 text-black placeholder:text-gray-400 font-body text-[15px] py-3.5 outline-none focus:border-gray-500 transition-colors";
+    "w-full bg-transparent border-b border-gray-200 text-black placeholder:text-gray-500 font-body text-[15px] py-3.5 outline-none focus:border-gray-500 transition-colors";
 
   return (
     <section className="section-padding bg-[#F5F5F7]" id="contact">
@@ -78,13 +78,13 @@ export default function ContactSection() {
 
           <div className="flex flex-col gap-6 font-body">
             <div>
-              <div className="text-gray-400 mb-1 tracking-widest uppercase text-xs font-bold">Call us</div>
+              <div className="text-gray-500 mb-1 tracking-widest uppercase text-xs font-bold">Call us</div>
               <a href={`tel:${siteConfig.contact.phone}`} className="text-black font-medium text-lg hover:text-gray-600 transition-colors">
                 {siteConfig.contact.phone}
               </a>
             </div>
             <div>
-              <div className="text-gray-400 mb-1 tracking-widest uppercase text-xs font-bold">Email us</div>
+              <div className="text-gray-500 mb-1 tracking-widest uppercase text-xs font-bold">Email us</div>
               <a href={`mailto:${siteConfig.contact.email}`} className="text-black font-medium text-lg hover:text-gray-600 transition-colors">
                 {siteConfig.contact.email}
               </a>
@@ -168,7 +168,7 @@ export default function ContactSection() {
                         : "border-gray-200 bg-white text-gray-500 hover:border-gray-300 hover:text-black"
                     }`}
                   >
-                    <span className="text-gray-400">{METHOD_ICONS[icon]}</span>
+                    <span className="text-gray-500">{METHOD_ICONS[icon]}</span>
                     {label}
                   </button>
                 ))}
@@ -194,7 +194,7 @@ export default function ContactSection() {
                         : "border-gray-200 bg-white text-gray-500 hover:border-gray-300 hover:text-black"
                     }`}
                   >
-                    <span className="text-gray-400">{TIME_ICONS[icon]}</span>
+                    <span className="text-gray-500">{TIME_ICONS[icon]}</span>
                     {label}
                   </button>
                 ))}

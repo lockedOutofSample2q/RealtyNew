@@ -66,7 +66,7 @@ export default function ContactMap() {
           url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
         />
         <ZoomControl position="topright" />
-        <Marker position={position} icon={CustomIcon}>
+        <Marker position={position} icon={CustomIcon} alt="Contact Location">
           <Popup>
             <div className="font-body text-sm font-semibold mb-1">Realty Holding & Management Consultants</div>
             <div className="font-body text-xs text-black/60 mb-2">{siteConfig.contact.address}</div>

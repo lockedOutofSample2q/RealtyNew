@@ -136,6 +136,7 @@ export default function PropertiesMap({
               key={p.id} 
               position={position} 
               icon={customIcon}
+              alt="Property Location"
               eventHandlers={{
                 mouseover: () => onHover?.(p.id),
                 mouseout: () => onHover?.(null),

@@ -39,7 +39,7 @@ export default function FormSelect({
 
   return (
     <div className={cn("relative w-full", className)} ref={containerRef}>
-      <label className="block font-body text-[11px] text-gray-400 mb-0.5 tracking-wide uppercase font-bold">
+      <label className="block font-body text-[11px] text-gray-500 mb-0.5 tracking-wide uppercase font-bold">
         {label} {required && "*"}
       </label>
       
@@ -53,14 +53,14 @@ export default function FormSelect({
       >
         <span className={cn(
           "truncate pr-4 transition-opacity",
-          !value && "text-gray-400"
+          !value && "text-gray-500"
         )}>
           {value || placeholder}
         </span>
         <ChevronDown 
           size={14} 
           className={cn(
-            "text-gray-400 group-hover:text-gray-600 transition-transform duration-300 shrink-0",
+            "text-gray-500 group-hover:text-gray-600 transition-transform duration-300 shrink-0",
             isOpen && "rotate-180 text-gray-600"
           )} 
         />

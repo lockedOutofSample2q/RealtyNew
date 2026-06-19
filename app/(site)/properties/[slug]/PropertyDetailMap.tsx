@@ -47,7 +47,7 @@ export default function PropertyDetailMap({
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
           url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
         />
-        <Marker position={[lat, lng]} icon={pinIcon}>
+        <Marker position={[lat, lng]} icon={pinIcon} alt="Property Location">
           <Popup>
             <div className="p-1">
               <p className="font-bold mb-1">{title}</p>
