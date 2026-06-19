@@ -153,7 +153,7 @@ export default async function HomePage() {
       />
       <HeroSection sectorOptions={availableSectors} />
       <AboutSection 
-        videoUrl={siteSettings?.homepage_video_url ?? "https://www.youtube.com/embed/PWaIjOLL_S4?si=dj2UMjOR-r6n7w3n"} 
+        videoUrl={siteSettings?.homepage_video_url ?? "https://www.youtube-nocookie.com/embed/PWaIjOLL_S4?si=dj2UMjOR-r6n7w3n"} 
         isVideoEnabled={siteSettings?.homepage_video_enabled ?? true} 
       />
       <PropertiesCarousel

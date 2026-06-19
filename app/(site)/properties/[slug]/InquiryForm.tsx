@@ -229,7 +229,7 @@ function VideoPlayer({ url }: { url: string }) {
   const ytId = getYouTubeId(url);
   const vimeoId = getVimeoId(url);
   const common = "w-full max-w-[1200px] aspect-video rounded-2xl shadow-2xl overflow-hidden bg-black";
-  if (ytId) return <iframe src={`https://www.youtube.com/embed/${ytId}?autoplay=1`} className={common} allow="autoplay; encrypted-media" allowFullScreen />;
+  if (ytId) return <iframe src={`https://www.youtube-nocookie.com/embed/${ytId}?autoplay=1`} className={common} allow="autoplay; encrypted-media" allowFullScreen />;
   if (vimeoId) return <iframe src={`https://player.vimeo.com/video/${vimeoId}?autoplay=1`} className={common} allow="autoplay; fullscreen" allowFullScreen />;
   return <video src={url} controls autoPlay className="max-w-full max-h-full rounded-2xl shadow-2xl" />;
 }

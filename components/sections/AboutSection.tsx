@@ -6,11 +6,11 @@ import { ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 
 function getYouTubeEmbedUrl(url: string) {
-  if (!url) return "https://www.youtube.com/embed/PWaIjOLL_S4?si=dj2UMjOR-r6n7w3n";
+  if (!url) return "https://www.youtube-nocookie.com/embed/PWaIjOLL_S4?si=dj2UMjOR-r6n7w3n";
   if (url.includes("embed/")) return url;
   const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^&?]+)/);
   if (match && match[1]) {
-    return `https://www.youtube.com/embed/${match[1]}`;
+    return `https://www.youtube-nocookie.com/embed/${match[1]}`;
   }
   return url;
 }
