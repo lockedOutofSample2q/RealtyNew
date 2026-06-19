@@ -51,10 +51,6 @@ export default function HeroSection({ sectorOptions }: HeroSectionProps = {}) {
 
   const activeSectors = sectorOptions ? sectorOptions[tab] : undefined;
 
-  const { scrollY } = useScroll();
-  const backgroundY = useTransform(scrollY, [0, 1000], ["0%", "20%"]);
-  const backgroundScale = useTransform(scrollY, [0, 1000], [1.05, 1.15]);
-
   // Prevent scrolling when modal is open
   useEffect(() => {
     if (isSearchModalOpen) {
@@ -97,7 +93,7 @@ export default function HeroSection({ sectorOptions }: HeroSectionProps = {}) {
   const tickerLogos = [...LOGOS, ...LOGOS];
 
   return (
-    <section className="relative min-h-screen flex flex-col z-20">
+    <section className="relative min-h-[100svh] flex flex-col z-20">
 
       {/* ── Background ── */}
       <div className="absolute inset-0 w-full h-full -z-10 overflow-hidden">
