@@ -8,7 +8,7 @@
 import { allPosts } from "contentlayer/generated";
 import { compareDesc } from "date-fns";
 import { formatDate } from "@/lib/utils";
-import { FileText, ExternalLink, Github } from "lucide-react";
+import { FileText, ExternalLink, Github, BookOpen } from "lucide-react";
 
 export default function BlogPostsAdmin() {
   const posts = allPosts.sort((a, b) =>
@@ -16,40 +16,45 @@ export default function BlogPostsAdmin() {
   );
 
   return (
-    <div>
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <h1 className="font-display text-2xl text-white font-light">Blog Posts</h1>
-          <p className="font-body text-xs text-white/40 mt-1">{posts.length} published posts</p>
+    <div className="max-w-7xl mx-auto">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+        <div className="flex items-center gap-4">
+          <div className="w-12 h-12 bg-blue-50 text-blue-600 flex items-center justify-center rounded-xl shadow-sm border border-blue-100">
+            <BookOpen size={24} strokeWidth={1.5} />
+          </div>
+          <div>
+            <h1 className="font-display text-2xl font-semibold text-gray-900">Blog Posts</h1>
+            <p className="font-body text-sm text-gray-500 mt-1">{posts.length} published posts</p>
+          </div>
         </div>
         <a
           href="https://github.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 px-4 py-2.5 border border-white/15 text-white/60 font-body text-sm hover:border-[var(--gold)] hover:text-[var(--gold)] transition-all"
+          className="flex items-center gap-2 px-5 py-2.5 border border-gray-200 text-gray-700 font-body text-sm font-medium hover:bg-gray-50 hover:border-gray-300 rounded-lg transition-all shadow-sm bg-white"
         >
-          <Github size={14} /> Open GitHub
+          <Github size={16} /> Open GitHub
         </a>
       </div>
 
       {/* How-to banner */}
-      <div className="bg-[rgba(201,168,76,0.05)] border border-[rgba(201,168,76,0.15)] p-5 mb-6">
-        <h3 className="font-body text-sm font-medium text-[var(--gold)] mb-2 flex items-center gap-2">
-          <FileText size={14} /> How to publish a new blog post
+      <div className="bg-blue-50/50 border border-blue-100 rounded-xl p-6 mb-8 shadow-sm">
+        <h3 className="font-body text-sm font-semibold text-blue-800 mb-3 flex items-center gap-2">
+          <FileText size={16} className="text-blue-600" /> How to publish a new blog post
         </h3>
-        <ol className="font-body text-xs text-white/55 space-y-1 list-decimal list-inside">
-          <li>Create a new file: <code className="bg-white/5 px-1.5 py-0.5 rounded text-[var(--gold-light)]">content/blog/your-post-slug.mdx</code></li>
+        <ol className="font-body text-sm text-blue-900/70 space-y-2 list-decimal list-inside ml-1">
+          <li>Create a new file: <code className="bg-blue-100/50 border border-blue-200 px-1.5 py-0.5 rounded text-blue-700 font-mono text-xs">content/blog/your-post-slug.mdx</code></li>
           <li>Add required frontmatter (see template below)</li>
           <li>Write your post in Markdown below the frontmatter</li>
           <li>Commit and push to GitHub — Vercel auto-builds within 60 seconds</li>
-          <li>Post is live at <code className="bg-white/5 px-1.5 py-0.5 rounded text-[var(--gold-light)]">realtyconsultants.in/blog/your-post-slug</code></li>
+          <li>Post is live at <code className="bg-blue-100/50 border border-blue-200 px-1.5 py-0.5 rounded text-blue-700 font-mono text-xs">realtyconsultants.in/blog/your-post-slug</code></li>
         </ol>
       </div>
 
       {/* MDX template */}
-      <div className="bg-[#141414] border border-white/5 p-5 mb-6 font-mono text-xs text-white/50 overflow-x-auto">
-        <p className="text-white/25 mb-2">{`# MDX Frontmatter Template — copy this to start a new post`}</p>
-        <pre className="leading-relaxed">{`---
+      <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-8 font-mono text-xs text-gray-600 overflow-x-auto shadow-sm">
+        <p className="text-gray-400 mb-3 font-body text-sm font-medium">{`# MDX Frontmatter Template — copy this to start a new post`}</p>
+        <pre className="leading-relaxed whitespace-pre-wrap">{`---
 title: "Your Post Title Here"
 date: "${new Date().toISOString().split("T")[0]}"
 excerpt: "One sentence summary shown in cards (max 160 chars)"
@@ -65,32 +70,32 @@ Your post content starts here. Write in standard Markdown.
       </div>
 
       {/* Posts list */}
-      <div className="bg-[#141414] border border-white/5">
-        <div className="px-5 py-3 border-b border-white/5">
-          <h2 className="font-body text-sm font-medium text-white">Published Posts</h2>
+      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+        <div className="px-6 py-4 border-b border-gray-100 bg-gray-50/50">
+          <h2 className="font-body text-sm font-semibold text-gray-900 uppercase tracking-wider">Published Posts</h2>
         </div>
         {posts.length === 0 ? (
-          <div className="px-5 py-12 text-center font-body text-sm text-white/30">
+          <div className="px-6 py-16 text-center font-body text-sm text-gray-500">
             No posts yet. Add an .mdx file to content/blog/ to get started.
           </div>
         ) : (
-          <div className="divide-y divide-white/5">
+          <div className="divide-y divide-gray-100">
             {posts.map((post) => (
-              <div key={post._id} className="px-5 py-4 flex items-center gap-4 hover:bg-white/[0.02]">
+              <div key={post._id} className="px-6 py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-gray-50/50 transition-colors group">
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-3 mb-1">
-                    <span className="font-body text-sm text-white truncate">{post.title}</span>
+                  <div className="flex items-center gap-3 mb-1.5">
+                    <span className="font-body text-sm font-medium text-gray-900 truncate">{post.title}</span>
                     {post.featured && (
-                      <span className="font-body text-xs px-2 py-0.5 bg-[rgba(201,168,76,0.15)] text-[var(--gold)]">
+                      <span className="font-body text-xs px-2.5 py-0.5 bg-blue-50 text-blue-700 ring-1 ring-inset ring-blue-600/20 rounded-full font-medium">
                         Featured
                       </span>
                     )}
                   </div>
-                  <div className="flex items-center gap-4 font-body text-xs text-white/35">
-                    <span>{post.category}</span>
+                  <div className="flex flex-wrap items-center gap-3 sm:gap-4 font-body text-xs text-gray-500 font-medium">
+                    <span className="bg-gray-100 text-gray-600 px-2 py-0.5 rounded border border-gray-200">{post.category}</span>
                     <span>{formatDate(post.date)}</span>
                     <span>{post.readingTime}</span>
-                    <code className="bg-white/5 px-1.5 py-0.5 rounded text-white/40">
+                    <code className="hidden sm:inline-block bg-gray-50 border border-gray-200 px-1.5 py-0.5 rounded text-gray-500">
                       content/blog/{post.slug}.mdx
                     </code>
                   </div>
@@ -99,9 +104,9 @@ Your post content starts here. Write in standard Markdown.
                   href={post.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="shrink-0 flex items-center gap-1.5 font-body text-xs text-white/40 hover:text-[var(--gold)] transition-colors"
+                  className="shrink-0 flex items-center justify-center gap-2 font-body text-sm font-medium text-gray-500 hover:text-blue-600 hover:bg-blue-50 px-4 py-2 rounded-lg transition-colors border border-transparent hover:border-blue-100"
                 >
-                  View <ExternalLink size={12} />
+                  View <ExternalLink size={16} />
                 </a>
               </div>
             ))}

@@ -42,35 +42,37 @@ export default async function DashboardPage() {
   const [stats, recentLeads] = await Promise.all([getStats(), getRecentLeads()]);
 
   const STATS = [
-    { label: "Total Properties", value: stats.properties ?? 0, icon: Building2, color: "text-blue-400" },
-    { label: "Total Leads", value: stats.leads ?? 0, icon: Users, color: "text-green-400" },
-    { label: "New Leads", value: stats.newLeads ?? 0, icon: TrendingUp, color: "text-[var(--gold)]" },
-    { label: "Newsletter Subscribers", value: stats.subscribers ?? 0, icon: Mail, color: "text-purple-400" },
+    { label: "Total Properties", value: stats.properties ?? 0, icon: Building2, color: "text-blue-600 bg-blue-50" },
+    { label: "Total Leads", value: stats.leads ?? 0, icon: Users, color: "text-green-600 bg-green-50" },
+    { label: "New Leads", value: stats.newLeads ?? 0, icon: TrendingUp, color: "text-amber-600 bg-amber-50" },
+    { label: "Newsletter Subscribers", value: stats.subscribers ?? 0, icon: Mail, color: "text-purple-600 bg-purple-50" },
   ];
 
   return (
-    <div>
+    <div className="max-w-7xl mx-auto">
       <div className="mb-8">
-        <h1 className="font-display text-2xl text-white font-light">Dashboard</h1>
-        <p className="font-body text-sm text-white/40 mt-1">
+        <h1 className="font-display text-2xl text-gray-900 font-medium">Dashboard</h1>
+        <p className="font-body text-sm text-gray-500 mt-1">
           Overview of your Realty platform
         </p>
       </div>
 
       {/* Stats grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         {STATS.map((stat) => (
           <div
             key={stat.label}
-            className="bg-[#141414] border border-white/5 p-5"
+            className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm"
           >
             <div className="flex items-start justify-between mb-4">
-              <span className="font-body text-xs text-white/40 uppercase tracking-wide">
+              <span className="font-body text-xs text-gray-500 uppercase tracking-wide font-medium">
                 {stat.label}
               </span>
-              <stat.icon size={16} className={stat.color} />
+              <div className={`p-2 rounded-lg ${stat.color}`}>
+                <stat.icon size={20} />
+              </div>
             </div>
-            <div className="font-display text-4xl text-white font-light">
+            <div className="font-display text-4xl text-gray-900 font-semibold tracking-tight">
               {stat.value}
             </div>
           </div>
@@ -78,52 +80,52 @@ export default async function DashboardPage() {
       </div>
 
       {/* Recent leads */}
-      <div className="bg-[#141414] border border-white/5">
-        <div className="flex items-center justify-between px-5 py-4 border-b border-white/5">
-          <h2 className="font-body text-sm font-medium text-white">Recent Leads</h2>
-          <a href="/admin-realty-8x2d9/leads" className="font-body text-xs text-[var(--gold)] hover:text-[var(--gold-light)]">
-            View all →
+      <div className="bg-white border border-gray-100 rounded-xl shadow-sm overflow-hidden">
+        <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100 bg-gray-50/50">
+          <h2 className="font-body text-base font-medium text-gray-900">Recent Leads</h2>
+          <a href="/admin-realty-8x2d9/leads" className="font-body text-sm text-blue-600 hover:text-blue-700 font-medium">
+            View all &rarr;
           </a>
         </div>
         <div className="overflow-x-auto">
-          <table className="w-full">
+          <table className="w-full text-left">
             <thead>
-              <tr className="border-b border-white/5">
+              <tr className="border-b border-gray-100 bg-white">
                 {["Name", "Email", "Phone", "Source", "Status", "Date"].map((h) => (
-                  <th key={h} className="px-5 py-3 text-left font-body text-xs text-white/30 uppercase tracking-wide">
+                  <th key={h} className="px-6 py-4 font-body text-xs text-gray-500 uppercase tracking-wider font-medium">
                     {h}
                   </th>
                 ))}
               </tr>
             </thead>
-            <tbody>
+            <tbody className="divide-y divide-gray-100">
               {recentLeads.length === 0 ? (
                 <tr>
-                  <td colSpan={6} className="px-5 py-10 text-center font-body text-sm text-white/30">
+                  <td colSpan={6} className="px-6 py-10 text-center font-body text-sm text-gray-500">
                     No leads yet
                   </td>
                 </tr>
               ) : (
                 recentLeads.map((lead: any) => (
-                  <tr key={lead.id} className="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
-                    <td className="px-5 py-3 font-body text-sm text-white">{lead.name}</td>
-                    <td className="px-5 py-3 font-body text-sm text-white/60">{lead.email}</td>
-                    <td className="px-5 py-3 font-body text-sm text-white/60">{lead.phone}</td>
-                    <td className="px-5 py-3">
-                      <span className="font-body text-xs px-2 py-1 bg-white/5 text-white/60 capitalize">
+                  <tr key={lead.id} className="hover:bg-gray-50/50 transition-colors">
+                    <td className="px-6 py-4 font-body text-sm text-gray-900 font-medium">{lead.name}</td>
+                    <td className="px-6 py-4 font-body text-sm text-gray-600">{lead.email}</td>
+                    <td className="px-6 py-4 font-body text-sm text-gray-600">{lead.phone}</td>
+                    <td className="px-6 py-4">
+                      <span className="font-body text-xs px-2.5 py-1 bg-gray-100 text-gray-600 rounded-md capitalize font-medium">
                         {lead.source}
                       </span>
                     </td>
-                    <td className="px-5 py-3">
-                      <span className={`font-body text-xs px-2 py-1 capitalize ${
+                    <td className="px-6 py-4">
+                      <span className={`font-body text-xs px-2.5 py-1 rounded-md capitalize font-medium ${
                         lead.status === "new"
-                          ? "bg-[rgba(201,168,76,0.15)] text-[var(--gold)]"
-                          : "bg-white/5 text-white/40"
+                          ? "bg-amber-100 text-amber-800"
+                          : "bg-gray-100 text-gray-600"
                       }`}>
                         {lead.status}
                       </span>
                     </td>
-                    <td className="px-5 py-3 font-body text-xs text-white/40">
+                    <td className="px-6 py-4 font-body text-sm text-gray-500">
                       {new Date(lead.created_at).toLocaleDateString("en-AE")}
                     </td>
                   </tr>

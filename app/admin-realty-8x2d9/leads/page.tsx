@@ -5,14 +5,14 @@
 import { useState, useEffect } from "react";
 import { createClient } from "@/lib/supabase";
 import { toast } from "sonner";
-import { Mail, Phone, MessageSquare } from "lucide-react";
+import { Mail, Phone, MessageSquare, Users } from "lucide-react";
 
 const STATUS_OPTIONS = ["new", "contacted", "qualified", "closed"];
 const STATUS_COLORS: Record<string, string> = {
-  new: "bg-[rgba(201,168,76,0.15)] text-[var(--gold)]",
-  contacted: "bg-blue-500/15 text-blue-400",
-  qualified: "bg-green-500/15 text-green-400",
-  closed: "bg-white/5 text-white/30",
+  new: "bg-blue-50 text-blue-700 ring-blue-600/20",
+  contacted: "bg-purple-50 text-purple-700 ring-purple-600/20",
+  qualified: "bg-green-50 text-green-700 ring-green-600/20",
+  closed: "bg-gray-50 text-gray-600 ring-gray-500/10",
 };
 
 export default function LeadsAdmin() {
@@ -49,22 +49,27 @@ export default function LeadsAdmin() {
   }
 
   return (
-    <div>
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <h1 className="font-display text-2xl text-white font-light">Leads</h1>
-          <p className="font-body text-xs text-white/40 mt-1">{leads.length} {filter === "all" ? "total" : filter} leads</p>
+    <div className="max-w-7xl mx-auto">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+        <div className="flex items-center gap-4">
+          <div className="w-12 h-12 bg-blue-50 text-blue-600 flex items-center justify-center rounded-xl shadow-sm border border-blue-100">
+            <Users size={24} strokeWidth={1.5} />
+          </div>
+          <div>
+            <h1 className="font-display text-2xl font-semibold text-gray-900">Leads CRM</h1>
+            <p className="font-body text-sm text-gray-500 mt-1">{leads.length} {filter === "all" ? "total" : filter} leads</p>
+          </div>
         </div>
         {/* Filter tabs */}
-        <div className="flex gap-1">
+        <div className="flex bg-gray-100/50 p-1 rounded-lg border border-gray-200">
           {["all", ...STATUS_OPTIONS].map((s) => (
             <button
               key={s}
               onClick={() => setFilter(s)}
-              className={`px-3 py-1.5 font-body text-xs capitalize transition-colors ${
+              className={`px-4 py-2 font-body text-sm font-medium capitalize rounded-md transition-all ${
                 filter === s
-                  ? "bg-[var(--gold)] text-black"
-                  : "bg-white/5 text-white/50 hover:text-white"
+                  ? "bg-white text-blue-600 shadow-sm ring-1 ring-black/5"
+                  : "text-gray-500 hover:text-gray-900"
               }`}
             >
               {s}
@@ -73,11 +78,11 @@ export default function LeadsAdmin() {
         </div>
       </div>
 
-      <div className="space-y-2">
+      <div className="space-y-4">
         {loading ? (
-          <div className="text-center py-12 font-body text-sm text-white/30">Loading...</div>
+          <div className="bg-white rounded-xl border border-gray-100 p-12 text-center font-body text-sm text-gray-500">Loading leads...</div>
         ) : leads.length === 0 ? (
-          <div className="text-center py-12 font-body text-sm text-white/30">No leads found</div>
+          <div className="bg-white rounded-xl border border-gray-100 p-12 text-center font-body text-sm text-gray-500">No leads found in this category</div>
         ) : (
           leads.map((lead) => {
             const propertyTitle = 
@@ -88,61 +93,62 @@ export default function LeadsAdmin() {
             return (
               <div
                 key={lead.id}
-                className="bg-[#141414] border border-white/5 p-5 flex flex-col sm:flex-row sm:items-center gap-4"
+                className="bg-white border border-gray-100 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center gap-6 shadow-sm hover:shadow-md transition-shadow"
               >
                 {/* Info */}
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="font-body text-sm font-medium text-white">{lead.name}</span>
-                    <span className={`font-body text-xs px-2 py-0.5 capitalize ${STATUS_COLORS[lead.status] ?? "bg-white/5 text-white/40"}`}>
+                  <div className="flex flex-wrap items-center gap-3 mb-3">
+                    <span className="font-body text-base font-semibold text-gray-900">{lead.name}</span>
+                    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full font-body text-xs font-medium ring-1 ring-inset capitalize ${STATUS_COLORS[lead.status] ?? "bg-gray-50 text-gray-600 ring-gray-500/10"}`}>
                       {lead.status}
                     </span>
-                    <span className="font-body text-xs bg-white/5 text-white/40 px-2 py-0.5 capitalize">
+                    <span className="font-body text-xs bg-gray-100 text-gray-600 px-2.5 py-0.5 rounded-md font-medium capitalize border border-gray-200">
                       {lead.source}
                     </span>
                     {propertyTitle && (
-                      <span className="font-body text-[10px] text-[var(--gold)] border border-[var(--gold)]/20 px-2 py-0.5 rounded">
+                      <span className="font-body text-xs text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md font-medium">
                         {propertyTitle}
                       </span>
                     )}
                   </div>
-                <div className="flex flex-wrap gap-4 text-white/50">
-                  <a href={`mailto:${lead.email}`} className="flex items-center gap-1.5 font-body text-xs hover:text-white transition-colors">
-                    <Mail size={12} /> {lead.email}
-                  </a>
-                  {lead.phone && (
-                    <a href={`tel:${lead.phone}`} className="flex items-center gap-1.5 font-body text-xs hover:text-white transition-colors">
-                      <Phone size={12} /> {lead.phone}
+                  <div className="flex flex-wrap gap-5 text-gray-500">
+                    <a href={`mailto:${lead.email}`} className="flex items-center gap-2 font-body text-sm hover:text-blue-600 transition-colors">
+                      <Mail size={14} className="text-gray-400" /> {lead.email}
                     </a>
-                  )}
-                  {lead.message && (
-                    <span className="flex items-center gap-1.5 font-body text-xs text-white/30 max-w-xs truncate">
-                      <MessageSquare size={12} /> {lead.message}
-                    </span>
-                  )}
+                    {lead.phone && (
+                      <a href={`tel:${lead.phone}`} className="flex items-center gap-2 font-body text-sm hover:text-blue-600 transition-colors">
+                        <Phone size={14} className="text-gray-400" /> {lead.phone}
+                      </a>
+                    )}
+                    {lead.message && (
+                      <div className="flex items-start gap-2 font-body text-sm text-gray-600 mt-1 sm:mt-0 w-full sm:w-auto">
+                        <MessageSquare size={14} className="text-gray-400 shrink-0 mt-0.5" /> 
+                        <span className="line-clamp-2 max-w-xl">{lead.message}</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Status + date */}
+                <div className="flex sm:flex-col items-center sm:items-end justify-between gap-3 shrink-0 sm:pl-6 sm:border-l border-gray-100">
+                  <span className="font-body text-xs text-gray-400 font-medium">
+                    {new Date(lead.created_at).toLocaleDateString("en-AE", { year: 'numeric', month: 'short', day: 'numeric' })}
+                  </span>
+                  <select
+                    value={lead.status}
+                    onChange={(e) => updateStatus(lead.id, e.target.value)}
+                    className="bg-white border border-gray-200 text-gray-700 font-body text-sm px-3 py-1.5 rounded-lg outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 cursor-pointer shadow-sm hover:bg-gray-50 transition-colors"
+                  >
+                    {STATUS_OPTIONS.map((s) => (
+                      <option key={s} value={s}>{s.charAt(0).toUpperCase() + s.slice(1)}</option>
+                    ))}
+                  </select>
                 </div>
               </div>
-
-              {/* Status + date */}
-              <div className="flex items-center gap-3 shrink-0">
-                <span className="font-body text-xs text-white/25">
-                  {new Date(lead.created_at).toLocaleDateString("en-AE")}
-                </span>
-                <select
-                  value={lead.status}
-                  onChange={(e) => updateStatus(lead.id, e.target.value)}
-                  className="bg-[#0D0D0D] border border-white/10 text-white/70 font-body text-xs px-3 py-1.5 outline-none focus:border-[var(--gold)] cursor-pointer"
-                >
-                  {STATUS_OPTIONS.map((s) => (
-                    <option key={s} value={s}>{s.charAt(0).toUpperCase() + s.slice(1)}</option>
-                  ))}
-                </select>
-              </div>
-            </div>
-          );
-        })
-      )}
-    </div>
+            );
+          })
+        )}
+      </div>
     </div>
   );
 }

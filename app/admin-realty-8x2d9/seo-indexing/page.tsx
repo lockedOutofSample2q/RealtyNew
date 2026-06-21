@@ -293,15 +293,15 @@ export default function IndexingConsolePage() {
   const inspectEligibleCount = counts.pending + counts.submitted + counts.notIndexed + counts.error;
 
   return (
-    <div className="space-y-6">
+    <div className="max-w-7xl mx-auto space-y-8 pb-12">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="font-display text-2xl text-white font-light flex items-center gap-2">
-            <Globe className="text-[var(--gold)]" size={24} />
+          <h1 className="font-display text-2xl text-gray-900 font-light flex items-center gap-2">
+            <Globe className="text-blue-600" size={24} />
             Google Indexing Console
           </h1>
-          <p className="font-body text-sm text-white/45 mt-1">
+          <p className="font-body text-sm text-gray-600 mt-1">
             Submit new property corridors, inspect crawling verity, and capture high-opportunity keywords.
           </p>
         </div>
@@ -311,7 +311,7 @@ export default function IndexingConsolePage() {
           <button
             onClick={handleSyncSitemap}
             disabled={loading}
-            className="flex items-center gap-2 px-3 py-2 bg-white/5 hover:bg-white/10 text-white font-body text-xs transition-colors border border-white/5"
+            className="flex items-center gap-2 px-3 py-2 bg-gray-50 text-gray-700 hover:bg-gray-200 text-gray-900 font-body text-xs transition-colors border border-gray-100"
           >
             <RefreshCw size={14} className={cn(loading && "animate-spin")} />
             Sync Sitemap
@@ -319,7 +319,7 @@ export default function IndexingConsolePage() {
           <button
             onClick={handleRunSubmissions}
             disabled={loading || submitEligibleCount === 0}
-            className="flex items-center gap-2 px-3 py-2 bg-[var(--gold)] hover:bg-[var(--gold-light)] text-[#0A0A0A] font-body text-xs transition-colors font-medium disabled:opacity-50"
+            className="flex items-center gap-2 px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white font-body text-xs transition-colors font-medium disabled:opacity-50"
           >
             <ArrowUpRight size={14} />
             Submit All ({submitEligibleCount} Queue)
@@ -327,7 +327,7 @@ export default function IndexingConsolePage() {
           <button
             onClick={handleRunInspections}
             disabled={loading || inspectEligibleCount === 0}
-            className="flex items-center gap-2 px-3 py-2 bg-blue-500 hover:bg-blue-400 text-white font-body text-xs transition-colors font-medium disabled:opacity-50 border border-blue-600"
+            className="flex items-center gap-2 px-3 py-2 bg-blue-500 hover:bg-blue-400 text-gray-900 font-body text-xs transition-colors font-medium disabled:opacity-50 border border-blue-600"
           >
             <RefreshCw size={14} />
             Inspect All ({inspectEligibleCount} Queue)
@@ -340,9 +340,9 @@ export default function IndexingConsolePage() {
         <div
           className={cn(
             "p-4 border flex items-start gap-3 transition-all",
-            actionMessage.type === "success" && "bg-green-500/10 border-green-500/20 text-green-400",
-            actionMessage.type === "error" && "bg-red-500/10 border-red-500/20 text-red-400",
-            actionMessage.type === "info" && "bg-blue-500/10 border-blue-500/20 text-blue-400"
+            actionMessage.type === "success" && "bg-green-500/10 border-green-500/20 text-green-600",
+            actionMessage.type === "error" && "bg-red-500/10 border-red-500/20 text-red-600",
+            actionMessage.type === "info" && "bg-blue-500/10 border-blue-500/20 text-blue-600"
           )}
         >
           {actionMessage.type === "success" && <CheckCircle2 size={16} className="mt-0.5 shrink-0" />}
@@ -362,45 +362,45 @@ export default function IndexingConsolePage() {
 
       {/* Overview Stat Counters */}
       <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-        <div className="bg-[#141414] border border-white/5 p-4 flex flex-col justify-between">
-          <span className="font-body text-xs text-white/35 uppercase tracking-wide">Total URLs Tracked</span>
-          <span className="font-display text-3xl text-white font-light mt-2">{counts.total}</span>
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 flex flex-col justify-between">
+          <span className="font-body text-xs text-gray-500 uppercase tracking-wide">Total URLs Tracked</span>
+          <span className="font-display text-3xl text-gray-900 font-light mt-2">{counts.total}</span>
         </div>
-        <div className="bg-[#141414] border border-white/5 p-4 flex flex-col justify-between">
-          <span className="font-body text-xs text-white/35 uppercase tracking-wide flex items-center gap-1.5">
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 flex flex-col justify-between">
+          <span className="font-body text-xs text-gray-500 uppercase tracking-wide flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 bg-yellow-500 rounded-full" /> Pending Indexing
           </span>
-          <span className="font-display text-3xl text-white font-light mt-2">{counts.pending}</span>
+          <span className="font-display text-3xl text-gray-900 font-light mt-2">{counts.pending}</span>
         </div>
-        <div className="bg-[#141414] border border-white/5 p-4 flex flex-col justify-between">
-          <span className="font-body text-xs text-white/35 uppercase tracking-wide flex items-center gap-1.5">
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 flex flex-col justify-between">
+          <span className="font-body text-xs text-gray-500 uppercase tracking-wide flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse" /> Submitted URLs
           </span>
-          <span className="font-display text-3xl text-white font-light mt-2">{counts.submitted}</span>
+          <span className="font-display text-3xl text-gray-900 font-light mt-2">{counts.submitted}</span>
         </div>
-        <div className="bg-[#141414] border border-white/5 p-4 flex flex-col justify-between">
-          <span className="font-body text-xs text-white/35 uppercase tracking-wide flex items-center gap-1.5">
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 flex flex-col justify-between">
+          <span className="font-body text-xs text-gray-500 uppercase tracking-wide flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 bg-green-500 rounded-full" /> Indexed (PASS)
           </span>
-          <span className="font-display text-3xl text-green-400 font-light mt-2">{counts.indexed}</span>
+          <span className="font-display text-3xl text-green-600 font-light mt-2">{counts.indexed}</span>
         </div>
-        <div className="bg-[#141414] border border-white/5 p-4 flex flex-col justify-between">
-          <span className="font-body text-xs text-white/35 uppercase tracking-wide flex items-center gap-1.5">
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 flex flex-col justify-between">
+          <span className="font-body text-xs text-gray-500 uppercase tracking-wide flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 bg-red-500 rounded-full" /> API Error Status
           </span>
-          <span className="font-display text-3xl text-red-400 font-light mt-2">{counts.error}</span>
+          <span className="font-display text-3xl text-red-600 font-light mt-2">{counts.error}</span>
         </div>
       </div>
 
       {/* Tabs Menu Navigation */}
-      <div className="flex border-b border-white/5 gap-4">
+      <div className="flex border-b border-gray-100 gap-4">
         <button
           onClick={() => setActiveTab("database")}
           className={cn(
             "pb-3 font-body text-sm font-medium transition-colors border-b-2 relative -bottom-[2px]",
             activeTab === "database"
-              ? "border-[var(--gold)] text-[var(--gold)]"
-              : "border-transparent text-white/45 hover:text-white"
+              ? "border-blue-600 text-blue-600"
+              : "border-transparent text-gray-600 hover:text-gray-900"
           )}
         >
           <span className="flex items-center gap-2">
@@ -412,8 +412,8 @@ export default function IndexingConsolePage() {
           className={cn(
             "pb-3 font-body text-sm font-medium transition-colors border-b-2 relative -bottom-[2px]",
             activeTab === "analytics"
-              ? "border-[var(--gold)] text-[var(--gold)]"
-              : "border-transparent text-white/45 hover:text-white"
+              ? "border-blue-600 text-blue-600"
+              : "border-transparent text-gray-600 hover:text-gray-900"
           )}
         >
           <span className="flex items-center gap-2">
@@ -428,7 +428,7 @@ export default function IndexingConsolePage() {
           {/* Filters Bar */}
           <div className="flex flex-col md:flex-row gap-3">
             <div className="flex-1 relative">
-              <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-white/30">
+              <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-500">
                 <Search size={14} />
               </span>
               <input
@@ -436,13 +436,13 @@ export default function IndexingConsolePage() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search tracked URLs..."
-                className="w-full pl-9 pr-4 py-2 bg-[#141414] border border-white/5 text-white text-sm focus:outline-none focus:border-white/20 font-body placeholder:text-white/20"
+                className="w-full pl-9 pr-4 py-2 bg-white rounded-2xl shadow-sm border border-gray-100 text-gray-900 text-sm focus:outline-none focus:border-gray-200 font-body placeholder:text-gray-500"
               />
             </div>
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="py-2 px-3 bg-[#141414] border border-white/5 text-white text-sm focus:outline-none focus:border-white/20 font-body"
+              className="py-2 px-3 bg-white rounded-2xl shadow-sm border border-gray-100 text-gray-900 text-sm focus:outline-none focus:border-gray-200 font-body"
             >
               <option value="">All Statuses</option>
               <option value="pending">Pending</option>
@@ -454,7 +454,7 @@ export default function IndexingConsolePage() {
             <select
               value={verdictFilter}
               onChange={(e) => setVerdictFilter(e.target.value)}
-              className="py-2 px-3 bg-[#141414] border border-white/5 text-white text-sm focus:outline-none focus:border-white/20 font-body"
+              className="py-2 px-3 bg-white rounded-2xl shadow-sm border border-gray-100 text-gray-900 text-sm focus:outline-none focus:border-gray-200 font-body"
             >
               <option value="">All Verdicts</option>
               <option value="PASS">PASS (Indexed)</option>
@@ -463,7 +463,7 @@ export default function IndexingConsolePage() {
             </select>
             <button
               onClick={() => fetchUrlData(1)}
-              className="py-2 px-4 bg-white/5 text-white font-body text-sm border border-white/5 hover:bg-white/10"
+              className="py-2 px-4 bg-gray-50 text-gray-700 text-gray-900 font-body text-sm border border-gray-100 hover:bg-gray-200"
             >
               Apply Filter
             </button>
@@ -472,14 +472,14 @@ export default function IndexingConsolePage() {
                 <button
                   onClick={() => handleBulkAction("URL_UPDATED")}
                   disabled={loading}
-                  className="py-2 px-4 bg-[var(--gold)] text-[#0A0A0A] font-body text-sm hover:bg-[var(--gold-light)] font-medium"
+                  className="py-2 px-4 bg-blue-600 text-white font-body text-sm hover:bg-blue-700 font-medium"
                 >
                   Index Selected ({selectedIds.length})
                 </button>
                 <button
                   onClick={() => handleBulkAction("DELETE_FROM_DB")}
                   disabled={loading}
-                  className="py-2 px-4 bg-red-500/10 text-red-400 font-body text-sm hover:bg-red-500/20 border border-red-500/20"
+                  className="py-2 px-4 bg-red-500/10 text-red-600 font-body text-sm hover:bg-red-500/20 border border-red-500/20"
                 >
                   Delete Selected ({selectedIds.length})
                 </button>
@@ -488,11 +488,11 @@ export default function IndexingConsolePage() {
           </div>
 
           {/* URLs Inventory Table */}
-          <div className="bg-[#141414] border border-white/5 overflow-hidden">
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
-                  <tr className="border-b border-white/5 bg-[#1a1a1a]">
+                  <tr className="border-b border-gray-100 bg-gray-50/50">
                     <th className="px-4 py-3 w-8">
                       <input
                         type="checkbox"
@@ -501,33 +501,33 @@ export default function IndexingConsolePage() {
                           if (e.target.checked) setSelectedIds(urls.map(u => u.id));
                           else setSelectedIds([]);
                         }}
-                        className="rounded-sm border-white/20 bg-transparent cursor-pointer"
+                        className="rounded-sm border-gray-200 bg-transparent cursor-pointer"
                       />
                     </th>
-                    <th className="px-4 py-3 text-left font-body text-xs text-white/35 uppercase tracking-wide">Tracked URL</th>
-                    <th className="px-4 py-3 text-left font-body text-xs text-white/35 uppercase tracking-wide">Sync Status</th>
-                    <th className="px-4 py-3 text-left font-body text-xs text-white/35 uppercase tracking-wide">GSC Verdict</th>
-                    <th className="px-4 py-3 text-left font-body text-xs text-white/35 uppercase tracking-wide">Crawled Date</th>
-                    <th className="px-4 py-3 text-left font-body text-xs text-white/35 uppercase tracking-wide">Submit Count</th>
-                    <th className="px-4 py-3 text-left font-body text-xs text-white/35 uppercase tracking-wide">Details / Coverage</th>
+                    <th className="px-4 py-3 text-left font-body text-xs text-gray-500 uppercase tracking-wide">Tracked URL</th>
+                    <th className="px-4 py-3 text-left font-body text-xs text-gray-500 uppercase tracking-wide">Sync Status</th>
+                    <th className="px-4 py-3 text-left font-body text-xs text-gray-500 uppercase tracking-wide">GSC Verdict</th>
+                    <th className="px-4 py-3 text-left font-body text-xs text-gray-500 uppercase tracking-wide">Crawled Date</th>
+                    <th className="px-4 py-3 text-left font-body text-xs text-gray-500 uppercase tracking-wide">Submit Count</th>
+                    <th className="px-4 py-3 text-left font-body text-xs text-gray-500 uppercase tracking-wide">Details / Coverage</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-white/5">
                   {loading && urls.length === 0 ? (
                     <tr>
-                      <td colSpan={7} className="px-4 py-10 text-center text-white/30 font-body text-sm">
+                      <td colSpan={7} className="px-4 py-10 text-center text-gray-500 font-body text-sm">
                         <Loader2 className="animate-spin inline-block mr-2" size={16} /> Loading URL indexing inventory...
                       </td>
                     </tr>
                   ) : urls.length === 0 ? (
                     <tr>
-                      <td colSpan={7} className="px-4 py-10 text-center text-white/30 font-body text-sm">
+                      <td colSpan={7} className="px-4 py-10 text-center text-gray-500 font-body text-sm">
                         No tracked URLs matching the specified filters. Try running Sitemap Sync.
                       </td>
                     </tr>
                   ) : (
                     urls.map((item) => (
-                      <tr key={item.id} className="hover:bg-white/[0.01] transition-colors">
+                      <tr key={item.id} className="hover:bg-gray-50/50 transition-colors">
                         <td className="px-4 py-3">
                           <input
                             type="checkbox"
@@ -536,16 +536,16 @@ export default function IndexingConsolePage() {
                               if (e.target.checked) setSelectedIds(prev => [...prev, item.id]);
                               else setSelectedIds(prev => prev.filter(id => id !== item.id));
                             }}
-                            className="rounded-sm border-white/20 bg-transparent cursor-pointer"
+                            className="rounded-sm border-gray-200 bg-transparent cursor-pointer"
                           />
                         </td>
                         {/* URL path and domain */}
-                        <td className="px-4 py-3 font-body text-sm text-white max-w-md truncate">
+                        <td className="px-4 py-3 font-body text-sm text-gray-900 max-w-md truncate">
                           <a
                             href={item.url}
                             target="_blank"
                             rel="noreferrer"
-                            className="flex items-center gap-1.5 text-white/80 hover:text-white hover:underline group"
+                            className="flex items-center gap-1.5 text-gray-700 hover:text-gray-900 hover:underline group"
                           >
                             {item.url.replace("https://www.realtyconsultants.in", "") || "/"}
                             <ExternalLink size={10} className="opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -557,11 +557,11 @@ export default function IndexingConsolePage() {
                           <span
                             className={cn(
                               "font-body text-xs px-2 py-0.5",
-                              item.status === "indexed" && "bg-green-500/10 text-green-400 border border-green-500/10",
-                              item.status === "submitted" && "bg-blue-500/10 text-blue-400 border border-blue-500/10",
-                              item.status === "pending" && "bg-yellow-500/10 text-yellow-400 border border-yellow-500/10",
-                              item.status === "not_indexed" && "bg-orange-500/10 text-orange-400 border border-orange-500/10",
-                              item.status === "error" && "bg-red-500/10 text-red-400 border border-red-500/10"
+                              item.status === "indexed" && "bg-green-500/10 text-green-600 border border-green-500/10",
+                              item.status === "submitted" && "bg-blue-500/10 text-blue-600 border border-blue-500/10",
+                              item.status === "pending" && "bg-yellow-500/10 text-yellow-600 border border-yellow-500/10",
+                              item.status === "not_indexed" && "bg-orange-500/10 text-orange-600 border border-orange-500/10",
+                              item.status === "error" && "bg-red-500/10 text-red-600 border border-red-500/10"
                             )}
                           >
                             {item.status}
@@ -574,9 +574,9 @@ export default function IndexingConsolePage() {
                             <span
                               className={cn(
                                 "font-body text-xs flex items-center gap-1",
-                                item.inspection_verdict === "PASS" && "text-green-400",
-                                item.inspection_verdict === "FAIL" && "text-red-400",
-                                item.inspection_verdict === "NEUTRAL" && "text-yellow-400"
+                                item.inspection_verdict === "PASS" && "text-green-600",
+                                item.inspection_verdict === "FAIL" && "text-red-600",
+                                item.inspection_verdict === "NEUTRAL" && "text-yellow-600"
                               )}
                             >
                               {item.inspection_verdict === "PASS" && <CheckCircle2 size={12} />}
@@ -585,24 +585,24 @@ export default function IndexingConsolePage() {
                               {item.inspection_verdict}
                             </span>
                           ) : (
-                            <span className="text-white/20 font-body text-xs">Not Inspected</span>
+                            <span className="text-gray-500 font-body text-xs">Not Inspected</span>
                           )}
                         </td>
 
                         {/* Last crawled timestamp */}
-                        <td className="px-4 py-3 text-white/50 font-body text-xs">
+                        <td className="px-4 py-3 text-gray-600 font-body text-xs">
                           {item.last_crawl_time ? new Date(item.last_crawl_time).toLocaleString("en-AE", { dateStyle: "short", timeStyle: "short" }) : "Never"}
                         </td>
 
                         {/* API submit count */}
-                        <td className="px-4 py-3 text-white font-body text-sm">
+                        <td className="px-4 py-3 text-gray-900 font-body text-sm">
                           {item.submit_count || 0}
                         </td>
 
                         {/* Diagnostic errors / Coverage */}
-                        <td className="px-4 py-3 text-white/60 font-body text-xs max-w-sm truncate">
+                        <td className="px-4 py-3 text-gray-600 font-body text-xs max-w-sm truncate">
                           {item.error_message ? (
-                            <span className="text-red-400 flex items-center gap-1" title={item.error_message}>
+                            <span className="text-red-600 flex items-center gap-1" title={item.error_message}>
                               <AlertCircle size={12} className="shrink-0" />
                               {item.error_message}
                             </span>
@@ -619,25 +619,25 @@ export default function IndexingConsolePage() {
 
             {/* Pagination Controls */}
             {pagination.totalPages > 1 && (
-              <div className="flex items-center justify-between px-4 py-3 bg-[#1a1a1a] border-t border-white/5">
-                <span className="font-body text-xs text-white/35">
+              <div className="flex items-center justify-between px-4 py-3 bg-gray-50/50 border-t border-gray-100">
+                <span className="font-body text-xs text-gray-500">
                   Showing {urls.length} of {pagination.total} URLs
                 </span>
                 <div className="flex gap-1">
                   <button
                     onClick={() => fetchUrlData(pagination.page - 1)}
                     disabled={pagination.page === 1 || loading}
-                    className="px-2.5 py-1 text-xs text-white/50 bg-[#141414] hover:bg-white/5 border border-white/5 disabled:opacity-30"
+                    className="px-2.5 py-1 text-xs text-gray-600 bg-white rounded-2xl shadow-sm hover:bg-gray-100 border border-gray-100 disabled:opacity-30"
                   >
                     Previous
                   </button>
-                  <span className="px-3 py-1 text-xs text-white/80 font-body font-medium">
+                  <span className="px-3 py-1 text-xs text-gray-700 font-body font-medium">
                     {pagination.page} of {pagination.totalPages}
                   </span>
                   <button
                     onClick={() => fetchUrlData(pagination.page + 1)}
                     disabled={pagination.page === pagination.totalPages || loading}
-                    className="px-2.5 py-1 text-xs text-white/50 bg-[#141414] hover:bg-white/5 border border-white/5 disabled:opacity-30"
+                    className="px-2.5 py-1 text-xs text-gray-600 bg-white rounded-2xl shadow-sm hover:bg-gray-100 border border-gray-100 disabled:opacity-30"
                   >
                     Next
                   </button>
@@ -650,110 +650,110 @@ export default function IndexingConsolePage() {
 
       {/* Tab 2: Search Console Analytics Dashboard */}
       {activeTab === "analytics" && (
-        <div className="space-y-6">
+        <div className="max-w-7xl mx-auto space-y-8 pb-12">
           {analyticsLoading ? (
-            <div className="bg-[#141414] border border-white/5 p-12 text-center text-white/30 font-body">
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-12 text-center text-gray-500 font-body">
               <Loader2 className="animate-spin inline-block mr-2" size={20} /> Fetching performance metrics from Google Search Console API...
             </div>
           ) : analyticsError ? (
-            <div className="bg-[#141414] border border-red-500/20 bg-red-500/5 p-6 text-left text-red-400 font-body flex items-start gap-3">
+            <div className="bg-white rounded-2xl shadow-sm border border-red-500/20 bg-red-500/5 p-6 text-left text-red-600 font-body flex items-start gap-3">
               <AlertCircle size={20} className="shrink-0 mt-0.5" />
               <div className="space-y-2">
-                <h3 className="font-medium text-white text-sm">GSC Performance Audit Blocked</h3>
-                <p className="text-xs text-red-400/80 leading-relaxed">{analyticsError}</p>
-                <div className="pt-2 text-xs leading-relaxed text-white/60">
-                  <strong className="text-white">How to fix this:</strong>
-                  <ol className="list-decimal pl-4 space-y-1 mt-1 text-white/50">
+                <h3 className="font-medium text-gray-900 text-sm">GSC Performance Audit Blocked</h3>
+                <p className="text-xs text-red-600/80 leading-relaxed">{analyticsError}</p>
+                <div className="pt-2 text-xs leading-relaxed text-gray-600">
+                  <strong className="text-gray-900">How to fix this:</strong>
+                  <ol className="list-decimal pl-4 space-y-1 mt-1 text-gray-600">
                     <li>Copy your Service Account email from your JSON credentials.</li>
                     <li>Go to Google Search Console → Settings → Users & permissions.</li>
-                    <li>Add the service account email as an <strong className="text-[var(--gold)]">Owner</strong>.</li>
+                    <li>Add the service account email as an <strong className="text-blue-600">Owner</strong>.</li>
                     <li>Make sure the site property URL exactly matches your domain.</li>
                   </ol>
                 </div>
               </div>
             </div>
           ) : analytics ? (
-            <div className="space-y-6">
+            <div className="max-w-7xl mx-auto space-y-8 pb-12">
               {/* Query Meta Info */}
-              <div className="flex items-center gap-2 text-white/40 font-body text-xs">
+              <div className="flex items-center gap-2 text-gray-500 font-body text-xs">
                 <Calendar size={12} />
                 <span>Search Audit Period:</span>
-                <span className="text-white/60 font-semibold">{analytics.startDate}</span>
+                <span className="text-gray-600 font-semibold">{analytics.startDate}</span>
                 <span>to</span>
-                <span className="text-white/60 font-semibold">{analytics.endDate}</span>
-                <span className="ml-auto text-[var(--gold)] font-medium">Verified by Service Account Auth 🟢</span>
+                <span className="text-gray-600 font-semibold">{analytics.endDate}</span>
+                <span className="ml-auto text-blue-600 font-medium">Verified by Service Account Auth 🟢</span>
               </div>
 
               {/* GSC Performance Summary Metrics */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="bg-[#141414] border border-white/5 p-5">
-                  <span className="font-body text-xs text-white/35 uppercase tracking-wide">Total Search Clicks</span>
-                  <div className="font-display text-4xl text-white font-light mt-3">{analytics.summary.clicks.toLocaleString()}</div>
+                <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
+                  <span className="font-body text-xs text-gray-500 uppercase tracking-wide">Total Search Clicks</span>
+                  <div className="font-display text-4xl text-gray-900 font-light mt-3">{analytics.summary.clicks.toLocaleString()}</div>
                 </div>
-                <div className="bg-[#141414] border border-white/5 p-5">
-                  <span className="font-body text-xs text-white/35 uppercase tracking-wide">Total Impressions</span>
-                  <div className="font-display text-4xl text-white font-light mt-3">{analytics.summary.impressions.toLocaleString()}</div>
+                <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
+                  <span className="font-body text-xs text-gray-500 uppercase tracking-wide">Total Impressions</span>
+                  <div className="font-display text-4xl text-gray-900 font-light mt-3">{analytics.summary.impressions.toLocaleString()}</div>
                 </div>
-                <div className="bg-[#141414] border border-white/5 p-5">
-                  <span className="font-body text-xs text-white/35 uppercase tracking-wide">Average CTR</span>
-                  <div className="font-display text-4xl text-[var(--gold)] font-light mt-3">
+                <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
+                  <span className="font-body text-xs text-gray-500 uppercase tracking-wide">Average CTR</span>
+                  <div className="font-display text-4xl text-blue-600 font-light mt-3">
                     {(analytics.summary.ctr * 100).toFixed(2)}%
                   </div>
                 </div>
-                <div className="bg-[#141414] border border-white/5 p-5">
-                  <span className="font-body text-xs text-white/35 uppercase tracking-wide">Average Position</span>
-                  <div className="font-display text-4xl text-blue-400 font-light mt-3">
+                <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
+                  <span className="font-body text-xs text-gray-500 uppercase tracking-wide">Average Position</span>
+                  <div className="font-display text-4xl text-blue-600 font-light mt-3">
                     {analytics.summary.position.toFixed(1)}
                   </div>
                 </div>
               </div>
 
               {/* Quick-Win Keyword Opportunities Section */}
-              <div className="bg-[#141414] border border-white/5">
-                <div className="px-5 py-4 border-b border-white/5 bg-[#1a1a1a] flex items-center justify-between">
+              <div className="bg-white rounded-2xl shadow-sm border border-gray-100">
+                <div className="px-5 py-4 border-b border-gray-100 bg-gray-50/50 flex items-center justify-between">
                   <div>
-                    <h2 className="font-body text-sm font-semibold text-white flex items-center gap-1.5">
-                      <TrendingUp size={16} className="text-[var(--gold)]" />
+                    <h2 className="font-body text-sm font-semibold text-gray-900 flex items-center gap-1.5">
+                      <TrendingUp size={16} className="text-blue-600" />
                       Quick-Win Keyword Opportunities (Priority Action List)
                     </h2>
-                    <p className="font-body text-xs text-white/35 mt-0.5">
+                    <p className="font-body text-xs text-gray-500 mt-0.5">
                       Queries ranking between positions 8 and 20 with high impressions but low CTR. Improving titles & meta tags can trigger immediate click boosts.
                     </p>
                   </div>
-                  <span className="font-body text-xs px-2 py-0.5 bg-[rgba(201,168,76,0.15)] text-[var(--gold)]">
+                  <span className="font-body text-xs px-2 py-0.5 bg-blue-50 text-blue-600">
                     {analytics.quickWins.length} Matches
                   </span>
                 </div>
                 <div className="overflow-x-auto">
                   <table className="w-full">
                     <thead>
-                      <tr className="border-b border-white/5">
-                        <th className="px-5 py-3 text-left font-body text-xs text-white/35 uppercase">Target Query</th>
-                        <th className="px-5 py-3 text-left font-body text-xs text-white/35 uppercase">Related Page</th>
-                        <th className="px-5 py-3 text-right font-body text-xs text-white/35 uppercase">Impressions</th>
-                        <th className="px-5 py-3 text-right font-body text-xs text-white/35 uppercase">Clicks</th>
-                        <th className="px-5 py-3 text-right font-body text-xs text-white/35 uppercase">CTR</th>
-                        <th className="px-5 py-3 text-right font-body text-xs text-white/35 uppercase">Avg. Position</th>
+                      <tr className="border-b border-gray-100">
+                        <th className="px-5 py-3 text-left font-body text-xs text-gray-500 uppercase">Target Query</th>
+                        <th className="px-5 py-3 text-left font-body text-xs text-gray-500 uppercase">Related Page</th>
+                        <th className="px-5 py-3 text-right font-body text-xs text-gray-500 uppercase">Impressions</th>
+                        <th className="px-5 py-3 text-right font-body text-xs text-gray-500 uppercase">Clicks</th>
+                        <th className="px-5 py-3 text-right font-body text-xs text-gray-500 uppercase">CTR</th>
+                        <th className="px-5 py-3 text-right font-body text-xs text-gray-500 uppercase">Avg. Position</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-white/5">
                       {analytics.quickWins.length === 0 ? (
                         <tr>
-                          <td colSpan={6} className="px-5 py-8 text-center font-body text-sm text-white/30">
+                          <td colSpan={6} className="px-5 py-8 text-center font-body text-sm text-gray-500">
                             No quick-win keyword opportunities detected.
                           </td>
                         </tr>
                       ) : (
                         analytics.quickWins.map((win, idx) => (
-                          <tr key={idx} className="hover:bg-white/[0.01] transition-colors">
-                            <td className="px-5 py-3 font-body text-sm text-[var(--gold)] font-medium">{win.query}</td>
-                            <td className="px-5 py-3 font-body text-xs text-white/50 max-w-xs truncate" title={win.page}>
+                          <tr key={idx} className="hover:bg-gray-50/50 transition-colors">
+                            <td className="px-5 py-3 font-body text-sm text-blue-600 font-medium">{win.query}</td>
+                            <td className="px-5 py-3 font-body text-xs text-gray-600 max-w-xs truncate" title={win.page}>
                               {win.page.replace("https://www.realtyconsultants.in", "") || "/"}
                             </td>
-                            <td className="px-5 py-3 text-right font-body text-sm text-white">{win.impressions.toLocaleString()}</td>
-                            <td className="px-5 py-3 text-right font-body text-sm text-white">{win.clicks}</td>
+                            <td className="px-5 py-3 text-right font-body text-sm text-gray-900">{win.impressions.toLocaleString()}</td>
+                            <td className="px-5 py-3 text-right font-body text-sm text-gray-900">{win.clicks}</td>
                             <td className="px-5 py-3 text-right font-body text-sm text-yellow-500 font-medium">{(win.ctr * 100).toFixed(2)}%</td>
-                            <td className="px-5 py-3 text-right font-body text-sm text-blue-400 font-medium">{win.position}</td>
+                            <td className="px-5 py-3 text-right font-body text-sm text-blue-600 font-medium">{win.position}</td>
                           </tr>
                         ))
                       )}
@@ -765,27 +765,27 @@ export default function IndexingConsolePage() {
               {/* Detailed Tables (Keywords vs. Pages) */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {/* Keywords */}
-                <div className="bg-[#141414] border border-white/5">
-                  <div className="px-5 py-3 border-b border-white/5 bg-[#1a1a1a] font-body text-sm font-semibold text-white">
+                <div className="bg-white rounded-2xl shadow-sm border border-gray-100">
+                  <div className="px-5 py-3 border-b border-gray-100 bg-gray-50/50 font-body text-sm font-semibold text-gray-900">
                     Top 10 Performing Queries
                   </div>
                   <div className="overflow-x-auto">
                     <table className="w-full">
                       <thead>
-                        <tr className="border-b border-white/5">
-                          <th className="px-5 py-2 text-left font-body text-xs text-white/35 uppercase">Query</th>
-                          <th className="px-5 py-2 text-right font-body text-xs text-white/35 uppercase">Clicks</th>
-                          <th className="px-5 py-2 text-right font-body text-xs text-white/35 uppercase">Impressions</th>
-                          <th className="px-5 py-2 text-right font-body text-xs text-white/35 uppercase">Position</th>
+                        <tr className="border-b border-gray-100">
+                          <th className="px-5 py-2 text-left font-body text-xs text-gray-500 uppercase">Query</th>
+                          <th className="px-5 py-2 text-right font-body text-xs text-gray-500 uppercase">Clicks</th>
+                          <th className="px-5 py-2 text-right font-body text-xs text-gray-500 uppercase">Impressions</th>
+                          <th className="px-5 py-2 text-right font-body text-xs text-gray-500 uppercase">Position</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-white/5">
                         {analytics.topKeywords.map((kw, idx) => (
-                          <tr key={idx} className="hover:bg-white/[0.01]">
-                            <td className="px-5 py-2.5 font-body text-sm text-white">{kw.query}</td>
-                            <td className="px-5 py-2.5 text-right font-body text-sm text-white">{kw.clicks}</td>
-                            <td className="px-5 py-2.5 text-right font-body text-sm text-white/50">{kw.impressions.toLocaleString()}</td>
-                            <td className="px-5 py-2.5 text-right font-body text-sm text-blue-400">{(kw.position).toFixed(1)}</td>
+                          <tr key={idx} className="hover:bg-gray-50/50">
+                            <td className="px-5 py-2.5 font-body text-sm text-gray-900">{kw.query}</td>
+                            <td className="px-5 py-2.5 text-right font-body text-sm text-gray-900">{kw.clicks}</td>
+                            <td className="px-5 py-2.5 text-right font-body text-sm text-gray-600">{kw.impressions.toLocaleString()}</td>
+                            <td className="px-5 py-2.5 text-right font-body text-sm text-blue-600">{(kw.position).toFixed(1)}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -794,29 +794,29 @@ export default function IndexingConsolePage() {
                 </div>
 
                 {/* Pages */}
-                <div className="bg-[#141414] border border-white/5">
-                  <div className="px-5 py-3 border-b border-white/5 bg-[#1a1a1a] font-body text-sm font-semibold text-white">
+                <div className="bg-white rounded-2xl shadow-sm border border-gray-100">
+                  <div className="px-5 py-3 border-b border-gray-100 bg-gray-50/50 font-body text-sm font-semibold text-gray-900">
                     Top 10 Performing Pages
                   </div>
                   <div className="overflow-x-auto">
                     <table className="w-full">
                       <thead>
-                        <tr className="border-b border-white/5">
-                          <th className="px-5 py-2 text-left font-body text-xs text-white/35 uppercase">Page Path</th>
-                          <th className="px-5 py-2 text-right font-body text-xs text-white/35 uppercase">Clicks</th>
-                          <th className="px-5 py-2 text-right font-body text-xs text-white/35 uppercase">Impressions</th>
-                          <th className="px-5 py-2 text-right font-body text-xs text-white/35 uppercase">CTR</th>
+                        <tr className="border-b border-gray-100">
+                          <th className="px-5 py-2 text-left font-body text-xs text-gray-500 uppercase">Page Path</th>
+                          <th className="px-5 py-2 text-right font-body text-xs text-gray-500 uppercase">Clicks</th>
+                          <th className="px-5 py-2 text-right font-body text-xs text-gray-500 uppercase">Impressions</th>
+                          <th className="px-5 py-2 text-right font-body text-xs text-gray-500 uppercase">CTR</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-white/5">
                         {analytics.topPages.map((pg, idx) => (
-                          <tr key={idx} className="hover:bg-white/[0.01]">
-                            <td className="px-5 py-2.5 font-body text-xs text-white/85 truncate max-w-xs" title={pg.page}>
+                          <tr key={idx} className="hover:bg-gray-50/50">
+                            <td className="px-5 py-2.5 font-body text-xs text-gray-700 truncate max-w-xs" title={pg.page}>
                               {pg.page.replace("https://www.realtyconsultants.in", "") || "/"}
                             </td>
-                            <td className="px-5 py-2.5 text-right font-body text-sm text-white">{pg.clicks}</td>
-                            <td className="px-5 py-2.5 text-right font-body text-sm text-white/50">{pg.impressions.toLocaleString()}</td>
-                            <td className="px-5 py-2.5 text-right font-body text-sm text-[var(--gold)]">{(pg.ctr * 100).toFixed(2)}%</td>
+                            <td className="px-5 py-2.5 text-right font-body text-sm text-gray-900">{pg.clicks}</td>
+                            <td className="px-5 py-2.5 text-right font-body text-sm text-gray-600">{pg.impressions.toLocaleString()}</td>
+                            <td className="px-5 py-2.5 text-right font-body text-sm text-blue-600">{(pg.ctr * 100).toFixed(2)}%</td>
                           </tr>
                         ))}
                       </tbody>
@@ -826,7 +826,7 @@ export default function IndexingConsolePage() {
               </div>
             </div>
           ) : (
-            <div className="bg-[#141414] border border-white/5 p-12 text-center text-white/30 font-body">
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-12 text-center text-gray-500 font-body">
               No analytics data could be retrieved.
             </div>
           )}

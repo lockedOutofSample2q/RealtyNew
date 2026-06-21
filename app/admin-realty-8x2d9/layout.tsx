@@ -77,24 +77,24 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   if (loadingSession) {
     return (
-      <div className="min-h-screen bg-[#0A0A0A] flex flex-col items-center justify-center">
+      <div className="min-h-screen bg-[#F9F9FA] flex flex-col items-center justify-center">
         <div className="flex">
-          <span className="font-display text-3xl text-white lowercase">real</span>
+          <span className="font-display text-3xl text-gray-900 lowercase">real</span>
           <span className="font-display text-3xl text-[var(--gold)] lowercase">ty</span>
         </div>
-        <p className="font-body text-white/40 text-sm mt-4 tracking-widest uppercase">Verifying authorization...</p>
+        <p className="font-body text-gray-500 text-sm mt-4 tracking-widest uppercase">Verifying authorization...</p>
       </div>
     );
   }
 
   const SidebarContent = () => (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full bg-white">
       {/* Logo */}
-      <div className="px-6 py-6 border-b border-white/5">
+      <div className="px-6 py-6 border-b border-gray-100">
         <Link href="/admin-realty-8x2d9/dashboard" className="flex items-center gap-2">
-          <span className="font-display text-lg text-white lowercase">real</span>
+          <span className="font-display text-lg text-gray-900 lowercase">real</span>
           <span className="font-display text-lg text-[var(--gold)] lowercase">ty</span>
-          <span className="font-body text-xs text-white/30 ml-2 border border-white/10 px-2 py-0.5 rounded">
+          <span className="font-body text-xs text-gray-500 ml-2 border border-gray-200 px-2 py-0.5 rounded bg-gray-50">
             Admin
           </span>
         </Link>
@@ -112,33 +112,33 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               className={cn(
                 "flex items-center gap-3 px-3 py-2.5 font-body text-sm transition-all rounded",
                 active
-                  ? "bg-[rgba(201,168,76,0.1)] text-[var(--gold)]"
-                  : "text-white/50 hover:text-white hover:bg-white/5"
+                  ? "bg-blue-50 text-blue-700 font-medium"
+                  : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
               )}
             >
-              <item.icon size={16} />
+              <item.icon size={18} className={active ? "text-blue-700" : "text-gray-500"} />
               {item.label}
-              {active && <ChevronRight size={12} className="ml-auto" />}
+              {active && <ChevronRight size={14} className="ml-auto opacity-50" />}
             </Link>
           );
         })}
       </nav>
 
       {/* Bottom */}
-      <div className="px-3 pb-4 space-y-1 border-t border-white/5 pt-4">
+      <div className="px-3 pb-4 space-y-1 border-t border-gray-100 pt-4">
         <Link
           href="/"
           target="_blank"
-          className="flex items-center gap-3 px-3 py-2.5 font-body text-sm text-white/50 hover:text-white transition-colors rounded hover:bg-white/5"
+          className="flex items-center gap-3 px-3 py-2.5 font-body text-sm text-gray-600 hover:text-gray-900 transition-colors rounded hover:bg-gray-50"
         >
-          <Building2 size={16} />
+          <Building2 size={18} className="text-gray-500" />
           View Site
         </Link>
         <button
           onClick={handleLogout}
-          className="w-full flex items-center gap-3 px-3 py-2.5 font-body text-sm text-white/50 hover:text-red-400 transition-colors rounded hover:bg-white/5"
+          className="w-full flex items-center gap-3 px-3 py-2.5 font-body text-sm text-gray-600 hover:text-red-600 transition-colors rounded hover:bg-red-50"
         >
-          <LogOut size={16} />
+          <LogOut size={18} className="text-gray-500 hover:text-red-600" />
           Sign Out
         </button>
       </div>
@@ -146,9 +146,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   );
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A] flex">
+    <div className="min-h-screen bg-[#F9F9FA] text-gray-900 flex">
       {/* Desktop sidebar */}
-      <aside className="hidden lg:flex flex-col w-56 shrink-0 admin-sidebar">
+      <aside className="hidden lg:flex flex-col w-64 shrink-0 border-r border-gray-200 bg-white">
         <SidebarContent />
       </aside>
 
@@ -156,10 +156,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       {sidebarOpen && (
         <div className="lg:hidden fixed inset-0 z-50 flex">
           <div
-            className="absolute inset-0 bg-black/60"
+            className="absolute inset-0 bg-gray-900/60 backdrop-blur-sm"
             onClick={() => setSidebarOpen(false)}
           />
-          <aside className="relative z-10 w-56 admin-sidebar flex flex-col">
+          <aside className="relative z-10 w-64 flex flex-col bg-white shadow-xl">
             <SidebarContent />
           </aside>
         </div>
@@ -168,22 +168,22 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       {/* Main */}
       <div className="flex-1 flex flex-col min-w-0">
         {/* Top bar */}
-        <header className="h-14 border-b border-white/5 bg-[#0A0A0A] flex items-center px-4 gap-4">
+        <header className="h-16 border-b border-gray-200 bg-white flex items-center px-6 gap-4 sticky top-0 z-20">
           <button
             onClick={() => setSidebarOpen(true)}
-            className="lg:hidden text-white/60 hover:text-white"
+            className="lg:hidden text-gray-500 hover:text-gray-900 transition-colors"
           >
-            <Menu size={20} />
+            <Menu size={24} />
           </button>
           <div className="ml-auto flex items-center gap-3">
-            <span className="font-body text-xs text-white/30">
+            <span className="font-body text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
               {new Date().toLocaleDateString("en-AE", { weekday: "long", day: "numeric", month: "long" })}
             </span>
           </div>
         </header>
 
         {/* Page content */}
-        <main className="flex-1 p-6 overflow-auto">{children}</main>
+        <main className="flex-1 p-6 md:p-8 overflow-auto">{children}</main>
       </div>
     </div>
   );

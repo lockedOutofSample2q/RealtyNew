@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   },
 };
 
-import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
+import AnalyticsWrapper from "@/components/AnalyticsWrapper";
 
 async function fetchRating() {
   const apiKey = process.env.GOOGLE_MAPS_API_KEY;
@@ -234,12 +234,7 @@ export default async function RootLayout({
         />
       </head>
       <body className={`${cormorant.variable} ${dmSans.variable} ${dmMono.variable} overflow-x-hidden font-body`}>
-        {/* Ahrefs Analytics */}
-        <Script
-          src="https://analytics.ahrefs.com/analytics.js"
-          data-key="Qm6W5Qeb+IdgA8tRuYFgHQ"
-          strategy="lazyOnload"
-        />
+        <AnalyticsWrapper />
         {children}
         <Toaster
           position="bottom-right"
@@ -252,8 +247,6 @@ export default async function RootLayout({
           }}
         />
       </body>
-      <GoogleAnalytics gaId="G-ZWNKTZ1M1S" />
-      <GoogleTagManager gtmId="GTM-5Z6V8R4V" />
     </html>
   );
 }

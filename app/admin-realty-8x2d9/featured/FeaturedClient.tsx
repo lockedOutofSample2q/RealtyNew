@@ -122,7 +122,7 @@ export default function FeaturedClient() {
         <button
           onClick={handleSave}
           disabled={saving}
-          className="flex items-center gap-2 px-6 py-2.5 bg-gold text-white rounded-lg hover:bg-gold/90 disabled:opacity-50"
+          className="flex items-center gap-2 px-6 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 transition-colors"
         >
           <Save className="w-5 h-5" />
           {saving ? "Saving..." : "Save Changes"}
@@ -140,12 +140,12 @@ export default function FeaturedClient() {
                 onClick={() => setActiveSection(sec.id)}
                 className={`w-full text-left p-4 rounded-xl border transition-all ${
                   activeSection === sec.id
-                    ? "bg-gold/5 border-gold shadow-sm"
+                    ? "bg-blue-50 border-blue-200 shadow-sm"
                     : "bg-white border-gray-200 hover:border-gray-300"
                 }`}
               >
                 <div className="flex items-center justify-between">
-                  <h3 className={`font-medium ${activeSection === sec.id ? 'text-gold' : 'text-gray-900'}`}>
+                  <h3 className={`font-medium ${activeSection === sec.id ? 'text-blue-700' : 'text-gray-900'}`}>
                     {sec.name}
                   </h3>
                   <span className="text-xs font-semibold bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
@@ -170,7 +170,7 @@ export default function FeaturedClient() {
                 placeholder="Search properties..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-4 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold"
+                className="w-full pl-9 pr-4 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
               />
             </div>
           </div>
@@ -184,7 +184,7 @@ export default function FeaturedClient() {
                   onClick={() => handleToggleProperty(p.id)}
                   className={`flex items-center gap-4 p-3 rounded-xl border cursor-pointer transition-all ${
                     isSelected
-                      ? "border-gold bg-gold/5 shadow-sm"
+                      ? "border-blue-300 bg-blue-50/50 shadow-sm"
                       : "border-gray-200 hover:border-gray-300 bg-white"
                   }`}
                 >
@@ -208,7 +208,7 @@ export default function FeaturedClient() {
                     </div>
                   </div>
                   <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 ${
-                    isSelected ? "bg-gold border-gold" : "border-gray-300"
+                    isSelected ? "bg-blue-600 border-blue-600" : "border-gray-300"
                   }`}>
                     {isSelected && <Check className="w-4 h-4 text-white" />}
                   </div>

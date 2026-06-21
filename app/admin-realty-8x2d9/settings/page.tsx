@@ -6,7 +6,7 @@
 // A future version could write to a DB-backed config table.
 // ============================================================
 
-import { ExternalLink, FileCode, Palette, Globe, Database } from "lucide-react";
+import { ExternalLink, FileCode, Palette, Globe, Database, Settings } from "lucide-react";
 
 const SETTINGS_SECTIONS = [
   {
@@ -67,37 +67,42 @@ const SETTINGS_SECTIONS = [
 
 export default function SettingsPage() {
   return (
-    <div>
-      <div className="mb-8">
-        <h1 className="font-display text-2xl text-white font-light">Settings</h1>
-        <p className="font-body text-sm text-white/40 mt-1">
-          Where to edit each part of the site
-        </p>
+    <div className="max-w-7xl mx-auto pb-12">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+        <div className="flex items-center gap-4">
+          <div className="w-12 h-12 bg-blue-50 text-blue-600 flex items-center justify-center rounded-xl shadow-sm border border-blue-100">
+            <Settings size={24} strokeWidth={1.5} />
+          </div>
+          <div>
+            <h1 className="font-display text-2xl font-semibold text-gray-900">Settings</h1>
+            <p className="font-body text-sm text-gray-500 mt-1">Where to edit each part of the site</p>
+          </div>
+        </div>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-6">
         {SETTINGS_SECTIONS.map((section) => (
-          <div key={section.title} className="bg-[#141414] border border-white/5">
-            <div className="px-6 py-5 border-b border-white/5 flex items-start gap-4">
-              <section.icon size={18} className="text-[var(--gold)] mt-0.5 shrink-0" />
-              <div className="flex-1">
-                <div className="flex items-center gap-3 mb-1">
-                  <h2 className="font-body text-sm font-medium text-white">{section.title}</h2>
-                  <code className="font-mono text-xs bg-[rgba(201,168,76,0.1)] text-[var(--gold)] px-2 py-0.5 rounded">
+          <div key={section.title} className="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden">
+            <div className="px-6 py-5 border-b border-gray-100 bg-gray-50/50 flex items-start gap-4">
+              <section.icon size={20} className="text-blue-600 mt-0.5 shrink-0" />
+              <div className="flex-1 min-w-0">
+                <div className="flex flex-wrap items-center gap-3 mb-1.5">
+                  <h2 className="font-body text-base font-semibold text-gray-900">{section.title}</h2>
+                  <code className="font-mono text-xs bg-blue-50 text-blue-700 px-2.5 py-0.5 rounded-md border border-blue-100">
                     {section.file}
                   </code>
                 </div>
-                <p className="font-body text-xs text-white/50 leading-relaxed">
+                <p className="font-body text-sm text-gray-500 leading-relaxed max-w-3xl">
                   {section.description}
                 </p>
               </div>
             </div>
-            <div className="px-6 py-4">
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+            <div className="px-6 py-5 bg-white">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6">
                 {section.items.map((item) => (
-                  <li key={item} className="flex items-start gap-2 font-body text-xs text-white/40">
-                    <span className="text-[var(--gold)] mt-0.5">·</span>
-                    {item}
+                  <li key={item} className="flex items-start gap-3 font-body text-sm text-gray-600">
+                    <span className="text-blue-500 mt-0.5 shrink-0">·</span>
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -107,30 +112,30 @@ export default function SettingsPage() {
       </div>
 
       {/* Environment variables */}
-      <div className="mt-6 bg-[#141414] border border-white/5">
-        <div className="px-6 py-5 border-b border-white/5">
-          <h2 className="font-body text-sm font-medium text-white mb-1">Environment Variables</h2>
-          <p className="font-body text-xs text-white/50">
+      <div className="mt-8 bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden">
+        <div className="px-6 py-5 border-b border-gray-100 bg-gray-50/50">
+          <h2 className="font-body text-base font-semibold text-gray-900 mb-1">Environment Variables</h2>
+          <p className="font-body text-sm text-gray-500">
             Set these in Vercel → Project Settings → Environment Variables (and in .env.local for local dev)
           </p>
         </div>
-        <div className="px-6 py-4 space-y-2 font-mono text-xs">
+        <div className="px-6 py-5 bg-white space-y-4 font-mono text-sm">
           {[
             ["NEXT_PUBLIC_SUPABASE_URL", "Your Supabase project URL"],
             ["NEXT_PUBLIC_SUPABASE_ANON_KEY", "Supabase anon/public key"],
             ["SUPABASE_SERVICE_ROLE_KEY", "Supabase service role key (server-only, never expose)"],
             ["NEXT_PUBLIC_SITE_URL", "https://www.realtyconsultants.in"],
           ].map(([key, desc]) => (
-            <div key={key} className="flex items-start gap-4">
-              <span className="text-[var(--gold-light)] shrink-0">{key}</span>
-              <span className="text-white/30">{desc}</span>
+            <div key={key} className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-6 pb-4 border-b border-gray-50 last:border-0 last:pb-0">
+              <span className="text-blue-700 font-medium sm:w-80 shrink-0">{key}</span>
+              <span className="text-gray-500 font-sans">{desc}</span>
             </div>
           ))}
         </div>
       </div>
 
       {/* Deployment quick links */}
-      <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
+      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {[
           { label: "Vercel Dashboard", href: "https://vercel.com/dashboard" },
           { label: "Supabase Dashboard", href: "https://supabase.com/dashboard" },
@@ -140,12 +145,12 @@ export default function SettingsPage() {
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between px-4 py-3 bg-[#141414] border border-white/5 hover:border-[var(--gold)] transition-colors group"
+            className="flex items-center justify-between px-5 py-4 bg-white border border-gray-200 rounded-xl hover:border-blue-300 hover:shadow-md transition-all group"
           >
-            <span className="font-body text-sm text-white/60 group-hover:text-white transition-colors">
+            <span className="font-body text-sm font-medium text-gray-700 group-hover:text-blue-600 transition-colors">
               {link.label}
             </span>
-            <ExternalLink size={12} className="text-white/30 group-hover:text-[var(--gold)] transition-colors" />
+            <ExternalLink size={16} className="text-gray-400 group-hover:text-blue-500 transition-colors" />
           </a>
         ))}
       </div>
