@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import {
   ChevronLeft, Save, MapPin, ImageIcon, ListChecks,
-  CreditCard, FileStack, UserCircle2, Info,
+  CreditCard, FileStack, UserCircle2, Info, Building2
 } from "lucide-react";
 import { createClient } from "@/lib/supabase";
 import { toast } from "sonner";
