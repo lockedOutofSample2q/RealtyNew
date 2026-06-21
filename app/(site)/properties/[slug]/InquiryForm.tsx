@@ -282,7 +282,6 @@ export default function InquiryForm({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: fd.get("name"),
-          email: fd.get("email"),
           phone,
           source: "property",
           property_id: propertyId,
@@ -310,7 +309,6 @@ export default function InquiryForm({
   return (
     <form onSubmit={handleSubmit} className="space-y-3">
       <input type="text" name="name" placeholder="Full name" required className={input} />
-      <input type="email" name="email" placeholder="Email address" required className={input} />
       <div className="flex gap-2">
         <select
           value={countryCode}
