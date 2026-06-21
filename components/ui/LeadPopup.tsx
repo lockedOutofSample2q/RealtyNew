@@ -92,7 +92,6 @@ export default function LeadPopup({ type, propertyTitle, propertyId, image }: Le
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: fd.get("name"),
-          email: fd.get("email"),
           phone,
           source: type === "property" ? "property_popup" : "blog_popup",
           property_id: propertyId,

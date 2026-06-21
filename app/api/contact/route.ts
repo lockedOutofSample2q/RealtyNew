@@ -12,10 +12,10 @@ const schema = z.object({
   name: z.string().optional(),
   firstName: z.string().optional(),
   lastName: z.string().optional(),
-  email: z.string().email(),
+  email: z.string().email().or(z.literal("")).nullable().optional(),
   phone: z.string().optional(),
   message: z.string().optional(),
-  source: z.enum(["contact", "property", "list-property", "newsletter", "relocation", "land_listing"]),
+  source: z.enum(["contact", "property", "list-property", "newsletter", "relocation", "land_listing", "property_popup", "blog_popup"]),
   property_id: z.string().optional(),
   // Extra fields from various forms
   company: z.string().optional(),
@@ -50,7 +50,7 @@ export async function POST(req: NextRequest) {
     
     const leadData: any = {
       name: fullName,
-      email: data.email,
+      email: data.email || "hello@realtyconsultants.in",
       phone: data.phone ?? "",
       message: finalMessage,
       source: data.source,

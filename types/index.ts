@@ -139,7 +139,7 @@ export interface Lead {
   email: string;
   phone: string;
   message?: string;
-  source: "contact" | "property" | "list-property" | "newsletter" | "relocation";
+  source: "contact" | "property" | "list-property" | "newsletter" | "relocation" | "land_listing" | "property_popup" | "blog_popup";
   property_id?: string;
   apartment_id?: string;
   house_id?: string;
