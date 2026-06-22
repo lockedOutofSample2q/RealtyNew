@@ -451,19 +451,11 @@ export default async function HouseDetailPage(props: Props) {
                 <span className="inline-block text-[11px] text-black/40 border border-black/10 rounded px-2 py-0.5 uppercase tracking-wider">
                   {listingLabel}
                 </span>
-                {property.created_at && (
-                  <span className="inline-flex items-center gap-1.5 text-[11px] text-black/40">
-                    <Calendar size={11} className="text-black/30" />
-                    <time dateTime={new Date(property.created_at).toISOString()}>
-                      Published {new Date(property.created_at).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
-                    </time>
-                  </span>
-                )}
-                {property.updated_at && property.updated_at !== property.created_at && (
+                {(property.updated_at || property.created_at) && (
                   <span className="inline-flex items-center gap-1.5 text-[11px] text-black/40">
                     <Clock size={11} className="text-black/30" />
-                    <time dateTime={new Date(property.updated_at).toISOString()}>
-                      Updated {new Date(property.updated_at).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
+                    <time dateTime={new Date(property.updated_at || property.created_at).toISOString()}>
+                      Updated on {new Date(property.updated_at || property.created_at).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
                     </time>
                   </span>
                 )}
