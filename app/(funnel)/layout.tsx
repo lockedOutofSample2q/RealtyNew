@@ -12,7 +12,7 @@ export default function FunnelLayout({
       <header className="py-3 border-b border-black/5">
         <div className="container-site flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="relative h-16 sm:h-20 aspect-[1756/925]">
+            <div className="relative h-20 sm:h-28 aspect-[1756/925]">
               <img 
                 src="/assets/logo-light-theme.svg" 
                 alt={siteConfig.name} 
