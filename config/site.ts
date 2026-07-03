@@ -30,9 +30,10 @@ export const siteConfig: SiteConfig = {
 
   social: {
     instagram: "https://instagram.com/amritrealty",
-    facebook: "https://facebook.com/amritrealty",
-    linkedin: "https://in.linkedin.com/company/reality-holding-and-management-consultants",
+    facebook: "https://www.facebook.com/people/AmritRealty/61587441234909/",
+    linkedin: "https://www.linkedin.com/company/realty-holding-and-management-consultants-mohali/",
     youtube: "https://www.youtube.com/@AmritRealty",
+    reddit: "https://www.reddit.com/user/realtyconsultants_in/",
   },
 };
 
@@ -94,11 +95,11 @@ export const footerLinks = {
 // ── Hero Section ─────────────────────────────────────────────
 // EDIT: Change the hero headline, subline, and background
 export const heroContent = {
-  headline: "Find Your Home\nin Mohali",
+  headline: "Know exactly what you are buying.\nBefore you pay.",
   subline:
-    "Mohali real estate Investments and Luxury assets, curated for those who know exactly what they want.",
-  ctaPrimary: { label: "Explore Properties", href: "/properties" },
-  ctaSecondary: { label: "Talk to an Advisor", href: "/contact" },
+    "Independent property advisory for Mohali and Tricity. 180+ transactions closed across every property category. I will tell you what I would do with my own money, including when the answer is not to buy.",
+  ctaPrimary: { label: "Book a 15-minute call", href: "/appointments" },
+  ctaSecondary: { label: "WhatsApp directly", href: "https://wa.me/917814613916" },
   // Background image (place in /public/images/hero.jpg or use Supabase URL)
   backgroundImage: "/assets/images/home/hero.webp",
 };
@@ -187,7 +188,7 @@ export const faqs = [
 export const seoDefaults = {
   titleTemplate: "%s | Realty Holding and Management Consultants",
   defaultTitle: "Buy Flats & Land in Mohali | Realty Holding and Management Consultants",
-  description: "Realty Holding & Management Consultants: Your trusted advisory for luxury flats, premium houses, and verified land investments in Mohali & Tricity.",
+  description: "Independent real estate advisory in Mohali. Verified flats, GMADA plots and land with honest pricing guidance. 180+ closed transactions. Talk before you pay.",
   openGraph: {
     type: "website",
     locale: "en_IN",

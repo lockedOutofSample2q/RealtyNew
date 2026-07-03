@@ -4,22 +4,22 @@ import { motion } from "framer-motion";
 
 const testimonials = [
   {
-    quote: "Realty Holding provided a level of transparency I hadn't seen in the Mohali market. Their advice on GMADA plots saved us from a very expensive mistake.",
-    author: "Rajesh Sharma",
-    role: "NRI Investor, Canada",
-    type: "Land Investment"
+    quote: "A client discovered after paying 65% that the builder had already cancelled both plots the seller sold him. We chased the reinstatement for 8 months, negotiated reallocation of adjacent plots, and completed the transfer. He paid us nothing extra for it. That is what post-sale advisory means.",
+    author: "The 8-Month Plot Recovery",
+    role: "Plot purchase",
+    type: "Mohali. Details anonymised."
   },
   {
-    quote: "The team's local expertise is unmatched. They found us an off-market villa in Sector 66 that was exactly what we were looking for, at a fair price.",
-    author: "Sandeep Kaur",
-    role: "Homeowner",
-    type: "Luxury Villa"
+    quote: "A ground-floor buyer inherited years of unpaid property tax spread across a whole building. We brought all three floor owners to one table, drafted an MOU splitting the liability, generated separate property IDs for each floor, and completed the GMADA transfer in 3 months.",
+    author: "The Property Tax MOU",
+    role: "Multi-floor building",
+    type: "Mohali. Details anonymised."
   },
   {
-    quote: "Professional, data-driven, and honest. They don't just sell properties; they provide a comprehensive investment strategy. Highly recommended.",
-    author: "Amit Malhotra",
-    role: "Business Owner",
-    type: "Commercial Portfolio"
+    quote: "Commercial units near Sector 82 were trading at Rs 3 to 4 crore. Our client seated at Rs 11 crore when the market said 6.5 to 7. Today those units trade at Rs 12 to 16 crore. If you move without vision, you buy at the wrong price.",
+    author: "The Airport Road Call",
+    role: "Commercial",
+    type: "Airport Road corridor."
   }
 ];
 
@@ -30,10 +30,10 @@ export default function TestimonialsSection() {
         <div className="flex flex-col md:flex-row items-end justify-between gap-8 mb-16">
           <div className="max-w-xl">
             <h2 className="font-display text-4xl md:text-6xl font-medium leading-tight mb-6">
-              What Our Clients Say
+              Real Case Studies
             </h2>
             <p className="font-body text-black/60 text-lg">
-              Trust is the foundation of every transaction we manage.
+              What post-sale advisory actually looks like in practice.
             </p>
           </div>
         </div>

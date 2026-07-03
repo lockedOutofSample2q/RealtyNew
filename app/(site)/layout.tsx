@@ -43,8 +43,9 @@ export default function SiteLayout({
       siteConfig.social.facebook,
       siteConfig.social.instagram,
       siteConfig.social.linkedin,
-      siteConfig.social.youtube
-    ]
+      siteConfig.social.youtube,
+      siteConfig.social.reddit
+    ].filter(Boolean) as string[]
   };
 
   return (

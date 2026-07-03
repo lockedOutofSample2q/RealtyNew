@@ -213,13 +213,15 @@ export default function PropertiesCarousel({
               Explore a wide range of properties tailored to your lifestyle and budget. From luxurious flats to family homes.
             </p>
             <div className="mt-8">
-              <span className="block font-body text-[13px] font-bold text-gray-500 mb-3 tracking-wide">View all 1,200+</span>
+              <span className="block font-body text-[13px] font-medium text-gray-500 mb-4 tracking-wide leading-relaxed">
+                <strong className="text-black font-bold">Every listing personally verified.</strong> We list fewer properties than portals because each one has passed developer, title, and RERA checks.
+              </span>
               <div className="flex items-center gap-4">
                 <Link
                   href={href}
                   className="font-body text-[13px] font-bold text-black uppercase tracking-widest hover:text-gray-500 transition-colors border-b border-black/30 hover:border-gray-500 pb-1 inline-flex items-center gap-2"
                 >
-                  Search more <ArrowRight size={14} className="-rotate-45" />
+                  Browse verified properties <ArrowRight size={14} className="-rotate-45" />
                 </Link>
                 {/* Arrow controls for carousel */}
                 <div className="flex gap-2 ml-auto">

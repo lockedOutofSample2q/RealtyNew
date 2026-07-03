@@ -191,6 +191,7 @@ export interface SiteConfig {
     facebook?: string;
     linkedin?: string;
     youtube?: string;
+    reddit?: string;
   };
 }
 

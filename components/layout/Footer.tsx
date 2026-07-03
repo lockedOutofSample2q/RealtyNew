@@ -17,37 +17,28 @@ export default function Footer() {
 
   return (
     <footer className="bg-charcoal text-white border-t border-white/10">
-      {/* -- Newsletter Banner --------------------------------- */}
+      {/* -- Lead Magnet Banner --------------------------------- */}
       <div className="border-b border-white/10">
         <div className="container-site py-16 flex flex-col md:flex-row items-start justify-between gap-10">
-          <div className="max-w-sm">
+          <div className="max-w-xl">
             <h3 className="font-display text-3xl font-medium leading-tight mb-3">
-              {siteConfig.tagline}
+              Free: The 9-Point Pre-Launch Checklist
             </h3>
-            <p className="font-body text-sm text-white/60 mt-1 leading-relaxed">
-              Stay informed about the latest outcomes in {siteConfig.contact.address.split(',').slice(-2, -1)[0]?.trim() || ''}. Subscribe to our newsletter for exclusive insights.
+            <p className="font-body text-sm text-white/80 mt-1 leading-relaxed max-w-md">
+              The exact checks I run before any client puts money into a pre-launch project in Mohali. Developer track record, RERA status, payment plan traps, exit clauses. Written from 180+ closed transactions.
             </p>
           </div>
-          <form
-            action="/api/subscribe"
-            method="POST"
-            className="flex flex-col sm:flex-row gap-4 w-full max-w-md mt-2"
-          >
-            <Input
-              type="email"
-              name="email"
-              placeholder="Enter your email address"
-              required
-              className="flex-1 bg-transparent border-white/20 text-white placeholder:text-white/60 focus-visible:border-white h-12"
-            />
+          <div className="flex w-full max-w-md mt-2 md:justify-end">
             <Button
-              type="submit"
+              asChild
               variant="secondary"
-              className="bg-white text-charcoal border-white hover:bg-white/90 h-12 px-6"
+              className="bg-white text-charcoal border-white hover:bg-white/90 h-12 px-8 font-bold"
             >
-              Subscribe
+              <a href="https://wa.me/917814613916?text=CHECKLIST" target="_blank" rel="noopener noreferrer">
+                Get it on WhatsApp
+              </a>
             </Button>
-          </form>
+          </div>
         </div>
       </div>
 
@@ -110,6 +101,19 @@ export default function Footer() {
                     className="text-white/60 hover:text-white transition-colors"
                   >
                     <Youtube size={20} />
+                  </a>
+                )}
+                {siteConfig.social.reddit && (
+                  <a 
+                    href={siteConfig.social.reddit} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    aria-label="Follow us on Reddit"
+                    className="text-white/60 hover:text-white transition-colors flex items-center justify-center"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M24 11.779c0-1.459-1.192-2.645-2.657-2.645-.715 0-1.363.275-1.84.734-1.805-1.198-4.315-1.982-7.129-2.08l1.458-6.236 4.385.947c.026 1.054.897 1.905 1.96 1.905 1.082 0 1.959-.87 1.959-1.942 0-1.071-.877-1.94-1.959-1.94-.852 0-1.58.54-1.843 1.29l-4.757-1.026c-.161-.035-.325.044-.378.197l-1.636 7.001c-2.883.053-5.46 1.01-7.3 2.215-.472-.423-1.087-.678-1.758-.678-1.465 0-2.656 1.187-2.656 2.646 0 .97.533 1.811 1.317 2.271-.052.282-.086.567-.086.857 0 3.911 5.244 7.09 11.714 7.09s11.714-3.179 11.714-7.09c0-.274-.029-.544-.075-.81.827-.442 1.39-1.282 1.39-2.257zm-15.688 3.52c0-.986.798-1.785 1.785-1.785s1.785.799 1.785 1.785-.798 1.785-1.785 1.785-1.785-.799-1.785-1.785zm8.995 3.518c-1.32.962-3.16.962-4.48 0-.17-.124-.222-.363-.116-.534.106-.17.34-.223.51-.118.983.716 2.502.716 3.485 0 .17-.124.404-.071.51.101.107.172.055.412-.115.536h.006zm-1.127-1.733c-.987 0-1.785-.799-1.785-1.785s.798-1.785 1.785-1.785 1.785.799 1.785 1.785-.798 1.785-1.785 1.785z"/>
+                    </svg>
                   </a>
                 )}
               </div>

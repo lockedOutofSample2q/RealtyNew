@@ -110,7 +110,9 @@ export default function PropertyCard({
                   {formatPrice(property.price)}
                 </>
               ) : (
-                <span className="text-sm text-white/60 italic font-normal">Price on request</span>
+                <span className="text-[11px] text-white/80 font-normal leading-tight font-body">
+                  {isLands ? "Serious buyers: price range shared on WhatsApp within 10 minutes. No obligation." : "INR 1.74 Cr to 3.35 Cr | Exact quote on WhatsApp after a 2-minute requirement check."}
+                </span>
               )}
             </div>
             {!isLands && (
@@ -217,7 +219,11 @@ export default function PropertyCard({
                 {formatPrice(property.price)}
                 {property.price_max && property.price_max > property.price && ` - ${formatPrice(property.price_max)}`}
               </>
-            ) : <span className="text-sm text-muted italic font-normal">Price on request</span>}
+            ) : (
+              <span className="text-[11px] text-muted font-normal leading-tight font-body max-w-[70%]">
+                {isLands ? "Serious buyers: price range shared on WhatsApp within 10 minutes. No obligation." : "INR 1.74 Cr to 3.35 Cr | Exact quote on WhatsApp after a 2-minute requirement check."}
+              </span>
+            )}
           </div>
           {!isLands && (
             <div className="w-11 h-11 rounded-full border border-border flex items-center justify-center group-hover:bg-charcoal group-hover:text-white transition-all duration-300 shrink-0 shadow-subtle">
