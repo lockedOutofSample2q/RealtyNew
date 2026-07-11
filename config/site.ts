@@ -95,7 +95,7 @@ export const footerLinks = {
 // ── Hero Section ─────────────────────────────────────────────
 // EDIT: Change the hero headline, subline, and background
 export const heroContent = {
-  headline: "Know exactly what you are buying.\nBefore you pay.",
+  headline: "Find your next investment in Mohali",
   subline:
     "Independent property advisory for Mohali and Tricity. 180+ transactions closed across every property category. I will tell you what I would do with my own money, including when the answer is not to buy.",
   ctaPrimary: { label: "Book a 15-minute call", href: "/appointments" },
@@ -224,7 +224,7 @@ export const propertiesPage = {
     description: "Verified property listings in Mohali and Tricity: pre-launch, resale, and ready possession. Evaluated for RERA compliance, developer track record, and fair pricing.",
   },
   hero: {
-    headline: "Find Your Home\nin Mohali",
+    headline: "Find your next investment in Mohali",
     subline: "Investments and luxury assets, curated for those who know exactly what they want.",
     backgroundImage: "/assets/images/home/hero.webp",
   }
