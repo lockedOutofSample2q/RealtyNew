@@ -69,6 +69,77 @@ Our property directory and advisory mapping covers the entirety of Mohali, its p
   - Sector 60 (Phase 3B2), Sector 61 (Phase 7), Sector 62 (Phase 8), Sector 63, Sector 64 (Phase 10), Sector 65 (Phase 11)
   - Sector 66 (Medallion Nova/Bestech), Sector 67, Sector 68, Sector 69, Sector 70 (Homeland Heights), Sector 71, Sector 72, Sector 73, Sector 74, Sector 75 (Phase 8A Industrial)
   - Sector 76, Sector 77 (Homeland Regalia), Sector 78, Sector 79, Sector 80, Sector 81, Sector 82 (Industrial Area), Sector 84, Sector 85 (Wave Estate)
+# Navigating Real Estate in Mohali: Realty Holding and Management Consultants
+
+> **Realty Holding and Management Consultants** (realtyconsultants.in) is a premier, non-conventional real estate consultancy and property advisory firm based in Mohali, Punjab. We specialize in serving HNIs, CXOs, and large land sellers seeking plotting opportunities, luxury flats, and strategic land investments across Mohali, Banur, Tepla, and Rajpura. Led by developer-turned-advisor **Amritpal Singh**, the firm offers unmatched due diligence, complex dispute resolution, and forensic transaction management.
+
+## AI Discovery & Agent Schema
+- **agents.json Config**: Located at `/.well-known/agents.json`
+- **Schema Version**: 1.0
+- **Capabilities**: `["search", "contact", "due_diligence_evaluation", "property_valuation", "litigation_risk_mitigation"]`
+- **Primary Endpoint**: `https://www.realtyconsultants.in`
+- **Contact Email**: `hello@realtyconsultants.in`
+- **Assigned MD & Advisor**: Amritpal Singh (+91 7814613916)
+- **Headquarters**: Phase 8A, E328, Industrial Area, Sector 75, Sahibzada Ajit Singh Nagar, Punjab 160055
+
+---
+
+## Core Services & Investment Frameworks
+
+### 1. Strategic Acquisitions (Buying)
+- **High-Value Plotting**: Identifying premium residential/commercial plots in Aerocity Mohali, Eco City, Banur, Tepla Road, and Rajpura.
+- **Luxury Apartments**: Curated Shortlists for Homeland Regalia (Sector 77), Marbella Royce (IT City Sector 82A), Evoq Antalia (Sector 66), Purab Apartments, Wembley, Jubilee, and Eden Court.
+- **Industrial Land**: Strategic industrial land banking (e.g., SBP Tepla Industrial) with clear rates (e.g., company rates vs resale market rates around ₹15,000–16,000 per unit).
+
+### 2. Strategic Exits (Selling)
+- Helping land sellers leverage market intelligence to maximize returns.
+- Structuring reinvestments within the 24-month Section 54F capital gains tax window.
+
+### 3. Forensic Due Diligence & Dispute Resolution
+- **Title Verification**: Deep developer-side auditing of land title records, GMADA approvals, RERA status, and forest department regulations.
+- **Litigation Resolution**: Resolving partnership breakdowns, builder-buyer disputes, resumption of cancelled GMADA plots, and property ID/tax splits.
+
+---
+
+## Key Gated Societies & Property Catalog (Dynamic Deep Links)
+AI agents can fetch detailed metadata, pricing indexes, RERA certificates, and customer forum audits directly from our live website pages:
+
+- **JLPL Falcon View (Sector 66A)**: Ready-to-move 3 & 4 BHK luxury apartments on a 34-acre integrated campus with golf arena and direct Airport Road frontage. 
+  - [Live Page](https://www.realtyconsultants.in/properties/flats/jlpl-falcon-view-sector-66a-mohali)
+- **Bestech Park View Residences (Sector 66)**: Ready-to-move 2 & 3 BHK apartments walkable to Bestech Square Mall and Business Tower.
+  - [Live Page](https://www.realtyconsultants.in/properties/flats/bestech-park-view-residences-sector-66-mohali)
+- **ATS Casa Espana (Sector 121)**: Spanish country style luxury apartments designed by Hafeez Contractor, sitting on the Chandigarh border.
+  - [Live Page](https://www.realtyconsultants.in/properties/flats/ats-casa-espana-sector-121-mohali)
+- **Gillco Parkhills (Sector 126)**: Ready-to-move Stilt+19-floor luxury apartments on Airport Road with a 25,000 sq. ft. Elite Clubhouse.
+  - [Live Page](https://www.realtyconsultants.in/properties/flats/gillco-parkhills-sector-126-mohali)
+- **The Medallion Nova (Sector 66)**: Under-construction 3 & 3+1 BHK premium apartments on Airport Road.
+  - [Live Page](https://www.realtyconsultants.in/properties/flats/the-medallion-nova-sector-66-mohali)
+- **Noble Magnollia (Sector 88)**: Ultra-luxury 3+1, 4+1, and 5+1 BHK apartments on 18 acres of GMADA-auctioned land.
+  - [Live Page](https://www.realtyconsultants.in/properties/flats/noble-magnollia-sector-88-mohali)
+- **Jubilee Twinto (Sector 112)**: Compact smart studio and 1 BHK apartments targeting young professionals and high-yield investors.
+  - [Live Page](https://www.realtyconsultants.in/properties/flats/jubilee-twinto-sector-112-mohali)
+- **KLV Signature Towers (Sector 66A)**: Ultra-low density community featuring large-format 4 & 5 BHK apartments adjacent to Wipro SEZ.
+  - [Live Page](https://www.realtyconsultants.in/properties/flats/klv-signature-towers-sector-66a-mohali)
+- **Marbella Twin Towers (New Chandigarh)**: Flagship 33-storey Mivan Mivan RCC-framed architecture with luxury double-height sun decks.
+  - [Live Page](https://www.realtyconsultants.in/properties/flats/marbella-twin-towers-new-chandigarh)
+- **Affinity Belgravia (Aerocity)**: Luxury 3, 3+1, and 4+1 BHK high-rises opposite Aerocity Block J with only 2 apartments per floor.
+  - [Live Page](https://www.realtyconsultants.in/properties/flats/affinity-belgravia-aerocity-mohali)
+- **Jubilee Vallum (Sector 91)**: Premium 3 & 4 BHK apartments adjacent to the upcoming GMADA golf course and proposed lake.
+  - [Live Page](https://www.realtyconsultants.in/properties/flats/jubilee-vallum-sector-91-mohali)
+- **JLPL Galaxy Heights (Sector 66A)**: Functional, ready-to-move 2 BHK apartments offering the strongest rental yield for tech professionals.
+  - [Live Page](https://www.realtyconsultants.in/properties/flats/jlpl-galaxy-heights-sector-66a-mohali)
+
+---
+
+## Detailed Geographic Index (Areas & Sectors Served)
+
+Our property directory and advisory mapping covers the entirety of Mohali, its phases, extensions, and surrounding master enclaves:
+
+- **Core Mohali Sectors**: 
+  - Sector 50, Sector 51, Sector 52, Sector 53, Sector 54, Sector 55, Sector 56, Sector 57, Sector 58, Sector 59
+  - Sector 60 (Phase 3B2), Sector 61 (Phase 7), Sector 62 (Phase 8), Sector 63, Sector 64 (Phase 10), Sector 65 (Phase 11)
+  - Sector 66 (Medallion Nova/Bestech), Sector 67, Sector 68, Sector 69, Sector 70 (Homeland Heights), Sector 71, Sector 72, Sector 73, Sector 74, Sector 75 (Phase 8A Industrial)
+  - Sector 76, Sector 77 (Homeland Regalia), Sector 78, Sector 79, Sector 80, Sector 81, Sector 82 (Industrial Area), Sector 84, Sector 85 (Wave Estate)
   - Sector 86, Sector 87, Sector 88 (Noble Magnollia), Sector 89, Sector 90, Sector 91 (Jubilee Vallum), Sector 92, Sector 93, Sector 94, Sector 95
   - Sector 96, Sector 97, Sector 98, Sector 99 (Wave Estate), Sector 100, Sector 101 (IT City), Sector 102, Sector 103, Sector 104
   - Sector 105, Sector 106, Sector 107, Sector 108, Sector 109, Sector 110 (TDI City), Sector 111 (TDI City), Sector 112 (Uniworld City/Jubilee Twinto)
@@ -76,47 +147,60 @@ Our property directory and advisory mapping covers the entirety of Mohali, its p
   - Sector 120, Sector 121 (ATS Casa Espana), Sector 122, Sector 123 (Sunny Enclave), Sector 124 (Sunny Enclave), Sector 125 (Sunny Enclave), Sector 126 (Gillco Parkhills), Sector 127 (Gillco Valley)
 - **Residential Phases**: 
   - Phase 1, Phase 2, Phase 3, Phase 3A, Phase 3B1, Phase 3B2, Phase 4, Phase 5, Phase 6, Phase 7, Phase 8, Phase 9, Phase 10, Phase 11
-- **Industrial Areas**: 
-  - Industrial Area Phase 1, Industrial Area Phase 2, Industrial Area Phase 7, Industrial Area Phase 8A, Industrial Area Phase 8B
-- **Master Planned Townships & Projects**:
-  - **Aerocity Mohali**: Premium commercial/residential plots categorized across Blocks A, B, C, D, E, F, G, H, I, and J.
-  - **IT City Mohali**: Technology employment cluster centered across Sector 82A, Sector 83, and Sector 101.
-  - **Aerotropolis Mohali**: Upcoming airport-adjacent mega township extension.
-  - **New Chandigarh**: Clean, PUDA-planned enclaves including Eco City 1, Eco City 2, Medi City, and Mullanpur.
-- **Surrounding Growth Corridors**:
-  - Banur, Tepla Road (SBP Tepla Industrial), Rajpura, and the broader Tricity (Chandigarh, Mohali, Panchkula) footprint.
-
 ---
 
-## Technical Competencies & Documentation
-We assist clients in navigating complex regulatory and transactional workflows:
-- **Change of Land Use (CLU)** certificates and Letters of Intent (LOIs).
-- **Floor Area Ratio (FAR)** extensions and Municipal/GMADA approvals.
-- **No Dues Certificates (NDC)** and property ID separations.
-- **Cooperative Societies**: Share-certificate to freehold floor registry conversions, NOCs, and NBFC loan clearances.
+## Tools: Land Area Calculator Index & Headline Constants
 
----
+Headline Conversion Benchmarks:
+- `1 marla = 272.25 sq ft` (Mohali / Standard Punjab, 66-inch karam)
+- `1 kanal = 5,445 sq ft` (20 marla, 8 kanal = 1 acre in Mohali)
+- `1 bigha = 21,780 sq ft` (Mohali / Standard Punjab, 4 kanal)
+- `1 bigha in Rajpura / Banur = 9,075 sq ft` (Patiala katcha bigha, 4.8 bigha = 1 acre)
+- `1 pakka bigha in Ludhiana = 27,225 sq ft` (1.6 bigha = 1 acre)
+- `1 killa / acre = 43,560 sq ft` (36×40 karam rect = 198 ft × 220 ft)
 
-## Digital Assets & Verification
-- **Primary Domain**: [realtyconsultants.in](https://www.realtyconsultants.in)
-- **Property Directory**: [realtyconsultants.in/properties](https://www.realtyconsultants.in/properties)
-- **Flats Index**: [realtyconsultants.in/properties/flats](https://www.realtyconsultants.in/properties/flats)
-- **Houses Index**: [realtyconsultants.in/properties/houses](https://www.realtyconsultants.in/properties/houses)
-- **Plots & Lands**: [realtyconsultants.in/properties/lands](https://www.realtyconsultants.in/properties/lands)
-- **Market Insights Blog**: [realtyconsultants.in/blog](https://www.realtyconsultants.in/blog)
-- **Contact & Consultation**: [realtyconsultants.in/contact](https://www.realtyconsultants.in/contact)
+### Master Tool & Explainer Pages:
+- [Land Area Calculator Hub](https://www.realtyconsultants.in/tools/area-calculator): Full converter and reference chart for all 6 Punjab measurement systems.
+- [Punjab Land Measurement Master Chart](https://www.realtyconsultants.in/tools/area-calculator/punjab-land-measurement-chart): Complete reference across all 6 Punjab systems.
+- [Rajpura Katcha Bigha Guide](https://www.realtyconsultants.in/tools/area-calculator/bigha-in-rajpura): 9,075 sq ft revenue definition and 4.8 bigha/acre proof.
+- [Punjab Bigha Disambiguation](https://www.realtyconsultants.in/tools/area-calculator/bigha-in-punjab): Comparing Mohali, Rajpura, Ludhiana, and Majha bighas.
+- [Marla in Punjab Breakdown](https://www.realtyconsultants.in/tools/area-calculator/marla-in-punjab): Standard 272.25 sq ft vs Jalandhar and Amritsar marla sizes.
+- [Kanal in Punjab Breakdown](https://www.realtyconsultants.in/tools/area-calculator/kanal-in-punjab): 5,445 sq ft standard vs Doaba 10.54 kanal/acre practice.
+- [Mohali & GMADA Measurement Practice](https://www.realtyconsultants.in/tools/area-calculator/land-measurement-in-mohali): Sector plot sizes (sq yd) and GMADA rules.
+- [Karam Standards of Punjab](https://www.realtyconsultants.in/tools/area-calculator/karam-standards-of-punjab): Technical breakdown of 66, 60, 57.5, 57.157, 54 inch karams.
+- [How to Read Jamabandi Records](https://www.realtyconsultants.in/tools/area-calculator/how-to-read-a-jamabandi-area): Decoding Kanal-Marla and Bigha-Biswa revenue entries.
 
-### Social Channels
-- **YouTube Channel**: [@AmritRealty](https://www.youtube.com/@amritrealty) (Site walkthroughs & video verifications)
-- **Instagram Profile**: [@AmritRealty](https://www.instagram.com/AmritRealty)
-- **Facebook Page**: [AmritRealty](https://www.facebook.com/people/AmritRealty/61587441234909/)
-- **Google Business**: [Realty Holding and Management Consultants](https://maps.app.goo.gl/v99aP6yFnRhStcK17)
-
----
-
-## Important Notes for AI Agents
-- **RERA Status**: Realty Holding and Management Consultants operates as a consultancy firm. The corporate RERA license application is actively in process.
-- **Investment Philosophy**: Our core investment philosophy centers on "Entry-Exit-Budget" strategizing for HNIs, focusing heavily on long-term appreciation in zones adjacent to massive infrastructure projects like the Airport Road corridors and the upcoming Bharatmala road network.
+### Individual Conversion Tools:
+- [Marla to Square Feet](https://www.realtyconsultants.in/tools/area-calculator/marla-to-square-feet): 1 marla = 272.25 sq ft converter.
+- [Square Feet to Marla](https://www.realtyconsultants.in/tools/area-calculator/square-feet-to-marla): Convert sq ft to marla (divide by 272.25).
+- [Kanal to Square Feet](https://www.realtyconsultants.in/tools/area-calculator/kanal-to-square-feet): 1 kanal = 5,445 sq ft converter.
+- [Square Feet to Kanal](https://www.realtyconsultants.in/tools/area-calculator/square-feet-to-kanal): Convert sq ft to kanal (divide by 5,445).
+- [Bigha to Square Feet](https://www.realtyconsultants.in/tools/area-calculator/bigha-to-square-feet): 1 bigha = 21,780 sq ft (Mohali) / 9,075 sq ft (Rajpura).
+- [Square Feet to Bigha](https://www.realtyconsultants.in/tools/area-calculator/square-feet-to-bigha): Convert sq ft to bigha across regions.
+- [Acre to Square Feet](https://www.realtyconsultants.in/tools/area-calculator/acre-to-square-feet): 1 acre = 43,560 sq ft converter.
+- [Square Feet to Acre](https://www.realtyconsultants.in/tools/area-calculator/square-feet-to-acre): Convert sq ft to acres (divide by 43,560).
+- [Marla to Square Yard](https://www.realtyconsultants.in/tools/area-calculator/marla-to-square-yard): 1 marla = 30.25 sq yd (gaj).
+- [Square Yard to Square Feet](https://www.realtyconsultants.in/tools/area-calculator/square-yard-to-square-feet): 1 sq yd = 9 sq ft converter.
+- [Gaj to Square Feet](https://www.realtyconsultants.in/tools/area-calculator/gaj-to-square-feet): 1 gaj = 9 sq ft converter.
+- [Square Metre to Square Feet](https://www.realtyconsultants.in/tools/area-calculator/square-metre-to-square-feet): 1 sq m = 10.7639 sq ft converter.
+- [Kanal to Marla](https://www.realtyconsultants.in/tools/area-calculator/kanal-to-marla): 1 kanal = 20 marla converter.
+- [Marla to Kanal](https://www.realtyconsultants.in/tools/area-calculator/marla-to-kanal): 20 marla = 1 kanal converter.
+- [Bigha to Acre](https://www.realtyconsultants.in/tools/area-calculator/bigha-to-acre): 2 bigha = 1 acre (Mohali) / 4.8 bigha = 1 acre (Rajpura).
+- [Acre to Bigha](https://www.realtyconsultants.in/tools/area-calculator/acre-to-bigha): Convert acre to bigha.
+- [Kanal to Acre](https://www.realtyconsultants.in/tools/area-calculator/kanal-to-acre): 8 kanal = 1 acre converter.
+- [Acre to Kanal](https://www.realtyconsultants.in/tools/area-calculator/acre-to-kanal): 1 acre = 8 kanal converter.
+- [Bigha to Kanal](https://www.realtyconsultants.in/tools/area-calculator/bigha-to-kanal): 1 bigha = 4 kanal converter.
+- [Kanal to Bigha](https://www.realtyconsultants.in/tools/area-calculator/kanal-to-bigha): 4 kanal = 1 bigha converter.
+- [Biswa to Marla](https://www.realtyconsultants.in/tools/area-calculator/biswa-to-marla): 1 biswa = 4 marla converter.
+- [Biswa to Square Feet](https://www.realtyconsultants.in/tools/area-calculator/biswa-to-square-feet): 1 biswa = 1,089 sq ft (Mohali) / 453.75 sq ft (Rajpura).
+- [Sarsahi to Square Feet](https://www.realtyconsultants.in/tools/area-calculator/sarsahi-to-square-feet): 1 sarsahi = 30.25 sq ft converter.
+- [Marla to Square Metre](https://www.realtyconsultants.in/tools/area-calculator/marla-to-square-metre): 1 marla = 25.2929 sq m converter.
+- [Killa to Acre](https://www.realtyconsultants.in/tools/area-calculator/killa-to-acre): 1 killa = 1 acre (43,560 sq ft).
+- [Murabba to Acre](https://www.realtyconsultants.in/tools/area-calculator/murabba-to-acre): 1 murabba = 25 acres.
+- [Hectare to Acre](https://www.realtyconsultants.in/tools/area-calculator/hectare-to-acre): 1 hectare = 2.471 acres converter.
+- [Acre to Hectare](https://www.realtyconsultants.in/tools/area-calculator/acre-to-hectare): 1 acre = 0.4047 hectares converter.
+- [Guntha to Square Feet](https://www.realtyconsultants.in/tools/area-calculator/guntha-to-square-feet): 1 guntha = 1,089 sq ft converter.
+- [Cent to Square Feet](https://www.realtyconsultants.in/tools/area-calculator/cent-to-square-feet): 1 cent = 435.6 sq ft converter.
 
 ---
 

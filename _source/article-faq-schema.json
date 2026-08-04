@@ -1,0 +1,87 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://realtyconsultants.in/blog/documents-required-buying-property-india-checklist#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the single most important document when buying property in India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The title or conveyance deed. It establishes that the seller legally owns the property. Every other document supports it or depends on it. If the title is not clean, nothing else on the checklist matters."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between fard and jamabandi in Punjab?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Jamabandi is the record of rights maintained by the Revenue Department and updated on a four-year cycle. Fard is a certified extract from that record, used for legal transactions. Jamabandi gives you the broader record and its history. Fard confirms current ownership status in a form you can submit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need an encumbrance certificate if I am paying cash and not taking a loan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The bank asks for it to protect the bank. You need it to protect yourself. It is the only document that reveals an existing mortgage, lien, or pending litigation on the property, and paying cash does not make those disappear."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the stamp duty and registration charges in Punjab in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Stamp duty is 7 percent for male buyers, 5 percent for female buyers, and 6 percent where a male and female buy jointly. Registration is 1 percent, capped at ₹2 lakh on most sale deeds. Both are calculated on the higher of the agreement value or the collector rate. Chandigarh applies a uniform 6 percent with no gender concession, plus 1 percent registration."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a builder give possession without an occupancy certificate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Under RERA a promoter cannot offer possession or collect the final payment without a valid occupancy or completion certificate. Punjab RERA has held that doing so violates PAPRA and RERA, and compensation has been awarded. If a builder offers you keys without an OC, that is a compliance failure, not a formality."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a GMADA property transfer take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Four to eight weeks when the file is complete. It requires a certified copy carrying the Tehsildar stamp, and fees of roughly ₹4,000 to ₹5,000 for a basic transfer. An OTP is sent to the last registered buyer on record. Incomplete files take considerably longer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is mutation the same as registration?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Registration transfers ownership through a registered sale deed at the Sub-Registrar office. Mutation, the intkal, updates the revenue record so the jamabandi shows your name. Registration creates your title. Mutation makes the state's record agree with it. Both are necessary. Expect mutation to take 15 to 30 days after registration."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What documents do I need for a resale flat as opposed to a new one?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Everything in part one, plus the original allotment letter and the full chain of prior transfers, the occupancy certificate, a no-due certificate from the society or builder, property tax receipts covering the previous three years, and confirmation that the electricity meter is in the seller's name and is separately metered."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do NRIs need different documents to buy property in India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The property-side checklist is identical. What is additional is on the buyer's side: FEMA compliance, payment routed through an NRO or NRE account, PAN, and a properly executed power of attorney if you are not present for registration. Residential property does not require RBI approval. Agricultural land, farmhouses, and plantation property do."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much should I budget for legal verification?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Far less than the loss it prevents. A competent property lawyer running a title search, a mother deed review, and a 30-year encumbrance search is a small fraction of a percent of a transaction. Both cases described above were recoverable only because someone chased them for months. Verification before payment costs a fraction of recovery after it."
+      }
+    }
+  ]
+}

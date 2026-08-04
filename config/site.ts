@@ -55,10 +55,10 @@ export const navItems: NavItem[] = [
     label: "Tools",
     href: "/tools",
     children: [
+      { label: "Land Area Calculator", href: "/tools/area-calculator" },
+      { label: "Property Document Checklist", href: "/tools/property-document-checklist" },
       { label: "Mortgage Calculator", href: "/tools/mortgage-calculator" },
-      { label: "Price Trends", href: "/tools/price-trend" },
       { label: "Loan Eligibility", href: "/tools/loan-eligibility" },
-      { label: "Sector Maps", href: "/properties" },
     ]
   },
 
@@ -78,10 +78,10 @@ export const footerLinks = {
     { label: "Site Directory", href: "/directory" },
   ],
   tools: [
+    { label: "Land Area Calculator", href: "/tools/area-calculator" },
+    { label: "Property Document Checklist", href: "/tools/property-document-checklist" },
     { label: "Mortgage Calculator", href: "/tools/mortgage-calculator" },
-    { label: "Price Trends", href: "/tools/price-trend" },
     { label: "Loan Eligibility", href: "/tools/loan-eligibility" },
-    { label: "Sector Maps", href: "/properties" },
   ],
   legal: [
     { label: "Builders", href: "/properties/builders" },
@@ -97,7 +97,7 @@ export const footerLinks = {
 export const heroContent = {
   headline: "Find your next investment in Mohali",
   subline:
-    "Independent property advisory for Mohali and Tricity. 180+ transactions closed across every property category. I will tell you what I would do with my own money, including when the answer is not to buy.",
+    "Independent property advisory for Mohali and Tricity. 180+ transactions closed across every property category. We will tell you what we would do with our own money, including when the answer is not to buy.",
   ctaPrimary: { label: "Book a 15-minute call", href: "/appointments" },
   ctaSecondary: { label: "WhatsApp directly", href: "https://wa.me/917814613916" },
   // Background image (place in /public/images/hero.jpg or use Supabase URL)

@@ -1,0 +1,138 @@
+# Comprehensive Punjab Revenue Land Measurement Reference (llms-full.txt)
+
+> **Realty Holding and Management Consultants** | [realtyconsultants.in](https://www.realtyconsultants.in)
+> Sourced from the *Punjab Land Records Manual (3rd Edition, 2004, pp. 183–185)* and the *Punjab Weight and Measurement Act 1976*.
+
+---
+
+## 1. Executive Summary & Core Conversion Principles
+
+All revenue land calculations across Punjab, Haryana, Himachal Pradesh, and Tricity (Mohali, Chandigarh, Panchkula) derive from the **linear karam** (measuring rod). 1 sarsahi (or square karam) is equal to 1 karam × 1 karam.
+
+Linear metric anchor (exact by definition):
+- `1 foot = 0.3048 metres` (exact)
+- `1 sq ft = 0.09290304 sq metres` (exact)
+- `1 sq metre = 10.763910416709722 sq ft`
+- `1 acre = 43,560 sq ft` (exact) = `4,840 sq yd` = `4,046.8564224 sq m`
+- `1 hectare = 10,000 sq m` = `107,639.10416709722 sq ft` = `2.4710538146716536 acres`
+
+---
+
+## 2. Master Table: The Six Revenue Systems of Punjab
+
+| System | Region / Districts | Karam Length | Sarsahi (Sq Ft) | Marla (Sq Ft) | Kanal (Sq Ft) | Bigha (Sq Ft) | Kanals / Acre | Bighas / Acre |
+|---|---|---|---|---|---|---|---|---|
+| **System A** | Mohali, Tricity, SAS Nagar, Chandigarh, Panchkula, Zirakpur, Kharar, Urban Punjab | **66 inches** (5.5 ft) | 30.25 | 272.25 | 5,445 | 21,780 | 8.00 kanal | 2.00 bigha |
+| **System B** | Rajpura, Banur, Dera Bassi, Lalru, Patiala, Nabha, Malerkotla, Fazilka | **57.157 inches** (4.763 ft) | 25.208 (or 22.6875/biswansi) | 226.875 | 4,537.5 | 9,075 (katcha) | 9.60 kanal | 4.80 bigha |
+| **System C** | Doaba: Jalandhar, Hoshiarpur, Nawanshahr, Anandpur Sahib | **57.5 inches** (4.79167 ft) | 22.960069 | 206.640625 | 4,132.8125 | 16,531.25 | 10.54 kanal | 2.63 bigha |
+| **System D** | Majha: Amritsar, Gurdaspur, Ferozepur, Faridkot | **60 inches** (5.0 ft) | 25.00 | 225.00 | 4,500 | 10,000 | 9.68 kanal | 4.356 bigha |
+| **System E** | Kapurthala State | **54 inches** (4.5 ft) | 20.25 | 182.25 | 3,645 | 7,290 | 11.95 kanal | 5.975 bigha |
+| **System F** | Ludhiana District & Erstwhile Jind State | **99-inch gatha** (8.25 ft) | 68.0625 (sq gatha) | 272.25 | 5,445 | 27,225 (pakka) | 8.00 kanal | 1.60 bigha |
+
+---
+
+## 3. Detailed Unit Definitions & Hierarchy
+
+### 3.1 System A — Punjab Standard (66-inch karam)
+
+*Default standard for Mohali, GMADA, PUDA, and municipal urban land.*
+
+- **1 Karam** = 66 inches = 5.5 feet = 1.6764 metres
+- **1 Sarsahi (Square Karam)** = 5.5 ft × 5.5 ft = 30.25 sq ft = 3.361111 sq yd = 2.810327 sq m
+- **1 Biswansi** = 1/20 biswa = 54.45 sq ft = 6.05 sq yd = 5.0586 sq m
+- **1 Marla** = 9 sarsahi = 272.25 sq ft = 30.25 sq yd = 25.292853 sq m
+- **1 Biswa** = 4 marla = 1,089 sq ft = 121 sq yd = 101.171411 sq m
+- **1 Kanal** = 20 marla = 5 biswa = 5,445 sq ft = 605 sq yd = 505.857053 sq m
+- **1 Bigha** = 4 kanal = 20 biswa = 80 marla = 21,780 sq ft = 2,420 sq yd = 2,023.428211 sq m
+- **1 Killa / Acre / Ghumaon** = 8 kanal = 2 bigha = 160 marla = 43,560 sq ft = 4,840 sq yd = 4,046.856422 sq m
+- **1 Murabba (Square)** = 25 killa / acres = 1,089,000 sq ft = 121,000 sq yd = 101,171.41056 sq m
+
+*Killa Dimensions:* Laid out as a rectangle of **36 karam × 40 karam** = 198 ft × 220 ft = 43,560 sq ft.
+
+### 3.2 System B — Patiala / Rajpura Katcha Bigha (57.157-inch karam)
+
+*Applies in Rajpura, Banur, Shamboo, Dera Bassi, Lalru, Patiala, Nabha, Malerkotla, Fazilka, and Ropar.*
+
+- **1 Karam** = 57.15764 inches = 4.763137 feet
+- **1 Biswansi** = 22.6875 sq ft = 2.520833 sq yd
+- **1 Biswa** = 20 biswansi = 453.75 sq ft = 50.416667 sq yd
+- **1 Bigha (Katcha)** = 20 biswa = 9,075 sq ft = 1,008.333333 sq yd = 0.2083333 acres
+- **Revenue Proof:** 4 bigha 16 biswa (4.8 bigha) = 1 acre.
+- **Sanity Checks:**
+  - 75 bigha in Rajpura = 15.625 acres (not 37.5 acres).
+  - 42.5 bigha in Banur = 8.854167 acres (8 acres 6 kanal 16 marla).
+
+### 3.3 System C — Doaba (57.5-inch karam)
+
+*Hoshiarpur, Jalandhar, Anandpur Sahib, Banga, SBS Nagar.*
+
+- **1 Sarsahi** = 22.960069 sq ft
+- **1 Marla** = 9 sarsahi = 206.640625 sq ft = 22.960069 sq yd
+- **1 Kanal** = 20 marla = 4,132.8125 sq ft = 459.201389 sq yd
+- **1 Ghumaon** = 8 kanal = 33,062.5 sq ft = 3,673.611111 sq yd
+- **Acre Relation:** 1 acre = 10.5400378 kanal.
+
+### 3.4 System D — Majha (60-inch karam)
+
+*Amritsar, Gurdaspur, Ferozepur, Faridkot.*
+
+- **1 Sarsahi / Biswansi** = 25.0 sq ft = 2.777778 sq yd
+- **1 Marla** = 225.0 sq ft = 25.0 sq yd
+- **1 Biswa** = 500.0 sq ft = 55.555556 sq yd
+- **1 Kanal** = 4,500.0 sq ft = 500.0 sq yd
+- **1 Bigha** = 10,000.0 sq ft = 1,111.111111 sq yd
+- **1 Ghumaon** = 36,000.0 sq ft = 4,000.0 sq yd
+- **Acre Relation:** 1 acre = 9.68 kanal.
+
+### 3.5 System E — Kapurthala (54-inch karam)
+
+*Erstwhile princely state of Kapurthala.*
+
+- **1 Sarsahi** = 20.25 sq ft = 2.25 sq yd
+- **1 Marla** = 182.25 sq ft = 20.25 sq yd
+- **1 Kanal** = 3,645.0 sq ft = 405.0 sq yd
+- **Acre Relation:** 1 acre = 11 kanal 19 marla (11.950617 kanal).
+
+### 3.6 System F — Ludhiana Pakka Bigha (99-inch gatha)
+
+*Ludhiana district and Jind state.*
+
+- **1 Biswansi** = 68.0625 sq ft = 7.5625 sq yd
+- **1 Biswa** = 1,361.25 sq ft = 151.25 sq yd
+- **1 Bigha (Pakka)** = 27,225.0 sq ft = 3,025.0 sq yd
+- **Acre Relation:** 1 acre = 1.60 pakka bigha.
+
+---
+
+## 4. Other-State Regional Land Units
+
+| Unit | Sq Ft | Region / State | Notes |
+|---|---|---|---|
+| **Guntha** | 1,089 | Maharashtra, Gujarat, Karnataka, AP, Telangana | 1/40 acre |
+| **Cent** | 435.6 | Tamil Nadu, Kerala, Karnataka | 1/100 acre |
+| **Dismil / Decimal** | 435.6 | Bihar, Jharkhand, UP, WB | 1/100 acre |
+| **Ground** | 2,400 | Tamil Nadu | 2,400 sq ft |
+| **Ankanam** | 72 | Andhra Pradesh, Karnataka | 72 sq ft |
+| **Kuncham** | 4,356 | Andhra Pradesh | 484 sq yd |
+| **Katha (West Bengal)** | 720 | West Bengal | 1/20 WB bigha |
+| **Chatak** | 45 | West Bengal | 1/16 katha |
+| **Katha (Bihar)** | 1,361.25 | Bihar | 1/20 Bihar bigha |
+| **Katha (Assam)** | 2,880 | Assam | 1/5 Assam bigha |
+| **Lecha / Lessa** | 144 | Assam | 1/20 katha |
+| **Nali** | 2,160 | Uttarakhand | 240 sq yd |
+| **Bigha (Himachal)** | 8,712 | Himachal Pradesh | 1/5 acre |
+| **Bigha (Rajasthan Pucca)** | 27,225 | Rajasthan | 3,025 sq yd |
+| **Bigha (Rajasthan Kachha)** | 17,424 | Rajasthan | 2/5 acre |
+| **Bigha (Uttar Pradesh)** | 27,000 | Uttar Pradesh | Pucca 27,225 in revenue; katcha 1/3 |
+| **Bigha (Bihar)** | 27,220 | Bihar | 27,220 sq ft |
+| **Bigha (Madhya Pradesh)** | 12,000 | Madhya Pradesh | 12,000 sq ft |
+| **Bigha (Gujarat)** | 17,427 | Gujarat | 17,427 sq ft |
+| **Bigha (West Bengal)** | 14,400 | West Bengal | 14,400 sq ft |
+| **Bigha (Assam)** | 14,400 | Assam | 14,400 sq ft |
+| **Bigha (Uttarakhand)** | 6,804 | Uttarakhand | 6,804 sq ft |
+
+---
+
+## 5. Official Verification Endpoint
+For live interactive conversion with composite urban/agricultural/revenue breakdowns, access:
+`https://www.realtyconsultants.in/tools/area-calculator`

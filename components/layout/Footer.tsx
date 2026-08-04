@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Instagram, Facebook, Linkedin, Youtube, Mail, Phone, MapPin } from "lucide-react";
 import { siteConfig, footerLinks } from "@/config/site";
 import { Button } from "@/components/ui/Button";
-import { Input } from "@/components/ui/Input";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 
@@ -17,31 +16,6 @@ export default function Footer() {
 
   return (
     <footer className="bg-charcoal text-white border-t border-white/10">
-      {/* -- Lead Magnet Banner --------------------------------- */}
-      <div className="border-b border-white/10">
-        <div className="container-site py-16 flex flex-col md:flex-row items-start justify-between gap-10">
-          <div className="max-w-xl">
-            <h3 className="font-display text-3xl font-medium leading-tight mb-3">
-              Free: The 9-Point Pre-Launch Checklist
-            </h3>
-            <p className="font-body text-sm text-white/80 mt-1 leading-relaxed max-w-md">
-              The exact checks I run before any client puts money into a pre-launch project in Mohali. Developer track record, RERA status, payment plan traps, exit clauses. Written from 180+ closed transactions.
-            </p>
-          </div>
-          <div className="flex w-full max-w-md mt-2 md:justify-end">
-            <Button
-              asChild
-              variant="secondary"
-              className="bg-white text-charcoal border-white hover:bg-white/90 h-12 px-8 font-bold"
-            >
-              <a href="https://wa.me/917814613916?text=CHECKLIST" target="_blank" rel="noopener noreferrer">
-                Get it on WhatsApp
-              </a>
-            </Button>
-          </div>
-        </div>
-      </div>
-
       {/* -- Main Footer Content ------------------------------- */}
       <div className="container-site py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">

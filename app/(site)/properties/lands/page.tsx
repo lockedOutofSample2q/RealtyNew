@@ -68,6 +68,24 @@ export default async function LandsCategoryPage() {
       <Suspense fallback={null}>
         <PropertiesClient properties={properties} initialTab="lands" />
       </Suspense>
+      <div className="container-site py-8">
+        <div className="bg-black/[0.02] border border-black/10 rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <h3 className="font-display font-semibold text-lg text-black">
+              Evaluating Land Measurements or Seller Price Quotes?
+            </h3>
+            <p className="text-xs text-black/60 mt-1">
+              Convert marlas, kanals, bighas (Mohali vs Rajpura), gaj, and acres across all six Punjab revenue measurement systems.
+            </p>
+          </div>
+          <a
+            href="/tools/area-calculator"
+            className="px-5 py-2.5 bg-black text-white text-xs font-semibold rounded-lg hover:bg-black/80 transition-colors shrink-0"
+          >
+            Open Area Calculator →
+          </a>
+        </div>
+      </div>
     </>
   );
 }

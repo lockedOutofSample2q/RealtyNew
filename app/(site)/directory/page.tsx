@@ -352,6 +352,18 @@ export default async function DirectoryPage() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/tools/area-calculator" className="flex items-center justify-between font-body text-sm font-semibold text-black hover:text-gold transition-colors">
+                    <span>Land Area Calculator</span>
+                    <span>/tools/area-calculator</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/tools/property-document-checklist" className="flex items-center justify-between font-body text-sm text-black/50 hover:text-charcoal transition-colors">
+                    <span>Document Checklist</span>
+                    <span>/tools/property-document-checklist</span>
+                  </Link>
+                </li>
+                <li>
                   <Link href="/tools/mortgage-calculator" className="flex items-center justify-between font-body text-sm text-black/50 hover:text-charcoal transition-colors">
                     <span>EMI Calculator</span>
                     <span>/tools/mortgage-calculator</span>

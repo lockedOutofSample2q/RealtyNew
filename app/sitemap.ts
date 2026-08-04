@@ -3,6 +3,7 @@ import { createAdminClient } from "@/lib/supabase";
 import { siteConfig } from "@/config/site";
 import { allPosts } from "contentlayer/generated";
 import type { Property } from "@/types";
+import { getAllAreaSlugs } from "@/content/area-calculator";
 
 export const revalidate = 3600;
 
@@ -16,6 +17,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
 
   // 1. Static Pages with Strategic Priorities
+  const areaToolSlugs = getAllAreaSlugs();
+  const areaToolRoutes = [
+    { path: "/tools/area-calculator", priority: 0.9 },
+    ...areaToolSlugs.map((slug) => ({
+      path: `/tools/area-calculator/${slug}`,
+      priority: 0.7,
+    })),
+  ];
+
   const routes = [
     { path: "", priority: 1.0 },                 // Home Base
     { path: "/properties/flats", priority: 0.9 }, 
@@ -24,6 +34,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: "/properties/builders", priority: 0.8 }, // Builders Directory Hub
     { path: "/blog", priority: 0.8 },            // High-Value Hub
     { path: "/directory", priority: 0.8 },       // Site Directory Index
+    { path: "/tools/area-calculator", priority: 0.9 }, // Land Area Calculator Hub
+    { path: "/tools/property-document-checklist", priority: 0.8 }, // Trust & Tools
     { path: "/tools/price-trend", priority: 0.7 }, // Trust & Tools
     { path: "/faq", priority: 0.7 },             // Trust & Tools
     { path: "/about", priority: 0.5 },           // Admin
@@ -34,7 +46,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: "/tools/loan-eligibility", priority: 0.5 },   // Admin
     { path: "/privacy", priority: 0.3 },         // Low Value
     { path: "/terms", priority: 0.3 },           // Low Value
-    { path: "/cookies", priority: 0.3 }          // Low Value
+    { path: "/cookies", priority: 0.3 },          // Low Value
+    ...areaToolRoutes.filter((r) => r.path !== "/tools/area-calculator"),
   ];
 
   const staticRoutes = routes.map((route) => ({

@@ -1,14 +1,26 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Calculator, TrendingUp, UserCheck, Map } from "lucide-react";
+import { Calculator, TrendingUp, UserCheck, Map, CheckSquare } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Free Real Estate Tools | Realty Holding and Management Consultants",
-  description: "Suite of free tools for real estate buyers in Mohali: EMI calculator, price trends, and loan eligibility checker.",
+  description: "Suite of free tools for real estate buyers in Mohali: property document checklist, EMI calculator, price trends, and loan eligibility checker.",
 };
 
 const tools = [
+  {
+    title: "Punjab Land Area Calculator",
+    description: "Convert marla, kanal, bigha, gaj, killa, and acre across all six Punjab revenue systems.",
+    href: "/tools/area-calculator",
+    icon: Calculator,
+  },
+  {
+    title: "Property Document Verification Checklist",
+    description: "Verify all 25 property documents step-by-step before buying in India & Punjab.",
+    href: "/tools/property-document-checklist",
+    icon: CheckSquare,
+  },
   {
     title: "EMI / Home Loan Calculator",
     description: "Plan your investment with our easy-to-use mortgage calculator.",
@@ -26,12 +38,6 @@ const tools = [
     description: "Check your home loan eligibility instantly based on your income.",
     href: "/tools/loan-eligibility",
     icon: UserCheck,
-  },
-  {
-    title: "Sector Maps",
-    description: "Detailed maps of Mohali sectors and upcoming infrastructure.",
-    href: "/properties",
-    icon: Map,
   },
 ];
 

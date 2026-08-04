@@ -1,0 +1,1613 @@
+================================================================================
+PROPERTY DOCUMENT CHECKLIST: COMPLETE SCOPE AND CONTENT
+Realty Holding & Management Consultants
+Repository: C:/Desktop/monter
+Prepared 26 July 2026
+================================================================================
+
+This file contains BOTH the scope of work and every word of copy that goes on
+the pages. Nothing else is needed to build it.
+
+  PART 1   What to build
+  PART 2   Rules that apply everywhere
+  PART 3   Content: the pillar article, in full
+  PART 4   Content: the tool page, in full
+  PART 5   Content: the about page, in full
+  PART 6   The 10 FAQ answers, for structured data
+  PART 7   Facts that must not change
+  PART 8   Done when
+
+Copy is final. Do not rewrite, condense or paraphrase any of it.
+
+
+================================================================================
+PART 1   WHAT TO BUILD
+================================================================================
+
+
+Three pages and one downloadable file.
+
+  D1  Pillar article
+      /blog/documents-required-buying-property-india-checklist
+      Approx 4,400 words. Full copy in PART 3.
+
+  D2  Interactive checklist tool
+      /tools/property-document-checklist
+      25 items, filterable, printable, shareable. Full copy in PART 4.
+
+  D3  Author and firm page
+      /about
+      Extend if it exists. Full copy in PART 5.
+
+  D4  Printable PDF
+      /downloads/RHMC-Property-Document-Checklist.pdf
+      Already produced. Must download on a plain click, no form.
+
+
+WHY THIS EXISTS
+
+Two outcomes, both required.
+
+  a) Someone actively buying property lands here and leaves with something
+     they can use the same day: a checklist they can work through, filter to
+     their situation, print, and carry to a site visit.
+
+  b) When someone asks Google, ChatGPT, Perplexity or Gemini what documents
+     are needed to buy property in India or Punjab, this site is the source
+     that gets cited.
+
+Outcome (b) is why the tool cannot be gated and cannot exist only in
+JavaScript. A machine that cannot read it cannot cite it.
+
+
+HOW THIS ACTUALLY GETS USED
+--------------------------------------------------------------------------------
+
+Read this before building. It is the reasoning behind requirements that will
+otherwise look arbitrary, and it should drive judgment on anything not
+specified elsewhere in this document.
+
+The user is not browsing. They are mid-transaction, with money at stake, in a
+process they do not feel qualified to navigate. Four distinct moments.
+
+
+MOMENT 1: AT THEIR DESK, PAPERS IN FRONT OF THEM
+
+  They have found a property. The seller has sent a bundle of photographed
+  documents over WhatsApp. They search something like "what documents to check
+  before buying a plot", land on the tool, and work down the list against what
+  they were actually sent.
+
+  What this requires:
+
+    The filter is the first thing they touch. Someone buying a resale flat
+      should not be reading about CLU orders for agricultural land. Filtering
+      must be immediate and obvious, not buried below the fold.
+    The "ask the seller" line matters more than the description. It is the
+      exact wording for a conversation they feel unqualified to have. Visually
+      distinct, never truncated, never collapsed behind a toggle.
+    Red flags visible at a glance without expanding anything.
+    They will be on this page 10 to 20 minutes and will scroll it repeatedly.
+      Scroll position survives filtering. Nothing reflows under the cursor.
+
+
+MOMENT 2: HANDING IT TO THEIR LAWYER OR SPOUSE
+
+  They tick what they have verified, copy the link, and send it. The recipient
+  opens it and sees the same state.
+
+  What this requires:
+
+    This is why state lives in the page address and not in browser storage. It
+      is what makes the tool circulate instead of being used once and
+      forgotten. Do not substitute an account, a saved session, or a
+      "download your progress" file.
+    The share button must confirm it worked. A silent copy reads as a broken
+      button.
+    A link opened cold restores state correctly, with no flash of an unchecked
+      list first.
+
+
+MOMENT 3: STANDING ON THE PLOT
+
+  Printed, on paper, in hand, in the sun, with the seller watching.
+
+  What this requires:
+
+    Checkboxes print empty regardless of screen state, so the sheet works as a
+      fresh worksheet.
+    Only the filtered items print. Someone buying a GMADA plot should not
+      carry four pages of builder-project items.
+    Nothing clipped at page edges. No item split across a page break.
+    No controls, buttons or navigation on the printed sheet.
+
+
+MOMENT 4: THE FIRM SENDS THE LINK INSTEAD OF EXPLAINING
+
+  Someone messages asking what papers they need. Instead of typing the same
+  answer again, the firm sends this URL. It also goes in YouTube descriptions,
+  the Google Business Profile, and replies on forums.
+
+  What this requires:
+
+    The page stands alone with no context. A cold visitor arriving from a
+      WhatsApp link understands within one screen what this is, who made it,
+      and that it is free.
+    Loads fast on a mid-range Android phone on mobile data.
+    Social preview metadata matters. This link gets pasted into chat apps more
+      often than it gets clicked from search results.
+
+
+THE BUSINESS LOGIC BEHIND THE CONSTRAINTS
+
+  There is no lead capture anywhere in this, deliberately. Someone who has
+  ticked 19 of 25 items and stalled on the occupancy certificate is already
+  the most qualified lead this firm can get. They make contact because they
+  have a specific problem, not because a form asked them to.
+
+  Friction added to help conversion will reduce conversion here. That is why
+  the no-gating rule is absolute rather than a preference.
+
+  The second reason is mechanical. Content behind a form, or content that only
+  exists after JavaScript runs, cannot be read by the AI engines this page is
+  built to be cited by. Gating it defeats the page's other purpose entirely.
+
+
+WHAT THE TOOL MUST DO
+
+  Filter by purchase type. Five options: everything, resale or individual
+  seller, from a builder, GMADA or PUDA or authority, plot or land.
+  Expected counts: all 25, resale 13, builder 21, authority 19, land 12.
+  When a filter empties a stage, that stage heading hides too.
+  Filtering never clears items already ticked.
+
+  Tick items off, by mouse and by keyboard.
+
+  Show progress. Counter and bar. The total counts currently visible items,
+  not all 25. Filter to "from a builder" and the total becomes 21.
+
+  Share progress. A button copies a link carrying the current tick state, so
+  a buyer can send it to their lawyer and the lawyer sees the same state.
+
+  Print. Produces a clean A4 document. Checkboxes print empty regardless of
+  screen state so the printout works as a fresh worksheet. Controls do not
+  print. Items do not split across a page break.
+
+  Reset. Clears everything.
+
+
+STRUCTURED DATA REQUIRED
+
+  Article page:  Article, FAQPage, BreadcrumbList
+  Tool page:     HowTo (5 stages, 25 steps), ItemList (25), WebApplication,
+                 FAQPage (10 questions), BreadcrumbList
+  About page:    Person, Organization. These are the canonical definitions.
+                 The other two pages reference them.
+
+
+SEQUENCE
+
+  1. Inspect the existing project. Report framework, routing, content
+     pipeline, styling and metadata mechanism before writing anything.
+  2. Build /about first. It defines the identity records the others reference.
+  3. Build the tool.
+  4. Build the article.
+  5. Wire cross-links, sitemap, canonicals.
+  6. Work through PART 8 and report every result.
+
+
+NOT SUPPLIED IN THIS PACKAGE
+--------------------------------------------------------------------------------
+
+Known gaps. Report each one, proceed as directed, do not invent a workaround.
+
+  SOCIAL SHARE IMAGE
+    No Open Graph image exists for either content page. Do not generate one
+    and do not use stock photography. Use the site's default if it has one.
+    Otherwise point the tag at /og/property-document-checklist.png and flag it
+    as needing a real asset. Never silently omit the tag.
+
+  AUTHOR PHOTOGRAPH
+    Not supplied. Build /about to accommodate a portrait, use whatever the
+    site already has, and flag it. No illustrations, avatar generators or
+    stock headshots.
+
+  FAVICON AND BRAND MARKS
+    Out of scope. Use what the site already has.
+
+  THE /tools INDEX ROUTE
+    Appears as the parent in the tool page breadcrumb. If it does not exist,
+    either create a minimal index listing this one tool, or repoint the
+    breadcrumb at the site root. State which was chosen. Never leave a
+    breadcrumb pointing at a 404.
+
+  THE /appointments BOOKING PAGE
+    Linked from the CTA blocks. Verify it exists. If not, report it and point
+    the CTA at the WhatsApp link only rather than shipping a dead link.
+
+  THE FIVE RELATED-READING TARGETS
+    Do not exist. They stay in the markup as ordinary links. No placeholder
+    pages, no removal, no nofollow. If the build fails on unresolved internal
+    links, report that before working around it.
+
+
+OUT OF SCOPE
+
+  The five related-reading pages referenced but not yet written.
+  Lead capture, CRM integration, analytics event tracking.
+  Redesign of existing pages beyond /about.
+  Translation into Punjabi or Hindi.
+  Paid promotion or link building.
+
+
+================================================================================
+PART 2   RULES THAT APPLY EVERYWHERE
+================================================================================
+
+
+ 1. NOTHING IS GATED.
+    No email form. No phone wall. No modal. No newsletter popup. No
+    exit-intent overlay. The PDF downloads on a plain click. The only
+    conversion elements are a WhatsApp link and a booking link.
+
+ 2. CONTENT MUST BE READABLE WITHOUT JAVASCRIPT.
+    If a crawler or a browser with scripting off cannot read all 25 items and
+    all article text, the work has failed its main purpose. Interactivity is
+    added on top. It is not the only way the content exists.
+
+ 3. NO BROWSER STORAGE.
+    Tick state lives in the page address, not in localStorage, session storage
+    or cookies. That is what makes progress shareable.
+
+ 4. THE ANSWER COMES FIRST.
+    On both content pages the first thing after the heading is a complete
+    answer to the page's core question, inside the first 150 words. No hero
+    image, breadcrumb bar, table of contents, author card or reading-time
+    widget above it.
+
+ 5. SUPPLIED COPY IS NOT TO BE EDITED.
+    No rewriting, condensing, paraphrasing or tightening. It is calibrated to
+    a brand voice and to specific search queries.
+
+ 6. NO EM DASHES ANYWHERE.
+    The brand voice uses colons, periods and commas.
+
+ 7. FAQ STRUCTURED DATA MATCHES VISIBLE TEXT WORD FOR WORD.
+    Change one, change both.
+
+ 8. CONTACT DETAILS APPEAR IDENTICALLY EVERYWHERE.
+        Realty Holding & Management Consultants
+        E328, Phase 8A, Industrial Area, Mohali, Punjab
+        +91 78146 13916
+        info@realtyconsultants.in
+        https://realtyconsultants.in
+
+ 9. NO STOCK PHOTOGRAPHY of houses, handshakes or keys.
+
+10. THE TOOL MUST WORK ON A PHONE.
+    Someone will open it standing in front of a plot.
+
+11. TWO CTA PLACEMENTS ON THE ARTICLE, ONE ACTION.
+    One after the case studies, one at the end. Both point at the same
+    WhatsApp action. Not two different asks.
+
+12. SITE HOUSEKEEPING.
+    All three pages in the sitemap. Nothing in robots.txt blocking /tools/.
+    Self-referencing canonicals. Article links to tool twice, tool links back
+    once, both link to /about via the author bio. Social preview metadata on
+    both content pages. Site language remains Indian English.
+
+
+================================================================================
+PART 3   CONTENT: THE PILLAR ARTICLE, IN FULL
+================================================================================
+
+
+URL:              /blog/documents-required-buying-property-india-checklist
+Page title:       Documents Required to Buy Property in India: The Complete
+                  Verification Checklist (2026)
+Meta title:       Documents Required to Buy Property in India: Full Checklist 2026
+Meta description: The complete list of documents to verify before buying
+                  property in India, with the Punjab and Tricity layer most
+                  checklists leave out: fard, jamabandi, intkal, GMADA
+                  transfer, OC, and registration.
+Canonical:        https://realtyconsultants.in/blog/documents-required-buying-property-india-checklist
+Published:        2026-07-26
+Last updated:     2026-07-26
+Category:         Process and Paperwork
+Author:           Amritpal Singh, Founder, Realty Holding & Management Consultants
+Reading time:     14 min
+Primary keyword:  documents required for buying property in India
+
+Secondary keywords:
+  property documents checklist India
+  documents to check before buying a plot
+  property registration documents Punjab
+  GMADA plot transfer documents
+  documents required to buy property in Mohali
+  encumbrance certificate Punjab
+  fard jamabandi intkal meaning
+
+Service areas: Mohali, Chandigarh, Ludhiana, Bathinda, Patiala, Jalandhar,
+Amritsar, Rajpura, Dera Bassi, Banur
+
+Notes for the build:
+  - Heading levels below are markdown. # is H1, ## is H2, ### is H3.
+  - Each FAQ question at the end must render as a linkable H3, not bold text.
+  - Tables must stay readable on a phone.
+  - Generate anchors on all headings. Desktop table of contents built from the
+    H2 headings, hidden on mobile.
+  - The six related-reading links stay as links. Five targets do not exist
+    yet. Do not remove them, do not create placeholder pages.
+
+FULL COPY FOLLOWS. Everything from the next line to the end of PART 3 is the
+article, verbatim.
+
+
+--------------------------------------------------------------------------------
+# Documents Required to Buy Property in India: The Complete Verification Checklist
+
+**Before you pay a single rupee for any property in India, verify five documents: the title or conveyance deed, the mother deed, the encumbrance certificate, the sale deed, and clearance receipts for property tax, electricity, water, and maintenance. If you are buying from a builder, add six more: the allotment letter, approved building plan, completion certificate, occupancy certificate, applicable NOCs, and permission to sell where a government authority is involved. At the transaction stage you need an agreement to sell on correct stamp paper, followed by a registered sale deed and then mutation in the revenue record. In Punjab these documents carry local names. Title proof is the fard and jamabandi. Transfer of record is the intkal. Both come from the Revenue Department, not from the seller.**
+
+That paragraph is the whole answer. The rest of this page is how to actually get each document, what the seller will tell you instead, and where the process differs in Mohali, Chandigarh, Ludhiana, and Bathinda.
+
+We are a property advisory firm based in Phase 8A, Mohali. This checklist comes up with almost every client we work with, usually after something has already gone wrong. So we wrote it once, properly.
+
+---
+
+## The one-page checklist
+
+| Document | What it proves | Who issues it | When to ask for it |
+|---|---|---|---|
+| Title / conveyance deed | The seller legally owns what they are selling | Revenue Department / Sub-Registrar | First. Before any discussion of price |
+| Mother deed | Unbroken chain of ownership back through previous owners | Revenue Department records | Before token money |
+| Encumbrance certificate | No loan, mortgage, lien, or litigation attached | Sub-Registrar office | Before token money |
+| Property tax receipts | No arrears that will transfer to you | Municipal Committee / Corporation | Before agreement to sell |
+| Electricity and water receipts | No pending dues, meter in seller's name | PSPCL / local utility | Before agreement to sell |
+| Allotment letter | Original terms of booking with a builder or authority | Builder or development authority | Before agreement to sell |
+| Approved building plan | Construction was sanctioned as built | Municipal Committee / PUDA / GMADA | Before agreement to sell |
+| Completion certificate | Construction matches the sanctioned plan | Local authority | Before possession |
+| Occupancy certificate | The building is legally habitable | Municipal Authority / Town Planning | Before possession. No exceptions |
+| NOCs / no-due certificates | Nothing outstanding with society, authority, or builder | Whichever body applies | Before sale deed |
+| Permission to sell | Authority consents to the transfer | Government authority | Before sale deed |
+| Agreement to sell | Every commercial term in writing | Executed between parties | At token stage |
+| Sale deed (registered) | Ownership has transferred to you | Sub-Registrar / Tehsildar office | On payment completion |
+| Mutation / intkal | Revenue record now shows your name | Revenue Department | Within 30 days of registry |
+
+Print it. Take it to the site visit.
+
+---
+
+## Part one: the five documents that apply anywhere in India
+
+### 1. Title deed or conveyance deed
+
+This is the document that proves the seller owns the property. Everything else is secondary to this one.
+
+The name changes by state. In Punjab and Haryana you will hear fard, jamabandi, and CD. In Karnataka you will hear khata. In Maharashtra, 7/12 extract. In Tamil Nadu, patta. Different words, same job: an official record from the Revenue Department confirming who holds the property.
+
+Two things matter here. First, the document must come from the Revenue Department, not from the seller's file. A photocopy handed to you across a table is not verification. Ask for a fresh certified copy, or pull it yourself. Second, the name on the title must match the name of the person signing your agreement, and the ID they present. If the property is jointly held, every joint owner must be identified and every joint owner must sign.
+
+If a seller is vague about the title document, that is not a paperwork delay. That is the answer to your question. Walk.
+
+### 2. Mother deed
+
+The mother deed traces ownership backward: from the current seller to the person before them, and the person before that, ideally to the original allottee or first owner.
+
+Its job is to expose gaps. A missing link in the chain is where disputes live. An inherited property where one heir never signed a relinquishment. A power of attorney sale that was never converted to a registered deed. A partition that happened on paper within a family but never in the revenue record.
+
+This matters most on older properties and on agricultural land converted to residential use. On a fresh authority allotment the chain is short and clean. On a 40-year-old kothi in an old sector of Ludhiana or Patiala, the chain is where you will find the problem, if there is one.
+
+Give the mother deed to your lawyer. This is the document that earns their fee.
+
+### 3. Encumbrance certificate
+
+The encumbrance certificate, and in Punjab the non-encumbrance certificate, confirms that no loan, mortgage, lien, charge, or litigation sits on the property.
+
+In Punjab this is issued from the Sub-Registrar or Joint Sub-Registrar office of the Revenue Department, and the state runs a Non-Encumbrance Certificate Issuance System through the Revenue Courts Management System portal so you can track the application online. Budget 15 to 30 days from application when the details submitted are correct.
+
+Two practical points from our own files.
+
+Your bank will demand this anyway if you are taking a home loan. Do not wait for the bank. By the time the bank raises a red flag you may have paid token money you cannot recover.
+
+And ask for a 30-year search period, not a 12-year one. The cheaper, shorter search is what most people order. Thirty years is what actually catches an old mortgage or a decades-old family claim.
+
+### 4. Sale deed
+
+The sale deed is the instrument that transfers ownership to you. It is drafted, stamped, signed, and registered at the Sub-Registrar or Tehsildar office. Until it is registered, you are a person with a receipt, not an owner.
+
+Read the draft before the registration date, not on it. On the day of registration you will be in a queue, with a token number, with the seller's family present, and you will sign what is in front of you. That is exactly the environment in which unfavourable clauses survive.
+
+One trap worth naming, because we see it constantly in Mohali and Kharar: registry on super area instead of covered area. Registry should legally reflect the covered area as per revenue records. Builders often push buyers to register on the super area because it makes the apparent value higher. The buyer pays stamp duty on the inflated figure. Check what area is written in your deed before it is executed.
+
+### 5. Tax, utility, and maintenance clearances
+
+Property tax. Electricity. Water and municipal charges. Maintenance, if it is a builder project or a gated society.
+
+Outstanding dues on a property do not stay with the person who created them. They attach to the property. The moment the property is yours, so are the arrears.
+
+Ask for the last three years of receipts, not the last one. A single current receipt tells you nothing about the four years before it. And on any multi-floor building, ask specifically whether the property tax ID is shared across floors or separate for each floor. That distinction has cost buyers more time than almost any other item on this list, and we explain why in part four.
+
+---
+
+## Part two: what these documents are called in Punjab
+
+Most national checklists are written for Bengaluru or Mumbai. If you take one to a Tehsil office in Punjab, half the vocabulary will not land. Here is the translation.
+
+| Standard name | Punjab equivalent | Where it comes from |
+|---|---|---|
+| Land record / title extract | Fard, or fard badar | Revenue Department, Sewa Kendra, Fard Kendra |
+| Record of rights | Jamabandi | Revenue Department, updated on a four-year cycle |
+| Mutation / transfer of record | Intkal | Tehsildar or Naib Tehsildar |
+| Daily register of proceedings | Rojnamcha | Patwari |
+| Survey and plot identifiers | Khasra, khewat, khatauni numbers | Revenue records |
+| Encumbrance certificate | Non-encumbrance certificate | Sub-Registrar office |
+| Change of land use | CLU | PUDA |
+| Colony or plot allotment record | Allotment letter, transfer memo | GMADA or PUDA |
+
+Punjab Land Records Society has digitised most of this. Jamabandi records, mutation status, rojnamcha, cadastral maps, nakal verification, and online fard requests are all available through the state land records portal, and a digitally signed QR-coded fard is legally valid. Copies issued through Sewa Kendras and Fard Kendras are equally valid.
+
+Use the online record as your first check and the certified copy as your verified one. Search by owner name, khewat number, khasra number, or khatauni number. If the online record and the paper the seller handed you disagree, you have found your issue before it cost you anything.
+
+### Which authority controls your property
+
+This is the question that decides which office you visit, and most buyers get it wrong.
+
+**GMADA** governs plot allotment by draw and auction, colony licensing inside its jurisdiction, and transfer records for properties in GMADA areas. For a GMADA transfer you need a certified copy carrying the Tehsildar stamp. Photographs of documents sent over WhatsApp are not accepted. A basic transfer costs roughly ₹4,000 to ₹5,000 in fees, an OTP goes to the last registered buyer on record, and the process takes four to eight weeks when the file is complete. When it is not complete, it takes as long as it takes.
+
+**PUDA** governs colony licensing outside GMADA limits, layout plan approvals, change of land use, and building plan sanctions in PUDA areas. Learn one distinction and it will save you: "applied for PUDA approval" is not "PUDA approved." CLU and layout approval are two separate processes. Both must be complete.
+
+**Municipal Committee or Corporation** governs building plan sanction, completion and occupancy certificates, property tax IDs, mutations inside municipal limits, and map revision approvals.
+
+**PSPCL** governs electrical connections, load sanction, and metering. A separate meter for each floor of a multi-floor building requires a fresh application and load sanction. It takes a few weeks. Having a separate meter is what makes a no-due certificate possible at resale.
+
+**RERA Punjab** is where you verify any registered project. Check the registration number, the promoter's past project history, current project status, and the number and type of complaints filed. Many promoters do not upload their mandatory quarterly progress updates. An empty update log on a project that claims to be 70 percent complete is information.
+
+---
+
+## Part three: buying from a builder or a development authority
+
+Everything in part one still applies. These six are additional.
+
+**Allotment letter.** Sets out the property details, price, and payment schedule agreed at booking. It should match your agreement to sell exactly. Here is the specific thing to watch: conditions do not belong in an allotment letter. Sellers and builders slip them in regularly. Every condition belongs in the agreement to sell, where both parties negotiate it. If a condition appears in the allotment letter that was never discussed, raise it before you pay the next instalment, not after.
+
+**Approved building plan.** Confirms the local authority sanctioned the plan the building was constructed from. On any built-up property this is essential. Compare the sanctioned plan against what is physically standing. Extra floors, covered balconies, and rear extensions that do not appear on the sanctioned plan become your regularisation problem.
+
+**Completion certificate.** Issued by the local authority confirming construction was completed as per the approved plan.
+
+**Occupancy certificate.** Issued by the Municipal Authority or Town Planning Department after completion, and it is what makes the property legally habitable. Under RERA, a promoter cannot hand over possession or collect the final payment without a valid occupancy or completion certificate. Punjab RERA has held that possession offered without a completion certificate violates both PAPRA and RERA, and has awarded compensation for delay and mental agony. The Supreme Court has held such possession illegal.
+
+Builders delay this one and offer you keys anyway. The offer is warm, the site is ready, your rent is running, and you want to move in. Do not take possession without the OC. Once you are living in a building without one, your leverage is gone and your legal position is weaker.
+
+**NOCs and no-due certificates.** Required when buying from a government authority, a cooperative society, or a builder. Do not accept a general assurance. Ask which specific NOCs apply to your property and get each one named.
+
+**Permission to sell.** Required when you are buying from a government authority. Without it the transfer will not be recorded, regardless of what you have paid.
+
+One more number, since it is where buyers overpay quietly: on a flat, a loading factor of 25 to 30 percent is standard. Above 35 percent is a red flag worth a direct question.
+
+---
+
+## Part four: the transaction itself
+
+### The agreement to sell
+
+Punjab calls it the bayana. In Punjab practice it is commonly executed on ₹4,000 stamp paper.
+
+There is a legal nuance here that costs people money. The Punjab and Haryana High Court has held that where an agreement to sell recites that possession has been delivered, stamp duty is leviable on that document as a conveyance. In plain terms: a possession clause can convert your agreement into a stamp-duty event. If possession is genuinely changing hands at agreement stage, have your lawyer draft that clause deliberately, with the duty implication understood, rather than copying a template.
+
+Everything you agreed verbally goes in this document. Price. Area, and whether that area is covered or super. Facing. Road width. Payment schedule. Possession date. Sale deed date. What happens if either side delays. What happens to the token if the deal collapses, and on whose default.
+
+A verbal understanding is not a term. If it is not written here, it does not exist.
+
+### Registration of the sale deed
+
+Once payment is complete, the sale deed is executed at the Sub-Registrar or Tehsildar office. Stamp duty is paid at this stage.
+
+| | Punjab | Chandigarh (UT) |
+|---|---|---|
+| Stamp duty, male buyer | 7% | 6% |
+| Stamp duty, female buyer | 5% | 6% |
+| Stamp duty, joint male and female | 6% | 6% |
+| Registration fee | 1%, capped at ₹2 lakh on most sale deeds | 1% |
+| Effective total | 6% to 8% | 7% |
+
+Both are calculated on the higher of the declared agreement value or the collector rate for that locality. Whichever is higher becomes the base.
+
+Punjab's 2 percent concession for female buyers is real money. On a ₹1 crore registry the difference between a male-only and female-only registration is ₹2 lakh. Two women buying jointly still pay 5 percent. This is worth a conversation with your family before the deed is drafted, not after.
+
+Chandigarh works differently in more ways than the rate. It is a Union Territory with its own Estate Office, and floor registries in Chandigarh are structured as shares rather than as independent units, which is why institutional home loans on Chandigarh floors are harder to arrange than on an equivalent independent flat registry in Mohali. If you are comparing a Chandigarh floor against a Mohali flat, compare the financing, not only the price.
+
+### Mutation: the step people skip
+
+Registration transfers ownership. Mutation updates the revenue record so the state knows about it.
+
+Mutation, the intkal in Punjab, does not create title. But without it the jamabandi will not carry your name, which means the next time anyone runs a check on the property, the record still points at the seller. Expect 15 to 30 days after registration in a normal case. Apply immediately. Do not let it drift.
+
+The same urgency applies to authority transfers. Initiate a GMADA transfer the moment your booking or registry is done, not months later when you get around to it. Which brings us to the two cases we tell every client.
+
+---
+
+## Part five: two cases from our own files
+
+**The plots that had already been cancelled.** We handled a Mohali transaction where the seller had not disclosed that the builder had cancelled both plots for non-payment of instalments by that seller. The buyer had already paid 65 percent of the purchase price. It surfaced only when the transfer was initiated. Recovery took eight months of persistent follow-up with the builder to get the plots reinstated, and one plot number had to be changed in the process, with reallocation to an adjacent position. The transfer eventually completed.
+
+The lesson is narrow and specific. Verify at the point of purchase that the plot is not already cancelled or under dispute, and initiate the transfer immediately after booking rather than after payment is complete. A plot can be cancelled at the builder's end while the paperwork in your hand still looks perfect.
+
+**The property tax that belonged to three floors.** A seller had not paid Municipal Committee property tax for several years on a constructed multi-floor building. The buyer bought the ground floor. When they went to clear the tax, the back-dated liability appeared as a collective amount across all three floors, because the property tax ID was at building level rather than floor level.
+
+Resolving it meant contacting every upper-floor owner, drafting an MOU between all three owners to allocate the liability and settle terms, generating separate property IDs for each floor, transferring the electricity connection into the buyer's name, and completing the GMADA transfer. Three months of coordination.
+
+The lesson: on any multi-floor building, get separate property tax IDs, and confirm electricity meter status before you complete the purchase. Ask the question at the site visit. It takes ten seconds and it is the difference between a clean file and a three-month negotiation with strangers.
+
+Neither of these was in anyone's scope of work. Both had to be solved anyway. That is what the post-sale part of an advisory relationship actually looks like.
+
+---
+
+## Part six: red flags that end the conversation
+
+Some issues are worth solving. These are worth walking away from.
+
+The seller cannot produce the title document, or produces only a photocopy and resists a certified copy.
+
+The name on the title does not match the person negotiating, and the explanation involves a family arrangement that was never registered.
+
+The sale is structured through a general power of attorney rather than a registered sale deed, with no clear reason.
+
+The builder is offering possession and asking for the final payment without an occupancy certificate.
+
+The property is agricultural land being sold for residential use with no CLU on record.
+
+The project claims approval but the promoter can only show an application, not a sanction.
+
+The RERA registration number does not resolve to a live listing on the Punjab RERA portal, or the promoter's complaint history shows repeated possession delays.
+
+The seller pushes for speed. Genuine sellers with clean files are patient, because time works in their favour. Urgency almost always belongs to the party with something to lose from a slow check.
+
+---
+
+## City-by-city: where you actually go
+
+**Mohali and the GMADA belt (including Kharar, Zirakpur, Dera Bassi, Banur, Rajpura, Lalru).** GMADA Estate Office at PUDA Bhawan, Sector 62 for allotment, transfer, and dues records. Municipal Committee for property tax, OC, and map revision. Tehsil office for fard, intkal, and registration. PSPCL sub-division for meter and load.
+
+**Chandigarh.** Estate Office for allotment and transfer of UT properties, with share-based floor registries and the financing consequences that follow. Sub-Registrar for registration at a uniform 6 percent stamp duty with no gender concession.
+
+**Ludhiana.** Municipal Corporation rather than a Municipal Committee, given the city's size. GLADA in place of GMADA for authority-developed areas. Tehsil office for fard and intkal. Ludhiana's older industrial and residential belts are exactly the profile where the mother deed and a 30-year encumbrance search earn their cost.
+
+**Bathinda, Patiala, Jalandhar, Amritsar.** Same architecture. Revenue Department for fard and jamabandi, Sub-Registrar for registration and non-encumbrance, the local municipal body for tax and building sanctions, and the relevant development authority for authority-allotted plots. The vocabulary and the portal are the same across Punjab. Only the office address changes.
+
+**Outside Punjab.** The five core documents in part one apply everywhere. The local names, the issuing office, and the stamp duty rate change with the state. Get a lawyer who practises in the district where the property sits, not one who practises where you live.
+
+---
+
+## Frequently asked questions
+
+**What is the single most important document when buying property in India?**
+
+The title or conveyance deed. It establishes that the seller legally owns the property. Every other document supports it or depends on it. If the title is not clean, nothing else on the checklist matters.
+
+**What is the difference between fard and jamabandi in Punjab?**
+
+Jamabandi is the record of rights maintained by the Revenue Department and updated on a four-year cycle. Fard is a certified extract from that record, used for legal transactions. Jamabandi gives you the broader record and its history. Fard confirms current ownership status in a form you can submit.
+
+**Do I need an encumbrance certificate if I am paying cash and not taking a loan?**
+
+Yes. The bank asks for it to protect the bank. You need it to protect yourself. It is the only document that reveals an existing mortgage, lien, or pending litigation on the property, and paying cash does not make those disappear.
+
+**What are the stamp duty and registration charges in Punjab in 2026?**
+
+Stamp duty is 7 percent for male buyers, 5 percent for female buyers, and 6 percent where a male and female buy jointly. Registration is 1 percent, capped at ₹2 lakh on most sale deeds. Both are calculated on the higher of the agreement value or the collector rate. Chandigarh applies a uniform 6 percent with no gender concession, plus 1 percent registration.
+
+**Can a builder give possession without an occupancy certificate?**
+
+No. Under RERA a promoter cannot offer possession or collect the final payment without a valid occupancy or completion certificate. Punjab RERA has held that doing so violates PAPRA and RERA, and compensation has been awarded. If a builder offers you keys without an OC, that is a compliance failure, not a formality.
+
+**How long does a GMADA property transfer take?**
+
+Four to eight weeks when the file is complete. It requires a certified copy carrying the Tehsildar stamp, and fees of roughly ₹4,000 to ₹5,000 for a basic transfer. An OTP is sent to the last registered buyer on record. Incomplete files take considerably longer.
+
+**Is mutation the same as registration?**
+
+No. Registration transfers ownership through a registered sale deed at the Sub-Registrar office. Mutation, the intkal, updates the revenue record so the jamabandi shows your name. Registration creates your title. Mutation makes the state's record agree with it. Both are necessary. Expect mutation to take 15 to 30 days after registration.
+
+**What documents do I need for a resale flat as opposed to a new one?**
+
+Everything in part one, plus the original allotment letter and the full chain of prior transfers, the occupancy certificate, a no-due certificate from the society or builder, property tax receipts covering the previous three years, and confirmation that the electricity meter is in the seller's name and is separately metered.
+
+**Do NRIs need different documents to buy property in India?**
+
+The property-side checklist is identical. What is additional is on the buyer's side: FEMA compliance, payment routed through an NRO or NRE account, PAN, and a properly executed power of attorney if you are not present for registration. Residential property does not require RBI approval. Agricultural land, farmhouses, and plantation property do.
+
+**How much should I budget for legal verification?**
+
+Far less than the loss it prevents. A competent property lawyer running a title search, a mother deed review, and a 30-year encumbrance search is a small fraction of a percent of a transaction. Both cases described above were recoverable only because someone chased them for months. Verification before payment costs a fraction of recovery after it.
+
+---
+
+## Before you sign anything
+
+If you are outside the Tricity, your lawyer should be cross-checking every item on this list before registration. If you do not have one, get one. A good property lawyer costs a fraction of a percent of the transaction and can save you crores.
+
+If you are buying in Mohali, Rajpura, Dera Bassi, Lalru, Banur, or Shamboo and want a second opinion on a specific file before you commit, one conversation is usually enough to tell you whether the paperwork is clean. Fifteen minutes, no pitch. WhatsApp us on [+91 78146 13916](https://wa.me/917814613916) or [book a call](https://realtyconsultants.in/appointments).
+
+---
+
+## Related reading
+
+- [Mohali Real Estate Guide 2026: the complete buyer reference](/blog/mohali-real-estate-guide-2026)
+- [Property Rates in Mohali and Chandigarh 2026: a ground-level market intelligence report](/blog/property-rates-mohali-2026-gmada-chandigarh-aerocity-guide)
+- [Mohali Real Estate FAQ 2026](/blog/mohali-real-estate-faq-2026)
+- [How to verify a GMADA plot before you buy](/blog/gmada-plot-verification-checklist)
+- [Occupancy certificate in Punjab: what it is and why possession without it is a problem](/blog/occupancy-certificate-punjab-buyer-rights)
+- [Encumbrance certificate in Punjab: how to obtain a non-encumbrance certificate](/blog/non-encumbrance-certificate-punjab-process)
+
+---
+
+## About the author
+
+Amritpal Singh is the founder of Realty Holding & Management Consultants, E328, Phase 8A, Industrial Area, Mohali. With over 10 years across real estate development, government liaisoning, capital markets, and media, he has personally closed 180+ transactions across all property categories in Punjab. He has obtained project approvals across five Punjab regulatory bodies, including GMADA, PUDA, PSPCL, the Municipal Committee, and the Forest Department, and has personally resolved builder-buyer conflicts, title disputes, and municipal tax disagreements. AMFI and NCFM certified.
+
+*This article is general information based on our transaction experience in Punjab and is not legal advice. Property law and documentation requirements vary by state and by individual circumstance. Engage a qualified property lawyer in the district where the property is located before completing any transaction.*
+--------------------------------------------------------------------------------
+
+END OF ARTICLE COPY.
+
+================================================================================
+PART 4   CONTENT: THE TOOL PAGE, IN FULL
+================================================================================
+
+
+URL:              /tools/property-document-checklist
+Page title:       Property Document Verification Checklist
+Meta title:       Property Document Verification Checklist, India and Punjab
+Meta description: A free, ungated checklist of every document to verify before
+                  buying property in India, with the Punjab layer: fard,
+                  jamabandi, intkal, GMADA transfer, stamp duty. Tick as you
+                  verify, print it, take it to the site visit.
+Canonical:        https://realtyconsultants.in/tools/property-document-checklist
+
+Masthead line:    Realty Holding & Management Consultants
+                  E328, Phase 8A, Industrial Area, Mohali, Punjab
+                  Free tool. No sign-up. Updated July 2026.
+
+STANDFIRST, directly under the H1:
+
+
+      Every document to verify before you buy property in India, in the order
+      you actually need it, with the Punjab layer most checklists leave out.
+      Tick items as you verify them, print it, take it to the site visit.
+
+
+ANSWER BLOCK, immediately after the standfirst. Labelled "The short answer".
+Three paragraphs. Nothing may sit above this.
+
+
+      Before paying anything for property in India, verify five documents: the
+      title or conveyance deed, the mother deed, the encumbrance certificate,
+      the sale deed, and clearance receipts for property tax, electricity,
+      water, and maintenance. If you are buying from a builder or a
+      development authority, add six more: the allotment letter, approved
+      building plan, completion certificate, occupancy certificate, applicable
+      NOCs, and permission to sell.
+
+      At the transaction stage you need an agreement to sell on correct stamp
+      paper, then a registered sale deed, then mutation in the revenue record.
+      In Punjab these carry local names: title proof is the fard and
+      jamabandi, transfer of record is the intkal. All of them come from the
+      Revenue Department, not from the seller.
+
+      Punjab stamp duty in 2026 is 7 percent for male buyers, 5 percent for
+      female buyers, and 6 percent for joint male and female purchase, plus 1
+      percent registration capped at ₹2 lakh. Chandigarh applies a flat 6
+      percent with no gender concession.
+
+
+--------------------------------------------------------------------------------
+THE 25 CHECKLIST ITEMS, IN FULL
+--------------------------------------------------------------------------------
+
+Format of each entry:
+
+  TITLE               the item heading
+  Punjab name         shown as a smaller label beside the title, where one exists
+  Applies to          which filters show this item
+  Description         the body sentence or two
+  Meta                labelled facts: who issues it, what to verify, timelines
+  Ask                 the question to put to the seller, shown in a tinted box
+  Red flag            shown in a red-bordered box, where one exists
+
+
+================================================================================
+STAGE 1: BEFORE YOU PAY A SINGLE RUPEE
+================================================================================
+  Token money is the hardest money to get back. Everything here happens before
+  it changes hands.
+
+--------------------------------------------------------------------------------
+ 1. Title or conveyance deed
+    Punjab name:  fard, jamabandi, CD
+    Applies to:   resale, builder, authority, land
+--------------------------------------------------------------------------------
+
+    Proves the seller legally owns what they are selling. This is the first
+    document you ask for and the one everything else depends on.
+
+    ISSUED BY:
+      Revenue Department. In Punjab, via Sewa Kendra, Fard Kendra, or the PLRS
+      portal
+
+    VERIFY:
+      The name on the title matches the person signing and the ID they
+      present. If jointly held, every joint owner is named
+
+    [ASK BOX]
+      Ask: "Can you give me a fresh certified copy, not a photocopy?"
+
+    [RED FLAG BOX: Walk away if]
+      The seller is vague about this document, or resists a fresh certified
+      copy. That hesitation is your answer.
+
+--------------------------------------------------------------------------------
+ 2. Mother deed
+    Sub-label:    chain of ownership
+    Applies to:   resale, authority, land
+--------------------------------------------------------------------------------
+
+    Traces ownership backward from the current seller to the original owner.
+    Its job is to expose gaps, and gaps are where disputes live.
+
+    ISSUED BY:
+      Revenue Department records
+
+    MATTERS MOST FOR:
+      Older properties, inherited property, agricultural land converted to
+      residential use
+
+    [ASK BOX]
+      Ask: "Has any transfer in this chain happened through power of attorney
+      rather than a registered deed?"
+
+    [RED FLAG BOX: Watch for]
+      An inherited property where one heir never signed a relinquishment. A
+      family partition done on paper but never in the revenue record.
+
+--------------------------------------------------------------------------------
+ 3. Encumbrance certificate
+    Punjab name:  non-encumbrance certificate
+    Applies to:   resale, builder, authority, land
+--------------------------------------------------------------------------------
+
+    Confirms no loan, mortgage, lien, charge, or litigation sits on the
+    property. The only document that reveals a hidden mortgage.
+
+    ISSUED BY:
+      Sub-Registrar or Joint Sub-Registrar office. Punjab runs an online
+      issuance system through the Revenue Courts Management System
+
+    TIMELINE:
+      15 to 30 days from application when details are correct
+
+    [ASK BOX]
+      Ask your lawyer for a 30-year search period, not the cheaper 12-year
+      one. Thirty years is what catches an old mortgage or a decades-old
+      family claim.
+
+    [RED FLAG BOX: Do not skip this if paying cash]
+      The bank asks for it to protect the bank. You need it to protect
+      yourself.
+
+--------------------------------------------------------------------------------
+ 4. Land use classification and CLU
+    Sub-label:    change of land use
+    Applies to:   land, authority
+--------------------------------------------------------------------------------
+
+    Confirms the land is legally usable for what you intend. Agricultural land
+    sold for residential use requires a change of land use order.
+
+    ISSUED BY:
+      PUDA for CLU. Industrial Departments for zone classification, red,
+      orange, or green
+
+    VERIFY:
+      CLU and layout approval are two separate processes. Both must be
+      complete
+
+    [ASK BOX]
+      Ask: "Is this PUDA approved, or has an application been submitted?"
+      Those are not the same thing.
+
+    [RED FLAG BOX: Walk away if]
+      Agricultural land is being sold for residential use with no CLU on
+      record.
+
+--------------------------------------------------------------------------------
+ 5. Cancellation and dispute status
+    Applies to:   authority, land
+--------------------------------------------------------------------------------
+
+    Confirms the plot has not already been cancelled by the builder or
+    authority for non-payment by the current seller, and is not under dispute.
+
+    CHECK AT:
+      GMADA Estate Office for GMADA plots. Request a property statement
+      showing instalments paid, pending dues, current registered owner, and
+      transfer history
+
+    [ASK BOX]
+      Ask the authority directly, not the seller. A plot can be cancelled at
+      the builder's end while the paperwork in the seller's hand still looks
+      perfect.
+
+    [RED FLAG BOX: From our files]
+      A buyer had paid 65 percent of the purchase price before discovering
+      both plots had been cancelled for the seller's non-payment. Recovery
+      took eight months and one plot number had to be changed.
+
+================================================================================
+STAGE 2: BEFORE THE AGREEMENT TO SELL
+================================================================================
+  Dues attach to the property, not the person who created them. Clear all of
+  these before you sign.
+
+--------------------------------------------------------------------------------
+ 6. Property tax receipts, last three years
+    Applies to:   resale, builder, authority, land
+--------------------------------------------------------------------------------
+
+    Outstanding property tax does not stay with the seller. The moment the
+    property is yours, so are the arrears.
+
+    ISSUED BY:
+      Municipal Committee or Municipal Corporation
+
+    ASK FOR:
+      Three years of receipts, not one. A single current receipt tells you
+      nothing about the four years before it
+
+    [ASK BOX]
+      On any multi-floor building ask: "Is the property tax ID separate for
+      this floor, or shared across the building?"
+
+    [RED FLAG BOX: From our files]
+      A seller had years of unpaid Municipal Committee tax on a multi-floor
+      building with a single building-level tax ID. The buyer of the ground
+      floor inherited a collective liability across all three floors.
+      Resolving it took an MOU between three owners and three months.
+
+--------------------------------------------------------------------------------
+ 7. Electricity and water clearance
+    Applies to:   resale, builder, authority
+--------------------------------------------------------------------------------
+
+    Confirms no pending utility dues and establishes whose name the meter sits
+    in.
+
+    ISSUED BY:
+      PSPCL for electricity in Punjab. Local body for water and municipal
+      charges
+
+    VERIFY:
+      On a multi-floor building, that the floor has its own meter. A separate
+      meter is what makes a no-due certificate possible at resale
+
+    [ASK BOX]
+      Ask: "Is there a separate sanctioned load and meter for this unit?"
+
+--------------------------------------------------------------------------------
+ 8. Maintenance dues and society clearance
+    Applies to:   builder
+--------------------------------------------------------------------------------
+
+    Confirms no outstanding maintenance charges on a builder project or gated
+    society.
+
+    BENCHMARK:
+      ₹3 to 4 per sq ft per month basic, ₹5 to 6 with amenities, ₹7 to 8 for
+      full service
+
+    [ASK BOX]
+      Ask: "What is the current monthly maintenance, and is anything
+      outstanding on this unit?"
+
+--------------------------------------------------------------------------------
+ 9. Allotment letter
+    Applies to:   builder, authority
+--------------------------------------------------------------------------------
+
+    Sets out property details, price, and payment schedule agreed at booking.
+    It should match your agreement to sell exactly.
+
+    ISSUED BY:
+      Builder or development authority
+
+    RULE:
+      Conditions do not belong in an allotment letter. Every condition belongs
+      in the agreement to sell, where both parties negotiate it
+
+    [ASK BOX]
+      Ask: "Why is this condition here and not in the agreement to sell?"
+
+    [RED FLAG BOX: Watch for]
+      Conditions inserted into the allotment letter that were never discussed.
+      Raise them before the next instalment, not after.
+
+--------------------------------------------------------------------------------
+10. Approved building plan
+    Applies to:   builder
+--------------------------------------------------------------------------------
+
+    Confirms the local authority sanctioned the plan the building was actually
+    constructed from.
+
+    ISSUED BY:
+      Municipal Committee, PUDA, or GMADA depending on jurisdiction
+
+    VERIFY:
+      Compare the sanctioned plan against what is physically standing
+
+    [ASK BOX]
+      Ask: "Does the sanctioned plan show this balcony, this floor, and this
+      rear extension?"
+
+    [RED FLAG BOX: Watch for]
+      Extra floors, covered balconies, and rear extensions absent from the
+      sanctioned plan. They become your regularisation problem.
+
+--------------------------------------------------------------------------------
+11. RERA Punjab registration and history
+    Applies to:   builder
+--------------------------------------------------------------------------------
+
+    Verifies the project is registered, and reveals what the promoter's past
+    projects actually did.
+
+    CHECK ON:
+      rera.punjab.gov.in
+
+    LOOK AT:
+      Registration number, promoter's past project history, current project
+      status, and the number and type of complaints filed
+
+    [ASK BOX]
+      Check whether the promoter has filed the mandatory quarterly progress
+      updates. An empty update log on a project claiming 70 percent completion
+      is information.
+
+    [RED FLAG BOX: Walk away if]
+      The registration number does not resolve to a live listing, or the
+      complaint history shows repeated possession delays.
+
+--------------------------------------------------------------------------------
+12. Carpet, built-up and super area, and the loading factor
+    Applies to:   builder
+--------------------------------------------------------------------------------
+
+    Establishes what you are actually paying for versus what you can actually
+    use.
+
+    BENCHMARK:
+      25 to 30 percent loading is standard. Above 35 percent deserves a direct
+      question
+
+    [ASK BOX]
+      Ask: "What is the carpet area, and what is the loading factor on this
+      unit?"
+
+================================================================================
+STAGE 3: BEFORE YOU TAKE POSSESSION
+================================================================================
+  Once you are living in a building, your leverage is gone. These are the
+  documents to insist on beforehand.
+
+--------------------------------------------------------------------------------
+13. Completion certificate
+    Applies to:   builder
+--------------------------------------------------------------------------------
+
+    Confirms construction was completed as per the approved plan.
+
+    ISSUED BY:
+      Local authority, Municipal Committee or Estate Office
+
+--------------------------------------------------------------------------------
+14. Occupancy certificate (OC)
+    Applies to:   builder
+--------------------------------------------------------------------------------
+
+    The document that makes the building legally habitable. Under RERA, a
+    promoter cannot offer possession or collect the final payment without a
+    valid occupancy or completion certificate.
+
+    ISSUED BY:
+      Municipal Authority or Town Planning Department after final inspection
+
+    LEGAL POSITION:
+      Punjab RERA has held that possession offered without a completion
+      certificate violates PAPRA and RERA, and has awarded compensation. The
+      Supreme Court has held such possession illegal
+
+    [ASK BOX]
+      Ask: "Can I see the OC before I accept the keys?" Then wait for it.
+
+    [RED FLAG BOX: Do not take possession without this]
+      The offer will be warm, the site will be ready, and your rent is
+      running. Once you are living in a building without an OC, your legal
+      position is weaker and your leverage is gone.
+
+--------------------------------------------------------------------------------
+15. NOCs and no-due certificates
+    Applies to:   builder, authority
+--------------------------------------------------------------------------------
+
+    Confirms nothing is outstanding with the society, the authority, or the
+    builder.
+
+    REQUIRED WHEN:
+      Buying from a government authority, a cooperative society, or a builder
+
+    [ASK BOX]
+      Do not accept a general assurance. Ask which specific NOCs apply to this
+      property, and get each one named.
+
+--------------------------------------------------------------------------------
+16. Permission to sell
+    Applies to:   authority
+--------------------------------------------------------------------------------
+
+    The authority's consent to the transfer. Without it the transfer will not
+    be recorded, regardless of what you have paid.
+
+    REQUIRED WHEN:
+      Buying from a government authority
+
+================================================================================
+STAGE 4: THE TRANSACTION
+================================================================================
+  A verbal understanding is not a term. If it is not written here, it does not
+  exist.
+
+--------------------------------------------------------------------------------
+17. Agreement to sell
+    Punjab name:  bayana
+    Applies to:   resale, builder, authority, land
+--------------------------------------------------------------------------------
+
+    Every commercial term in writing. In Punjab practice this is commonly
+    executed on ₹4,000 stamp paper.
+
+    MUST CONTAIN:
+      Price. Area, and whether it is covered or super. Facing. Road width.
+      Payment schedule. Possession date. Sale deed date. What happens if
+      either side delays, and what happens to the token if the deal collapses,
+      and on whose default
+
+    LEGAL NUANCE:
+      The Punjab and Haryana High Court has held that where an agreement to
+      sell recites that possession has been delivered, stamp duty is leviable
+      on that document as a conveyance
+
+    [ASK BOX]
+      If possession genuinely changes hands at agreement stage, have your
+      lawyer draft that clause deliberately, with the duty implication
+      understood, rather than copying a template.
+
+--------------------------------------------------------------------------------
+18. Sale deed draft, reviewed before registration day
+    Applies to:   resale, builder, authority, land
+--------------------------------------------------------------------------------
+
+    Read the draft before the registration date, not on it.
+
+    WHY IT MATTERS:
+      On the day you will be in a queue, with a token number, with the
+      seller's family present. That is exactly the environment in which
+      unfavourable clauses survive
+
+    CHECK:
+      Whether the deed is written on covered area or super area. Registry
+      should legally reflect covered area per revenue records
+
+    [ASK BOX]
+      Ask: "Send me the draft deed a week before we register."
+
+    [RED FLAG BOX: The super area trap]
+      Builders push buyers to register on super area because it inflates the
+      apparent value. You pay stamp duty on the inflated figure.
+
+--------------------------------------------------------------------------------
+19. Stamp duty and registration calculated
+    Applies to:   resale, builder, authority, land
+--------------------------------------------------------------------------------
+
+    Punjab 2026: 7 percent male, 5 percent female, 6 percent joint male and
+    female. Registration 1 percent, capped at ₹2 lakh on most sale deeds.
+    Chandigarh: flat 6 percent regardless of gender, plus 1 percent.
+
+    CALCULATED ON:
+      The higher of the declared agreement value or the collector rate for
+      that locality
+
+    [ASK BOX]
+      Punjab's 2 percent concession for female buyers is real money. On a ₹1
+      crore registry the difference is ₹2 lakh. Two women buying jointly still
+      pay 5 percent. Have this conversation before the deed is drafted.
+
+--------------------------------------------------------------------------------
+20. Sale deed executed and registered
+    Applies to:   resale, builder, authority, land
+--------------------------------------------------------------------------------
+
+    Executed at the Sub-Registrar or Tehsildar office once payment is
+    complete. Until it is registered, you are a person with a receipt, not an
+    owner.
+
+    BRING:
+      ID and address proof and PAN for both parties, photographs, the draft
+      deed, and proof of stamp duty payment
+
+================================================================================
+STAGE 5: AFTER REGISTRATION, AND DO NOT LET THIS DRIFT
+================================================================================
+  This is the stage most buyers skip. It is also the stage that causes
+  problems years later when you try to sell.
+
+--------------------------------------------------------------------------------
+21. Mutation applied for
+    Punjab name:  intkal
+    Applies to:   resale, builder, authority, land
+--------------------------------------------------------------------------------
+
+    Registration transfers ownership. Mutation updates the revenue record so
+    the state knows about it. Both are necessary.
+
+    APPLIED AT:
+      Tehsildar or Naib Tehsildar. Status trackable on the PLRS portal
+
+    TIMELINE:
+      15 to 30 days after registration in a normal case
+
+    [ASK BOX]
+      Apply immediately. Without mutation the jamabandi will not carry your
+      name, and the next check anyone runs still points at the seller.
+
+--------------------------------------------------------------------------------
+22. Authority transfer initiated (GMADA, PUDA)
+    Applies to:   authority, builder
+--------------------------------------------------------------------------------
+
+    Transfers the allotment record into your name at the development
+    authority.
+
+    REQUIRES:
+      A certified copy carrying the Tehsildar stamp. Photographs of documents
+      sent over WhatsApp are not accepted
+
+    COST AND TIME:
+      Roughly ₹4,000 to ₹5,000 in fees for a basic transfer. Four to eight
+      weeks when the file is complete. An OTP goes to the last registered
+      buyer on record
+
+    [ASK BOX]
+      Initiate the transfer the moment your booking or registry is done, not
+      months later.
+
+--------------------------------------------------------------------------------
+23. Electricity and water transferred to your name
+    Applies to:   resale, builder, authority
+--------------------------------------------------------------------------------
+
+    Moves the connection into your name and, on a multi-floor building,
+    establishes separate metering.
+
+    APPLIED AT:
+      PSPCL sub-division. A separate meter per floor requires a fresh
+      application and load sanction, a few weeks
+
+--------------------------------------------------------------------------------
+24. Separate property tax ID generated
+    Applies to:   resale, builder, authority
+--------------------------------------------------------------------------------
+
+    Ensures your floor or unit carries its own tax liability rather than
+    sharing one with the rest of the building.
+
+    APPLIED AT:
+      Municipal Committee. On a multi-floor building this may require an MOU
+      between floor owners
+
+    [ASK BOX]
+      Do this now, while the other owners are cooperative, rather than at
+      resale when you need a no-due certificate urgently.
+
+--------------------------------------------------------------------------------
+25. Originals secured, digital copies made
+    Applies to:   resale, builder, authority, land
+--------------------------------------------------------------------------------
+
+    The registered sale deed, mutation record, allotment letter, OC, NOCs, and
+    receipts. Scan everything and keep a set off-site.
+
+    [ASK BOX]
+      Your buyer, five years from now, will ask for exactly this file.
+      Assemble it while you still remember where everything is.
+
+
+--------------------------------------------------------------------------------
+TABLE 1: WHAT THESE DOCUMENTS ARE CALLED IN PUNJAB
+--------------------------------------------------------------------------------
+
+Intro line:
+      Most national checklists are written for Bengaluru or Mumbai. Here is
+      the translation for a Tehsil office in Punjab.
+
+  Standard name                  Punjab equivalent            Where it comes from
+  -----------------------------  ---------------------------  ---------------------------------
+  Land record, title extract     Fard, fard badar             Revenue Department, Sewa Kendra,
+                                                              Fard Kendra
+  Record of rights               Jamabandi                    Revenue Department, updated on a
+                                                              four-year cycle
+  Mutation, transfer of record   Intkal                       Tehsildar or Naib Tehsildar
+  Daily register of proceedings  Rojnamcha                    Patwari
+  Plot and survey identifiers    Khasra, khewat, khatauni     Revenue records
+  Encumbrance certificate        Non-encumbrance certificate  Sub-Registrar office
+  Change of land use             CLU                          PUDA
+  Allotment and transfer record  Allotment letter,            GMADA or PUDA
+                                 transfer memo
+
+--------------------------------------------------------------------------------
+TABLE 2: WHICH OFFICE CONTROLS WHAT
+--------------------------------------------------------------------------------
+
+Intro line:
+      The question that decides where you go, and the one most buyers get
+      wrong.
+
+  GMADA
+    Controls:  Plot allotment by draw and auction, colony licensing, transfer
+               records in GMADA areas
+    Note:      Transfer needs a Tehsildar-stamped certified copy. Roughly
+               Rs 4,000 to Rs 5,000, four to eight weeks
+
+  PUDA
+    Controls:  Colony licensing outside GMADA, layout plans, CLU, building
+               sanctions in PUDA areas
+    Note:      "Applied for PUDA approval" is not "PUDA approved". CLU and
+               layout approval are separate
+
+  Municipal Committee
+    Controls:  Building sanction, completion and occupancy certificates,
+               property tax IDs, mutation in municipal limits
+    Note:      Tax IDs are often at building level, causing shared liability
+               across floors
+
+  PSPCL
+    Controls:  Electrical connection, load sanction, metering
+    Note:      A separate meter is what makes a no-due certificate possible at
+               resale
+
+  RERA Punjab
+    Controls:  Project registration and promoter compliance
+    Note:      Many promoters skip the mandatory quarterly progress updates
+
+  Revenue Department
+    Controls:  Fard, jamabandi, intkal, registration
+    Note:      Records are online through the PLRS portal. A digitally signed
+               QR-coded fard is legally valid
+
+--------------------------------------------------------------------------------
+PANEL: WHEN TO WALK AWAY
+--------------------------------------------------------------------------------
+
+Heading:    When to walk away
+Sub-line:   Some issues are worth solving. These are worth leaving.
+
+
+    - The seller cannot produce the title document, or produces only a
+    photocopy and resists a certified copy.
+
+    - The name on the title does not match the person negotiating, and the
+    explanation involves a family arrangement that was never registered.
+
+    - The sale is structured through a general power of attorney rather than a
+    registered sale deed, with no clear reason.
+
+    - The builder is offering possession and asking for the final payment
+    without an occupancy certificate.
+
+    - Agricultural land is being sold for residential use with no CLU on
+    record.
+
+    - The project claims approval but the promoter can show only an
+    application, not a sanction.
+
+    - The RERA number does not resolve to a live listing, or the complaint
+    history shows repeated possession delays.
+
+    - The seller pushes for speed. Genuine sellers with clean files are
+    patient, because time works in their favour. Urgency almost always belongs
+    to the party with something to lose from a slow check.
+
+
+--------------------------------------------------------------------------------
+CALL TO ACTION BLOCK
+--------------------------------------------------------------------------------
+
+Heading:
+    If something on this list is not adding up
+
+    This checklist is free and there is nothing to sign up for. If you are
+    mid-transaction in Mohali, Rajpura, Dera Bassi, Lalru, Banur, or Shamboo
+    and want a second opinion on a specific file before you commit, one
+    conversation is usually enough to tell you whether the paperwork is clean.
+
+    Fifteen minutes. No pitch.
+
+    Outside the Tricity? Your lawyer should be cross-checking every item above
+    before registration. If you do not have one, get one. A good property
+    lawyer costs a fraction of a percent of the transaction.
+
+    Button:  WhatsApp +91 78146 13916   ->  https://wa.me/917814613916
+    Also:    Download the printable version
+             ->  /downloads/RHMC-Property-Document-Checklist.pdf
+================================================================================
+PART 5   CONTENT: THE ABOUT PAGE, IN FULL
+================================================================================
+
+
+URL:  /about
+
+If the page already exists, extend it. Do not replace it. It must end up
+carrying the canonical Person and Organization records, because both other
+pages reference them.
+
+
+AUTHOR BIOGRAPHY, use word for word:
+
+    Amritpal Singh founded Realty Holding & Management Consultants after a
+    career that placed him on every side of the real estate transaction. He
+    has worked as a consultant, built projects as a developer, navigated five
+    Punjab government regulatory bodies to obtain project approvals (PUDA,
+    PSPCL, Forest Department, Municipal Committee, and Industrial
+    Departments), and personally resolved property disputes ranging from
+    builder-buyer conflicts and title disputes to municipal tax disagreements.
+    He holds AMFI and NCFM certifications in capital markets and derivatives,
+    a postgraduate qualification in Advertising and Public Relations, and has
+    worked as a newspaper editor and insurance professional. He has personally
+    closed 180+ transactions across all property categories across Mohali,
+    Chandigarh, Panchkula, Banga, and Anandpur Sahib.
+
+
+SHORT BIOGRAPHY, used at the foot of the article and the tool page:
+
+    Amritpal Singh is the founder of Realty Holding & Management Consultants,
+    E328, Phase 8A, Industrial Area, Mohali. With over 10 years across real
+    estate development, government liaisoning, capital markets, and media, he
+    has personally closed 180+ transactions across all property categories in
+    Punjab. He has obtained project approvals across five Punjab regulatory
+    bodies including GMADA, PUDA, PSPCL, the Municipal Committee, and the
+    Forest Department, and has personally resolved builder-buyer conflicts,
+    title disputes, and municipal tax disagreements. AMFI and NCFM certified.
+
+
+CREDENTIALS, display as a structured list:
+
+    10+ years across real estate development, government liaisoning, capital
+      markets and media
+    180+ transactions personally closed, across all six property categories
+    AMFI certified, Association of Mutual Funds in India
+    NCFM certified, Capital Markets and Derivatives, NSE Academy
+    Post Graduate, Advertising and Public Relations
+    Director and Sales Head of a RERA-approved private limited company
+    Direct liaisoning experience with GMADA, PUDA, PSPCL, Municipal Committee,
+      Forest and Conservation Authorities, and the Industrial Departments of
+      Punjab
+    Editor of an RNIS-registered fortnightly newspaper, English and Hindi
+      editions
+
+
+CONTACT BLOCK, byte-identical wherever it appears:
+
+    Realty Holding & Management Consultants
+    E328, Phase 8A, Industrial Area, Mohali, Punjab
+    +91 78146 13916
+    info@realtyconsultants.in
+    https://realtyconsultants.in
+    Booking: https://realtyconsultants.in/appointments
+    WhatsApp: https://wa.me/917814613916
+
+
+SERVICE AREAS:
+
+    Mohali, Rajpura, Dera Bassi, Lalru, Banur, Shamboo
+
+
+SUBJECTS THE AUTHOR IS AUTHORITATIVE ON, for structured data:
+
+    Property documentation India
+    GMADA plot allotment and transfer
+    PUDA colony licensing and CLU
+    RERA Punjab compliance
+    Punjab land records and mutation
+    Real estate investment advisory
+
+
+LEGAL DISCLAIMER, appears at the foot of the article and the tool page:
+
+    This article is general information based on our transaction experience in
+    Punjab and is not legal advice. Property law and documentation
+    requirements vary by state and by individual circumstance. Engage a
+    qualified property lawyer in the district where the property is located
+    before completing any transaction. Figures current as of July 2026.
+
+================================================================================
+PART 6   THE 10 FAQ ANSWERS, FOR STRUCTURED DATA
+================================================================================
+
+
+These appear on the tool page and go into its FAQ structured data. The text in
+the structured data must match the text visible on the page character for
+character. If one changes, both change.
+
+
+ 1. Q: What documents are required to buy property in India?
+
+      A: Five documents apply to every purchase: the title or conveyance deed,
+      the mother deed, the encumbrance certificate, the sale deed, and
+      clearance receipts for property tax, electricity, water, and
+      maintenance. Buying from a builder adds the allotment letter, approved
+      building plan, completion certificate, occupancy certificate, applicable
+      NOCs, and permission to sell.
+
+ 2. Q: What is the most important document when buying property in India?
+
+      A: The title or conveyance deed. It establishes that the seller legally
+      owns the property. Every other document supports it or depends on it. If
+      the title is not clean, nothing else on the checklist matters.
+
+ 3. Q: What is the difference between fard and jamabandi in Punjab?
+
+      A: Jamabandi is the record of rights maintained by the Revenue
+      Department and updated on a four-year cycle. Fard is a certified extract
+      from that record, used for legal transactions. Jamabandi gives the
+      broader record and its history. Fard confirms current ownership status
+      in submittable form.
+
+ 4. Q: What is intkal in Punjab property?
+
+      A: Intkal is mutation, the process of updating the revenue record after
+      ownership changes. It does not create title, but without it the
+      jamabandi will not carry your name. Apply at the Tehsildar office.
+      Expect 15 to 30 days after registration.
+
+ 5. Q: What are the stamp duty and registration charges in Punjab in 2026?
+
+      A: Stamp duty is 7 percent for male buyers, 5 percent for female buyers,
+      and 6 percent where a male and female buy jointly. Registration is 1
+      percent, capped at ₹2 lakh on most sale deeds. Both are calculated on
+      the higher of agreement value or collector rate. Chandigarh applies a
+      uniform 6 percent with no gender concession, plus 1 percent
+      registration.
+
+ 6. Q: Can a builder give possession without an occupancy certificate?
+
+      A: No. Under RERA a promoter cannot offer possession or collect the
+      final payment without a valid occupancy or completion certificate.
+      Punjab RERA has held that doing so violates PAPRA and RERA, and
+      compensation has been awarded. The Supreme Court has held such
+      possession illegal.
+
+ 7. Q: How long does a GMADA property transfer take?
+
+      A: Four to eight weeks when the file is complete. It requires a
+      certified copy carrying the Tehsildar stamp, and fees of roughly ₹4,000
+      to ₹5,000 for a basic transfer. An OTP is sent to the last registered
+      buyer on record.
+
+ 8. Q: Do I need an encumbrance certificate if I am not taking a home loan?
+
+      A: Yes. The bank asks for it to protect the bank. You need it to protect
+      yourself. It is the only document that reveals an existing mortgage,
+      lien, or pending litigation on the property, and paying cash does not
+      make those disappear.
+
+ 9. Q: Is mutation the same as property registration?
+
+      A: No. Registration transfers ownership through a registered sale deed
+      at the Sub-Registrar office. Mutation updates the revenue record so the
+      jamabandi shows your name. Registration creates your title. Mutation
+      makes the state's record agree with it. Both are necessary.
+
+10. Q: How do I check if a plot has been cancelled by the builder?
+
+      A: Ask the authority directly rather than the seller. For a GMADA plot,
+      visit the GMADA Estate Office with the allotment letter and request a
+      property statement showing instalments paid, pending dues, current
+      registered owner, and transfer history. A plot can be cancelled at the
+      builder's end while the seller's paperwork still looks correct.
+
+================================================================================
+PART 7   FACTS THAT MUST NOT CHANGE
+================================================================================
+
+
+Verified against sources on 26 July 2026. Do not round, simplify or restate.
+
+  Punjab stamp duty          7% male, 5% female, 6% joint male and female
+  Punjab registration        1%, capped at Rs 2 lakh on most sale deeds
+  Chandigarh stamp duty      6% flat, no gender concession, plus 1%
+  Basis of calculation       higher of agreement value or collector rate
+  Agreement to sell          commonly on Rs 4,000 stamp paper in Punjab
+  Possession clause          Punjab and Haryana High Court has held that an
+                             agreement to sell reciting delivery of possession
+                             attracts stamp duty as a conveyance
+  GMADA basic transfer       roughly Rs 4,000 to Rs 5,000
+  GMADA transfer time        4 to 8 weeks when the file is complete
+  Encumbrance certificate    15 to 30 days
+  Mutation after registry    15 to 30 days
+  Encumbrance search period  ask for 30 years, not the cheaper 12
+  Acceptable loading factor  25 to 30 percent, above 35 percent is a red flag
+  Maintenance benchmark      Rs 3-4 basic, Rs 5-6 with amenities, Rs 7-8 full
+                             service, per sq ft per month
+  Jamabandi update cycle     four years
+  Case study figure          buyer had paid 65 percent before discovering the
+                             plots were cancelled, 8 months to recover
+  Case study figure          property tax MOU across three floor owners,
+                             3 months to resolve
+
+Review every quarter. When a figure changes, update the visible text, the
+structured data, and the page's last-modified date together.
+
+
+================================================================================
+PART 8   DONE WHEN
+================================================================================
+
+
+Every line verified and reported, not assumed.
+
+READABLE BY MACHINES
+  [ ] All 25 items present in the page source before any script runs
+  [ ] All content readable with JavaScript disabled
+  [ ] Answer block inside the first 150 words on both content pages
+  [ ] Nothing hidden behind a click-to-expand on first load
+
+WORKS
+  [ ] All 25 items tickable by mouse and by keyboard
+  [ ] Filters return 25 / 13 / 21 / 19 / 12
+  [ ] Filtering does not clear ticked items
+  [ ] Scroll position preserved when filtering
+  [ ] Progress total counts visible items, not all items
+  [ ] Share link round-trips: tick 7 items, copy, open fresh, same 7 ticked
+  [ ] Reset clears everything
+  [ ] Print preview is clean A4, nothing clipped, no controls printed
+  [ ] Print output contains only the filtered items, not all 25
+  [ ] Share button gives visible confirmation
+  [ ] Shared link correct on first paint, no flash of unchecked list
+  [ ] PDF downloads without a form
+
+STRUCTURED DATA
+  [ ] All three pages pass Google's Rich Results Test with no errors
+  [ ] FAQ answers identical to visible text on both pages
+  [ ] Every schema question also visible on that page
+  [ ] Every breadcrumb item resolves to a real route
+  [ ] Item list declares 25 and contains 25
+  [ ] Process data contains 5 stages and 25 steps
+  [ ] Person and Organization identifiers identical across all three pages
+
+CONTENT INTACT
+  [ ] Article word count within 5 percent of 4,400
+  [ ] Zero em dashes in the rendered output
+  [ ] Every figure in PART 7 present and unaltered
+  [ ] Contact block identical on all three pages
+  [ ] No supplied copy reworded
+
+QUALITY
+  [ ] Accessibility score 95 or above on both content pages
+  [ ] SEO score 100 on both content pages
+  [ ] No layout shift on load
+  [ ] Tool usable at 360px width
+
+
+================================================================================
+END
+================================================================================

@@ -1,0 +1,559 @@
+================================================================================
+SCOPE OF WORK
+Property Document Checklist: pillar article, interactive tool, author page
+Realty Holding & Management Consultants
+Repository: C:/Desktop/monter
+Prepared 26 July 2026
+================================================================================
+
+This document states WHAT must exist when the work is finished.
+It does not state how to build it. Implementation choices are the developer's,
+provided every requirement below is met.
+
+
+================================================================================
+1. OBJECTIVE
+================================================================================
+
+Two outcomes, both required. Neither alone is sufficient.
+
+  a) A person actively buying property must be able to land on this site and
+     walk away with something they can use that same day: a checklist they can
+     work through, filter to their situation, print, and take to a site visit.
+
+  b) When someone asks Google, ChatGPT, Perplexity or Gemini what documents are
+     needed to buy property in India or Punjab, this site must be the source
+     that gets cited.
+
+Outcome (b) is why the tool cannot be gated and cannot be rendered only in the
+browser. A machine that cannot read the content cannot cite it.
+
+
+================================================================================
+1B. HOW THIS ACTUALLY GETS USED
+================================================================================
+
+
+Read this before building. It is the reasoning behind requirements that will
+otherwise look arbitrary, and it should drive judgment on anything not
+specified elsewhere in this document.
+
+The user is not browsing. They are mid-transaction, with money at stake, in a
+process they do not feel qualified to navigate. Four distinct moments.
+
+
+MOMENT 1: AT THEIR DESK, PAPERS IN FRONT OF THEM
+
+  They have found a property. The seller has sent a bundle of photographed
+  documents over WhatsApp. They search something like "what documents to check
+  before buying a plot", land on the tool, and work down the list against what
+  they were actually sent.
+
+  What this requires:
+
+    The filter is the first thing they touch. Someone buying a resale flat
+      should not be reading about CLU orders for agricultural land. Filtering
+      must be immediate and obvious, not buried below the fold.
+    The "ask the seller" line matters more than the description. It is the
+      exact wording for a conversation they feel unqualified to have. Visually
+      distinct, never truncated, never collapsed behind a toggle.
+    Red flags visible at a glance without expanding anything.
+    They will be on this page 10 to 20 minutes and will scroll it repeatedly.
+      Scroll position survives filtering. Nothing reflows under the cursor.
+
+
+MOMENT 2: HANDING IT TO THEIR LAWYER OR SPOUSE
+
+  They tick what they have verified, copy the link, and send it. The recipient
+  opens it and sees the same state.
+
+  What this requires:
+
+    This is why state lives in the page address and not in browser storage. It
+      is what makes the tool circulate instead of being used once and
+      forgotten. Do not substitute an account, a saved session, or a
+      "download your progress" file.
+    The share button must confirm it worked. A silent copy reads as a broken
+      button.
+    A link opened cold restores state correctly, with no flash of an unchecked
+      list first.
+
+
+MOMENT 3: STANDING ON THE PLOT
+
+  Printed, on paper, in hand, in the sun, with the seller watching.
+
+  What this requires:
+
+    Checkboxes print empty regardless of screen state, so the sheet works as a
+      fresh worksheet.
+    Only the filtered items print. Someone buying a GMADA plot should not
+      carry four pages of builder-project items.
+    Nothing clipped at page edges. No item split across a page break.
+    No controls, buttons or navigation on the printed sheet.
+
+
+MOMENT 4: THE FIRM SENDS THE LINK INSTEAD OF EXPLAINING
+
+  Someone messages asking what papers they need. Instead of typing the same
+  answer again, the firm sends this URL. It also goes in YouTube descriptions,
+  the Google Business Profile, and replies on forums.
+
+  What this requires:
+
+    The page stands alone with no context. A cold visitor arriving from a
+      WhatsApp link understands within one screen what this is, who made it,
+      and that it is free.
+    Loads fast on a mid-range Android phone on mobile data.
+    Social preview metadata matters. This link gets pasted into chat apps more
+      often than it gets clicked from search results.
+
+
+THE BUSINESS LOGIC BEHIND THE CONSTRAINTS
+
+  There is no lead capture anywhere in this, deliberately. Someone who has
+  ticked 19 of 25 items and stalled on the occupancy certificate is already
+  the most qualified lead this firm can get. They make contact because they
+  have a specific problem, not because a form asked them to.
+
+  Friction added to help conversion will reduce conversion here. That is why
+  the no-gating rule is absolute rather than a preference.
+
+  The second reason is mechanical. Content behind a form, or content that only
+  exists after JavaScript runs, cannot be read by the AI engines this page is
+  built to be cited by. Gating it defeats the page's other purpose entirely.
+
+
+
+================================================================================
+2. DELIVERABLES
+================================================================================
+
+Three pages and one downloadable file.
+
+  D1  Pillar article
+      URL:  /blog/documents-required-buying-property-india-checklist
+      Approx 4,400 words. Long-form reference piece.
+
+  D2  Interactive checklist tool
+      URL:  /tools/property-document-checklist
+      25 verification items, filterable, printable, shareable.
+
+  D3  Author and firm page
+      URL:  /about
+      Extend if it already exists. Do not replace it.
+
+  D4  Printable PDF
+      URL:  /downloads/RHMC-Property-Document-Checklist.pdf
+      4 pages, A4. Already produced. Must be downloadable with no gate.
+
+All content for D1 to D4 is already written and supplied. This is an
+implementation job, not a writing job.
+
+
+================================================================================
+3. SUPPLIED MATERIALS
+================================================================================
+
+Place these in the repository before starting. They are the source of truth.
+
+  documents-required-buying-property-india-punjab-checklist.mdx
+      The full article, with frontmatter.
+
+  property-document-checklist-tool.html
+      A complete working reference build of the tool, including its schema.
+
+  checklist-data.json
+      All 25 items as structured data.
+
+  citation-answer-blocks.md
+      30+ query-matched answers. Reference for future pages.
+
+  schema-deployment-guide.md
+      Which schema goes on which page and how the pages connect.
+
+  authority-playbook-property-documentation-punjab.md
+      Strategy context and the article's schema block.
+
+  RHMC-Property-Document-Checklist.pdf
+      The printable asset.
+
+
+================================================================================
+4. WHAT MUST BE ON THE PILLAR ARTICLE  (D1)
+================================================================================
+
+Required content blocks, in this order:
+
+  4.1   Page title as H1.
+
+  4.2   A complete answer to "what documents are required to buy property in
+        India", appearing within the first 150 words. Nothing may sit between
+        the H1 and this block. No hero image, no breadcrumb bar, no table of
+        contents, no author card, no reading-time widget above it.
+
+  4.3   A 14-row quick-reference table: document, what it proves, who issues
+        it, when to ask for it.
+
+  4.4   Part one: the five documents that apply to any purchase in India.
+
+  4.5   Part two: what these documents are called in Punjab, including an
+        8-row translation table and a breakdown of which authority controls
+        what.
+
+  4.6   Part three: additional documents when buying from a builder or a
+        development authority.
+
+  4.7   Part four: the transaction stage, including a stamp duty comparison
+        table for Punjab against Chandigarh.
+
+  4.8   Part five: two anonymised case studies from the firm's own files.
+
+  4.9   Part six: red flags that end the conversation.
+
+  4.10  A city-by-city section covering Mohali, Chandigarh, Ludhiana,
+        Bathinda, Patiala, Jalandhar and Amritsar.
+
+  4.11  A frequently asked questions section, 10 questions. Each question must
+        be a linkable heading, not bold body text.
+
+  4.12  Author bio.
+
+  4.13  Legal disclaimer.
+
+  4.14  A related-reading list of six internal links. Five of those targets do
+        not exist yet. They stay as links. Do not remove them and do not
+        create placeholder pages for them.
+
+Additional requirements:
+
+  - Two call-to-action placements, both pointing to the same WhatsApp action.
+    One after the case studies, one at the end. Not two different actions.
+  - A table of contents on desktop, generated from the headings. Hidden on
+    mobile.
+  - Anchor links on all section headings.
+  - Tables must remain readable on a phone.
+  - Structured data: Article, FAQPage, BreadcrumbList.
+
+
+================================================================================
+5. WHAT MUST BE ON THE TOOL PAGE  (D2)
+================================================================================
+
+5.1  CONTENT
+
+  - Page title as H1.
+  - A three-paragraph complete answer, within the first 150 words, before
+    anything else.
+  - The 25 checklist items, grouped into 5 stages (listed in section 6).
+  - For each item: its name, its Punjab name where one exists, what it proves,
+    which office issues it, the exact question to put to the seller, and the
+    red flag where one applies.
+  - A translation table: 8 rows, standard document name against Punjab name
+    and issuing office.
+  - An authority table: 6 rows, which body controls what.
+  - A "when to walk away" panel: 8 conditions.
+  - A call to action.
+  - Author bio and disclaimer.
+  - A link to download the printable PDF.
+
+5.2  WHAT IT MUST DO
+
+  - Filter by purchase type. Five options: everything, resale or individual
+    seller, from a builder, GMADA or PUDA or authority, plot or land.
+    Expected counts: all 25, resale 13, builder 21, authority 19, land 12.
+    When a filter empties a stage, that stage's heading hides too.
+    Filtering must never clear items the user has already ticked.
+
+  - Tick items off. Every item must be tickable by mouse and by keyboard.
+
+  - Show progress. A counter and a bar. The total reflects currently visible
+    items, not all 25. Filtering to "from a builder" makes the total 21.
+
+  - Share progress. A button that copies a link carrying the user's current
+    tick state, so they can send it to their lawyer or spouse and the
+    recipient sees the same state.
+
+  - Print. A button that produces a clean A4 document. On the printed sheet
+    the checkboxes must appear empty regardless of on-screen state, so the
+    printout works as a fresh worksheet. Controls and buttons must not print.
+    Items must not be split across a page break.
+
+  - Reset. Clears everything.
+
+5.3  STRUCTURED DATA
+
+  HowTo covering all five stages, ItemList of all 25 items, WebApplication,
+  FAQPage with 10 questions, BreadcrumbList, plus references to the Person and
+  Organization entities defined on /about.
+
+
+================================================================================
+6. THE 25 CHECKLIST ITEMS
+================================================================================
+
+Bracketed text is the Punjab-specific name.
+Braces list which purchase types the item applies to.
+
+STAGE 1  Before you pay a single rupee                              (5 items)
+   1. Title or conveyance deed [fard, jamabandi, CD]  {resale builder authority land}
+   2. Mother deed, chain of ownership                 {resale authority land}
+   3. Encumbrance certificate [non-encumbrance certificate] {resale builder authority land}
+   4. Land use classification and CLU                 {land authority}
+   5. Cancellation and dispute status                 {authority land}
+
+STAGE 2  Before the agreement to sell                               (7 items)
+   6. Property tax receipts, last three years         {resale builder authority land}
+   7. Electricity and water clearance                 {resale builder authority}
+   8. Maintenance dues and society clearance          {builder}
+   9. Allotment letter                                {builder authority}
+  10. Approved building plan                          {builder}
+  11. RERA Punjab registration and history            {builder}
+  12. Carpet, built-up and super area, loading factor {builder}
+
+STAGE 3  Before you take possession                                 (4 items)
+  13. Completion certificate                          {builder}
+  14. Occupancy certificate (OC)                      {builder}
+  15. NOCs and no-due certificates                    {builder authority}
+  16. Permission to sell                              {authority}
+
+STAGE 4  The transaction                                            (4 items)
+  17. Agreement to sell [bayana]                      {resale builder authority land}
+  18. Sale deed draft, reviewed before registration   {resale builder authority land}
+  19. Stamp duty and registration calculated          {resale builder authority land}
+  20. Sale deed executed and registered               {resale builder authority land}
+
+STAGE 5  After registration, and do not let this drift              (5 items)
+  21. Mutation applied for [intkal]                   {resale builder authority land}
+  22. Authority transfer initiated (GMADA, PUDA)      {authority builder}
+  23. Electricity and water transferred to your name  {resale builder authority}
+  24. Separate property tax ID generated              {resale builder authority}
+  25. Originals secured, digital copies made          {resale builder authority land}
+
+
+================================================================================
+7. WHAT MUST BE ON THE ABOUT PAGE  (D3)
+================================================================================
+
+  - Full author biography for Amritpal Singh, supplied, used word for word.
+  - A displayed credentials list:
+        10+ years across real estate development, government liaisoning,
+          capital markets and media
+        180+ transactions personally closed, across all six property categories
+        AMFI certified, Association of Mutual Funds in India
+        NCFM certified, Capital Markets and Derivatives, NSE Academy
+        Post Graduate, Advertising and Public Relations
+        Director and Sales Head of a RERA-approved private limited company
+        Direct liaisoning with GMADA, PUDA, PSPCL, Municipal Committee,
+          Forest and Conservation Authorities, and the Industrial Departments
+          of Punjab
+        Editor of an RNIS-registered fortnightly newspaper, English and Hindi
+  - The firm's contact block.
+  - Service areas: Mohali, Rajpura, Dera Bassi, Lalru, Banur, Shamboo.
+  - Structured data defining the Person and the Organization. These are the
+    canonical definitions. The other two pages point at them.
+
+
+================================================================================
+8. RULES THAT APPLY TO EVERY PAGE
+================================================================================
+
+  8.1  Nothing is gated.
+       No email form. No phone number wall. No modal. No newsletter popup.
+       No exit-intent overlay. The PDF downloads on a plain click.
+       The only conversion elements are a WhatsApp link and a booking link.
+
+  8.2  The content must be readable without JavaScript.
+       If a crawler or a browser with scripting disabled cannot read all 25
+       checklist items and all article text, the work has failed its main
+       purpose. Interactivity may be added on top. It may not be the only way
+       the content exists.
+
+  8.3  No browser storage.
+       Tick state lives in the page address, not in localStorage, session
+       storage or cookies. This is what makes progress shareable.
+
+  8.4  The answer comes first.
+       On both content pages the first thing after the heading is a complete
+       answer to the page's core question.
+
+  8.5  Supplied copy is not to be edited.
+       No rewriting, no condensing, no paraphrasing, no "tightening".
+       It is calibrated to a brand voice and to specific search queries.
+
+  8.6  No em dashes anywhere in the output.
+       The brand voice uses colons, periods and commas.
+
+  8.7  FAQ structured data must match the visible text on the page word for
+       word. If one changes, both change.
+
+  8.8  Contact details appear identically everywhere they appear.
+       Realty Holding & Management Consultants
+       E328, Phase 8A, Industrial Area, Mohali, Punjab
+       +91 78146 13916
+       info@realtyconsultants.in
+       https://realtyconsultants.in
+
+  8.9  No stock photography of houses, handshakes or keys.
+
+  8.10 The tool must work on a phone. Someone will open it standing in front
+       of a plot.
+
+
+================================================================================
+9. FACTS THAT MUST APPEAR UNCHANGED
+================================================================================
+
+Verified against sources on 26 July 2026. Do not round, simplify or restate.
+
+  Punjab stamp duty          7% male, 5% female, 6% joint male and female
+  Punjab registration        1%, capped at Rs 2 lakh on most sale deeds
+  Chandigarh stamp duty      6% flat, no gender concession, plus 1%
+  Basis of calculation       higher of agreement value or collector rate
+  GMADA basic transfer       roughly Rs 4,000 to Rs 5,000
+  GMADA transfer time        4 to 8 weeks when the file is complete
+  Encumbrance certificate    15 to 30 days
+  Mutation after registry    15 to 30 days
+  Acceptable loading factor  25 to 30 percent, above 35 percent is a red flag
+  Maintenance benchmark      Rs 3-4 basic, Rs 5-6 with amenities,
+                             Rs 7-8 full service, per sq ft per month
+  Case study figure          buyer had paid 65 percent before discovering
+                             the plots were cancelled, 8 months to recover
+  Case study figure          property tax MOU across three floor owners,
+                             3 months to resolve
+
+Review these every quarter. When a figure changes, update the visible text,
+the structured data, and the page's last-modified date together.
+
+
+================================================================================
+10. WIRING AND HOUSEKEEPING
+================================================================================
+
+  - All three pages added to the sitemap.
+  - Nothing in robots.txt blocking /tools/.
+  - Canonical URLs set and pointing at themselves.
+  - Article links to the tool in at least two places.
+  - Tool links back to the article once.
+  - Both link to /about through the author bio.
+  - Social preview metadata on both content pages.
+  - PDF served correctly as a PDF.
+  - Site language remains Indian English.
+
+
+================================================================================
+NOT SUPPLIED IN THIS PACKAGE
+================================================================================
+
+Known gaps. Report each one, proceed as directed, do not invent a workaround.
+
+  SOCIAL SHARE IMAGE
+    No Open Graph image exists for either content page. Do not generate one
+    and do not use stock photography. Use the site's default if it has one.
+    Otherwise point the tag at /og/property-document-checklist.png and flag it
+    as needing a real asset. Never silently omit the tag.
+
+  AUTHOR PHOTOGRAPH
+    Not supplied. Build /about to accommodate a portrait, use whatever the
+    site already has, and flag it. No illustrations, avatar generators or
+    stock headshots.
+
+  FAVICON AND BRAND MARKS
+    Out of scope. Use what the site already has.
+
+  THE /tools INDEX ROUTE
+    Appears as the parent in the tool page breadcrumb. If it does not exist,
+    either create a minimal index listing this one tool, or repoint the
+    breadcrumb at the site root. State which was chosen. Never leave a
+    breadcrumb pointing at a 404.
+
+  THE /appointments BOOKING PAGE
+    Linked from the CTA blocks. Verify it exists. If not, report it and point
+    the CTA at the WhatsApp link only rather than shipping a dead link.
+
+  THE FIVE RELATED-READING TARGETS
+    Do not exist. They stay in the markup as ordinary links. No placeholder
+    pages, no removal, no nofollow. If the build fails on unresolved internal
+    links, report that before working around it.
+
+
+================================================================================
+11. DONE WHEN
+================================================================================
+
+Every line below must be verified and reported, not assumed.
+
+READABLE BY MACHINES
+  [ ] All 25 items present in the page source before any script runs
+  [ ] All content readable with JavaScript disabled
+  [ ] Answer block inside the first 150 words on both content pages
+  [ ] Nothing hidden behind a click-to-expand on first load
+
+WORKS
+  [ ] All 25 items tickable by mouse and by keyboard
+  [ ] Filters return 25 / 13 / 21 / 19 / 12
+  [ ] Filtering does not clear ticked items
+  [ ] Scroll position preserved when filtering, nothing reflows under cursor
+  [ ] Progress total counts visible items, not all items
+  [ ] Share link round-trips: tick 7 items, copy, open fresh, same 7 ticked
+  [ ] Reset clears everything
+  [ ] Print preview is clean A4, nothing clipped, no controls printed
+  [ ] Print output contains only the filtered items, not all 25
+  [ ] Share button gives visible confirmation
+  [ ] Shared link shows correct state on first paint, no flash of unchecked list
+  [ ] PDF downloads without a form
+
+STRUCTURED DATA
+  [ ] All three pages pass Google's Rich Results Test with no errors
+  [ ] FAQ answers identical to visible text on both pages
+  [ ] Every schema question is also visible on that page
+  [ ] Every breadcrumb item resolves to a real route
+  [ ] Item list declares 25 and contains 25
+  [ ] Process data contains 5 stages and 25 steps
+  [ ] Person and Organization identifiers identical across all three pages
+
+CONTENT INTACT
+  [ ] Article word count within 5 percent of 4,400
+  [ ] Zero em dashes in the rendered output
+  [ ] Every figure in section 9 present and unaltered
+  [ ] Contact block identical on all three pages
+  [ ] No supplied copy reworded
+
+QUALITY
+  [ ] Accessibility score 95 or above on both content pages
+  [ ] SEO score 100 on both content pages
+  [ ] No layout shift on load
+  [ ] Tool usable at 360px width
+  [ ] Tool scores 85+ on Lighthouse mobile performance, slow 4G
+  [ ] Social preview renders correctly when pasted into a chat app
+  [ ] Every 'not supplied' item above addressed and reported
+
+
+================================================================================
+12. SEQUENCE
+================================================================================
+
+  1. Inspect the existing project. Report the framework, routing convention,
+     content pipeline, styling system and metadata mechanism before writing
+     anything. Match what is already there.
+  2. Build /about first. It defines the identity records the other two pages
+     depend on.
+  3. Build the tool.
+  4. Build the article.
+  5. Wire the cross-links, sitemap and canonicals.
+  6. Work through section 11 and report every result.
+
+
+================================================================================
+13. OUT OF SCOPE
+================================================================================
+
+  - The five related-reading pages referenced but not yet written.
+  - Any lead capture, CRM integration or analytics event tracking.
+  - Redesign of existing pages beyond /about.
+  - Translation into Punjabi or Hindi.
+  - Paid promotion or off-site link building.
+
+================================================================================
+END
+================================================================================

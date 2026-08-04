@@ -1,0 +1,626 @@
+{
+  "version": "1.0",
+  "updated": "2026-07-26",
+  "publisher": {
+    "name": "Realty Holding & Management Consultants",
+    "address": "E328, Phase 8A, Industrial Area, Mohali, Punjab",
+    "phone": "+91-7814613916",
+    "whatsapp": "https://wa.me/917814613916",
+    "email": "info@realtyconsultants.in",
+    "url": "https://realtyconsultants.in",
+    "booking": "https://realtyconsultants.in/appointments"
+  },
+  "filters": [
+    {
+      "key": "all",
+      "label": "Show everything"
+    },
+    {
+      "key": "resale",
+      "label": "Resale or individual seller"
+    },
+    {
+      "key": "builder",
+      "label": "From a builder"
+    },
+    {
+      "key": "authority",
+      "label": "GMADA, PUDA or authority"
+    },
+    {
+      "key": "land",
+      "label": "Plot or land"
+    }
+  ],
+  "stages": [
+    {
+      "stage": 1,
+      "eyebrow": "Stage 1",
+      "title": "Before you pay a single rupee",
+      "intro": "Token money is the hardest money to get back. Everything here happens before it changes hands.",
+      "items": [
+        {
+          "id": "title-or-conveyance-deed",
+          "title": "Title or conveyance deed",
+          "localName": "Punjab: fard, jamabandi, CD",
+          "description": "Proves the seller legally owns what they are selling. This is the first document you ask for and the one everything else depends on.",
+          "meta": [
+            {
+              "label": "Issued by",
+              "value": "Revenue Department. In Punjab, via Sewa Kendra, Fard Kendra, or the PLRS portal"
+            },
+            {
+              "label": "Verify",
+              "value": "The name on the title matches the person signing and the ID they present. If jointly held, every joint owner is named"
+            }
+          ],
+          "ask": "Ask: \"Can you give me a fresh certified copy, not a photocopy?\"",
+          "flag": {
+            "label": "Walk away if",
+            "text": "The seller is vague about this document, or resists a fresh certified copy. That hesitation is your answer."
+          },
+          "appliesTo": [
+            "resale",
+            "builder",
+            "authority",
+            "land"
+          ]
+        },
+        {
+          "id": "mother-deed",
+          "title": "Mother deed",
+          "localName": "chain of ownership",
+          "description": "Traces ownership backward from the current seller to the original owner. Its job is to expose gaps, and gaps are where disputes live.",
+          "meta": [
+            {
+              "label": "Issued by",
+              "value": "Revenue Department records"
+            },
+            {
+              "label": "Matters most for",
+              "value": "Older properties, inherited property, agricultural land converted to residential use"
+            }
+          ],
+          "ask": "Ask: \"Has any transfer in this chain happened through power of attorney rather than a registered deed?\"",
+          "flag": {
+            "label": "Watch for",
+            "text": "An inherited property where one heir never signed a relinquishment. A family partition done on paper but never in the revenue record."
+          },
+          "appliesTo": [
+            "resale",
+            "authority",
+            "land"
+          ]
+        },
+        {
+          "id": "encumbrance-certificate",
+          "title": "Encumbrance certificate",
+          "localName": "Punjab: non-encumbrance certificate",
+          "description": "Confirms no loan, mortgage, lien, charge, or litigation sits on the property. The only document that reveals a hidden mortgage.",
+          "meta": [
+            {
+              "label": "Issued by",
+              "value": "Sub-Registrar or Joint Sub-Registrar office. Punjab runs an online issuance system through the Revenue Courts Management System"
+            },
+            {
+              "label": "Timeline",
+              "value": "15 to 30 days from application when details are correct"
+            }
+          ],
+          "ask": "Ask your lawyer for a 30-year search period, not the cheaper 12-year one. Thirty years is what catches an old mortgage or a decades-old family claim.",
+          "flag": {
+            "label": "Do not skip this if paying cash",
+            "text": "The bank asks for it to protect the bank. You need it to protect yourself."
+          },
+          "appliesTo": [
+            "resale",
+            "builder",
+            "authority",
+            "land"
+          ]
+        },
+        {
+          "id": "land-use-classification-and-clu",
+          "title": "Land use classification and CLU",
+          "localName": "change of land use",
+          "description": "Confirms the land is legally usable for what you intend. Agricultural land sold for residential use requires a change of land use order.",
+          "meta": [
+            {
+              "label": "Issued by",
+              "value": "PUDA for CLU. Industrial Departments for zone classification, red, orange, or green"
+            },
+            {
+              "label": "Verify",
+              "value": "CLU and layout approval are two separate processes. Both must be complete"
+            }
+          ],
+          "ask": "Ask: \"Is this PUDA approved, or has an application been submitted?\" Those are not the same thing.",
+          "flag": {
+            "label": "Walk away if",
+            "text": "Agricultural land is being sold for residential use with no CLU on record."
+          },
+          "appliesTo": [
+            "land",
+            "authority"
+          ]
+        },
+        {
+          "id": "cancellation-and-dispute-status",
+          "title": "Cancellation and dispute status",
+          "localName": null,
+          "description": "Confirms the plot has not already been cancelled by the builder or authority for non-payment by the current seller, and is not under dispute.",
+          "meta": [
+            {
+              "label": "Check at",
+              "value": "GMADA Estate Office for GMADA plots. Request a property statement showing instalments paid, pending dues, current registered owner, and transfer history"
+            }
+          ],
+          "ask": "Ask the authority directly, not the seller. A plot can be cancelled at the builder's end while the paperwork in the seller's hand still looks perfect.",
+          "flag": {
+            "label": "From our files",
+            "text": "A buyer had paid 65 percent of the purchase price before discovering both plots had been cancelled for the seller's non-payment. Recovery took eight months and one plot number had to be changed."
+          },
+          "appliesTo": [
+            "authority",
+            "land"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": 2,
+      "eyebrow": "Stage 2",
+      "title": "Before the agreement to sell",
+      "intro": "Dues attach to the property, not the person who created them. Clear all of these before you sign.",
+      "items": [
+        {
+          "id": "property-tax-receipts-last-three-years",
+          "title": "Property tax receipts, last three years",
+          "localName": null,
+          "description": "Outstanding property tax does not stay with the seller. The moment the property is yours, so are the arrears.",
+          "meta": [
+            {
+              "label": "Issued by",
+              "value": "Municipal Committee or Municipal Corporation"
+            },
+            {
+              "label": "Ask for",
+              "value": "Three years of receipts, not one. A single current receipt tells you nothing about the four years before it"
+            }
+          ],
+          "ask": "On any multi-floor building ask: \"Is the property tax ID separate for this floor, or shared across the building?\"",
+          "flag": {
+            "label": "From our files",
+            "text": "A seller had years of unpaid Municipal Committee tax on a multi-floor building with a single building-level tax ID. The buyer of the ground floor inherited a collective liability across all three floors. Resolving it took an MOU between three owners and three months."
+          },
+          "appliesTo": [
+            "resale",
+            "builder",
+            "authority",
+            "land"
+          ]
+        },
+        {
+          "id": "electricity-and-water-clearance",
+          "title": "Electricity and water clearance",
+          "localName": null,
+          "description": "Confirms no pending utility dues and establishes whose name the meter sits in.",
+          "meta": [
+            {
+              "label": "Issued by",
+              "value": "PSPCL for electricity in Punjab. Local body for water and municipal charges"
+            },
+            {
+              "label": "Verify",
+              "value": "On a multi-floor building, that the floor has its own meter. A separate meter is what makes a no-due certificate possible at resale"
+            }
+          ],
+          "ask": "Ask: \"Is there a separate sanctioned load and meter for this unit?\"",
+          "flag": null,
+          "appliesTo": [
+            "resale",
+            "builder",
+            "authority"
+          ]
+        },
+        {
+          "id": "maintenance-dues-and-society-clearance",
+          "title": "Maintenance dues and society clearance",
+          "localName": null,
+          "description": "Confirms no outstanding maintenance charges on a builder project or gated society.",
+          "meta": [
+            {
+              "label": "Benchmark",
+              "value": "₹3 to 4 per sq ft per month basic, ₹5 to 6 with amenities, ₹7 to 8 for full service"
+            }
+          ],
+          "ask": "Ask: \"What is the current monthly maintenance, and is anything outstanding on this unit?\"",
+          "flag": null,
+          "appliesTo": [
+            "builder"
+          ]
+        },
+        {
+          "id": "allotment-letter",
+          "title": "Allotment letter",
+          "localName": null,
+          "description": "Sets out property details, price, and payment schedule agreed at booking. It should match your agreement to sell exactly.",
+          "meta": [
+            {
+              "label": "Issued by",
+              "value": "Builder or development authority"
+            },
+            {
+              "label": "Rule",
+              "value": "Conditions do not belong in an allotment letter. Every condition belongs in the agreement to sell, where both parties negotiate it"
+            }
+          ],
+          "ask": "Ask: \"Why is this condition here and not in the agreement to sell?\"",
+          "flag": {
+            "label": "Watch for",
+            "text": "Conditions inserted into the allotment letter that were never discussed. Raise them before the next instalment, not after."
+          },
+          "appliesTo": [
+            "builder",
+            "authority"
+          ]
+        },
+        {
+          "id": "approved-building-plan",
+          "title": "Approved building plan",
+          "localName": null,
+          "description": "Confirms the local authority sanctioned the plan the building was actually constructed from.",
+          "meta": [
+            {
+              "label": "Issued by",
+              "value": "Municipal Committee, PUDA, or GMADA depending on jurisdiction"
+            },
+            {
+              "label": "Verify",
+              "value": "Compare the sanctioned plan against what is physically standing"
+            }
+          ],
+          "ask": "Ask: \"Does the sanctioned plan show this balcony, this floor, and this rear extension?\"",
+          "flag": {
+            "label": "Watch for",
+            "text": "Extra floors, covered balconies, and rear extensions absent from the sanctioned plan. They become your regularisation problem."
+          },
+          "appliesTo": [
+            "builder"
+          ]
+        },
+        {
+          "id": "rera-punjab-registration-and-history",
+          "title": "RERA Punjab registration and history",
+          "localName": null,
+          "description": "Verifies the project is registered, and reveals what the promoter's past projects actually did.",
+          "meta": [
+            {
+              "label": "Check on",
+              "value": "rera.punjab.gov.in"
+            },
+            {
+              "label": "Look at",
+              "value": "Registration number, promoter's past project history, current project status, and the number and type of complaints filed"
+            }
+          ],
+          "ask": "Check whether the promoter has filed the mandatory quarterly progress updates. An empty update log on a project claiming 70 percent completion is information.",
+          "flag": {
+            "label": "Walk away if",
+            "text": "The registration number does not resolve to a live listing, or the complaint history shows repeated possession delays."
+          },
+          "appliesTo": [
+            "builder"
+          ]
+        },
+        {
+          "id": "carpet-built-up-and-super-area-and-the-loading-factor",
+          "title": "Carpet, built-up and super area, and the loading factor",
+          "localName": null,
+          "description": "Establishes what you are actually paying for versus what you can actually use.",
+          "meta": [
+            {
+              "label": "Benchmark",
+              "value": "25 to 30 percent loading is standard. Above 35 percent deserves a direct question"
+            }
+          ],
+          "ask": "Ask: \"What is the carpet area, and what is the loading factor on this unit?\"",
+          "flag": null,
+          "appliesTo": [
+            "builder"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": 3,
+      "eyebrow": "Stage 3",
+      "title": "Before you take possession",
+      "intro": "Once you are living in a building, your leverage is gone. These are the documents to insist on beforehand.",
+      "items": [
+        {
+          "id": "completion-certificate",
+          "title": "Completion certificate",
+          "localName": null,
+          "description": "Confirms construction was completed as per the approved plan.",
+          "meta": [
+            {
+              "label": "Issued by",
+              "value": "Local authority, Municipal Committee or Estate Office"
+            }
+          ],
+          "ask": null,
+          "flag": null,
+          "appliesTo": [
+            "builder"
+          ]
+        },
+        {
+          "id": "occupancy-certificate-oc",
+          "title": "Occupancy certificate (OC)",
+          "localName": null,
+          "description": "The document that makes the building legally habitable. Under RERA, a promoter cannot offer possession or collect the final payment without a valid occupancy or completion certificate.",
+          "meta": [
+            {
+              "label": "Issued by",
+              "value": "Municipal Authority or Town Planning Department after final inspection"
+            },
+            {
+              "label": "Legal position",
+              "value": "Punjab RERA has held that possession offered without a completion certificate violates PAPRA and RERA, and has awarded compensation. The Supreme Court has held such possession illegal"
+            }
+          ],
+          "ask": "Ask: \"Can I see the OC before I accept the keys?\" Then wait for it.",
+          "flag": {
+            "label": "Do not take possession without this",
+            "text": "The offer will be warm, the site will be ready, and your rent is running. Once you are living in a building without an OC, your legal position is weaker and your leverage is gone."
+          },
+          "appliesTo": [
+            "builder"
+          ]
+        },
+        {
+          "id": "nocs-and-no-due-certificates",
+          "title": "NOCs and no-due certificates",
+          "localName": null,
+          "description": "Confirms nothing is outstanding with the society, the authority, or the builder.",
+          "meta": [
+            {
+              "label": "Required when",
+              "value": "Buying from a government authority, a cooperative society, or a builder"
+            }
+          ],
+          "ask": "Do not accept a general assurance. Ask which specific NOCs apply to this property, and get each one named.",
+          "flag": null,
+          "appliesTo": [
+            "builder",
+            "authority"
+          ]
+        },
+        {
+          "id": "permission-to-sell",
+          "title": "Permission to sell",
+          "localName": null,
+          "description": "The authority's consent to the transfer. Without it the transfer will not be recorded, regardless of what you have paid.",
+          "meta": [
+            {
+              "label": "Required when",
+              "value": "Buying from a government authority"
+            }
+          ],
+          "ask": null,
+          "flag": null,
+          "appliesTo": [
+            "authority"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": 4,
+      "eyebrow": "Stage 4",
+      "title": "The transaction",
+      "intro": "A verbal understanding is not a term. If it is not written here, it does not exist.",
+      "items": [
+        {
+          "id": "agreement-to-sell",
+          "title": "Agreement to sell",
+          "localName": "Punjab: bayana",
+          "description": "Every commercial term in writing. In Punjab practice this is commonly executed on ₹4,000 stamp paper.",
+          "meta": [
+            {
+              "label": "Must contain",
+              "value": "Price. Area, and whether it is covered or super. Facing. Road width. Payment schedule. Possession date. Sale deed date. What happens if either side delays, and what happens to the token if the deal collapses, and on whose default"
+            },
+            {
+              "label": "Legal nuance",
+              "value": "The Punjab and Haryana High Court has held that where an agreement to sell recites that possession has been delivered, stamp duty is leviable on that document as a conveyance"
+            }
+          ],
+          "ask": "If possession genuinely changes hands at agreement stage, have your lawyer draft that clause deliberately, with the duty implication understood, rather than copying a template.",
+          "flag": null,
+          "appliesTo": [
+            "resale",
+            "builder",
+            "authority",
+            "land"
+          ]
+        },
+        {
+          "id": "sale-deed-draft-reviewed-before-registration-day",
+          "title": "Sale deed draft, reviewed before registration day",
+          "localName": null,
+          "description": "Read the draft before the registration date, not on it.",
+          "meta": [
+            {
+              "label": "Why it matters",
+              "value": "On the day you will be in a queue, with a token number, with the seller's family present. That is exactly the environment in which unfavourable clauses survive"
+            },
+            {
+              "label": "Check",
+              "value": "Whether the deed is written on covered area or super area. Registry should legally reflect covered area per revenue records"
+            }
+          ],
+          "ask": "Ask: \"Send me the draft deed a week before we register.\"",
+          "flag": {
+            "label": "The super area trap",
+            "text": "Builders push buyers to register on super area because it inflates the apparent value. You pay stamp duty on the inflated figure."
+          },
+          "appliesTo": [
+            "resale",
+            "builder",
+            "authority",
+            "land"
+          ]
+        },
+        {
+          "id": "stamp-duty-and-registration-calculated",
+          "title": "Stamp duty and registration calculated",
+          "localName": null,
+          "description": "Punjab 2026: 7 percent male, 5 percent female, 6 percent joint male and female. Registration 1 percent, capped at ₹2 lakh on most sale deeds. Chandigarh: flat 6 percent regardless of gender, plus 1 percent.",
+          "meta": [
+            {
+              "label": "Calculated on",
+              "value": "The higher of the declared agreement value or the collector rate for that locality"
+            }
+          ],
+          "ask": "Punjab's 2 percent concession for female buyers is real money. On a ₹1 crore registry the difference is ₹2 lakh. Two women buying jointly still pay 5 percent. Have this conversation before the deed is drafted.",
+          "flag": null,
+          "appliesTo": [
+            "resale",
+            "builder",
+            "authority",
+            "land"
+          ]
+        },
+        {
+          "id": "sale-deed-executed-and-registered",
+          "title": "Sale deed executed and registered",
+          "localName": null,
+          "description": "Executed at the Sub-Registrar or Tehsildar office once payment is complete. Until it is registered, you are a person with a receipt, not an owner.",
+          "meta": [
+            {
+              "label": "Bring",
+              "value": "ID and address proof and PAN for both parties, photographs, the draft deed, and proof of stamp duty payment"
+            }
+          ],
+          "ask": null,
+          "flag": null,
+          "appliesTo": [
+            "resale",
+            "builder",
+            "authority",
+            "land"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": 5,
+      "eyebrow": "Stage 5",
+      "title": "After registration, and do not let this drift",
+      "intro": "This is the stage most buyers skip. It is also the stage that causes problems years later when you try to sell.",
+      "items": [
+        {
+          "id": "mutation-applied-for",
+          "title": "Mutation applied for",
+          "localName": "Punjab: intkal",
+          "description": "Registration transfers ownership. Mutation updates the revenue record so the state knows about it. Both are necessary.",
+          "meta": [
+            {
+              "label": "Applied at",
+              "value": "Tehsildar or Naib Tehsildar. Status trackable on the PLRS portal"
+            },
+            {
+              "label": "Timeline",
+              "value": "15 to 30 days after registration in a normal case"
+            }
+          ],
+          "ask": "Apply immediately. Without mutation the jamabandi will not carry your name, and the next check anyone runs still points at the seller.",
+          "flag": null,
+          "appliesTo": [
+            "resale",
+            "builder",
+            "authority",
+            "land"
+          ]
+        },
+        {
+          "id": "authority-transfer-initiated-gmada-puda",
+          "title": "Authority transfer initiated (GMADA, PUDA)",
+          "localName": null,
+          "description": "Transfers the allotment record into your name at the development authority.",
+          "meta": [
+            {
+              "label": "Requires",
+              "value": "A certified copy carrying the Tehsildar stamp. Photographs of documents sent over WhatsApp are not accepted"
+            },
+            {
+              "label": "Cost and time",
+              "value": "Roughly ₹4,000 to ₹5,000 in fees for a basic transfer. Four to eight weeks when the file is complete. An OTP goes to the last registered buyer on record"
+            }
+          ],
+          "ask": "Initiate the transfer the moment your booking or registry is done, not months later.",
+          "flag": null,
+          "appliesTo": [
+            "authority",
+            "builder"
+          ]
+        },
+        {
+          "id": "electricity-and-water-transferred-to-your-name",
+          "title": "Electricity and water transferred to your name",
+          "localName": null,
+          "description": "Moves the connection into your name and, on a multi-floor building, establishes separate metering.",
+          "meta": [
+            {
+              "label": "Applied at",
+              "value": "PSPCL sub-division. A separate meter per floor requires a fresh application and load sanction, a few weeks"
+            }
+          ],
+          "ask": null,
+          "flag": null,
+          "appliesTo": [
+            "resale",
+            "builder",
+            "authority"
+          ]
+        },
+        {
+          "id": "separate-property-tax-id-generated",
+          "title": "Separate property tax ID generated",
+          "localName": null,
+          "description": "Ensures your floor or unit carries its own tax liability rather than sharing one with the rest of the building.",
+          "meta": [
+            {
+              "label": "Applied at",
+              "value": "Municipal Committee. On a multi-floor building this may require an MOU between floor owners"
+            }
+          ],
+          "ask": "Do this now, while the other owners are cooperative, rather than at resale when you need a no-due certificate urgently.",
+          "flag": null,
+          "appliesTo": [
+            "resale",
+            "builder",
+            "authority"
+          ]
+        },
+        {
+          "id": "originals-secured-digital-copies-made",
+          "title": "Originals secured, digital copies made",
+          "localName": null,
+          "description": "The registered sale deed, mutation record, allotment letter, OC, NOCs, and receipts. Scan everything and keep a set off-site.",
+          "meta": [],
+          "ask": "Your buyer, five years from now, will ask for exactly this file. Assemble it while you still remember where everything is.",
+          "flag": null,
+          "appliesTo": [
+            "resale",
+            "builder",
+            "authority",
+            "land"
+          ]
+        }
+      ]
+    }
+  ]
+}

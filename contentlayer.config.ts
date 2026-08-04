@@ -40,17 +40,20 @@ export const Post = defineDocumentType(() => ({
     },
     excerpt: {
       type: "string",
-      required: true,
+      required: false,
       description: "Short summary (shown in cards, max 160 chars)",
     },
-    author: {
+    description: {
       type: "string",
-      required: true,
-      description: "Author name",
+      required: false,
+    },
+    author: {
+      type: "json",
+      required: false,
+      description: "Author name or object",
     },
     category: {
       type: "string",
-      
       required: true,
     },
 
@@ -62,13 +65,20 @@ export const Post = defineDocumentType(() => ({
     wordCount: { type: "number" },
     metaTitle: { type: "string" },
     metaDescription: { type: "string" },
-
-
+    readingTime: { type: "string" },
+    canonical: { type: "string" },
+    updated: { type: "string" },
+    categoryPillar: { type: "boolean" },
+    publisher: { type: "string" },
+    primaryKeyword: { type: "string" },
+    secondaryKeywords: { type: "list", of: { type: "string" } },
+    serviceAreas: { type: "list", of: { type: "string" } },
 
     coverImage: {
       type: "string",
-      required: true,
-      description: "Path to cover image (e.g. /images/blog/post-1.jpg)",
+      required: false,
+      default: "/og/property-document-checklist.png",
+      description: "Path to cover image",
     },
 
     // OPTIONAL
@@ -80,7 +90,7 @@ export const Post = defineDocumentType(() => ({
     tags: {
       type: "list",
       of: { type: "string" },
-      description: "Tags for filtering (e.g. [Dubai, Luxury, 2024])",
+      description: "Tags for filtering",
     },
   },
 
