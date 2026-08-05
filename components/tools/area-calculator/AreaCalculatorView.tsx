@@ -228,8 +228,8 @@ export function AreaCalculatorView({ content }: AreaCalculatorViewProps) {
               <h2 className="text-2xl font-serif font-semibold text-charcoal">
                 Common Conversion Values: {fromUnit.name} to {toUnit.name}
               </h2>
-              <div className="overflow-x-auto border border-black/10 rounded-2xl shadow-sm">
-                <table className="w-full text-left text-sm border-collapse font-sans">
+              <div className="overflow-hidden overflow-x-auto border border-black/10 rounded-2xl shadow-sm bg-white">
+                <table className="w-full text-left text-sm border-collapse font-sans m-0">
                   <caption className="sr-only">
                     Conversion table for {fromUnit.name} to {toUnit.name}
                   </caption>
@@ -269,8 +269,8 @@ export function AreaCalculatorView({ content }: AreaCalculatorViewProps) {
             <h2 className="text-2xl font-serif font-semibold text-charcoal">
               Regional Variations Across Punjab Revenue Systems
             </h2>
-            <div className="overflow-x-auto border border-black/10 rounded-2xl shadow-sm">
-              <table className="w-full text-left text-sm border-collapse font-sans">
+            <div className="overflow-hidden overflow-x-auto border border-black/10 rounded-2xl shadow-sm bg-white">
+              <table className="w-full text-left text-sm border-collapse font-sans m-0">
                 <caption className="sr-only">
                   Comparison of measurement systems across Punjab districts
                 </caption>

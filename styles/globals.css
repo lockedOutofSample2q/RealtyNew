@@ -69,6 +69,16 @@ a {
   transition: color var(--transition);
 }
 
+/* Remove default prose top/bottom margins on tables inside rounded containers */
+.prose table {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.prose table thead {
+  margin-top: 0 !important;
+}
+
 @layer utilities {
   .section-padding { padding: 6rem 0; }
   .section-padding-sm { padding: 3rem 0; }

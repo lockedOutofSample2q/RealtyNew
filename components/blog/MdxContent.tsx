@@ -32,14 +32,14 @@ const components = {
   },
   table: (props: any) => (
     <div className="my-8 w-full overflow-hidden overflow-x-auto rounded-2xl border border-black/10 shadow-sm bg-white">
-      <table className="w-full text-left border-collapse font-sans text-sm text-charcoal" {...props} />
+      <table className="w-full text-left border-collapse font-sans text-sm text-charcoal m-0 !mt-0 !mb-0" {...props} />
     </div>
   ),
   thead: (props: any) => (
-    <thead className="bg-black/5 text-charcoal text-xs uppercase tracking-wider font-display font-bold border-b border-black/10" {...props} />
+    <thead className="bg-black/5 text-charcoal text-xs uppercase tracking-wider font-display font-bold border-b border-black/10 m-0 !mt-0 p-0" {...props} />
   ),
   tbody: (props: any) => (
-    <tbody className="divide-y divide-black/5 bg-white font-sans text-sm text-black/80" {...props} />
+    <tbody className="divide-y divide-black/5 bg-white font-sans text-sm text-black/80 m-0 p-0" {...props} />
   ),
   tr: (props: any) => (
     <tr className="hover:bg-gold/5 transition-colors" {...props} />
