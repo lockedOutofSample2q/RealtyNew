@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -25,6 +26,7 @@ export interface LeadPopupProps {
 }
 
 export default function LeadPopup({ type, propertyTitle, propertyId, image }: LeadPopupProps) {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [countryCode, setCountryCode] = useState("+91");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -103,8 +105,13 @@ export default function LeadPopup({ type, propertyTitle, propertyId, image }: Le
         setStatus("success");
         // Store 15 day expiry
         localStorage.setItem("lead_captured_expiry", (Date.now() + 15 * 24 * 60 * 60 * 1000).toString());
-        // Close modal after short delay
-        setTimeout(() => setIsOpen(false), 2500);
+        // Close modal after short delay & redirect if blog popup
+        setTimeout(() => {
+          setIsOpen(false);
+          if (type === "blog") {
+            router.push("/tools/property-document-checklist");
+          }
+        }, 1500);
       } else {
         setStatus("error");
       }
