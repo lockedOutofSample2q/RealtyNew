@@ -112,8 +112,8 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const priceRangeStr = minPrice === Infinity ? "pricing on request" : `${formatIndianCurrency(minPrice)} - ${formatIndianCurrency(maxPrice)}`;
   const sectorsStr = locations.size > 0 ? `Sectors ${Array.from(locations).join(", ")}` : "Mohali";
 
-  const title = `${commonName} Projects & Flats in Mohali | RERA Verified`;
-  const description = `Browse all ${matchingProperties.length} RERA-verified ${commonName} properties in Mohali. ${priceRangeStr}. ${sectorsStr}. Expert advisory by Realty Holding & Management Consultants — Mohali's trusted real estate desk.`;
+  const title = `${commonName} Projects & Flats in Mohali - RERA Verified`;
+  const description = `Browse all ${matchingProperties.length} RERA-verified ${commonName} properties in Mohali. ${priceRangeStr}. ${sectorsStr}.`;
 
   return {
     title,

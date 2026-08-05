@@ -142,34 +142,34 @@ export function AreaCalculatorView({ content }: AreaCalculatorViewProps) {
       <section className="bg-black/[0.02] border-b border-black/10 py-10 sm:py-14">
         <div className="container-site space-y-4">
           {/* Breadcrumbs */}
-          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-black/60">
-            <Link href="/" className="hover:text-black transition-colors">Home</Link>
-            <ChevronRight className="w-3 h-3 text-black/40" />
-            <Link href="/tools" className="hover:text-black transition-colors">Tools</Link>
-            <ChevronRight className="w-3 h-3 text-black/40" />
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-muted">
+            <Link href="/" className="hover:text-charcoal transition-colors">Home</Link>
+            <ChevronRight className="w-3 h-3 text-muted/60" />
+            <Link href="/tools" className="hover:text-charcoal transition-colors">Tools</Link>
+            <ChevronRight className="w-3 h-3 text-muted/60" />
             {isHub ? (
-              <span className="text-black font-medium">Area Calculator</span>
+              <span className="text-charcoal font-medium">Area Calculator</span>
             ) : (
               <>
-                <Link href="/tools/area-calculator" className="hover:text-black transition-colors">
+                <Link href="/tools/area-calculator" className="hover:text-charcoal transition-colors">
                   Area Calculator
                 </Link>
-                <ChevronRight className="w-3 h-3 text-black/40" />
-                <span className="text-black font-medium truncate max-w-[200px] sm:max-w-none">
+                <ChevronRight className="w-3 h-3 text-muted/60" />
+                <span className="text-charcoal font-medium truncate max-w-[200px] sm:max-w-none">
                   {content.h1}
                 </span>
               </>
             )}
           </nav>
 
-          <h1 className="text-3xl sm:text-5xl font-display font-semibold text-black tracking-tight leading-tight">
+          <h1 className="text-4xl sm:text-5xl font-serif font-medium text-charcoal tracking-tight leading-tight">
             {content.h1}
           </h1>
 
-          {/* 6.1 THE ANSWER BLOCK (Most Important Element on Page) */}
-          <p data-answer className="text-base sm:text-lg text-black/80 font-medium leading-relaxed max-w-4xl bg-white border border-black/15 p-4 sm:p-5 rounded-xl shadow-sm">
+          {/* Answer Block with Gold Accent Border */}
+          <div data-answer className="bg-black/[0.02] p-5 sm:p-6 rounded-2xl border border-black/10 border-l-4 border-l-gold text-base sm:text-lg leading-relaxed text-charcoal/90 font-body max-w-4xl shadow-sm">
             {content.answerBlock}
-          </p>
+          </div>
         </div>
       </section>
 
@@ -188,18 +188,18 @@ export function AreaCalculatorView({ content }: AreaCalculatorViewProps) {
       <section className="py-14 bg-white">
         <div className="container-site max-w-4xl space-y-12">
           {/* Key Facts List (<dl>) */}
-          <div id="key-facts-list" className="bg-black/[0.02] border border-black/10 rounded-xl p-6 space-y-4">
-            <h2 className="text-lg font-display font-semibold text-black flex items-center gap-2">
-              <ShieldCheck className="w-5 h-5 text-black/70" />
+          <div id="key-facts-list" className="bg-black/[0.02] border border-black/10 rounded-2xl p-6 space-y-4">
+            <h2 className="text-lg font-serif font-semibold text-charcoal flex items-center gap-2">
+              <ShieldCheck className="w-5 h-5 text-gold" />
               Key Facts & Revenue Parameters
             </h2>
             <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {content.keyFacts.map((fact, idx) => (
-                <div key={idx} className="bg-white border border-black/10 p-3.5 rounded-lg shadow-sm">
-                  <dt className="text-xs font-semibold text-black/50 uppercase tracking-wider">
+                <div key={idx} className="bg-white border border-black/10 p-4 rounded-xl shadow-sm">
+                  <dt className="text-xs font-semibold text-muted uppercase tracking-wider">
                     {fact.term}
                   </dt>
-                  <dd className="text-sm font-semibold text-black font-display mt-0.5">
+                  <dd className="text-sm font-semibold text-charcoal font-display mt-1">
                     {fact.value}
                   </dd>
                 </div>
@@ -208,15 +208,15 @@ export function AreaCalculatorView({ content }: AreaCalculatorViewProps) {
           </div>
 
           {/* Formula & Worked Example Block */}
-          <div className="bg-white border border-black/15 rounded-xl p-6 space-y-4 shadow-sm">
-            <h2 className="text-lg font-display font-semibold text-black">
+          <div className="bg-white border border-black/10 rounded-2xl p-6 space-y-4 shadow-sm">
+            <h2 className="text-xl font-serif font-semibold text-charcoal">
               Conversion Formula & Worked Example
             </h2>
-            <div className="bg-black/5 p-4 rounded-lg font-mono text-sm space-y-1 text-black">
+            <div className="bg-charcoal text-white/90 p-4 rounded-xl font-mono text-sm space-y-1">
               <div>{content.formula.forward}</div>
               <div>{content.formula.reverse}</div>
             </div>
-            <p className="text-sm text-black/80 leading-relaxed font-body">
+            <p className="text-sm text-charcoal/80 leading-relaxed font-body">
               <strong>Worked Example:</strong> {content.formula.example}
             </p>
           </div>
@@ -225,34 +225,34 @@ export function AreaCalculatorView({ content }: AreaCalculatorViewProps) {
           {/* Table 1: Common Step Values */}
           {!isHub && (
             <div className="space-y-4">
-              <h2 className="text-xl font-display font-semibold text-black">
+              <h2 className="text-2xl font-serif font-semibold text-charcoal">
                 Common Conversion Values: {fromUnit.name} to {toUnit.name}
               </h2>
-              <div className="overflow-x-auto border border-black/10 rounded-xl shadow-sm">
-                <table className="w-full text-left text-sm border-collapse">
+              <div className="overflow-x-auto border border-black/10 rounded-2xl shadow-sm">
+                <table className="w-full text-left text-sm border-collapse font-sans">
                   <caption className="sr-only">
                     Conversion table for {fromUnit.name} to {toUnit.name}
                   </caption>
-                  <thead className="bg-black/5 border-b border-black/10 text-xs uppercase font-semibold text-black/70">
+                  <thead className="bg-charcoal text-white text-xs uppercase font-bold tracking-wider">
                     <tr>
-                      <th scope="col" className="px-4 py-3">{fromUnit.name}</th>
-                      <th scope="col" className="px-4 py-3">{toUnit.name}</th>
-                      <th scope="col" className="px-4 py-3">Square Feet Equivalent</th>
+                      <th scope="col" className="px-4 py-3.5 text-white">{fromUnit.name}</th>
+                      <th scope="col" className="px-4 py-3.5 text-white">{toUnit.name}</th>
+                      <th scope="col" className="px-4 py-3.5 text-white">Square Feet Equivalent</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-black/10">
+                  <tbody className="divide-y divide-black/5 bg-white">
                     {commonSteps.map((val) => {
                       const converted = convertArea(val, fromUnit.id, toUnit.id, activeRegion);
                       const sqftVal = convertArea(val, fromUnit.id, "sqft", activeRegion);
                       return (
-                        <tr key={val} className="hover:bg-black/[0.02]">
-                          <td className="px-4 py-3 font-semibold text-black">
+                        <tr key={val} className="hover:bg-gold/5 transition-colors">
+                          <td className="px-4 py-3.5 font-semibold text-charcoal">
                             {val} {val === 1 ? fromUnit.name : fromUnit.plural}
                           </td>
-                          <td className="px-4 py-3 font-medium text-black">
+                          <td className="px-4 py-3.5 font-medium text-charcoal">
                             {formatValue(converted)} {toUnit.plural}
                           </td>
-                          <td className="px-4 py-3 text-black/70">
+                          <td className="px-4 py-3.5 text-muted font-mono">
                             {formatValue(sqftVal)} sq ft
                           </td>
                         </tr>
@@ -266,25 +266,25 @@ export function AreaCalculatorView({ content }: AreaCalculatorViewProps) {
 
           {/* Table 2: Regional Variation Table across all 6 Punjab Systems */}
           <div className="space-y-4">
-            <h2 className="text-xl font-display font-semibold text-black">
+            <h2 className="text-2xl font-serif font-semibold text-charcoal">
               Regional Variations Across Punjab Revenue Systems
             </h2>
-            <div className="overflow-x-auto border border-black/10 rounded-xl shadow-sm">
-              <table className="w-full text-left text-sm border-collapse">
+            <div className="overflow-x-auto border border-black/10 rounded-2xl shadow-sm">
+              <table className="w-full text-left text-sm border-collapse font-sans">
                 <caption className="sr-only">
                   Comparison of measurement systems across Punjab districts
                 </caption>
-                <thead className="bg-black/5 border-b border-black/10 text-xs uppercase font-semibold text-black/70">
+                <thead className="bg-charcoal text-white text-xs uppercase font-bold tracking-wider">
                   <tr>
-                    <th scope="col" className="px-4 py-3">System & Region</th>
-                    <th scope="col" className="px-4 py-3">Karam</th>
-                    <th scope="col" className="px-4 py-3">1 Marla</th>
-                    <th scope="col" className="px-4 py-3">1 Kanal</th>
-                    <th scope="col" className="px-4 py-3">1 Bigha</th>
-                    <th scope="col" className="px-4 py-3">Kanals / Acre</th>
+                    <th scope="col" className="px-4 py-3.5 text-white">System & Region</th>
+                    <th scope="col" className="px-4 py-3.5 text-white">Karam</th>
+                    <th scope="col" className="px-4 py-3.5 text-white">1 Marla</th>
+                    <th scope="col" className="px-4 py-3.5 text-white">1 Kanal</th>
+                    <th scope="col" className="px-4 py-3.5 text-white">1 Bigha</th>
+                    <th scope="col" className="px-4 py-3.5 text-white">Kanals / Acre</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-black/10">
+                <tbody className="divide-y divide-black/5 bg-white">
                   {Object.values(REGIONS).map((reg) => {
                     const marlaSqft = convertArea(1, "marla", "sqft", reg.id);
                     const kanalSqft = convertArea(1, "kanal", "sqft", reg.id);
@@ -292,16 +292,16 @@ export function AreaCalculatorView({ content }: AreaCalculatorViewProps) {
                     const kanalsPerAcre = 43560 / kanalSqft;
 
                     return (
-                      <tr key={reg.id} className="hover:bg-black/[0.02]">
-                        <td className="px-4 py-3 font-medium text-black max-w-[200px]">
+                      <tr key={reg.id} className="hover:bg-gold/5 transition-colors">
+                        <td className="px-4 py-3.5 font-medium text-charcoal max-w-[200px]">
                           <div className="font-semibold">{reg.shortName}</div>
-                          <div className="text-xs text-black/50 truncate">{reg.name}</div>
+                          <div className="text-xs text-muted truncate">{reg.name}</div>
                         </td>
-                        <td className="px-4 py-3 text-black/80">{reg.karamInches} in</td>
-                        <td className="px-4 py-3 font-mono text-black/90">{formatValue(marlaSqft)} sq ft</td>
-                        <td className="px-4 py-3 font-mono text-black/90">{formatValue(kanalSqft)} sq ft</td>
-                        <td className="px-4 py-3 font-mono text-black/90">{formatValue(bighaSqft)} sq ft</td>
-                        <td className="px-4 py-3 font-semibold text-black">{kanalsPerAcre.toFixed(2)} kanal</td>
+                        <td className="px-4 py-3.5 text-charcoal/80">{reg.karamInches} in</td>
+                        <td className="px-4 py-3.5 font-mono text-charcoal/90">{formatValue(marlaSqft)} sq ft</td>
+                        <td className="px-4 py-3.5 font-mono text-charcoal/90">{formatValue(kanalSqft)} sq ft</td>
+                        <td className="px-4 py-3.5 font-mono text-charcoal/90">{formatValue(bighaSqft)} sq ft</td>
+                        <td className="px-4 py-3.5 font-semibold text-gold">{kanalsPerAcre.toFixed(2)} kanal</td>
                       </tr>
                     );
                   })}
@@ -314,10 +314,10 @@ export function AreaCalculatorView({ content }: AreaCalculatorViewProps) {
           <div className="space-y-8">
             {content.sections.map((section, idx) => (
               <div key={idx} className="space-y-3">
-                <h2 className="text-2xl font-display font-semibold text-black tracking-tight">
+                <h2 className="text-2xl font-serif font-semibold text-charcoal tracking-tight">
                   {section.title}
                 </h2>
-                <p className="text-base text-black/80 leading-relaxed">
+                <p className="text-base text-charcoal/80 leading-relaxed font-body">
                   {section.content}
                 </p>
               </div>
@@ -325,42 +325,42 @@ export function AreaCalculatorView({ content }: AreaCalculatorViewProps) {
           </div>
 
           {/* Citations & Statistics */}
-          <div className="bg-black/[0.02] border border-black/10 rounded-xl p-6 space-y-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-black flex items-center gap-1.5">
-              <BookOpen className="w-4 h-4 text-black/70" />
+          <div className="bg-black/[0.02] border border-black/10 rounded-2xl p-6 space-y-4">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-gold flex items-center gap-1.5 font-display">
+              <BookOpen className="w-4 h-4 text-gold" />
               Statutory Citations & Source Documentation
             </h3>
-            <ul className="space-y-2 text-sm text-black/80">
+            <ul className="space-y-2 text-sm text-charcoal/80">
               {content.citations.map((cite, idx) => (
                 <li key={idx} className="flex items-center gap-2">
-                  <ArrowUpRight className="w-4 h-4 text-black/40 shrink-0" />
+                  <ArrowUpRight className="w-4 h-4 text-gold shrink-0" />
                   <a
                     href={cite.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-medium text-black hover:underline underline-offset-4"
+                    className="font-medium text-charcoal hover:text-gold transition-colors underline-offset-4"
                   >
                     {cite.title}
                   </a>
-                  <span className="text-black/40 text-xs">({cite.source})</span>
+                  <span className="text-muted text-xs">({cite.source})</span>
                 </li>
               ))}
             </ul>
-            <div className="pt-3 border-t border-black/10 text-xs text-black/60 space-y-1">
-              <p><strong>Verified Statistic:</strong> {content.statistic}</p>
-              <p><strong>Provenance:</strong> {content.provenance}</p>
-              <p className="text-black/50 italic pt-1">
+            <div className="pt-3 border-t border-black/10 text-xs text-muted space-y-1">
+              <p><strong className="text-charcoal">Verified Statistic:</strong> {content.statistic}</p>
+              <p><strong className="text-charcoal">Provenance:</strong> {content.provenance}</p>
+              <p className="text-muted italic pt-1">
                 "Revenue practice varies by tehsil and by whether the area was consolidated. Before any registry, confirm the conversion against the jamabandi and the local patwari record."
               </p>
             </div>
           </div>
 
           {/* E-E-A-T Block (Reviewed By line) */}
-          <div className="p-4 bg-white border border-black/15 rounded-xl flex items-center gap-3 shadow-sm text-xs text-black/70">
-            <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
+          <div className="p-4 bg-gold/5 border border-gold/20 rounded-2xl flex items-center gap-3 shadow-sm text-xs text-charcoal/80">
+            <CheckCircle2 className="w-5 h-5 text-gold shrink-0" />
             <div>
               Reviewed by the advisory team at{" "}
-              <Link href="/about" className="font-semibold text-black hover:underline">
+              <Link href="/about" className="font-bold text-charcoal hover:text-gold transition-colors">
                 Realty Holding and Management Consultants, Mohali
               </Link>
               . 180+ transactions closed across residential, agricultural, industrial and commercial land in Punjab.
@@ -369,16 +369,16 @@ export function AreaCalculatorView({ content }: AreaCalculatorViewProps) {
 
           {/* FAQ Section */}
           <div className="space-y-6 pt-4 border-t border-black/10">
-            <h2 className="text-2xl font-display font-semibold text-black">
+            <h2 className="text-2xl font-serif font-semibold text-charcoal">
               Frequently Asked Questions
             </h2>
             <div className="space-y-4">
               {content.questions.map((q, idx) => (
-                <div key={idx} className="bg-white border border-black/10 p-5 rounded-xl space-y-2 shadow-sm">
-                  <h3 className="text-base font-semibold font-display text-black">
+                <div key={idx} className="bg-white border border-black/10 p-6 rounded-2xl space-y-2 shadow-sm">
+                  <h3 className="text-base font-semibold font-serif text-charcoal">
                     {q.question}
                   </h3>
-                  <p className="text-sm text-black/80 leading-relaxed">
+                  <p className="text-sm text-charcoal/80 leading-relaxed font-body">
                     {q.answer}
                   </p>
                 </div>
@@ -388,7 +388,7 @@ export function AreaCalculatorView({ content }: AreaCalculatorViewProps) {
 
           {/* Internal Links Grid */}
           <div className="pt-8 border-t border-black/10 space-y-6">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-black/60">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-muted font-display">
               Related Conversion Tools & Reference Guides
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
@@ -396,20 +396,20 @@ export function AreaCalculatorView({ content }: AreaCalculatorViewProps) {
                 <Link
                   key={idx}
                   href={`/tools/area-calculator/${link.slug}`}
-                  className="p-3 bg-black/[0.02] border border-black/10 hover:border-black/30 rounded-lg text-black font-medium transition-colors flex items-center justify-between"
+                  className="p-3.5 bg-black/[0.02] border border-black/10 hover:border-gold/40 hover:bg-gold/5 rounded-xl text-charcoal font-medium transition-colors flex items-center justify-between"
                 >
                   <span>{link.anchorText}</span>
-                  <ChevronRight className="w-4 h-4 text-black/40" />
+                  <ChevronRight className="w-4 h-4 text-gold" />
                 </Link>
               ))}
               {content.entityLinks?.map((link, idx) => (
                 <Link
                   key={`ent-${idx}`}
                   href={`/tools/area-calculator/${link.slug}`}
-                  className="p-3 bg-black/5 border border-black/15 hover:border-black/30 rounded-lg text-black font-medium transition-colors flex items-center justify-between"
+                  className="p-3.5 bg-gold/5 border border-gold/20 hover:border-gold rounded-xl text-charcoal font-medium transition-colors flex items-center justify-between"
                 >
                   <span>{link.anchorText}</span>
-                  <ChevronRight className="w-4 h-4 text-black/40" />
+                  <ChevronRight className="w-4 h-4 text-gold" />
                 </Link>
               ))}
             </div>

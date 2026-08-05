@@ -4,7 +4,7 @@ import { Calculator, TrendingUp, UserCheck, Map, CheckSquare } from "lucide-reac
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Free Real Estate Tools | Realty Holding and Management Consultants",
+  title: "Real Estate Tools",
   description: "Suite of free tools for real estate buyers in Mohali: property document checklist, EMI calculator, price trends, and loan eligibility checker.",
 };
 
@@ -26,12 +26,6 @@ const tools = [
     description: "Plan your investment with our easy-to-use mortgage calculator.",
     href: "/tools/mortgage-calculator",
     icon: Calculator,
-  },
-  {
-    title: "Price Trends Mohali",
-    description: "Analyze sector-wise price growth and market demand in Mohali.",
-    href: "/tools/price-trend",
-    icon: TrendingUp,
   },
   {
     title: "Loan Eligibility Checker",
@@ -94,36 +88,38 @@ export default function ToolsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       {/* Hero */}
-      <div className="bg-white py-24 text-black border-b border-black/10">
-        <div className="container-site text-center">
-          <h1 className="text-5xl md:text-7xl font-display font-semibold mb-6">Free Tools</h1>
-          <p className="text-xl text-black/60 max-w-2xl mx-auto">
-            Easy-to-use tools for real estate buyers, investors, and homeowners in Mohali.
+      <div className="bg-white py-10 sm:py-14 text-charcoal border-b border-black/10">
+        <div className="container-site text-center max-w-3xl mx-auto">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-semibold text-charcoal mb-4 tracking-tight">Real Estate Tools</h1>
+          <p className="text-base sm:text-lg text-charcoal/70 max-w-xl mx-auto font-body">
+            Free, ungated calculators and verification tools for property buyers, investors, and owners in Mohali &amp; Punjab.
           </p>
         </div>
       </div>
 
       {/* Tools Grid */}
-      <div className="container-site py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="container-site py-12 sm:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {tools.map((tool) => (
             <Link
               key={tool.title}
               href={tool.href}
-              className="group border border-black/10 rounded-[32px] p-10 hover:border-black transition-all flex flex-col justify-between aspect-[4/3] md:aspect-square"
+              className="group border border-black/10 rounded-2xl p-6 bg-white hover:border-gold/50 hover:shadow-lg transition-all flex flex-col justify-between"
             >
               <div>
-                <div className="w-16 h-16 rounded-2xl bg-black/5 flex items-center justify-center mb-8 group-hover:bg-charcoal group-hover:text-white transition-colors">
-                  <tool.icon size={32} />
+                <div className="w-12 h-12 rounded-xl bg-black/5 flex items-center justify-center mb-5 group-hover:bg-charcoal group-hover:text-gold transition-colors text-charcoal">
+                  <tool.icon size={22} />
                 </div>
-                <h2 className="text-3xl font-display font-medium mb-4">{tool.title}</h2>
-                <p className="text-lg text-black/60 leading-relaxed">
+                <h2 className="text-xl font-display font-semibold text-charcoal mb-2 leading-snug group-hover:text-gold transition-colors">
+                  {tool.title}
+                </h2>
+                <p className="text-xs sm:text-sm text-charcoal/70 leading-relaxed font-body">
                   {tool.description}
                 </p>
               </div>
-              <div className="flex items-center gap-2 font-body font-bold uppercase tracking-widest text-xs mt-8">
-                Explore Tool
-                <span className="w-8 h-[1px] bg-black/20 group-hover:w-12 group-hover:bg-charcoal transition-all" />
+              <div className="flex items-center gap-2 font-display font-bold uppercase tracking-wider text-xs text-gold mt-6 pt-4 border-t border-black/5">
+                <span>Explore Tool</span>
+                <span className="w-5 h-[1.5px] bg-gold group-hover:w-8 transition-all" />
               </div>
             </Link>
           ))}
@@ -131,18 +127,20 @@ export default function ToolsPage() {
       </div>
 
       {/* CTA */}
-      <div className="bg-black/5 py-24 text-center">
-        <div className="container-site">
-          <h2 className="text-3xl md:text-5xl font-display font-medium mb-8 text-charcoal">Need personalized advice?</h2>
-          <p className="text-xl text-black/60 mb-12 max-w-xl mx-auto">
-            Our advisors can provide custom investment analysis based on your financial goals.
+      <div className="bg-black/[0.02] py-14 border-t border-black/10 text-center">
+        <div className="container-site max-w-2xl mx-auto space-y-4">
+          <h2 className="text-2xl md:text-3xl font-display font-semibold text-charcoal">Need personalized advisory on your property file?</h2>
+          <p className="text-base text-charcoal/70 font-body">
+            Our principal advisory team in Phase 8A, Mohali provides direct title reviews, GMADA verification, and legal due diligence before you pay token money.
           </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-charcoal text-white px-12 py-5 rounded-full font-body font-bold uppercase tracking-widest text-sm hover:bg-black transition-colors"
-          >
-            Talk to an Advisor
-          </Link>
+          <div className="pt-2">
+            <Link
+              href="/contact"
+              className="inline-block bg-charcoal text-white px-8 py-3.5 rounded-xl font-display text-xs font-bold uppercase tracking-widest hover:bg-gold hover:text-charcoal transition-all shadow-md"
+            >
+              Talk to an Advisor &rarr;
+            </Link>
+          </div>
         </div>
       </div>
     </div>

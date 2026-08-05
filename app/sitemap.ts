@@ -36,7 +36,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: "/directory", priority: 0.8 },       // Site Directory Index
     { path: "/tools/area-calculator", priority: 0.9 }, // Land Area Calculator Hub
     { path: "/tools/property-document-checklist", priority: 0.8 }, // Trust & Tools
-    { path: "/tools/price-trend", priority: 0.7 }, // Trust & Tools
     { path: "/faq", priority: 0.7 },             // Trust & Tools
     { path: "/about", priority: 0.5 },           // Admin
     { path: "/contact", priority: 0.5 },         // Admin

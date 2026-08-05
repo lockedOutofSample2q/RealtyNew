@@ -4,7 +4,7 @@ import { AreaPageContent } from "./types";
 export const tier3Pages: Record<string, AreaPageContent> = {
   "punjab-land-measurement-chart": {
     slug: "punjab-land-measurement-chart",
-    title: "Punjab Land Measurement Chart (All 6 Systems) | RHMC",
+    title: "Punjab Land Measurement Chart (All 6 Systems)",
     metaDescription: "Master reference chart of land measurement units across all 6 Punjab revenue systems. Bigha, marla, kanal, killa, sarsahi, biswa and karam standards.",
     h1: "Punjab Land Measurement Chart: The Master Revenue Reference",
     tier: "entity",
@@ -91,7 +91,7 @@ export const tier3Pages: Record<string, AreaPageContent> = {
 
   "bigha-in-rajpura": {
     slug: "bigha-in-rajpura",
-    title: "1 Bigha in Rajpura = 9,075 Sq Ft | Revenue Guide & Calculations",
+    title: "1 Bigha in Rajpura = 9,075 Sq Ft - Revenue Guide & Calculations",
     metaDescription: "1 bigha in Rajpura, Banur and Patiala is 9,075 sq ft (katcha bigha), not 21,780 sq ft. Learn why 4.8 bigha equal 1 acre with revenue record proofs.",
     h1: "Bigha in Rajpura & Banur: The 9,075 Sq Ft Katcha Bigha Standard",
     tier: "entity",
@@ -176,7 +176,7 @@ export const tier3Pages: Record<string, AreaPageContent> = {
 
   "bigha-in-punjab": {
     slug: "bigha-in-punjab",
-    title: "Bigha in Punjab Disambiguation | 6 Regional Standards Explained",
+    title: "Bigha in Punjab Disambiguation - 6 Regional Standards Explained",
     metaDescription: "Comprehensive disambiguation of bigha sizes across Punjab. Compare Mohali (21,780 sq ft), Rajpura (9,075 sq ft), Ludhiana (27,225 sq ft) and Majha (10,000 sq ft).",
     h1: "Bigha in Punjab: The Definitive Regional Disambiguation Guide",
     tier: "entity",
@@ -255,7 +255,7 @@ export const tier3Pages: Record<string, AreaPageContent> = {
 
   "marla-in-punjab": {
     slug: "marla-in-punjab",
-    title: "Marla in Punjab | Standard 272.25 Sq Ft vs District Variations",
+    title: "Marla in Punjab - Standard 272.25 Sq Ft vs District Variations",
     metaDescription: "Comprehensive guide to marla sizes in Punjab. Standard 272.25 sq ft (Mohali) vs Jalandhar (206.64 sq ft), Amritsar (225 sq ft) and Patiala (226.88 sq ft).",
     h1: "Marla in Punjab: Standard Benchmarks & District Variations",
     tier: "entity",
@@ -334,7 +334,7 @@ export const tier3Pages: Record<string, AreaPageContent> = {
 
   "kanal-in-punjab": {
     slug: "kanal-in-punjab",
-    title: "Kanal in Punjab | 5,445 Sq Ft Standard vs District Kanal Sizes",
+    title: "Kanal in Punjab - 5,445 Sq Ft Standard vs District Kanal Sizes",
     metaDescription: "Complete guide to kanal land measurement in Punjab. Standard 5,445 sq ft (Mohali) vs Jalandhar (4,132.81 sq ft) and why Doaba has 10.54 kanal per acre.",
     h1: "Kanal in Punjab: Revenue Standards & District Comparisons",
     tier: "entity",
@@ -412,7 +412,7 @@ export const tier3Pages: Record<string, AreaPageContent> = {
 
   "land-measurement-in-mohali": {
     slug: "land-measurement-in-mohali",
-    title: "Land Measurement in Mohali | GMADA, PUDA & Municipal Practice",
+    title: "Land Measurement in Mohali - GMADA, PUDA & Municipal Practice",
     metaDescription: "Guide to land measurement practice in Mohali, SAS Nagar, Kharar, Zirakpur and GMADA sectors. Standard 66-inch karam, sq yd plots and jamabandi rules.",
     h1: "Land Measurement Practice in Mohali & GMADA Sectors",
     tier: "entity",
@@ -491,7 +491,7 @@ export const tier3Pages: Record<string, AreaPageContent> = {
 
   "karam-standards-of-punjab": {
     slug: "karam-standards-of-punjab",
-    title: "Karam Standards of Punjab | 66, 60, 57.5, 57.157 & 54 Inch Standards",
+    title: "Karam Standards of Punjab - 66, 60, 57.5, 57.157 & 54 Inch Standards",
     metaDescription: "Detailed technical guide to karam measurement standards in Punjab by district. 66-inch, 60-inch, 57.5-inch, 57.157-inch and 54-inch karams explained.",
     h1: "Karam Standards of Punjab: District-by-District Technical Analysis",
     tier: "entity",
@@ -570,7 +570,7 @@ export const tier3Pages: Record<string, AreaPageContent> = {
 
   "how-to-read-a-jamabandi-area": {
     slug: "how-to-read-a-jamabandi-area",
-    title: "How to Read Area in a Jamabandi Record | Worked Examples & Notation",
+    title: "How to Read Area in a Jamabandi Record - Worked Examples & Notation",
     metaDescription: "Learn how to read land area in Punjab jamabandi revenue records. Decode Kanal-Marla-Sarsahi and Bigha-Biswa-Biswansi notation with real worked examples.",
     h1: "How to Read Land Area in a Punjab Jamabandi Record",
     tier: "entity",

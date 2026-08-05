@@ -4,7 +4,7 @@ import { AreaPageContent } from "./types";
 export const tier2Pages: Record<string, AreaPageContent> = {
   "marla-to-square-feet": {
     slug: "marla-to-square-feet",
-    title: "1 Marla = 272.25 Sq Ft | Marla to Square Feet Converter",
+    title: "1 Marla = 272.25 Sq Ft - Marla to Square Feet Converter",
     metaDescription: "1 marla is 272.25 square feet in standard Punjab revenue records. Convert marla to square feet instantly with formulas, worked examples and district variations.",
     h1: "Marla to Square Feet Converter (1 Marla = 272.25 Sq Ft)",
     tier: "conversion",
@@ -92,7 +92,7 @@ export const tier2Pages: Record<string, AreaPageContent> = {
 
   "square-feet-to-marla": {
     slug: "square-feet-to-marla",
-    title: "Square Feet to Marla Converter | 272.25 Sq Ft = 1 Marla",
+    title: "Square Feet to Marla Converter - 272.25 Sq Ft = 1 Marla",
     metaDescription: "Convert square feet to marla instantly. 272.25 sq ft equals 1 standard marla in Punjab. View formulas, composite breakdowns and district comparison tables.",
     h1: "Square Feet to Marla Converter",
     tier: "conversion",
@@ -172,7 +172,7 @@ export const tier2Pages: Record<string, AreaPageContent> = {
 
   "kanal-to-square-feet": {
     slug: "kanal-to-square-feet",
-    title: "1 Kanal = 5,445 Sq Ft | Kanal to Square Feet Converter",
+    title: "1 Kanal = 5,445 Sq Ft - Kanal to Square Feet Converter",
     metaDescription: "1 kanal is 5,445 square feet in standard Punjab revenue land measurement. Convert kanal to square feet with district tables, formulas and worked examples.",
     h1: "Kanal to Square Feet Converter (1 Kanal = 5,445 Sq Ft)",
     tier: "conversion",
@@ -254,7 +254,7 @@ export const tier2Pages: Record<string, AreaPageContent> = {
 
   "square-feet-to-kanal": {
     slug: "square-feet-to-kanal",
-    title: "Square Feet to Kanal Converter | 5,445 Sq Ft = 1 Kanal",
+    title: "Square Feet to Kanal Converter - 5,445 Sq Ft = 1 Kanal",
     metaDescription: "Convert square feet to kanal instantly. 5,445 sq ft equals 1 standard kanal in Punjab. Calculate kanal, marla and sarsahi remainders with live formulas.",
     h1: "Square Feet to Kanal Converter",
     tier: "conversion",

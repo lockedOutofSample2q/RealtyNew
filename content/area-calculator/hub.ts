@@ -3,7 +3,7 @@ import { AreaPageContent } from "./types";
 
 export const hubContent: AreaPageContent = {
   slug: "",
-  title: "Punjab Land Area Calculator & Measurement Chart | RHMC",
+  title: "Punjab Land Area Calculator & Measurement Chart",
   metaDescription: "Free land area calculator for Punjab & Tricity. Convert marla, kanal, bigha, gaj, killa, and acre across all six regional revenue standards.",
   h1: "Punjab Land Area Calculator & Measurement Converter",
   tier: "hub",

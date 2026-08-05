@@ -7,7 +7,7 @@ export const tier2AllPages: Record<string, AreaPageContent> = {
 
   "square-feet-to-bigha": {
     slug: "square-feet-to-bigha",
-    title: "Square Feet to Bigha Converter | Mohali & Rajpura Bigha Table",
+    title: "Square Feet to Bigha Converter - Mohali & Rajpura Bigha Table",
     metaDescription: "Convert square feet to bigha instantly. Compare Mohali bigha (21,780 sq ft) vs Rajpura katcha bigha (9,075 sq ft) with formulas and district tables.",
     h1: "Square Feet to Bigha Converter",
     tier: "conversion",
@@ -88,7 +88,7 @@ export const tier2AllPages: Record<string, AreaPageContent> = {
 
   "acre-to-square-feet": {
     slug: "acre-to-square-feet",
-    title: "1 Acre = 43,560 Sq Ft | Acre to Square Feet Converter",
+    title: "1 Acre = 43,560 Sq Ft - Acre to Square Feet Converter",
     metaDescription: "1 acre is exactly 43,560 square feet. Convert acre to square feet, marla, kanal and bigha instantly with standard revenue formulas.",
     h1: "Acre to Square Feet Converter (1 Acre = 43,560 Sq Ft)",
     tier: "conversion",
@@ -170,7 +170,7 @@ export const tier2AllPages: Record<string, AreaPageContent> = {
 
   "square-feet-to-acre": {
     slug: "square-feet-to-acre",
-    title: "Square Feet to Acre Converter | 43,560 Sq Ft = 1 Acre",
+    title: "Square Feet to Acre Converter - 43,560 Sq Ft = 1 Acre",
     metaDescription: "Convert square feet to acres instantly. 43,560 sq ft equals 1 acre. Calculate acreage, killa, kanal and marla breakdown with live formulas.",
     h1: "Square Feet to Acre Converter",
     tier: "conversion",

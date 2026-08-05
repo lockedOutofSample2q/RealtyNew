@@ -4,7 +4,7 @@ import { AreaPageContent } from "./types";
 export const remainingTier2Pages: Record<string, AreaPageContent> = {
   "marla-to-square-yard": {
     slug: "marla-to-square-yard",
-    title: "1 Marla = 30.25 Sq Yd (Gaj) | Marla to Square Yard Converter",
+    title: "1 Marla = 30.25 Sq Yd (Gaj) - Marla to Square Yard Converter",
     metaDescription: "Convert marla to square yards (gaj) in Punjab. 1 marla equals 30.25 sq yd. View formulas, plot dimensions and GMADA sector layout equivalents.",
     h1: "Marla to Square Yard (Gaj) Converter",
     tier: "conversion",
@@ -84,7 +84,7 @@ export const remainingTier2Pages: Record<string, AreaPageContent> = {
 
   "square-yard-to-square-feet": {
     slug: "square-yard-to-square-feet",
-    title: "1 Sq Yd = 9 Sq Ft | Square Yard to Square Feet Converter",
+    title: "1 Sq Yd = 9 Sq Ft - Square Yard to Square Feet Converter",
     metaDescription: "Convert square yards to square feet. 1 square yard equals 9 square feet. Calculate plot areas, covered areas and architectural square footage.",
     h1: "Square Yard to Square Feet Converter (1 Sq Yd = 9 Sq Ft)",
     tier: "conversion",
@@ -163,7 +163,7 @@ export const remainingTier2Pages: Record<string, AreaPageContent> = {
 
   "gaj-to-square-feet": {
     slug: "gaj-to-square-feet",
-    title: "1 Gaj = 9 Sq Ft | Gaj to Square Feet Plot Calculator",
+    title: "1 Gaj = 9 Sq Ft - Gaj to Square Feet Plot Calculator",
     metaDescription: "Convert gaj (gajj) to square feet for Indian property deals. 1 gaj equals 9 square feet. View plot dimension tables, rates and GMADA examples.",
     h1: "Gaj to Square Feet Converter (1 Gaj = 9 Sq Ft)",
     tier: "conversion",
@@ -243,7 +243,7 @@ export const remainingTier2Pages: Record<string, AreaPageContent> = {
 
   "square-metre-to-square-feet": {
     slug: "square-metre-to-square-feet",
-    title: "1 Sq Metre = 10.7639 Sq Ft | Square Metre to Sq Ft Converter",
+    title: "1 Sq Metre = 10.7639 Sq Ft - Square Metre to Sq Ft Converter",
     metaDescription: "Convert square metres to square feet instantly. 1 sq m equals 10.7639 sq ft. Metric to imperial area conversion with formulas and RERA examples.",
     h1: "Square Metre to Square Feet Converter",
     tier: "conversion",
@@ -322,7 +322,7 @@ export const remainingTier2Pages: Record<string, AreaPageContent> = {
 
   "kanal-to-marla": {
     slug: "kanal-to-marla",
-    title: "1 Kanal = 20 Marla | Kanal to Marla Converter",
+    title: "1 Kanal = 20 Marla - Kanal to Marla Converter",
     metaDescription: "Convert kanal to marla instantly. 1 kanal equals 20 marla across all six revenue systems in Punjab. View worked examples and plot conversions.",
     h1: "Kanal to Marla Converter (1 Kanal = 20 Marla)",
     tier: "conversion",
@@ -402,7 +402,7 @@ export const remainingTier2Pages: Record<string, AreaPageContent> = {
 
   "marla-to-kanal": {
     slug: "marla-to-kanal",
-    title: "20 Marla = 1 Kanal | Marla to Kanal Converter",
+    title: "20 Marla = 1 Kanal - Marla to Kanal Converter",
     metaDescription: "Convert marla to kanal instantly. 20 marla equals 1 kanal in Punjab real estate. Calculate kanal and marla remainders with live formulas.",
     h1: "Marla to Kanal Converter (20 Marla = 1 Kanal)",
     tier: "conversion",
@@ -481,7 +481,7 @@ export const remainingTier2Pages: Record<string, AreaPageContent> = {
 
   "bigha-to-acre": {
     slug: "bigha-to-acre",
-    title: "Bigha to Acre Converter | 2 Bigha = 1 Acre (Mohali) / 4.8 Bigha (Rajpura)",
+    title: "Bigha to Acre Converter - 2 Bigha = 1 Acre (Mohali) / 4.8 Bigha (Rajpura)",
     metaDescription: "Convert bigha to acre across Punjab. Learn why 2 bigha = 1 acre in Mohali but 4.8 bigha = 1 acre in Rajpura and Banur with full revenue proofs.",
     h1: "Bigha to Acre Converter (Mohali & Rajpura Systems)",
     tier: "conversion",
@@ -560,7 +560,7 @@ export const remainingTier2Pages: Record<string, AreaPageContent> = {
 
   "acre-to-bigha": {
     slug: "acre-to-bigha",
-    title: "1 Acre = 2 Bigha (Mohali) / 4.8 Bigha (Rajpura) | Farm Land Converter",
+    title: "1 Acre = 2 Bigha (Mohali) / 4.8 Bigha (Rajpura) - Farm Land Converter",
     metaDescription: "Convert acres to bigha across Punjab farmland. 1 acre equals 2 bigha in Mohali and 4.8 bigha in Rajpura and Banur for agricultural transactions.",
     h1: "Acre to Bigha Farmland Calculator (Mohali vs Rajpura)",
     tier: "conversion",
@@ -639,7 +639,7 @@ export const remainingTier2Pages: Record<string, AreaPageContent> = {
 
   "kanal-to-acre": {
     slug: "kanal-to-acre",
-    title: "8 Kanal = 1 Acre | Kanal to Acre Converter",
+    title: "8 Kanal = 1 Acre - Kanal to Acre Converter",
     metaDescription: "Convert kanal to acre. 8 kanal equals 1 acre in standard Punjab revenue practice. View district variations for Doaba (10.54 kanal/acre).",
     h1: "Kanal to Acre Converter (8 Kanal = 1 Acre)",
     tier: "conversion",
@@ -717,7 +717,7 @@ export const remainingTier2Pages: Record<string, AreaPageContent> = {
 
   "acre-to-kanal": {
     slug: "acre-to-kanal",
-    title: "1 Acre = 8 Kanal | Acre to Kanal Converter",
+    title: "1 Acre = 8 Kanal - Acre to Kanal Converter",
     metaDescription: "Convert acres to kanal. 1 acre equals 8 kanal in standard Punjab revenue records. View district conversion factors and worked examples.",
     h1: "Acre to Kanal Converter (1 Acre = 8 Kanal)",
     tier: "conversion",
@@ -795,7 +795,7 @@ export const remainingTier2Pages: Record<string, AreaPageContent> = {
 
   "bigha-to-kanal": {
     slug: "bigha-to-kanal",
-    title: "1 Bigha = 4 Kanal | Bigha to Kanal Subdividing Guide",
+    title: "1 Bigha = 4 Kanal - Bigha to Kanal Subdividing Guide",
     metaDescription: "Convert bigha to kanal. 1 bigha equals 4 kanal in Mohali revenue records and 2 kanal in Rajpura. View farm partition deed calculations.",
     h1: "Bigha to Kanal Subdividing Converter (1 Bigha = 4 Kanal)",
     tier: "conversion",
@@ -873,7 +873,7 @@ export const remainingTier2Pages: Record<string, AreaPageContent> = {
 
   "kanal-to-bigha": {
     slug: "kanal-to-bigha",
-    title: "4 Kanal = 1 Bigha | Urban Plot Aggregation Calculator",
+    title: "4 Kanal = 1 Bigha - Urban Plot Aggregation Calculator",
     metaDescription: "Convert kanal to bigha for urban plot aggregation and GMADA sector plotting. 4 kanal equals 1 bigha in Mohali and 2 kanal equals 1 bigha in Rajpura.",
     h1: "Kanal to Bigha Aggregation Calculator",
     tier: "conversion",
@@ -952,7 +952,7 @@ export const remainingTier2Pages: Record<string, AreaPageContent> = {
 
   "biswa-to-marla": {
     slug: "biswa-to-marla",
-    title: "1 Biswa = 4 Marla | Jamabandi Share Sub-Unit Guide",
+    title: "1 Biswa = 4 Marla - Jamabandi Share Sub-Unit Guide",
     metaDescription: "Convert biswa to marla in revenue records. 1 biswa equals 4 marla in Mohali and 2 marla in Rajpura. View fractional khatauni share rules.",
     h1: "Biswa to Marla Revenue Sub-Unit Converter (1 Biswa = 4 Marla)",
     tier: "conversion",
@@ -1108,7 +1108,7 @@ export const remainingTier2Pages: Record<string, AreaPageContent> = {
 
   "sarsahi-to-square-feet": {
     slug: "sarsahi-to-square-feet",
-    title: "1 Sarsahi = 30.25 Sq Ft | Sarsahi to Sq Ft Converter",
+    title: "1 Sarsahi = 30.25 Sq Ft - Sarsahi to Sq Ft Converter",
     metaDescription: "Convert sarsahi (square karam) to square feet. 1 sarsahi equals 30.25 sq ft in standard Punjab revenue records. View district karam tables.",
     h1: "Sarsahi to Square Feet Converter (1 Sarsahi = 30.25 Sq Ft)",
     tier: "conversion",
@@ -1186,7 +1186,7 @@ export const remainingTier2Pages: Record<string, AreaPageContent> = {
 
   "marla-to-square-metre": {
     slug: "marla-to-square-metre",
-    title: "1 Marla = 25.2929 Sq Metres | Marla to Sq M Converter",
+    title: "1 Marla = 25.2929 Sq Metres - Marla to Sq M Converter",
     metaDescription: "Convert marla to square metres. 1 marla equals 25.2929 sq m in standard Punjab. Calculate metric area equivalents with live formulas.",
     h1: "Marla to Square Metre Converter (1 Marla = 25.2929 Sq M)",
     tier: "conversion",
@@ -1264,7 +1264,7 @@ export const remainingTier2Pages: Record<string, AreaPageContent> = {
 
   "killa-to-acre": {
     slug: "killa-to-acre",
-    title: "1 Killa = 1 Acre (43,560 Sq Ft) | Killa to Acre Converter",
+    title: "1 Killa = 1 Acre (43,560 Sq Ft) - Killa to Acre Converter",
     metaDescription: "Convert killa to acre in Punjab. 1 killa is identical to 1 acre (43,560 sq ft / 8 kanal). View farmland dimensions and revenue rules.",
     h1: "Killa to Acre Converter (1 Killa = 1 Acre)",
     tier: "conversion",
@@ -1343,7 +1343,7 @@ export const remainingTier2Pages: Record<string, AreaPageContent> = {
 
   "murabba-to-acre": {
     slug: "murabba-to-acre",
-    title: "1 Murabba = 25 Acres | Murabba to Acre Converter",
+    title: "1 Murabba = 25 Acres - Murabba to Acre Converter",
     metaDescription: "Convert murabba (square) to acres in Punjab. 1 murabba equals 25 acres (25 killa / 1,089,000 sq ft). View revenue grid details.",
     h1: "Murabba to Acre Converter (1 Murabba = 25 Acres)",
     tier: "conversion",
@@ -1422,7 +1422,7 @@ export const remainingTier2Pages: Record<string, AreaPageContent> = {
 
   "hectare-to-acre": {
     slug: "hectare-to-acre",
-    title: "1 Hectare = 2.471 Acres | Hectare to Acre Converter",
+    title: "1 Hectare = 2.471 Acres - Hectare to Acre Converter",
     metaDescription: "Convert hectares to acres. 1 hectare equals 2.47105 acres (10,000 sq m / 107,639 sq ft). Metric to agricultural land area converter.",
     h1: "Hectare to Acre Converter (1 Hectare = 2.471 Acres)",
     tier: "conversion",
@@ -1501,7 +1501,7 @@ export const remainingTier2Pages: Record<string, AreaPageContent> = {
 
   "acre-to-hectare": {
     slug: "acre-to-hectare",
-    title: "1 Acre = 0.4047 Hectares | Acre to Hectare Converter",
+    title: "1 Acre = 0.4047 Hectares - Acre to Hectare Converter",
     metaDescription: "Convert acres to hectares. 1 acre equals 0.404686 hectares (4,046.86 sq m). Calculate metric land area with live formulas.",
     h1: "Acre to Hectare Converter (1 Acre = 0.4047 Hectares)",
     tier: "conversion",
@@ -1579,7 +1579,7 @@ export const remainingTier2Pages: Record<string, AreaPageContent> = {
 
   "guntha-to-square-feet": {
     slug: "guntha-to-square-feet",
-    title: "1 Guntha = 1,089 Sq Ft | Guntha to Sq Ft Satbara Converter",
+    title: "1 Guntha = 1,089 Sq Ft - Guntha to Sq Ft Satbara Converter",
     metaDescription: "Convert guntha (gunta) to square feet for Satbara (7/12) land records in Maharashtra and Gujarat. 1 guntha equals 1,089 sq ft (121 sq yd).",
     h1: "Guntha to Square Feet Converter (Satbara 7/12 Land Records)",
     tier: "conversion",
@@ -1658,7 +1658,7 @@ export const remainingTier2Pages: Record<string, AreaPageContent> = {
 
   "cent-to-square-feet": {
     slug: "cent-to-square-feet",
-    title: "1 Cent = 435.6 Sq Ft | Cent to Sq Ft Patta Chitta Calculator",
+    title: "1 Cent = 435.6 Sq Ft - Cent to Sq Ft Patta Chitta Calculator",
     metaDescription: "Convert cent to square feet for Patta and Chitta land deeds in Tamil Nadu, Kerala & Karnataka. 1 cent equals 435.6 sq ft (48.4 sq yd).",
     h1: "Cent to Square Feet Converter (Patta & Chitta Land Records)",
     tier: "conversion",

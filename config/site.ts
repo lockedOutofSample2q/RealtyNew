@@ -186,8 +186,8 @@ export const faqs = [
 
 // ── SEO Defaults ─────────────────────────────────────────────
 export const seoDefaults = {
-  titleTemplate: "%s | Realty Holding and Management Consultants",
-  defaultTitle: "Buy Flats & Land in Mohali | Realty Holding and Management Consultants",
+  titleTemplate: "%s",
+  defaultTitle: "Buy Flats & Land in Mohali",
   description: "Independent real estate advisory in Mohali. Verified flats, GMADA plots and land with honest pricing guidance. 180+ closed transactions. Talk before you pay.",
   openGraph: {
     type: "website",

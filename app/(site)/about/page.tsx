@@ -13,7 +13,7 @@ import { siteConfig } from "@/config/site";
 import { CheckCircle2, MapPin, Phone, Mail, Globe } from "lucide-react";
 
 export const metadata = {
-  title: "About Our Advisory | Realty Holding & Management Consultants",
+  title: "About Our Advisory",
   description: "Amritpal Singh founded Realty Holding & Management Consultants after a career that placed him on every side of the real estate transaction in Mohali.",
   alternates: {
     canonical: `${siteConfig.url}/about`,

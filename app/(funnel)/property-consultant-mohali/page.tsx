@@ -5,7 +5,7 @@ import { CheckCircle2, Phone, ShieldCheck, Calculator, MapPin, Globe, ArrowDown 
 import { SmoothScrollButton } from "@/components/ui/SmoothScrollButton";
 
 export const metadata: Metadata = {
-  title: "Property Consultant in Mohali — Independent Advisory | Realty Holding & Management Consultants",
+  title: "Property Consultant in Mohali — Independent Advisory",
   description: "Independent property consultant in Mohali — not a property dealer. Honest advisory on flats, plots & NRI investments. Free 15-minute call.",
   alternates: {
     canonical: "https://realtyconsultants.in/property-consultant-mohali",

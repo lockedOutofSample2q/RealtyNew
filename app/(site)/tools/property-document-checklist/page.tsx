@@ -6,7 +6,7 @@ import "@/styles/checklist.css";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Property Document Verification Checklist, India and Punjab | Realty Holding & Management Consultants",
+  title: "Property Document Verification Checklist, India and Punjab",
   description: "A free, ungated checklist of every document to verify before buying property in India, with the Punjab layer: fard, jamabandi, intkal, GMADA transfer, stamp duty. Tick as you verify, print it, take it to the site visit.",
   alternates: {
     canonical: `${siteConfig.url}/tools/property-document-checklist`,
@@ -246,16 +246,6 @@ export default function PropertyDocumentChecklistPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <ChecklistInteractive />
-
-      <header className="masthead-tool">
-        <div className="masthead-in">
-          <div className="brand-tool">
-            Realty Holding &amp; Management Consultants
-            <span>E328, Phase 8A, Industrial Area, Mohali, Punjab</span>
-          </div>
-          <div className="masthead-meta">Free tool. No sign-up. <span style={{ fontWeight: 600, color: "var(--brass)" }}>Last updated: July 2026</span></div>
-        </div>
-      </header>
 
       <div className="checklist-wrap">
         <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", fontSize: "12px", textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: 700, color: "var(--brass)", marginBottom: "16px", background: "rgba(201, 168, 76, 0.08)", padding: "4px 14px", borderRadius: "9999px", border: "1px solid rgba(201, 168, 76, 0.25)" }}>

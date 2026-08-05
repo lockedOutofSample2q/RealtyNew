@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: SlugPageProps): Promise<Metad
 
   if (!content) {
     return {
-      title: "Page Not Found | RHMC",
+      title: "Page Not Found",
     };
   }
 

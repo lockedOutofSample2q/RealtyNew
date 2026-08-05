@@ -215,8 +215,8 @@ export default async function PostPage({ params }: PostPageProps) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="flex flex-col lg:flex-row gap-12 items-start">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
             
             {/* Main Article Column */}
             <main className="w-full flex-1 min-w-0 max-w-[72ch] mx-auto lg:mx-0">
@@ -305,7 +305,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
               {/* MDX Body Content */}
               <div className="prose prose-lg max-w-none text-black/80 prose-headings:font-serif prose-headings:text-charcoal prose-a:text-gold prose-a:no-underline hover:prose-a:underline prose-table:overflow-x-auto">
-                <MdxContent source={post.body.raw.replace(/# Documents Required to Buy Property in India: The Complete Verification Checklist[\s\S]*?\*\*Before you pay a single rupee[\s\S]*?properly\./, '')} />
+                <MdxContent code={post.body.code} />
               </div>
 
               {/* Inline WhatsApp CTA 1 */}
@@ -454,7 +454,7 @@ export default async function PostPage({ params }: PostPageProps) {
             )}
 
             <div className="prose prose-lg max-w-none text-black/80 prose-headings:font-serif prose-headings:text-charcoal prose-a:text-gold prose-a:no-underline hover:prose-a:underline prose-table:overflow-x-auto">
-              <MdxContent source={post.body.raw} />
+              <MdxContent code={post.body.code} />
             </div>
 
             <div className="mt-16 p-8 bg-charcoal text-white rounded-2xl border border-white/10 shadow-xl">

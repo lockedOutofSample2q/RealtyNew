@@ -11,7 +11,7 @@ import { Navigation, Building2, BookOpen, Compass, ShieldAlert, BadgePercent } f
 export const revalidate = 3600; // Cache for 1 hour
 
 export const metadata: Metadata = {
-  title: "Website Directory & Site Index | Realty Holding and Management Consultants",
+  title: "Website Directory & Site Index",
   description: "Complete index of verified builders, cooperative societies, sector intelligence, property listings, and investment guides for Mohali & Tricity.",
   alternates: {
     canonical: "https://www.realtyconsultants.in/directory",
@@ -373,12 +373,6 @@ export default async function DirectoryPage() {
                   <Link href="/tools/loan-eligibility" className="flex items-center justify-between font-body text-sm text-black/50 hover:text-charcoal transition-colors">
                     <span>Loan Eligibility</span>
                     <span>/tools/loan-eligibility</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/tools/price-trend" className="flex items-center justify-between font-body text-sm text-black/50 hover:text-charcoal transition-colors">
-                    <span>Price Trends</span>
-                    <span>/tools/price-trend</span>
                   </Link>
                 </li>
               </ul>
