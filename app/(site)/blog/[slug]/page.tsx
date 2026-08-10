@@ -1,3 +1,4 @@
+import React from "react";
 import { allPosts } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import Image from "next/image";
@@ -7,6 +8,18 @@ import { ArrowLeft } from "lucide-react";
 import MdxContent from "@/components/blog/MdxContent";
 import LeadPopup from "@/components/ui/LeadPopup";
 import { siteConfig } from "@/config/site";
+
+const internals =
+  (React as any).__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE ||
+  (React as any).__SERVER_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE ||
+  (React as any).__SECRET_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
+if (internals) {
+  if (internals.A && !internals.A.getOwner) {
+    internals.A.getOwner = () => null;
+  } else if (!internals.A) {
+    internals.A = { getOwner: () => null };
+  }
+}
 
 interface PostPageProps {
   params: Promise<{

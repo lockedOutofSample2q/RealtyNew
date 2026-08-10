@@ -1,11 +1,41 @@
 "use client";
 
-import { useMDXComponent } from "next-contentlayer/hooks";
-import React from "react";
+import React, { useMemo } from "react";
+import * as _jsx_runtime from "react/jsx-runtime";
+
+const shimReactInternals = (reactInstance: any) => {
+  if (!reactInstance) return;
+  const internals =
+    reactInstance.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE ||
+    reactInstance.__SERVER_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE ||
+    reactInstance.__SECRET_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
+  if (internals) {
+    if (internals.A && !internals.A.getOwner) {
+      internals.A.getOwner = () => null;
+    } else if (!internals.A) {
+      internals.A = { getOwner: () => null };
+    }
+  }
+};
+
+shimReactInternals(React);
 
 interface MdxContentProps {
   code: string;
 }
+
+const getMDXComponent = (code: string, globals: Record<string, any> = {}) => {
+  shimReactInternals(React);
+  const customJsxRuntime = {
+    ..._jsx_runtime,
+    jsxDEV: (type: any, props: any, key: any) => {
+      return (_jsx_runtime as any).jsx(type, props, key);
+    },
+  };
+  const scope = { React, ReactDOM: {}, _jsx_runtime: customJsxRuntime, ...globals };
+  const fn = new Function(...Object.keys(scope), code);
+  return fn(...Object.values(scope)).default;
+};
 
 const slugify = (text: any): string => {
   if (!text) return "";
@@ -53,6 +83,6 @@ const components = {
 };
 
 export default function MdxContent({ code }: MdxContentProps) {
-  const Component = useMDXComponent(code);
+  const Component = useMemo(() => getMDXComponent(code), [code]);
   return <Component components={components} />;
 }
