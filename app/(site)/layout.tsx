@@ -55,7 +55,7 @@ export default function SiteLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
         />
-        <Suspense fallback={<div className="h-[var(--nav-height)] bg-black w-full border-b border-white/10"></div>}>
+        <Suspense fallback={<div className="h-[var(--nav-height)] bg-white w-full border-b border-black/6"></div>}>
           <Navbar />
         </Suspense>
         <main>{children}</main>
