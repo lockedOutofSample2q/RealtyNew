@@ -119,12 +119,12 @@ export default function Navbar() {
           
           {/* -- Logo --------------------------------------- */}
           <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 group z-50">
-            <div className="relative h-12 xs:h-14 sm:h-16 md:h-20 w-44 xs:w-52 sm:w-60 md:w-72 aspect-[1756/925]">
+            <div className="relative h-14 xs:h-16 sm:h-20 md:h-24 lg:h-28 aspect-[1335/675]">
               <Image 
                 src="/assets/logo-light-theme.svg" 
                 alt={siteConfig.name} 
-                width={1756}
-                height={925}
+                width={1335}
+                height={675}
                 priority
                 className={cn(
                   "absolute inset-0 h-full w-full object-contain object-left transition-opacity duration-300",
@@ -134,8 +134,8 @@ export default function Navbar() {
               <Image 
                 src="/assets/logo-dark-theme.svg" 
                 alt={siteConfig.name} 
-                width={1756}
-                height={925}
+                width={1335}
+                height={675}
                 priority
                 className={cn(
                   "absolute inset-0 h-full w-full object-contain object-left transition-opacity duration-300",

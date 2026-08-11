@@ -15,7 +15,7 @@ type Section = {
 
 const SECTIONS: Section[] = [
   { id: "home_hero", name: "Home Page Hero", description: "The main hero property displayed prominently on the homepage.", maxItems: 1 },
-  { id: "home_latest", name: "Home Page: Properties Worth Looking At", description: "First properties carousel on the homepage." },
+  { id: "home_latest", name: "Home Page: Mohali Properties Worth Looking At", description: "First properties carousel on the homepage." },
   { id: "home_lands", name: "Home Page: Land Listings", description: "Second properties carousel on the homepage." },
   { id: "properties_featured", name: "Properties Page Highlights", description: "Featured properties displayed on the properties search page." },
 ];

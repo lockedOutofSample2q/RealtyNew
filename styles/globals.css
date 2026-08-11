@@ -110,8 +110,55 @@ a {
 ::-webkit-scrollbar-thumb { background: #a0a0a0; border-radius: 2px; }
 ::-webkit-scrollbar-thumb:hover { background: #666; }
 
-::selection { background: rgba(0, 0, 0, 0.3); color: inherit; text-shadow: none; }
-[class*="bg-charcoal"] ::selection, [class*="bg-black"] ::selection { background: rgba(255, 255, 255, 0.3); color: inherit; text-shadow: none; }
+::selection {
+  background: rgba(0, 0, 0, 0.25);
+  color: inherit;
+  text-shadow: none;
+}
+::-moz-selection {
+  background: rgba(0, 0, 0, 0.25);
+  color: inherit;
+  text-shadow: none;
+}
+
+/* Invert selection background on dark sections while keeping original text color */
+[class*="bg-charcoal"] ::selection,
+[class*="bg-charcoal"]::selection,
+[class*="bg-black"] ::selection,
+[class*="bg-black"]::selection,
+[class*="text-white"] ::selection,
+[class*="text-white"]::selection,
+.text-white ::selection,
+.text-white::selection,
+footer ::selection,
+footer::selection,
+header ::selection,
+header::selection,
+[class*="from-black"] ::selection,
+[class*="from-black"]::selection {
+  background: rgba(255, 255, 255, 0.35);
+  color: inherit;
+  text-shadow: none;
+}
+
+[class*="bg-charcoal"] ::-moz-selection,
+[class*="bg-charcoal"]::-moz-selection,
+[class*="bg-black"] ::-moz-selection,
+[class*="bg-black"]::-moz-selection,
+[class*="text-white"] ::-moz-selection,
+[class*="text-white"]::-moz-selection,
+.text-white ::-moz-selection,
+.text-white::-moz-selection,
+footer ::-moz-selection,
+footer::-moz-selection,
+header ::-moz-selection,
+header::-moz-selection,
+[class*="from-black"] ::-moz-selection,
+[class*="from-black"]::-moz-selection {
+  background: rgba(255, 255, 255, 0.35);
+  color: inherit;
+  text-shadow: none;
+}
 
 .prose-premium { color: #3a3a3a; line-height: 1.85; font-size: 16.5px; }
 

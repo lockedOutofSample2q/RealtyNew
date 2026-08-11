@@ -5,19 +5,16 @@ import { motion } from "framer-motion";
 const testimonials = [
   {
     quote: "A client discovered after paying 65% that the builder had already cancelled both plots the seller sold him. We chased the reinstatement for 8 months, negotiated reallocation of adjacent plots, and completed the transfer. He paid us nothing extra for it. That is what post-sale advisory means.",
-    author: "The 8-Month Plot Recovery",
     role: "Plot purchase",
     type: "Mohali. Details anonymised."
   },
   {
     quote: "A ground-floor buyer inherited years of unpaid property tax spread across a whole building. We brought all three floor owners to one table, drafted an MOU splitting the liability, generated separate property IDs for each floor, and completed the GMADA transfer in 3 months.",
-    author: "The Property Tax MOU",
     role: "Multi-floor building",
     type: "Mohali. Details anonymised."
   },
   {
     quote: "Commercial units near Sector 82 were trading at Rs 3 to 4 crore. Our client seated at Rs 11 crore when the market said 6.5 to 7. Today those units trade at Rs 12 to 16 crore. If you move without vision, you buy at the wrong price.",
-    author: "The Airport Road Call",
     role: "Commercial",
     type: "Airport Road corridor."
   }
@@ -55,8 +52,7 @@ export default function TestimonialsSection() {
                 </p>
               </div>
               <div>
-                <p className="font-body font-bold text-black">{t.author}</p>
-                <p className="font-body text-xs text-black/40 uppercase tracking-widest mt-1">
+                <p className="font-body text-xs text-black/40 uppercase tracking-widest">
                   {t.role} • {t.type}
                 </p>
               </div>

@@ -32,7 +32,7 @@ export const siteConfig: SiteConfig = {
     instagram: "https://instagram.com/amritrealty",
     facebook: "https://www.facebook.com/people/AmritRealty/61587441234909/",
     linkedin: "https://www.linkedin.com/company/realty-holding-and-management-consultants-mohali/",
-    youtube: "https://www.youtube.com/@AmritRealty",
+    youtube: "https://www.youtube.com/@realtyconsultantsin",
     reddit: "https://www.reddit.com/user/realtyconsultants_in/",
   },
 };
@@ -96,8 +96,7 @@ export const footerLinks = {
 // EDIT: Change the hero headline, subline, and background
 export const heroContent = {
   headline: "Find your next investment in Mohali",
-  subline:
-    "Independent property advisory for Mohali and Tricity. 180+ transactions closed across every property category. We will tell you what we would do with our own money, including when the answer is not to buy.",
+  subline: "Independent property advisory for Mohali and Tricity",
   ctaPrimary: { label: "Book a 15-minute call", href: "/appointments" },
   ctaSecondary: { label: "WhatsApp directly", href: "https://wa.me/917814613916" },
   // Background image (place in /public/images/hero.jpg or use Supabase URL)
@@ -208,7 +207,7 @@ export const seoDefaults = {
 
 export const homeCarousels = {
   properties: {
-    title: "Properties Worth Looking At",
+    title: "Mohali Properties Worth Looking At",
     subtitle: "A curated selection of verified residential and commercial listings across Mohali and Tricity: pre-launch, resale, and ready possession."
   },
   lands: {

@@ -148,7 +148,7 @@ export default async function RootLayout({
                     "Mohali", "Banur", "Tepla Road", "Aerocity", "Aerotropolis", "New Chandigarh", "IT City"
                   ],
                   "sameAs": [
-                    "https://www.youtube.com/@AmritRealty",
+                    "https://www.youtube.com/@realtyconsultantsin",
                     "https://www.facebook.com/people/AmritRealty/61587441234909/",
                     "https://www.linkedin.com/company/realty-holding-and-management-consultants-mohali/",
                     "https://maps.app.goo.gl/3xNnTgRUkC5eKcRG6",

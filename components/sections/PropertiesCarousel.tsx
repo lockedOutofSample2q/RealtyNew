@@ -193,7 +193,7 @@ export default function PropertiesCarousel({
             Latest
           </span>
           <h2 className="font-display font-medium text-black text-[clamp(2rem,5vw,4rem)] tracking-tight">
-            Properties Worth Looking At
+            Mohali Properties Worth Looking At
           </h2>
         </motion.div>
 
