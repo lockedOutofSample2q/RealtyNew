@@ -191,7 +191,7 @@ export default function ChecklistInteractive() {
     ];
 
     // Download PDF Action with dynamic ticked state
-    const downloadBtns = Array.from(document.querySelectorAll<HTMLElement>('a[href*="RHMC-Property-Document-Checklist.pdf"], .btn-tool'));
+    const downloadBtns = Array.from(document.querySelectorAll<HTMLElement>('a[href*="Property-Document-Verification-Checklist.pdf"], a[href*=".pdf"], .btn-tool'));
     downloadBtns.forEach((btn) => {
       if (btn.tagName === 'A' && btn.getAttribute('href')?.includes('.pdf')) {
         const handleDownload = async (e: Event) => {
@@ -200,7 +200,7 @@ export default function ChecklistInteractive() {
 
           try {
             const { PDFDocument, PDFName, PDFString, StandardFonts, rgb } = await import('pdf-lib');
-            const res = await fetch('/downloads/RHMC-Property-Document-Checklist.pdf');
+            const res = await fetch('/downloads/Property-Document-Verification-Checklist.pdf');
             const pdfBytes = await res.arrayBuffer();
             const pdfDoc = await PDFDocument.load(pdfBytes);
             const boldFont = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
@@ -376,7 +376,7 @@ export default function ChecklistInteractive() {
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'RHMC-Property-Document-Checklist.pdf';
+            a.download = 'Property-Document-Verification-Checklist.pdf';
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
@@ -385,7 +385,7 @@ export default function ChecklistInteractive() {
             say('Checklist PDF downloaded with your verified items!');
           } catch (err) {
             console.error('PDF download error:', err);
-            window.location.href = '/downloads/RHMC-Property-Document-Checklist.pdf';
+            window.location.href = '/downloads/Property-Document-Verification-Checklist.pdf';
           }
         };
 

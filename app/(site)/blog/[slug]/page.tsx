@@ -362,8 +362,8 @@ export default async function PostPage({ params }: PostPageProps) {
                   &rarr; Interactive Verification Tool
                 </Link>
                 <a
-                  href="/downloads/RHMC-Property-Document-Checklist.pdf"
-                  download
+                  href="/downloads/Property-Document-Verification-Checklist.pdf"
+                  download="Property-Document-Verification-Checklist.pdf"
                   className="font-display text-xs text-muted hover:text-charcoal transition-colors block"
                 >
                   &darr; Download Printable PDF

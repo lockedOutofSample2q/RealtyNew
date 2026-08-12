@@ -34,7 +34,26 @@
 .checklist-container h3,
 .checklist-container h4,
 .checklist-ui {
-  font-family: var(--font-display), system-ui, -apple-system, sans-serif;
+  font-family: var(--font-body), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* badge */
+.checklist-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--brass);
+  margin-bottom: 12px;
+  background: rgba(201, 168, 76, 0.08);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  width: fit-content;
 }
 
 /* masthead */
@@ -53,7 +72,7 @@ header.masthead-tool {
   flex-wrap: wrap;
 }
 .brand-tool {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: var(--font-body), 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
   letter-spacing: .14em;
   text-transform: uppercase;
@@ -70,21 +89,24 @@ header.masthead-tool {
   margin-top: 3px;
 }
 .masthead-meta {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: var(--font-body), 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 12px;
   color: var(--ink-3);
 }
 
 .checklist-wrap h1 {
-  font-size: 34px;
-  line-height: 1.2;
-  margin: 34px 0 10px;
-  letter-spacing: -.015em;
+  font-size: 28px;
+  line-height: 1.25;
+  font-weight: 700;
+  margin: 14px 0 10px;
+  letter-spacing: -.02em;
+  color: var(--ink);
 }
 .checklist-standfirst {
-  font-size: 18px;
+  font-size: 15.5px;
+  line-height: 1.55;
   color: var(--ink-2);
-  margin: 0 0 26px;
+  margin: 0 0 24px;
   max-width: 70ch;
 }
 
@@ -569,18 +591,77 @@ section.faq h3:first-of-type {
   transform: translate(-50%, 0);
 }
 
-@media (max-width: 620px) {
+@media (max-width: 640px) {
+  .checklist-wrap {
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px 60px;
+  }
+  .checklist-badge {
+    order: 1;
+    margin-bottom: 6px;
+  }
   .checklist-wrap h1 {
-    font-size: 27px;
+    order: 2;
+    font-size: 20px;
+    line-height: 1.28;
+    margin: 8px 0 6px;
+    font-weight: 700;
+  }
+  .checklist-standfirst {
+    order: 3;
+    font-size: 13.5px;
+    line-height: 1.45;
+    margin: 0 0 14px;
   }
   .checklist-controls {
+    order: 4;
     position: static;
+    padding: 14px 14px;
+    margin-bottom: 16px;
+  }
+  #checklist-stages {
+    order: 5;
+  }
+  .checklist-answer {
+    order: 6;
+    margin-top: 28px;
+    margin-bottom: 24px;
+    padding: 18px 18px;
+  }
+  section.ref {
+    order: 7;
+    margin-top: 28px;
+  }
+  .walkaway {
+    order: 8;
+    margin-top: 28px;
+    padding: 18px 18px;
+  }
+  section.faq {
+    order: 9;
+    margin-top: 28px !important;
+  }
+  .cta-tool {
+    order: 10;
+    margin-top: 28px;
+    padding: 22px 20px;
+  }
+  .author-tool {
+    order: 11;
+    margin-top: 28px;
   }
   .item {
-    padding: 16px 16px;
+    padding: 14px 14px;
   }
   .stage-head {
-    padding: 14px 16px;
+    padding: 12px 14px;
+  }
+  .stage-head h2 {
+    font-size: 17px;
+  }
+  .item-title {
+    font-size: 15px;
   }
   .table-tool {
     font-size: 13px;

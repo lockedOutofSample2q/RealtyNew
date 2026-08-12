@@ -131,7 +131,7 @@ export const aboutCarouselItems = [
     description: "Ultra-luxury landmark designed by Hafeez Contractor. Offers 90+ world-class amenities and 24/7 concierge services in Punjab's most powerful address.",
     price: "INR 25,000,000",
     badges: ["Hafeez Contractor", "90+ Amenities", "Sky Lounge"],
-    image: "/assets/images/home/regalia.jpg",
+    image: "/assets/images/home/regalia.webp",
   },
   {
     title: "Evoq Antalia",

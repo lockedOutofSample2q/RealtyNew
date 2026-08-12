@@ -248,7 +248,7 @@ export default function PropertyDocumentChecklistPage() {
       <ChecklistInteractive />
 
       <div className="checklist-wrap">
-        <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", fontSize: "12px", textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: 700, color: "var(--brass)", marginBottom: "16px", background: "rgba(201, 168, 76, 0.08)", padding: "4px 14px", borderRadius: "9999px", border: "1px solid rgba(201, 168, 76, 0.25)" }}>
+        <div className="checklist-badge">
           <span>Last updated: July 2026</span>
         </div>
         <h1>Property Document Verification Checklist</h1>
@@ -304,8 +304,8 @@ export default function PropertyDocumentChecklistPage() {
               <button id="print" className="btn-tool ghost">Print sheet</button>
               <button id="reset" className="btn-tool ghost">Reset</button>
               <a
-                href="/downloads/RHMC-Property-Document-Checklist.pdf"
-                download="RHMC-Property-Document-Checklist.pdf"
+                href="/downloads/Property-Document-Verification-Checklist.pdf"
+                download="Property-Document-Verification-Checklist.pdf"
                 className="btn-tool"
                 style={{ textDecoration: "none", display: "inline-block" }}
               >
