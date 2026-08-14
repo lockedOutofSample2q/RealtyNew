@@ -4,24 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Search, Building2, Users, CheckCircle, Navigation } from "lucide-react";
 import { useCurrency } from "@/context/CurrencyContext";
-import { Property } from "@/types";
-
-const LOGO_MAPPING: Record<string, string> = {
-  "affinity-buildtech-affinity-group": "affinity.svg",
-  "ambika-realcon-pvt-ltd-ambika-infra-ventures-pvt-ltd": "ambika.svg",
-  "evoq-realtech-directors-gaurav-goyal-satish-katyal-brand-ambassador-hrithik-roshan": "evoq.svg",
-  "klv-builders-and-developers-pvt-ltd": "klv.svg",
-  "gillco-developers-and-builders-pvt-ltd-gillco-group": "gillco.svg",
-  "hero-realty-pvt-ltd-hero-group-usd-5-billion-enterprise": "hero_homes.svg",
-  "homeland-group": "homeland.svg",
-  "horizon-group-punjab": "horizon.svg",
-  "jlpl": "jlpl.svg",
-  "joy-homes-joy-group": "joygrand.svg",
-  "jubilee-group": "jubilee.svg",
-  "marbella-group-srg-group": "marbella.svg",
-  "turnstone-realty-medallion-group": "medallion.svg",
-  "noble-ventures-noble-group": "noble_callista.svg",
-};
+import type { Property } from "@/types";
+import { LOGO_MAPPING, getDeveloperLogo } from "@/lib/builder-utils";
 
 interface Builder {
   name: string;
@@ -83,7 +67,7 @@ export default function BuildersClient({ builders }: BuildersClientProps) {
       .join("")
       .toUpperCase();
 
-    const logoFile = LOGO_MAPPING[b.slug];
+    const logoFile = getDeveloperLogo(b.name) || LOGO_MAPPING[b.slug];
 
     return (
       <div

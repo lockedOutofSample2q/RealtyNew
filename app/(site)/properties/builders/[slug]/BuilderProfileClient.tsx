@@ -9,22 +9,7 @@ import PropertyCard from "@/components/ui/PropertyCard";
 import InquiryForm from "@/app/(site)/properties/[slug]/InquiryForm";
 import buildersData from "@/config/builders-data.json";
 
-const LOGO_MAPPING: Record<string, string> = {
-  "affinity-buildtech-affinity-group": "affinity.svg",
-  "ambika-realcon-pvt-ltd-ambika-infra-ventures-pvt-ltd": "ambika.svg",
-  "evoq-realtech-directors-gaurav-goyal-satish-katyal-brand-ambassador-hrithik-roshan": "evoq.svg",
-  "klv-builders-and-developers-pvt-ltd": "klv.svg",
-  "gillco-developers-and-builders-pvt-ltd-gillco-group": "gillco.svg",
-  "hero-realty-pvt-ltd-hero-group-usd-5-billion-enterprise": "hero_homes.svg",
-  "homeland-group": "homeland.svg",
-  "horizon-group-punjab": "horizon.svg",
-  "jlpl": "jlpl.svg",
-  "joy-homes-joy-group": "joygrand.svg",
-  "jubilee-group": "jubilee.svg",
-  "marbella-group-srg-group": "marbella.svg",
-  "turnstone-realty-medallion-group": "medallion.svg",
-  "noble-ventures-noble-group": "noble_callista.svg",
-};
+import { LOGO_MAPPING, getDeveloperLogo } from "@/lib/builder-utils";
 
 interface BuilderBackground {
   c1: string;
@@ -122,20 +107,23 @@ export default function BuilderProfileClient({ builder, properties }: BuilderPro
         <div className="flex items-center gap-3.5">
           {/* Logo */}
           <div className="w-11 h-11 rounded-xl bg-charcoal/5 border border-charcoal/10 flex items-center justify-center font-display text-base font-semibold text-charcoal shrink-0 shadow-sm overflow-hidden relative bg-white">
-            {LOGO_MAPPING[builder.slug] ? (
-              <div className="w-full h-full p-1.5 relative flex items-center justify-center">
-                <Image
-                  src={`/assets/images/logos/${LOGO_MAPPING[builder.slug]}`}
-                  alt={`${builder.commonName} logo`}
-                  fill
-                  sizes="44px"
-                  className="object-contain p-0.5"
-                  style={{ filter: "brightness(0)" }}
-                />
-              </div>
-            ) : (
-              initials
-            )}
+            {(() => {
+              const logoFile = getDeveloperLogo(builder.commonName || builder.name) || LOGO_MAPPING[builder.slug];
+              return logoFile ? (
+                <div className="w-full h-full p-1.5 relative flex items-center justify-center">
+                  <Image
+                    src={`/assets/images/logos/${logoFile}`}
+                    alt={`${builder.commonName} logo`}
+                    fill
+                    sizes="44px"
+                    className="object-contain p-0.5"
+                    style={{ filter: "brightness(0)" }}
+                  />
+                </div>
+              ) : (
+                initials
+              );
+            })()}
           </div>
           
           <div>

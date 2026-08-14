@@ -16,22 +16,7 @@ import { AmenityIcon } from "@/components/ui/AmenityIcons";
 import { enrichProperty } from "@/lib/property-utils";
 import { cn, slugify } from "@/lib/utils";
 
-const LOGO_MAPPING: Record<string, string> = {
-  "affinity-buildtech-affinity-group": "affinity.svg",
-  "ambika-realcon-pvt-ltd-ambika-infra-ventures-pvt-ltd": "ambika.svg",
-  "evoq-realtech-directors-gaurav-goyal-satish-katyal-brand-ambassador-hrithik-roshan": "evoq.svg",
-  "klv-builders-and-developers-pvt-ltd": "klv.svg",
-  "gillco-developers-and-builders-pvt-ltd-gillco-group": "gillco.svg",
-  "hero-realty-pvt-ltd-hero-group-usd-5-billion-enterprise": "hero_homes.svg",
-  "homeland-group": "homeland.svg",
-  "horizon-group-punjab": "horizon.svg",
-  "jlpl": "jlpl.svg",
-  "joy-homes-joy-group": "joygrand.svg",
-  "jubilee-group": "jubilee.svg",
-  "marbella-group-srg-group": "marbella.svg",
-  "turnstone-realty-medallion-group": "medallion.svg",
-  "noble-ventures-noble-group": "noble_callista.svg",
-};
+import { getDeveloperLogo, getBuilderInfo } from "@/lib/builder-utils";
 import InquiryForm, { PropertyGallery } from "../../[slug]/InquiryForm";
 import PriceDisplay from "../../[slug]/PriceDisplay";
 import PropertyDetailMapClient from "../../[slug]/PropertyDetailMapClient";
@@ -415,8 +400,9 @@ export default async function HouseDetailPage(props: Props) {
                   {property.title}
                 </h1>
                 {property.developer && (() => {
-                  const devSlug = slugify(property.developer.trim());
-                  const logoFile = LOGO_MAPPING[devSlug];
+                  const { slug: devSlug, info: builderInfo } = getBuilderInfo(property.developer);
+                  const logoFile = getDeveloperLogo(property.developer);
+                  const devName = builderInfo?.commonName || property.developer;
                   
                   return (
                     <Link
@@ -428,7 +414,7 @@ export default async function HouseDetailPage(props: Props) {
                           <div className="w-full h-full relative flex items-center justify-center bg-white">
                             <Image
                               src={`/assets/images/logos/${logoFile}`}
-                              alt={`${property.developer} logo`}
+                              alt={`${devName} logo`}
                               fill
                               sizes="40px"
                               className="object-contain p-0.5"
@@ -441,7 +427,7 @@ export default async function HouseDetailPage(props: Props) {
                       </div>
                       <div className="flex flex-col">
                         <span className="text-[10px] text-black/35 font-medium uppercase tracking-wider leading-none mb-0.5">Developed by</span>
-                        <span className="text-[14px] font-bold text-black group-hover:underline leading-none font-display">{property.developer}</span>
+                        <span className="text-[14px] font-bold text-black group-hover:underline leading-none font-display">{devName}</span>
                       </div>
                     </Link>
                   );
@@ -631,10 +617,10 @@ export default async function HouseDetailPage(props: Props) {
                 />
               </div>
 
-              {/* Card 3: Contact Agent */}
+              {/* Card 3: Consult advisor */}
               <div className="bg-white border border-black/10 rounded-2xl p-6 shadow-sm">
                 <div className="flex items-center justify-between mb-4">
-                  <p className="text-sm font-bold text-black font-display">Contact Agent</p>
+                  <p className="text-sm font-bold text-black font-display">Consult advisor</p>
                   <span className="text-[9px] uppercase tracking-widest text-black/40 bg-black/[0.04] px-2 py-0.5 rounded font-semibold font-body">
                     Realty Holding and Management Consultants
                   </span>
@@ -694,9 +680,8 @@ export default async function HouseDetailPage(props: Props) {
 
               {/* Card 4: Developer Card */}
               {property.developer && (() => {
-                const devSlug = slugify(property.developer.trim());
-                const builderInfo = devSlug ? (buildersData.builders as any)[devSlug] : null;
-                const logoFile = LOGO_MAPPING[devSlug];
+                const { slug: devSlug, info: builderInfo } = getBuilderInfo(property.developer);
+                const logoFile = getDeveloperLogo(property.developer);
                 
                 const devName = builderInfo?.commonName || property.developer;
                 const devDesc = builderInfo?.background?.c1 || "";
@@ -708,12 +693,12 @@ export default async function HouseDetailPage(props: Props) {
                     
                     <div className="w-full bg-black/[0.02] border border-black/5 rounded-2xl px-4 py-6 mb-4 flex items-center justify-center min-h-[90px] shadow-sm select-none">
                       {logoFile ? (
-                        <div className="w-full h-10 relative flex items-center justify-center">
+                        <div className="w-full h-12 relative flex items-center justify-center">
                           <Image
                             src={`/assets/images/logos/${logoFile}`}
                             alt={`${devName} logo`}
                             fill
-                            sizes="150px"
+                            sizes="160px"
                             className="object-contain"
                             style={{ filter: "brightness(0)" }}
                           />
