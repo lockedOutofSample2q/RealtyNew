@@ -69,7 +69,7 @@ export default function ContactMap() {
           }
           url={
             process.env.NEXT_PUBLIC_CARTO_API_KEY
-              ? `https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=${process.env.NEXT_PUBLIC_CARTO_API_KEY}`
+              ? `https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=${process.env.NEXT_PUBLIC_CARTO_API_KEY}`
               : "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           }
         />
