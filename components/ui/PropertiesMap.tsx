@@ -77,15 +77,19 @@ export default function PropertiesMap({
           key={mapTheme}
           attribution={
             mapTheme === "light"
-              ? '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+              ? process.env.NEXT_PUBLIC_CARTO_API_KEY
+                ? '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+                : '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               : '&copy; Google Maps'
           }
           url={
             mapTheme === "light"
-              ? "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+              ? process.env.NEXT_PUBLIC_CARTO_API_KEY
+                ? `https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=${process.env.NEXT_PUBLIC_CARTO_API_KEY}`
+                : "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               : "https://{s}.google.com/vt/lyrs=y&x={x}&y={y}&z={z}"
           }
-          subdomains={mapTheme === "satellite" ? ["mt0", "mt1", "mt2", "mt3"] : ["a", "b", "c", "d"]}
+          subdomains={mapTheme === "satellite" ? ["mt0", "mt1", "mt2", "mt3"] : ["a", "b", "c"]}
         />
         <ZoomControl position="topleft" />
         <MapResizer />
